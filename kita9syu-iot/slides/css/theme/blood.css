@@ -58,10 +58,10 @@ body {
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 1.7em; }
+  font-size: 1.4em; }
 
 .reveal h2 {
-  font-size: 1.5em; }
+  font-size: 1.25em; }
 
 .reveal h3 {
   font-size: 1.15em; }
@@ -98,7 +98,7 @@ body {
 .reveal ul {
   display: inline-block;
   text-align: left;
-  margin: 0 0 0 1em; }
+  margin: 0 0 0 0.7em; }
 
 .reveal ol {
   list-style-type: decimal; }
