@@ -4,10 +4,10 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<title>Slides</title>
+<title>モビリティ無人レンタルシステム</title>
 
 <meta name="description" content="">
-<meta name="author" content="">
+<meta name="author" content="K.Oosawa">
 <meta name="generator" content="reveal-ck 4.0.0">
 
 
@@ -21,7 +21,7 @@
 <!-- Code syntax highlighting -->
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/reveal.css">
-<link rel="stylesheet" href="css/theme/black.css" id="theme">
+<link rel="stylesheet" href="css/theme/kita9syu-iot.css" id="theme">
 
 <!-- Theme used for syntax highlighting of code -->
 <link rel="stylesheet" href="lib/css/monokai.css">
@@ -49,9 +49,12 @@
 
 </section>
 <section>
+<section>
 
-<p>アフターコロナを意識した、<br>
-モビリティ無人レンタルの仕組みを考える</p>
+<p>// 実現したい世界観/原体験(30s)<br>
+地方の観光促進の為に<br>
+アフターコロナを意識した<br>
+モビリティの無人レンタルサービスを提案します。</p>
 
 </section>
 <section>
@@ -64,6 +67,8 @@
 <p>鍵を返却</p>
 
 </section>
+</section>
+
 <section>
 <section>
 
@@ -149,6 +154,13 @@
 </ul>
 
 </section>
+<section>
+
+<ul>
+  <li>太陽光発電での動作も検討する。</li>
+</ul>
+
+</section>
 </section>
 
 <section>
@@ -181,28 +193,12 @@
 <section>
 
 <ul>
-  <li>バックエンドシステムの基盤ソフトウェアにはFIWAREを利用したい。</li>
+  <li>バックエンドシステムの基盤ソフトウェアには<strong>FIWARE</strong>を利用したい。</li>
 </ul>
 
 </section>
 </section>
-<section>
 
-<h1>FIWARE</h1>
-<ul>
-  <li>欧州の官民連携プロジェクトで開発／実証されたスマートシティー基盤ソフトウェア。</li>
-  <li>データ/コンテキスト管理、IoT、セキュリティ、クラウド環境などのモジュール群で構成されている。</li>
-</ul>
-
-</section>
-<section>
-
-<h2>DLTによる安全な電子鍵配布</h2>
-<ul>
-  <li>FIWARE/CainsMajor DLT Adaptorを利用して分散型台帳基盤(Etheream,IOST,Hyperledger Fabric等)を使った安全な電子鍵の配布を検討する。</li>
-</ul>
-
-</section>
 <section>
 <section>
 
@@ -251,11 +247,22 @@
 </ul>
 
 </section>
+</section>
+
+<section>
 <section>
 
-<p>分散型台帳技術Blockchain/DLT)や公開鍵技術(KPI)を利用したデジタル鍵（証明書）を検討する。</p>
+<h1>FIWARE</h1>
+<ul>
+  <li>欧州の官民連携プロジェクトで開発／実証されたスマートシティー基盤ソフトウェア。</li>
+  <li>データ/コンテキスト管理、IoT、セキュリティ、クラウド環境などのモジュール群で構成されている。</li>
+</ul>
 
 </section>
+<section>
+
+<h2>公開鍵技術(KPI)</h2>
+
 </section>
 <section>
 
@@ -264,9 +271,16 @@
 </section>
 <section>
 
-<h2>公開鍵技術(KPI)</h2>
+<h2>DLTによる安全な電子鍵配布</h2>
+<ul>
+  <li>FIWARE/CainsMajor DLT Adaptorを利用して分散型台帳基盤(Etheream,IOST,Hyperledger Fabric等)を使った安全な電子鍵の配布を検討する。</li>
+  <li>
+<strong>分散型台帳技術Blockchain/DLT)</strong>や<strong>公開鍵技術(KPI)</strong>を利用したデジタル鍵（証明書）を検討する。</li>
+</ul>
 
 </section>
+</section>
+
 <section>
 <section>
 
@@ -416,7 +430,7 @@
 
   
 
-  var configOptions = {"controls":true,"progress":true,"history":true,"center":true}
+  var configOptions = {"controls":true,"postgress":true,"slideNumber":true,"history":true,"overview":true,"enter":true,"touch":false,"loop":false,"rtl":false,"fragments":true,"autoSlide":0,"autoSlideStoppable":false,"mouseWheel":false,"transition":"default","transitionSpeed":"fast"}
   var initializeOptions = {};
   extend(initializeOptions, baseOptions);
   extend(initializeOptions, configOptions);
