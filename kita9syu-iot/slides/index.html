@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Slides</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="generator" content="reveal-ck 4.0.0">
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+
+<!-- Code syntax highlighting -->
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/monokai.css">
+
+<link rel="stylesheet" href="css/reveal-ck.css">
+
+
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+  </head>
+
+  <body>
+    <div class="reveal">
+  <div class="slides">
+    <section>
+
+<h2>モビリティ無人レンタルシステム</h2>
+
+</section>
+<section>
+
+<h2>アフターコロナを意識した、モビリティ無人レンタルの仕組みを考える</h2>
+
+</section>
+<section>
+
+<h2>鍵をレンタルしてモビリティを利用</h2>
+
+</section>
+<section>
+
+<h2>鍵を返却</h2>
+
+</section>
+<section>
+
+<h2>モビリティ無人レンタルシステム構成</h2>
+
+</section>
+<section>
+<section>
+
+<p>①-1 鍵のレンタル許可要求</p>
+
+</section>
+</section>
+<section>
+
+<p>①-2 BT通信などにより、鍵のレンタル要求</p>
+
+</section>
+<section>
+<section>
+
+<p>①-3 鍵のレンタル</p>
+
+</section>
+</section>
+<section>
+
+<p>② 鍵の返却</p>
+
+</section>
+<section>
+
+<h2>レンタルキーを収納するスマートロックボックス</h2>
+
+</section>
+<section>
+
+<h3>スマートロックボックスの定義</h3>
+<ul>
+<li>鍵を格納できる。</li>
+<li>バックエンドサーバーからの鍵解除要求により鍵をレンタル可能状態になる。</li>
+<li>鍵レンタル状態でスマホアプリとBT通信などにより鍵をレンタルする。</li>
+<li>保守用にボックスの開閉ができる</li>
+<li>無人でのレンタルを前提とする為、盗難防止（監視カメラ、異常の報告など）の検討</li>
+<li>鍵の返却をバックエンドサーバーに通知できる。</li>
+<li>環境センサーも設置して設置場所の情報の集取も検討する。</li>
+</ul>
+
+</section>
+<section>
+
+<h2>スマートロックボックスのバックエンドシステム</h2>
+
+</section>
+<section>
+<section>
+
+<p>バックエンドシステムの定義<br>
+インターネット上に準備されている。<br>
+スマートフォンアプリからの要求からDB更新後、スマートロックボックスに鍵のレンタルを通知。<br>
+スマートロックボックスからの鍵の返却通知によりDBを更新。<br>
+スマートフォンアプリに鍵のレンタル情報を配信。<br>
+管理画面が用意してあり、レンタル状況やモビリティの利用情報、決済情報、ユーザー情報などを管理。<br>
+バックエンドシステムの基盤ソフトウェアにはFIWAREを利用する。FIWAREは欧州の官民連携プロジェクトで開発／実証された基盤ソフトウェアで、データ/コンテキスト管理、IoT、セキュリティ、クラウド環境などのカテゴリーにまたがる約40種のモジュール群で構成されている。<br>
+FIWARE/CainsMajor DLT Adaptorを利用して分散型台帳基盤(Etheream,IOST,Hyperledger Fabric等)を使った安全な電子鍵の配布を検討する。</p>
+
+</section>
+<section>
+
+<h2>スマートフォンアプリ</h2>
+<h3>スマートフォンアプリの定義</h3>
+
+</section>
+</section>
+<section>
+
+<p>Android/iOS用のスマートフォンアプリを用意する。<br>
+地図などからレンタルモビリティを探せる<br>
+レンタルモビリティの決済処理ができる。<br>
+決済完了後、デジタル鍵（証明書）を受診。<br>
+スマートロックボックスとBT通信などによりボックスを開錠する。<br>
+スマートロックボックスからの鍵の返却通知によりDBを更新<br>
+スマートフォンアプリに鍵のレンタル情報を配信<br>
+管理画面が用意してあり、レンタル状況やモビリティの利用情報、決済情報、ユーザー情報などを管理<br>
+分散型台帳技術(Blockchain/DLT)や公開鍵技術(KPI)を活用ししたデジタル鍵（証明書）を検討する。</p>
+
+</section>
+<section>
+
+<h2>実証実験 宝探し編</h2>
+<h3>スマートロックボックスの機能確認のための実装実験</h3>
+<p>スマートフォンの地図を利用した宝探し<br>
+問題を解くと鍵の番号を入手<br>
+複数の番号を入手したら①−１の鍵レンタル許可要求を発行<br>
+スマートロックボックスを探して①−２の鍵解除要求で開ける事ができる。<br>
+スマートロックボックス内には子供の喜ぶオモチャやお菓子を入れておく。<br>
+管理画面からどんな情報がとれるかなども確認する。</p>
+
+</section>
+<section>
+
+<h2>観光地での実証実験 日本三景「松島」編</h2>
+<p>実際にモビリティをレンタルして観光地を巡ってもらう。<br>
+松島には徒歩では行きづらい、是非いってほしい場所が多くある。<br>
+松島〜塩釜遊覧船に乗った後に松島まで帰るルート<br>
+仙台魚市場、馬の背、雄島、西行戻しの松公園などをレンタル三輪EVをつかって観光する</p>
+
+</section>
+<section>
+
+<section data-background="https://cache.sengokuixa.jp/world/20210908-01/img/card/chara/1143_JPJktZz6.png">
+<h2 style="background-color:#000000;opacity: 0.7;">観光地での実証実験2<br>黒田如水九州討伐編</h2>
+</section>
+
+</section>
+<section>
+
+<h2>この仕組みを利用してレンタルできそうなもの。</h2>
+<p>スマートロックボックスに格納できる物はレンタルができる。鍵をつかってレンタルできそうな物を検討する。お部屋、宿泊施設、会議室などいろいろ想像できる。軽トラックや軽バンをキャンピングカー化するハックが流行っている。EVバンをキャンピングカー化したものや、オフィス化したものレンタルは面白そうである。また、EVトラックの荷台に乗せるコンテナなどをレンタルする事業も検討している。EVトラックに乗せるコンテナは、研究室、ワークスペース、キャンピング、キッチンなど用途事に用意して必用に応じてレンタルする仕組みも需要がありそう。</p>
+
+</section>
+
+  </div>
+</div>
+
+<script src="js/reveal.js"></script>
+
+
+<script>
+  (function() {
+  function extend( a, b ) {
+    for(var i in b) {
+      a[i] = b[i];
+    }
+  }
+  var baseOptions = {
+    transition: 'default',
+    hash: true,
+    dependencies: [
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      { src: 'plugin/highlight/highlight.js' },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  };
+
+  
+
+  var configOptions = {"controls":true,"progress":true,"history":true,"center":true}
+  var initializeOptions = {};
+  extend(initializeOptions, baseOptions);
+  extend(initializeOptions, configOptions);
+  Reveal.initialize(initializeOptions);
+})();
+
+</script>
+
+  </body>
+</html>
