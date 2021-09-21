@@ -177,8 +177,9 @@ K.Oosawa
 ***
 ***
 ## FIWARE
-<!-- PHPとデータベースなどでの実現可能ですが、FIWAREというスマートシティー基盤での実現を目指しております -->
-<!-- FIWAREとは、EUで開発されたスマートシティー基盤で、すでに高松市などで利用されています。 -->
+<!-- このくらいの仕組みですと、単純にPHPとデータベースでの実現可能ですが、
+FIWAREというスマートシティー基盤での実現を目指しております -->
+<!-- FIWAREは、EUで開発されたスマートシティー基盤で、すでに高松市などで利用されています。 -->
 - 欧州で開発／実証された**スマートシティー基盤**
 - データ管理、IoT、セキュリティ、クラウド、WebRTCなどのモジュール群で構成されている。
 ![](images/0921.003.png)
@@ -210,11 +211,15 @@ K.Oosawa
 - sigfox
 - OpenMTC
 - FIROS
-https://github.com/FIWARE/catalogue/tree/master/iot-agents
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 ---
-#### 最新技術の取り込み
+#### 最新技術も利用できる
+<!--　そして、最新技術を利用する、追加する仕組みも用意されています。 -->
+- Oliot Mediation Gateway
 - CanisMajor Blockchain/DLT Adaptor
-- 
+- Kurento Media Stream
+- OpenVodi Video Calls (WebRTC)
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 ***
 ### モビリティ無人レンタルシステム
 ![](images/0916.003.png)
