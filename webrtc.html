@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="jp">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1280, initial-scale=1.0, minimum-scale=1.0">
+<style>
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+main div {
+  margin: 0; /* 要素の外側の余白を0に定義 */
+  padding: 0; /* 要素の内側の余白を0に定義 */
+}
+.left-column {
+  float: left;
+  width: 70%;
+  height: 90%;
+  background-color: #fff;
+  background-color: #fff;
+}
+.left-column2 {
+  float: left;
+  width: 50%;
+  height: 90%;
+  background-color: #fff;
+}
+.right-column2 {
+  float: right;
+  width: 50%;
+  height: 90%;
+  background-color: #fff;
+}
+</style>
+</head>
+<body>
+   <video id="myVideo" width="400" height="300" autoplay="1" ></video>
+
+   <script type="text/javascript">
+navigator.mediaDevices = navigator.mediaDevices || ((navigator.mozGetUserMedia || navigator.webkitGetUserMedia) ? {
+   getUserMedia: function(c) {
+     return new Promise(function(y, n) {
+        (navigator.mozGetUserMedia ||
+        navigator.webkitGetUserMedia).call(navigator, c, y, n);
+     });
+   }
+} : null);
+
+if (!navigator.mediaDevices) {
+  console.log("getUserMedia() not supported.");
+}
+
+// Prefer camera resolution nearest to 1280x720.
+
+var constraints = { audio: true, video: { width: 1280, height: 720 } };
+
+navigator.mediaDevices.getUserMedia(constraints)
+.then(function(stream) {
+  var video = document.querySelector('video');
+  video.srcObject = stream
+  video.onloadedmetadata = function(e) {
+    video.play();
+  };
+})
+.catch(function(err) {
+  console.log(err.name + ": " + err.message);
+});
+   </script>
+</body>
+</html>
