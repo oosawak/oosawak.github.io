@@ -138,3 +138,5 @@ PHPやNode.jsの脆弱性と更新が、なぜ維持の負担になるのか。\
 [技術者向け補足資料：PHPとNode.jsの脆弱性・更新・メジャーバージョンアップ](https://oosawak.github.io/tech/#/post/tech/php-nodejs-supplement)
 
 （同じ資料は[Qiita](https://qiita.com/oosawak@github/items/fc22b45424d7442d1995)にもあります）
+
+この記事は、[Qiita](https://qiita.com/oosawak@github/items/e195f09a746ad48bcf12)にも載せています。
