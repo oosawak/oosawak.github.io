@@ -222,3 +222,5 @@ Muse × GitHub × Markdown CMSは、公開側では何も動かさず、作る�
 - [IKIGAI](https://oosawak.github.io/ikigai/) ― 日本の丁寧な暮らしのレシピ集
 - [Lyre3 Games](https://oosawak.github.io/) ― このブログの本体サイト
 - 仕組みの公開先 ― [GitHub（oosawak/markdown-cms）](https://github.com/oosawak/markdown-cms)
+
+この記事は、[Qiita](https://qiita.com/oosawak@github/items/a0eba6657eaa53827e41)にも載せています。
