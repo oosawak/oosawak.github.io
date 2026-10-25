@@ -3,8 +3,8 @@ title: 技術者向け補足資料：PHPとNode.jsの脆弱性・更新・メジ
 date: '2026-10-25'
 category: コラム
 summary: 2026年10月のPHPとNode.jsのセキュリティリリースを題材に、公開サーバーでプログラムを動かすことの維持負担、メジャーバージョンアップの難しさ、静的サイトが直撃を受けない理由を、技術者向けに整理した補足資料です。
-cover: tech/library.webp
-cover_alt: 資料イメージ（図書室）
+cover: tech/version-stairs.webp
+cover_alt: サーバーでできた階段と、崩れていく先の段のイラスト
 type: article
 ---
 
