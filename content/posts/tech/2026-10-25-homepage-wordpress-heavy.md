@@ -68,7 +68,15 @@ WordPressは、ページを見る人が来るたびに、サーバーの中で�
 
 これは、思いつきの話ではありません。
 
-町のポータル、パン屋さん、フルーツのお店、グルメ案内、小説サイト。性格の違う5つのサイトが、この仕組みで実際に公開されています。文章を置けば自動でページが作られ、それらをまとめた統合ポータルには71件の情報が集まって、定期的に自動で更新され続けています。
+町のサイト「[みどり野町](https://oosawak.github.io/midorino-town/)」、パン屋さん「[haru no tane bakery](https://oosawak.github.io/haru-no-tane-bakery/)」、フルーツのお店「[果実日和](https://oosawak.github.io/kajitsu-biyori/)」、グルメ案内「[山形グルメ案内](https://oosawak.github.io/yamagata-gourmet/)」、小説サイト「[よむきく](https://oosawak.github.io/MdYomuKiku/)」。性格の違う5つのサイトが、この仕組みで実際に公開されています。文章を置けば自動でページが作られ、それらをまとめた統合ポータル「[まちのつながり](https://oosawak.github.io/community-portal/)」には73件の情報が集まって、定期的に自動で更新され続けています。
+
+![統合ポータル「まちのつながり」の画面。5つのサイトの新着が集まって表示されている](tech/community-portal.webp)
+
+そして、今読んでいるこの[Techブログ](https://oosawak.github.io/tech/)自体も、同じ仕組みで作られています。親サイトの[Lyre3 Games](https://oosawak.github.io/)も含め、この記事も、文章ファイルを置いて自動でページにしたものです。
+
+## 仕組みは、公開しています
+
+せっかくなので、この仕組み自体も、自由に使える形（MITライセンス）で[GitHubに公開](https://github.com/oosawak/midorino-town)しています。よければ持って行って、自分のサイトで試してみてください。詰まるところがあれば、相談してもらっても構いません。
 
 ホームページは、もっと身軽でいい。
 
