@@ -1,0 +1,77 @@
+name: Build blogs (tech / game) and commit generated files
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'
+      - 'scripts/**'
+      - 'assets/**'
+      - 'requirements.txt'
+      - '.github/workflows/build-blogs.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: build-blogs
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Build and test Tech Blog
+        env:
+          SITE_ID: tech
+          SITE_URL: https://oosawak.github.io/tech/
+          PORTAL_URL: https://oosawak.github.io/
+        run: |
+          python scripts/build.py
+          python -m unittest discover -s scripts -p 'test_*.py'
+          mkdir -p tech
+          rsync -a --delete dist/data/ tech/data/
+          rsync -a --delete dist/assets/ tech/assets/
+          cp dist/index.html tech/index.html
+      - name: Build and test Game Blog
+        env:
+          SITE_ID: game
+          SITE_URL: https://oosawak.github.io/game/
+          PORTAL_URL: https://oosawak.github.io/
+        run: |
+          python scripts/build.py
+          python -m unittest discover -s scripts -p 'test_*.py'
+          mkdir -p game
+          rsync -a --delete dist/data/ game/data/
+          rsync -a --delete dist/assets/ game/assets/
+          cp dist/index.html game/index.html
+      - name: Guard - protected pages must be untouched by the build
+        run: |
+          if [ -n "$(git status --porcelain -- ixa.html webrtc.html .nojekyll)" ]; then
+            echo 'Protected files were modified by the build. Aborting.' >&2
+            exit 1
+          fi
+      - name: Commit generated changes
+        run: |
+          git add tech game
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+          else
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Update generated blog files'
+            git push origin HEAD:main
+          fi
