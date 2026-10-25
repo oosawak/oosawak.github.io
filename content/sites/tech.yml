@@ -1,0 +1,12 @@
+id: tech
+name: Tech Blog
+short_name: Tech Blog
+kind: blog
+kind_label: 技術ブログ
+accent: '#637f37'
+eyebrow: LYRE3 GAMES / TECH BLOG
+hero_title: Tech Blog
+description: Lyre3 Gamesの技術ブログ。Markdown CMSや静的サイト、開発環境についての記事を置きます。
+subtitle: 技術ブログ
+hero_note: Markdown → JSON → 静的配信
+about: Lyre3 Gamesの技術ブログです。自作のMarkdown CMSで記事を書き、JSONに変換して静的配信しています。

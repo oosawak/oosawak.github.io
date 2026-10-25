@@ -1,0 +1,12 @@
+id: game
+name: Game Blog
+short_name: Game Blog
+kind: blog
+kind_label: ゲームブログ
+accent: '#637f37'
+eyebrow: LYRE3 GAMES / GAME BLOG
+hero_title: Game Blog
+description: Lyre3 Gamesのゲームブログ。開発中のゲームの進捗や、公開のお知らせを書きます。
+subtitle: ゲームブログ
+hero_note: 開発日誌とお知らせ
+about: Lyre3 Gamesのゲームブログです。ブラウザゲームやツールの開発進捗、公開のお知らせを書いていきます。
