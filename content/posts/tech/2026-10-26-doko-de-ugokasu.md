@@ -123,11 +123,11 @@ GitHubは裏側の保管庫として残し、表の入口は身近な道具に�
 ### 実際に動いているサイト群
 
 これは構想ではなく、すでに動いている仕組みです。\
-町のサイト「みどり野町」、パン屋「haru no tane bakery」、フルーツ店「果実日和」、グルメ案内「山形グルメ案内」、小説サイト「よむきく」が公開中です。\
-それらを束ねる統合ポータル「まちのつながり」も、自動更新で稼働しています。\
+町のサイト「[みどり野町](https://oosawak.github.io/midorino-town/)」、パン屋「[haru no tane bakery](https://oosawak.github.io/haru-no-tane-bakery/)」、フルーツ店「[果実日和](https://oosawak.github.io/kajitsu-biyori/)」、グルメ案内「[山形グルメ案内](https://oosawak.github.io/yamagata-gourmet/)」、小説サイト「[よむきく](https://oosawak.github.io/MdYomuKiku/)」が公開中です。\
+それらを束ねる統合ポータル「[まちのつながり](https://oosawak.github.io/community-portal/)」も、自動更新で稼働しています。\
 ポータル本体のサイト「Lyre3 Games」（oosawak.github.io）と、その中のTechブログ・Gameブログも、同じ仕組みです。\
-日本の丁寧な暮らしのレシピ集「IKIGAI」も、この仕組みの上に乗っています。\
-仕組み自体はMITライセンスでGitHubに公開しています（github.com/oosawak/markdown-cms）。\
+日本の丁寧な暮らしのレシピ集「[IKIGAI](https://oosawak.github.io/ikigai/)」も、この仕組みの上に乗っています。\
+仕組み自体はMITライセンスで[GitHub（oosawak/markdown-cms）](https://github.com/oosawak/markdown-cms)に公開しています。\
 
 ![構想ではなく、すでに稼働しているサイト群の図](tech/doko-slide-14.webp)
 
@@ -208,3 +208,17 @@ Muse × GitHub × Markdown CMSは、公開側では何も動かさず、作る�
 まずは触って、確かめてみてください。\
 
 ![自分のサイトに本当に必要なものは何か。仕組みはMITライセンスで公開中、という締めの図](tech/doko-slide-20.webp)
+
+## 参考リンク
+
+この記事で紹介した、実際に動いているサイトです。\
+
+- [みどり野町](https://oosawak.github.io/midorino-town/) ― 町のサイト
+- [haru no tane bakery](https://oosawak.github.io/haru-no-tane-bakery/) ― パン屋のサイト
+- [果実日和](https://oosawak.github.io/kajitsu-biyori/) ― フルーツ店のサイト
+- [山形グルメ案内](https://oosawak.github.io/yamagata-gourmet/) ― グルメ案内サイト
+- [よむきく](https://oosawak.github.io/MdYomuKiku/) ― 小説サイト
+- [まちのつながり](https://oosawak.github.io/community-portal/) ― 上のサイトを束ねる統合ポータル
+- [IKIGAI](https://oosawak.github.io/ikigai/) ― 日本の丁寧な暮らしのレシピ集
+- [Lyre3 Games](https://oosawak.github.io/) ― このブログの本体サイト
+- 仕組みの公開先 ― [GitHub（oosawak/markdown-cms）](https://github.com/oosawak/markdown-cms)
