@@ -4,7 +4,7 @@ date: '2026-10-25'
 category: コラム
 summary: ホームページの約3割に使われているWordPressは、多くの小規模なサイトには重すぎるのではないか。プログラムを動かさない静的な仕組みという選択と、その向き・不向きを、技術を知らない人にも分かるように書きました。
 cover: tech/wordpress-heavy.webp
-cover_alt: 小さなお店と掲示板、巨大な発電所のイラスト
+cover_alt: 舞う1枚の紙と、その下の複雑な機械のイラスト
 type: article
 ---
 
