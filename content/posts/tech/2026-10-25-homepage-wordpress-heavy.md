@@ -82,6 +82,19 @@ WordPressは、ページを見る人が来るたびに、サーバーの中で�
 
 次回は、この仕組みで「できること」と「できないこと」を、もう少し正直に並べてみます。
 
+## 参考リンク
+
+紹介したサイトと、その記事です。
+
+- [みどり野町](https://oosawak.github.io/midorino-town/) ― [秋の実りフェスタ開催のお知らせ](https://oosawak.github.io/midorino-town/#/post/town/harvest-event)
+- [haru no tane bakery](https://oosawak.github.io/haru-no-tane-bakery/) ― [これからのパン便り](https://oosawak.github.io/haru-no-tane-bakery/#/post/bakery/bread-notes)
+- [果実日和](https://oosawak.github.io/kajitsu-biyori/) ― [蜜入りりんごの秋ギフト](https://oosawak.github.io/kajitsu-biyori/#/post/fruit/apple-gift)
+- [山形グルメ案内](https://oosawak.github.io/yamagata-gourmet/) ― [温泉街で見つける喫茶時間](https://oosawak.github.io/yamagata-gourmet/#/post/gourmet/onsen-cafe)
+- [よむきく](https://oosawak.github.io/MdYomuKiku/) ― [三国志](https://oosawak.github.io/MdYomuKiku/work-5LiJ5Zu95b-X.html)
+- [まちのつながり](https://oosawak.github.io/community-portal/) ― 5サイトをまとめた統合ポータル
+- [Lyre3 Games](https://oosawak.github.io/) ― [Techブログ](https://oosawak.github.io/tech/)
+- 仕組みの公開先 ― [GitHub（oosawak/midorino-town）](https://github.com/oosawak/midorino-town)
+
 ---
 
 技術者の方へ ― PHPやNode.jsの脆弱性と更新が、なぜ維持の負担になるのか。技術的な裏付けは、別資料にまとめました。
