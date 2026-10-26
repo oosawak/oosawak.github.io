@@ -6,6 +6,7 @@
   "slug": "design-wo-kaeru",
   "type": "article",
   "title": "見た目は、言葉で変えられます",
+  "subtitle": "",
   "date": "2026-10-25",
   "category": "使い方",
   "summary": "公開中のMarkdown CMSの見た目を、AIアシスタントに頼んで変える手順です。GitHubから取り込んで、好みのホームページの画像を見せて「この形にして」と頼むだけ。プログラムは書けなくて大丈夫です。",
