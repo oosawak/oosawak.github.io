@@ -78,3 +78,5 @@ Markdownという入口は同じでも、出口で目指している景色が違
 それでも、自分の仕組みの立ち位置を確認する良い機会になりました。
 
 WordPressやEmDashとの比較は、[こちらの記事](https://oosawak.github.io/tech/#/post/tech/doko-de-ugokasu)にまとめています。
+
+この記事は、[Qiita](https://qiita.com/oosawak@github/items/808124d1ac35e2a25eb4)にも載せています。
