@@ -106,7 +106,7 @@ WordPressは、ページを見る人が来るたびに、サーバーの中で�
 
 ## 仕組みは、公開しています
 
-せっかくなので、この仕組み自体も、自由に使える形（MITライセンス）で[GitHubに公開](https://github.com/oosawak/markdown-cms)しています。\
+せっかくなので、この仕組み自体も、自由に使える形（MITライセンス）で[GitHubに公開](https://github.com/oosawak/markdown-cms-oss)しています。\
 よければ持って行って、自分のサイトで試してみてください。\
 詰まるところがあれば、相談してもらっても構いません。
 
@@ -126,7 +126,7 @@ WordPressは、ページを見る人が来るたびに、サーバーの中で�
 - [よむきく](https://oosawak.github.io/MdYomuKiku/) ― [三国志](https://oosawak.github.io/MdYomuKiku/work-5LiJ5Zu95b-X.html)
 - [まちのつながり](https://oosawak.github.io/community-portal/) ― 5サイトをまとめた統合ポータル
 - [Lyre3 Games](https://oosawak.github.io/) ― [Techブログ](https://oosawak.github.io/tech/)
-- 仕組みの公開先 ― [GitHub（oosawak/markdown-cms）](https://github.com/oosawak/markdown-cms)
+- 仕組みの公開先 ― [GitHub（oosawak/markdown-cms-oss）](https://github.com/oosawak/markdown-cms-oss)
 
 ---
 

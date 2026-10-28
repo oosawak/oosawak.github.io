@@ -128,7 +128,7 @@ GitHubは裏側の保管庫として残し、表の入口は身近な道具に�
 それらを束ねる統合ポータル「[まちのつながり](https://oosawak.github.io/community-portal/)」も、自動更新で稼働しています。\
 ポータル本体のサイト「Lyre3 Games」（oosawak.github.io）と、その中のTechブログ・Gameブログも、同じ仕組みです。\
 日本の丁寧な暮らしのレシピ集「[IKIGAI](https://oosawak.github.io/ikigai/)」も、この仕組みの上に乗っています。\
-仕組み自体はMITライセンスで[GitHub（oosawak/markdown-cms）](https://github.com/oosawak/markdown-cms)に公開しています。
+仕組み自体はMITライセンスで[GitHub（oosawak/markdown-cms-oss）](https://github.com/oosawak/markdown-cms-oss)に公開しています。
 
 ![構想ではなく、すでに稼働しているサイト群の図](tech/doko-slide-14.webp)
 
@@ -222,6 +222,6 @@ Muse × GitHub × Markdown CMSは、公開側では何も動かさず、作る�
 - [まちのつながり](https://oosawak.github.io/community-portal/) ― 上のサイトを束ねる統合ポータル
 - [IKIGAI](https://oosawak.github.io/ikigai/) ― 日本の丁寧な暮らしのレシピ集
 - [Lyre3 Games](https://oosawak.github.io/) ― このブログの本体サイト
-- 仕組みの公開先 ― [GitHub（oosawak/markdown-cms）](https://github.com/oosawak/markdown-cms)
+- 仕組みの公開先 ― [GitHub（oosawak/markdown-cms-oss）](https://github.com/oosawak/markdown-cms-oss)
 
 この記事は、[Qiita](https://qiita.com/oosawak@github/items/a0eba6657eaa53827e41)にも載せています。

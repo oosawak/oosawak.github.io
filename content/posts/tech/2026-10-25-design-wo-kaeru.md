@@ -30,7 +30,7 @@ AIアシスタントに、公開先のアドレスを伝えて「これを取り
 技術の言葉では「クローン」と言いますが、要はまるごと複写してくることです。\
 取り込む先はAIが作業する場所なので、自分でコマンドを打ったり、自分の機械に何かを入れたりする必要はありません。
 
-公開先： [GitHub（oosawak/markdown-cms）](https://github.com/oosawak/markdown-cms)
+公開先： [GitHub（oosawak/markdown-cms-oss）](https://github.com/oosawak/markdown-cms-oss)
 
 ## 手順2：見本の画像を見せて、頼む
 

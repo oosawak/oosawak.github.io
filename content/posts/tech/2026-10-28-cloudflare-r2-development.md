@@ -123,7 +123,7 @@ R2への直接追加は、先に公開した「R2版の公開テスト」とい�
 ## 関連リンク
 
 - [R2版の公開テスト](https://markdown-cms-r2.oosawak.workers.dev/#/post/sample/r2-test)
-- [GitHub Pages版](https://oosawak.github.io/markdown-cms/)
+- [GitHub Pages版](https://oosawak.github.io/markdown-cms-oss/)
 - [Cloudflare Pages版](https://markdown-cms-sample.pages.dev/)
-- [MarkdownCMSのソースコード](https://github.com/oosawak/markdown-cms)
-- [R2版の説明書](https://github.com/oosawak/markdown-cms/blob/main/guides/R2.md)
+- [MarkdownCMSのソースコード](https://github.com/oosawak/markdown-cms-oss)
+- [R2版の説明書](https://github.com/oosawak/markdown-cms-cloudflare/blob/main/guides/R2.md)
