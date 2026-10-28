@@ -126,4 +126,4 @@ R2への直接追加は、先に公開した「R2版の公開テスト」とい�
 - [GitHub Pages版](https://oosawak.github.io/markdown-cms-oss/)
 - [Cloudflare Pages版](https://markdown-cms-sample.pages.dev/)
 - [MarkdownCMSのソースコード](https://github.com/oosawak/markdown-cms-oss)
-- [R2版の説明書](https://github.com/oosawak/markdown-cms-cloudflare/blob/main/guides/R2.md)
+- [R2版の説明書](https://github.com/oosawak/gmemo/blob/main/R2.md)

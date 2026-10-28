@@ -124,5 +124,5 @@ GitHub版は、生成したファイルをGitHub Pagesなどで静的に配信�
 
 - [前の記事：GitHubへのpushなしで更新できる、MarkdownCMSのR2版](#/post/tech/cloudflare-r2-development)
 - [MarkdownCMSのソースコード](https://github.com/oosawak/markdown-cms-oss)
-- [R2版の説明書](https://github.com/oosawak/markdown-cms-cloudflare/blob/main/guides/R2.md)
+- [R2版の説明書](https://github.com/oosawak/gmemo/blob/main/R2.md)
 - [OWASP：Content Security Policy Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html)
