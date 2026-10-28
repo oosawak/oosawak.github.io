@@ -3,7 +3,7 @@ title: Codexと作り、Museと育てたMarkdownCMS
 subtitle: SNSとつながる運用から、開発と公開がつながる運用へ
 date: '2026-10-28'
 category: コラム
-summary: Codexと作ったMarkdownCMSを、MuseとのSNS連携や日々の運用で育ててきました。今回Codexでも、記事の執筆からCMSの改修・テスト・公開までを実践。GMEMOで資料を引き継ぎ、R2版の開発と二つのサイトへの掲載を進めた経験から、Markdownを共通の土台にする価値を考えます。
+summary: Codexと作ったMarkdownCMSを、MuseとのSNS連携や日々の運用で育ててきました。今回はCodexとCloudflare対応を実装し、その内容の記事制作・公開までを実践。GMEMOで資料を引き継ぎ、R2版の開発と二つのサイトへの掲載を進めた経験から、Markdownを共通の土台にする価値を考えます。
 cover: tech/r2-hero.webp
 cover_alt: MarkdownCMSサンプルサイトの風景
 type: article
@@ -13,7 +13,8 @@ type: article
 
 このMarkdownCMSは、もともとCodexと一緒に作ったものでした。\
 その後、Museと組み合わせて、SNSと連動しながら記事を作り、サイトに公開する運用を育ててきました。\
-今回は、その日々の運用でできていたことをCodexでも進め、CMS自体の開発と記事の公開をつなぐ流れを、実際の作業で確かめました。
+今回はCodexとCloudflare対応を実装し、その内容の記事制作・公開まで行いました。\
+Museとの運用でできていた「会話から記事を公開する」流れを、Codexでも進めながら、CMS自体の開発と記事の公開をつなぐ形になりました。
 
 資料を渡す。相談する。記事にする。公開する。\
 さらに今回は、記事の公開先となるCMSそのものの改修も、同じやり取りの中で進みました。
