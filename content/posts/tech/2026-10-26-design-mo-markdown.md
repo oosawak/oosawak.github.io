@@ -42,7 +42,7 @@ type: article
 
 ## サンプルサイトで、切り替えて試せます
 
-公開している[サンプルサイト](https://oosawak.github.io/markdown-cms/)には、テーマの切り替え機能を付けました。\
+公開している[サンプルサイト](https://oosawak.github.io/markdown-cms-oss/)には、テーマの切り替え機能を付けました。\
 ページの上でテーマを選ぶと、その場で見た目が切り替わります。\
 文章は同じまま、着せ替えるように雰囲気が変わる様子を見てもらえます。
 
@@ -50,7 +50,7 @@ type: article
 サイトの設定で、有効にも無効にもできます。\
 読者に切り替えを楽しんでもらいたいサイトもあれば、見た目は固定でよいサイトもある。\
 だから、仕組み側で押し付けず、サイトごとに選べる形にしました。\
-詳しい手順は、[ガイド文書](https://github.com/oosawak/markdown-cms/blob/main/guides/DESIGN_CUSTOMIZATION.md)にまとめてあります。
+詳しい手順は、[ガイド文書](https://github.com/oosawak/markdown-cms-oss/blob/main/guides/DESIGN_CUSTOMIZATION.md)にまとめてあります。
 
 ## 細かい試みも、少し
 
@@ -60,7 +60,7 @@ type: article
 
 ## 仕組みは公開中です
 
-この仕組みは、[GitHubで公開](https://github.com/oosawak/markdown-cms)しています（MITライセンス）。\
+この仕組みは、[GitHubで公開](https://github.com/oosawak/markdown-cms-oss)しています（MITライセンス）。\
 持って行って、自分のサイトで試してもらって構いません。\
 文章はファイル、見た目もファイル。\
 書くことと整えることが、どちらも同じ土俵に乗った。\

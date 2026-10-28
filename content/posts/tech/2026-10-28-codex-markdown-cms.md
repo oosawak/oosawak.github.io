@@ -129,6 +129,6 @@ MarkdownCMSがファイルを土台にしている意味を、今回の作業で
 - [GitHubへのpushなしで更新できる、MarkdownCMSのR2版](https://oosawak.github.io/tech/#/post/tech/cloudflare-r2-development)
 - [守る対象を小さくする、MarkdownCMSの安全性への考え方](https://oosawak.github.io/tech/#/post/tech/static-cms-security)
 - [Museとの週末3日間の制作日誌](https://oosawak.github.io/tech/#/post/tech/weekend-3days-diary)
-- [MarkdownCMSのソースコード](https://github.com/oosawak/markdown-cms)
+- [MarkdownCMSのソースコード](https://github.com/oosawak/markdown-cms-oss)
 - [GMEMO](https://oosawak.github.io/gmemo/)
 - [OpenAI公式：プロジェクトとチャット](https://learn.chatgpt.com/docs/projects)
