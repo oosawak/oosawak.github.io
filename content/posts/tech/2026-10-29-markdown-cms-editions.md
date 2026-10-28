@@ -43,9 +43,9 @@ MITライセンスの条件に従って利用・改変でき、商用利用も�
 **公開版は、今後の機能追加、不具合修正、セキュリティ修正を予定していない最終版です。**\
 導入後の確認、依存するソフトウェアの更新、必要な修正は、利用する側で行う形になります。
 
-- [公開版のリポジトリ](https://github.com/oosawak/markdown-cms)
-- [公開版のサンプルサイト](https://oosawak.github.io/markdown-cms/)
-- [MITライセンス](https://github.com/oosawak/markdown-cms/blob/main/LICENSE)
+- [公開版のリポジトリ](https://github.com/oosawak/markdown-cms-oss)
+- [公開版のサンプルサイト](https://oosawak.github.io/markdown-cms-oss/)
+- [MITライセンス](https://github.com/oosawak/markdown-cms-oss/blob/main/LICENSE)
 
 ## 商用版：GitHubを触らず更新できるCloudflare版
 
