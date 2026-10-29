@@ -1,5 +1,5 @@
 ---
-title: '勝てる気がしたので、調べた'
+title: '東北のビジコン調べてみた'
 author: ミューズさん
 subtitle: 'MarkdownCMS商用版のビジコン候補リスト'
 date: '2026-10-29'
@@ -11,7 +11,7 @@ type: article
 ---
 MarkdownCMSの商用版（Cloudflare版）の試用を公開して、少し経ちました。\
 動いているものを見ていると、欲が出てきます。\
-「これ、ビジネスコンテスト（ビジコン）に出しても、勝てる気がする」と。
+「これ、ビジネスコンテスト（ビジコン）に出してみてもいいかな」と。
 
 とはいえ、私は法人ではなく個人事業主です。\
 しかも、事業はもう始まっています。\
@@ -36,7 +36,7 @@ MarkdownCMSの商用版（Cloudflare版）の試用を公開して、少し経�
 次回の募集は、まだ発表されていません（例年は秋に募集して、翌2月に本審査のようです）。\
 本命は「次回待ち」です。募集が出たら、すぐ出せるように準備しておく大会だと思いました。
 
-公式: https://www.pref.miyagi.jp/soshiki/sangyod/miyagipitchcontest.html
+公式: [宮城県 Miyagi Pitch Contest](https://www.pref.miyagi.jp/soshiki/sangyod/miyagipitchcontest.html)
 
 ## いま募集中のもの
 
@@ -51,7 +51,7 @@ MarkdownCMSの商用版（Cloudflare版）の試用を公開して、少し経�
 締切が目下の問題で、参加エントリーの締切は11月1日です。\
 この記事が公開される頃には、もう目前のはずです。
 
-公式: https://www.city.nagai.yamagata.jp/material/files/group/35/award2.pdf
+公式: [長井ビジネスみらい創造アワード2027 リーフレット（PDF）](https://www.city.nagai.yamagata.jp/material/files/group/35/award2.pdf)
 
 ### JR東日本スタートアッププログラム 2026秋
 
@@ -65,7 +65,7 @@ JR東日本グループとの事業共創を目指すプログラムです。\
 ここは「要確認」です。出すなら、まず事務局に聞くところからになります。\
 締切は11月13日です。
 
-公式: https://jrestartup.co.jp/2026-entry-autumn/
+公式: [JR東日本スタートアッププログラム](https://jrestartup.co.jp/2026-entry-autumn/)
 
 ### 第12回 日本アントレプレナー大賞
 
@@ -75,7 +75,7 @@ JR東日本グループとの事業共創を目指すプログラムです。\
 大賞は100万円。最終プレゼンと表彰式は東京開催で、交通費は自己負担です。\
 締切は2027年1月18日と先なので、資料を練る時間はあります。
 
-公式: https://kenja-club.com/lc/entrepreneur
+公式: [日本アントレプレナー大賞](https://kenja-club.com/lc/entrepreneur)
 
 ### みんなの夢AWARD17
 
@@ -94,7 +94,7 @@ JR東日本グループとの事業共創を目指すプログラムです。\
 ただ「ピッチの練習台」としては、いちばん早く使える場かもしれません。\
 締切日は公式ページに明記がなかったので、ここも確認が要ります。
 
-公式: https://ict-business.jp/bdaa2025-2026-touhoku/
+公式: [Japan Business Design & Action Award](https://ict-business.jp/bdaa2025-2026-touhoku/)
 
 ## 次回を狙うもの
 
@@ -106,7 +106,7 @@ JR東日本グループとの事業共創を目指すプログラムです。\
 対象の文言は「企業等及び起業家」で、個人事業主とは明記されていません。\
 書類も会社前提の表現が多いので、出すなら財団への事前確認が前提になります。
 
-公式: https://www.77bsf.or.jp
+公式: [七十七ビジネス振興財団](https://www.77bsf.or.jp)
 
 ### SPARK!TOHOKU Startup Pitch
 
@@ -115,7 +115,7 @@ JR東日本グループとの事業共創を目指すプログラムです。\
 今年の回は終わっていて、次回は例年どおりなら2027年の夏に募集の見通しです。\
 応募資格は「東北地域に本社が所在する企業」と書かれていて、個人事業主の可否は明記がありません。ここも要確認です。
 
-公式: https://www.sparktohoku.net/
+公式: [SPARK!TOHOKU](https://www.sparktohoku.net/)
 
 ### ASPIC AI・クラウドアワード
 
@@ -124,7 +124,7 @@ JR東日本グループとの事業共創を目指すプログラムです。\
 条件は「すでに商用提供されているサービス」で、試用版の段階では応募できません。\
 有料提供を始めて、実績を積んでから狙う大会です。個人事業主の可否も、要確認に残りました。
 
-公式: https://www.aspicjapan.org/event/award/index.html
+公式: [ASPIC AI・クラウドアワード](https://www.aspicjapan.org/event/award/index.html)
 
 ## 調べて分かったこと
 
