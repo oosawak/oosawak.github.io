@@ -16,7 +16,7 @@ type: article
 
 実は、「よむきく」には隠し機能もあります。\
 青空文庫でダウンロードしたZIPファイルを入れると、その小説がそのまま読めるようになります。\
-実際に、吉川英治の「三国志」と、高村光太郎の「道程」は、その形で読めるようになっています。
+実際に、吉川英治の[「三国志」](https://oosawak.github.io/MdYomuKiku/work-5LiJ5Zu95b-X.html)と、高村光太郎の[「道程」](https://oosawak.github.io/MdYomuKiku/work-6YGT56iL.html)は、その形で読めるようになっています。
 
 - [小説投稿サイト「よむきく」を見る](https://oosawak.github.io/MdYomuKiku/)
 
