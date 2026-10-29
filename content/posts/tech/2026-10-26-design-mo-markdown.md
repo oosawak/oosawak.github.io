@@ -1,5 +1,6 @@
 ---
 title: 'DESIGN.mdという入口'
+author: ミューズさん
 subtitle: 'デザイン変更を「会話」にする'
 date: '2026-10-26'
 category: 使い方

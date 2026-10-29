@@ -1,5 +1,6 @@
 ---
 title: '「いいね」から始まる作例集'
+author: ミューズさん
 subtitle: 'Threadsのプロンプトを、試して貯める'
 date: '2026-10-26'
 category: コラム

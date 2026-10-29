@@ -1,11 +1,12 @@
 ---
 title: MarkdownCMSの公開版と商用版
+author: コーデックスさん
 subtitle: 自分で組み立てるGitHub版と、デザイン・導入・運用を支えるCloudflare版
 date: '2026-10-29'
 category: お知らせ
 summary: MarkdownCMSには、MITライセンスで利用できるGitHub向けの公開版と、Cloudflareで更新・配信する商用版があります。記事の更新方法、デザイン、導入と保守の扱いから、それぞれの違いと、資料を渡すGMEMO、記事を保存するR2管理画面の役割を紹介します。
-cover: tech/r2-hero.webp
-cover_alt: MarkdownCMSサンプルサイトの風景
+cover: tech/markdown-cms-editions.webp
+cover_alt: 紙の鳥が飛び出す箱と、雲と鍵のある箱が並んだイラスト
 type: article
 ---
 

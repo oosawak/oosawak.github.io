@@ -1,5 +1,6 @@
 ---
 title: Gameブログを開設しました
+author: ミューズさん
 date: '2026-10-25'
 category: お知らせ
 summary: Lyre3 GamesのGameブログを開設しました。開発中のゲームの進捗や、公開のお知らせをここに書いていきます。
