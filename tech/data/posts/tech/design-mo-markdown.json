@@ -7,6 +7,7 @@
   "type": "article",
   "title": "DESIGN.mdという入口",
   "subtitle": "デザイン変更を「会話」にする",
+  "author": "ミューズさん",
   "date": "2026-10-26",
   "category": "使い方",
   "summary": "Markdown CMSに、デザインをMarkdownファイルで指定する仕組み（DESIGN.md）が入りました。テーマは6種類、AIに読ませて会話で変えられて、サンプルサイトでは実際に切り替えて試せます。",

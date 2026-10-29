@@ -7,6 +7,7 @@
   "type": "article",
   "title": "小説サイト「よむきく」も、Cloudflareへ",
   "subtitle": "いまのGitHub Pages版と並べて公開する計画",
+  "author": "ミューズさん",
   "date": "2026-10-29",
   "category": "お知らせ",
   "summary": "小説投稿サイト「よむきく」について、現在のGitHub Pages版に加えて、Cloudflare版を作って並べて公開する計画を紹介します。決まっていることと、これから決めることを分けて書きます。",
