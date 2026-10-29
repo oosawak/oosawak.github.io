@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>ビジコン候補リスト — MarkdownCMS商用版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" integrity="sha384-hJnF5AwidE18GSWTAGHv3ByzzvfNZ1Tcx5y1UUV3WkauuMCEzBJBMSwSt/PUPXnM" crossorigin="anonymous"></script>
+<style>
+:root{
+--bg:#faf7f1; --bg2:#f1ece1; --surface:#ffffff; --surface2:#fdfaf4;
+--ink:#1c2420; --ink2:#44514a; --muted:#6d7a72; --line:#ddd5c3; --line2:#e8e1d0;
+--accent:#9a3412; --accent-ink:#7c2a0e; --accent-soft:#fbe9dd;
+--teal:#145c4c; --teal-soft:#dff0e8; --gold:#8a6d1b; --gold-soft:#f6ecd0;
+--red:#a61c1c; --red-soft:#fbe3e0;
+--radius:14px;
+--shadow:0 1px 2px rgba(28,36,32,.06),0 8px 28px rgba(28,36,32,.06);
+}
+@media (prefers-color-scheme: dark){
+:root{
+--bg:#121613; --bg2:#171c18; --surface:#1b211d; --surface2:#1e2520;
+--ink:#eef1ec; --ink2:#c2cdc4; --muted:#93a198; --line:#333c35; --line2:#2a322c;
+--accent:#f59e6c; --accent-ink:#ffb98f; --accent-soft:#3a2418;
+--teal:#6fd3b2; --teal-soft:#17382e; --gold:#e3c66b; --gold-soft:#332c14;
+--red:#ff9a8f; --red-soft:#3d1d1a;
+--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.25);
+}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New",system-ui,-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;line-height:1.75;font-size:15.5px;-webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-underline-offset:3px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px 72px}
+/* header */
+.top{padding:38px 0 8px}
+.dateline{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12.5px;color:var(--muted);letter-spacing:.02em}
+.dateline .dot{width:3px;height:3px;border-radius:50%;background:var(--muted)}
+h1{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(30px,6vw,48px);line-height:1.2;margin:14px 0 6px;letter-spacing:.01em}
+h1 .thin{display:block;font-size:clamp(16px,3vw,21px);font-weight:600;color:var(--ink2);margin-top:10px;line-height:1.5}
+.lede{max-width:760px;color:var(--ink2);font-size:16px;margin:14px 0 0}
+.lede strong{color:var(--ink)}
+/* profile strip */
+.profile{margin-top:24px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.profile h3{margin:0 0 4px;font-size:12px;letter-spacing:.12em;color:var(--muted);font-weight:700;display:flex;gap:6px;align-items:center}
+.profile h3 svg{width:14px;height:14px}
+.profile p{margin:0;font-size:14px;color:var(--ink2)}
+.profile p b{color:var(--ink)}
+/* urgent */
+.urgent{margin-top:22px;border:1px solid color-mix(in srgb,var(--red) 35%,var(--line));background:var(--red-soft);border-radius:var(--radius);padding:18px 20px}
+.urgent h2{margin:0 0 4px;font-size:17px;display:flex;align-items:center;gap:8px;color:var(--red)}
+.urgent h2 svg{width:19px;height:19px}
+.urgent p{margin:0 0 12px;font-size:13.5px;color:var(--ink2)}
+.urgent-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.urgent-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.urgent-card .d{font-family:"Shippori Mincho",serif;font-size:24px;font-weight:800;line-height:1.1}
+.urgent-card .d small{font-size:13px;font-weight:600;color:var(--red)}
+.urgent-card .n{font-weight:700;font-size:14.5px;margin-top:4px}
+.urgent-card .s{font-size:13px;color:var(--muted)}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.stat{background:var(--surface2);border:1px solid var(--line2);border-radius:12px;padding:14px 16px}
+.stat .num{font-family:"Shippori Mincho",serif;font-size:30px;font-weight:800;line-height:1}
+.stat .lab{font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.5}
+/* section heads */
+.sec-head{margin:46px 0 6px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sec-head .no{font-family:"Shippori Mincho",serif;font-size:13px;color:var(--accent);font-weight:800;letter-spacing:.15em}
+.sec-head h2{font-family:"Shippori Mincho",serif;font-size:clamp(21px,4vw,27px);margin:0;font-weight:800}
+.sec-sub{color:var(--muted);font-size:13.5px;max-width:780px;margin:4px 0 0}
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 6px;position:sticky;top:0;background:var(--bg);padding:12px 0;z-index:5}
+.chip{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink2);padding:8px 15px;border-radius:999px;font:inherit;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip svg{width:14px;height:14px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.count-note{font-size:12.5px;color:var(--muted);margin:2px 0 10px}
+/* rank table */
+.rankwrap{overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}
+.rankrow{display:grid;grid-template-columns:44px 1.35fr.95fr 1.5fr;gap:14px;padding:14px 18px;border-top:1px solid var(--line2);align-items:start;text-decoration:none;color:inherit}
+.rankrow:first-child{border-top:none}
+.rankrow:hover{background:var(--surface2)}
+.rankrow .r{font-family:"Shippori Mincho",serif;font-size:22px;font-weight:800;color:var(--accent);line-height:1.2}
+.rankrow .nm{font-weight:900;font-size:15px;line-height:1.45}
+.rankrow .org{font-size:12.5px;color:var(--muted)}
+.rankrow .why,.rankrow .st{font-size:13.5px;color:var(--ink2);line-height:1.6}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:800;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pill.open{background:var(--teal-soft);color:var(--teal)}
+.pill.next{background:var(--gold-soft);color:var(--gold)}
+.pill.urgentp{background:var(--red-soft);color:var(--red)}
+/* cards */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-top:18px;overflow:hidden}
+.card.hidden{display:none}
+.card-top{padding:20px 22px 0;display:flex;gap:16px;align-items:flex-start}
+.rankbadge{flex:none;width:46px;height:46px;border-radius:12px;background:var(--accent-soft);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-family:"Shippori Mincho",serif;font-size:21px;font-weight:800}
+.card-top h3{margin:0;font-size:19px;line-height:1.4;font-weight:900}
+.card-top .org{color:var(--muted);font-size:13px;margin-top:2px}
+.card-top .pills{margin-left:auto;display:flex;flex-direction:column;gap:6px;align-items:flex-end;flex:none}
+.deadline{margin:16px 22px 0;background:var(--surface2);border:1px dashed var(--line);border-radius:10px;padding:11px 15px;display:flex;flex-wrap:wrap;gap:6px 20px;align-items:baseline;font-size:13.5px}
+.deadline>*{min-width:0}
+.deadline b{font-size:15px}
+.deadline .big{font-family:"Shippori Mincho",serif;font-size:19px;font-weight:800;color:var(--accent-ink);line-height:1.5;padding:2px 0}
+.deadline span{color:var(--muted);font-size:12.5px}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:16px 22px 0;border:1px solid var(--line2);border-radius:10px;overflow:hidden}
+.fit>div{padding:13px 16px}
+.fit .good{background:var(--teal-soft)}
+.fit .warn{background:var(--gold-soft)}
+.fit h4{margin:0 0 4px;font-size:12px;letter-spacing:.1em;display:flex;gap:6px;align-items:center}
+.fit h4 svg{width:14px;height:14px}
+.fit p{margin:0;font-size:13.5px;color:var(--ink2);line-height:1.65}
+@media (prefers-color-scheme: dark){.fit p{color:var(--ink)}}
+.facts{padding:8px 22px 6px}
+.facts dl{margin:0}
+.facts .row{display:grid;grid-template-columns:118px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line2)}
+.facts dt{font-size:12.5px;font-weight:800;color:var(--muted);letter-spacing:.04em;padding-top:2px;display:flex;gap:6px;align-items:flex-start}
+.facts dt svg{width:14px;height:14px;flex:none;margin-top:3px}
+.facts dd{margin:0;font-size:14px;color:var(--ink2)}
+.facts dd b{color:var(--ink)}
+.verify{display:inline-block;font-size:11px;font-weight:800;padding:1px 7px;border-radius:5px;background:var(--bg2);color:var(--muted);margin-left:6px;vertical-align:1px}
+.card-foot{padding:14px 22px 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:var(--bg);text-decoration:none;padding:9px 16px;border-radius:9px;font-size:13.5px;font-weight:800}
+.btn svg{width:15px;height:15px}
+.btn.ghost{background:transparent;color:var(--ink2);border:1px solid var(--line)}
+.srcnote{font-size:12px;color:var(--muted)}
+/* checklist / notes */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;margin-top:18px}
+.panel h3{margin:0 0 8px;font-size:16px;display:flex;gap:8px;align-items:center}
+.panel h3 svg{width:17px;height:17px;color:var(--accent)}
+.panel ul{margin:8px 0 0;padding:0;list-style:none}
+.panel li{padding:9px 0 9px 26px;position:relative;border-top:1px solid var(--line2);font-size:14px;color:var(--ink2)}
+.panel li:first-child{border-top:none}
+.panel li::before{content:"";position:absolute;left:2px;top:16px;width:8px;height:8px;border-radius:2px;background:var(--accent-soft);border:1.5px solid var(--accent)}
+.panel li b{color:var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.two .panel{margin-top:18px}
+footer{margin-top:52px;border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:12.5px}
+footer h3{color:var(--ink2);font-size:13.5px;margin:0 0 8px}
+footer ul{margin:0;padding-left:18px}
+footer li{margin:3px 0;word-break:break-all}
+.empty{display:none;text-align:center;padding:34px 16px;color:var(--muted);border:1px dashed var(--line);border-radius:var(--radius);margin-top:18px;background:var(--surface)}
+@media (max-width:760px){
+.profile{grid-template-columns:1fr}
+.urgent-grid{grid-template-columns:1fr}
+.stats{grid-template-columns:1fr 1fr}
+.rankrow{grid-template-columns:34px 1fr;gap:10px}
+.rankrow .st{grid-column:2}
+.rankrow .why{grid-column:2}
+.fit{grid-template-columns:1fr}
+.facts .row{grid-template-columns:1fr;gap:3px}
+.two{grid-template-columns:1fr}
+.card-top{flex-wrap:wrap}
+.card-top .pills{margin-left:62px;flex-direction:row;flex-wrap:wrap}
+.filters{position:static}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+<div class="dateline">
+<span>調査時点：2026年10月29日（木）</span><span class="dot"></span>
+<span>典拠：主催者の公式ページ／公式文書</span><span class="dot"></span>
+<span>対象事業：MarkdownCMS 商用版（Cloudflare版）</span>
+</div>
+<h1>ビジコン候補リスト
+<span class="thin">仙台在住の個人事業主が、すでに稼働中のWebサービスで応募できるコンテスト</span>
+</h1>
+<p class="lede">条件は3つ——<strong>法人ではなく個人で応募できる</strong>こと、<strong>創業前限定ではなく事業開始済みでも応募できる</strong>こと、学生限定・法人格必須でないこと。その条件で公式要項を確認し、<strong>候補9件</strong>を相性の良い順に並べました。今すぐ応募できるのは4件、本命は次回募集待ちの宮城のピッチコンテストです。</p>
+
+<div class="profile" aria-label="応募者と事業の前提">
+<div>
+<h3><i data-lucide="user"></i>応募者</h3>
+<p><b>宮城県仙台市在住の個人</b>（個人事業主として活動）。山形県でも活動している。</p>
+</div>
+<div>
+<h3><i data-lucide="globe"></i>事業</h3>
+<p><b>2026年10月に試用版を公開済みの稼働中Webサービス</b>。小規模事業者向け静的サイトCMS——Markdownで記事を書き、サーバー側でプログラムを動かさないため脆弱性リスクが小さい。</p>
+</div>
+<div>
+<h3><i data-lucide="package"></i>売り方</h3>
+<p>「導入・デザイン制作・運用支援・保守」をパッケージにした<b>サービス型</b>（Cloudflare基盤）。対象客は自分でサイトを運用できない小さい店・個人事業主。</p>
+</div>
+</div>
+
+<div class="urgent" role="note">
+<h2><i data-lucide="alarm-clock"></i>締切が近いものから</h2>
+<p>調査時点（10月29日）から数日〜2週間で締め切るものが2件あります。どちらも「個人事業主での応募可否」など前提確認が要るので、動くならまずそこから。</p>
+<div class="urgent-grid">
+<div class="urgent-card">
+<div class="d">11月1日 <small>あと3日</small></div>
+<div class="n">長井ビジネスみらい創造アワード2027（エントリー締切）</div>
+<div class="s">応募シート提出は11月23日。ただし長井市内への拠点設置予定が必須条件。</div>
+</div>
+<div class="urgent-card">
+<div class="d">11月13日 <small>24時締切</small></div>
+<div class="n">JR東日本スタートアッププログラム2026（秋募集）</div>
+<div class="s">今回は東北重点募集・DemoDayは仙台開催。「企業」表記で個人事業主の可否は要確認。</div>
+</div>
+</div>
+</div>
+
+<div class="stats" aria-label="概要">
+<div class="stat"><div class="num">9件</div><div class="lab">条件に合う候補（参考・除外を除く）</div></div>
+<div class="stat"><div class="num">4件</div><div class="lab">2026年10月末時点で募集中</div></div>
+<div class="stat"><div class="num">100万円</div><div class="lab">本命 Miyagi Pitch Contest の1位賞金（＋事業支援 最大900万円）</div></div>
+<div class="stat"><div class="num">200万円</div><div class="lab">七十七ニュービジネス助成金（3〜5先・使途不問）</div></div>
+</div>
+</header>
+
+<div class="sec-head"><span class="no">01</span><h2>相性の良い順・一覧</h2></div>
+<p class="sec-sub">順位は調査レポートの評価どおりです。各行をタップすると、その候補の詳細カードへ移動します。「要確認」は、要項が「企業」表記などで個人事業主の可否が公式に読み取れないものを指します。</p>
+
+<div class="rankwrap" style="margin-top:16px">
+<a class="rankrow" href="#c1"><span class="r">1</span><span><span class="nm">Miyagi Pitch Contest</span><br><span class="org">宮城県ほか／宮城県DXスタートアップ創出イベント実行委員会</span></span><span class="st"><span class="pill next">次回募集待ち</span><br>直近回は終了。次回は未発表（例年は秋募集・翌2月開催）</span><span class="why">個人応募が公式明記。テーマ「地域課題×DX」が小規模事業者向けCMSと直結し、デモ可能な稼働中プロダクトという条件を試用版で満たせる。</span></a>
+<a class="rankrow" href="#c2"><span class="r">2</span><span><span class="nm">長井ビジネスみらい創造アワード2027・ビジネス創造部門</span><br><span class="org">長井市（山形県）ほか</span></span><span class="st"><span class="pill urgentp">募集中・締切間近</span><br>エントリー締切 2026年11月1日／シート提出 11月23日</span><span class="why">「個人（個人事業主を含む）」と公式明記、開始2年以内の事業も対象。山形での活動と接続できる唯一の自治体枠。</span></a>
+<a class="rankrow" href="#c3"><span class="r">3</span><span><span class="nm">JR東日本スタートアッププログラム2026（秋募集）</span><br><span class="org">JR東日本／JR東日本スタートアップ</span></span><span class="st"><span class="pill open">募集中</span><br>締切 2026年11月13日 24時</span><span class="why">今回は「東北発」ベンチャーを重点募集しDemoDayも仙台開催。プロダクト保有が条件で試用版で満たす。</span></a>
+<a class="rankrow" href="#c4"><span class="r">4</span><span><span class="nm">第12回 日本アントレプレナー大賞</span><br><span class="org">賢者の選択リーダーズ倶楽部（後援：経済産業省）</span></span><span class="st"><span class="pill open">募集中</span><br>締切 2027年1月18日 23:59</span><span class="why">法人格の要件がなく個人で応募可、事業化7年未満が対象。資料は形式自由で作りやすい。</span></a>
+<a class="rankrow" href="#c5"><span class="r">5</span><span><span class="nm">みんなの夢AWARD17</span><br><span class="org">公益財団法人みんなの夢をかなえる会 ほか</span></span><span class="st"><span class="pill open">募集中</span><br>エントリー締切 2026年12月4日 23:59</span><span class="why">国内在住・年齢不問、法人格の要件なし。グランプリ賞金100万円＋最大2,000万円の出資交渉権。</span></a>
+<a class="rankrow" href="#c6"><span class="r">6</span><span><span class="nm">七十七ニュービジネス助成金</span><br><span class="org">公益財団法人七十七ビジネス振興財団</span></span><span class="st"><span class="pill next">次回待ち</span><br>2026年度は終了。次回は例年通りなら2027年7〜8月</span><span class="why">助成金200万円・使途不問と資金面の魅力が大きい。宮城県内に拠点があればよい。</span></a>
+<a class="rankrow" href="#c7"><span class="r">7</span><span><span class="nm">SPARK!TOHOKU Startup Pitch（次回）</span><br><span class="org">SPARK!TOHOKU実行委員会（仙台市・東北大学・NICTほか）</span></span><span class="st"><span class="pill next">次回待ち</span><br>2026年回は終了。次回は例年通りなら2027年6〜7月募集</span><span class="why">ICT×東北という事業の素性と一致し、仙台開催。通過すれば全国大会「起業家万博」への道がある。</span></a>
+<a class="rankrow" href="#c8"><span class="r">8</span><span><span class="nm">ASPIC AI・クラウドアワード（次回）</span><br><span class="org">一般社団法人日本クラウド産業協会（ASPIC）</span></span><span class="st"><span class="pill next">次回待ち</span><br>2026年回は終了。次回は例年通りなら2027年5〜6月</span><span class="why">部門の対象例に「CMS」が明記。「サーバー側で動かさない＝脆弱性リスクが小さい」という売りと響き合う。</span></a>
+<a class="rankrow" href="#c9"><span class="r">9</span><span><span class="nm">Japan Business Design &amp; Action Award in 東北</span><br><span class="org">一般社団法人ビジネス・アクション・クラブ</span></span><span class="st"><span class="pill next">次回 11月21日開催予告</span><br>2026年11月21日、エルパーク仙台＋Zoom</span><span class="why">個人OKが明記され、仮エントリーは資料なし1分と最も手軽。仙台会場＋オンラインで参加しやすい。</span></a>
+</div>
+
+<div class="sec-head"><span class="no">02</span><h2>候補の詳細</h2></div>
+<p class="sec-sub">各候補の資格・日程・費用・賞・応募形式は、公式ページ／公式文書で確認できた範囲です。「確認方法」の印は調査時点の確認経路を示します（verified live＝公式ページを直接開いて確認／index＝検索インデックス経由）。</p>
+
+<div class="filters" role="group" aria-label="絞り込み">
+<button class="chip" data-filter="all" aria-pressed="true"><i data-lucide="list"></i>すべて（9件）</button>
+<button class="chip" data-filter="open" aria-pressed="false"><i data-lucide="megaphone"></i>募集中</button>
+<button class="chip" data-filter="next" aria-pressed="false"><i data-lucide="calendar-clock"></i>次回募集待ち</button>
+<button class="chip" data-filter="needcheck" aria-pressed="false"><i data-lucide="circle-help"></i>個人事業主の可否・要確認</button>
+</div>
+<p class="count-note" id="countNote">9件を表示しています。</p>
+<div class="empty" id="emptyNote">この条件に合う候補はありません。</div>
+
+<!-- 1 Miyagi -->
+<article class="card" id="c1" data-status="next" data-check="ok">
+<div class="card-top">
+<div class="rankbadge">1</div>
+<div><h3>Miyagi Pitch Contest</h3><div class="org">主催：宮城県DXスタートアップ創出イベント実行委員会（宮城県、宮城県商工会議所連合会、株式会社Macbee Planet、ポケットサイン株式会社）</div></div>
+<div class="pills"><span class="pill next">次回募集待ち・本命</span></div>
+</div>
+<div class="deadline"><span>直近回の申込</span><b>2025年9月3日〜10月31日</b><span>開催 2026年2月6日（仙台・CROSS B PLUS）で終了。今年度で3回目</span><span class="big">次回（2027）の募集発表はまだなし</span><span>例年は「秋（9〜10月）募集→翌2月本審査」のため、次回がある場合は2027年秋募集の可能性が高い（公式未発表）</span></div>
+<div class="fit">
+<div class="good"><h4><i data-lucide="thumbs-up"></i>合う理由</h4><p>個人応募が公式に明記され、テーマ「人口減少など地域の社会課題×DX」と、事業例に挙がる「様々な業種におけるデジタルを活用した生産性向上」が、小規模店舗の情報発信・運用負担を下げるCMSと直結する。賞金100万円＋事業支援最大900万円、メンター支援も厚く、仙台開催で参加しやすい。</p></div>
+<div class="warn"><h4><i data-lucide="triangle-alert"></i>注意点</h4><p>次回募集の発表待ちが前提。審査は「成長への期待感・将来性」も重視され、VC型スタートアップが登壇の中心——サービス型の堅実な収益モデルをどう成長物語に翻訳するかが鍵。参加条件に「事業化・協業・資金調達の意向」がある。</p></div>
+</div>
+<div class="facts"><dl>
+<div class="row"><dt><i data-lucide="badge-check"></i>応募資格</dt><dd>プロダクトのデモが可能なスタートアップ（主にシード・アーリー期想定）。<b>所在地の県内外は問わず、個人・法人問わず、起業前でも応募可能</b>（公式明記）。FAQでも「すでにリリース済みのサービスでも参加可能」「学生／社会人の別、県内／県外の別を問わない」と明記。条件は、デモ可能なプロトタイプがあること（モック可）、発表するプランによる起業・事業化・協業・資金調達の意向があること、当日会場でピッチに参加できること。業種制限なし（テーマ適合のみ）。</dd></div>
+<div class="row"><dt><i data-lucide="wallet"></i>参加費</dt><dd>無料（交通費・通信費は自己負担）。</dd></div>
+<div class="row"><dt><i data-lucide="trophy"></i>賞金・特典</dt><dd>賞金 <b>1位100万円・2位50万円・3位30万円</b>。優勝者には宮城県による<b>事業支援 最大900万円</b>（宮城県内に本社又は事業所を有する等の要件あり、1年以内に設ける場合を含む＝仙台在住なら満たしやすい）。特別賞：MacbeePlanet賞30万円、ポケットサイン賞30万円。サポーター賞：enspace賞（施設利用30万円相当）、オリコ賞（賞金10万円＋拡販支援）、住友商事東北賞（賞金10万円）。一次審査通過者には先輩起業家メンターによるブラッシュアップ支援とスペシャルメンターの助言、終了後に投資家・VC・金融機関等との交流会。</dd></div>
+<div class="row"><dt><i data-lucide="file-text"></i>応募形式</dt><dd>参加登録フォーム → エントリーシート（サービス概要400字・社会課題解決への訴求力300字・持続可能性300字・成長への期待感300字・自己PR200字＝合計1,500字以内）＋サービス概略図（A4・1枚PDF）をメール提出。一次審査（書類）→メンタリング→二次審査（オンライン、10者程度）→本審査（1者6分のピッチ）。</dd></div>
+</dl></div>
+<div class="card-foot">
+<a class="btn" href="https://www.pref.miyagi.jp/soshiki/sangyod/miyagipitchcontest.html" target="_blank" rel="noopener"><i data-lucide="external-link"></i>公式ページ（宮城県）</a>
+<span class="srcnote">確認方法：verified live（2026-10-29）。賞金内訳の出典は宮城県公式リリース（index）。</span>
+</div>
+</article>
+
+<!-- 2 Nagai -->
+<article class="card" id="c2" data-status="open" data-check="ok">
+<div class="card-top">
+<div class="rankbadge">2</div>
+<div><h3>長井ビジネスみらい創造アワード2027・ビジネス創造部門</h3><div class="org">主催：長井市（山形県）。共催：一般財団法人置賜地域地場産業振興センター、長井商工会議所（事務局：株式会社山形テレビ）</div></div>
+<div class="pills"><span class="pill urgentp">募集中・締切間近</span></div>
+</div>
+<div class="deadline"><span>参加エントリー締切</span><span class="big">2026年11月1日</span><span>応募シート提出締切 11月23日（メール提出）／書類審査結果 12月中旬／ブラッシュアップ研修 2027年1月23日（書類通過者必須・オンライン参加可）／ファイナルイベント 2027年2月20日（タスパークホテル長井、プレゼンテーション審査）</span></div>
+<div class="fit">
+<div class="good"><h4><i data-lucide="thumbs-up"></i>合う理由</h4><p>「個人（個人事業主を含む）」と公式明記され、開始2年以内の事業も対象。賞金25万円。山形県でも活動している点と接続できる唯一の自治体枠で、ブラッシュアップ研修はオンライン参加可。</p></div>
+<div class="warn"><h4><i data-lucide="triangle-alert"></i>注意点</h4><p>長井市内に事業拠点を「設ける予定」であることが必須で、審査に「市内実装性・地域波及性」がある。長井の小規模事業者向け展開（顧客候補・協力先）を具体的に描けないと実質的に難しい。エントリー締切まで数日しかない。</p></div>
+</div>
+<div class="facts"><dl>
+<div class="row"><dt><i data-lucide="badge-check"></i>応募資格</dt><dd><b>個人（個人事業主を含む）、法人又は任意団体</b>（公式明記）。ただし全て満たすことが必要——①長井市内に店舗・事務所等の事業拠点を有すること、<b>又は応募する創業・新事業展開に伴い市内に事業拠点を設ける予定</b>であること、②応募シート提出期限時点で「未開始でファイナルイベント後1年程度を目途に開始予定」<b>または「開始してから2年以内」</b>であること（既存事業者の新事業展開は当該新事業の開始日が起算日）。分野は不問。なお「既存事業の単純な規模拡大、設備の更新又は業務効率化のみを目的とする提案は原則対象外」。</dd></div>
+<div class="row"><dt><i data-lucide="wallet"></i>参加費</dt><dd>公式リーフレットに記載なし（未確認）。</dd></div>
+<div class="row"><dt><i data-lucide="trophy"></i>賞金</dt><dd>ビジネス創造賞 <b>25万円</b>。（学生・生徒向け「みらい創造部門」5万円は対象外）</dd></div>
+<div class="row"><dt><i data-lucide="file-text"></i>応募形式</dt><dd>エントリーフォームで参加エントリー → 事務局から送られる応募シートをメール提出 → 書類審査 → ファイナルでプレゼン。</dd></div>
+</dl></div>
+<div class="card-foot">
+<a class="btn" href="https://www.city.nagai.yamagata.jp/material/files/group/35/award2.pdf" target="_blank" rel="noopener"><i data-lucide="external-link"></i>公式リーフレット（長井市・PDF）</a>
+<span class="srcnote">確認方法：verified live（2026-10-29）</span>
+</div>
+</article>
+
+<!-- 3 JR -->
+<article class="card" id="c3" data-status="open" data-check="need">
+<div class="card-top">
+<div class="rankbadge">3</div>
+<div><h3>JR東日本スタートアッププログラム2026（秋募集）</h3><div class="org">主催：東日本旅客鉄道株式会社、JR東日本スタートアップ株式会社 ※全国のベンチャーが応募できるプログラム。今回は東北重点募集＋DemoDay仙台開催</div></div>
+<div class="pills"><span class="pill open">募集中</span><span class="pill urgentp">個人事業主の可否・要確認</span></div>
+</div>
+<div class="deadline"><span>応募期間</span><b>2026年10月8日開始</b><span class="big">締切 11月13日 24時</span><span>一次選考（書類）・二次選考（プレゼン）12月〜1月／アクセラレーション期間 2月〜4月／DemoDay 2027年5月に仙台で開催（東北初開催）／6月以降に実証実験。通算15回目、春・秋の募集実績あり</span></div>
+<div class="fit">
+<div class="good"><h4><i data-lucide="thumbs-up"></i>合う理由</h4><p>今回は重点募集 TYPE1「東北発」（東北6県に本社または事業拠点を有するベンチャー企業）が置かれ、仙台在住はここに該当。プロダクト保有が条件で試用版で満たす。賞金100万円に加え、実証実験の場と費用支援、グループの商流・プロモーション資源が得られる。</p></div>
+<div class="warn"><h4><i data-lucide="triangle-alert"></i>注意点</h4><p>募集要項は「企業」表記で、<b>個人事業主が含まれるか公式に明記がない</b>（メール応募時の記載欄も「社名」「会社設立年月日」）。応募前に事務局確認が先。またJR東日本グループのアセット活用と事業共創が必須条件のため、「駅周辺・沿線の小規模店舗の情報発信を支える」等の共創提案に作り替える必要がある。</p></div>
+</div>
+<div class="facts"><dl>
+<div class="row"><dt><i data-lucide="badge-check"></i>応募資格</dt><dd>既に自社の製品・サービスまたはプロトタイプを有する企業、概ね起業10年以内の企業。FAQに「ステージによる制限はない」。応募条件は、提案に新規性があること、JR東日本グループとの事業共創につながること、原則として同グループのリソース・アセットを活用すること、2027年9月までに実証実験の実施を目指せること。テーマは「地域共創」「デジタル共創」「地球共創（SDGs）」。</dd></div>
+<div class="row"><dt><i data-lucide="wallet"></i>参加費</dt><dd>無料（プログラム参加時の交通費・宿泊費は自己負担。実証実験費用の一部支援あり）。</dd></div>
+<div class="row"><dt><i data-lucide="trophy"></i>賞金・支援</dt><dd>DemoDayでスタートアップ大賞1社に<b>100万円</b>、優秀賞1社に<b>50万円</b>（FAQ）。採択中はメンター配置、JR東日本グループの情報・ITツール・プロモーション設備・商流等の利用、終了後も事業化に向けたハンズオン支援や出資の相談が可能。</dd></div>
+<div class="row"><dt><i data-lucide="file-text"></i>応募形式</dt><dd>Googleフォームで協業プランを提出（メール応募も可。プレゼンテーション資料PDF添付）。</dd></div>
+</dl></div>
+<div class="card-foot">
+<a class="btn" href="https://jrestartup.co.jp/2026-entry-autumn/" target="_blank" rel="noopener"><i data-lucide="external-link"></i>公式ページ（2026秋募集）</a>
+<span class="srcnote">確認方法：verified live（2026-10-29）</span>
+</div>
+</article>
+
+<!-- 4 Entrepreneur -->
+<article class="card" id="c4" data-status="open" data-check="ok">
+<div class="card-top">
+<div class="rankbadge">4</div>
+<div><h3>第12回 日本アントレプレナー大賞</h3><div class="org">主催：賢者の選択リーダーズ倶楽部（運営：株式会社矢動丸プロジェクト）。後援：経済産業省。第12回と回数を重ねる毎年開催（累計応募約3,500件）</div></div>
+<div class="pills"><span class="pill open">募集中</span></div>
+</div>
+<div class="deadline"><span>応募期間</span><b>2026年10月1日〜</b><span class="big">締切 2027年1月18日 23:59</span><span>1次発表 2027年3月5日予定／最終プレゼン会 3月18日（日本外国特派員協会）／表彰式 4月22日（帝国ホテル東京・予定）</span></div>
+<div class="fit">
+<div class="good"><h4><i data-lucide="thumbs-up"></i>合う理由</h4><p>法人格の要件がなく個人で応募でき、事業化7年未満が対象で稼働中事業に合う。地域制限なし、応募資料は形式自由で作りやすい。大賞100万円。</p></div>
+<div class="warn"><h4><i data-lucide="triangle-alert"></i>注意点</h4><p>部門は4つのみで、最も近いソーシャルビジネス部門（地域創生・ローカル）でも「社会課題解決の物語」の比重が高い。最終プレゼン・表彰式は東京開催で交通費自己負担。参加費は公式に記載なし。</p></div>
+</div>
+<div class="facts"><dl>
+<div class="row"><dt><i data-lucide="badge-check"></i>応募資格</dt><dd>高校生以上であること、ビジネスプランが事業化されていない<b>あるいは事業化してから7年未満</b>であること（創業・設立年数は不問）、自らが起業家として事業を行う意志を持っていること、東京開催の最終プレゼン会・表彰式に参加できること（交通費は自己負担）。グループ応募可、再応募可。<b>法人格の要件はなく、個人で応募できる</b>。地域制限なし。</dd></div>
+<div class="row"><dt><i data-lucide="layout-grid"></i>部門</dt><dd>サイエンス部門（HORIBA賞）／エンタメ部門（ピーアーク賞）／<b>ソーシャルビジネス部門（SK Dream Japan賞。「地域創生・ローカル（地方活性・地域経済循環）」が例示に含まれる）</b>／サクセッション部門（サクセッション協会賞）。この事業はソーシャルビジネス部門が最も近い。</dd></div>
+<div class="row"><dt><i data-lucide="wallet"></i>参加費</dt><dd>公式資料に記載なし（最終プレゼン・表彰式の交通費は自己負担と明記）。</dd></div>
+<div class="row"><dt><i data-lucide="trophy"></i>賞金</dt><dd>大賞 <b>100万円</b>、部門賞は各<b>10万円</b>。</dd></div>
+<div class="row"><dt><i data-lucide="file-text"></i>応募形式</dt><dd>公式ページの応募フォームから、自己紹介（経歴・PRなど）とビジネスプランを送付。資料の形式・枚数は自由（添付100MBまで）。</dd></div>
+</dl></div>
+<div class="card-foot">
+<a class="btn" href="https://kenja-club.com/lc/entrepreneur" target="_blank" rel="noopener"><i data-lucide="external-link"></i>応募公式ページ</a>
+<a class="btn ghost" href="https://www.value-press.com/pressrelease/381488" target="_blank" rel="noopener"><i data-lucide="newspaper"></i>主催者プレスリリース（2026-10-01）</a>
+<span class="srcnote">確認方法：verified live（2026-10-29）</span>
+</div>
+</article>
+
+<!-- 5 Dream -->
+<article class="card" id="c5" data-status="open" data-check="ok">
+<div class="card-top">
+<div class="rankbadge">5</div>
+<div><h3>みんなの夢AWARD17</h3><div class="org">主催：公益財団法人みんなの夢をかなえる会。共催：一般社団法人ソーシャルビジネス・ドリームパートナーズ（SBDP）。社会起業家の発掘・育成を目的とするソーシャルビジネスコンテストで、今回が17回目</div></div>
+<div class="pills"><span class="pill open">募集中</span><span class="pill next">公式要項の再確認が必要</span></div>
+</div>
+<div class="deadline"><span>エントリー締切</span><span class="big">2026年12月4日 23:59</span><span>開催は2027年3月10日、LINE CUBE SHIBUYA（渋谷公会堂）でファイナリストによる最終プレゼンテーション</span></div>
+<div class="fit">
+<div class="good"><h4><i data-lucide="thumbs-up"></i>合う理由</h4><p>国内在住・年齢不問、法人格の要件なし。グランプリ賞金100万円＋最大2,000万円の出資交渉権と金額規模が大きい。毎年開催の実績（17回目）。</p></div>
+<div class="warn"><h4><i data-lucide="triangle-alert"></i>注意点</h4><p>ソーシャルビジネス色が強く、「夢と社会課題」を語るプレゼン形式。出資交渉権は出資受け入れ（法人化等）が前提になり得る。<b>主催者公式サイト本体のURLは今回の調査では特定できなかった</b>ため、参加費・詳細要項は応募時に主催者公式ページで最新要項を確認すること。</p></div>
+</div>
+<div class="facts"><dl>
+<div class="row"><dt><i data-lucide="badge-check"></i>応募資格</dt><dd>国内在住であれば年齢不問。起業を検討している方／中小企業経営者・起業家／第二創業者・事業承継の後継者／新規事業の責任者のいずれかに該当し、同AWARDが大切にする3つの選考基準に合致する方。法人格の要件は示されていない。</dd></div>
+<div class="row"><dt><i data-lucide="wallet"></i>参加費</dt><dd>確認できず。</dd></div>
+<div class="row"><dt><i data-lucide="trophy"></i>賞・支援</dt><dd>グランプリ＝賞金<b>100万円</b>＋SBDPからの<b>最大2,000万円の出資交渉権</b>。準グランプリ＝賞金<b>50万円</b>。協賛企業からの支援、ファイナリストへの経営指導等のバックアップあり。</dd></div>
+<div class="row"><dt><i data-lucide="file-text"></i>応募形式</dt><dd>主催者ホームページのエントリーフォームから応募（メール・郵送は不可）。</dd></div>
+</dl></div>
+<div class="card-foot">
+<a class="btn" href="https://kobonabi.com/minnanoyumeaward-17th-2026/" target="_blank" rel="noopener"><i data-lucide="external-link"></i>主催者案内（公募情報サイト掲載）</a>
+<span class="srcnote">確認方法：index（2026-10-29）。公募情報サイトが主催者の案内文を掲載したものに基づく。</span>
+</div>
+</article>
+
+<!-- 6 77 -->
+<article class="card" id="c6" data-status="next" data-check="need">
+<div class="card-top">
+<div class="rankbadge">6</div>
+<div><h3>七十七ニュービジネス助成金／七十七ビジネス大賞</h3><div class="org">主催：公益財団法人七十七ビジネス振興財団（七十七銀行本店内、仙台市）。第29回まで続く毎年募集の制度</div></div>
+<div class="pills"><span class="pill next">2026年度は終了</span><span class="pill urgentp">個人事業主の可否・要確認</span></div>
+</div>
+<div class="deadline"><span>2026年度（第29回）募集</span><b>2026年7月1日〜8月31日（当日消印有効）で終了</b><span>助成金の二次審査＝プレゼン面接は2026年10月29日開催予定、贈呈式 11月27日</span><span class="big">次回は例年通りなら2027年7〜8月募集の見通し（公式未発表）</span></div>
+<div class="fit">
+<div class="good"><h4><i data-lucide="thumbs-up"></i>合う理由</h4><p>助成金200万円（3〜5先）・使途不問と資金面の魅力が大きい。宮城県内に拠点があればよく、「新規事業活動を志す起業家」も対象で、地元の小規模事業者のDXという文脈も県内産業振興の目的に合う。</p></div>
+<div class="warn"><h4><i data-lucide="triangle-alert"></i>注意点</h4><p>いずれも「個人事業主」の明記がなく、応募書類も「応募用紙・会社パンフレット等」と法人前提の表現。過去の贈呈先も法人・合同会社が中心。<b>個人事業主での応募可否は財団（TEL 022-211-9787）への事前確認が必須</b>。両方への同時応募は不可、過去の応募実績は不問。郵送のみ・書類審査の比重が高く、事業性・実績の裏付けが求められる。「ビジネス大賞」は実績企業向けで本事業には時期尚早。</p></div>
+</div>
+<div class="facts"><dl>
+<div class="row"><dt><i data-lucide="badge-check"></i>応募資格</dt><dd>共通：<b>宮城県内に本社等の活動拠点があること</b>（本社が県外でも、対象事業を行っている事業所が宮城県内にあれば可）。仙台市在住の個人事業主は拠点要件を満たす。「ニュービジネス助成金」は、独創的な技術開発・革新的な発想により新商品・サービスの創出、新しいビジネスモデルの構築等を目指し事業展開を行っている<b>企業等及び新規事業活動を志している起業家</b>が対象で、稼働中の新規事業でも応募できる建付け。「ビジネス大賞」は、評価の高い商品・サービス、優れた技術力・経営手法等を有し県内の産業・経済発展に寄与している企業等が対象で、経営実績のある企業向けの色が強い。</dd></div>
+<div class="row"><dt><i data-lucide="wallet"></i>参加費</dt><dd>記載なし（応募は書留郵送のみで郵送料は自己負担。助成金の二次審査の交通費も自己負担と明記）。</dd></div>
+<div class="row"><dt><i data-lucide="trophy"></i>賞金・助成</dt><dd>ニュービジネス助成金＝表彰状と<b>助成金200万円を3〜5先</b>に贈呈（資金使途は問わない）。ビジネス大賞＝表彰状と奨励金<b>50万円</b>を1〜2先。</dd></div>
+<div class="row"><dt><i data-lucide="file-text"></i>応募形式</dt><dd>財団所定の応募用紙と会社パンフレット等を各2部、書留で郵送（持参・メール応募は不可）。助成金は一次＝書類審査（新規性・独創性・事業性）、二次＝プレゼンテーションを中心とする面接。大賞は書類審査のみ。</dd></div>
+</dl></div>
+<div class="card-foot">
+<a class="btn" href="https://www.77bsf.or.jp" target="_blank" rel="noopener"><i data-lucide="external-link"></i>財団公式サイト</a>
+<a class="btn ghost" href="https://www.77bsf.or.jp/wp-content/uploads/2026/05/260610_koubopanhu.pdf" target="_blank" rel="noopener"><i data-lucide="file-text"></i>2026年度 募集要項パンフレット（PDF）</a>
+<span class="srcnote">確認方法：verified live（2026-10-29）</span>
+</div>
+</article>
+
+<!-- 7 SPARK -->
+<article class="card" id="c7" data-status="next" data-check="need">
+<div class="card-top">
+<div class="rankbadge">7</div>
+<div><h3>SPARK!TOHOKU Startup Pitch</h3><div class="org">主催：SPARK!TOHOKU実行委員会（仙台市、会津若松市、郡山市、滝沢市、八幡平市、青森市、山形県、東北大学、会津大学、NICT、総務省東北総合通信局ほか）。総務省・NICT主催「起業家万博／起業家甲子園」の東北連携大会</div></div>
+<div class="pills"><span class="pill next">次回募集待ち</span><span class="pill urgentp">個人事業主の可否・要確認</span></div>
+</div>
+<div class="deadline"><span>2026年回</span><b>エントリー締切 7月17日、資料提出 7月24日、2026年9月5日に仙台国際センターで開催済み</b><span>毎年開催の実績あり（2025・2026回、歴代出場者2013年〜）</span><span class="big">次回は例年通りなら2027年6〜7月募集・9月開催の見通し（公式未発表）</span></div>
+<div class="fit">
+<div class="good"><h4><i data-lucide="thumbs-up"></i>合う理由</h4><p>ICT×東北という事業の素性と一致し、仙台開催。通過すれば総務省・NICTの全国大会「起業家万博」への道とICTメンターの伴走が得られる。</p></div>
+<div class="warn"><h4><i data-lucide="triangle-alert"></i>注意点</h4><p>募集対象が「東北地域に本社が所在する企業」とされ<b>個人事業主の可否は公式に明記がない</b>（2026年の若手部門出場者は全て株式会社）。事務局確認が前提。条件に「資金調達を目指す」等の成長志向の文言があり、ブートストラップ型のサービス事業とは温度差がある。現金の賞金はほぼない。</p></div>
+</div>
+<div class="facts"><dl>
+<div class="row"><dt><i data-lucide="badge-check"></i>応募資格</dt><dd>若手起業家部門（起業家万博対象）：①ICTを利活用したビジネスプラン、②<b>東北地域に本社が所在する企業</b>で事業計画の策定・事業拡大等に意欲があり成長志向が強いこと、③「概ね過去3年以内に新規事業を開始し資金調達を目指している」「協業者となる企業を模索している」「概ね今後1年以内に新規事業の開始を目指している」のいずれか、④地域の特色を生かしたプラン、⑤開催日に仙台国際センターで発表できること。</dd></div>
+<div class="row"><dt><i data-lucide="wallet"></i>参加費</dt><dd>公式ページに記載なし。</dd></div>
+<div class="row"><dt><i data-lucide="trophy"></i>賞・特典</dt><dd>現金の賞金はほぼなし。NICT賞＝「起業家万博」（2027年3月・東京）への出場権＋ICTメンターによる複数回のメンタリング。東北総合通信局長賞＝トロフィーと「ICTフェア in 東北 2027」出展権、仙台市長賞＝INNOVATOR'S MEETUPゲスト登壇権、その他企業賞（JICT賞＝経営陣とのディスカッション機会、COSTA賞＝サービス立ち上げ伴走権、コープ東北サンネット賞＝商品券2万円など）。</dd></div>
+<div class="row"><dt><i data-lucide="file-text"></i>応募形式</dt><dd>エントリーフォーム → ビジネスプランの概要スライド（所定フォーマット）＋任意の追加資料をメール提出、の二段階。応募期間中はスライド作成・ブラッシュアップのサポートあり。</dd></div>
+</dl></div>
+<div class="card-foot">
+<a class="btn" href="https://www.sparktohoku.net/" target="_blank" rel="noopener"><i data-lucide="external-link"></i>公式サイト</a>
+<span class="srcnote">確認方法：verified live（2026-10-29）</span>
+</div>
+</article>
+
+<!-- 8 ASPIC -->
+<article class="card" id="c8" data-status="next" data-check="need">
+<div class="card-top">
+<div class="rankbadge">8</div>
+<div><h3>ASPIC AI・クラウドアワード</h3><div class="org">主催：一般社団法人日本クラウド産業協会（ASPIC）。直近は第19回 AI・クラウドアワード2026。2007年開始で毎年開催</div></div>
+<div class="pills"><span class="pill next">次回募集待ち</span><span class="pill urgentp">個人事業主の可否・要確認</span></div>
+</div>
+<div class="deadline"><span>2026年回</span><b>登録締切 2026年6月20日、エントリーシート送付締切 6月30日で終了</b><span>表彰式は2026年11月18日・経団連会館</span><span class="big">次回は例年通りなら2027年5月頃に募集開始、6月締切の見通し（公式未発表）</span></div>
+<div class="fit">
+<div class="good"><h4><i data-lucide="thumbs-up"></i>合う理由</h4><p>部門体系では基幹業務系ASP・SaaS部門の対象例に<b>「CMS」が明記</b>されており、サービス類型としての適合度は高い。安心・安全なクラウドサービスの普及という目的は、「サーバー側でプログラムを動かさない＝脆弱性リスクが小さい」という本サービスの売りと響き合う。応募無料。</p></div>
+<div class="warn"><h4><i data-lucide="triangle-alert"></i>注意点</h4><p><b>応募対象は「日本国内で既に商用提供されているサービス」で、企画段階や実証実験中（商用提供前）のサービスは応募不可</b>。試用版の段階では応募できず、有料提供の開始と導入実績を積んでからが現実的。賞金はなく表彰型。「事業者」「応募企業」の表記が混在し、個人事業主の可否は公式に明記がない（要確認）。</p></div>
+</div>
+<div class="facts"><dl>
+<div class="row"><dt><i data-lucide="badge-check"></i>応募資格</dt><dd>従来のクラウドサービス（ASP・SaaS、IoT、IaaS・PaaS、データセンター、運用サービス）およびAIを活用したサービスを提供する事業者。エントリーシートの「実績」項目の記載が必須。</dd></div>
+<div class="row"><dt><i data-lucide="wallet"></i>参加費</dt><dd>無料（応募費用）。</dd></div>
+<div class="row"><dt><i data-lucide="trophy"></i>賞・特典</dt><dd>賞金なし（表彰型）。最高位は総務大臣賞（申請中）。各部門で総合グランプリ・準グランプリ・ベンチャーグランプリ・ベストイノベーション賞・ニュービジネスモデル賞等を選出。受賞メリットとして受賞ロゴマークの使用、ASPICクラウドマガジン掲載、クラウドサービス紹介サイト「アスピック」への6か月無料掲載など。</dd></div>
+<div class="row"><dt><i data-lucide="file-text"></i>応募形式</dt><dd>サイトで登録 → エントリーシート（Excel）をメール送付（1次：書類審査）→ 2次：プレゼンテーション資料の書類審査 → 3次：プレゼンテーション審査。</dd></div>
+</dl></div>
+<div class="card-foot">
+<a class="btn" href="https://www.aspicjapan.org/event/award/index.html" target="_blank" rel="noopener"><i data-lucide="external-link"></i>アワード公式ページ</a>
+<a class="btn ghost" href="https://www.aspicjapan.org/event/award/19/pdf/guide.pdf" target="_blank" rel="noopener"><i data-lucide="file-text"></i>第19回 募集のご案内（PDF）</a>
+<span class="srcnote">確認方法：verified live（2026-10-29）</span>
+</div>
+</article>
+
+<!-- 9 BDAA -->
+<article class="card" id="c9" data-status="next" data-check="ok">
+<div class="card-top">
+<div class="rankbadge">9</div>
+<div><h3>Japan Business Design &amp; Action Award（BDAA）in 東北</h3><div class="org">主催：一般社団法人ビジネス・アクション・クラブ。後援：一般社団法人宮城県情報サービス産業協会、宮城県ソフトウェア事業協同組合</div></div>
+<div class="pills"><span class="pill next">次回 11月21日開催予告</span></div>
+</div>
+<div class="deadline"><span>前回</span><b>2026年2月21日開催（募集終了）</b><span class="big">次回：2026年11月21日（土）13:00〜17:30、エルパーク仙台＋Zoom</span><span>ただし次回回の具体的なエントリー締切日は公式ページに明記がない（ステップごとに異なる）ため、主催者への確認が必要</span></div>
+<div class="fit">
+<div class="good"><h4><i data-lucide="thumbs-up"></i>合う理由</h4><p>個人OKが明記され、すでに商品化・発表済みのプランでも応募可、参加無料、仮エントリーは資料なし1分と最も手軽。仙台会場＋オンラインで参加しやすい。該当部門は「ビジネス部門」（すでにビジネスを始めている、または拡大を目指す企業・団体・個人向け）。</p></div>
+<div class="warn"><h4><i data-lucide="triangle-alert"></i>注意点</h4><p>民間の小規模大会で、賞はJAPAN大会出場権利と商品券レベル。次回回の締切日が公式ページに明記されておらず、主催者への確認が必要。格付け・資金面の効果は限定的。</p></div>
+</div>
+<div class="facts"><dl>
+<div class="row"><dt><i data-lucide="badge-check"></i>応募資格</dt><dd><b>個人OK（チーム未完成でも可）</b>、全国の学生・社会人・個人・チーム。東北を中心に募集（地域外も可）。構想段階でも可、<b>すでに商品化・発表済みのものでも応募可能</b>。</dd></div>
+<div class="row"><dt><i data-lucide="wallet"></i>参加費</dt><dd>無料（交通費等は自己負担）。</dd></div>
+<div class="row"><dt><i data-lucide="trophy"></i>賞・副賞</dt><dd>ビジネス部門グランプリ＝JAPAN大会出場権利、準グランプリ＝商品券。特別賞（地方創生賞、SDGs賞、AIビジネス賞、未来ビジネス賞）は商品券等。現金賞金の設定はない。</dd></div>
+<div class="row"><dt><i data-lucide="file-text"></i>応募形式</dt><dd>1分で仮エントリー（資料提出なし）→ 10分相談／資料提出／エントリーシート → 当日ピッチ（5分＋質疑5〜10分、会場またはZoom）。事前にAI診断とメンターのフィードバックあり。</dd></div>
+</dl></div>
+<div class="card-foot">
+<a class="btn" href="https://ict-business.jp/bdaa2025-2026-touhoku/" target="_blank" rel="noopener"><i data-lucide="external-link"></i>公式ページ（東北大会）</a>
+<span class="srcnote">確認方法：verified live（2026-10-29）</span>
+</div>
+</article>
+
+<div class="sec-head"><span class="no">03</span><h2>応募前に確認すること・未確認事項</h2></div>
+<p class="sec-sub">レポートの「確認できなかったこと」をそのまま残しています。ここを潰してから応募するのが安全です。</p>
+
+<div class="two">
+<div class="panel">
+<h3><i data-lucide="phone-call"></i>事務局への事前確認が要るもの</h3>
+<ul>
+<li><b>JR東日本スタートアッププログラム</b>——「企業」表記。個人事業主（屋号）での応募可否。</li>
+<li><b>SPARK!TOHOKU</b>——「東北地域に本社が所在する企業」。個人事業主の可否は公式に明記なし。</li>
+<li><b>ASPICクラウドアワード</b>——「事業者／応募企業」の表記が混在。個人事業主の可否は未明記。</li>
+<li><b>七十七ビジネス大賞／ニュービジネス助成金</b>——「企業等及び起業家」、書類は「会社パンフレット等」。財団（TEL 022-211-9787）への事前確認が必須。</li>
+<li>いずれも<b>法人格必須とは書かれていない</b>が、可否は各事務局への確認が必要、というのが調査時点の結論です。</li>
+</ul>
+</div>
+<div class="panel">
+<h3><i data-lucide="circle-help"></i>情報が未確定のもの</h3>
+<ul>
+<li><b>みんなの夢AWARD17</b>——主催者公式サイト本体のURLを検索で特定できず、締切・賞金・資格は公募情報サイト（コボナビ）に掲載された主催者案内文に基づく。参加費も未確認。応募前に主催者公式ページで要項の再確認が必要。</li>
+<li><b>次回開催の公式発表がないもの</b>——Miyagi Pitch Contest 2027、SPARK!TOHOKU次回回、ASPIC第20回、七十七財団第30回はいずれも2026年10月29日時点で公式発表を確認できず、「例年の時期」は過去実績からの見通し。</li>
+<li><b>長井ビジネスみらい創造アワードの参加費</b>——公式リーフレットに記載がなく確認できなかった。</li>
+<li><b>BDAA in 東北の次回締切日</b>——公式ページに明記がなく、主催者への確認が必要。</li>
+</ul>
+</div>
+</div>
+
+<div class="panel">
+<h3><i data-lucide="list-checks"></i>候補に入れなかったもの（理由つき）</h3>
+<ul>
+<li><b>やまがたビジネスプランコンテスト（山形県）</b>——過去の開催紹介（対象：山形県内で事業を実施予定、または起業後3年未満の個人・企業・団体。例年1月応募締切）までは確認できたが、主催者の公式ページによる現行の募集要項を確認できなかったため候補に入れていない。山形県の公式発表が出れば条件面では合い得る。</li>
+<li><b>仙台X-TECHイノベーションアワード2027</b>——対象が「AI・データを用いたソリューション」に限定され、連動メンタリングの参加条件も「仙台市もしくは東北6県内に事業拠点を構えている<b>会社・団体</b>」「役員層もしくは経営企画部長等が参加できること」など組織前提の文言。非AIのCMSというテーマ面でも、個人事業主という条件面でも合いにくいため対象外寄り。（発表会 2027年2月26日、大賞1件・優秀賞3件程度）</li>
+<li><b>X-Tech Innovation（地銀5行共催）</b>——北海道銀行・岩手銀行・七十七銀行・ふくおかフィナンシャルグループ・沖縄銀行が共催し東北地区大会もあったが、ふくおかフィナンシャルグループの2025年9月16日付リリースで「昨年度で第10回を迎え、今年からは“大交流会型イベント”へと形を変え」と明記され、2026年のコンテスト募集は確認できなかった。現行形式では応募できないため除外。</li>
+<li><b>日本スタートアップ大賞2026（政府主催）</b>——2026年度の募集締切が2026年10月29日（調査当日）とされ、かつ顕著な実績・インパクトを持つ起業家の表彰という性格のため、現段階の本事業には現実的でないと判断し候補から外した。</li>
+<li><b>第26回 Japan Venture Awards（JVA）</b>——将来向けの参考として記録。主催：独立行政法人中小企業基盤整備機構。創業後概ね15年以内のベンチャー企業の経営者を表彰する制度（経済産業大臣賞、地域課題解決賞、再挑戦起業賞など。賞金ではなく表彰型）。2026年回は募集2026年7月1日〜8月19日で終了、表彰式2026年12月15日。毎年開催（26回）。ロールモデルとなる優れた経営者を発掘する性格で、事業の実績・社会的評価が審査対象になるため、サービスを公開したばかりの現段階では現実的な候補ではない。</li>
+</ul>
+</div>
+
+<footer>
+<h3>出典（主催者公式ページ／公式文書）</h3>
+<ul>
+<li>Miyagi Pitch Contest 公式ページ（宮城県）— https://www.pref.miyagi.jp/soshiki/sangyod/miyagipitchcontest.html</li>
+<li>SPARK!TOHOKU 公式サイト — https://www.sparktohoku.net/</li>
+<li>JR東日本スタートアッププログラム2026（秋募集）公式ページ — https://jrestartup.co.jp/2026-entry-autumn/</li>
+<li>七十七ビジネス振興財団 公式サイト — https://www.77bsf.or.jp ／ 2026年度募集パンフレット — https://www.77bsf.or.jp/wp-content/uploads/2026/05/260610_koubopanhu.pdf</li>
+<li>ASPIC アワード公式ページ — https://www.aspicjapan.org/event/award/index.html ／ 第19回募集のご案内 — https://www.aspicjapan.org/event/award/19/pdf/guide.pdf</li>
+<li>長井ビジネスみらい創造アワード2027 公式リーフレット（長井市）— https://www.city.nagai.yamagata.jp/material/files/group/35/award2.pdf</li>
+<li>第12回日本アントレプレナー大賞 応募ページ — https://kenja-club.com/lc/entrepreneur ／ 主催者プレスリリース — https://www.value-press.com/pressrelease/381488</li>
+<li>Japan Business Design &amp; Action Award in 東北 公式ページ — https://ict-business.jp/bdaa2025-2026-touhoku/</li>
+<li>仙台X-TECHイノベーションプロジェクト案内（SENDAI INC.／仙台市事業）— https://sendai-inc.com/news/261002/</li>
+<li>みんなの夢AWARD17 主催者案内（コボナビ掲載・index）— https://kobonabi.com/minnanoyumeaward-17th-2026/</li>
+<li>第26回 Japan Venture Awards 公式 — https://j-venture.smrj.go.jp/</li>
+<li>X-Tech Innovation 形式変更に関するふくおかフィナンシャルグループ リリース（2025-09-16・index）— https://www.fukuoka-fg.com/news_info_pdf/2025/20250916_release.pdf</li>
+</ul>
+<p style="margin-top:14px">このページは2026年10月29日時点の調査結果のスナップショットです。募集状況・締切は変わることがあるため、応募時は各公式ページで最新の要項を確認してください。</p>
+</footer>
+</div>
+
+<script>
+if (window.lucide) lucide.createIcons();
+(function(){
+var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+var note = document.getElementById('countNote');
+var empty = document.getElementById('emptyNote');
+function apply(f){
+var shown = 0;
+cards.forEach(function(c){
+var ok = f==='all' || (f==='open' && c.dataset.status==='open') || (f==='next' && c.dataset.status==='next') || (f==='needcheck' && c.dataset.check==='need');
+c.classList.toggle('hidden',!ok);
+if(ok) shown++;
+});
+note.textContent = shown + '件を表示しています。';
+empty.style.display = shown===0? 'block':'none';
+}
+chips.forEach(function(ch){
+ch.addEventListener('click', function(){
+chips.forEach(function(x){ x.setAttribute('aria-pressed','false');});
+ch.setAttribute('aria-pressed','true');
+apply(ch.dataset.filter);
+});
+});
+})();
+</script>
+</body>
+</html>
