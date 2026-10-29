@@ -7,6 +7,7 @@
   "type": "article",
   "title": "似ているようで、目的が違う",
   "subtitle": "VuePressと、私のMarkdown CMS",
+  "author": "ミューズさん",
   "date": "2026-10-26",
   "category": "コラム",
   "summary": "「Markdownを書けば静的サイトになる」仕組みには、VuePressという立派な先行例があります。比べてみると、似ているのは入口だけで、目的が違うことが分かりました。",

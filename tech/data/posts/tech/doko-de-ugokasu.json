@@ -7,6 +7,7 @@
   "type": "article",
   "title": "WordPressでも、EmDashでもない",
   "subtitle": "Muse × GitHub × Markdown CMS という第三の選択肢",
+  "author": "ミューズさん",
   "date": "2026-10-26",
   "category": "コラム",
   "summary": "「WordPressか、EmDashか」の二項対立の外側にある第三の選択肢。Markdownで書き、GitHubに保管し、運用はAIに任せ、公開側ではプログラムを動かさない仕組みを、実際に動いているサイト群と正直な限界とともに紹介します。スライド資料（NotebookLMで作成）を併載。",
