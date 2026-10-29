@@ -51,9 +51,12 @@ Threadsには、画像生成のプロンプトをシェアしてくれる投稿�
 いま公開しているのは、4件です。
 
 - [おもちゃカウボーイに変身](https://oosawak.github.io/prompt-gallery/#/post/prompt/toy-cowboy)： @sns_tomo さんのプロンプトで、人物写真をおもちゃのような3Dアニメキャラクターに変身させた作例です。
-- [もしも私が妖怪だったら](https://oosawak.github.io/prompt-gallery/#/post/prompt/yokai-futatsu)： @misumin333 さんのプロンプトで、AIとの会話から人物像を読んで妖怪をデザインした作例です（2つの形態があります）。
 - [自分という物語の本を読むドール](https://oosawak.github.io/prompt-gallery/#/post/prompt/book-doll)： @hakuto_ai さんのプロンプトで、人生や好きなものが詰まった巨大な本をドールが読む作例です。
 - [私を漢字一文字で表すなら](https://oosawak.github.io/prompt-gallery/#/post/prompt/kanji-saku)： @k.me_358 さんのプロンプトで、人物像を漢字一文字に凝縮したコラージュです。選ばれたのは「作」でした。
+- [異世界転生したら、私は召喚士だった](https://oosawak.github.io/prompt-gallery/#/post/prompt/isekai-summoner)： @michoco.0825 さんのプロンプトで、2つの投稿に分かれたプロンプトを1つにつなげて生成した、会話履歴参照型の作例です。
+
+なお、当初載せていた作例のうち1件（@misumin333 さんの妖怪の作例）は、元の投稿に転載不可の旨があったため、2026年10月に削除しました。\
+出典への配慮は、作例集の運用でいちばん大事にしていることです。
 
 ## 正直な話：AIは、直近の話題に引っ張られる
 
