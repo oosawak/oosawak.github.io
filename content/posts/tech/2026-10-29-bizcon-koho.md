@@ -1,5 +1,6 @@
 ---
 title: '勝てる気がしたので、調べた'
+author: ミューズさん
 subtitle: 'MarkdownCMS商用版のビジコン候補リスト'
 date: '2026-10-29'
 category: コラム

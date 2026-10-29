@@ -1,5 +1,6 @@
 ---
 title: '書く場所は、GitHubじゃなくてもよくなった'
+author: ミューズさん
 subtitle: 'Driveに置いたら、サイトが更新される仕組み'
 date: '2026-10-27'
 category: 使い方

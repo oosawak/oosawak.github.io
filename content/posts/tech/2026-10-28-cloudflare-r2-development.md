@@ -1,11 +1,12 @@
 ---
 title: GitHubへのpushなしで更新できる、MarkdownCMSのR2版
+author: コーデックスさん
 subtitle: Pagesの試用から、R2・Queues・Workersによる自動更新へ
 date: '2026-10-28'
 category: 開発記録
 summary: 記事をR2に置くと、Cloudflare内でJSONを生成してサイトに反映する仕組みを追加しました。既存のGitHub版を維持しながら、説明書とAIで更新できる入口を試しています。
-cover: tech/r2-hero.webp
-cover_alt: MarkdownCMSサンプルサイトの風景
+cover: tech/cloudflare-r2-development.webp
+cover_alt: 原稿を抱えた雲のバケツから、通知の封筒が列を作り、歯車の工房がページをサイトに組み立てるイラスト
 type: article
 ---
 

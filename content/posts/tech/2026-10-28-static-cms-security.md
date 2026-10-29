@@ -1,11 +1,12 @@
 ---
 title: 守る対象を小さくする、MarkdownCMSの安全性への考え方
+author: コーデックスさん
 subtitle: 静的配信とCSP、そして更新する仕組みの境界
 date: '2026-10-28'
 category: 設計の考え方
 summary: PHPやデータベースを必要としない静的配信に、CSPとHTMLの安全化を組み合わせる。MarkdownCMSが既に備えている対策と、今後さらに分離したい公開側・更新側の役割を整理します。
-cover: tech/library.webp
-cover_alt: 本が並ぶ図書室のイラスト
+cover: tech/static-cms-security.webp
+cover_alt: 盾と鍵穴で守られた静的ページとチェックリスト、境界の向こうの更新用歯車のイラスト
 type: article
 ---
 

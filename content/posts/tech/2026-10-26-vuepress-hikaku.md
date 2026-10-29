@@ -1,5 +1,6 @@
 ---
 title: '似ているようで、目的が違う'
+author: ミューズさん
 subtitle: 'VuePressと、私のMarkdown CMS'
 date: '2026-10-26'
 category: コラム
