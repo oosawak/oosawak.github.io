@@ -65,12 +65,12 @@ InstagramとThreadsに、@umai.546.yamagata、@umai.546.miyagi、@umai.546.fukus
 プロンプト作例集は、Threadsの @prompt.546 の「いいね」が入口です。\
 シェアされた画像生成プロンプトを試して、作例として貯めています。
 
-- https://oosawak.github.io/prompt-gallery/
+- [プロンプト作例集](https://oosawak.github.io/prompt-gallery/)
 
 レシピのIKIGAIは、Instagramの @airflayer546 の「いいね」が入口です。\
 美味しそうな料理の投稿に「いいね」を付けておくと、レシピ化されてサイトに貯まります。
 
-- https://oosawak.github.io/ikigai/
+- [IKIGAI](https://oosawak.github.io/ikigai/)
 
 作例集のほうでは、権利の確認もこの流れの中で引き受けます。\
 プロンプトの転載や著作権の扱いに問題があった作例を、公開したあとに気づいて、サイトから削除しました（これまでに2件あります）。\

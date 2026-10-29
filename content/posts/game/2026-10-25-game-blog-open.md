@@ -18,12 +18,9 @@ Lyre3 Games のホームページを oosawak.github.io に移し、あわせて�
 
 ## 制作中のもの（抜粋）
 
-- CubeCoreDungeon ― ブラウザで遊べるダンジョンゲーム
-  https://github.com/oosawak/CubeCoreDungeon
-- xDimensionGameEngine ― 2Dキャラクターと3Dの町・地形を組み合わせたゲームエンジン試作
-  https://github.com/oosawak/xDimensionGameEngine
-- INKBOUND ― 屋上を舞台にしたFPS試作
-  https://github.com/oosawak/INKBOUND
+- [CubeCoreDungeon](https://github.com/oosawak/CubeCoreDungeon) ― ブラウザで遊べるダンジョンゲーム
+- [xDimensionGameEngine](https://github.com/oosawak/xDimensionGameEngine) ― 2Dキャラクターと3Dの町・地形を組み合わせたゲームエンジン試作
+- [INKBOUND](https://github.com/oosawak/INKBOUND) ― 屋上を舞台にしたFPS試作
 
 作品の一覧はトップページの Repository library からもたどれます。\
 気になるものがあればのぞいてみてください。
