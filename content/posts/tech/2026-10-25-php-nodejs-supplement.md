@@ -532,3 +532,5 @@ PHP／WordPress側でこの手順が重くなるのは、2と5が難しいから
 その判断材料を並べたものとして、この資料を読んでいただければ幸いです。
 
 この資料は、[Qiita](https://qiita.com/oosawak@github/items/fc22b45424d7442d1995)にも載せています。
+
+この資料は、[Zenn](https://zenn.dev/oosawak/articles/php-nodejs-supplement)にも載せています。
