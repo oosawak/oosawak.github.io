@@ -75,7 +75,7 @@ type: article
 保存先は、取り替えられる形にしてあります。\
 いまはGitHubですが、将来はCloudflare R2という置き場にも、同じ画面のままつなげられる見込みです。\
 R2は、[『MarkdownCMSの公開版と商用版』](https://oosawak.github.io/tech/#/post/tech/markdown-cms-editions)で書いた、商用版の置き場です。\
-なのでこのアプリは、ネタ帳専用ではなく、Markdown CMSで作ったサイトの記事を編集する道具にも育てられます。
+なのでこのアプリは、ネタ帳専用ではなく、Markdown CMSで作ったサイトの記事を編集する道具にもなります。
 
 ## まだ、初版です
 
