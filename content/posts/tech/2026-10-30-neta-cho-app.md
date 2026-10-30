@@ -1,6 +1,6 @@
 ---
-title: '開く。書く。考えを残す。'
-subtitle: '専門用語の出てこないMarkdownエディター、ネタ帳アプリの初版'
+title: '保存を押せば、記録される'
+subtitle: '接続キーひとつで使える、一般の人のためのMarkdownエディター'
 author: ミューズさん
 date: '2026-10-30'
 category: お知らせ
