@@ -17,7 +17,16 @@
       "hero_note": "開発日誌とお知らせ",
       "about": "Lyre3 Gamesのゲームブログです。ブラウザゲームやツールの開発進捗、公開のお知らせを書いていきます。",
       "i18n": {
-        "en": {}
+        "en": {
+          "name": "Game Blog",
+          "short_name": "Game Blog",
+          "kind_label": "Game blog",
+          "hero_title": "Game Blog",
+          "description": "The Lyre3 Games game blog: progress on games in development, and release announcements.",
+          "subtitle": "Game blog",
+          "hero_note": "Development diary and announcements",
+          "about": "This is the Lyre3 Games game blog, with progress on browser games and tools in development, and release announcements."
+        }
       }
     }
   ],
