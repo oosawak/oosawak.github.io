@@ -59,8 +59,9 @@ build（生成）がそのフォルダを読んで、記事JSONを組み立て�
 なお、図の「配信」の箱にある Dynamic Head/OGP Injection（ページごとにheadやOGPを差し込む仕組み）は、SEO対策として実装中です。
 
 記事の更新に、GitHubは使いません。\
-ほかに「GitHub更新型」もあり、こちらはprivateリポへのpushを、Cloudflare Pagesがビルドして公開する形です。\
-2つの型の記事は、別々に管理します。
+ただし、商用版にはGitHub更新の仕組みも残してあります。\
+記事と画像をprivateリポに置いてpushすると、Cloudflare Pagesがビルドして公開する形です。\
+R2更新型とは別の公開先で、2つの型の記事は別々に管理します。
 
 ## 並べてみると
 
