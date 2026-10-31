@@ -42,7 +42,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Seeing Markdown CMS in Diagrams",
+          "subtitle": "The shared core, and the flows of the OSS and Commercial editions",
+          "category": "News",
+          "summary": "This article explains how Markdown CMS is put together behind the scenes, using architecture diagrams. The shared core is this: the site folder is the source of truth, the build generates article JSON (the shared data.json format), and the display side only reads it. The OSS edition (GitHub edition) generates with Actions and is served by Pages, while the Commercial edition (Cloudflare edition, R2 update model) is saved from an admin screen to R2, and a Worker generates and serves it when notified through Queues. In both editions, no program runs on the display side.",
+          "cover_alt": "Illustration of documents in a folder passing through a small conversion box and becoming a neat bundle of cards, then branching toward a delivery tower and a cloud"
+        }
       }
     },
     {

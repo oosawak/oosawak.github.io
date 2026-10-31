@@ -23,6 +23,8 @@
   };
   const getLang=()=>{try{return localStorage.getItem('community-language')==='en'?'en':'ja'}catch{return 'ja'}};
   let lang=getLang();
+  const stripLang=r=>{const m=String(r||'').match(/^(?:en|ja)\/(.*)$/);return m?m[1]:(r==='en'||r==='ja'?'':String(r||''))};
+  const parseLang=r=>{const m=String(r||'').match(/^(en|ja)(?:\/|$)/);if(m){lang=m[1];try{localStorage.setItem('community-language',lang)}catch{}}return stripLang(r)};
   const tr=k=>words[lang][k]??k;
   const loc=o=>o&&typeof o==='object'?{...o,...(o.i18n?.[lang]||{})}:o;
   const h=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -30,14 +32,15 @@
   const date=s=>{const [y,m,d]=String(s).split('-').map(Number);return lang==='ja'?`${y}年${m}月${d}日`:`${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][m-1]||''} ${d}, ${y}`};
   const yen=v=>lang==='ja'?Number(v).toLocaleString('ja-JP')+'円':'¥'+Number(v).toLocaleString('en-US');
   const routeLink=r=>{
+    r=stripLang(r);
     if(standalone){
-      if(r==='portal')return portalUrl || '#/'+ownSite;
-      return '#/'+r;
+      if(r==='portal')return portalUrl || '#/'+lang+'/'+ownSite;
+      return '#/'+lang+'/'+r;
     }
-    if(preview)return '#/'+r;
+    if(preview)return '#/'+lang+'/'+r;
     const head=r.split('/')[0];
     const site=['bakery','town','fruit','gourmet'].includes(head)?head:r.startsWith('post/')?r.split('/')[1]:r.startsWith('about/')?r.split('/')[1]:r==='cart'?'fruit':'portal';
-    return new URL((site==='portal'?'':site+'/')+'#/'+r,root).href;
+    return new URL((site==='portal'?'':site+'/')+'#/'+lang+'/'+r,root).href;
   };
   const routeNow=()=>{let hash='';try{hash=decodeURIComponent(location.hash.replace(/^#\/?/,''))}catch{}return hash||(app.dataset.default||'portal')};
   const state={category:'all',query:'',cart:{}};
@@ -98,9 +101,9 @@
   async function showAbout(sid){const d=await site(sid),s=loc(d.site);const body=`<section class="articlehead"><div class="container"><span class="kicker">ABOUT</span><h1>${h(s.name)} ${h(tr('aboutTitle'))}</h1></div></section><section class="section container"><article class="paper"><p class="lead">${h(s.description)}</p><p>${h(s.about)}</p><div class="info">${h(tr('noteAbout'))}</div><a class="backlink" href="${h(routeLink(sid))}">← ${h(tr('back'))}</a></article></section>`;layout('about/'+sid,body,d.site)}
   async function showCart(){const d=await site('fruit'),items=d.entries.filter(x=>x.type==='product'),lines=items.filter(x=>(state.cart[x.slug]||0)>0),total=lines.reduce((sum,x)=>sum+x.price_jpy*state.cart[x.slug],0);const lineHtml=lines.map(raw=>{const it=loc(raw);return `<div class="cartrow"><img src="${h(raw.cover.src)}" alt=""><div><h3><a href="${h(routeLink('post/fruit/'+raw.slug))}">${tt(it)}</a></h3><p>${yen(raw.price_jpy)} × ${state.cart[raw.slug]}</p></div><div class="cartctrl"><button type="button" data-qty="${h(raw.slug)}" data-step="-1" aria-label="Decrease">−</button>${state.cart[raw.slug]}<button type="button" data-qty="${h(raw.slug)}" data-step="1" aria-label="Increase">＋</button></div></div>`}).join('');const body=`<section class="articlehead"><div class="container"><span class="kicker">FRUIT SHOP / DEMO CART</span><h1>${h(tr('demoCart'))}</h1></div></section><section class="section container"><article class="paper"><div class="notice">${h(tr('demoOrder'))}</div>${lines.length?lineHtml+`<div class="total"><span>${h(tr('subtotal'))}</span><span>${yen(total)}</span></div><p class="notice">${h(tr('demoFees'))}</p><button class="pillbutton ghost" type="button" data-clear>${h(tr('clear'))}</button>`:`<p class="empty">${h(tr('emptyCart'))}</p>`}<a class="backlink" href="${h(routeLink('fruit'))}">← ${h(tr('backToShop'))}</a></article></section>`;layout('cart',body,d.site)}
   function updateFilter(){const q=state.query.trim().toLocaleLowerCase(lang==='en'?'en-US':'ja-JP'),cards=app.querySelectorAll('[data-card]');let hits=0;for(const c of cards){const isMatch=(!q||c.textContent.toLocaleLowerCase().includes(q))&&(state.category==='all'||c.dataset.site===state.category||c.dataset.category===state.category);c.hidden=!isMatch;if(isMatch)hits++}const empty=app.querySelector('[data-empty]');if(empty)empty.hidden=hits>0;}
-  async function render(scroll=true){let route=routeNow();if(standalone&&(route==='portal'||(!([ownSite,'cart'].includes(route)||route.startsWith('post/'+ownSite+'/')||route==='about/'+ownSite))))route=ownSite;state.category='all';state.query='';try{if(route==='portal')await showPortal();else if(route===ownSite||['bakery','town','fruit','gourmet'].includes(route))await showSite(route);else if(route.startsWith('post/')){const [,sid,slug]=route.split('/');if(!sid||!slug)throw Error('Invalid URL');await showPost(sid,slug)}else if(route==='cart')await showCart();else if(route.startsWith('about/'))await showAbout(route.split('/')[1]);else await showPortal()}catch(e){console.error(e);app.innerHTML=`<section class="section container"><h1>${h(tr('error'))}</h1><p>${h(e.message)}</p><a href="${h(routeLink('portal'))}">${h(tr('returnPortal'))}</a></section>`}if(scroll)window.scrollTo({top:0,behavior:'auto'})}
+  async function render(scroll=true){let route=parseLang(routeNow());if(standalone&&(route==='portal'||(!([ownSite,'cart'].includes(route)||route.startsWith('post/'+ownSite+'/')||route==='about/'+ownSite))))route=ownSite;state.category='all';state.query='';try{if(route==='portal')await showPortal();else if(route===ownSite||['bakery','town','fruit','gourmet'].includes(route))await showSite(route);else if(route.startsWith('post/')){const [,sid,slug]=route.split('/');if(!sid||!slug)throw Error('Invalid URL');await showPost(sid,slug)}else if(route==='cart')await showCart();else if(route.startsWith('about/'))await showAbout(route.split('/')[1]);else await showPortal()}catch(e){console.error(e);app.innerHTML=`<section class="section container"><h1>${h(tr('error'))}</h1><p>${h(e.message)}</p><a href="${h(routeLink('portal'))}">${h(tr('returnPortal'))}</a></section>`}if(scroll)window.scrollTo({top:0,behavior:'auto'})}
   app.addEventListener('input',e=>{if(e.target.matches('[data-search]')){state.query=e.target.value;updateFilter()}});
-  app.addEventListener('click',e=>{const l=e.target.closest('[data-lang]');if(l){const target=l.dataset.lang;if(target!==lang&&['ja','en'].includes(target)){lang=target;try{localStorage.setItem('community-language',lang)}catch{}render(false)}return}
+  app.addEventListener('click',e=>{const l=e.target.closest('[data-lang]');if(l){const target=l.dataset.lang;if(['ja','en'].includes(target)){let cur=stripLang(routeNow());if(standalone&&(!cur||cur==='portal'))cur=ownSite;const next='#/'+target+(cur?'/'+cur:'');lang=target;try{localStorage.setItem('community-language',lang)}catch{}let pushed=false;try{history.pushState(null,'',next);pushed=true}catch{}if(pushed)render(false);else if(location.hash!==next)location.hash=next;else render(false)}return}
     const f=e.target.closest('[data-filter]');if(f){state.category=f.dataset.filter;app.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b===f));updateFilter();return}
     const add=e.target.closest('[data-add]');if(add){state.cart[add.dataset.add]=(state.cart[add.dataset.add]||0)+1;saveCart();const badge=app.querySelector('[data-cartcount]');if(badge)badge.textContent=cartCount();add.textContent=tr('added');return}
     const qty=e.target.closest('[data-qty]');if(qty){const k=qty.dataset.qty;state.cart[k]=Math.max(0,(state.cart[k]||0)+Number(qty.dataset.step));if(!state.cart[k])delete state.cart[k];saveCart();showCart();return}
