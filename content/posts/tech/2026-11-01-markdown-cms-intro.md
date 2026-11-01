@@ -97,5 +97,3 @@ type: article
   [Markdown CMS 公開版（GitHub）](https://github.com/oosawak/markdown-cms-oss)
 
 - **Cloudflare版（商用版）**: デザインや導入、運用の手伝いまで含めた形で使いたい方は、Cloudflare版があります。こちらは準備中のため、興味のある方は私（大澤）までご連絡ください。Facebookのメッセージでも大丈夫です。
-
-この記事は、[Zenn](https://zenn.dev/oosawak/articles/markdown-cms-intro)にも載せています。
