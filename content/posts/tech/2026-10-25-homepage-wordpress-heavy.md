@@ -141,3 +141,5 @@ PHPやNode.jsの脆弱性と更新が、なぜ維持の負担になるのか。\
 （同じ資料は[Qiita](https://qiita.com/oosawak@github/items/fc22b45424d7442d1995)にもあります）
 
 この記事は、[Qiita](https://qiita.com/oosawak@github/items/e195f09a746ad48bcf12)にも載せています。
+
+この記事は、[Zenn](https://zenn.dev/oosawak/articles/homepage-wordpress-heavy)にも載せています。
