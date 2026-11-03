@@ -90,6 +90,12 @@ type: article
 - [スターブレイカー](https://oosawak.github.io/html-player/?game=games/star-breaker/)と[リングバースト](https://oosawak.github.io/html-player/?game=games/ring-burst/)（シューティング2本）
 - CubeCoreDungeonとDUNGEON//LOAD（大きなゲームを、URL指定で差したもの）
 
+![「一騎討ち ― 刹那の一閃」を開いたところ。夕日を背に、向かい合う両者](game/ikkiuchi-jikki-v1.webp)
+
+![「スターブレイカー」を開いたところ。敵と惑星が上から近づいてくる](game/star-breaker-jikki-v1.webp)
+
+![「Cube Core Dungeon」を開いたところ。大きなゲームも、URL指定で差して遊べる](game/cube-jikki-v1.webp)
+
 プレイヤー本体と収録カートリッジは、MITライセンスで公開しています。
 
 ## カートリッジを作るには
