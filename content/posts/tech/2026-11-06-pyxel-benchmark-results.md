@@ -11,7 +11,8 @@ type: article
 ---
 
 [前編](https://oosawak.github.io/tech/#/post/tech/pyxel-three-implementations)では、Pyxelをめぐる3つの実装を比べました。\
-今回は続編として、同じゲームを3つの方式で実際に動かして、数字を測りました。
+今回は続編として、同じゲームを3つの方式で実際に動かして、数字を測りました。\
+関連するコードは、GitHubの[pyxel-rust](https://github.com/oosawak/pyxel-rust)と、本家の[Pyxel](https://github.com/kitao/pyxel)にあります。
 
 ## 測り方
 
@@ -46,7 +47,7 @@ LINE BOYの結果です。
 
 CubeBoyは、[本家Pyxel版](https://oosawak.github.io/html-player/games/cube-boy-pyx/)／[pyxel-rust版](https://oosawak.github.io/pyxel-rust/examples/cubeboy/)／[JavaScript版](https://oosawak.github.io/html-player/games/cube-boy/)です。
 
-![CubeBoy（本家Pyxel版）の画面](tech/bench-cubeboy-pyxel.webp)
+![CubeBoy（本家Pyxel版）の画面](tech/bench-cubeboy-pyxel-v2.webp)
 
 ![CubeBoy（pyxel-rust版）の画面](tech/bench-cubeboy-rust.webp)
 
@@ -54,7 +55,7 @@ CubeBoyは、[本家Pyxel版](https://oosawak.github.io/html-player/games/cube-b
 
 LINE BOYは、[本家Pyxel版](https://oosawak.github.io/html-player/games/line-boy-pyx/)／[pyxel-rust版](https://oosawak.github.io/pyxel-rust/examples/lineboy/)／[JavaScript版](https://oosawak.github.io/html-player/games/line-boy/)です。
 
-![LINE BOY（本家Pyxel版）の画面](tech/bench-lineboy-pyxel.webp)
+![LINE BOY（本家Pyxel版）の画面](tech/bench-lineboy-pyxel-v2.webp)
 
 ![LINE BOY（pyxel-rust版）の画面](tech/bench-lineboy-rust.webp)
 
