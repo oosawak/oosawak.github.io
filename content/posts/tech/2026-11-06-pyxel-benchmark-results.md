@@ -40,36 +40,57 @@ LINE BOYの結果です。
 | 素のJavaScript | 約0.15MB | 約1.4秒 | ※後述 | 約1.3% |
 
 
-## 遊べる場所と、実際の画面
+## 実際に遊べます
 
-測った実物は、全部ブラウザで遊べます。\
-JavaScript版は、この記事の中でそのまま遊べます。\
-ほかの方式の画面は、計測のときに撮ったものです。
+測った実物は、全部この記事の中で遊べます。\
+大きい画面で遊びたいときは、それぞれの名前のリンクからページを開いてください。
 
-CubeBoyは、[本家Pyxel版](https://oosawak.github.io/html-player/games/cube-boy-pyx/)／[pyxel-rust版](https://oosawak.github.io/pyxel-rust/examples/cubeboy/)／[JavaScript版](https://oosawak.github.io/html-player/games/cube-boy/)です。
+CubeBoy・[本家Pyxel版](https://oosawak.github.io/html-player/games/cube-boy-pyx/)
 
-![CubeBoy（本家Pyxel版）の画面](tech/bench-cubeboy-pyxel-v2.webp)
+```embed
+https://oosawak.github.io/html-player/games/cube-boy-pyx/
+512x512
+70%
+```
 
-![CubeBoy（pyxel-rust版）の画面](tech/bench-cubeboy-rust.webp)
+CubeBoy・[pyxel-rust版](https://oosawak.github.io/pyxel-rust/examples/cubeboy/)
 
-CubeBoy（JavaScript版）は、ここで遊べます。
+```embed
+https://oosawak.github.io/pyxel-rust/examples/cubeboy/
+512x512
+70%
+```
+
+CubeBoy・[JavaScript版](https://oosawak.github.io/html-player/games/cube-boy/)
 
 ```embed
 https://oosawak.github.io/html-player/games/cube-boy/
-960x720
+512x512
+70%
 ```
 
-LINE BOYは、[本家Pyxel版](https://oosawak.github.io/html-player/games/line-boy-pyx/)／[pyxel-rust版](https://oosawak.github.io/pyxel-rust/examples/lineboy/)／[JavaScript版](https://oosawak.github.io/html-player/games/line-boy/)です。
+LINE BOY・[本家Pyxel版](https://oosawak.github.io/html-player/games/line-boy-pyx/)
 
-![LINE BOY（本家Pyxel版）の画面](tech/bench-lineboy-pyxel-v2.webp)
+```embed
+https://oosawak.github.io/html-player/games/line-boy-pyx/
+512x512
+70%
+```
 
-![LINE BOY（pyxel-rust版）の画面](tech/bench-lineboy-rust.webp)
+LINE BOY・[pyxel-rust版](https://oosawak.github.io/pyxel-rust/examples/lineboy/)
 
-LINE BOY（JavaScript版）は、ここで遊べます。
+```embed
+https://oosawak.github.io/pyxel-rust/examples/lineboy/
+512x512
+70%
+```
+
+LINE BOY・[JavaScript版](https://oosawak.github.io/html-player/games/line-boy/)
 
 ```embed
 https://oosawak.github.io/html-player/games/line-boy/
-960x720
+512x512
+70%
 ```
 
 ## 転送量は、桁が違った
