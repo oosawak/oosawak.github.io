@@ -9,7 +9,7 @@ import re
 import shutil
 import hashlib
 import os
-from html import escape
+from html import escape, unescape
 from functools import lru_cache
 from PIL import Image, ImageOps
 import mistune
@@ -51,6 +51,14 @@ def embed_html_images(html_text):
 
 ALLOWED_MARKDOWN_TAGS={'p','h1','h2','h3','h4','h5','h6','ul','ol','li','strong','em','b','i','code','pre','blockquote','a','img','hr','br','del','table','thead','tbody','tr','th','td'}
 
+def embed_src_prefix():
+    # Embeds may only frame pages on the site's own origin (from SITE_URL),
+    # never third-party pages.
+    site_url=os.environ.get('SITE_URL','')
+    if site_url.startswith(('https://','http://')):
+        return '/'.join(site_url.split('/')[:3])+'/'
+    return ''
+
 def article_attribute(tag,name,value):
     if tag=='img':
         return name=='alt' or (name=='src' and value.startswith('data:image/webp;base64,')) or (name=='loading' and value in ('lazy','eager'))
@@ -60,10 +68,34 @@ def article_attribute(tag,name,value):
             # Data, javascript, protocol-relative, and other executable URLs are forbidden.
             if value.startswith('#'):return True
             return value.startswith(('https://','http://','mailto:'))
+    if tag=='code':
+        # Only the embed marker survives; expand_embeds consumes it.
+        return name=='class' and value=='language-embed'
     return False
 
+def expand_embeds(html_text):
+    # A fenced ```embed block in the source (the URL on the first line, an
+    # optional WxH size on the second) becomes a responsive iframe. Raw HTML
+    # stays escaped by design, so this block is the only way to embed, and
+    # only URLs on the site's own origin are expanded; anything else is
+    # dropped. Without this feature the block simply renders as code.
+    def repl(match):
+        lines=[line.strip() for line in unescape(match.group(1)).splitlines() if line.strip()]
+        if not lines:return ''
+        url=lines[0]
+        prefix=embed_src_prefix()
+        if not prefix or not url.startswith(prefix):return ''
+        w,h=4,3
+        if len(lines)>1:
+            size=re.fullmatch(r'(\d+)x(\d+)',lines[1])
+            if size and int(size.group(1))>0 and int(size.group(2))>0:
+                w,h=int(size.group(1)),int(size.group(2))
+        return (f'<iframe src="{escape(url,quote=True)}" loading="lazy" '
+                f'style="width:100%;aspect-ratio:{w} / {h};border:0;display:block" allowfullscreen></iframe>')
+    return re.sub(r'<pre><code class="language-embed">(.*?)</code></pre>',repl,html_text,flags=re.S)
+
 def sanitize_article_html(content):
-    return bleach.clean(content,tags=ALLOWED_MARKDOWN_TAGS,attributes=article_attribute,protocols=['http','https','mailto','data'],strip=True)
+    return expand_embeds(bleach.clean(content,tags=ALLOWED_MARKDOWN_TAGS,attributes=article_attribute,protocols=['http','https','mailto','data'],strip=True))
 
 @lru_cache(maxsize=200)
 def image_uri(rel: str, kind: str) -> tuple[str,int]:
@@ -89,6 +121,12 @@ class InlineImageRenderer(mistune.HTMLRenderer):
         # Only locally managed images are embedded; no remote/network images from Markdown.
         uri,_=image_uri(url,'detail')
         return f'<img src="{escape(uri,quote=True)}" alt="{escape(text,quote=True)}" loading="lazy">'
+    def block_code(self,code:str,info:str|None=None)->str:
+        # Only the ```embed fence is marked; expand_embeds turns it into an
+        # iframe later. Other fences render exactly as before.
+        if info and info.strip()=='embed':
+            return f'<pre><code class="language-embed">{escape(code)}</code></pre>\n'
+        return super().block_code(code,info)
 
 md=mistune.create_markdown(renderer=InlineImageRenderer(escape=True),plugins=['table'])
 
