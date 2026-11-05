@@ -43,7 +43,8 @@ LINE BOYの結果です。
 ## 遊べる場所と、実際の画面
 
 測った実物は、全部ブラウザで遊べます。\
-画面は、計測のときに撮ったものです。
+JavaScript版は、この記事の中でそのまま遊べます。\
+ほかの方式の画面は、計測のときに撮ったものです。
 
 CubeBoyは、[本家Pyxel版](https://oosawak.github.io/html-player/games/cube-boy-pyx/)／[pyxel-rust版](https://oosawak.github.io/pyxel-rust/examples/cubeboy/)／[JavaScript版](https://oosawak.github.io/html-player/games/cube-boy/)です。
 
@@ -51,7 +52,12 @@ CubeBoyは、[本家Pyxel版](https://oosawak.github.io/html-player/games/cube-b
 
 ![CubeBoy（pyxel-rust版）の画面](tech/bench-cubeboy-rust.webp)
 
-![CubeBoy（JavaScript版）の画面](tech/bench-cubeboy-js.webp)
+CubeBoy（JavaScript版）は、ここで遊べます。
+
+```embed
+https://oosawak.github.io/html-player/games/cube-boy/
+960x720
+```
 
 LINE BOYは、[本家Pyxel版](https://oosawak.github.io/html-player/games/line-boy-pyx/)／[pyxel-rust版](https://oosawak.github.io/pyxel-rust/examples/lineboy/)／[JavaScript版](https://oosawak.github.io/html-player/games/line-boy/)です。
 
@@ -59,7 +65,12 @@ LINE BOYは、[本家Pyxel版](https://oosawak.github.io/html-player/games/line-
 
 ![LINE BOY（pyxel-rust版）の画面](tech/bench-lineboy-rust.webp)
 
-![LINE BOY（JavaScript版）の画面](tech/bench-lineboy-js.webp)
+LINE BOY（JavaScript版）は、ここで遊べます。
+
+```embed
+https://oosawak.github.io/html-player/games/line-boy/
+960x720
+```
 
 ## 転送量は、桁が違った
 
