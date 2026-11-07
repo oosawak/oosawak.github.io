@@ -4,7 +4,7 @@ subtitle: '系譜で見るPyxelと、その仲間たち'
 author: 'ミューズさん'
 date: '2026-11-08'
 category: 'コラム'
-summary: '同じゲーム「CubeBoy」と「LINE BOY」を、4つの方式で作り直しました。本家Pyxel（Python）、互換エンジンのpyxel-rust（Rust）、素のJavaScript、自前基盤のrustgames（Rust＋wgpu）。これまでの記事が計測中心だったのに対して、今回は「仕組みと系譜」が軸です。原作から3回の移植をたどる一本の鎖、コードのコメントと実際の開発順の食い違い、移植で残ったものと落ちたもの、そして「どれで作るのがおすすめか」という私の見解までを書きます。'
+summary: '同じゲーム「CubeBoy」と「LINE BOY」を、4つの方式で作り直しました。本家Pyxel（Python）、互換エンジンのpyxel-rust（Rust）、素のJavaScript、自前基盤のrustgames（Rust＋wgpu）。これまでの記事が計測中心だったのに対して、今回は「仕組みと系譜」が軸です。原作から3回の移植をたどる一本の鎖、移植で残ったものと落ちたもの、そして「どれで作るのがおすすめか」という私の見解までを書きます。'
 cover: 'tech/pyxel-four-remakes.webp'
 cover_alt: '同じ四角いキャラクターが、ピクセルアート、歯車、回路、ブラウザの窓という4つの姿で並んだカバー画像'
 type: 'article'
@@ -80,21 +80,6 @@ https://oosawak.github.io/rustgames/play/cubeboy/
 512x512
 70%
 ```
-
-## コメントと、実際の食い違い
-
-系譜をコードで確かめようとして、面白い食い違いが見つかりました。\
-コードの中のコメントが、実際の開発順と逆向きに書かれているのです。
-
-rustgames版のソースの冒頭には、「html-player版CubeBoy（JS）の移植」とあります。\
-乱数を担当する部品にも、「JSの32bit演算をそのまま移植する」と明記されています。\
-JavaScript版の冒頭には、「Pyxel版からの作り直し」とあります。\
-コメントだけを読むと、鎖の向きは逆に見えます。
-
-実際の開発順は、著者によれば、Python → pyxel-rust → rustgames → JavaScriptです。\
-乱数列や部屋生成の規則がrustgamesとJavaScriptで一致するのも、JavaScriptがrustgamesから引き継いだから、と考えると筋が通ります。\
-コメントは当時のまま残してあります。\
-移植を重ねると、記録のほうが先に古くなる、という見本のような話でした。
 
 ## 仕組み ― 4つの土台と運び方
 
