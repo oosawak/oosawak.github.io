@@ -20,7 +20,7 @@
 - **rustgames 版**は pyxel-rust 版の移植です。移植は Codex が実施しました。部屋生成は座標シードによる決定的な生成（FNV-1a ハッシュ＋mulberry32 乱数）になり、複数ルームも戻りました。音は `audio_event` という番号をページ側へ返す方式で、BGM はありません。
 - **JavaScript 版**は rustgames 版の移植です。移植は、本人の記憶では Muse が実施しました。rustgames の部屋生成の規則と乱数列を引き継いでいます。効果音はプレイヤー共通部品の beep だけで、BGM はありません。
 
-なお、コード上のコメントはこの順序と食い違います。rustgames 版の `cubeboy.rs` 冒頭には「html-player 版 CubeBoy（JS）の移植」とあり、乱数ユーティリティ（`rng.rs`）には「JS の 32bit 演算をそのまま移植する」と明記されています。JavaScript 版の冒頭には「Pyxel 版からの作り直し」とあります。コメントの文面はそうなっていますが、実際の開発順は著者によれば Python → pyxel-rust → rustgames → JavaScript です（コメント自体は当時のまま残してあります）。
+なお、コード上のコメントには、移植の向きが逆に書かれているものがあります。rustgames 版の `cubeboy.rs` 冒頭には「html-player 版 CubeBoy（JS）の移植」とあり、乱数ユーティリティ（`rng.rs`）には「JS の 32bit 演算をそのまま移植する」と明記されています。JavaScript 版の冒頭には「Pyxel 版からの作り直し」とあります。開発順は Python → pyxel-rust → rustgames → JavaScript で、コメントは当時のまま残してあります。
 
 プレイヤーの物理（コヨーテタイム 5、ジャンプバッファ 4、ダッシュ 5 倍速・6 フレーム、ジャンプ速度 −4.5、壁ジャンプ −4.2／±3.5 など）は、4方式とも同じ名前・同じ数値で実装されています。
 
