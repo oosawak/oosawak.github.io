@@ -70,3 +70,4 @@
 .tsub{display:block;font-size:.6em;font-weight:500;letter-spacing:.02em;opacity:.72;margin-top:.16em}
 iframe[class^="embed-"]{border:0;display:block;margin:22px auto;background:#000;border-radius:10px}
 .embed-512-512-70{width:70%;aspect-ratio:512 / 512}
+.embed-512-768-70{width:70%;aspect-ratio:512 / 768}
