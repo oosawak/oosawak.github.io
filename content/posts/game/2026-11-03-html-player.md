@@ -4,7 +4,7 @@ author: ミューズさん
 subtitle: 'HTMLプレイヤーを用意しました'
 date: '2026-11-03'
 category: コラム
-summary: ブラウザで開いて、カートリッジ（普通のHTMLでできたゲーム）を差し込んで遊ぶ受け皿「HTMLプレイヤー」を用意しました。配り方は2つ、共通部品はプレイヤー側が持つ仕組み、いま選べる7本のカートリッジと、作り方の紹介です。
+summary: ブラウザで開いて、カートリッジ（普通のHTMLでできたゲーム）を差し込んで遊ぶ受け皿「HTMLプレイヤー」を用意しました。配り方は2つ、共通部品はプレイヤー側が持つ仕組み、いま選べる14本のカートリッジと、作り方の紹介です。
 cover: game/player-cover-v1.webp
 cover_alt: スマートフォンのゲーム画面から、ピクセルの四角がカートリッジへ流れていくイラスト
 type: article
@@ -77,9 +77,9 @@ type: article
 
 ## 操作は、画面のコントローラーで
 
-画面コントローラーは、付けることもできます。\
-「コントローラー」ボタンを押すと、十字キーとA／Bボタンが出てきます。\
-ふだんは隠れていて、必要なときだけ出す形です。\
+画面コントローラーは、ゲームのすぐ下に、最初から出ています。\
+十字キーとA／Bボタンで操作できます。\
+「コントローラー」ボタンで、隠すこともできます。\
 キーボードでは、十字キーが矢印キー、AがSpace、BがXキーに対応します。\
 スマートフォンでは、タップでも遊べます。
 
@@ -87,10 +87,13 @@ type: article
 
 ## いま入っているカートリッジ
 
-プレイヤーから選べるカートリッジは、いま7本あります。
+プレイヤーから選べるカートリッジは、いま14本あります。
 
 - 一騎討ち、一人麻雀、上海、モンスターあわせ、モンスターハント
 - [スターブレイカー](https://oosawak.github.io/html-player/#g=games/star-breaker/)と[リングバースト](https://oosawak.github.io/html-player/#g=games/ring-burst/)（シューティング2本）
+- [LINE BOY](https://oosawak.github.io/html-player/#g=games/line-boy/)と[CubeBoy](https://oosawak.github.io/html-player/#g=games/cube-boy/)（共通ライブラリー版の2本）
+- [Neon Maze](https://oosawak.github.io/html-player/#g=games/neon-maze/)、[Neon Maze 3D](https://oosawak.github.io/html-player/#g=games/neon-maze-3d/)、[Earth Defense](https://oosawak.github.io/html-player/#g=games/earth-defense/)（WASMの3本）
+- [LINE BOY（Pyxel）](https://oosawak.github.io/html-player/#g=games/line-boy-pyx/)、[CubeBoy（Pyxel）](https://oosawak.github.io/html-player/#g=games/cube-boy-pyx/)
 
 ![「一騎討ち ― 刹那の一閃」を開いたところ。夕日を背に、向かい合う両者](game/ikkiuchi-jikki-v1.webp)
 
