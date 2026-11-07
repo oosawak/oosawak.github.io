@@ -61,7 +61,7 @@ pyxel-rust版のCubeBoyです。
 
 ```embed
 https://oosawak.github.io/pyxel-rust/examples/cubeboy/
-512x512
+512x768
 70%
 ```
 
@@ -262,7 +262,7 @@ pyxel-rust版のLINE BOYです。
 
 ```embed
 https://oosawak.github.io/pyxel-rust/examples/lineboy/
-512x512
+512x768
 70%
 ```
 
