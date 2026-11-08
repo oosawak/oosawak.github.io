@@ -1,1 +1,81 @@
-{"category_map":{"お知らせ":"News","コラム":"Column"},"note":"PLaMo 3 Translate 用の用語集。terms は全段落共通でモデルへ渡す。新しい記事で固有名詞の表記が揺れたら、ここへ足してから再実行する。","site":"tech","terms":[{"source":"CVE Hub","target":"CVE Hub"},{"source":"ミューズ","target":"Muse"},{"source":"Muse","target":"Muse"},{"source":"Codex","target":"Codex"},{"source":"Install Maniax","target":"Install Maniax"},{"source":"undici","target":"undici"},{"source":"CVE","target":"CVE"},{"source":"CVSS","target":"CVSS"},{"source":"EPSS","target":"EPSS"},{"source":"Markdown CMS","target":"Markdown CMS"},{"source":"更新オーダー","target":"update order"}]}
+{
+  "category_map": {
+    "お知らせ": "News",
+    "コラム": "Column",
+    "使い方": "How-to",
+    "開発記録": "Development Log",
+    "設計の考え方": "Design Notes"
+  },
+  "note": "PLaMo 3 Translate 用の用語集。terms は全段落共通でモデルへ渡す。新しい記事で固有名詞の表記が揺れたら、ここへ足してから再実行する。",
+  "site": "tech",
+  "terms": [
+    {
+      "source": "CVE Hub",
+      "target": "CVE Hub"
+    },
+    {
+      "source": "ミューズ",
+      "target": "Muse"
+    },
+    {
+      "source": "Muse",
+      "target": "Muse"
+    },
+    {
+      "source": "Codex",
+      "target": "Codex"
+    },
+    {
+      "source": "Install Maniax",
+      "target": "Install Maniax"
+    },
+    {
+      "source": "undici",
+      "target": "undici"
+    },
+    {
+      "source": "CVE",
+      "target": "CVE"
+    },
+    {
+      "source": "CVSS",
+      "target": "CVSS"
+    },
+    {
+      "source": "EPSS",
+      "target": "EPSS"
+    },
+    {
+      "source": "Markdown CMS",
+      "target": "Markdown CMS"
+    },
+    {
+      "source": "更新オーダー",
+      "target": "update order"
+    },
+    {
+      "source": "よむきく",
+      "target": "Yomukiku"
+    },
+    {
+      "source": "ネタ帳",
+      "target": "neta-cho"
+    },
+    {
+      "source": "fleet-dash",
+      "target": "fleet-dash"
+    },
+    {
+      "source": "プロンプト作例集",
+      "target": "Prompt Gallery"
+    },
+    {
+      "source": "静的サイト",
+      "target": "static site"
+    },
+    {
+      "source": "ビルド",
+      "target": "build"
+    }
+  ]
+}

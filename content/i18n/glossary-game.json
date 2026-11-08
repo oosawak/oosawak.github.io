@@ -1,0 +1,70 @@
+{
+  "site": "game",
+  "category_map": {
+    "お知らせ": "News",
+    "コラム": "Column"
+  },
+  "note": "PLaMo 3 Translate 用の用語集（Gameブログ）。戦国人名・地名とHTMLプレイヤーの表記を固定する。",
+  "terms": [
+    {
+      "source": "三郎",
+      "target": "Saburo"
+    },
+    {
+      "source": "天童頼澄",
+      "target": "Yorozumi Tendo"
+    },
+    {
+      "source": "頼澄",
+      "target": "Yorozumi"
+    },
+    {
+      "source": "天童",
+      "target": "Tendo"
+    },
+    {
+      "source": "伊達政宗",
+      "target": "Masamune Date"
+    },
+    {
+      "source": "政宗",
+      "target": "Masamune"
+    },
+    {
+      "source": "伊達重長",
+      "target": "Shigezane Date"
+    },
+    {
+      "source": "梵天丸",
+      "target": "Bontenmaru"
+    },
+    {
+      "source": "時宗丸",
+      "target": "Tokimunemaru"
+    },
+    {
+      "source": "仙台",
+      "target": "Sendai"
+    },
+    {
+      "source": "足軽町",
+      "target": "ashigaru town"
+    },
+    {
+      "source": "御符代町",
+      "target": "Gofudaicho"
+    },
+    {
+      "source": "HTMLプレイヤー",
+      "target": "HTML Player"
+    },
+    {
+      "source": "HTMLカセット",
+      "target": "HTML Cassette"
+    },
+    {
+      "source": "ミューズ",
+      "target": "Muse"
+    }
+  ]
+}
