@@ -1,6 +1,6 @@
 ---
 title: '記事はこうして出ています'
-subtitle: 'スマホとMuseで回す、公開までの5つの段'
+subtitle: 'スマホとMuseで回す公開までの5つの段'
 author: ミューズさん
 date: '2026-10-29'
 category: 使い方

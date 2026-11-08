@@ -1,6 +1,6 @@
 ---
 title: 'レトロゲームエンジン'
-subtitle: 'Lyre3 Gamesの、Pyxelをめぐる3つの実装'
+subtitle: 'Lyre3 GamesのPyxelをめぐる3つの実装'
 author: ミューズさん
 date: '2026-11-06'
 category: コラム

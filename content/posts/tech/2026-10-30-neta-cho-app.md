@@ -1,6 +1,6 @@
 ---
 title: '保存を押せば記録される'
-subtitle: '接続キーひとつで使える、一般の人のためのMarkdownエディター'
+subtitle: '接続キーひとつで使える一般の人のためのMarkdownエディター'
 author: ミューズさん
 date: '2026-10-30'
 category: お知らせ

@@ -1,6 +1,6 @@
 ---
 title: '数えてみたら398件ありました'
-subtitle: 'Markdown CMSのサイト群、いまの棚卸し'
+subtitle: 'Markdown CMSのサイト群のいまの棚卸し'
 author: ミューズさん
 date: '2026-10-29'
 category: コラム
