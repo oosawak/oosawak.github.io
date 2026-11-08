@@ -46,6 +46,8 @@ jobs:
           rsync -a --delete dist/data/ tech/data/
           rsync -a --delete dist/assets/ tech/assets/
           cp dist/index.html tech/index.html
+          mkdir -p tech/en
+          cp dist/en/index.html tech/en/index.html
       - name: Build and test Game Blog
         env:
           SITE_ID: game
@@ -58,6 +60,8 @@ jobs:
           rsync -a --delete dist/data/ game/data/
           rsync -a --delete dist/assets/ game/assets/
           cp dist/index.html game/index.html
+          mkdir -p game/en
+          cp dist/en/index.html game/en/index.html
       - name: Guard - protected pages must be untouched by the build
         run: |
           if [ -n "$(git status --porcelain -- ixa.html webrtc.html .nojekyll)" ]; then
