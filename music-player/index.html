@@ -16,7 +16,10 @@
   .meta{ color:#8fb0d1; font-size:13px; margin-bottom:10px; }
   .note{ color:#c7d9ec; font-size:14px; line-height:1.7; margin:10px 0 0; }
   audio{ width:100%; margin-top:6px; }
-  body.compact main{ padding:14px 16px 16px; }
+  html,body{ height:100%; }
+  body.compact main{ padding:14px 16px 16px; height:100%; display:flex; }
+  body.compact #list{ flex:1; display:flex; }
+  body.compact .track{ flex:1; }
   body.compact h1, body.compact .lead{ display:none; }
   body.compact .track{ margin-bottom:0; }
   .empty{ color:#a9c3de; }
