@@ -153,7 +153,39 @@
     {
       "source": "南石切町",
       "target": "Minami-Ishikiri-machi"
+    },
+    {
+      "source": "材木町",
+      "target": "Zaimoku-cho"
+    },
+    {
+      "source": "南材木町",
+      "target": "Minami-Zaimoku-cho"
+    },
+    {
+      "source": "北材木町",
+      "target": "Kita-Zaimoku-cho"
+    },
+    {
+      "source": "新町",
+      "target": "Shincho"
+    },
+    {
+      "source": "西新町",
+      "target": "Nishi-Shincho"
+    },
+    {
+      "source": "東新町",
+      "target": "Higashi-Shincho"
+    },
+    {
+      "source": "舟丁",
+      "target": "Funacho"
+    },
+    {
+      "source": "穀町",
+      "target": "Koku-cho"
     }
   ],
-  "sendai_town_names": "仙台の町名は原則 -machi とする（五十人町は Gojyunin-machi）。ただし片平丁（Katahira-cho）、御譜代町（Gofudaicho）、国分町（Kokubuncho）、一番町（Ichibancho）など -cho が定着しているものは例外。"
+  "sendai_town_names": "仙台の町名は原則 -machi（五十人町 Gojyunin-machi など、決まった読みは terms に固定）。ただし -cho が正しいものは例外として terms に固定する（片平丁 Katahira-cho、御譜代町 Gofudaicho、国分町 Kokubuncho、一番町 Ichibancho、番丁系、材木町系、新町系、舟丁 Funacho、穀町 Koku-cho など）。石垣町・大河原町・亀岡町は読みが未確定のため当面 -cho 表記とし、確定したら直す。"
 }
