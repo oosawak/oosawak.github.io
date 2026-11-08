@@ -146,9 +146,13 @@ class PlamoTranslator:
             kwargs["context"] = self.context
         if self.glossary:
             kwargs["glossary"] = self.glossary
+        # source_lang 等はテンプレート変数として直接渡す。
+        # chat_template_kwargs に入れ子にすると mlx-lm 経由では
+        # トップレベルの変数として届かず TemplateError になる
+        # （2026-11-08 のグルメ試訳初回で発生し、直接渡しで解消）。
         prompt = self.tokenizer.apply_chat_template(
             messages, add_generation_prompt=True, tokenize=False,
-            chat_template_kwargs=kwargs,
+            **kwargs,
         )
         n_in = len(self.tokenizer.encode(prompt))
         est = len(self.tokenizer.encode(text))
