@@ -1,0 +1,34 @@
+{
+  "updated": "2026-11-07",
+  "note": "公開版でも個別の対応履歴を載せています。対象はツール名のレベルで、棚卸しの詳細（パスや版数の対応表）は含みません。",
+  "summary": {
+    "total": 1,
+    "by_status": {
+      "対応完了": 1
+    }
+  },
+  "items": [
+    {
+      "date": "2026-11-07",
+      "cve": "CVE-2026-116592",
+      "url": "https://cvehub.io/jp/cve/CVE-2026-116592",
+      "product": "undici",
+      "cvss": 7.4,
+      "kev": false,
+      "affected": [
+        "7.30.1 (fix 7.30.2+)",
+        "8.12.2-8.12.3 (fix 8.12.4+)"
+      ],
+      "targets": [
+        "r2-cms",
+        "wrangler-app",
+        "embed-hash-check",
+        "MdYomuKiku"
+      ],
+      "summary": "undici のキャッシュポイズニング／他ユーザーへの情報漏えい。 originless Agent が redirect＋共有キャッシュの interceptor を組み合わせた場合に、 中間リダイレクトホップ経由で信頼済み URL のキャッシュを汚染されたり、 ユーザーごとの非公開レスポンスが別ユーザーに渡されたりする。",
+      "response": "undici を修正版へ更新（7.30.1 → 7.30.2+、8.12.2-8.12.3 → 8.12.4+）。各対象で npm update を実行し、lock の更新を確認する。更新オーダーを 脆弱性ウォッチ の orders/ に発行し、Codex が実行する。",
+      "status": "対応完了",
+      "progress": "4件中3件は解消済み（MdYomuKiku、embed-hash-check、wrangler-app）。残り1件は r2-cms の内部で使う miniflare が undici を古い版に固定しているための待ちです。対象は外部から届かない開発用ツールなので、この環境の対応としては完了とします（miniflare 側の修正が出たら通常手順で上げます）。"
+    }
+  ]
+}

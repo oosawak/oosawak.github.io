@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>マシン群ダッシュボード（公開版）</title>
+<style>
+  :root { --bg:#10151d; --panel:#171e29; --line:#2a3444; --fg:#e8edf4; --sub:#93a1b3; --accent:#ffb224; --ok:#39c98e; --wait:#e0a83c; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif; }
+  header { padding:20px 18px 6px; max-width:1060px; margin:0 auto; }
+  h1 { font-size:21px; margin:0 0 4px; }
+  .center { color:var(--sub); font-size:13px; }
+  .center b { color:var(--accent); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; padding:16px 18px 30px; max-width:1060px; margin:0 auto; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
+  .card h2 { font-size:17px; margin:0 0 2px; }
+  .kind { color:var(--sub); font-size:12px; margin-bottom:8px; }
+  .spec { font-size:13px; line-height:1.65; }
+  .spec span { color:var(--sub); }
+  .role { margin-top:10px; font-size:13px; background:#1e2a3a; border:1px solid var(--line); border-radius:9px; padding:8px 10px; }
+  .status { display:inline-block; margin-top:10px; font-size:12px; padding:3px 9px; border-radius:999px; border:1px solid var(--wait); color:var(--wait); }
+  .status.done { border-color:var(--ok); color:var(--ok); }
+  .status.failed { border-color:#e05c5c; color:#e05c5c; }
+  .models { margin-top:8px; font-size:12px; color:var(--sub); word-break:break-all; }
+  .detailbtn { margin-top:10px; background:transparent; color:var(--sub); border:1px solid var(--line); border-radius:999px; font-family:inherit; font-size:12px; padding:3px 12px; cursor:pointer; }
+  .detailbtn.active { background:#1e2a3a; color:var(--accent); }
+  .detailbox { margin-top:10px; font-size:13px; line-height:1.65; background:#141b26; border:1px solid var(--line); border-radius:9px; padding:9px 11px; word-break:break-word; }
+  .detailbox span { color:var(--sub); }
+  table.vtable .detailbtn { margin-top:6px; }
+  table.vtable .detailbox { margin-top:0; }
+  .sect { max-width:1060px; margin:0 auto; padding:4px 18px 0; }
+  .sect h2 { font-size:18px; margin:0 0 2px; }
+  .sect .sub { color:var(--sub); font-size:12px; }
+  .sect a { color:var(--accent); text-decoration:none; }
+  .sect a:hover { text-decoration:underline; }
+  .locs { margin:4px 0 0; padding-left:16px; }
+  .locs li { word-break:break-all; }
+  .secthead { display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .viewtoggle { display:inline-flex; flex:none; border:1px solid var(--line); border-radius:999px; overflow:hidden; margin-top:2px; }
+  .viewtoggle button { background:transparent; color:var(--sub); border:0; font-family:inherit; font-size:12px; padding:4px 12px; cursor:pointer; }
+  .viewtoggle button.active { background:#1e2a3a; color:var(--accent); }
+  .listwrap { overflow-x:auto; padding:8px 0 28px; }
+  table.vtable { border-collapse:collapse; width:100%; font-size:13px; }
+  table.vtable th, table.vtable td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  table.vtable th { color:var(--sub); font-weight:600; background:#141b26; white-space:nowrap; }
+  table.vtable td { background:var(--panel); line-height:1.55; }
+  table.vtable a { color:var(--accent); text-decoration:none; }
+  table.vtable tr.progrow td { color:var(--sub); background:#12161f; }
+  table.vtable a:hover { text-decoration:underline; }
+  table.vtable .status { margin-top:0; white-space:nowrap; }
+  table.vtable .locs { margin:0; }
+  .bignum { font-size:30px; font-weight:700; color:var(--accent); margin:2px 0 6px; }
+  .trend { word-break:break-all; }
+  .subhead { font-size:15px; margin:16px 0 4px; }
+  .subhead:first-of-type { margin-top:8px; }
+  td.urlcell, td.askcell { word-break:break-all; }
+  td code.cmd { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:13px; background:#1e2a3a; border:1px solid var(--line); border-radius:6px; padding:2px 7px; white-space:nowrap; }
+  a.longurl { display:block; max-height:4.6em; overflow:hidden; }
+  .thumbs { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:14px; padding:8px 0 28px; }
+  .thumb { background:var(--panel); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+  .thumb img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#0b0f16; }
+  .thumb .tmeta { padding:9px 12px 11px; }
+  .thumb .tmeta a { color:var(--fg); text-decoration:none; font-size:13px; line-height:1.5; display:block; }
+  .thumb .tmeta a:hover { color:var(--accent); }
+  .thumb .tdate { color:var(--sub); font-size:11px; margin-top:4px; }
+  footer { color:var(--sub); font-size:12px; text-align:center; padding:0 18px 26px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>マシン群ダッシュボード（公開版）</h1>
+  <div class="center">中心: <b id="centerName">ミューズ</b> ／ 更新: <span id="updated">-</span></div>
+</header>
+<section class="sect">
+  <div class="card" style="margin:16px 0 4px;">
+    <h2 style="font-size:16px;">このページについて <span style="color:var(--sub);font-size:12px;">（この説明文は下書きです）</span></h2>
+    <div class="spec">
+      これは、仕事の記録を Markdown ファイルで残し、自動で一覧にしている実例です。<br>
+      日々の作業やマシンの状態、頼んだこと、作ったものをテキストで保存しておくと、後からこうして見返すことができて、AI と一緒に使うこともできます。<br>
+      これは公開用コピーで、マシン名や棚卸しの詳細など、個人や環境が分かる情報は伏せてあります。もとのページは本人のログインが必要です。
+    </div>
+  </div>
+</section>
+<section class="sect">
+  <div class="secthead"><h2>マシンの状況</h2>
+    <div class="viewtoggle" id="machinesToggle"><button type="button" data-view="card">カード</button><button type="button" data-view="list">リスト</button></div>
+  </div>
+  <div class="sub">各マシンのスペックと状態。棚卸しの実データから自動生成（fleet.json）／ 更新: <span id="machinesUpdated">-</span></div>
+  <div class="grid" id="grid" style="padding-left:0;padding-right:0;"></div>
+</section>
+<section class="sect">
+  <div class="secthead"><h2>CVE対応履歴</h2>
+    
+  </div>
+  <div class="sub">「こういう問題があって、こういう対応をした」の一覧。脆弱性の日次チェックの実データから自動生成（公開版では対象名と進み具合まで載せています）／ 更新: <span id="cveUpdated">-</span></div>
+  <div class="grid" id="cveGrid" style="padding-left:0;padding-right:0;"></div>
+</section>
+<section class="sect">
+  <div class="secthead"><h2>Codexタスク</h2>
+    
+  </div>
+  <div class="sub">ミューズから常駐 Codex への指示書の一覧。公開版では対象と詳細を伏せています／ 更新: <span id="tasksUpdated">-</span> ／ 完了 <span id="tasksDone">-</span> 件・待ち <span id="tasksWait">-</span> 件</div>
+  <div class="grid" id="tasksGrid" style="padding-left:0;padding-right:0;"></div>
+</section>
+<section class="sect">
+  <div class="secthead"><h2>使用量と処理量</h2></div>
+  <div class="sub">ミューズの週間枠と、処理した作業の件数。実ログから自動生成／ 更新: <span id="statsUpdated">-</span> ／ 週次まとめ: <span id="statsSummary">-</span></div>
+  <div class="grid" id="statsGrid" style="padding-left:0;padding-right:0;"></div>
+</section>
+<section class="sect">
+  <div class="secthead"><h2>渡した URL の履歴</h2></div>
+  <div class="sub">ミューズが会話の中で渡した URL の一覧。本人が貼った URL は対象外（history.json）／ <span id="historyCount">-</span> 件</div>
+  <div class="listwrap" id="historyList"></div>
+</section>
+<section class="sect">
+  <div class="secthead"><h2>聞き直しメモ（早見表）</h2></div>
+  <div class="sub">何度も聞き直したものの一覧。ここを見れば聞き直さなくて済むように（requested.json）／ 更新: <span id="reaskUpdated">-</span></div>
+  <h3 class="subhead">URLを聞いたもの</h3>
+  <div class="listwrap" id="reaskUrls"></div>
+  <h3 class="subhead">コマンドを聞いたもの</h3>
+  <div class="listwrap" id="reaskCmds"></div>
+  <h3 class="subhead">文言を作らせたもの</h3>
+  <div class="listwrap" id="reaskTexts"></div>
+</section>
+<section class="sect">
+  <div class="secthead"><h2>作った URL</h2></div>
+  <div class="sub">ミューズが新規に作った URL の一覧。カセットURL・確認用ページ・公開で生まれたページ（created_urls.json）／ <span id="createdCount">-</span> 件</div>
+  <div class="listwrap" id="createdList"></div>
+</section>
+<section class="sect">
+  <div class="secthead"><h2>作った画像</h2></div>
+  <div class="sub">ミューズが作った画像の一覧。記事カバーは Techブログと Gameブログ分、その他は作業記録から（images_made.json）／ カバー <span id="imagesCoverCount">-</span> 件・その他 <span id="imagesOtherCount">-</span> 件</div>
+  <div class="thumbs" id="imagesCovers"></div>
+  <h3 class="subhead">カバー以外の生成</h3>
+  <div class="listwrap" id="imagesOthers"></div>
+</section>
+<section class="sect">
+  <div class="secthead"><h2>ミューズの環境に作ったもの</h2></div>
+  <div class="sub">ミューズの作業環境の中に作られた道具と仕組みの目録。GitHub のリポ一覧とは別（made_in_env.json）／ <span id="envCount">-</span> 件</div>
+  <div class="grid" id="envGrid" style="padding-left:0;padding-right:0;"></div>
+</section>
+<footer>このページは公開版のコピーです。マシン名・棚卸しの詳細など、個人や環境が分かる情報は伏せてあります。記録は Markdown で残し、自動で一覧にしています。</footer>
+<script>
+let fleetData = null;
+let machinesView = 'card';
+try { machinesView = localStorage.getItem('fd-view-machines') === 'list' ? 'list' : 'card'; } catch (e) {}
+function machineGpu(m) {
+  return (m.gpus || []).map(g => g.model + (g.vram_gb ? `（VRAM ${g.vram_gb}GB）` : '')).join(' / ') || '-';
+}
+function machineStatus(text) {
+  const st = document.createElement('span');
+  st.className = 'status';
+  st.textContent = text || '';
+  if (/済み|稼働/.test(text || '')) st.classList.add('done');
+  if (/失敗/.test(text || '')) st.classList.add('failed');
+  return st;
+}
+function detailPairs(m) {
+  const d = m.detail || {};
+  const pairs = [];
+  if (d.os_detail) pairs.push(['OS詳細', d.os_detail]);
+  if (d.kernel) pairs.push(['カーネル', d.kernel]);
+  if (d.cpu_detail) pairs.push(['CPU詳細', d.cpu_detail]);
+  if (d.software_count) pairs.push(['ソフト', d.software_count + ' 件' + (d.software_breakdown ? `（${d.software_breakdown}）` : '')]);
+  if (d.highlights && d.highlights.length) pairs.push(['主なソフト', d.highlights.join(' / ')]);
+  if (d.containers && d.containers.length) pairs.push(['コンテナ', d.containers.join(' / ')]);
+  if (d.codex) pairs.push(['Codex', d.codex]);
+  if (d.collected) pairs.push(['棚卸し日', d.collected]);
+  if (d.source) pairs.push(['出所', d.source]);
+  return pairs;
+}
+function taskDetailPairs(it) {
+  const d = it.detail || {};
+  const pairs = [];
+  if (d.purpose) pairs.push(['目的', d.purpose]);
+  if (d.report_summary) pairs.push(['報告の要点', d.report_summary]);
+  if (d.report_file) pairs.push(['報告ファイル', 'reports/' + d.report_file]);
+  return pairs;
+}
+function makeDetail(pairs, emptyText) {
+  const wrap = document.createElement('div');
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'detailbtn';
+  btn.textContent = '詳細';
+  const box = document.createElement('div');
+  box.className = 'detailbox';
+  box.style.display = 'none';
+  if (pairs && pairs.length) {
+    pairs.forEach(([k, v], i) => {
+      const s = document.createElement('span');
+      s.textContent = k + ': ';
+      box.appendChild(s);
+      box.appendChild(document.createTextNode(v));
+      if (i < pairs.length - 1) box.appendChild(document.createElement('br'));
+    });
+  } else {
+    box.textContent = emptyText || '';
+  }
+  btn.addEventListener('click', () => {
+    const open = box.style.display !== 'none';
+    box.style.display = open ? 'none' : '';
+    const row = box.closest('tr');
+    if (row) row.style.display = open ? 'none' : '';
+    btn.classList.toggle('active', !open);
+  });
+  wrap.append(btn, box);
+  wrap.btn = btn;
+  wrap.box = box;
+  return wrap;
+}
+function renderMachines() {
+  markToggle('machinesToggle', machinesView);
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  if (!fleetData) return;
+  const machines = fleetData.machines || [];
+  if (!machines.length) {
+    grid.className = '';
+    grid.textContent = 'マシンはまだ登録されていません。';
+    return;
+  }
+  if (machinesView === 'list') {
+    grid.className = '';
+    const lw = document.createElement('div');
+    lw.className = 'listwrap';
+    const t = document.createElement('table');
+    t.className = 'vtable';
+    const thead = document.createElement('thead');
+    thead.innerHTML = '<tr><th>名前</th><th>種類</th><th>OS</th><th>CPU</th><th>メモリ</th><th>GPU</th><th>空き容量</th><th>実行環境</th><th>状態</th></tr>';
+    t.appendChild(thead);
+    const tb = document.createElement('tbody');
+    for (const m of machines) {
+      const tr = document.createElement('tr');
+      const vals = [m.name || '-', m.kind || '-', m.os || '-', m.cpu || '-', m.ram_gb ? m.ram_gb + 'GB' : '-', machineGpu(m), m.storage_free_gb ? m.storage_free_gb + 'GB' : '-', m.runtime || '-', null];
+      let nameTd = null;
+      vals.forEach((v, i) => {
+        const td = document.createElement('td');
+        if (i === 8) td.appendChild(machineStatus(m.status));
+        else td.textContent = v;
+        if (i === 0) nameTd = td;
+        tr.appendChild(td);
+      });
+      const dw = makeDetail(detailPairs(m), '詳細は公開版では伏せています');
+      nameTd.appendChild(document.createElement('br'));
+      nameTd.appendChild(dw.btn);
+      tb.appendChild(tr);
+      const notes = [];
+      if (m.role) notes.push('役割: ' + m.role);
+      if (m.models && m.models.length) notes.push('モデル: ' + m.models.join(' / '));
+      if (notes.length) {
+        const ntr = document.createElement('tr');
+        ntr.className = 'progrow';
+        const ntd = document.createElement('td');
+        ntd.colSpan = 9;
+        ntd.textContent = notes.join(' ／ ');
+        ntr.appendChild(ntd);
+        tb.appendChild(ntr);
+      }
+      const dtr = document.createElement('tr');
+      dtr.className = 'progrow';
+      dtr.style.display = 'none';
+      const dtd = document.createElement('td');
+      dtd.colSpan = 9;
+      dtd.appendChild(dw.box);
+      dtr.appendChild(dtd);
+      tb.appendChild(dtr);
+    }
+    t.appendChild(tb);
+    lw.appendChild(t);
+    grid.appendChild(lw);
+    return;
+  }
+  grid.className = 'grid';
+  for (const m of machines) {
+    const el = document.createElement('div');
+    el.className = 'card';
+    const gpu = machineGpu(m);
+    const done = /済み|稼働/.test(m.status || '');
+    el.innerHTML = `
+      <h2></h2><div class="kind"></div>
+      <div class="spec">
+        <span>OS:</span> ${m.os || '-'}<br>
+        <span>CPU:</span> ${m.cpu || '-'}<br>
+        <span>メモリ:</span> ${m.ram_gb ? m.ram_gb + 'GB' : '-'}<br>
+        <span>GPU:</span> ${gpu}<br>
+        <span>空き容量:</span> ${m.storage_free_gb ? m.storage_free_gb + 'GB' : '-'}<br>
+        <span>実行環境:</span> ${m.runtime || '-'}
+      </div>
+      <div class="role"></div>
+      ${m.models && m.models.length ? '<div class="models">モデル: ' + m.models.join(' / ') + '</div>' : ''}
+      <span class="status ${done ? 'done' : ''}"></span>`;
+    el.querySelector('h2').textContent = m.name;
+    el.querySelector('.kind').textContent = m.kind || '';
+    el.querySelector('.role').textContent = '役割: ' + (m.role || '-');
+    el.querySelector('.status').textContent = m.status || '';
+    el.appendChild(makeDetail(detailPairs(m), '詳細は公開版では伏せています'));
+    grid.appendChild(el);
+  }
+}
+document.querySelectorAll('#machinesToggle button').forEach(b => b.addEventListener('click', () => {
+  machinesView = b.dataset.view === 'list' ? 'list' : 'card';
+  try { localStorage.setItem('fd-view-machines', machinesView); } catch (e) {}
+  renderMachines();
+}));
+markToggle('machinesToggle', machinesView);
+fetch('fleet.json').then(r => r.json()).then(d => {
+  document.getElementById('centerName').textContent = d.center || 'ミューズ';
+  document.getElementById('updated').textContent = d.updated || '-';
+  document.getElementById('machinesUpdated').textContent = d.updated || '-';
+  fleetData = d;
+  renderMachines();
+}).catch(e => {
+  document.getElementById('grid').textContent = 'fleet.json の読み込みに失敗しました。';
+});
+let cveData = null;
+let cveView = 'card';
+try { cveView = localStorage.getItem('fd-view-cve') === 'list' ? 'list' : 'card'; } catch (e) {}
+function markToggle(id, view) {
+  document.querySelectorAll('#' + id + ' button').forEach(b => b.classList.toggle('active', b.dataset.view === view));
+}
+function statusSpan(text) {
+  const st = document.createElement('span');
+  st.className = 'status';
+  st.textContent = text || '';
+  if (text === '完了') st.classList.add('done');
+  if (text === '失敗') st.classList.add('failed');
+  return st;
+}
+function locList(locations) {
+  const ul = document.createElement('ul');
+  ul.className = 'locs';
+  for (const loc of locations || []) {
+    const li = document.createElement('li');
+    li.textContent = loc;
+    ul.appendChild(li);
+  }
+  return ul;
+}
+function renderCve() {
+  const grid = document.getElementById('cveGrid');
+  grid.innerHTML = '';
+  if (!cveData) return;
+  if (!cveData.items || !cveData.items.length) {
+    grid.className = '';
+    grid.textContent = '対応履歴はまだありません。';
+    return;
+  }
+  grid.className = 'grid';
+  for (const it of cveData.items) {
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.innerHTML = `
+      <h2><a target="_blank" rel="noopener"></a></h2>
+      <div class="kind"></div>
+      <div class="spec">
+        <span>日付:</span> ${it.date || '-'}<br>
+        <span>影響バージョン:</span> ${(it.affected || []).join(' / ') || '-'}<br>
+        <span>当たった場所:</span>
+        <ul class="locs"></ul>
+        <span>問題:</span> <span class="sum"></span><br>
+        <span>対応:</span> <span class="res"></span>
+        <span class="progwrap"><br><span>進み具合:</span> <span class="prog"></span></span>
+      </div>
+      <span class="status"></span>`;
+    const link = el.querySelector('h2 a');
+    link.href = it.url || '#';
+    link.textContent = it.cve || '-';
+    el.querySelector('.kind').textContent =
+      `${it.product || ''} ／ CVSS ${it.cvss ?? '-'} ／ KEV ${it.kev ? '掲載あり' : '未掲載'}`;
+    const ul = el.querySelector('.locs');
+    for (const loc of it.targets || []) {
+      const li = document.createElement('li');
+      li.textContent = loc;
+      ul.appendChild(li);
+    }
+    el.querySelector('.sum').textContent = it.summary || '-';
+    el.querySelector('.res').textContent = it.response || '-';
+    const pw = el.querySelector('.progwrap');
+    if (it.progress) pw.querySelector('.prog').textContent = it.progress; else pw.style.display = 'none';
+    const st = el.querySelector('.status');
+    st.textContent = it.status || '';
+    if (it.status === '完了' || it.status === '対応完了') st.classList.add('done');
+    if (it.status === '失敗') st.classList.add('failed');
+    grid.appendChild(el);
+  }
+}
+fetch('cve.json').then(r => r.json()).then(d => {
+  document.getElementById('cveUpdated').textContent = d.updated || '-';
+  cveData = d;
+  renderCve();
+}).catch(e => {
+  document.getElementById('cveGrid').textContent = 'cve.json の読み込みに失敗しました。';
+});
+let tasksData = null;
+let tasksView = 'card';
+try { tasksView = localStorage.getItem('fd-view-tasks') === 'list' ? 'list' : 'card'; } catch (e) {}
+function renderTasks() {
+  const grid = document.getElementById('tasksGrid');
+  grid.innerHTML = '';
+  if (!tasksData) return;
+  const items = tasksData.items || [];
+  if (!items.length) {
+    grid.className = '';
+    grid.textContent = 'タスクはまだありません。';
+    return;
+  }
+  grid.className = 'grid';
+  for (const it of items) {
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.innerHTML = `
+      <h2></h2>
+      <div class="spec">
+        <span>日付:</span> ${it.date || '-'}
+      </div>
+      <span class="status"></span>`;
+    el.querySelector('h2').textContent = it.title || '-';
+    const st = el.querySelector('.status');
+    st.textContent = it.status || '';
+    if (it.status === '完了') st.classList.add('done');
+    grid.appendChild(el);
+  }
+}
+fetch('tasks.json').then(r => r.json()).then(d => {
+  document.getElementById('tasksUpdated').textContent = d.updated || '-';
+  document.getElementById('tasksDone').textContent = d.done ?? '-';
+  document.getElementById('tasksWait').textContent = d.waiting ?? '-';
+  tasksData = d;
+  renderTasks();
+}).catch(e => {
+  document.getElementById('tasksGrid').textContent = 'tasks.json の読み込みに失敗しました。';
+});
+function fmtDay(iso) {
+  const p = (iso || '').split('-');
+  return p.length === 3 ? `${Number(p[1])}/${Number(p[2])}` : (iso || '-');
+}
+function trendText(daily) {
+  return (daily || []).map(d => `${fmtDay(d.date)} ${d.max_pct}%`).join(' → ') || '-';
+}
+fetch('stats.json').then(r => r.json()).then(d => {
+  document.getElementById('statsUpdated').textContent = d.updated || '-';
+  document.getElementById('statsSummary').textContent =
+    d.weekly_summary ? `${d.weekly_summary.file}（${d.weekly_summary.date}）` : '-';
+  const grid = document.getElementById('statsGrid');
+  const cw = (d.token || {}).current_week;
+  if (cw) {
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.innerHTML = `
+      <h2>トークン週間枠（今週）</h2>
+      <div class="kind">無料週間枠の使用率</div>
+      <div class="bignum"></div>
+      <div class="spec">
+        <span>リセット:</span> <span class="reset"></span><br>
+        <span>最新の記録:</span> <span class="latest"></span><br>
+        <span>推移（日ごとの最大）:</span> <span class="trend"></span>
+      </div>`;
+    el.querySelector('.bignum').textContent = (cw.latest_pct ?? '-') + '%';
+    el.querySelector('.reset').textContent = cw.reset || '-';
+    el.querySelector('.latest').textContent = cw.latest_at || '-';
+    el.querySelector('.trend').textContent = trendText(cw.daily);
+    grid.appendChild(el);
+  }
+  const pw = (d.token || {}).prev_week;
+  if (pw) {
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.innerHTML = `
+      <h2>前週の実績</h2>
+      <div class="kind"></div>
+      <div class="bignum"></div>
+      <div class="spec">
+        <span class="peakline"></span><br>
+        <span>推移（日ごとの最大）:</span> <span class="trend"></span>
+      </div>`;
+    el.querySelector('.kind').textContent = `リセット ${pw.reset || '-'} の週（${pw.start_at || '-'} 〜 ${pw.end_at || '-'}）`;
+    el.querySelector('.bignum').textContent = (pw.peak_pct ?? '-') + '%';
+    el.querySelector('.peakline').textContent = pw.first_100_at
+      ? `100%到達: ${pw.first_100_at}`
+      : `ピーク: ${pw.peak_pct ?? '-'}%（${pw.peak_at || '-'}）`;
+    el.querySelector('.trend').textContent = trendText(pw.daily);
+    grid.appendChild(el);
+  }
+  const w = d.work;
+  if (w) {
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.innerHTML = `
+      <h2>処理量（累計）</h2>
+      <div class="kind">作業記録の単位別カウンターから</div>
+      <div class="bignum"></div>
+      <div class="spec">
+        <span>手作業系:</span> <span class="manual"></span><br>
+        <span>一括処理分:</span> <span class="bulk"></span>
+        <ul class="locs units"></ul>
+      </div>`;
+    el.querySelector('.bignum').textContent = (w.total ?? '-') + ' 件';
+    el.querySelector('.manual').textContent = (w.manual_total ?? '-') + ' 件';
+    const bulkText = (w.bulk_items || []).map(b => `${b.date} ${b.content || b.unit || ''} ${b.count}件`).join('／');
+    el.querySelector('.bulk').textContent = (w.bulk_total ?? '-') + ' 件' + (bulkText ? `（${bulkText}）` : '');
+    const ul = el.querySelector('.units');
+    for (const u of w.units || []) {
+      const li = document.createElement('li');
+      li.textContent = `${u.unit}: ${u.count}件`;
+      ul.appendChild(li);
+    }
+    grid.appendChild(el);
+  }
+}).catch(e => {
+  document.getElementById('statsGrid').textContent = 'stats.json の読み込みに失敗しました。';
+});
+function makeTable(headers) {
+  const t = document.createElement('table');
+  t.className = 'vtable';
+  const thead = document.createElement('thead');
+  const tr = document.createElement('tr');
+  for (const h of headers) {
+    const th = document.createElement('th');
+    th.textContent = h;
+    tr.appendChild(th);
+  }
+  thead.appendChild(tr);
+  t.appendChild(thead);
+  const tb = document.createElement('tbody');
+  t.appendChild(tb);
+  return [t, tb];
+}
+function urlLink(url) {
+  const a = document.createElement('a');
+  a.target = '_blank'; a.rel = 'noopener';
+  a.href = url;
+  a.textContent = url;
+  if (url.length > 200) a.className = 'longurl';
+  return a;
+}
+fetch('requested.json').then(r => r.json()).then(d => {
+  document.getElementById('reaskUpdated').textContent = d.updated || '-';
+  const [ut, ub] = makeTable(['日付', '件名', 'URL', '頼み方']);
+  for (const it of d.urls || []) {
+    const tr = document.createElement('tr');
+    const d1 = document.createElement('td'); d1.textContent = it.date || '-';
+    const d2 = document.createElement('td'); d2.textContent = it.title || '-';
+    const d3 = document.createElement('td'); d3.className = 'urlcell';
+    if (it.result) d3.appendChild(urlLink(it.result)); else d3.textContent = '-';
+    const d4 = document.createElement('td'); d4.className = 'askcell'; d4.textContent = it.ask || '-';
+    tr.append(d1, d2, d3, d4);
+    ub.appendChild(tr);
+  }
+  document.getElementById('reaskUrls').appendChild(ut);
+  const [ct, cb] = makeTable(['日付', '件名', 'コマンド', '頼み方']);
+  for (const it of d.commands || []) {
+    const tr = document.createElement('tr');
+    const d1 = document.createElement('td'); d1.textContent = it.date || '-';
+    const d2 = document.createElement('td'); d2.textContent = it.title || '-';
+    const d3 = document.createElement('td');
+    const code = document.createElement('code');
+    code.className = 'cmd';
+    code.textContent = it.result || '-';
+    d3.appendChild(code);
+    const d4 = document.createElement('td'); d4.className = 'askcell'; d4.textContent = it.ask || '-';
+    tr.append(d1, d2, d3, d4);
+    cb.appendChild(tr);
+  }
+  document.getElementById('reaskCmds').appendChild(ct);
+  const [tt, tb2] = makeTable(['日付', '件名', '頼み方']);
+  for (const it of d.texts || []) {
+    const tr = document.createElement('tr');
+    const d1 = document.createElement('td'); d1.textContent = it.date || '-';
+    const d2 = document.createElement('td'); d2.textContent = it.title || '-';
+    const d3 = document.createElement('td'); d3.className = 'askcell'; d3.textContent = it.ask || '-';
+    tr.append(d1, d2, d3);
+    tb2.appendChild(tr);
+  }
+  document.getElementById('reaskTexts').appendChild(tt);
+}).catch(e => {
+  document.getElementById('reaskUrls').textContent = 'requested.json の読み込みに失敗しました。';
+});
+fetch('created_urls.json').then(r => r.json()).then(d => {
+  const items = d.items || [];
+  document.getElementById('createdCount').textContent = items.length;
+  const [t, tb] = makeTable(['日付', '件名', 'URL']);
+  for (const it of items) {
+    const tr = document.createElement('tr');
+    const d1 = document.createElement('td'); d1.textContent = it.date || '-';
+    const d2 = document.createElement('td'); d2.textContent = it.title || '-';
+    const d3 = document.createElement('td'); d3.className = 'urlcell';
+    if (it.url) d3.appendChild(urlLink(it.url)); else d3.textContent = '-';
+    tr.append(d1, d2, d3);
+    tb.appendChild(tr);
+  }
+  document.getElementById('createdList').appendChild(t);
+}).catch(e => {
+  document.getElementById('createdList').textContent = 'created_urls.json の読み込みに失敗しました。';
+});
+fetch('history.json').then(r => r.json()).then(d => {
+  const items = d.entries || [];
+  document.getElementById('historyCount').textContent = items.length;
+  const [t, tb] = makeTable(['日付', 'タイトル', '渡した場面', 'URL']);
+  for (const it of items) {
+    const tr = document.createElement('tr');
+    const d1 = document.createElement('td'); d1.textContent = it.at || '-';
+    const d2 = document.createElement('td'); d2.textContent = it.title || '-';
+    const d3 = document.createElement('td'); d3.textContent = it.context || '-';
+    const d4 = document.createElement('td'); d4.className = 'urlcell';
+    if (it.url) d4.appendChild(urlLink(it.url)); else d4.textContent = '-';
+    tr.append(d1, d2, d3, d4);
+    tb.appendChild(tr);
+  }
+  document.getElementById('historyList').appendChild(t);
+}).catch(e => {
+  document.getElementById('historyList').textContent = 'history.json の読み込みに失敗しました。';
+});
+fetch('images_made.json').then(r => r.json()).then(d => {
+  const covers = d.covers || [];
+  const others = d.others || [];
+  document.getElementById('imagesCoverCount').textContent = covers.length;
+  document.getElementById('imagesOtherCount').textContent = others.length;
+  const wrap = document.getElementById('imagesCovers');
+  for (const it of covers) {
+    const el = document.createElement('div');
+    el.className = 'thumb';
+    const img = document.createElement('img');
+    img.loading = 'lazy';
+    img.src = it.cover_url;
+    img.alt = it.title || '';
+    const meta = document.createElement('div');
+    meta.className = 'tmeta';
+    const a = document.createElement('a');
+    a.target = '_blank'; a.rel = 'noopener';
+    a.href = it.article_url || '#';
+    a.textContent = it.title || '-';
+    const dt = document.createElement('div');
+    dt.className = 'tdate';
+    dt.textContent = `${it.date || ''} ／ ${it.blog || ''}の記事カバー`;
+    meta.append(a, dt);
+    el.append(img, meta);
+    wrap.appendChild(el);
+  }
+  const [t, tb] = makeTable(['日付', '内容', '枚数']);
+  for (const it of others) {
+    const tr = document.createElement('tr');
+    const d1 = document.createElement('td'); d1.textContent = it.date || '-';
+    const d2 = document.createElement('td'); d2.textContent = it.title || '-';
+    const d3 = document.createElement('td'); d3.textContent = (it.count ?? '-') + ' 枚';
+    tr.append(d1, d2, d3);
+    tb.appendChild(tr);
+  }
+  document.getElementById('imagesOthers').appendChild(t);
+}).catch(e => {
+  document.getElementById('imagesCovers').textContent = 'images_made.json の読み込みに失敗しました。';
+});
+fetch('made_in_env.json').then(r => r.json()).then(d => {
+  const items = d.items || [];
+  document.getElementById('envCount').textContent = items.length;
+  const grid = document.getElementById('envGrid');
+  for (const it of items) {
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.innerHTML = `<h2></h2><div class="kind"></div><div class="spec desc"></div>`;
+    el.querySelector('h2').textContent = it.name || '-';
+    el.querySelector('.kind').textContent = it.kind || '';
+    el.querySelector('.desc').textContent = it.description || '';
+    grid.appendChild(el);
+  }
+}).catch(e => {
+  document.getElementById('envGrid').textContent = 'made_in_env.json の読み込みに失敗しました。';
+});
+</script>
+</body>
+</html>

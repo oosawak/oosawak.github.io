@@ -1,0 +1,101 @@
+{
+  "note": "ミューズが新規に作った URL の一覧（カセットURL・確認用ページ・公開で生まれたページ）。history.json（渡した URL の履歴）とは別に、作ったものだけを集めた（2026-11-07 本人決定）。",
+  "updated": "2026-11-08",
+  "items": [
+    {
+      "title": "3Dモデル横断検索（公開ページ）",
+      "date": "2026-11-07",
+      "url": "https://oosawak.github.io/3d-model-search/"
+    },
+    {
+      "title": "Dungeon Studio",
+      "date": "2026-11-06",
+      "url": "https://oosawak.github.io/dungeon-studio/"
+    },
+    {
+      "title": "Techブログ記事 第3弾（pyxel-four-ways）",
+      "date": "2026-11-06",
+      "url": "https://oosawak.github.io/tech/#/post/tech/pyxel-four-ways"
+    },
+    {
+      "title": "rustgames プレイ画面",
+      "date": "2026-11-06",
+      "url": "https://oosawak.github.io/rustgames/play/"
+    },
+    {
+      "title": "HTMLプレイヤー CubeBoy（#g= カセット）",
+      "date": "2026-11-05",
+      "url": "https://oosawak.github.io/html-player/#g=games/cube-boy/"
+    },
+    {
+      "title": "HTMLプレイヤー LINE BOY（#g= カセット）",
+      "date": "2026-11-04",
+      "url": "https://oosawak.github.io/html-player/#g=games/line-boy/"
+    },
+    {
+      "title": "本の3Dマップ シーン: 会津",
+      "date": "2026-11-04",
+      "url": "https://oosawak.github.io/date-no-kuni/map.html?scene=aizu"
+    },
+    {
+      "title": "本の3Dマップ シーン: 貞山運河",
+      "date": "2026-11-04",
+      "url": "https://oosawak.github.io/date-no-kuni/map.html?scene=teizan&river=貞山運河"
+    },
+    {
+      "title": "一騎討ち カセットURL（#p=、最適化版。URL自体がゲーム本体）",
+      "date": "2026-11-03",
+      "url": "https://oosawak.github.io/html-player/#p=H4sIAA-q6WoC_61ZW3PbxhV-569AVlMPEIIUAF5EEaQyshNlMuNMMpLSTMf1wxJYkqhAgAFAXSpphqCcRIrsXDyxndR2UzcZXxLHcZymVWwn_i-BqMtT_kLPLkASpKRO2nRsg8Du2bPfOfudc3bXpedefO3M_B9ef4mrew1zKlGiP5yJrVoZ_QmjqVKdYH2q1CAe5rQ6dlzildEb8zOpAgJh1mzhBimjRYMsNW3HQ5xmWx6xQGzJ0L16WSeLhkZS7EM0LMMzsJlyNWySsiy2XOKwD1yBb8umSj3DM8nU7k778O77B3ffD_xb3M_tK1x384fDzueB_4D2XN0ojYdyiZLrrdDfiq2vrDawUzOsoqRWsLZQc-yWpRfHZCwrsqRqtmk7xbFqhkzqiloFlKkqbhjmShFAGFXVI8teCptGzSpqgJ84amqJVBYML-XhZqpu1OrQV_dSoR7PwZbbxA5IrifGlmDm5dDGYk6RmstqhAS3PFttYl03rFpRho71RF1eZZO7xp9JUZ4EWZN4HvVDE2tULC3nSKOnIEuHpN34EAWGRMZok5VsAa8nNGwtYnc1BCBL0u-GHKBUqAvUiu3oxCnCcM61TUPnxgo4X8lUo46Ug3Wj5RbzoF433KaJV4oV09YWwL7GasOwUnVCHVDMUgAxPDlqgmGRXr-czvXQF6BrqW54hBlHik0HmODg5nqi0vI824qbRefte0oGkBnqx7gdE5oiK4X-QlZ7yIvywCS9UMnm8TEmjTpZAR_HSWBYdaABLGbaiaOSB86uTOD8RHXE1Ik4b0xS9SLTU57djBa8NB5StDQeBhNl6lRJNxY5Q4cooZyvy7-C8CCUYMM0E7tuGbloKmhf_OWpH7QvBf7F7ruPA_-zoLMVtP396zt7W9tBZzPovLd37V7gf7B39X7QuRi0O7ndx4_33rsR-DDmQfeDS92HF7rbNw8e_Q36SuOgHiYJ6cTgaYuICwMZZQsS4kLDyyiTlyA7jIeSES4q30BT3WcbQefy4c1Pg45PIbQ73Q83u9e_C_yfAv9Od_sKwAn8L2PzhWRg4ytglH8h8K-CFd2H292dncD_qjQeSgzb74DoxpP9j58c3vx70HkWbGwEG9d-ebrJ5vks8L8JOj8EG38JNp7Cyy9Pt8BH4C_miG1wGQDZ_fFGqeJQLTFHPuhuwfOrSM6_C12B_x51p_8F9RrItDtK9_pfwZi9K9e6F69FOqgzn4Fjv-l-8N3uDog_2LvxNWiSx_PS_p3L3Uuf7P4Imu8c3Lq7_8VjANp9CH64wsx9Evj3DtsA-gIAjfRFiwj6tm8CKQ7bj4JOOybKnNjZ7jmR_ZRczTGa3lQCQWrlXM8xNA-pCcjJrsdpi2Xd1loNyFnpGvFeMgl9Pb3yis7TdRbE5bK2SHvO0BS-7PFI0aH11ZNHNaD79MndFST05p4pnzuHDv753cGTH7ndnfeB00jMSOfFc2jvzqXdny5xe3fv7e5sIVHJ0caDS5f3vr590H6b6z66d7h1AdqZcHfr84Nvv-S6_7p98OwjJMp52rh_8Xr34Tvc4f2ndMzH30N75vx5NQEhz82VESsUSJwtS-LMWXi8-QY85qbp5xx9m4fH7EzZapmmeHo-_J0-w37VhOesrEIj5EFsznm2g2uEmvmKRxo8MhaQsK5hT6vzRFhdT1RbluYZwOQKIU2-KuqiJ6xSDaBu-szamkWW-CXD0u2l9HRLN-zIz2trUWNYb-JdAi_QzMXZMD6tOQR75DVXM0wTAxZeEGuD9pexYYG0nfZWmqQMSpH7VgsKFIKmqkPeahFLW0kvYrNFylW1lq6BfBrq-e9py7Q3bzQIn5ZFqq_l0LpGW4SeIFlu2hY0QvWexY3mvD00TJJGByZ1CgXW3iKax9eont4HCOrE9QwLU19RMdfDjseHb3aTP6Ip5uOYk6s24YVVh3gtx-Jmzr2KvXoayhQ_K2aF8zE5Vj1Aki6-Gi20CrxYwgbEBrChSZyq7TSwpZG0ZS_xQlJWJCnJFEKZ1-0GLzyvZCRJfTVNF-VMb4ezf_8-SvKzSVlIIgj3KGDbPkoybOek89De7vzRihJg53L3p7cD__bPbfoXqaeH1YUph2awQTbbQqruYMAUM8iF_FcHgygxrKPo1QRnVPm5cjkykVqeTKqMk3JWEtNyQUQuXvJs26vTCOWo_MzZqbIirIJfTNsF0oyYGk-BLPlBVg_Lhv9NL1E9CDod-qQWo-RsEsVKzZ397ztBB1LW5zQ3tztHjGdj34G80H18G60DJmK6hMKp2i3zP8KBxM0FPoy-K8ezMkyy--RKd_NdqIH71_8R-NeOm3ZY5FO0HnpbDWm1PnClCwUemyj0etUph-xg1OKt1Ny0MA77Lun5vCRQjlUdFfKKFTq9UACnSxM9T1ed0sycsApvkFjKjI5ra9CYPD0v0FwDY2nOGEo5bizliFVnKCJmYXFBM1U9O1XOsTXUTIKdI14b1P5D_-O9zQ_Bcwe3t3cfgyO_DHcZbO32brShwBzc_eTw4qMihwBXEgErozrGODnK3Bvt7iYUKdhybLHF668eZLYjMCjPGQ9g_rBowiRVh8VKv-hB08xcFD5792-FLUNhNUKxYxaXjeuFpb-D1uO8Opbmh_7bdJvkfxaG6Ag6_1h0v5HqUXjH4tsztIVfH96nTllT5TffYMsekVSF6mapUN1Cf8nnkzG2Dqe1bEoRotSQUShN80I_4YxyH2YCok-VZ-aACc9TuiezEszbJ7o8mRfTmaHkcpKj-zlj7-oPsDFjG5rt0GWh63-rXwdWsNrnetOW0WAVZ8aBEytPnRxPqlW6ryUO3xSroibqlrC6nHbxIvhPXU6z0x7UXALdSr4gqDSMBRCg51g-JYsyawpHDYRlCaTpeMf22Hc6k6OIltNVKOFz9FRQ1qC7QuDE8DqsC5sMOxovial8VpRlURInaBuV53svs7SKprJiKpcXC6IsUUqMKmnYi2TeBmgZMZUt0BZ6boGWIw2TTEP_M9X71ui69fVFAHrYQwiAD0wsREb22zODVioPu1B7gQyspRO9yY4UefUE2AXAGAelQIOi0IZQGX9UMxrTdR0Nqc-epH6gLtKfU8RUJjukHxYNSGM7ZKj0hqRioVkrL0c7r7OgBDsv08Mm8BDWjv7J0EpQS8OB9gw9Ps7RjY0korEMlqtyHh3pS09AJ87mJIUc7ZShL0eUqozRYA1Cu2txz9OJ4ZgWTj4sh8ZIAWeyVXQs3xTYFyiZgpgrjDBuVImShb3RBBqeFEKCTTupxLMTK9xra-yd5QAaHDFdTq2CI2elszkBnWQIBEwvOOUc7QAUJIsnNCTGdKs9mUxGEqm_wtuCSIaWoQhKWBrjQKP0trbG86PCoe5Tp2ZnngsrtTBiBL2GYMhtmoEqtqlzk-yGBXJAil0s0V6apqbpFQFMz-6WesbOs2MW1EE44MASgG_jefdYDw6TnmQyw6SfOIn0kN9F8F88FcCyyYV8XIa2DMvQUaFMLzQigPOnTvEn-PYITLbUSi4n9v6lJ4Vh2JkTYUNNkQtxSLARB66OQhrh-qSuadIQpbJSVlQKeUrxXCyV9EbkK1msyEdBhVLHaTgSGooywgQl_18yoU-zF2ZniiiVQmI2kxEzSjaajammt0ojWgdUijZp0cBM9ijM8AJ0gJTe350Mkl5pob4ONgdb6fBQ_QLqfvgRK9wX4IjDiu8tOLSjYlTfi0N7Ni68yAjrOcfKOxffyNNN1VmIATG0l22Qe2G3OoTKobE-bHi4aWW7VTELNAYdsKc6nbYtzYRSX-aF8tRqL7BC9PHIGibw6iwcFaNzI3CLbhkHmy6guxD1qSN9LGDZTuy3Hy6PHl7-L6fIEHB0hFxXE9oiuKhpG5SLur1klQn4iaSbDlkEdS-SKm6Z9Gw-tOeMvNU7Ew209a-CbGuBrPT1wWAC53-d0FFz9CoYvPQ_TkJn6Z3RTtzYqfTWNbwKK42HF67j4f9w_Buvo6uO8hgAAA"
+    },
+    {
+      "title": "xtest（Xの文字数カウント確認用ページ）",
+      "date": "2026-11-03",
+      "url": "https://oosawak.github.io/html-player/xtest.html"
+    },
+    {
+      "title": "リングバースト X投稿用ページ",
+      "date": "2026-11-03",
+      "url": "https://oosawak.github.io/html-player/games/ring-burst/x-post.html"
+    },
+    {
+      "title": "一騎討ち ― 刹那の一閃（単体ページ）",
+      "date": "2026-11-03",
+      "url": "https://oosawak.github.io/ikkiuchi/"
+    },
+    {
+      "title": "本の3Dマップ一覧",
+      "date": "2026-11-03",
+      "url": "https://oosawak.github.io/date-no-kuni/map-list.html"
+    },
+    {
+      "title": "本の3Dマップ シーン: 仙台",
+      "date": "2026-11-03",
+      "url": "https://oosawak.github.io/date-no-kuni/map.html?scene=sendai"
+    },
+    {
+      "title": "本のコラム記事（book-col-ujin）",
+      "date": "2026-11-03",
+      "url": "https://oosawak.github.io/date-no-kuni/#/post/date/book-col-ujin"
+    },
+    {
+      "title": "Gameブログ記事（HTMLプレイヤー紹介）",
+      "date": "2026-11-03",
+      "url": "https://oosawak.github.io/game/#/post/game/html-player"
+    },
+    {
+      "title": "冬毛ミューズ 第1話（縦スクロール漫画の試作）",
+      "date": "2026-11-07",
+      "url": "https://oosawak.github.io/manga-proto/"
+    },
+    {
+      "title": "Codex CLI 設定・攻略ガイド（公開版）",
+      "date": "2026-11-08",
+      "url": "https://oosawak.github.io/codex-guide/"
+    },
+    {
+      "title": "マシン群ダッシュボード 公開版コピー（トップサイト内）",
+      "date": "2026-11-08",
+      "url": "https://oosawak.github.io/fleet-dash/"
+    }
+  ]
+}
