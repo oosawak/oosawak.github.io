@@ -126,11 +126,8 @@ rustgamesの1,501行は、その引き受け手が無い場所に、全部を自
 
 CubeBoy・[本家Pyxel版](https://oosawak.github.io/html-player/games/cube-boy-pyx/)
 
-```embed
-https://oosawak.github.io/html-player/games/cube-boy-pyx/
-512x512
-70%
-```
+本家Pyxel版は、BGMの音を記事の中で止める手段が要るのと、サイズが大きいため、埋め込みではなくリンクにしました。\
+[CubeBoy ― 本家Pyxel版で遊ぶ](https://oosawak.github.io/html-player/games/cube-boy-pyx/)
 
 CubeBoy・[pyxel-rust版](https://oosawak.github.io/pyxel-rust/examples/cubeboy/)
 
@@ -158,11 +155,7 @@ https://oosawak.github.io/rustgames/play/cubeboy/
 
 LINE BOY・[本家Pyxel版](https://oosawak.github.io/html-player/games/line-boy-pyx/)
 
-```embed
-https://oosawak.github.io/html-player/games/line-boy-pyx/
-512x512
-70%
-```
+[LINE BOY ― 本家Pyxel版で遊ぶ](https://oosawak.github.io/html-player/games/line-boy-pyx/)
 
 LINE BOY・[pyxel-rust版](https://oosawak.github.io/pyxel-rust/examples/lineboy/)
 

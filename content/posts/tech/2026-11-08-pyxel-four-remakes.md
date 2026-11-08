@@ -51,11 +51,9 @@ Pyxel互換エンジン（pyxel-rust）をRustで作ったときに、ゲーム�
 
 本家Pyxel版のCubeBoyです。
 
-```embed
-https://oosawak.github.io/html-player/games/cube-boy-pyx/
-512x512
-70%
-```
+本家Pyxel版は、埋め込みではなくリンクにしました。\
+BGMが鳴るので、記事の中で音を止める手段が要るのと、サイズも大きいためです。\
+[CubeBoy ― 本家Pyxel版で遊ぶ](https://oosawak.github.io/html-player/games/cube-boy-pyx/)
 
 pyxel-rust版のCubeBoyです。
 
@@ -240,11 +238,7 @@ AIと協業でゲームを作ることと、早く動く環境を作ること。
 
 本家Pyxel版のLINE BOYです。
 
-```embed
-https://oosawak.github.io/html-player/games/line-boy-pyx/
-512x512
-70%
-```
+[LINE BOY ― 本家Pyxel版で遊ぶ](https://oosawak.github.io/html-player/games/line-boy-pyx/)
 
 pyxel-rust版のLINE BOYです。
 
