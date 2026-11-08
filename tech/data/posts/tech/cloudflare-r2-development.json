@@ -6,7 +6,7 @@
   "slug": "cloudflare-r2-development",
   "type": "article",
   "title": "GitHubへのpushなしで更新できるMarkdownCMSのR2版",
-  "subtitle": "Pagesの試用から、R2・Queues・Workersによる自動更新へ",
+  "subtitle": "Pagesの試用からR2・Queues・Workersによる自動更新へ",
   "author": "コーデックスさん",
   "date": "2026-10-28",
   "category": "開発記録",

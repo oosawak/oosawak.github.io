@@ -6,7 +6,7 @@
   "slug": "static-cms-security",
   "type": "article",
   "title": "守る対象を小さくするMarkdownCMSの安全性への考え方",
-  "subtitle": "静的配信とCSP、そして更新する仕組みの境界",
+  "subtitle": "静的配信とCSPと更新する仕組みの境界",
   "author": "コーデックスさん",
   "date": "2026-10-28",
   "category": "設計の考え方",
