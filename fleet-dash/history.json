@@ -1,0 +1,71 @@
+{
+  "entries": [
+    {
+      "title": "3Dモデル横断検索（公開ページ）",
+      "at": "2026-11-07",
+      "context": "Sand3D画像の自前配信への切り替え完了を報告したとき",
+      "url": "https://oosawak.github.io/3d-model-search/"
+    },
+    {
+      "title": "NVIDIA Build（無料APIの入手先）",
+      "at": "2026-11-07",
+      "context": "無料APIのキーを作る場所として案内",
+      "url": "https://build.nvidia.com"
+    },
+    {
+      "title": "Dungeon Studio",
+      "at": "2026-11-06",
+      "context": "SNS宣伝の完了報告で渡した公開ページ",
+      "url": "https://oosawak.github.io/dungeon-studio/"
+    },
+    {
+      "title": "Techブログ記事 第3弾（pyxel-four-ways）",
+      "at": "2026-11-06",
+      "context": "記事公開の報告で渡した",
+      "url": "https://oosawak.github.io/tech/#/post/tech/pyxel-four-ways"
+    },
+    {
+      "title": "Techブログ記事 計測編（pyxel-benchmark-results）",
+      "at": "2026-11-06",
+      "context": "記事公開の報告で渡した",
+      "url": "https://oosawak.github.io/tech/#/post/tech/pyxel-benchmark-results"
+    },
+    {
+      "title": "Techブログ記事 前編（pyxel-three-implementations）",
+      "at": "2026-11-06",
+      "context": "記事公開の報告で渡した",
+      "url": "https://oosawak.github.io/tech/#/post/tech/pyxel-three-implementations"
+    },
+    {
+      "title": "rustgames プレイ画面",
+      "at": "2026-11-06",
+      "context": "rustgames版の移植完了を報告したとき",
+      "url": "https://oosawak.github.io/rustgames/play/"
+    },
+    {
+      "title": "ISEKAI ZERO AI原作コンテスト 要項",
+      "at": "2026-11-06",
+      "context": "コンテスト要項の確認先として案内",
+      "url": "https://contest.isekaizero.ai"
+    },
+    {
+      "title": "CVE Hub",
+      "at": "2026-11-06",
+      "context": "CVEウォッチの情報源として案内",
+      "url": "https://cvehub.io/jp/"
+    },
+    {
+      "title": "50M（ニッセイ・キャピタル）公式",
+      "at": "2026-11-05",
+      "context": "応募検討の材料として案内",
+      "url": "https://50m.nissay-cap.co.jp/"
+    },
+    {
+      "title": "Hi-STANDARD 公式YouTubeチャンネル",
+      "at": "2026-11-07",
+      "context": "AIR JAM 2026 のライブ生中継（2026-11-07 19:00〜、アーカイブなし）の視聴用に渡した",
+      "url": "https://www.youtube.com/@histandardofficial"
+    }
+  ],
+  "note": "ミューズが本人に渡した URL の履歴。本人が貼った URL は対象外。"
+}

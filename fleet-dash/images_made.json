@@ -1,0 +1,310 @@
+{
+  "updated": "2026-11-08",
+  "note": "ミューズが作った画像の一覧。カバーは Techブログと Gameブログの記事カバー（公開画像つき）。その他は作業記録から。",
+  "covers": [
+    {
+      "title": "脆弱性は、見るだけでは終わらない",
+      "date": "2026-11-07",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/cve-watch-daily.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/cve-watch-daily"
+    },
+    {
+      "title": "同じゲーム、3つの速さ",
+      "date": "2026-11-06",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/pyxel-benchmark-results.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/pyxel-benchmark-results"
+    },
+    {
+      "title": "4つ目のエンジン、GPUで描く",
+      "date": "2026-11-06",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/pyxel-four-ways.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/pyxel-four-ways"
+    },
+    {
+      "title": "レトロゲームエンジン",
+      "date": "2026-11-06",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/pyxel-three-implementations.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/pyxel-three-implementations"
+    },
+    {
+      "title": "Three-Liveで城モデル",
+      "date": "2026-11-06",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/three-live-castle.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/three-live-castle"
+    },
+    {
+      "title": "ウイルスは作れない、でも詐欺は作れる",
+      "date": "2026-11-04",
+      "blog": "Gameブログ",
+      "cover_url": "https://oosawak.github.io/content/images/game/player-safety-cover-v1.webp",
+      "article_url": "https://oosawak.github.io/game/#/post/game/html-player-security"
+    },
+    {
+      "title": "普通のHTMLが、そのままカートリッジになる",
+      "date": "2026-11-03",
+      "blog": "Gameブログ",
+      "cover_url": "https://oosawak.github.io/content/images/game/player-cover-v1.webp",
+      "article_url": "https://oosawak.github.io/game/#/post/game/html-player"
+    },
+    {
+      "title": "仙台の足軽町",
+      "date": "2026-11-02",
+      "blog": "Gameブログ",
+      "cover_url": "https://oosawak.github.io/content/images/game/sendai-ashigaru-cover-v1.webp",
+      "article_url": "https://oosawak.github.io/game/#/post/game/sendai-no-ashigaru-machi"
+    },
+    {
+      "title": "プログラムを動かさない、ホームページの仕組み",
+      "date": "2026-11-01",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/markdown-cms-intro.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/markdown-cms-intro"
+    },
+    {
+      "title": "処理は、どこで動くか",
+      "date": "2026-11-01",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/processing-lives.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/where-the-processing-lives"
+    },
+    {
+      "title": "政宗についてきた町",
+      "date": "2026-11-01",
+      "blog": "Gameブログ",
+      "cover_url": "https://oosawak.github.io/content/images/game/kaido-cover-v1.webp",
+      "article_url": "https://oosawak.github.io/game/#/post/game/gofudaicho-kaido"
+    },
+    {
+      "title": "政宗についてきた人たち",
+      "date": "2026-11-01",
+      "blog": "Gameブログ",
+      "cover_url": "https://oosawak.github.io/content/images/game/ashigaru-machi-cover-v1.webp",
+      "article_url": "https://oosawak.github.io/game/#/post/game/sendai-ashigaru-machi"
+    },
+    {
+      "title": "保存を押せば、記録される",
+      "date": "2026-10-30",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/neta-cho-app.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/neta-cho-app"
+    },
+    {
+      "title": "指示はMarkdownで渡す",
+      "date": "2026-10-30",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/shiji-markdown.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/shiji-markdown"
+    },
+    {
+      "title": "載せ替えの道具、できました",
+      "date": "2026-10-30",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/wp-import.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/wp-import"
+    },
+    {
+      "title": "東北のビジコン調べてみた",
+      "date": "2026-10-29",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/bizcon-koho.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/bizcon-koho"
+    },
+    {
+      "title": "AIと暮らす、個人の棚",
+      "date": "2026-10-29",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/gmemo-essay.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/gmemo-essay"
+    },
+    {
+      "title": "いいねが、サイトの入口になる",
+      "date": "2026-10-29",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/iine-iriguchi.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/iine-iriguchi"
+    },
+    {
+      "title": "数えてみたら、398件ありました",
+      "date": "2026-10-29",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/inventory.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/kazoete-mitara"
+    },
+    {
+      "title": "MarkdownCMSの公開版と商用版",
+      "date": "2026-10-29",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/markdown-cms-editions.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/markdown-cms-editions"
+    },
+    {
+      "title": "記事は、こうして出ています",
+      "date": "2026-10-29",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/update-flow.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/update-flow"
+    },
+    {
+      "title": "小説サイト「よむきく」も、Cloudflareへ",
+      "date": "2026-10-29",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/yomukiku-cloudflare.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/yomukiku-cloudflare"
+    },
+    {
+      "title": "GitHubへのpushなしで更新できる、MarkdownCMSのR2版",
+      "date": "2026-10-28",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/cloudflare-r2-development.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/cloudflare-r2-development"
+    },
+    {
+      "title": "Codexと作り、Museと育てたMarkdownCMS",
+      "date": "2026-10-28",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/codex-markdown-cms.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/codex-markdown-cms"
+    },
+    {
+      "title": "守る対象を小さくする、MarkdownCMSの安全性への考え方",
+      "date": "2026-10-28",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/static-cms-security.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/static-cms-security"
+    },
+    {
+      "title": "天童を選んだ理由は、400年前にもいた",
+      "date": "2026-10-28",
+      "blog": "Gameブログ",
+      "cover_url": "https://oosawak.github.io/content/images/game/saburo-snow.webp",
+      "article_url": "https://oosawak.github.io/game/#/post/game/saburo-to-tendo"
+    },
+    {
+      "title": "書く場所は、GitHubじゃなくてもよくなった",
+      "date": "2026-10-27",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/drive-import.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/drive-import"
+    },
+    {
+      "title": "DESIGN.mdという入口",
+      "date": "2026-10-26",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/design-md.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/design-mo-markdown"
+    },
+    {
+      "title": "WordPressでも、EmDashでもない",
+      "date": "2026-10-26",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/doko-slide-01.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/doko-de-ugokasu"
+    },
+    {
+      "title": "「いいね」から始まる作例集",
+      "date": "2026-10-26",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/prompt-gallery.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/prompt-gallery"
+    },
+    {
+      "title": "似ているようで、目的が違う",
+      "date": "2026-10-26",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/vuepress-hikaku.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/vuepress-hikaku"
+    },
+    {
+      "title": "週末3日間の制作日誌",
+      "date": "2026-10-26",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/weekend-diary.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/weekend-3days-diary"
+    },
+    {
+      "title": "見た目は、言葉で変えられます",
+      "date": "2026-10-25",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/design-words.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/design-wo-kaeru"
+    },
+    {
+      "title": "ホームページに、WordPressは重すぎるのではないか",
+      "date": "2026-10-25",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/wordpress-heavy.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/homepage-wordpress-heavy"
+    },
+    {
+      "title": "技術者向け補足資料：PHPとNode.jsの脆弱性・更新・メジャーバージョンアップ",
+      "date": "2026-10-25",
+      "blog": "Techブログ",
+      "cover_url": "https://oosawak.github.io/content/images/tech/version-stairs.webp",
+      "article_url": "https://oosawak.github.io/tech/#/post/tech/php-nodejs-supplement"
+    },
+    {
+      "title": "Gameブログを開設しました",
+      "date": "2026-10-25",
+      "blog": "Gameブログ",
+      "cover_url": "https://oosawak.github.io/content/images/game/hero.webp",
+      "article_url": "https://oosawak.github.io/game/#/post/game/game-blog-open"
+    }
+  ],
+  "others": [
+    {
+      "title": "CubeBoy の系譜図（4方式の移植の鎖）",
+      "date": "2026-11-08",
+      "count": 1
+    },
+    {
+      "title": "縦スクロール漫画の試作「冬毛ミューズ」第1話のコマ",
+      "date": "2026-11-07",
+      "count": 4
+    },
+    {
+      "title": "合戦モック（battle-lab）の宣伝用カバー",
+      "date": "2026-11-01",
+      "count": 1
+    },
+    {
+      "title": "長井グルメ地図 Treats記事のカバー",
+      "date": "2026-11-01",
+      "count": 1
+    },
+    {
+      "title": "長井グルメ地図のヒーロー（黒獅子）v9・v10（v10が確定版）",
+      "date": "2026-11-01",
+      "count": 2
+    },
+    {
+      "title": "長井グルメ地図のヒーロー（黒獅子）v7・v8（v8が確定版）",
+      "date": "2026-11-01",
+      "count": 2
+    },
+    {
+      "title": "長井グルメ地図のヒーロー（黒獅子）v3〜v6 試作",
+      "date": "2026-11-01",
+      "count": 4
+    },
+    {
+      "title": "長井グルメ地図のヒーロー（黒獅子）v2",
+      "date": "2026-11-01",
+      "count": 1
+    },
+    {
+      "title": "長井グルメ地図のヒーロー（黒獅子）と記事カバー5枚を水彩で生成",
+      "date": "2026-11-01",
+      "count": 6
+    },
+    {
+      "title": "サブチャットの分身ミューズたちのイラスト",
+      "date": "2026-10-30",
+      "count": 2
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "updated": "2026-11-07",
+  "center": "ミューズ（取りまとめ・検品）",
+  "note": "公開版。マシン名は役割名に置き換え、棚卸しの詳細とモデル一覧は伏せてあります。",
+  "machines": [
+    {
+      "name": "自宅サーバー1台目",
+      "kind": "自宅マシン",
+      "os": "Ubuntu",
+      "cpu": "AMD Ryzen 7 PRO 8845HS w/ Radeon 780M Graphics",
+      "ram_gb": 30,
+      "gpus": [
+        {
+          "model": "AMD Radeon 780M Graphics (Phoenix3)",
+          "vram_gb": null
+        }
+      ],
+      "storage_free_gb": null,
+      "runtime": "Ollama",
+      "models": [],
+      "role": "配置は結果を見て決める",
+      "status": "ハードウェア棚卸し済み"
+    },
+    {
+      "name": "手元のノートパソコン",
+      "kind": "手元マシン",
+      "os": "macOS",
+      "cpu": "Apple M1 Max",
+      "ram_gb": 64,
+      "gpus": [
+        {
+          "model": "M1 Max 内蔵GPU（ユニファイドメモリ）",
+          "vram_gb": null
+        }
+      ],
+      "storage_free_gb": null,
+      "runtime": "ソフト棚卸し済み（2026-11-06）",
+      "models": [],
+      "role": "持ち運びと確認用。ローカルLLMの配置は後で検討",
+      "status": "ソフト棚卸し済み"
+    },
+    {
+      "name": "クラウドの無料API",
+      "kind": "クラウドの助っ人",
+      "os": "OpenAI互換API",
+      "cpu": "-",
+      "ram_gb": null,
+      "gpus": [],
+      "storage_free_gb": null,
+      "runtime": "無料API（キー取得待ち）",
+      "models": [],
+      "role": "下読み・要約・別解出しの外注先（カタログ全84モデル）",
+      "status": "APIキー待ち"
+    },
+    {
+      "name": "自宅サーバー2台目",
+      "kind": "自宅マシン",
+      "os": "Ubuntu",
+      "cpu": "棚卸し待ち",
+      "ram_gb": null,
+      "gpus": [
+        {
+          "model": "GPU（型番は棚卸し待ち）",
+          "vram_gb": 24
+        }
+      ],
+      "storage_free_gb": null,
+      "runtime": "未確認",
+      "models": [],
+      "role": "配置は棚卸しの結果を見て決める",
+      "status": "ハードウェア棚卸し待ち"
+    },
+    {
+      "name": "自宅サーバー3台目",
+      "kind": "自宅マシン",
+      "os": "Ubuntu",
+      "cpu": "Intel Core i9（世代は棚卸し待ち）",
+      "ram_gb": null,
+      "gpus": [
+        {
+          "model": "GPU（型番は棚卸し待ち）",
+          "vram_gb": null
+        }
+      ],
+      "storage_free_gb": null,
+      "runtime": "未確認",
+      "models": [],
+      "role": "配置は棚卸しの結果を見て決める",
+      "status": "ハードウェア棚卸し待ち"
+    },
+    {
+      "name": "自宅サーバー4台目",
+      "kind": "自宅マシン",
+      "os": "未確認",
+      "cpu": "棚卸し待ち",
+      "ram_gb": null,
+      "gpus": [
+        {
+          "model": "AMD Radeon（型番は棚卸し待ち）",
+          "vram_gb": null
+        }
+      ],
+      "storage_free_gb": null,
+      "runtime": "未確認",
+      "models": [],
+      "role": "配置は棚卸しの結果を見て決める",
+      "status": "ハードウェア棚卸し待ち"
+    }
+  ]
+}

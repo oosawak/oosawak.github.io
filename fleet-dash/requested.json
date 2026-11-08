@@ -1,0 +1,100 @@
+{
+  "note": "本人が聞き直したもの（URL・コマンド・文言）の早見表。Dash を見れば聞き直さなくて済むようにする（2026-11-07 本人決定）。出所は会話記録（runtime.messages）から抽出。",
+  "updated": "2026-11-07",
+  "urls": [
+    {
+      "title": "本『伊達の国を歩く』確認用サイト",
+      "date": "2026-11-04",
+      "ask": "確認用のURLを教えて。",
+      "result": "https://oosawak.github.io/date-no-kuni/"
+    },
+    {
+      "title": "本のコラム記事（book-col-ujin）のURL",
+      "date": "2026-11-03",
+      "ask": "とりあえずこれの URL 欲しいな",
+      "result": "https://oosawak.github.io/date-no-kuni/#/post/date/book-col-ujin"
+    },
+    {
+      "title": "三十三銀行ビジネスプランコンテスト2026（公式）",
+      "date": "2026-11-03",
+      "ask": "33銀行の募集要項みたいなのを見たいんだけど、URL 教えてもらってもいい",
+      "result": "https://www.33bank.co.jp/33ir/professional/businessplan2026.html"
+    },
+    {
+      "title": "Xの文字数カウント確認用ページ（xtest）",
+      "date": "2026-11-03",
+      "ask": "どこまで行けるのか確認する URL お願い",
+      "result": "https://oosawak.github.io/html-player/xtest.html"
+    },
+    {
+      "title": "運営サイトのURL一覧（当時18件を提示。代表はポータル）",
+      "date": "2026-11-01",
+      "ask": "URLだけくれるといい（サイトのURL、全部入れて）",
+      "result": "https://oosawak.github.io/"
+    },
+    {
+      "title": "Gameブログ（Lyre3 Games）",
+      "date": "2026-10-25",
+      "ask": "そのgameのブログの URL 教えて",
+      "result": "https://oosawak.github.io/game/"
+    }
+  ],
+  "commands": [
+    {
+      "title": "Ubuntu の一括更新（一覧の取り直し＋適用）",
+      "date": "2026-11-07",
+      "ask": "Ubuntu のアップデートは apt updateだよね、upgrade もいる？",
+      "result": "sudo apt update && sudo apt upgrade"
+    }
+  ],
+  "texts": [
+    {
+      "title": "棚卸しの再依頼文（2台分）",
+      "date": "2026-11-07",
+      "ask": "両方にもう1度、依頼するから、それぞれの文言ください。",
+      "result": ""
+    },
+    {
+      "title": "Ubuntu 側 Codex への指示文",
+      "date": "2026-11-07",
+      "ask": "Ubuntuに渡す文言をここに書いて",
+      "result": ""
+    },
+    {
+      "title": "Unity 棚卸しの指示文",
+      "date": "2026-11-07",
+      "ask": "Unityの棚卸しの文言ちょうだい。",
+      "result": ""
+    },
+    {
+      "title": "Mac の Codex へのオーダー文",
+      "date": "2026-11-06",
+      "ask": "実際にMacにオーダーする時の文言も作ってよ。",
+      "result": ""
+    },
+    {
+      "title": "X 投稿文（LINE BOY／CubeBoy 宣伝）",
+      "date": "2026-11-05",
+      "ask": "Xに投稿する文言ください。",
+      "result": ""
+    },
+    {
+      "title": "X 宣伝文（一騎討ちカセットURL付き）",
+      "date": "2026-11-03",
+      "ask": "余ってる分の文字を使ってこれを宣伝する文言",
+      "result": ""
+    },
+    {
+      "title": "返信の文言",
+      "date": "2026-11-03",
+      "ask": "これに返事の文言お願い",
+      "result": ""
+    },
+    {
+      "title": "Codex への依頼文",
+      "date": "2026-11-01",
+      "ask": "できてれば、オーデックスに依頼する文言を教えてください",
+      "result": ""
+    }
+  ]
+}
