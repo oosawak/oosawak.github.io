@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>英訳の仕組み システム構成図</title>
+<style>
+  :root{
+    --ink:#1f2937; --sub:#5b6472; --line:#c9d2dd; --bg:#f6f8fa;
+    --shop:#e8f3ec; --shop-b:#4c9a6c;
+    --muse:#e9eefb; --muse-b:#5b7fd4;
+    --box:#fdf0e2; --box-b:#dd8f3c;
+    --dict:#f3eafd; --dict-b:#8b5fd6;
+    --cloud:#e6f4f6; --cloud-b:#3d97a5;
+    --reader:#f1f1f4; --reader-b:#8a8f98;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:24px 16px 48px;background:var(--bg);color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",system-ui,sans-serif;
+    -webkit-text-size-adjust:100%}
+  .wrap{max-width:1060px;margin:0 auto}
+  h1{font-size:26px;margin:0 0 6px}
+  .lead{color:var(--sub);margin:0 0 22px;font-size:15px;line-height:1.7}
+  h2{font-size:18px;margin:30px 0 12px;border-left:5px solid var(--muse-b);padding-left:10px}
+  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+  .card{border:2px solid;border-radius:14px;padding:14px 16px;background:#fff}
+  .card h3{margin:0 0 6px;font-size:17px}
+  .card p{margin:0;font-size:13.5px;line-height:1.75;color:#374151}
+  .card .tag{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;
+    padding:2px 9px;margin-bottom:8px;color:#fff}
+  .shop{border-color:var(--shop-b);background:var(--shop)} .shop .tag{background:var(--shop-b)}
+  .muse{border-color:var(--muse-b);background:var(--muse)} .muse .tag{background:var(--muse-b)}
+  .box{border-color:var(--box-b);background:var(--box)} .box .tag{background:var(--box-b)}
+  .dict{border-color:var(--dict-b);background:var(--dict)} .dict .tag{background:var(--dict-b)}
+  .cloud{border-color:var(--cloud-b);background:var(--cloud)} .cloud .tag{background:var(--cloud-b)}
+  .reader{border-color:var(--reader-b);background:var(--reader)} .reader .tag{background:var(--reader-b)}
+  .flow{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+  .step{display:flex;gap:12px;align-items:flex-start}
+  .step + .step{margin-top:4px}
+  .num{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--muse-b);
+    color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .step p{margin:0;font-size:14.5px;line-height:1.8}
+  .step b{white-space:nowrap}
+  .arrow{margin:2px 0 2px 13px;color:#9aa5b1;font-size:14px;line-height:1}
+  ul.points{margin:0;padding-left:20px;font-size:14.5px;line-height:1.9}
+  .note{font-size:12.5px;color:var(--sub);margin-top:26px;line-height:1.8}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr} h1{font-size:22px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>英訳の仕組み システム構成図</h1>
+<p class="lead">日本語で記事を書くと、英語版も付いてくる仕組みの構成です。<br>
+発信者が触るのは「書く」と「直しを伝える」だけ。翻訳の下書き、校正、辞書づくりは裏側で回ります。</p>
+
+<div class="grid">
+  <div class="card shop">
+    <span class="tag">お店・発信者</span>
+    <h3>発信者</h3>
+    <p>日本語で記事を書く。公開された英語版を見て、直したい所があればミューズに言葉で伝える。ファイルや機械を直接触ることはない。</p>
+  </div>
+  <div class="card muse">
+    <span class="tag">窓口・校正</span>
+    <h3>ミューズ</h3>
+    <p>発信者の窓口。英訳の校正をして公開できる品質にする。直しのうち恒常的なものは辞書の登録候補にし、作業のオーダーを各所へ出す。</p>
+  </div>
+  <div class="card box">
+    <span class="tag">お店に置く専用機</span>
+    <h3>日本語化マシン</h3>
+    <p>お店に置かれる、触れない箱。電源とネットワークだけ。出て行く通信だけで記事を受け取り、英訳エンジンで下書きを作って戻す。外から穴を開ける必要はない。</p>
+  </div>
+  <div class="card dict">
+    <span class="tag">育つ資産</span>
+    <h3>辞書（用語集）</h3>
+    <p>店名の読み、名物、地名、カテゴリの対応を、お店ごとに固定したもの。ミューズが管理し、マシンへ配る。記事が増えるほど育ち、下書きの崩れが小さくなる。</p>
+  </div>
+  <div class="card cloud">
+    <span class="tag">配信</span>
+    <h3>サイト本体（商用版 Markdown CMS）</h3>
+    <p>日本語版と英語版を配信する。配信はマシンとは独立していて、マシンが止まってもサイトは動き続ける。</p>
+  </div>
+  <div class="card reader">
+    <span class="tag">読者</span>
+    <h3>読者（国内・海外）</h3>
+    <p>日本語版と英語版を、言語切り替えで読む。海外の読者にも、お店の情報がそのまま届く。</p>
+  </div>
+</div>
+
+<h2>記事が英語になるまでの流れ</h2>
+<div class="flow">
+  <div class="step"><div class="num">1</div><p><b>書く</b> ― 発信者が、日本語で記事を書く。</p></div>
+  <div class="arrow">▼</div>
+  <div class="step"><div class="num">2</div><p><b>下書き</b> ― 日本語化マシンが記事を取りに行き、辞書を使って英訳の下書きを作り、置き場に戻す（1記事およそ1分）。</p></div>
+  <div class="arrow">▼</div>
+  <div class="step"><div class="num">3</div><p><b>校正</b> ― ミューズが下書きを通読し、意味のずれ、用語の揺れ、固有名詞の読みを直す。</p></div>
+  <div class="arrow">▼</div>
+  <div class="step"><div class="num">4</div><p><b>承認・公開</b> ― 発信者が確認して承認すると、英語版がサイトに公開される。</p></div>
+</div>
+
+<h2>直しが辞書に育つ流れ</h2>
+<div class="flow">
+  <div class="step"><div class="num">1</div><p><b>伝える</b> ― 発信者が英語版を見て、「ここはこう直して」とミューズに言う。</p></div>
+  <div class="arrow">▼</div>
+  <div class="step"><div class="num">2</div><p><b>分ける</b> ― ミューズが、その記事だけの直しか、辞書に入れるべき恒常的な直しかを判断する。</p></div>
+  <div class="arrow">▼</div>
+  <div class="step"><div class="num">3</div><p><b>登録・反映</b> ― 承認された直しは辞書に登録され、マシンへ配られる。次回からは、最初からその訳で下書きが出る。</p></div>
+</div>
+
+<h2>運用の要点</h2>
+<div class="flow">
+  <ul class="points">
+    <li><b>管理は遠隔で</b> ― マシンの状態確認、英訳エンジンの入れ替え、辞書の更新は、管理用ネットワーク経由で行う。お店のネットワークに外から穴を開けない。</li>
+    <li><b>止まっても困らない</b> ― マシンが止まると困るのは英訳の順番待ちだけ。サイトの配信は別に動き続ける。</li>
+    <li><b>文章は外に出ない</b> ― 翻訳はお店の中のマシンで完結する。下書き前の文章を外部のサービスへ送らない。</li>
+    <li><b>芯は辞書と校正</b> ― マシンは下書き係。商品の品質を作るのは、お店ごとに育つ辞書と、ミューズの校正の工程。</li>
+  </ul>
+</div>
+
+<p class="note">この図は、Markdown CMS 商用版への搭載を検討中の「英訳の仕組み」の構成案です（2026-11-08 時点）。<br>
+実証済みの部分: ローカル環境での英訳の下書き生成、校正、英語版の公開までの一巡（Techブログ1記事、グルメサイト5店舗で公開済み）。</p>
+
+</div>
+</body>
+</html>
