@@ -6,7 +6,8 @@ Markdown CMS の英語版登録用エントリ（en.json 形式）を生成す�
 - frontmatter の title / subtitle / summary / cover_alt を個別に翻訳する。
 - 本文は空行区切りブロック単位で翻訳する。見出しは記号を外して訳し、
   コードブロックはモデルに送らずそのまま写す。画像は URL 据え置きで
-  alt テキストだけを訳す。
+  alt テキストだけを訳す。箇条書きブロックは行ごとに訳してマーカーを
+  保つ（お店の情報リストなどが段落に潰れないように）。
 - 通常段落は行末バックスラッシュ（日本語版の改行マーカー）を外し、
   行を空白でつないでから送る。英語版にバックスラッシュは付けない。
 - 履歴は「直前の通常段落の原文と訳」の1組だけを渡す。
@@ -86,6 +87,7 @@ def split_blocks(body: str):
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.*)$", re.S)
 IMAGE_RE = re.compile(r"^!\[([^\]]*)\]\(([^)]+)\)$")
 LINK_RE = re.compile(r"\[[^\]]*\]\((https?://[^)]+)\)")
+LIST_ITEM_RE = re.compile(r"^(\s*(?:[-*]|\d+\.)\s+)(.*)$")
 
 
 def classify(block: str) -> str:
@@ -96,6 +98,9 @@ def classify(block: str) -> str:
         return "heading"
     if IMAGE_RE.match(s):
         return "image"
+    lines = [ln for ln in s.split("\n") if ln.strip()]
+    if lines and all(LIST_ITEM_RE.match(ln) for ln in lines):
+        return "list"
     return "paragraph"
 
 
@@ -240,6 +245,17 @@ def main() -> int:
             m = IMAGE_RE.match(block.strip())
             alt = do(m.group(1), label, history=history)
             en_blocks.append(f"![{alt}]({m.group(2)})")
+        elif kind == "list":
+            # 箇条書きは行ごとに訳してマーカーを保つ（住所などの情報リストが
+            # 1段落に潰れないように）。履歴は通常段落のものを引き継がない。
+            out_lines = []
+            for ln in block.strip().split("\n"):
+                m = LIST_ITEM_RE.match(ln)
+                if m and m.group(2).strip():
+                    out_lines.append(m.group(1) + do(m.group(2), label))
+                else:
+                    out_lines.append(ln)
+            en_blocks.append("\n".join(out_lines))
         else:
             src = paragraph_input(block)
             out = do(src, label, history=history)
