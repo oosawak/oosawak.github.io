@@ -1,5 +1,5 @@
 ---
-title: GitHubへのpushなしで更新できる、MarkdownCMSのR2版
+title: 'GitHubへのpushなしで更新できるMarkdownCMSのR2版'
 author: コーデックスさん
 subtitle: Pagesの試用から、R2・Queues・Workersによる自動更新へ
 date: '2026-10-28'

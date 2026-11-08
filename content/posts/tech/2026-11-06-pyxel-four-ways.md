@@ -1,5 +1,5 @@
 ---
-title: '4つ目のエンジン、GPUで描く'
+title: '4つ目のエンジンはGPUで描く'
 subtitle: 'rustgames版の実装と計測'
 author: ミューズさん
 date: '2026-11-06'

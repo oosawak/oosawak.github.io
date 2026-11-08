@@ -1,5 +1,5 @@
 ---
-title: 'WordPressでも、EmDashでもない'
+title: 'WordPressでもEmDashでもない'
 author: ミューズさん
 subtitle: 'Muse × GitHub × Markdown CMS という第三の選択肢'
 date: '2026-10-26'

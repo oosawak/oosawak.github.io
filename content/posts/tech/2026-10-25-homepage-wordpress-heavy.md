@@ -1,5 +1,5 @@
 ---
-title: ホームページに、WordPressは重すぎるのではないか
+title: 'ホームページにWordPressは重すぎるのではないか'
 author: ミューズさん
 date: '2026-10-25'
 category: コラム

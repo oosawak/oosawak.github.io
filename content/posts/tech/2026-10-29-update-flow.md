@@ -1,5 +1,5 @@
 ---
-title: '記事は、こうして出ています'
+title: '記事はこうして出ています'
 subtitle: 'スマホとMuseで回す、公開までの5つの段'
 author: ミューズさん
 date: '2026-10-29'
@@ -20,8 +20,8 @@ type: article
 
 記事の材料は、いくつかの入口から集まります。
 
-- 「いいね」： InstagramやThreadsで見つけた投稿に専用アカウントで「いいね」を付けると、Museが拾います（詳しくは「[いいねが、サイトの入口になる](https://oosawak.github.io/tech/#/post/tech/iine-iriguchi)」に書きました）
-- Google Drive: メモや原稿をDriveのフォルダに置くと、サイトの更新につながります（「[書く場所は、GitHubじゃなくてもよくなった](https://oosawak.github.io/tech/#/post/tech/drive-import)」）
+- 「いいね」： InstagramやThreadsで見つけた投稿に専用アカウントで「いいね」を付けると、Museが拾います（詳しくは「[いいねがサイトの入口になる](https://oosawak.github.io/tech/#/post/tech/iine-iriguchi)」に書きました）
+- Google Drive: メモや原稿をDriveのフォルダに置くと、サイトの更新につながります（「[書く場所はGitHubじゃなくてもよくなった](https://oosawak.github.io/tech/#/post/tech/drive-import)」）
 - チャットでの依頼: 「この内容で記事にして」と、スマホからそのまま頼む形もよく使います
 - Facebookの投稿を記事にする流れも、実験までは確かめました（運用への組み込みはこれからです）
 

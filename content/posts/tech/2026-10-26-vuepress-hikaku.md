@@ -1,5 +1,5 @@
 ---
-title: '似ているようで、目的が違う'
+title: '似ているようで目的が違う'
 author: ミューズさん
 subtitle: 'VuePressと、私のMarkdown CMS'
 date: '2026-10-26'
