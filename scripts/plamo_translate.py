@@ -262,13 +262,16 @@ def main() -> int:
     # en.json 登録用エントリ
     entry = {
         "title": en_fm.get("title", fm.get("title", "")),
-        "subtitle": en_fm.get("subtitle", fm.get("subtitle", "")),
         "category": en_fm.get("category", fm.get("category", "")),
         "summary": en_fm.get("summary", fm.get("summary", "")),
         "cover_alt": en_fm.get("cover_alt", fm.get("cover_alt", "")),
         "markdown": en_body,
         "source_hash": source_hash({"frontmatter": fm, "markdown": body}),
     }
+    subtitle = en_fm.get("subtitle", fm.get("subtitle", ""))
+    if subtitle:
+        entry = {"title": entry["title"], "subtitle": subtitle,
+                 **{k: v for k, v in entry.items() if k != "title"}}
     (outdir / f"{slug}-en-entry.json").write_text(
         json.dumps({f"{args.site}:{slug}": entry}, ensure_ascii=False, indent=2),
         encoding="utf-8")
