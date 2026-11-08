@@ -80,7 +80,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "The Ground Moves a Few Millimeters Every Day",
+          "subtitle": "A trial in visualizing electronic control point data",
+          "category": "Development Log",
+          "summary": "Using the \"daily coordinate values\" of the Geospatial Information Authority of Japan's GEONET, I built a heatmap of horizontal ground displacement. It covers 191 stations across the six prefectures of Tohoku and 490 stations across 19 prefectures around Mie and Shikoku. Earthquake catalogs, seismic intensity, the phases of the moon, and geomagnetism are layered onto the same map. This is not an earthquake-prediction tool, but a visualization prototype. I write about how the data is fetched, how the calculation works, and where the line of interpretation lies.",
+          "cover_alt": "Screenshot of the Tohoku crustal deformation heatmap. A map showing the horizontal displacement of GNSS reference stations as color shading, with epicenter markers overlaid."
+        }
       }
     },
     {
