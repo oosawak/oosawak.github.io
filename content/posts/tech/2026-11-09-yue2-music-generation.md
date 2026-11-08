@@ -20,6 +20,14 @@ type: article
 結果は、54.9秒・48kHzステレオの曲が1曲です。\
 生成にかかった時間は、およそ16分でした。
 
+できた曲は、こちらで聴けます。
+
+```embed
+https://oosawak.github.io/music-player/#winter-muse
+4x1
+100%
+```
+
 動かしたのはMacBook Pro（M1 Max）です。\
 [YuE2の公式リポジトリ](https://github.com/multimodal-art-projection/YuE)では、動作確認はLinuxとNVIDIAのGPUで、Macは未検証という扱いです。\
 それでも、重い版（bf16）のモデルならMacのGPUで最後まで通りました。\

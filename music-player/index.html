@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>作った曲のプレイヤー</title>
+<style>
+  :root{ color-scheme: dark; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#0d1b2e; color:#eaf2fb; font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif; }
+  main{ max-width:760px; margin:0 auto; padding:28px 20px 40px; }
+  h1{ font-size:24px; margin:0 0 6px; }
+  .lead{ color:#a9c3de; font-size:14px; margin:0 0 24px; line-height:1.7; }
+  .track{ background:#12263f; border:1px solid #274a6e; border-radius:12px; padding:18px 20px; margin-bottom:16px; }
+  .track h2{ font-size:19px; margin:0 0 4px; }
+  .meta{ color:#8fb0d1; font-size:13px; margin-bottom:10px; }
+  .note{ color:#c7d9ec; font-size:14px; line-height:1.7; margin:10px 0 0; }
+  audio{ width:100%; margin-top:6px; }
+  body.compact main{ padding:14px 16px 16px; }
+  body.compact h1, body.compact .lead{ display:none; }
+  body.compact .track{ margin-bottom:0; }
+  .empty{ color:#a9c3de; }
+</style>
+</head>
+<body>
+<main>
+  <h1>作った曲のプレイヤー</h1>
+  <p class="lead">作曲AIで生成した曲を置く場所です。曲の情報は songs.json に登録し、このページが一覧を描きます。</p>
+  <div id="list"><p class="empty">読み込み中…</p></div>
+</main>
+<script>
+(async () => {
+  const list = document.getElementById('list');
+  try {
+    const res = await fetch('songs.json');
+    const data = await res.json();
+    const wanted = location.hash ? decodeURIComponent(location.hash.slice(1)) : null;
+    let tracks = data.tracks || [];
+    if (wanted) {
+      tracks = tracks.filter(t => t.id === wanted);
+      if (tracks.length) document.body.classList.add('compact');
+    }
+    if (!tracks.length) { list.innerHTML = '<p class="empty">曲がまだありません。</p>'; return; }
+    list.innerHTML = '';
+    for (const t of tracks) {
+      const div = document.createElement('div');
+      div.className = 'track';
+      const h = document.createElement('h2'); h.textContent = t.title; div.appendChild(h);
+      const meta = document.createElement('div'); meta.className = 'meta';
+      meta.textContent = [t.date, t.duration].filter(Boolean).join(' ・ ');
+      div.appendChild(meta);
+      const audio = document.createElement('audio');
+      audio.controls = true; audio.preload = 'metadata'; audio.src = t.file;
+      div.appendChild(audio);
+      if (t.note) { const n = document.createElement('p'); n.className = 'note'; n.textContent = t.note; div.appendChild(n); }
+      list.appendChild(div);
+    }
+  } catch (e) {
+    list.innerHTML = '<p class="empty">曲の一覧を読み込めませんでした。</p>';
+  }
+})();
+</script>
+</body>
+</html>

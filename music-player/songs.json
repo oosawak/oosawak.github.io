@@ -1,0 +1,12 @@
+{
+  "tracks": [
+    {
+      "id": "winter-muse",
+      "title": "冬毛ミューズの歌",
+      "file": "tracks/winter-muse-song.mp3",
+      "duration": "0:55",
+      "date": "2026-11-08",
+      "note": "作曲AI「YuE2」（bf16）を MacBook Pro（M1 Max）で生成。歌詞はサビ4行、生成は約16分。歌声はモデルのAIボイス"
+    }
+  ]
+}
