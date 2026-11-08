@@ -53,7 +53,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "I Remade the Same Game Four Times",
+          "subtitle": "Pyxel and Its Kin: A Genealogical Perspective",
+          "category": "Column",
+          "summary": "I've rebuilt the same games, \"CubeBoy\" and \"LINE BOY,\" using four different approaches: the original Pyxel (Python), the compatible pyxel-rust engine (Rust), vanilla JavaScript, and my own custom platform, rustgames (Rust + wgpu). While previous articles focused primarily on measurement, this one centers on \"mechanisms and lineage.\" I'll trace the single chain of three ports from the original, examine what remained and what was discarded, and share my take on \"which approach I recommend.\"",
+          "cover_alt": "A cover image featuring the same square character in four forms: pixel art, gears, circuitry, and a browser window."
+        }
       }
     },
     {
@@ -76,7 +82,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "If You Write in Japanese, an English Version Comes With It",
+          "subtitle": "A workflow for English versions run on local AI drafts, a dictionary, and proofreading",
+          "category": "Column",
+          "summary": "I have built a system where writing an article in Japanese gets you an English version with it. The translation drafts are produced by a translation model running on my own machine, terminology is fixed via a dictionary, and the result is published after proofreading. I write about the track record — English versions added to all 37 entries on Yamagata Gourmet and one article on this blog — and how the system works inside. This is being developed as a feature for the commercial version of Markdown CMS, and will not be included in the open-source version.",
+          "cover_alt": "System architecture diagram of how AI English translation works. A diagram depicting the relationship between the sender, Muse, the AI translation engine, the dictionary, the commercial version of the Markdown CMS, and the reader."
+        }
       }
     },
     {
@@ -99,7 +111,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Running Work with Two AIs and GitHub",
+          "subtitle": "Introducing Three Introductory Guides",
+          "category": "Column",
+          "summary": "I have published three introductory resources: the Codex User Guide (Beginner's Edition), the Muse User Guide (Beginner's Edition), and \"Connecting via GitHub — Handing Off Between AIs.\" The set is designed to flow as one sequence, from how to use the tools, to how to connect them via GitHub, to how to run two AIs. At its core is a mechanism for handing off between AIs not by connecting them directly, but through Markdown instruction sheets and reports on GitHub — a generalization of the workflow I actually run at home.",
+          "cover_alt": "Two AIs and a file repository in the middle. Instruction sheets and report forms are passing back and forth."
+        }
       }
     },
     {
@@ -122,7 +140,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "This Is How I Work with AI",
+          "subtitle": "The core is the Muse mobile app, with a dashboard that consolidates everything onto a single page",
+          "category": "Column",
+          "summary": "My primary way of delegating work to AI is through smartphone conversations. A fleet of home PCs handles the work, while a resident system keeps watch. \"fleet-dash\" is a single page dedicated to checking \"What's going on right now?\" Machine status, usage and throughput, progress, CVE response history, and even a list of what has been created are automatically populated from real data. The source is Markdown, and the JSON the page reads is a generated output. Since lists aren't written by hand, they never become outdated.",
+          "cover_alt": "An illustration depicting how a dashboard connects to a home PC setup, centered around a smartphone."
+        }
       }
     },
     {
@@ -174,7 +198,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Castle Model in Three-Live",
+          "subtitle": "AI-Generated: Three.js to GLB",
+          "category": "Column",
+          "summary": "I tried out Google's open-source \"Three-Live.\" It is a tool that converts AI-generated Three.js code into 3D model files in GLB format. Using the official tool, I created a model of Sendai Castle (featuring stone walls and a double-story turret), and through testing, I ended up with a 44KB GLB file. If the turret and stone walls can be turned into components, other castles can also be created with different parameters.",
+          "cover_alt": "An illustration of lines of code flowing to the right, transforming into a castle with a double turret standing atop a stone wall."
+        }
       }
     },
     {
@@ -197,7 +227,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Retro Game Engines",
+          "subtitle": "Three Pyxel Implementations by Lyre3 Games",
+          "category": "Column",
+          "summary": "At Lyre3 Games, we build retro game engines and create games using them. We compare three implementations of Pyxel, our subject of study: the original written in Python; pyxel-rust, which ported its API to a lightweight Rust and WASM path; and rustgames, which renders 3D on the GPU without pursuing compatibility. We also introduce the origins of pyxel-rust—a project created independently despite being listed as a \"fork\" on GitHub.",
+          "cover_alt": "An illustration showing three branches extending from a single root, each tipped with a retro game screen (a maze and snake, a spaceship and gears, and a neon 3D tunnel)."
+        }
       }
     },
     {
@@ -220,7 +256,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "The Fourth Engine Renders on the GPU",
+          "subtitle": "RustGames Implementation and Measurement",
+          "category": "Column",
+          "summary": "I remeasured using four methods: CubeBoy, LINE BOY, and the RustGames version rendered on the GPU. The transfer size was approximately 3.65 MB—larger than pyxel-rust—and it took slightly longer to start up, while the CPU usage during execution was similar. I also compared the source code line counts across the four methods. For LINE BOY, RustGames had 1,501 lines compared to pyxel-rust's 266, directly reflecting the difference in the scope of work handled by the engine.",
+          "cover_alt": "An illustration of four game consoles side by side: one with a wood grain texture, one with gears and a bowtie, a small one, and a large one with a GPU fan on its back and a floating 3D maze."
+        }
       }
     },
     {
@@ -243,7 +285,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "The Same Game at Three Speeds",
+          "subtitle": "Pyxel / pyxel-rust / JavaScript: The Measurements",
+          "category": "Column",
+          "summary": "I ran the three implementations compared in the first part in the same game to measure their performance. I ran CubeBoy and LINE BOY using the original Pyxel, pyxel-rust, and vanilla JavaScript, comparing data transfer volume, startup time, FPS, and CPU usage during execution. The data transfer volumes were on completely different scales: the original was approximately 27–29 MB, pyxel-rust about 2 MB, and JavaScript about 0.14 MB. As for FPS, I will report the results honestly, taking into account the quirks of the measurement tool.",
+          "cover_alt": "An illustration of a game console with a large backpack, a winged game console, and a small, speeding game console lined up on a track with a stopwatch and a measuring tape."
+        }
       }
     },
     {
@@ -266,7 +314,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Where the Processing Lives",
+          "subtitle": "Markdown CMS architecture — no database, no runtime server",
+          "category": "News",
+          "summary": "Where does the code actually run in a website? A traditional CMS keeps a database and an application server working on every request. Markdown CMS removes both. This article walks through the architecture using the English slide deck: the three design pillars, the universal site-folder core, the five-stage lifecycle of an article, the OSS edition on GitHub and the Commercial edition on Cloudflare, and why the compute footprint approaches zero.",
+          "cover_alt": "A press stamping a stack of documents into cards that fly to a browser window, while a server tower sleeps beside a bookshelf"
+        }
       }
     },
     {
@@ -289,7 +343,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "How a Website Works Without Running Code",
+          "subtitle": "Making Markdown CMS understandable even for non-engineers",
+          "category": "Column",
+          "summary": "For those concerned about updating or securing their website, here is an introduction to a \"Markdown CMS\" that lets you create pages simply by writing text—all without technical jargon. Since it doesn't run programs on a server, you can avoid the risk of hijacking or update-related mishaps. We'll also use local gourmet maps and history guides currently in operation as examples.",
+          "cover_alt": "An illustration of a pencil and manuscript paper transforming into a browser page (photo frames, text, and store icons) via particles of light."
+        }
       }
     },
     {
@@ -312,7 +372,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "The Migration Tools Are Ready",
+          "subtitle": "A converter and instructions for converting a WordPress site to Markdown files",
+          "category": "News",
+          "summary": "A tool for migrating WordPress sites to a Markdown CMS has been added to the commercial version (Cloudflare edition). The converter converts all posts and images to Markdown, while AI-powered instructions handle the procedures and decision-making. There are two entry points—the WordPress API and coded HTML—and both source files are stored in the Markdown site folder. The WordPress version has been proven on a single live site. Elements that cannot be made static, such as forms, are extracted along with replacement proposals.",
+          "cover_alt": "An illustration of paper emerging from a large geared machine and transforming into a neat stack of documents on the right."
+        }
       }
     },
     {
@@ -335,7 +401,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Pass Instructions in Markdown",
+          "subtitle": "A morning where I spent an hour building the system and finished the app in minutes",
+          "category": "Column",
+          "summary": "This is about an experiment in enabling AI collaboration through the exchange of Markdown files, rather than through any special mechanism. You place \"instructions\" in a management repository, Codex picks them up and gets to work, and returns a \"work report.\" This morning, using that workflow, I actually managed to create v0.1 of a Tauri app.",
+          "cover_alt": "An illustration of Muse handing out notes at the central desk, with clone Muses (winter coats) doing their respective tasks in the small rooms around her."
+        }
       }
     },
     {
@@ -358,7 +430,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Press Save and It Is Recorded",
+          "subtitle": "A Markdown editor for everyday users, accessible with a single connection key",
+          "category": "News",
+          "summary": "No need to touch GitHub or R2. This is an introduction to the first version of a Markdown editor for everyday users. Just paste your connection key, open a document, write, and hit \"Save\"—everything is reflected as is. The backend is currently hosted on GitHub, and no technical jargon appears on the screen.",
+          "cover_alt": "An illustration of a large key about to be inserted into an app window showing a list of documents and an editing screen."
+        }
       }
     },
     {
@@ -381,7 +459,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "The Novel Site \"Yomukiku\" Is Also Going to Cloudflare",
+          "subtitle": "Plan to publish alongside the current GitHub Pages version",
+          "category": "News",
+          "summary": "I'll share my plan to create a Cloudflare version of the novel submission site \"Yomukiku\" alongside the current GitHub Pages version and publish them side-by-side. I'll break down what has already been decided from what remains to be determined.",
+          "cover_alt": "An illustration of two doors showing the same bookshelf. One side is a wooden library, the other is a sky with floating clouds."
+        }
       }
     },
     {
@@ -404,7 +488,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "How Articles Get Published",
+          "subtitle": "5 Stages to Publishing Using a Smartphone and Muse",
+          "category": "How-to",
+          "summary": "I've outlined the process for publishing articles on this tech blog. It consists of five stages—from gathering materials to drafting, approval, publishing, and promotion—along with the division of roles between humans and Muse. The workflow is handled entirely via smartphone and chat.",
+          "cover_alt": "An illustration depicting the journey from a smartphone to the flag across five stages, along with the checkpoints along the way."
+        }
       }
     },
     {
@@ -427,7 +517,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Public and Commercial Versions of MarkdownCMS",
+          "subtitle": "A self-assembly GitHub version and a Cloudflare version supporting design, deployment, and operations",
+          "category": "News",
+          "summary": "MarkdownCMS offers a public version for GitHub available under the MIT License, as well as a commercial version updated and delivered via Cloudflare. We will cover how to update articles, the design, and the handling of deployment and maintenance, while explaining the differences between the versions and the roles of GMEMO for providing materials and the R2 admin panel for storing articles.",
+          "cover_alt": "An illustration featuring a box with a paper bird popping out, alongside a box with clouds and a key."
+        }
       }
     },
     {
@@ -450,7 +546,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "When I Counted, There Were 398",
+          "subtitle": "Current Inventory of Markdown CMS Sites",
+          "category": "Column",
+          "summary": "With my tech blog now up to 18 posts, I took the opportunity to count the total number of pieces of content across my entire suite of sites built with a Markdown CMS. The highest count is 320 for Narumi Zanmai, bringing the total to 398. This isn't the result of writing each piece by hand; rather, it's the result of using a workflow centered on entry points and templates.",
+          "cover_alt": "An illustration of a shelf with many cards neatly arranged, and a small abacus placed in front of it."
+        }
       }
     },
     {
@@ -473,7 +575,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Likes Become the Site's Entry Point",
+          "subtitle": "How Muse Builds from Instagram and Threads Likes and Stores Them on the Site",
+          "category": "Column",
+          "summary": "This is an explanation of how Muse collects and drafts content—triggered by \"likes\" on Instagram and Threads—and stores it on a static site. The focus is on gourmet websites for Yamagata, Miyagi, and Fukushima. Draft articles for restaurants are generated from \"likes\" on dedicated regional accounts. The source accounts are also listed by their real names.",
+          "cover_alt": "An illustration showing a shelf where cards accumulate beyond a large heart-shaped entrance."
+        }
       }
     },
     {
@@ -496,7 +604,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "A Personal Shelf for Living with AI",
+          "subtitle": "How It Is Used Is Up to the Owner",
+          "category": "Column",
+          "summary": "I've created \"gmemo,\" a small tool for storing notes and files on Google Drive. It has a human-facing interface and an AI-facing one; any AI capable of reading the instructions can open the shelf. The idea is that I haven't defined a specific use for it—it's up to whoever owns it.",
+          "cover_alt": "An illustration of thin threads extending from bundles of notes, boxes, and a small shelf with photos, connecting to glowing speech bubbles."
+        }
       }
     },
     {
@@ -519,7 +633,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Looking into Business Contests in Tohoku",
+          "subtitle": "List of Business Competition Candidates for the Commercial Version of MarkdownCMS",
+          "category": "Column",
+          "summary": "I looked through the organizers' official guidelines for business contests that the commercial version of Markdown CMS could enter. My top choice in Miyagi means waiting for the next round, and there is also a contest with a deadline of November 1. The nine candidates are compiled into a list on a separate page.",
+          "cover_alt": "An illustration of a small trophy, a stack of application documents, and a pin on a map of Japan"
+        }
       }
     },
     {
@@ -542,7 +662,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Markdown CMS's Approach to Security: Narrowing the Scope of Protection",
+          "subtitle": "Boundary between static serving, CSP, and the update mechanism",
+          "category": "Design Notes",
+          "summary": "Combine CSP and HTML sanitization with static delivery—which requires no PHP or database. We will outline the measures already in place in MarkdownCMS and further refine the separation between the publishing and update sides.",
+          "cover_alt": "A static page and checklist protected by a shield and keyhole, with an illustration of an update gear beyond the boundary"
+        }
       }
     },
     {
@@ -565,7 +691,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "A Markdown CMS built with Codex and nurtured with Muse",
+          "subtitle": "None",
+          "category": "Column",
+          "summary": "I've been growing a Markdown CMS built with Codex through social media integration with Muse and daily operations. This time, I implemented support for Codex and Cloudflare, and went through the process of creating and publishing an article on the work. Drawing on my experience of handing over materials via GMEMO, developing the R2 version, and publishing it across two sites, I'll explore the value of using Markdown as a common foundation.",
+          "cover_alt": "An illustration of a desk with gears and tools, connected to a desk with sprouts and speech bubbles by a small bridge."
+        }
       }
     },
     {
@@ -588,7 +720,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "R2 version of the Markdown CMS that can be updated without pushing to GitHub",
+          "subtitle": "None",
+          "category": "Development Log",
+          "summary": "I've added a mechanism that generates JSON within Cloudflare and applies it to the site when articles are placed in R2. While maintaining the existing GitHub version, I'm experimenting with a gateway that allows updates via documentation and AI.",
+          "cover_alt": "An illustration of notification envelopes forming a queue from a bucket of clouds holding manuscripts, while a gear workshop assembles pages into a site."
+        }
       }
     },
     {
@@ -611,7 +749,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "You No Longer Have to Write on GitHub",
+          "subtitle": "How the site updates when files are added to Drive",
+          "category": "How-to",
+          "summary": "I've built a system that routes Markdown CMS entries through Google Drive. When you place Markdown files in a Drive folder, Apps Script periodically picks them up and pushes them to GitHub, where they are then published via the usual automated build. Writers no longer need to touch GitHub.",
+          "cover_alt": "An illustration of a Markdown document in a Google Drive folder crossing a small bridge to become a web page."
+        }
       }
     },
     {
@@ -634,7 +778,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Three-Day Weekend Development Log",
+          "subtitle": "From \"Publish\" to your article being live",
+          "category": "Column",
+          "summary": "Over the three-day period from October 24 to 26, 2026, I simultaneously set up a new site, published articles, uploaded videos, and gathered foodie information—all with just brief instructions to the AI assistant \"Muse.\" Here is a record of that process.",
+          "cover_alt": "Smartphone and speech bubbles, site pages fanning out, small calendar illustration"
+        }
       }
     },
     {
@@ -657,7 +807,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "They Look Similar, but the Purpose Is Different",
+          "subtitle": "VuePress and My Markdown CMS",
+          "category": "Column",
+          "summary": "There is a solid precedent for the \"write Markdown, get a static site\" approach: VuePress. Comparing the two reveals that while the entry point is similar, their purposes differ.",
+          "cover_alt": "Beyond the fork in the road, on the left a developer's workbench with gears and blueprints, and on the right a folder of paper files and a small illustration of a sprout."
+        }
       }
     },
     {
@@ -680,7 +836,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "A Gallery of Examples That Starts with a Like",
+          "subtitle": "Trying Out Threads Prompts and Saving the Results",
+          "category": "Column",
+          "summary": "I've created \"Prompt Gallery,\" a site where Muse actually tests image generation prompts I've \"liked\" on Threads and saves them as examples. This is the third example in the \"Like → Collect → Publish\" pattern, following Yamagata Gourmet and IKIGAI.",
+          "cover_alt": "An illustration where a smartphone \"like\" triggers prompt cards and generated image cards to expand and be tucked into an album."
+        }
       }
     },
     {
@@ -703,7 +865,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Neither WordPress nor EmDash",
+          "subtitle": "A Third Option: Muse × GitHub × Markdown CMS",
+          "category": "Column",
+          "summary": "A third option beyond the binary choice of \"WordPress or EmDash.\" We introduce a workflow—writing in Markdown, hosting on GitHub, letting AI handle operations, and avoiding running any programs on the publishing side—along with a collection of live sites and their honest limitations. Slides (created with NotebookLM) are also included.",
+          "cover_alt": "Cover slide titled \"Not 'Which CMS,' but 'Where to Run It'\""
+        }
       }
     },
     {
@@ -726,7 +894,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "The entry point: DESIGN.md",
+          "subtitle": "None",
+          "category": "How-to",
+          "summary": "The Markdown CMS now includes a feature to specify the design in Markdown files (DESIGN.md). There are six themes that can be changed via conversation with an AI, and you can actually switch between them on the sample site.",
+          "cover_alt": "An illustration of a piece of paper with color swatches and typesetting specifications, and a web page rising from its edge."
+        }
       }
     },
     {
@@ -749,7 +923,12 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Supplementary Materials for Engineers: PHP and Node.js Vulnerabilities, Updates, and Major Version Upgrades",
+          "category": "Column",
+          "summary": "This supplementary material, tailored for engineers, examines the maintenance burden of running applications on public servers, the challenges of major version upgrades, and why static sites are unaffected, using October 2026 security releases for PHP and Node.js as a case study.",
+          "cover_alt": "An illustration of stairs made of servers, with the rung beyond them crumbling away"
+        }
       }
     },
     {
@@ -772,7 +951,12 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Is WordPress Too Heavy for a Website?",
+          "category": "Column",
+          "summary": "WordPress, used by about 30% of websites, might be too heavy for many small sites. I've written about the choice for a static system that doesn't run code—and its strengths and weaknesses—in a way that even those without technical knowledge can understand.",
+          "cover_alt": "An illustration of a single piece of paper fluttering, with complex machinery beneath it"
+        }
       }
     },
     {
@@ -795,7 +979,12 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "You Can Change the Look with Words",
+          "category": "How-to",
+          "summary": "Here's how to have an AI assistant change the look of your public Markdown CMS. Just pull it from GitHub, show it an image of your preferred homepage, and ask, \"Make it look like this.\" No coding skills required.",
+          "cover_alt": "Sample page and speech bubbles, color palette and adjustment sliders, illustration of a webpage being repainted"
+        }
       }
     }
   ]
