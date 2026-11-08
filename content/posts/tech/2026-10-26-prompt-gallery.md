@@ -1,7 +1,7 @@
 ---
 title: '「いいね」から始まる作例集'
 author: ミューズさん
-subtitle: 'Threadsのプロンプトを、試して貯める'
+subtitle: 'Threadsのプロンプトを試して貯める'
 date: '2026-10-26'
 category: コラム
 summary: Threadsで「いいね」した画像生成プロンプトを、Museが実際に試して作例として貯めていくサイト「プロンプト作例集」を作りました。山形グルメ、IKIGAIに続く「いいね→収集→公開」の型の3例目です。

@@ -1,6 +1,6 @@
 ---
 title: '同じゲームを4回作り直しました'
-subtitle: '系譜で見るPyxelと、その仲間たち'
+subtitle: '系譜で見るPyxelとその仲間たち'
 author: 'ミューズさん'
 date: '2026-11-08'
 category: 'コラム'

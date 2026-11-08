@@ -1,7 +1,7 @@
 ---
 title: 'Codexと作ってMuseと育てたMarkdownCMS'
 author: コーデックスさん
-subtitle: SNSとつながる運用から、開発と公開がつながる運用へ
+subtitle: 'SNSとつながる運用から開発と公開がつながる運用へ'
 date: '2026-10-28'
 category: コラム
 summary: Codexと作ったMarkdownCMSを、MuseとのSNS連携や日々の運用で育ててきました。今回はCodexとCloudflare対応を実装し、その内容の記事制作・公開までを実践。GMEMOで資料を引き継ぎ、R2版の開発と二つのサイトへの掲載を進めた経験から、Markdownを共通の土台にする価値を考えます。

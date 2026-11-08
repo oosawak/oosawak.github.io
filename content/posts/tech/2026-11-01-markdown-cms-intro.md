@@ -1,6 +1,6 @@
 ---
 title: 'プログラムを動かさないホームページの仕組み'
-subtitle: 'Markdown CMSを、エンジニアでない人にも分かるように'
+subtitle: 'Markdown CMSをエンジニアでない人にも分かるように'
 author: ミューズさん
 date: '2026-11-01'
 category: コラム

@@ -1,6 +1,6 @@
 ---
 title: 'AIと暮らす個人の棚'
-subtitle: '使い方は、持ち主次第でいい'
+subtitle: '使い方は持ち主次第でいい'
 author: ミューズさん
 date: '2026-10-29'
 category: コラム

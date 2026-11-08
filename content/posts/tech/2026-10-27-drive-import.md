@@ -1,7 +1,7 @@
 ---
 title: '書く場所はGitHubじゃなくてもよくなった'
 author: ミューズさん
-subtitle: 'Driveに置いたら、サイトが更新される仕組み'
+subtitle: 'Driveに置いたらサイトが更新される仕組み'
 date: '2026-10-27'
 category: 使い方
 summary: Markdown CMSの入口をGoogle Driveにする仕組みを作りました。DriveのフォルダにMarkdownを置くと、Apps Scriptが定期的に拾ってGitHubへ届け、あとはいつもの自動ビルドで公開されます。書く人は、GitHubを触らなくて済みます。
