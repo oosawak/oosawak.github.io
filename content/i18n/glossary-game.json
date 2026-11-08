@@ -149,6 +149,10 @@
     {
       "source": "弓ノ町",
       "target": "Yumino-machi"
+    },
+    {
+      "source": "南石切町",
+      "target": "Minami-Ishikiri-machi"
     }
   ],
   "sendai_town_names": "仙台の町名は原則 -machi とする（五十人町は Gojyunin-machi）。ただし片平丁（Katahira-cho）、御譜代町（Gofudaicho）、国分町（Kokubuncho）、一番町（Ichibancho）など -cho が定着しているものは例外。"
