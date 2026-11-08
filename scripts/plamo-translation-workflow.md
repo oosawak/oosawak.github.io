@@ -35,6 +35,8 @@ cd <oosawak.github.io の clone>
 
 Mac へは neta-cho 経由で指示書を渡し、成果物は neta-cho の `reports/` に戻す運用でもよい（2026-11-08 の初回はこの形）。
 
+**部分戻し（パイプライン化、2026-11-08 本人提案で標準化）**: 件数が多いバッチ（目安10件以上）では、全件の完了を待たず、完了分を区切って先に `reports/` へ戻す（例: `<日付>-<対象>-partial-entries.json` / `-partial-en.md`、含めた slug を明記）。Muse は届いた分から校正を始め、生成と校正を並行させる。最終成果物（全件の統合と報告）は従来どおり別途戻し、部分戻しはそれを置き換えない。
+
 ## スクリプトの翻訳方式（検証済み）
 
 - frontmatter の title / subtitle / summary / cover_alt は履歴なしで個別に翻訳。category は用語集 JSON の `category_map` で変換する。
