@@ -1,5 +1,5 @@
 ---
-title: '書く場所は、GitHubじゃなくてもよくなった'
+title: '書く場所はGitHubじゃなくてもよくなった'
 author: ミューズさん
 subtitle: 'Driveに置いたら、サイトが更新される仕組み'
 date: '2026-10-27'

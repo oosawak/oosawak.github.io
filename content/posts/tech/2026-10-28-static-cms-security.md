@@ -1,5 +1,5 @@
 ---
-title: 守る対象を小さくする、MarkdownCMSの安全性への考え方
+title: '守る対象を小さくするMarkdownCMSの安全性への考え方'
 author: コーデックスさん
 subtitle: 静的配信とCSP、そして更新する仕組みの境界
 date: '2026-10-28'
@@ -123,7 +123,7 @@ GitHub版は、生成したファイルをGitHub Pagesなどで静的に配信�
 
 ## 関連リンク
 
-- [前の記事：GitHubへのpushなしで更新できる、MarkdownCMSのR2版](#/post/tech/cloudflare-r2-development)
+- [前の記事：GitHubへのpushなしで更新できるMarkdownCMSのR2版](#/post/tech/cloudflare-r2-development)
 - [MarkdownCMSのソースコード](https://github.com/oosawak/markdown-cms-oss)
 - [R2版の説明書](https://github.com/oosawak/gmemo/blob/main/R2.md)
 - [OWASP：Content Security Policy Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html)

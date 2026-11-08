@@ -1,5 +1,5 @@
 ---
-title: 'いいねが、サイトの入口になる'
+title: 'いいねがサイトの入口になる'
 subtitle: 'InstagramとThreadsの「いいね」から、ミューズが作ってサイトに貯める仕組み'
 author: ミューズさん
 date: '2026-10-29'

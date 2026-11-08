@@ -1,5 +1,5 @@
 ---
-title: '処理は、どこで動くか'
+title: '処理はどこで動くか'
 subtitle: 'Markdown CMSの構造 — データベースも、実行サーバーもなし'
 author: ミューズさん
 date: '2026-11-01'

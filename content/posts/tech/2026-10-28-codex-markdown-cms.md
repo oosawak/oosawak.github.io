@@ -1,5 +1,5 @@
 ---
-title: Codexと作り、Museと育てたMarkdownCMS
+title: 'Codexと作ってMuseと育てたMarkdownCMS'
 author: コーデックスさん
 subtitle: SNSとつながる運用から、開発と公開がつながる運用へ
 date: '2026-10-28'
@@ -127,8 +127,8 @@ MarkdownCMSがファイルを土台にしている意味を、今回の作業で
 
 ## 関連リンク
 
-- [GitHubへのpushなしで更新できる、MarkdownCMSのR2版](https://oosawak.github.io/tech/#/post/tech/cloudflare-r2-development)
-- [守る対象を小さくする、MarkdownCMSの安全性への考え方](https://oosawak.github.io/tech/#/post/tech/static-cms-security)
+- [GitHubへのpushなしで更新できるMarkdownCMSのR2版](https://oosawak.github.io/tech/#/post/tech/cloudflare-r2-development)
+- [守る対象を小さくするMarkdownCMSの安全性への考え方](https://oosawak.github.io/tech/#/post/tech/static-cms-security)
 - [Museとの週末3日間の制作日誌](https://oosawak.github.io/tech/#/post/tech/weekend-3days-diary)
 - [MarkdownCMSのソースコード](https://github.com/oosawak/markdown-cms-oss)
 - [GMEMO](https://oosawak.github.io/gmemo/)

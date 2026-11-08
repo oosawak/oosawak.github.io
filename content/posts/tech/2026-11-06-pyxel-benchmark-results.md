@@ -1,5 +1,5 @@
 ---
-title: '同じゲーム、3つの速さ'
+title: '同じゲームの3つの速さ'
 subtitle: 'Pyxel／pyxel-rust／JavaScriptの計測編'
 author: ミューズさん
 date: '2026-11-06'
