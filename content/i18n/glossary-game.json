@@ -65,6 +65,35 @@
     {
       "source": "ミューズ",
       "target": "Muse"
+    },
+    {
+      "source": "五十人町",
+      "target": "Gojyunin-machi"
+    },
+    {
+      "source": "三百人町",
+      "target": "Sanbyakunin-machi"
+    },
+    {
+      "source": "六十人町",
+      "target": "Rokujunin-machi"
+    },
+    {
+      "source": "三十人町",
+      "target": "Sanjunin-machi"
+    },
+    {
+      "source": "二十人町",
+      "target": "Nijunin-machi"
+    },
+    {
+      "source": "北五十人町",
+      "target": "Kita-Gojyunin-machi"
+    },
+    {
+      "source": "川内三十人町",
+      "target": "Kawauchi-Sanjunin-machi"
     }
-  ]
+  ],
+  "sendai_town_names": "仙台の町名は原則 -machi とする（五十人町は Gojyunin-machi）。ただし片平丁（Katahira-cho）、御譜代町（Gofudaicho）、国分町（Kokubuncho）、一番町（Ichibancho）など -cho が定着しているものは例外。"
 }
