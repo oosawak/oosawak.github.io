@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codex CLI 設定・攻略ガイド v0.1</title>
+<style>
+  :root{
+    --bg:#0a1526; --bg2:#0d1d36; --panel:#12263f; --panel2:#173152;
+    --line:#24466e; --line2:#2f5a8c;
+    --text:#e9f2fd; --sub:#9db8d6; --dim:#6f8cae;
+    --accent:#4da3ff; --accent2:#8ec9ff;
+    --ok:#3ddc97; --warn:#ffcf5c; --bad:#ff8f8f;
+    --badge-mac:#1d4d3a; --badge-srv:#4d3a1d; --badge-gen:#2a3f5c;
+    --radius:14px;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);
+    background-attachment:fixed; color:var(--text);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.75; font-size:16px;
+  }
+  a{color:var(--accent2);}
+  header.top{
+    position:sticky; top:0; z-index:20;
+    background:rgba(10,21,38,.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  header.top .inner{
+    max-width:1060px; margin:0 auto; padding:12px 18px;
+    display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  }
+  .logo{
+    width:38px; height:38px; border-radius:10px; flex:0 0 auto;
+    background:linear-gradient(135deg,#1c5fa8,#4da3ff);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:19px; color:#fff; letter-spacing:.02em;
+  }
+  header.top h1{font-size:17px; margin:0; line-height:1.3;}
+  header.top .ver{
+    font-size:12px; font-weight:700; color:#06263f; background:var(--accent2);
+    border-radius:999px; padding:1px 9px; margin-left:6px; vertical-align:2px;
+  }
+  header.top .total{margin-left:auto; min-width:170px;}
+  header.top .total .lbl{font-size:12px; color:var(--sub); display:flex; justify-content:space-between;}
+  .bar{height:8px; background:#0a1a30; border:1px solid var(--line); border-radius:999px; overflow:hidden;}
+  .bar > i{display:block; height:100%; width:0%; background:linear-gradient(90deg,#2f7fe0,var(--accent2)); transition:width .3s;}
+  main{max-width:1060px; margin:0 auto; padding:22px 18px 60px;}
+  .intro{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 20px; margin-bottom:20px;
+  }
+  .intro p{margin:6px 0; color:var(--sub); font-size:14.5px;}
+  .intro p b{color:var(--text);}
+  .grid{
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px;
+  }
+  .card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 18px 14px; cursor:pointer; transition:border-color .15s, transform .15s;
+    display:flex; flex-direction:column; gap:8px; min-height:148px;
+  }
+  .card:hover{border-color:var(--line2); transform:translateY(-1px);}
+  .card .num{
+    font-size:12px; font-weight:800; color:var(--accent2); letter-spacing:.14em;
+  }
+  .card h2{font-size:18px; margin:0; line-height:1.4;}
+  .card .desc{color:var(--sub); font-size:13.5px; margin:0; flex:1;}
+  .card .prog{display:flex; align-items:center; gap:10px;}
+  .card .prog .bar{flex:1;}
+  .card .prog .cnt{font-size:12.5px; color:var(--sub); white-space:nowrap;}
+  .card .done{color:var(--ok); font-weight:700;}
+  /* 詳細 */
+  .backbtn{
+    display:inline-flex; align-items:center; gap:6px; color:var(--accent2);
+    background:none; border:1px solid var(--line); border-radius:999px;
+    padding:5px 14px; font-size:14px; cursor:pointer; margin-bottom:16px;
+  }
+  .backbtn:hover{border-color:var(--line2);}
+  .detail-head h2{font-size:25px; margin:2px 0 4px; line-height:1.35;}
+  .detail-head .num{font-size:12px; font-weight:800; color:var(--accent2); letter-spacing:.14em;}
+  .detail-head .prog{display:flex; align-items:center; gap:12px; margin:12px 0 4px; max-width:420px;}
+  .detail-head .prog .bar{flex:1;}
+  .detail-head .prog .cnt{font-size:13px; color:var(--sub);}
+  section.blk{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 20px 18px; margin-top:16px;
+  }
+  section.blk > h3{
+    font-size:16.5px; margin:0 0 10px; display:flex; align-items:center; gap:10px;
+  }
+  section.blk > h3 .chip{
+    background:var(--panel2); border:1px solid var(--line2); color:var(--accent2);
+    font-size:12px; font-weight:700; border-radius:8px; padding:1px 9px; white-space:nowrap;
+  }
+  section.blk p{margin:6px 0;}
+  section.blk ul, section.blk ol{margin:6px 0 6px; padding-left:1.4em;}
+  section.blk li{margin:5px 0;}
+  .badge{
+    display:inline-block; font-size:11.5px; font-weight:700; line-height:1.5;
+    border-radius:999px; padding:0 8px; margin-left:6px; vertical-align:1px; white-space:nowrap;
+    border:1px solid var(--line2); color:var(--accent2); background:var(--badge-gen);
+  }
+  .badge.mac{background:var(--badge-mac); border-color:#2c7a5c; color:#8ff0c8;}
+  .badge.srv{background:var(--badge-srv); border-color:#8a6a2c; color:#ffe1a0;}
+  .badge.gen{background:var(--badge-gen); color:var(--sub);}
+  label.check{
+    display:flex; gap:11px; align-items:flex-start; cursor:pointer;
+    background:var(--bg2); border:1px solid var(--line); border-radius:10px;
+    padding:10px 13px; margin:8px 0; font-size:15px;
+  }
+  label.check:hover{border-color:var(--line2);}
+  label.check input{width:20px; height:20px; margin-top:3px; flex:0 0 auto; accent-color:#2f7fe0; cursor:pointer;}
+  label.check.checked{border-color:#2c7a5c; background:#0d2a24;}
+  label.check.checked .ctext{color:var(--sub);}
+  code.inl{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.88em;
+    background:#0a1a30; border:1px solid var(--line); border-radius:6px; padding:0 5px;
+    color:#cfe6ff; word-break:break-all;
+  }
+  .codebox{
+    border:1px solid var(--line); border-radius:12px; overflow:hidden; margin:12px 0;
+    background:#081222;
+  }
+  .codebox .cbar{
+    display:flex; align-items:center; gap:8px; padding:7px 12px;
+    background:var(--panel2); border-bottom:1px solid var(--line);
+    font-size:13px; color:var(--sub);
+  }
+  .codebox .cbar .ttl{font-weight:700; color:var(--text);}
+  .codebox .copy{
+    margin-left:auto; background:#0a1a30; color:var(--accent2);
+    border:1px solid var(--line2); border-radius:8px; font-size:12.5px;
+    padding:3px 12px; cursor:pointer; white-space:nowrap;
+  }
+  .codebox .copy:hover{background:#12325c;}
+  .codebox pre{
+    margin:0; padding:13px 15px; overflow-x:auto;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:13.5px; line-height:1.65; color:#d7e9ff;
+  }
+  .note{
+    border-left:4px solid var(--warn); background:#2a2410;
+    border-radius:0 10px 10px 0; padding:9px 14px; margin:12px 0; font-size:14.5px;
+  }
+  .note.blue{border-left-color:var(--accent); background:#10263f;}
+  table.mini{border-collapse:collapse; width:100%; margin:10px 0; font-size:14.5px;}
+  table.mini th, table.mini td{border:1px solid var(--line); padding:8px 11px; text-align:left; vertical-align:top;}
+  table.mini th{background:var(--panel2); color:var(--accent2); white-space:nowrap;}
+  .small{font-size:13px; color:var(--dim);}
+  .resetbtn{
+    background:none; border:1px solid var(--line); color:var(--sub);
+    border-radius:8px; font-size:12.5px; padding:4px 12px; cursor:pointer;
+  }
+  .resetbtn:hover{border-color:var(--line2); color:var(--text);}
+  footer{max-width:1060px; margin:0 auto; padding:0 18px 34px; color:var(--dim); font-size:12.5px;}
+  @media (max-width:560px){
+    body{font-size:15px;}
+    .detail-head h2{font-size:21px;}
+    header.top .total{min-width:130px;}
+    section.blk{padding:14px 15px 16px;}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="inner">
+    <div class="logo">Cx</div>
+    <h1>Codex CLI 設定・攻略ガイド<span class="ver">v0.1</span></h1>
+    <div class="total">
+      <div class="lbl"><span>全体の進み具合</span><span id="total-cnt">0/0</span></div>
+      <div class="bar"><i id="total-bar"></i></div>
+    </div>
+  </div>
+</header>
+<main id="app"></main>
+<footer>
+  Codex CLI 設定・攻略ガイド v0.1 ― 実例は MacBook Pro（macOS）と Ubuntu の自宅サーバーの設定棚卸し・点検（2026年11月）に基づきます。版や環境でキーや挙動が異なる場合があります。チェック状態はこのブラウザの中（localStorage）にだけ保存されます。
+</footer>
+
+<script>
+"use strict";
+/* =========================================================
+   データ: 各症状ページ
+   badge: "mac" = 実例（Mac） / "srv" = 実例（自宅サーバー） / "gen" = 一般論
+   ========================================================= */
+const TOPICS = [
+{
+  id:"github", num:"01",
+  title:"GitHub が使えない",
+  desc:"gh の再認証が EOF で終わる／push で認証エラーになる",
+  symptom:`<p><code class="inl">git push</code> が認証エラーで失敗する。<code class="inl">gh auth login --web</code> でログインし直そうとしても、トークン受け取りのポーリングの途中で <b>EOF になって終了</b>してしまい、再認証が完了しない。<span class="badge mac">実例（運用環境）</span></p>
+  <p>この環境では SSH（22/443番）が外向きプロキシに切断されるため、GitHub へは HTTPS でつなぐ前提になっている。認証だけの問題に見えて、実は到達性の問題が混ざっていることもある。</p>`,
+  checks:[
+    {t:`<code class="inl">gh auth status</code> でログイン状態とスコープ（repo / read:org など）を確認した`},
+    {t:`<code class="inl">git push --dry-run</code> を実行し、エラーが「認証」なのか「名前解決・到達性」なのか切り分けた（到達性なら症状02のページへ）`},
+    {t:`サンドボックスの外の通常のシェルでも同じエラーになるか確認した`},
+    {t:`ブラウザを開ける端末（スマホでも可）を手元に用意した`}
+  ],
+  causes:`<ul>
+    <li>トークンの失効、または未ログイン。<code class="inl">gh auth status</code> でまず状態を見る。</li>
+    <li><code class="inl">gh auth login --web</code> のブラウザ方式は、環境によっては<b>トークン受け取りのポーリングが EOF で切れて完了しない</b>ことがある。この環境で実際に起きた既知の癖で、同じ操作を繰り返しても直らない。<span class="badge mac">実例</span></li>
+    <li>実はネット側（名前解決・到達性）の問題で、認証の手前で落ちている。症状02と必ず切り分ける。</li>
+  </ul>`,
+  steps:`<ol>
+    <li>通常の <code class="inl">gh auth login</code> を1回だけ試す。EOF で終わるなら、それ以上繰り返さない。</li>
+    <li>下のスクリプトで <b>device code を curl で発行</b>する。</li>
+    <li>ブラウザで <code class="inl">https://github.com/login/device</code> を開き、表示されたコード（user_code）を入力して承認する。コードの有効期限は約15分。</li>
+    <li>スクリプト後半のポーリングがトークンを受け取ったら、そのまま <code class="inl">gh auth login --with-token</code> へ標準入力で渡す。<b>トークンを画面やファイルに出さない</b>のが要点。</li>
+    <li><code class="inl">gh auth status</code> と <code class="inl">git push --dry-run</code> で疎通を確認する。</li>
+  </ol>`,
+  codes:[
+    {ttl:"再認証スクリプト（device code 方式）", badge:"mac", badgeLabel:"実例で安定した方式",
+     code:
+`#!/usr/bin/env bash
+# gh auth login --web が EOF で終わる環境向けの再認証手順。
+# トークンは画面に出さず、gh auth login --with-token へ直接渡す。
+set -euo pipefail
+
+CLIENT_ID="178c6fc778ccc68e1d6a"  # GitHub CLI の公開 OAuth クライアントID
+SCOPE="repo,read:org,gist"        # --with-token には read:org が必須
+                                  # workflow ファイルを push するなら ,workflow を足す
+
+# 1) device code を発行する
+RESP=$(curl -s -X POST https://github.com/login/device/code \\
+  -H 'Accept: application/json' \\
+  -d "client_id=$CLIENT_ID" -d "scope=$SCOPE")
+DEVICE_CODE=$(printf '%s' "$RESP" | sed -n 's/.*"device_code"[[:space:]]*:[[:space:]]*"\\([^"]*\\)".*/\\1/p')
+USER_CODE=$(printf '%s' "$RESP" | sed -n 's/.*"user_code"[[:space:]]*:[[:space:]]*"\\([^"]*\\)".*/\\1/p')
+INTERVAL=$(printf '%s' "$RESP" | sed -n 's/.*"interval"[[:space:]]*:[[:space:]]*\\([0-9]*\\).*/\\1/p')
+if [ -z "$INTERVAL" ]; then INTERVAL=5; fi
+
+echo "ブラウザで https://github.com/login/device を開き、このコードを入力: $USER_CODE"
+echo "（コードの有効期限は約15分）"
+
+# 2) ポーリングでトークンを受け取り、gh へ直接渡す
+while :; do
+  sleep "$INTERVAL"
+  POLL=$(curl -s -X POST https://github.com/login/oauth/access_token \\
+    -H 'Accept: application/json' \\
+    -d "client_id=$CLIENT_ID" \\
+    -d "device_code=$DEVICE_CODE" \\
+    -d 'grant_type=urn:ietf:params:oauth:grant-type:device_code')
+  case "$POLL" in
+    *'"access_token"'*)
+      printf '%s' "$POLL" | sed -n 's/.*"access_token"[[:space:]]*:[[:space:]]*"\\([^"]*\\)".*/\\1/p' \\
+        | gh auth login --with-token
+      echo "登録しました。gh auth status で確認してください"
+      break ;;
+    *'authorization_pending'*) : ;;              # 承認待ち。そのまま続ける
+    *'slow_down'*) INTERVAL=$((INTERVAL + 5)) ;; # 間隔を広げて続ける
+    *) echo "エラー応答: $POLL" >&2; exit 1 ;;
+  esac
+done`},
+    {ttl:"確認コマンド", badge:"gen", badgeLabel:"一般",
+     code:
+`gh auth status
+git push --dry-run`}
+  ],
+  notes:`<div class="note">スクリプトはトークンを一切出力しません。トークンをチャットやファイルに貼る運用はしないこと。</div>`
+},
+{
+  id:"net", num:"02",
+  title:"ネットが使えない",
+  desc:"サンドボックスの中だけ通信できない／名前解決に失敗する",
+  symptom:`<p>Codex が実行するコマンド環境（サンドボックス内）からネットにつながらない。<code class="inl">curl</code> が <code class="inl">Could not resolve host: github.com</code> で失敗する。</p>
+  <p><span class="badge srv">実例（自宅サーバー）</span>「ネットが使えないことがある」状態が続き、起動パラメータで指定したときはその場はつながったが、根治していない。</p>
+  <p><span class="badge mac">実例（Mac）</span>設定ファイルでは通信許可（network_access = true）でも、通常のシェルでは成功（HTTP 200）するのに、<b>サンドボックス内だけ名前解決に失敗</b>した（curl 終了コード 6／git は 128）。セッション側の実行制約がファイルの設定より強く働いていた。</p>`,
+  checks:[
+    {t:`通常のシェルから <code class="inl">curl -sI https://github.com</code> と <code class="inl">curl -sI https://api.github.com</code> が通るか確認した`},
+    {t:`Codex 経由（サンドボックス内）で同じ curl を実行し、結果をシェル側と比べた`},
+    {t:`<code class="inl">getent hosts github.com</code> で名前解決だけでもできるか確認した`},
+    {t:`<code class="inl">~/.codex/config.toml</code> の sandbox と network に関する行を確認した`},
+    {t:`起動の形（tmux 常駐／VS Code 経由／都度起動）と、起動時に渡している引数・環境変数を確認した`}
+  ],
+  causes:`<ul>
+    <li><code class="inl">[sandbox_workspace_write] network_access</code> が未設定または false で、サンドボックス内の通信が止められている。<span class="badge gen">一般</span></li>
+    <li>設定ファイルでは許可でも、<b>セッション側の実行制約の方が強い</b>と、サンドボックス内だけ DNS が引けない形になる。<span class="badge mac">実例（Mac）</span></li>
+    <li>通信可否が起動パラメータ頼みになっていて、起動の仕方が変わると再発する。<span class="badge srv">実例（自宅サーバー）</span></li>
+    <li>通常のシェルでも通らないなら、設定以前のマシン・回線側の問題。</li>
+  </ul>`,
+  steps:`<ol>
+    <li><b>切り分け</b>： シェル○／サンドボックス× なら Codex の設定の問題、両方× ならマシン・回線の問題として分ける。</li>
+    <li><b>応急処置</b>： 起動時に <code class="inl">-c sandbox_workspace_write.network_access=true</code> を付けて通るか試す。<span class="badge srv">実例（自宅サーバー）でその場は効いた形</span></li>
+    <li><b>根治</b>： 通ることが分かったら、その指定を <code class="inl">~/.codex/config.toml</code> へ移し、起動パラメータを外した状態で再確認する。</li>
+    <li>それでもサンドボックス内だけ失敗する場合は、セッション側の制約を疑う。その環境では「git push など外向きの操作はサンドボックス外のシェルでやる」と運用で分けるのも現実解。<span class="badge mac">実例（Mac）の実測に基づく割り切り</span></li>
+  </ol>`,
+  codes:[
+    {ttl:"config.toml へ寄せる（根治）", badge:"gen", badgeLabel:"一般＋Mac の実物と同じ形",
+     code:
+`sandbox_mode = "workspace-write"
+
+[sandbox_workspace_write]
+network_access = true`},
+    {ttl:"応急処置（起動時だけ上書き）", badge:"gen", badgeLabel:"一般",
+     code:
+`codex -c sandbox_workspace_write.network_access=true`},
+    {ttl:"切り分けコマンド", badge:"srv", badgeLabel:"自宅サーバーの点検の実物",
+     code:
+`# シェルとサンドボックス内で、それぞれ実行して比べる
+curl -sI --connect-timeout 10 https://github.com
+curl -sI --connect-timeout 10 https://api.github.com
+getent hosts github.com
+git push --dry-run`}
+  ],
+  notes:`<div class="note blue">実例（Mac）の実測: サンドボックス外シェル → HTTP/2 200 で成功。サンドボックス内 → curl は終了コード 6（名前解決失敗）、git push --dry-run は 128 で <code class="inl">Could not resolve host: github.com</code>。設定ファイルの値は正しくても、この形があり得る。</div>`
+},
+{
+  id:"approval", num:"03",
+  title:"承認を頻繁に求められる",
+  desc:"コマンドのたびに止まる／常駐で無人に回したい",
+  symptom:`<p>コマンドを実行するたびに承認を求められて作業が止まる。逆に、常駐で回したい作業が承認待ちで先に進まない。</p>
+  <p><span class="badge mac">実例（Mac）</span>常駐 Codex では <code class="inl">approval_policy = "never"</code> と <code class="inl">sandbox_mode = "workspace-write"</code> の組み合わせで無人運用している。</p>`,
+  checks:[
+    {t:`<code class="inl">~/.codex/config.toml</code> の <code class="inl">approval_policy</code> の値を確認した`},
+    {t:`プロジェクト側 <code class="inl">.codex/config.toml</code> で上書きされていないか確認した`},
+    {t:`起動引数（<code class="inl">-a</code> / <code class="inl">--ask-for-approval</code>）で指定していないか確認した`},
+    {t:`その作業が「対話で見ながら」か「常駐で無人」か決めた`}
+  ],
+  causes:`<ul>
+    <li><code class="inl">approval_policy</code> が <code class="inl">untrusted</code> や <code class="inl">on-request</code> のままだと、確認の回数が多いのは仕様通り。<span class="badge gen">一般</span></li>
+    <li>常駐・定型の自動実行なのに、承認前提の設定のまま回している。<span class="badge mac">実例（Mac）との対比</span></li>
+  </ul>
+  <table class="mini">
+    <tr><th>値</th><th>意味</th></tr>
+    <tr><td><code class="inl">untrusted</code></td><td>信頼済みとみなされるコマンド以外は、毎回確認する</td></tr>
+    <tr><td><code class="inl">on-failure</code></td><td>コマンドが失敗したときだけ、条件を変えての再実行などを確認する</td></tr>
+    <tr><td><code class="inl">on-request</code></td><td>モデルが必要と判断したときに確認する</td></tr>
+    <tr><td><code class="inl">never</code></td><td>確認しない。無人・常駐向け。<b>sandbox とセット</b>で使う</td></tr>
+  </table>`,
+  steps:`<ol>
+    <li>作業の性質で選ぶ。対話で安全に見たいなら <code class="inl">on-request</code>、定型の自動実行なら <code class="inl">on-failure</code>、それでも止まる常駐作業なら <code class="inl">never</code>。</li>
+    <li>決めた値を <code class="inl">~/.codex/config.toml</code> に書く（下の設定例）。</li>
+    <li>一時的に変えたいときは起動引数 <code class="inl">-a</code> で変える。ファイル側は常駐向けのままにしておける。</li>
+    <li><code class="inl">never</code> にする場合は、<code class="inl">sandbox_mode = "workspace-write"</code> とセットにして作業範囲を区切るのが実例（Mac）の形。<code class="inl">danger-full-access</code> との併用は避ける。</li>
+  </ol>`,
+  codes:[
+    {ttl:"常駐向けの設定", badge:"mac", badgeLabel:"実例（Mac）の実物",
+     code:
+`approval_policy = "never"
+sandbox_mode = "workspace-write"
+
+[sandbox_workspace_write]
+network_access = true`},
+    {ttl:"その場だけ変える", badge:"gen", badgeLabel:"一般",
+     code:
+`codex -a on-request
+codex -c approval_policy="on-failure"`}
+  ],
+  notes:`<div class="note">approval_policy = "never" は安全装置を外す設定です。使うなら sandbox で範囲を区切り、対象を定型の常駐作業に限ること。</div>`
+},
+{
+  id:"bwrap", num:"04",
+  title:"bwrap のエラーが出る",
+  desc:"Linux でコマンド実行が bubblewrap のエラーで落ちる",
+  symptom:`<p>Linux で Codex がコマンドを実行しようとすると <code class="inl">bwrap: ...</code> のエラーで失敗する。<code class="inl">RTM_NEWADDR</code> を含む行が出ることがある。</p>
+  <p><span class="badge srv">実例（自宅サーバー）</span>自宅サーバーの点検では、このエラーの文面（特に bwrap や RTM_NEWADDR を含む行）をそのまま記録することが、切り分けの起点になっている。「設定が微妙」とされる症状のひとつで、根治はこれからの点検対象。</p>`,
+  checks:[
+    {t:`エラーの文面を省略せずに記録した（RTM_NEWADDR の有無を含む）`},
+    {t:`通常のシェルでは同じコマンドが動くか確認した`},
+    {t:`<code class="inl">sandbox_mode</code> を変えて実行すると出るかどうか確認した（切り分け用）`},
+    {t:`OS のバージョンと <code class="inl">codex --version</code>、<code class="inl">bwrap --version</code> を控えた`},
+    {t:`OS やカーネルを更新した直後ではないか思い出した`}
+  ],
+  causes:`<ul>
+    <li>bubblewrap がサンドボックス用のネットワーク名前空間を作る段階で、カーネル側とのやり取り（netlink の RTM_NEWADDR まわり）が環境と合わずに失敗している型。<span class="badge gen">一般論</span></li>
+    <li>非特権ユーザー名前空間の制限など、OS 側のセキュリティ設定と噛み合っていないことがある。<span class="badge gen">一般論・環境により異なる</span></li>
+  </ul>`,
+  steps:`<ol>
+    <li>まず文面を記録して切り分ける。設定ファイルの問題か、サンドボックス基盤（bwrap／カーネル）の問題かで行き先が違う。</li>
+    <li><code class="inl">codex -s read-only</code> など sandbox_mode を変えても出るか、出る条件を絞る。</li>
+    <li>OS 側の確認ポイント（下のコマンド例）を見る。ユーザー名前空間まわりの制限が関係する型があるが、<b>項目の有無も意味も環境により異なる</b>ので、変更は OS の公式情報にあたってからにする。</li>
+    <li>急ぎの作業は通常シェルでの手作業に逃がす。<code class="inl">-s danger-full-access</code> は最終手段で、単発の作業だけに使う。</li>
+    <li>Codex と OS の更新で直ることがある。版を控えておき、更新後に同じ手順で再確認する。</li>
+  </ol>`,
+  codes:[
+    {ttl:"版と環境を控える", badge:"gen", badgeLabel:"一般",
+     code:
+`codex --version
+bwrap --version
+uname -a`},
+    {ttl:"OS 側の確認ポイントの例", badge:"gen", badgeLabel:"一般論・環境により異なる",
+     code:
+`# ユーザー名前空間まわりの制限の有無を見る例。
+# この項目自体が無い環境もある。
+sysctl kernel.unprivileged_userns_clone 2>/dev/null || echo "この項目が無い環境もあります"`}
+  ],
+  notes:`<div class="note">この症状は手元の実例でも点検の途中です。「この設定を変えれば直る」と断定できる材料はまだありません。文面の記録と切り分けが先、がこのページの方針です。</div>`
+},
+{
+  id:"files", num:"05",
+  title:"ファイルが書けない",
+  desc:"ワークスペースの外へ書くと Operation not permitted になる",
+  symptom:`<p>ワークスペース（作業ディレクトリ）の外――別リポ、<code class="inl">/tmp</code>、ホーム直下など――へファイルを書こうとすると <code class="inl">Operation not permitted</code> で落ちる。</p>
+  <p><span class="badge mac">実例（Mac）</span>版を取るだけのコマンドでも、標準エラーに次の警告が出た。書き込み範囲の制限が、こういう形で顔を出す。</p>`,
+  codesExtraTop:
+`WARNING: proceeding, even though we could not create PATH aliases: Operation not permitted (os error 1)`,
+  checks:[
+    {t:`<code class="inl">~/.codex/config.toml</code> の <code class="inl">sandbox_mode</code> の現在の値を確認した`},
+    {t:`書こうとしている場所が、作業ディレクトリの中か外か確認した`},
+    {t:`追加で書きたい場所が決まっている（場当たりで範囲を広げていない）`},
+    {t:`エラーが権限（範囲外）の問題か、パスの勘違いか、文面で切り分けた`}
+  ],
+  causes:`<ul>
+    <li><code class="inl">workspace-write</code> は「作業ディレクトリ配下は読み書き可、外は不可」が仕様。設定ミスではなく、範囲の外に出ているケースが大半。<span class="badge gen">一般</span></li>
+  </ul>
+  <table class="mini">
+    <tr><th>sandbox_mode</th><th>範囲</th><th>向き</th></tr>
+    <tr><td><code class="inl">read-only</code></td><td>読むだけ。書き込み不可</td><td>棚卸し・点検など読み取り専用の作業</td></tr>
+    <tr><td><code class="inl">workspace-write</code></td><td>作業ディレクトリ配下は読み書き可</td><td>常用。実例（Mac）の常駐もこの値</td></tr>
+    <tr><td><code class="inl">danger-full-access</code></td><td>制限なし</td><td>範囲の概念が無くなる。場面を決めて使う</td></tr>
+  </table>`,
+  steps:`<ol>
+    <li>基本は、作業場所そのものをワークスペース内へ寄せる。</li>
+    <li>決まった場所への書き込みが要るなら、<code class="inl">[sandbox_workspace_write] writable_roots</code> に追加する（下の設定例）。</li>
+    <li>単発の作業だけ広げたいときは、起動引数で一時的に変える。</li>
+    <li><code class="inl">danger-full-access</code> は承認設定（症状03）と合わせて、使う場面を決めてから使う。</li>
+  </ol>`,
+  codes:[
+    {ttl:"書き込み先を追加する", badge:"gen", badgeLabel:"一般",
+     code:
+`sandbox_mode = "workspace-write"
+
+[sandbox_workspace_write]
+writable_roots = ["/path/to/another-project"]
+network_access = true`},
+    {ttl:"その場だけ変える", badge:"gen", badgeLabel:"一般",
+     code:
+`codex -s read-only            # 読み取り専用で開く
+codex -c sandbox_mode="workspace-write"`}
+  ],
+  notes:""
+},
+{
+  id:"venv", num:"06",
+  title:"Python の venv が迷子になる",
+  desc:"前に作った環境がどこにあるか分からない／別の Python を掴む",
+  symptom:`<p>「前に作った venv がどこにあるか分からない」「Codex が想定と違う Python を掴む」。</p>
+  <p><span class="badge mac">実例（Mac）</span>棚卸しで広い範囲を探して見つかった venv は <b>1件だけ</b>で、プロジェクトの日付フォルダの奥（<code class="inl">work/</code> の中）にあった。既定の python3 は pyenv の 3.12.8、見つかった venv の中身は 3.12.11 と、版までずれていた。道具は pyenv 2.6.25 と uv 0.10.9（どちらも Homebrew）。</p>`,
+  checks:[
+    {t:`<code class="inl">which python3</code> と <code class="inl">python3 --version</code> で既定の解決先を確認した`},
+    {t:`既存の venv を <code class="inl">pyvenv.cfg</code> で探して洗い出した`},
+    {t:`版管理の道具（pyenv / uv など）が何か確認した`},
+    {t:`置き場所の決め（例: プロジェクト直下の <code class="inl">.venv</code>）を1つに決めた`},
+    {t:`Codex に作業させるとき、使う venv を指示の中で明示した`}
+  ],
+  causes:`<ul>
+    <li>venv は「作った場所に置かれるだけ」で、登録簿のような仕組みがない。名前も場所も自由な分、<b>決めが無いと増えるたびに迷子になる</b>。<span class="badge gen">一般</span></li>
+    <li>既定の Python と venv 内の Python の版がずれていても、見た目では気づきにくい。<span class="badge mac">実例（Mac）: 3.12.8 と 3.12.11</span></li>
+  </ul>`,
+  steps:`<ol>
+    <li><b>棚卸し</b>： まず既存の venv を探し（下のコマンド）、使うものと捨てるものを分ける。</li>
+    <li><b>決めを作る</b>： 置き場所はプロジェクト直下の <code class="inl">.venv</code>、版はプロジェクトに固定（<code class="inl">pyenv local</code> など）。</li>
+    <li><b>指定する</b>： Codex の常駐指示や作業指示に「この venv を使う」と書く。探させるのではなく、指定するのが効く。</li>
+    <li>新規は決め通りに作り、決めの外に作らない。</li>
+  </ol>`,
+  codes:[
+    {ttl:"既存 venv の棚卸し", badge:"mac", badgeLabel:"実例（Mac）の探し方",
+     code:
+`which python3 && python3 --version
+
+# pyvenv.cfg がある場所が venv。深い入れ子は階層を広げて探す
+find ~/Documents/Codex -maxdepth 4 -name pyvenv.cfg -print 2>/dev/null`},
+    {ttl:"決め通りに作る", badge:"gen", badgeLabel:"Mac の道具立て＋一般手順",
+     code:
+`# pyenv で版を固定し、プロジェクト直下に .venv を作る
+pyenv local 3.12.8
+python3 -m venv .venv
+
+# uv を使う場合
+uv venv .venv`}
+  ],
+  notes:`<div class="note blue">実例（Mac）で見つかった唯一の venv は <code class="inl">Documents/Codex/2026-09-20/…/work/audio-env</code>（Python 3.12.11、パッケージ44件）。日付フォルダ運用では、探す範囲の階層を広げないと見つからない。</div>`
+},
+{
+  id:"basics", num:"07",
+  title:"基本編：設定ファイルの場所と優先順位",
+  desc:"どこに書けば効くのか／書いたのに効かないときの見方",
+  symptom:`<p>設定を書いたのに効いていない気がする。そもそも、どこに書けばいいのか分からない。まずこのページで置き場所と優先順位をそろえる。</p>
+  <p><span class="badge mac">実例（Mac）</span>設定ファイルでは通信許可でもサンドボックス内は通信不可だった件（症状02）のように、<b>ファイルの値と、そのセッションに実際に与えられた実行制約は別物</b>ということがある。効いているかどうかは、ファイルではなく実測で確かめる。</p>`,
+  checks:[
+    {t:`<code class="inl">codex --version</code> で版を確認した`},
+    {t:`<code class="inl">~/.codex/config.toml</code> が存在し、書きたいキーがそこにあるか確認した`},
+    {t:`プロジェクト側 <code class="inl">.codex/config.toml</code> の有無を確認した`},
+    {t:`起動引数（<code class="inl">-c</code> / <code class="inl">-s</code> / <code class="inl">-a</code>）で上書きしていないか確認した`}
+  ],
+  causes:`<ul>
+    <li>優先順位の高い側（起動引数やプロジェクト側の設定）が、ユーザー設定を上書きしている。<span class="badge gen">一般</span></li>
+    <li>起動の形（アプリ／常駐／VS Code 経由）によって、セッション側から実行制約が別途与えられていて、ファイル通りにならない。<span class="badge mac">実例（Mac）</span></li>
+  </ul>
+  <table class="mini">
+    <tr><th>優先</th><th>置き場所</th><th>役割</th></tr>
+    <tr><td>高</td><td>起動引数 <code class="inl">-c キー=値</code>、<code class="inl">-s</code>、<code class="inl">-a</code></td><td>その場だけの上書き。ファイルを汚さず試せる</td></tr>
+    <tr><td>中</td><td>プロジェクトの <code class="inl">.codex/config.toml</code></td><td>プロジェクト固有の指定</td></tr>
+    <tr><td>低</td><td><code class="inl">~/.codex/config.toml</code></td><td>マシン全体の基本形。まずここをそろえる</td></tr>
+    <tr><td>―</td><td>（どれにも無ければ既定値）</td><td></td></tr>
+  </table>`,
+  steps:`<ol>
+    <li>まず <code class="inl">~/.codex/config.toml</code> に基本形を置く（下の実例）。</li>
+    <li>プロジェクト固有の違いだけ、プロジェクト側 <code class="inl">.codex/config.toml</code> に書く。</li>
+    <li>一時的な変更は起動時に <code class="inl">-c キー=値</code> で上書きして試す。</li>
+    <li>効いているかは症状別の切り分け（curl の疎通、<code class="inl">git push --dry-run</code> など）で実測する。</li>
+  </ol>
+  <p class="small">注: プロジェクト側の設定が読み込まれない場合は、そのプロジェクトが信頼済みとして扱われているかも確認ポイントになる（版や環境により異なる）。</p>`,
+  codes:[
+    {ttl:"ユーザーレベルの基本形", badge:"mac", badgeLabel:"実例（Mac）の実物・該当行のみ",
+     code:
+`approval_policy = "never"
+sandbox_mode = "workspace-write"
+
+[sandbox_workspace_write]
+network_access = true`},
+    {ttl:"起動時の一時上書き", badge:"gen", badgeLabel:"一般",
+     code:
+`codex -c sandbox_mode="read-only"
+codex -c sandbox_workspace_write.network_access=true
+codex -s workspace-write -a on-request   # -s / -a は sandbox / approval の短縮指定`}
+  ],
+  notes:`<div class="note blue">実例（Mac）の環境で、2026年11月に読み取り実測した棚卸しに基づきます。</div>`
+}
+];
+
+/* =========================================================
+   状態管理（localStorage）
+   ========================================================= */
+const LS_KEY = "codex-guide-v01-checks";
+let state = {};
+try{ state = JSON.parse(localStorage.getItem(LS_KEY) || "{}") || {}; }catch(e){ state = {}; }
+function saveState(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }catch(e){} }
+function checkId(tid, idx){ return tid + ":" + idx; }
+function topicProgress(t){
+  let done = 0;
+  t.checks.forEach((c,i)=>{ if(state[checkId(t.id,i)]) done++; });
+  return {done:done, total:t.checks.length};
+}
+function esc(s){
+  return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+function badgeHtml(b, label){
+  if(!b) return "";
+  const cls = b==="mac" ? "mac" : (b==="srv" ? "srv" : "gen");
+  return `<span class="badge ${cls}">${esc(label||"")}</span>`;
+}
+
+/* =========================================================
+   描画
+   ========================================================= */
+const app = document.getElementById("app");
+
+function updateTotal(){
+  let d=0, n=0;
+  TOPICS.forEach(t=>{ const p=topicProgress(t); d+=p.done; n+=p.total; });
+  document.getElementById("total-cnt").textContent = d + "/" + n;
+  document.getElementById("total-bar").style.width = (n ? (d/n*100) : 0) + "%";
+}
+
+function renderList(){
+  let cards = TOPICS.map(t=>{
+    const p = topicProgress(t);
+    const pct = p.total ? (p.done/p.total*100) : 0;
+    const cnt = p.done===p.total
+      ? `<span class="cnt done">完了 ${p.done}/${p.total}</span>`
+      : `<span class="cnt">進捗 ${p.done}/${p.total}</span>`;
+    return `<div class="card" data-open="${t.id}" role="button" tabindex="0">
+      <div class="num">CASE ${t.num}</div>
+      <h2>${esc(t.title)}</h2>
+      <p class="desc">${esc(t.desc)}</p>
+      <div class="prog"><div class="bar"><i style="width:${pct}%"></i></div>${cnt}</div>
+    </div>`;
+  }).join("");
+  app.innerHTML = `
+    <div class="intro">
+      <p><b>使い方</b> ― 症状のカードを選ぶと、「まず確認（チェック）→ 原因の見立て → 対処手順 → 設定例」の順に進められます。チェックは自動で保存され、一覧に進捗が出ます。</p>
+      <p><b>印の意味</b> ― <span class="badge mac">実例（Mac）</span> <span class="badge srv">実例（自宅サーバー）</span> は実際の設定棚卸し・点検に基づく内容、<span class="badge gen">一般</span> は一般論です。混ざらないよう分けて書いています。</p>
+    </div>
+    <div class="grid">${cards}</div>`;
+  app.querySelectorAll("[data-open]").forEach(el=>{
+    const go = ()=>{ location.hash = "#/t/" + el.getAttribute("data-open"); };
+    el.addEventListener("click", go);
+    el.addEventListener("keydown", e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } });
+  });
+  updateTotal();
+  window.scrollTo(0,0);
+}
+
+function codebox(c){
+  return `<div class="codebox">
+    <div class="cbar"><span class="ttl">${esc(c.ttl)}</span>${badgeHtml(c.badge, c.badgeLabel)}
+      <button class="copy" type="button">コピー</button></div>
+    <pre><code>${esc(c.code)}</code></pre>
+  </div>`;
+}
+
+function renderDetail(t){
+  const p = topicProgress(t);
+  const pct = p.total ? (p.done/p.total*100) : 0;
+  const checks = t.checks.map((c,i)=>{
+    const id = checkId(t.id,i);
+    const on = !!state[id];
+    return `<label class="check ${on?"checked":""}">
+      <input type="checkbox" data-check="${id}" ${on?"checked":""}>
+      <span class="ctext">${c.t}</span></label>`;
+  }).join("");
+  const extraTop = t.codesExtraTop ? `<div class="codebox">
+      <div class="cbar"><span class="ttl">実際の出力</span>${badgeHtml("mac","実例（Mac）")}
+        <button class="copy" type="button">コピー</button></div>
+      <pre><code>${esc(t.codesExtraTop)}</code></pre></div>` : "";
+  const codes = (t.codes||[]).map(codebox).join("");
+  app.innerHTML = `
+    <button class="backbtn" id="back" type="button">← 症状の一覧に戻る</button>
+    <div class="detail-head">
+      <div class="num">CASE ${t.num}</div>
+      <h2>${esc(t.title)}</h2>
+      <div class="prog"><div class="bar"><i style="width:${pct}%"></i></div>
+        <span class="cnt">確認 ${p.done}/${p.total}</span>
+        <button class="resetbtn" id="reset" type="button">この症状のチェックをリセット</button></div>
+    </div>
+    <section class="blk"><h3><span class="chip">1</span>症状</h3>${t.symptom}${extraTop}</section>
+    <section class="blk"><h3><span class="chip">2</span>まず確認</h3>${checks}</section>
+    <section class="blk"><h3><span class="chip">3</span>原因の見立て</h3>${t.causes}</section>
+    <section class="blk"><h3><span class="chip">4</span>対処手順</h3>${t.steps}</section>
+    <section class="blk"><h3><span class="chip">5</span>設定例・コマンド</h3>${codes}${t.notes||""}</section>`;
+  document.getElementById("back").addEventListener("click", ()=>{ location.hash = "#/"; });
+  document.getElementById("reset").addEventListener("click", ()=>{
+    t.checks.forEach((c,i)=>{ delete state[checkId(t.id,i)]; });
+    saveState(); renderDetail(t);
+  });
+  app.querySelectorAll("[data-check]").forEach(inp=>{
+    inp.addEventListener("change", ()=>{
+      state[inp.getAttribute("data-check")] = inp.checked;
+      if(!inp.checked) delete state[inp.getAttribute("data-check")];
+      saveState();
+      inp.closest("label").classList.toggle("checked", inp.checked);
+      const p2 = topicProgress(t);
+      const bar = app.querySelector(".detail-head .bar > i");
+      const cnt = app.querySelector(".detail-head .cnt");
+      if(bar) bar.style.width = (p2.total ? (p2.done/p2.total*100) : 0) + "%";
+      if(cnt) cnt.textContent = "確認 " + p2.done + "/" + p2.total;
+      updateTotal();
+    });
+  });
+  updateTotal();
+  window.scrollTo(0,0);
+}
+
+function route(){
+  const h = location.hash || "#/";
+  const m = h.match(/^#\/t\/(.+)$/);
+  if(m){
+    const t = TOPICS.find(x=>x.id===m[1]);
+    if(t){ renderDetail(t); return; }
+  }
+  renderList();
+}
+window.addEventListener("hashchange", route);
+
+/* コピーボタン（イベント委譲） */
+document.addEventListener("click", e=>{
+  const btn = e.target.closest ? e.target.closest(".copy") : null;
+  if(!btn) return;
+  const box = btn.closest(".codebox");
+  const pre = box ? box.querySelector("pre code") : null;
+  if(!pre) return;
+  const text = pre.textContent;
+  const done = ()=>{ const old = btn.textContent; btn.textContent = "コピーしました"; setTimeout(()=>{ btn.textContent = old; }, 1400); };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(()=>{ fallback(); });
+  } else { fallback(); }
+  function fallback(){
+    const ta = document.createElement("textarea");
+    ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); done(); }catch(err){}
+    document.body.removeChild(ta);
+  }
+});
+
+route();
+</script>
+</body>
+</html>
