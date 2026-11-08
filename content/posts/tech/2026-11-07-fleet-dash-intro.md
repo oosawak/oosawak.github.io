@@ -30,7 +30,7 @@ type: 'article'
 そこで、状況の確認だけを集めたページを作りました。\
 マシン群ダッシュボード「fleet-dash」です。
 
-実物は、情報を絞った[公開版](https://oosawak.github.io/fleet-dash-public/)を置きました。\
+実物は、情報を絞った[公開版](https://oosawak.github.io/fleet-dash/)を置きました。\
 本体は[こちら](https://fleet-dash-2iz.pages.dev)ですが、ログイン側はCloudflare Accessでユーザー管理をしていて、開いてもログイン画面が出るだけです。
 
 ## 集まっているもの
