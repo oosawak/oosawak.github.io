@@ -43,6 +43,9 @@
   .step b{white-space:nowrap}
   .arrow{margin:2px 0 2px 13px;color:#9aa5b1;font-size:14px;line-height:1}
   ul.points{margin:0;padding-left:20px;font-size:14.5px;line-height:1.9}
+  .figure{margin:0 0 22px}
+  .figure img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:14px;background:#fff}
+  .figure figcaption{font-size:12.5px;color:var(--sub);margin-top:8px}
   .note{font-size:12.5px;color:var(--sub);margin-top:26px;line-height:1.8}
   @media (max-width:760px){ .grid{grid-template-columns:1fr} h1{font-size:22px} }
 </style>
@@ -53,6 +56,11 @@
 <h1>英訳の仕組み システム構成図</h1>
 <p class="lead">日本語で記事を書くと、英語版も付いてくる仕組みの構成です。<br>
 発信者が触るのは「書く」と「直しを伝える」だけ。翻訳の下書き、校正、辞書づくりは裏側で回ります。</p>
+
+<figure class="figure">
+  <img src="system-diagram.png" alt="AI英訳の仕組みのシステム構成図。発信者、ミューズ、日本語化マシン、辞書、Markdown CMS商用版、読者の関係と、記事が英語になるまでの流れ">
+  <figcaption>システム構成図（v0.1）。オーダーはミューズから各所へ出る形です。</figcaption>
+</figure>
 
 <div class="grid">
   <div class="card shop">
