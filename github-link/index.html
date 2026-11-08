@@ -185,7 +185,7 @@
   <div class="top-in">
     <div class="top-row">
       <div class="top-title">GitHub でつなぐ ― AI同士の受け渡し</div>
-      <span class="ver">v0.3</span>
+      <span class="ver">v0.4</span>
     </div>
     <div class="progress-wrap">
       <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
@@ -456,6 +456,29 @@ memory/   … メモリーの写しを置く場所</pre><button class="copy-btn"
       <p>
         フォルダ名は英語の小文字にしておくと、どの道具からでも扱いやすくなります。
         置き場の中にファイルやフォルダを作る作業も、ブラウザの画面からできますし、AI に頼んでも大丈夫です。
+      </p>
+
+      <h3>「つなぐ」とは、同じ置き場を見られるようにすること</h3>
+      <p>
+        ここで言う「つなぐ」とは、難しい設定を指す言葉ではありません。
+        突き詰めれば、<strong>Codex とミューズの両方が、同じ GitHub リポジトリーを見て、読み書きできる状態にすること</strong>です。
+        片方だけが見られるのでは受け渡しになりません。二人が同じ置き場を開き、同じファイルを確認できることが出発点です。
+      </p>
+      <p>
+        具体的な手順が分からなくても大丈夫です。
+        それぞれの AI に「このリポジトリーにつないで」とお願いすれば、必要な手順を教えてくれます。
+        画面の案内や AI の説明に沿って進めれば、接続そのものはすぐに終わります。
+      </p>
+      <div class="note">
+        <strong>家での実例：</strong>
+        Codex 側は、<code class="inline">gh auth login</code> を使って Web 経由で GitHub にログインし、つなぎました。
+        ミューズ側は、会話の中で口頭で「つないで」とお願いし、コネクターでつなぎました。
+        やり方は側ごとに違っても、同じリポジトリーを見られれば目的は達成です。
+      </div>
+      <p>
+        一度つながってしまえば、その後の連携は単純です。
+        片方が Markdown ファイルに指示を書き、もう片方がそれを読み、結果を別の Markdown ファイルに書く。
+        それぞれが同じ置き場のファイルを読み書きするだけで、仕事を受け渡せます。
       </p>
 
       <h3>手順4：ミューズと Codex につなぐ</h3>
@@ -777,7 +800,7 @@ on:
   </section>
 
   <footer>
-    GitHub でつなぐ ― AI同士の受け渡し <span class="fver">v0.3</span><br>
+    GitHub でつなぐ ― AI同士の受け渡し <span class="fver">v0.4</span><br>
     読了チェックはこの端末のブラウザに保存されます。
   </footer>
 
