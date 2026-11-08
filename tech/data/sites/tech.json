@@ -122,7 +122,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Looking at Vulnerabilities Is Not Enough",
+          "subtitle": "A daily check run on CVE Hub by a fellow Install Maniax member, with hand-offs between Muse and Codex",
+          "category": "Column",
+          "summary": "Starting from CVE Hub, a vulnerability information site built by a fellow member of Install Maniax, I built a system that, every morning, picks out only the dangerous vulnerabilities that actually hit my own environment. On the first run I checked 463 entries; of the 83 that passed the filter, just one matched my environment. Detection, writing the fix order, and handing it to Codex for execution all run as one continuous flow. I also write about the 21 WordPress plugin vulnerabilities found in the same window, and about how a static site is not even in that arena.",
+          "cover_alt": "An illustration of a watchtower on a hill with a radar and a net, where only one of the many documents falling from the sky stays in the net, and a robot below catches it"
+        }
       }
     },
     {
