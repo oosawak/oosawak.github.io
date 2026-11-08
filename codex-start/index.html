@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codex 使い方ガイド ― 入門編</title>
+<style>
+  :root{
+    --bg:#071224;
+    --bg2:#0a1a36;
+    --panel:#0e2247;
+    --panel2:#123058;
+    --line:#1f4479;
+    --ink:#e9f1ff;
+    --ink-dim:#a9bedd;
+    --accent:#53a8ff;
+    --accent2:#38d6c4;
+    --code-bg:#06101f;
+    --warn:#ffc857;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 60%,#081630 100%);
+    color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+    line-height:1.85;
+    font-size:16px;
+  }
+  a{color:var(--accent);}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px 80px;}
+
+  /* ヘッダー */
+  header.top{
+    position:sticky;top:0;z-index:50;
+    background:rgba(7,18,36,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .top-in{max-width:1060px;margin:0 auto;padding:12px 20px 10px;}
+  .top-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .top-title{font-size:18px;font-weight:700;letter-spacing:.02em;}
+  .ver{
+    font-size:12px;color:var(--bg);background:var(--accent2);
+    border-radius:999px;padding:1px 10px;font-weight:700;
+  }
+  .progress-wrap{margin-top:8px;display:flex;align-items:center;gap:12px;}
+  .progress-bar{flex:1;height:10px;background:#0b1e3d;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+  .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .4s;}
+  .progress-text{font-size:13px;color:var(--ink-dim);white-space:nowrap;}
+
+  /* ヒーロー */
+  .hero{padding:44px 0 8px;}
+  .hero .kicker{color:var(--accent2);font-weight:700;letter-spacing:.18em;font-size:13px;}
+  .hero h1{font-size:38px;line-height:1.35;margin:10px 0 14px;font-weight:800;}
+  .hero h1 .hl{color:var(--accent);}
+  .hero p.lead{color:var(--ink-dim);font-size:17px;max-width:760px;}
+  .hero .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+  .hero .badge{
+    border:1px solid var(--line);background:var(--panel);
+    border-radius:999px;padding:4px 14px;font-size:13px;color:var(--ink-dim);
+  }
+
+  /* 章ナビ */
+  nav.chapters{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 6px;}
+  nav.chapters a{
+    text-decoration:none;color:var(--ink);
+    background:var(--panel);border:1px solid var(--line);
+    border-radius:var(--radius);padding:10px 16px;font-size:14px;
+    display:flex;gap:8px;align-items:center;
+  }
+  nav.chapters a:hover{border-color:var(--accent);}
+  nav.chapters a .st{font-size:12px;color:var(--ink-dim);}
+  nav.chapters a.done{border-color:var(--accent2);}
+  nav.chapters a.done .st{color:var(--accent2);}
+
+  /* 章 */
+  section.chapter{
+    background:rgba(14,34,71,.55);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:30px 30px 26px;
+    margin-top:28px;
+  }
+  .ch-head{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;}
+  .ch-num{
+    background:linear-gradient(135deg,var(--accent),#2b6fd4);
+    color:#fff;font-weight:800;border-radius:12px;
+    width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+    font-size:19px;flex:none;
+  }
+  .ch-head h2{font-size:24px;line-height:1.4;}
+  .ch-head .sub{color:var(--ink-dim);font-size:14px;}
+  .ch-body{margin-top:16px;}
+  .ch-body h3{font-size:18px;margin:24px 0 8px;color:#cfe4ff;}
+  .ch-body h3:first-child{margin-top:4px;}
+  .ch-body p{margin:8px 0;}
+  .ch-body ul,.ch-body ol{margin:8px 0 8px 1.4em;}
+  .ch-body li{margin:4px 0;}
+  .dim{color:var(--ink-dim);}
+  .note{
+    background:var(--panel);border-left:4px solid var(--accent);
+    border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;font-size:15px;
+  }
+  .note.warn{border-left-color:var(--warn);}
+  .note strong{color:#fff;}
+
+  /* 手順ステップ */
+  .steps{display:grid;gap:14px;margin:14px 0;}
+  .step{
+    background:var(--panel);border:1px solid var(--line);
+    border-radius:var(--radius);padding:16px 18px;
+    display:flex;gap:14px;
+  }
+  .step .n{
+    flex:none;width:30px;height:30px;border-radius:50%;
+    background:var(--accent2);color:#04263f;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px;
+  }
+  .step h4{font-size:16px;margin-bottom:4px;}
+  .step p{font-size:15px;color:var(--ink-dim);}
+
+  /* コード */
+  .codebox{position:relative;margin:12px 0;}
+  pre{
+    background:var(--code-bg);border:1px solid var(--line);
+    border-radius:12px;padding:14px 84px 14px 16px;
+    overflow-x:auto;font-size:14px;line-height:1.7;
+    font-family:"SF Mono",Menlo,Consolas,"Noto Sans Mono",monospace;
+    color:#d7e9ff;white-space:pre-wrap;word-break:break-all;
+  }
+  .copy-btn{
+    position:absolute;top:8px;right:8px;
+    background:var(--panel2);color:var(--ink);
+    border:1px solid var(--line);border-radius:8px;
+    font-size:12px;padding:4px 10px;cursor:pointer;
+  }
+  .copy-btn:hover{border-color:var(--accent);}
+  .copy-btn.copied{background:var(--accent2);color:#04263f;border-color:var(--accent2);}
+  code.inline{
+    background:var(--code-bg);border:1px solid var(--line);
+    border-radius:6px;padding:0 6px;font-size:.92em;
+    font-family:Menlo,Consolas,monospace;color:#cfe4ff;
+  }
+
+  /* 3つのモード */
+  .modes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0;}
+  .mode-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;}
+  .mode-card h4{font-size:16px;margin-bottom:6px;}
+  .mode-card p{font-size:14px;color:var(--ink-dim);}
+  .mode-card .tag{font-size:12px;color:var(--accent2);font-weight:700;letter-spacing:.08em;}
+
+  /* 依頼文ライブラリ */
+  .cat-title{
+    margin:26px 0 4px;font-size:19px;display:flex;align-items:center;gap:10px;
+  }
+  .cat-title .cat-badge{
+    background:var(--panel2);border:1px solid var(--line);color:var(--accent);
+    font-size:12px;border-radius:999px;padding:2px 12px;font-weight:700;
+  }
+  .prompt-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px;}
+  .prompt-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;}
+  .prompt-card h4{font-size:15px;margin-bottom:2px;}
+  .prompt-card .when{font-size:13px;color:var(--ink-dim);margin-bottom:8px;}
+  .prompt-card pre{font-size:13.5px;}
+
+  /* 用語辞典 */
+  .glossary{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}
+  .term{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;}
+  .term dt{font-weight:700;color:#cfe4ff;margin-bottom:2px;}
+  .term dd{font-size:14px;color:var(--ink-dim);}
+
+  /* 読了チェック */
+  .read-check{
+    margin-top:22px;border-top:1px dashed var(--line);padding-top:16px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .read-check label{cursor:pointer;font-size:15px;display:flex;align-items:center;gap:10px;}
+  .read-check input{width:20px;height:20px;accent-color:var(--accent2);cursor:pointer;}
+  .read-check .done-msg{color:var(--accent2);font-size:14px;display:none;}
+  section.chapter.is-done{border-color:var(--accent2);}
+  section.chapter.is-done .done-msg{display:inline;}
+
+  footer{margin-top:44px;color:var(--ink-dim);font-size:13px;text-align:center;}
+  footer .fver{color:var(--accent2);font-weight:700;}
+
+  @media (max-width:820px){
+    .modes{grid-template-columns:1fr;}
+    .prompt-grid{grid-template-columns:1fr;}
+    .glossary{grid-template-columns:1fr;}
+    .hero h1{font-size:29px;}
+    section.chapter{padding:22px 18px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="top-row">
+      <div class="top-title">Codex 使い方ガイド ― 入門編</div>
+      <span class="ver">v0.2</span>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-text" id="progressText">読了 0 / 9 章</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="kicker">CODEX STARTER GUIDE</div>
+    <h1>Codex と一緒に、<br><span class="hl">フォルダの中で物を作る。</span></h1>
+    <p class="lead">
+      Codex は、パソコンのフォルダの中身を読んで、書いて、直してくれる AI の相棒です。
+      このガイドは、ターミナル（黒い画面）に慣れていない人に向けて、
+      「最初の15分」の手順から、頼み方のコツ、言葉の意味までを順に案内します。
+    </p>
+    <div class="badges">
+      <span class="badge">対象： Codex CLI</span>
+      <span class="badge">全9章</span>
+      <span class="badge">依頼文 29本つき</span>
+      <span class="badge">読了チェックで進み具合が残ります</span>
+    </div>
+  </div>
+
+  <nav class="chapters" id="chapterNav">
+    <a href="#start15" data-nav="start15">1. 最初の15分 <span class="st">未読</span></a>
+    <a href="#screen" data-nav="screen">2. 画面と操作の基本 <span class="st">未読</span></a>
+    <a href="#safety" data-nav="safety">3. モードと安全の基本 <span class="st">未読</span></a>
+    <a href="#prompts" data-nav="prompts">4. 依頼文ライブラリ <span class="st">未読</span></a>
+    <a href="#agents" data-nav="agents">5. AGENTS.md の書き方 <span class="st">未読</span></a>
+    <a href="#markdown" data-nav="markdown">6. Markdown で仕事を渡す <span class="st">未読</span></a>
+    <a href="#config" data-nav="config">7. 設定の入口 <span class="st">未読</span></a>
+    <a href="#muse" data-nav="muse">8. ミューズと連動して使う <span class="st">未読</span></a>
+    <a href="#glossary" data-nav="glossary">9. 用語辞典 <span class="st">未読</span></a>
+  </nav>
+
+  <!-- 第1章 -->
+  <section class="chapter" id="start15">
+    <div class="ch-head">
+      <div class="ch-num">1</div>
+      <div>
+        <h2>最初の15分</h2>
+        <div class="sub">入れる → サインイン → フォルダで開く → 最初のひと言 → 出来上がりを見る</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        Codex の仕事場は「フォルダ」です。作りたい物が入るフォルダを決めて、その中で Codex を開くと、
+        Codex はそのフォルダの中身を見ながら作業します。まずは小さなフォルダで試すのがおすすめです。
+      </p>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div>
+          <h4>Codex を入れる</h4>
+          <p>ターミナルを開いて、次のどちらかを実行します。Mac では Homebrew、他の環境では npm を使う方法が一般的です。</p>
+        </div></div>
+      </div>
+      <div class="codebox"><pre>brew install --cask codex</pre><button class="copy-btn" type="button">コピー</button></div>
+      <div class="codebox"><pre>npm install -g @openai/codex</pre><button class="copy-btn" type="button">コピー</button></div>
+      <div class="steps">
+        <div class="step"><div class="n">2</div><div>
+          <h4>サインインする</h4>
+          <p>ターミナルで <code class="inline">codex</code> と入力して Enter。初回はサインインを求められるので、
+          案内に従って ChatGPT アカウントでサインインします（API キーで使う方法もあります）。</p>
+        </div></div>
+        <div class="step"><div class="n">3</div><div>
+          <h4>作業フォルダの中で開く</h4>
+          <p>ターミナルで作業したいフォルダへ移動してから <code class="inline">codex</code> を実行します。
+          たとえば「memos」というフォルダで始めたいなら、次のようにします。</p>
+        </div></div>
+      </div>
+      <div class="codebox"><pre>cd ~/memos
+codex</pre><button class="copy-btn" type="button">コピー</button></div>
+      <div class="steps">
+        <div class="step"><div class="n">4</div><div>
+          <h4>最初の依頼を出す</h4>
+          <p>画面の下の入力欄に、やってほしいことを普通の文章で書いて Enter を押します。
+          最初は小さな頼みごとが安心です。</p>
+        </div></div>
+      </div>
+      <div class="codebox"><pre>このフォルダの中身を一覧にして、それぞれ何のファイルか短く説明してください。ファイルは変更しないでください。</pre><button class="copy-btn" type="button">コピー</button></div>
+      <div class="steps">
+        <div class="step"><div class="n">5</div><div>
+          <h4>結果を確かめる</h4>
+          <p>Codex が何をしたかは、画面の表示と、実際にフォルダの中身を開いて確かめます。
+          ファイルを書き換えたときは <code class="inline">/diff</code> と入力すると、変更箇所だけを表示してくれます。</p>
+        </div></div>
+      </div>
+      <div class="note">
+        <strong>15分のゴール：</strong>
+        「フォルダを開いて、ひと言頼んで、結果を見る」が一通りできれば十分です。
+        凝った物作りは次の章からで大丈夫です。
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="start15"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第2章 -->
+  <section class="chapter" id="screen">
+    <div class="ch-head">
+      <div class="ch-num">2</div>
+      <div>
+        <h2>画面と操作の基本</h2>
+        <div class="sub">対話画面の見方と、止める・戻す・頼み直すの作法</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <h3>画面は「会話の記録」です</h3>
+      <p>
+        Codex の画面には、あなたの依頼、Codex の考えや作業の様子、実行したコマンドとその結果が、
+        上から下へ時系列で並びます。迷ったら、まず一番下（最新の状態）を見てください。
+        入力欄は画面の下にあり、文章を書いて Enter で送信します。
+      </p>
+      <h3>途中で止めたいとき</h3>
+      <ul>
+        <li>作業の途中で止めたいときは <strong>Esc キー</strong>を押します。今の作業が中断され、指示を出し直せます。</li>
+        <li>Codex が作業中でも、追加の文章を入力して送ると「次の指示」として受け取られます。急ぎの軌道修正は、まず Esc で止めてから伝える方が確実です。</li>
+        <li>画面を終えるときは <code class="inline">/quit</code> と入力するか、Ctrl+C を2回押します。</li>
+      </ul>
+      <h3>承認を求められたら</h3>
+      <p>
+        ファイルの書き換えやコマンドの実行の前に、Codex が「実行してよいですか？」と聞いてくることがあります。
+        これは失敗ではなく、安全のための確認です。内容を見て、問題なければ許可（Yes）を選びます。
+        どんなときに聞かれるかは、次の章の「モードと安全」で決まります。
+      </p>
+      <h3>覚えておくと便利なコマンド</h3>
+      <p>入力欄に <code class="inline">/</code> と打つと、使えるコマンドの一覧が出ます。最初はこの3つで十分です。</p>
+      <div class="codebox"><pre>/diff    … Codex が加えた変更箇所を表示する
+/status  … いまのモデルや設定の状態を表示する
+/model   … 使うモデルを切り替える</pre><button class="copy-btn" type="button">コピー</button></div>
+      <h3>「戻す」はフォルダごと守る</h3>
+      <p>
+        作業フォルダを Git で管理しておくと、「さっきの状態に戻す」が簡単になります。
+        Git を使っていないフォルダでは、大事なファイルを先にコピーしておくのが安全です。
+        Codex 自身にも「変更を元に戻して」と頼めますが、確実なのは自分側の控えです。
+      </p>
+      <div class="note warn">
+        <strong>注意：</strong>
+        うまくいかなかったときに慌てて同じ指示を連打すると、変更が重なって余計に分からなくなります。
+        一度止めて、「何が起きたか説明して」と聞くのが近道です。
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="screen"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第3章 -->
+  <section class="chapter" id="safety">
+    <div class="ch-head">
+      <div class="ch-num">3</div>
+      <div>
+        <h2>モードと安全の基本</h2>
+        <div class="sub">「どこまで自由にやっていいか」を決める2つのスイッチ</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        Codex の動き方は、大きく2つの考え方で決まります。
+        ひとつは <strong>サンドボックス</strong>（触れる範囲）、もうひとつは <strong>承認</strong>（実行前に聞くかどうか）です。
+        難しく考えず、「範囲」と「確認」の2つだと思ってください。
+      </p>
+      <h3>サンドボックス ＝ 触れる範囲</h3>
+      <div class="modes">
+        <div class="mode-card">
+          <div class="tag">READ-ONLY</div>
+          <h4>読むだけ</h4>
+          <p>ファイルを読むことはできますが、書き換えはできません。相談や調査だけしたいときに。</p>
+        </div>
+        <div class="mode-card">
+          <div class="tag">WORKSPACE-WRITE</div>
+          <h4>作業フォルダの中は自由</h4>
+          <p>開いたフォルダの中は読み書きできますが、その外には手を出しません。ふだんの作業はこれが基本です。</p>
+        </div>
+        <div class="mode-card">
+          <div class="tag">FULL ACCESS</div>
+          <h4>全部許可</h4>
+          <p>パソコン全体に触れます。便利ですが、影響も大きくなります。何をしているか分かっているときだけ選びます。</p>
+        </div>
+      </div>
+      <h3>承認 ＝ 実行前に聞くかどうか</h3>
+      <ul>
+        <li><strong>こまめに聞く：</strong> 書き換えやコマンドのたびに確認が出ます。最初はこの状態で、Codex の動き方に慣れるのがおすすめです。</li>
+        <li><strong>範囲内は聞かない：</strong> 作業フォルダの中のことは自動で進み、範囲の外に出るときだけ聞かれます。慣れてきたらこの形が快適です。</li>
+        <li><strong>ほとんど聞かない：</strong> 確認なしで進みます。作業は速くなりますが、見守る前提の使い方です。</li>
+      </ul>
+      <p>
+        画面では <code class="inline">/approvals</code> と入力すると、いまの承認のされ方を確認・変更できます。
+        組み合わせの目安はシンプルで、<strong>大事なフォルダほど「狭く・こまめに」、試作用のフォルダほど「広く・自動で」</strong>です。
+      </p>
+      <div class="note">
+        <strong>ネットワークについて：</strong>
+        標準では、作業中のコマンドからインターネットへ出る通信は制限されています。
+        必要な場合だけ、設定で許可できます（第7章参照）。
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="safety"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第4章 -->
+  <section class="chapter" id="prompts">
+    <div class="ch-head">
+      <div class="ch-num">4</div>
+      <div>
+        <h2>依頼文ライブラリ</h2>
+        <div class="sub">そのまま貼って使える頼み方の見本 29本（名前や対象は自分の物に置き換えてください）</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        良い依頼文のコツは3つです。<strong>①何をしてほしいか</strong>、<strong>②対象はどれか</strong>、<strong>③やってはいけないこと</strong>を添えること。
+        下の見本はどれも、この3つが入る形にしてあります。
+      </p>
+
+      <div class="cat-title">作る <span class="cat-badge">6本</span></div>
+      <div class="prompt-grid">
+        <div class="prompt-card">
+          <h4>小さな道具を1ファイルで</h4>
+          <div class="when">ちょっとした作業を自動化したいとき</div>
+          <div class="codebox"><pre>CSVファイルの列を並べ替える小さなプログラムを、Pythonで作ってください。ファイル名は sort_csv.py にして、使い方を先頭のコメントに書いてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>ブラウザで開けるページ</h4>
+          <div class="when">見た目のある成果物がほしいとき</div>
+          <div class="codebox"><pre>自己紹介のページを index.html 1ファイルで作ってください。名前と、できることの一覧と、連絡先の欄を入れてください。色は青系で、スマホでも崩れないようにしてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>文章の下書きファイル</h4>
+          <div class="when">文章づくりのたたき台がほしいとき</div>
+          <div class="codebox"><pre>「地域のパン屋さんを紹介する記事」の構成案を outline.md に作ってください。見出しと、各見出しで書く内容のメモだけにしてください。本文はまだ書かないでください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>フォルダと土台を用意する</h4>
+          <div class="when">新しい作業を始めるとき</div>
+          <div class="codebox"><pre>新しいプロジェクト用に、このフォルダの中に docs、src、data の3つのフォルダを作ってください。それぞれの用途を書いた README.md も置いてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>表計算のまとめファイル</h4>
+          <div class="when">データを集計したいとき</div>
+          <div class="codebox"><pre>data フォルダにある CSV を全部読み、月ごとの合計を出した summary.csv を作ってください。元のファイルは変更しないでください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>ひな形を増やす</h4>
+          <div class="when">同形式のものを量産したいとき</div>
+          <div class="codebox"><pre>template.md をひな形にして、items.txt に書かれた名前ごとに1ファイルずつ、pages フォルダへ作ってください。名前の部分だけ差し替えて、他の文面は変えないでください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+      </div>
+
+      <div class="cat-title">直す <span class="cat-badge">5本</span></div>
+      <div class="prompt-grid">
+        <div class="prompt-card">
+          <h4>エラーを見てもらう</h4>
+          <div class="when">動かなくなったときの第一声</div>
+          <div class="codebox"><pre>このプログラムを実行するとエラーが出ます。エラーの文面を貼るので、原因を教えてください。いきなり直さず、まず原因の見立てを聞かせてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>直し方を小さく区切る</h4>
+          <div class="when">大きな修正を安全に進めたいとき</div>
+          <div class="codebox"><pre>今のエラーを直してください。ただし変更は最小限にして、直した場所と理由を1か所ずつ説明してください。関係ない場所は触らないでください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>見た目の崩れを直す</h4>
+          <div class="when">ページの表示がおかしいとき</div>
+          <div class="codebox"><pre>index.html をスマホで見ると、右側に余白ができて横にずれます。原因を探して直してください。デザインそのものは変えないでください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>文章の表記をそろえる</h4>
+          <div class="when">文面の整え直し</div>
+          <div class="codebox"><pre>docs フォルダの文章で、「ください」と「下さい」の表記が混ざっています。「ください」に統一してください。意味や言い回しは変えないでください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>元に戻してもらう</h4>
+          <div class="when">直し方が気にいらないとき</div>
+          <div class="codebox"><pre>さっきの変更を元に戻してください。戻したあと、代わりにどうすればいいか、案を2つ出してください。勝手に別の変更はしないでください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+      </div>
+
+      <div class="cat-title">調べる <span class="cat-badge">5本</span></div>
+      <div class="prompt-grid">
+        <div class="prompt-card">
+          <h4>中身の地図を作る</h4>
+          <div class="when">初めてのフォルダを前にしたとき</div>
+          <div class="codebox"><pre>このフォルダの全体像を教えてください。何を作るための場所で、主要なファイルはどれで、それぞれ何の役割ですか。変更はしないでください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>ある言葉を探す</h4>
+          <div class="when">どこに書いてあるか知りたいとき</div>
+          <div class="codebox"><pre>「送料」という言葉が出てくるファイルを全部探して、ファイル名と行番号と、その行の文面を一覧にしてください。変更はしないでください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>重複と矛盾を探す</h4>
+          <div class="when">資料が増えてきたとき</div>
+          <div class="codebox"><pre>docs フォルダの文章を通して読み、同じ内容の重複と、食い違っている記述を探してください。場所と内容を一覧にしてください。直すかどうかは私が決めるので、変更はしないでください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>大きさと古さの棚卸し</h4>
+          <div class="when">片づけの前の現状把握</div>
+          <div class="codebox"><pre>このフォルダで、容量の大きいファイル上位10件と、1年以上触られていないファイルを一覧にしてください。消すかどうかはまだ決めないので、一覧だけください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>変更の履歴を見る</h4>
+          <div class="when">Git 管理のフォルダで</div>
+          <div class="codebox"><pre>最近の変更の流れを教えてください。ここ1週間で何が変わって、どのファイルがよく触られていますか。専門用語は少なく説明してください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+      </div>
+
+      <div class="cat-title">テストする <span class="cat-badge">4本</span></div>
+      <div class="prompt-grid">
+        <div class="prompt-card">
+          <h4>動かして確かめる</h4>
+          <div class="when">直したあとの確認</div>
+          <div class="codebox"><pre>さっき直したプログラムを実際に動かして、エラーが出ないか確認してください。実行したコマンドと結果をそのまま見せてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>確かめる手順を書く</h4>
+          <div class="when">自分で確かめたいとき</div>
+          <div class="codebox"><pre>このページが正しく動くか、私が自分で確かめるための手順を書いてください。開く場所、押す場所、どうなれば正常かを、順番に短く書いてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>テストを用意する</h4>
+          <div class="when">壊れていないか自動で見たいとき</div>
+          <div class="codebox"><pre>sort_csv.py のための簡単なテストを作ってください。正常なCSVと、空のCSVと、列が足りないCSVの3パターンで確かめるものにしてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>壊れた理由を切り分ける</h4>
+          <div class="when">テストが失敗したとき</div>
+          <div class="codebox"><pre>テストが1件失敗しています。失敗した箇所と、考えられる原因を切り分けてください。直すのはまだ先で、まず原因の候補を確からしい順に並べてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+      </div>
+
+      <div class="cat-title">説明してもらう <span class="cat-badge">5本</span></div>
+      <div class="prompt-grid">
+        <div class="prompt-card">
+          <h4>コードを言葉に訳す</h4>
+          <div class="when">中身が読めないとき</div>
+          <div class="codebox"><pre>main.py が何をしているか、プログラムに詳しくない人向けに説明してください。専門用語には、その場で短い言い換えを添えてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>変更点を要約する</h4>
+          <div class="when">作業の締めに</div>
+          <div class="codebox"><pre>今日の作業で変更した内容を、3行で要約してください。どのファイルに、何のために手を入れたかが分かるようにしてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>選択肢とおすすめ</h4>
+          <div class="when">やり方が1つでないとき</div>
+          <div class="codebox"><pre>このデータを1つのファイルにまとめる方法を、案として2〜3個出してください。それぞれの良い点と面倒な点と、あなたのおすすめを教えてください。決めるのは私です。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>用語をその場で聞く</h4>
+          <div class="when">分からない言葉が出たら</div>
+          <div class="codebox"><pre>さっきの説明に出てきた「リファクタリング」という言葉を、身近な例えで説明してください。1分で読める長さにしてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>手順書にしてもらう</h4>
+          <div class="when">同じ作業をまたやるとき</div>
+          <div class="codebox"><pre>今やった作業の手順を、次に私が自分でできるように手順書として manual.md に書いてください。コマンドはそのまま使える形で載せてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+      </div>
+
+      <div class="cat-title">進め方・その他 <span class="cat-badge">4本</span></div>
+      <div class="prompt-grid">
+        <div class="prompt-card">
+          <h4>まず計画だけ立てる</h4>
+          <div class="when">大きい頼みごとの前に</div>
+          <div class="codebox"><pre>このフォルダのサイトに「お問い合わせページ」を足したいです。いきなり作らず、まず作業の段取りを箇条書きで見せてください。私が承認したら始めてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>節目ごとに知らせる</h4>
+          <div class="when">長い作業を頼むとき</div>
+          <div class="codebox"><pre>この作業は大きな段取りごとに区切って進めてください。1つ終わるごとに、何をしたか短く報告してから次へ進んでください。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>やらないことを先に決める</h4>
+          <div class="when">事故を防ぎたいとき</div>
+          <div class="codebox"><pre>このフォルダで作業するとき、元データの入った data フォルダは読み取りだけにして、書き換えないでください。出力は output フォルダへお願いします。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+        <div class="prompt-card">
+          <h4>今日の記録を残す</h4>
+          <div class="when">作業のおわりに</div>
+          <div class="codebox"><pre>今日やったこと、決めたこと、次にやることを、worklog.md に日付つきで追記してください。箇条書きで短くお願いします。</pre><button class="copy-btn" type="button">コピー</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="prompts"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第5章 -->
+  <section class="chapter" id="agents">
+    <div class="ch-head">
+      <div class="ch-num">5</div>
+      <div>
+        <h2>AGENTS.md の書き方</h2>
+        <div class="sub">「この場所での約束」をファイルに残すと、毎回説明しなくて済みます</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        フォルダの中に <code class="inline">AGENTS.md</code> という名前の文章ファイルを置いておくと、
+        Codex は作業の前にそれを読み、そのフォルダでの約束として守ります。
+        たとえば「出力は output フォルダへ」「勝手に消さないで」のような決まりを、毎回チャットで言わなくて済むようになります。
+      </p>
+      <h3>作り方</h3>
+      <p>
+        画面で <code class="inline">/init</code> と入力すると、そのフォルダ用の AGENTS.md の土台を Codex が作ってくれます。
+        あとは自分の言葉で書き足したり、Codex に「約束を追記して」と頼んだりして育てます。
+      </p>
+      <h3>書くと効くこと</h3>
+      <ul>
+        <li><strong>このフォルダは何の場所か</strong>（何を作っているか）</li>
+        <li><strong>触ってほしくない場所</strong>（元データ、公開済みのもの）</li>
+        <li><strong>出力の置き場所や名前の付け方</strong></li>
+        <li><strong>作業の進め方</strong>（区切りごとに報告する、公開前に必ず確認を取る、など）</li>
+        <li><strong>文章の約束</strong>（表記の統一、敬語の有無など）</li>
+      </ul>
+      <h3>見本</h3>
+      <div class="codebox"><pre># このフォルダの約束
+
+- ここは地域のお店を紹介する原稿置き場です。
+- 原稿は drafts/ に Markdown で置きます。
+- 元データ（data/）は読み取りだけ。書き換えや削除はしません。
+- 表記は「ください」に統一します。
+- 公開用の書き出しをする前に、必ず私に確認してください。</pre><button class="copy-btn" type="button">コピー</button></div>
+      <div class="note">
+        <strong>置き場所の小ワザ：</strong>
+        AGENTS.md は、フォルダの中のさらに下のフォルダにも置けます。その場合、下のフォルダでは近い方の約束が優先されます。
+        また、パソコン全体で効く約束は、ホームの <code class="inline">~/.codex/AGENTS.md</code> に置きます。
+      </div>
+      <div class="note">
+        <strong>AGENTS.md は「常駐の約束」：</strong>
+        ここで扱ったのは、ずっと効き続ける約束です。一回ごとの仕事の明細は、別の Markdown ファイルに書いて渡します。
+        その書き方は次の第6章で扱います。
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="agents"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第6章 -->
+  <section class="chapter" id="markdown">
+    <div class="ch-head">
+      <div class="ch-num">6</div>
+      <div>
+        <h2>Markdown で仕事を渡す</h2>
+        <div class="sub">AGENTS.md の約束とは別に、一回ごとの仕事もファイルで渡せます</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        第5章の AGENTS.md は「常駐の約束」でした。でも、Codex とのやり取りで使う Markdown は、それだけではありません。
+        一回ごとの仕事の明細、作るものの決め事、終わったあとの報告――それらも Markdown のファイルで受け渡すと、
+        仕事がぐっと回しやすくなります。
+      </p>
+      <h3>なぜ Markdown なのか</h3>
+      <ul>
+        <li><strong>そのまま読めるテキスト：</strong> 特別なソフトがなくても開けて、人が読んで、その場で直せます。</li>
+        <li><strong>AI が読み書きできる：</strong> Codex をはじめ、AI は Markdown の文章をそのまま扱えます。画面に貼る文章も、ファイルに書く文章も、同じ言葉で通じます。</li>
+        <li><strong>ファイルとして残る：</strong> チャットの流れの中に消えてしまわず、「何を頼んで、何が返ってきたか」をあとから見返せます。</li>
+        <li><strong>版の管理ができる：</strong> GitHub などの仕組みに乗せると、いつ・何が変わったかという履歴が残ります。</li>
+      </ul>
+      <h3>AGENTS.md 以外の Markdown たち</h3>
+      <ul>
+        <li><strong>指示書：</strong> 一回ごとの仕事の明細を書いたファイルです。目的、材料、やること、報告の形まで書いて渡すと、口頭の頼みごとより漏れが減ります。</li>
+        <li><strong>仕様書・設計メモ：</strong> 作るものの決め事を書いて残し、Codex に読ませます。会話の中で決めただけだと流れてしまいますが、ファイルに残せば次回も同じ前提で始められます。</li>
+        <li><strong>報告：</strong> 実行した結果を、同じファイルの末尾や、報告用のフォルダのファイルに書き戻してもらいます。人はあとからまとめて確認できます。</li>
+        <li><strong>テンプレート：</strong> 指示書の「型」をあらかじめ用意しておくと、毎回同じ形で頼めます。型があると、書く側も読む側も迷いません。</li>
+      </ul>
+      <h3>指示書テンプレートの見本</h3>
+      <p>新しく作るフォルダに、この型を1枚置いておくのがおすすめです。仕事のたびにコピーして使います。</p>
+      <div class="codebox"><pre># 指示書：（仕事の名前）
+
+## 目的
+（何のための仕事か。終わったとき、どうなっていれば成功か）
+
+## 材料・置き場所
+- 対象のフォルダ／ファイル：（場所を書く）
+- 参考にしてよい資料：（あれば書く）
+
+## やること
+1. （頼みたい作業を、順番に書く）
+2.
+3.
+
+## やってはいけないこと
+- （触ってほしくないもの。勝手に公開・送信しないことなど）
+
+## 報告の形
+- このファイルの末尾に「状態：完了／未完了」と、やったことの要約を書き戻してください。
+- 進めるうちに分からない点が出たら、作業を止めて「要確認」と書いてください。</pre><button class="copy-btn" type="button">コピー</button></div>
+      <h3>往復の流れ</h3>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div>
+          <h4>指示書を書く</h4>
+          <p>テンプレートに沿って、その回の仕事の明細をファイルに書きます。</p>
+        </div></div>
+        <div class="step"><div class="n">2</div><div>
+          <h4>Codex が読んで実行する</h4>
+          <p>ファイルの置き場所を伝えると、Codex はそれを読んで作業します。</p>
+        </div></div>
+        <div class="step"><div class="n">3</div><div>
+          <h4>状態と報告が書き戻る</h4>
+          <p>終わったら、同じファイルの末尾や報告ファイルに、結果が Markdown で残ります。</p>
+        </div></div>
+        <div class="step"><div class="n">4</div><div>
+          <h4>人が確認する</h4>
+          <p>報告を読んで、よければ次の指示書へ。直してほしい点は、次の指示に書きます。</p>
+        </div></div>
+      </div>
+      <div class="note">
+        <strong>使い分け：</strong>
+        その場で対話しながら詰める仕事は、チャットが向いています。
+        時間をおいて実行してほしい仕事や、記録を残したい仕事は、この章の「ファイルで渡す」形が向いています。
+        なお、常駐の約束である AGENTS.md の書き方は、第5章で扱いました。
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="markdown"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第7章 -->
+  <section class="chapter" id="config">
+    <div class="ch-head">
+      <div class="ch-num">7</div>
+      <div>
+        <h2>設定の入口</h2>
+        <div class="sub">config.toml の場所と、入門のうちに触る項目だけ</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        Codex の設定は、ホームフォルダの中の <code class="inline">~/.codex/config.toml</code> というファイルに書かれています。
+        特定のフォルダだけの設定は、そのフォルダの <code class="inline">.codex/config.toml</code> に書けます。
+        入門の段階では、次の3つを知っていれば十分です。
+      </p>
+      <div class="codebox"><pre># ~/.codex/config.toml の例
+
+# 使うモデル
+model = "gpt-5-codex"
+
+# 承認のされ方（第3章の考え方と対応します）
+approval_policy = "on-request"
+
+# 触れる範囲
+sandbox_mode = "workspace-write"</pre><button class="copy-btn" type="button">コピー</button></div>
+      <ul>
+        <li><code class="inline">model</code> ― どのモデルに仕事を頼むか。</li>
+        <li><code class="inline">approval_policy</code> ― 確認の頻度。<code class="inline">on-request</code> は「必要なときに聞く」という意味です。</li>
+        <li><code class="inline">sandbox_mode</code> ― 触れる範囲。第3章の3段階（<code class="inline">read-only</code> / <code class="inline">workspace-write</code> / <code class="inline">danger-full-access</code>）と対応します。</li>
+      </ul>
+      <p>
+        一時的に変えたいだけなら、起動時に <code class="inline">codex -c approval_policy='"on-request"'</code> のように
+        <code class="inline">-c</code> で上書きもできます。まずはファイル側を正として整えるのがおすすめです。
+      </p>
+      <div class="note">
+        <strong>もっと深い設定や、困ったときの直し方は：</strong>
+        設定でつまずいたときの切り分け手順は、姉妹編の「Codex CLI 設定・攻略ガイド」にまとめてあります。<br>
+        <a href="https://oosawak.github.io/codex-guide/">https://oosawak.github.io/codex-guide/</a>
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="config"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第8章 -->
+  <section class="chapter" id="muse">
+    <div class="ch-head">
+      <div class="ch-num">8</div>
+      <div>
+        <h2>ミューズと連動して使う</h2>
+        <div class="sub">会話と判断はミューズ、実行は Codex。受け渡しは Markdown ファイルで</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        Codex は、フォルダの中で実行する役として頼りになります。一方で、相談したり、方針を決めたり、
+        進み具合を確認したりするのは、チャット型の相棒の方が向いている場面もあります。
+        そこで、別の AI エージェント「ミューズ（Muse）」と Codex を組み合わせる形を紹介します。
+        ここで紹介するのは、実際に家庭の環境で回している運用を、固有名や細部を外して一般化したものです。
+      </p>
+      <h3>考え方：直接つながず、ファイルで受け渡す</h3>
+      <p>
+        役割分担はシンプルです。<strong>会話と判断はミューズ</strong>（スマホから話しかけて、相談・方針決め・結果の確認をする）、
+        <strong>実行は Codex</strong>（パソコンやサーバーの中で、ファイルの読み書きやコマンドの実行をする）。
+        大事なのは、この2つを直接つながないことです。受け渡しは、GitHub 上に置いた Markdown ファイル――
+        第6章の「指示書」と「報告」――だけで行います。いわば、決めた場所に置き手紙をする方式です。
+      </p>
+      <h3>往復の流れ</h3>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div>
+          <h4>ミューズが指示書を書く</h4>
+          <p>人との相談をもとに、目的・やること・報告の形を Markdown の指示書にまとめます（第6章の型がそのまま使えます）。</p>
+        </div></div>
+        <div class="step"><div class="n">2</div><div>
+          <h4>決めたフォルダに置く</h4>
+          <p>指示書は、GitHub 上の「指示書置き場」に置きます。置き場所は最初に1つ決めておきます。</p>
+        </div></div>
+        <div class="step"><div class="n">3</div><div>
+          <h4>Codex が見に来て実行する</h4>
+          <p>Codex は定期的に置き場を確認し、新しい指示書があれば、そのうち自分が担当するものを実行します。</p>
+        </div></div>
+        <div class="step"><div class="n">4</div><div>
+          <h4>報告を書いて戻す</h4>
+          <p>結果は報告ファイルに書き、指示書の側にも「完了」などの状態を書き添えます。</p>
+        </div></div>
+        <div class="step"><div class="n">5</div><div>
+          <h4>人が報告を確認する</h4>
+          <p>報告を読んで、次の判断をします。途中経過もファイルに残るので、あとから追いかけられます。</p>
+        </div></div>
+      </div>
+      <h3>なぜ GitHub 経由なのか</h3>
+      <ul>
+        <li><strong>一か所で済む：</strong> 置き場所、履歴、受け渡しが GitHub の上に集まります。誰が・いつ・何を渡して、何が返ってきたかが残ります。</li>
+        <li><strong>常時接続がいらない：</strong> 2つの AI を直接つなぐ特別な仕組みがなくても、ファイルが届けば回ります。片方が止まっている間も、ファイルは置き場に残ります。</li>
+      </ul>
+      <div class="note warn">
+        <strong>安全の線引き：</strong>
+        実行の根拠は、いつも人の承認です。指示書が置かれていること自体は、「やっていい」という許可ではありません。
+        とくに、公開・送信・お金が絡むことは、実行の前に必ず人が確認します。
+        分からない点が出たら進めずに「要確認」と書いて止まる――その約束も、指示書の型に入れておきます。
+      </div>
+      <div class="note">
+        <strong>この章の続きは別資料で：</strong>
+        GitHub へのつなぎ方の詳しい手順は、別資料『GitHub でつなぐ』にまとめます。
+        また、ミューズ側から見た使い方（何を相談し、報告をどう読むか）は「ミューズ使い方ガイド」にまとめてあります。
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="muse"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第9章 -->
+  <section class="chapter" id="glossary">
+    <div class="ch-head">
+      <div class="ch-num">9</div>
+      <div>
+        <h2>用語辞典</h2>
+        <div class="sub">出てきた言葉を、短く平たい言葉で</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <dl class="glossary">
+        <div class="term"><dt>ターミナル（黒い画面）</dt><dd>文字で命令を打つための画面。macOS では「ターミナル」、Windows では「ターミナル」や「PowerShell」がこれにあたります。</dd></div>
+        <div class="term"><dt>フォルダ／ディレクトリ</dt><dd>ファイルを入れる箱。ディレクトリはフォルダの技術寄りの呼び方で、意味は同じです。</dd></div>
+        <div class="term"><dt>リポジトリ</dt><dd>Git で管理されているフォルダ全体のこと。「この作業の保管庫」くらいの意味です。</dd></div>
+        <div class="term"><dt>コミット</dt><dd>その時点の状態を、履歴として記録すること。あとから「あのときの状態」に戻れます。</dd></div>
+        <div class="term"><dt>差分（diff）</dt><dd>変更の前後で、どこがどう変わったかの一覧。Codex の変更確認は <code class="inline">/diff</code> で見ます。</dd></div>
+        <div class="term"><dt>サンドボックス</dt><dd>Codex が触れる範囲を制限する仕組み。「砂場の中だけで遊ぶ」というイメージです（第3章）。</dd></div>
+        <div class="term"><dt>承認（approval）</dt><dd>書き換えやコマンド実行の前に、Codex があなたに許可を求めること。</dd></div>
+        <div class="term"><dt>モデル</dt><dd>実際に考えて作業する AI の種類。速さと賢さのバランスが違います。<code class="inline">/model</code> で切り替えます。</dd></div>
+        <div class="term"><dt>トークン</dt><dd>AI が文章を読み書きするときの、文字の数え方の単位。使用量の目安になります。</dd></div>
+        <div class="term"><dt>依頼文（プロンプト）</dt><dd>Codex への頼みごとの文章。このガイドの第4章の見本がそれです。</dd></div>
+        <div class="term"><dt>AGENTS.md</dt><dd>フォルダごとの約束を書いておくファイル。Codex が作業前に読みます（第5章）。</dd></div>
+        <div class="term"><dt>Markdown（マークダウン）</dt><dd><code class="inline">#</code> や <code class="inline">-</code> などの記号で見出しや箇条書きを表す、テキストファイルの書き方。そのまま読めるので、人と AI の受け渡しに向きます（第6章）。</dd></div>
+        <div class="term"><dt>指示書</dt><dd>一回ごとの仕事の明細を書いた Markdown ファイル。目的・材料・やること・報告の形を書いて渡します（第6章）。</dd></div>
+        <div class="term"><dt>config.toml</dt><dd>Codex の設定ファイル。モデルや承認のされ方などを書きます（第7章）。</dd></div>
+        <div class="term"><dt>スラッシュコマンド</dt><dd>入力欄で <code class="inline">/</code> から始める命令。<code class="inline">/diff</code> や <code class="inline">/status</code> のように、会話とは別に直接指示します。</dd></div>
+        <div class="term"><dt>テスト</dt><dd>プログラムが期待どおり動くかを確かめる仕組みや作業のこと。壊れた箇所を早く見つけられます。</dd></div>
+        <div class="term"><dt>ミューズ（Muse）</dt><dd>チャットで相談や判断ができる AI エージェント。第8章では、Codex と役割分担する相棒として登場します。</dd></div>
+      </dl>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="glossary"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <footer>
+    Codex 使い方ガイド ― 入門編 <span class="fver">v0.2</span><br>
+    読了チェックはこの端末のブラウザに保存されます。
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var KEY = "codex-start-v01-read";
+  var chapters = ["start15","screen","safety","prompts","agents","markdown","config","muse","glossary"];
+  var state = {};
+  try{ state = JSON.parse(localStorage.getItem(KEY) || "{}"); }catch(e){ state = {}; }
+
+  var boxes = document.querySelectorAll("input[data-read]");
+  function refresh(){
+    var done = 0;
+    chapters.forEach(function(id){
+      var on = !!state[id];
+      if(on) done++;
+      var sec = document.getElementById(id);
+      if(sec) sec.classList.toggle("is-done", on);
+      var nav = document.querySelector('[data-nav="'+id+'"]');
+      if(nav){
+        nav.classList.toggle("done", on);
+        var st = nav.querySelector(".st");
+        if(st) st.textContent = on ? "✓ 読了" : "未読";
+      }
+    });
+    document.getElementById("progressFill").style.width = (done / chapters.length * 100) + "%";
+    document.getElementById("progressText").textContent = "読了 " + done + " / " + chapters.length + " 章";
+  }
+  boxes.forEach(function(box){
+    var id = box.getAttribute("data-read");
+    box.checked = !!state[id];
+    box.addEventListener("change", function(){
+      state[id] = box.checked;
+      try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+      refresh();
+    });
+  });
+  refresh();
+
+  // コピーボタン
+  document.querySelectorAll(".codebox").forEach(function(box){
+    var btn = box.querySelector(".copy-btn");
+    var pre = box.querySelector("pre");
+    if(!btn || !pre) return;
+    btn.addEventListener("click", function(){
+      var text = pre.innerText;
+      function done(){
+        btn.textContent = "✓ コピー済み";
+        btn.classList.add("copied");
+        setTimeout(function(){
+          btn.textContent = "コピー";
+          btn.classList.remove("copied");
+        }, 1600);
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(); });
+      }else{ fallback(); }
+      function fallback(){
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try{ document.execCommand("copy"); }catch(e){}
+        document.body.removeChild(ta);
+        done();
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

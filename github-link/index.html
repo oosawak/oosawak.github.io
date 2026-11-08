@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub でつなぐ ― AI同士の受け渡し</title>
+<style>
+  :root{
+    --bg:#071224;
+    --bg2:#0a1a36;
+    --panel:#0e2247;
+    --panel2:#123058;
+    --line:#1f4479;
+    --ink:#e9f1ff;
+    --ink-dim:#a9bedd;
+    --accent:#53a8ff;
+    --accent2:#38d6c4;
+    --code-bg:#06101f;
+    --warn:#ffc857;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 60%,#081630 100%);
+    color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+    line-height:1.85;
+    font-size:16px;
+  }
+  a{color:var(--accent);}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px 80px;}
+
+  /* ヘッダー */
+  header.top{
+    position:sticky;top:0;z-index:50;
+    background:rgba(7,18,36,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .top-in{max-width:1060px;margin:0 auto;padding:12px 20px 10px;}
+  .top-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .top-title{font-size:18px;font-weight:700;letter-spacing:.02em;}
+  .ver{
+    font-size:12px;color:var(--bg);background:var(--accent2);
+    border-radius:999px;padding:1px 10px;font-weight:700;
+  }
+  .progress-wrap{margin-top:8px;display:flex;align-items:center;gap:12px;}
+  .progress-bar{flex:1;height:10px;background:#0b1e3d;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+  .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .4s;}
+  .progress-text{font-size:13px;color:var(--ink-dim);white-space:nowrap;}
+
+  /* ヒーロー */
+  .hero{padding:44px 0 8px;}
+  .hero .kicker{color:var(--accent2);font-weight:700;letter-spacing:.18em;font-size:13px;}
+  .hero h1{font-size:38px;line-height:1.35;margin:10px 0 14px;font-weight:800;}
+  .hero h1 .hl{color:var(--accent);}
+  .hero p.lead{color:var(--ink-dim);font-size:17px;max-width:760px;}
+  .hero .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+  .hero .badge{
+    border:1px solid var(--line);background:var(--panel);
+    border-radius:999px;padding:4px 14px;font-size:13px;color:var(--ink-dim);
+  }
+
+  /* 章ナビ */
+  nav.chapters{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 6px;}
+  nav.chapters a{
+    text-decoration:none;color:var(--ink);
+    background:var(--panel);border:1px solid var(--line);
+    border-radius:var(--radius);padding:10px 16px;font-size:14px;
+    display:flex;gap:8px;align-items:center;
+  }
+  nav.chapters a:hover{border-color:var(--accent);}
+  nav.chapters a .st{font-size:12px;color:var(--ink-dim);}
+  nav.chapters a.done{border-color:var(--accent2);}
+  nav.chapters a.done .st{color:var(--accent2);}
+
+  /* 章 */
+  section.chapter{
+    background:rgba(14,34,71,.55);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:30px 30px 26px;
+    margin-top:28px;
+  }
+  .ch-head{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;}
+  .ch-num{
+    background:linear-gradient(135deg,var(--accent),#2b6fd4);
+    color:#fff;font-weight:800;border-radius:12px;
+    width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+    font-size:19px;flex:none;
+  }
+  .ch-head h2{font-size:24px;line-height:1.4;}
+  .ch-head .sub{color:var(--ink-dim);font-size:14px;}
+  .ch-body{margin-top:16px;}
+  .ch-body h3{font-size:18px;margin:24px 0 8px;color:#cfe4ff;}
+  .ch-body h3:first-child{margin-top:4px;}
+  .ch-body p{margin:8px 0;}
+  .ch-body ul,.ch-body ol{margin:8px 0 8px 1.4em;}
+  .ch-body li{margin:4px 0;}
+  .dim{color:var(--ink-dim);}
+  .note{
+    background:var(--panel);border-left:4px solid var(--accent);
+    border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;font-size:15px;
+  }
+  .note.warn{border-left-color:var(--warn);}
+  .note strong{color:#fff;}
+
+  /* 手順ステップ */
+  .steps{display:grid;gap:14px;margin:14px 0;}
+  .step{
+    background:var(--panel);border:1px solid var(--line);
+    border-radius:var(--radius);padding:16px 18px;
+    display:flex;gap:14px;
+  }
+  .step .n{
+    flex:none;width:30px;height:30px;border-radius:50%;
+    background:var(--accent2);color:#04263f;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:15px;
+  }
+  .step h4{font-size:16px;margin-bottom:4px;}
+  .step p{font-size:15px;color:var(--ink-dim);}
+
+  /* コード */
+  .codebox{position:relative;margin:12px 0;}
+  pre{
+    background:var(--code-bg);border:1px solid var(--line);
+    border-radius:12px;padding:14px 84px 14px 16px;
+    overflow-x:auto;font-size:14px;line-height:1.7;
+    font-family:"SF Mono",Menlo,Consolas,"Noto Sans Mono",monospace;
+    color:#d7e9ff;white-space:pre-wrap;word-break:break-all;
+  }
+  .copy-btn{
+    position:absolute;top:8px;right:8px;
+    background:var(--panel2);color:var(--ink);
+    border:1px solid var(--line);border-radius:8px;
+    font-size:12px;padding:4px 10px;cursor:pointer;
+  }
+  .copy-btn:hover{border-color:var(--accent);}
+  .copy-btn.copied{background:var(--accent2);color:#04263f;border-color:var(--accent2);}
+  code.inline{
+    background:var(--code-bg);border:1px solid var(--line);
+    border-radius:6px;padding:0 6px;font-size:.92em;
+    font-family:Menlo,Consolas,monospace;color:#cfe4ff;
+  }
+
+  /* 3つのカード */
+  .modes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0;}
+  .mode-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;}
+  .mode-card h4{font-size:16px;margin-bottom:6px;}
+  .mode-card p{font-size:14px;color:var(--ink-dim);}
+  .mode-card .tag{font-size:12px;color:var(--accent2);font-weight:700;letter-spacing:.08em;}
+
+  /* 用語辞典 */
+  .glossary{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}
+  .term{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;}
+  .term dt{font-weight:700;color:#cfe4ff;margin-bottom:2px;}
+  .term dd{font-size:14px;color:var(--ink-dim);}
+
+  /* 読了チェック */
+  .read-check{
+    margin-top:22px;border-top:1px dashed var(--line);padding-top:16px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .read-check label{cursor:pointer;font-size:15px;display:flex;align-items:center;gap:10px;}
+  .read-check input{width:20px;height:20px;accent-color:var(--accent2);cursor:pointer;}
+  .read-check .done-msg{color:var(--accent2);font-size:14px;display:none;}
+  section.chapter.is-done{border-color:var(--accent2);}
+  section.chapter.is-done .done-msg{display:inline;}
+
+  footer{margin-top:44px;color:var(--ink-dim);font-size:13px;text-align:center;}
+  footer .fver{color:var(--accent2);font-weight:700;}
+
+  @media (max-width:820px){
+    .modes{grid-template-columns:1fr;}
+    .glossary{grid-template-columns:1fr;}
+    .hero h1{font-size:29px;}
+    section.chapter{padding:22px 18px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="top-row">
+      <div class="top-title">GitHub でつなぐ ― AI同士の受け渡し</div>
+      <span class="ver">v0.1</span>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-text" id="progressText">読了 0 / 10 章</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="kicker">GITHUB LINK GUIDE</div>
+    <h1>AI同士の受け渡しを、<br><span class="hl">無料の GitHub で。</span></h1>
+    <p class="lead">
+      ミューズと Codex（コーデックス）、2人の AI に連携して働いてもらうには、「同じファイルを見られる置き場」が要ります。
+      この資料は、その置き場として GitHub を使う方法を、GitHub を触ったことがない人に向けて、
+      アカウント作りの最初の一歩から順に案内します。
+    </p>
+    <div class="badges">
+      <span class="badge">対象： GitHub はじめての人</span>
+      <span class="badge">全10章</span>
+      <span class="badge">指示書の見本つき</span>
+      <span class="badge">読了チェックで進み具合が残ります</span>
+    </div>
+  </div>
+
+  <nav class="chapters" id="chapterNav">
+    <a href="#intro" data-nav="intro">1. GitHub ってなに？ <span class="st">未読</span></a>
+    <a href="#why" data-nav="why">2. なぜ GitHub か <span class="st">未読</span></a>
+    <a href="#others" data-nav="others">3. 他のやり方もある <span class="st">未読</span></a>
+    <a href="#setup" data-nav="setup">4. つなぎ方の手順 <span class="st">未読</span></a>
+    <a href="#roundtrip" data-nav="roundtrip">5. 往復の流れ <span class="st">未読</span></a>
+    <a href="#pages" data-nav="pages">6. GitHub Pages：配る場所 <span class="st">未読</span></a>
+    <a href="#actions" data-nav="actions">7. GitHub Actions：自動で回す場所 <span class="st">未読</span></a>
+    <a href="#safety" data-nav="safety">8. 守ること <span class="st">未読</span></a>
+    <a href="#keep" data-nav="keep">9. 残せるものの例 <span class="st">未読</span></a>
+    <a href="#glossary" data-nav="glossary">10. 用語辞典 <span class="st">未読</span></a>
+  </nav>
+
+  <!-- 第1章 -->
+  <section class="chapter" id="intro">
+    <div class="ch-head">
+      <div class="ch-num">1</div>
+      <div>
+        <h2>GitHub ってなに？</h2>
+        <div class="sub">ひとことで言うと「履歴のついた、インターネット上のファイル置き場」</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        GitHub（ギットハブ）は、インターネット上にあるファイル置き場のサービスです。
+        ふつうのファイル置き場と違うのは、<strong>「いつ・誰が・何を変えたか」が全部、履歴として残る</strong>ことです。
+        間違えて消したり壊したりしても、履歴をたどれば前の状態に戻れます。
+      </p>
+      <p>
+        もともとはプログラマーがプログラムを置く場所として広まりました。
+        ただ、中身はただのファイル置き場なので、<strong>文章、メモ、資料、写真のようなファイルでも置けます</strong>。
+        「エンジニアの道具だから自分には関係ない」という身構えは、ここで外して大丈夫です。
+      </p>
+      <h3>この資料で大事な、3つの言葉だけ先に</h3>
+      <dl class="glossary">
+        <div class="term"><dt>リポジトリ（置き場）</dt><dd>GitHub の中に作る、プロジェクトごとの保管庫です。フォルダを丸ごと預けるイメージで大丈夫です。英語では repository と書きます。</dd></div>
+        <div class="term"><dt>コミット（履歴に記録）</dt><dd>その時点の状態を「ここまでの記録」として残すことです。ゲームのセーブデータのように、あとからその時点へ戻れます。</dd></div>
+        <div class="term"><dt>プッシュ／プル</dt><dd>プッシュは「自分の側のファイルを置き場へ送る」、プルは「置き場の新しいファイルを自分の側へ受け取る」という意味です。送る・受け取る、と読めば十分です。</dd></div>
+        <div class="term"><dt>Git（ギット）</dt><dd>履歴を記録する仕組みそのものの名前です。GitHub は、その仕組みを使った置き場を貸してくれるサービス、という関係です。</dd></div>
+      </dl>
+      <div class="note">
+        <strong>安心材料を先に：</strong>
+        操作の多くは、ミューズや Codex のような AI に「やって」と頼めます。
+        置き場の用意の仕方だけ分かれば、細かい操作は AI と分担できます。
+        この資料の目的も、「全部を自分で覚える」ことではなく「全体の形が分かる」ことです。
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="intro"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第2章 -->
+  <section class="chapter" id="why">
+    <div class="ch-head">
+      <div class="ch-num">2</div>
+      <div>
+        <h2>なぜ GitHub か</h2>
+        <div class="sub">無料で、人と AI が同じファイルを見られて、履歴が残るから</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        AI 同士に連携して働いてもらうには、「2人ともが見られる場所」にファイルを置く必要があります。
+        その場所の候補はいくつかありますが（第3章）、まず GitHub を勧める理由は次の通りです。
+      </p>
+      <h3>無料の範囲で、十分に使えます</h3>
+      <p>
+        GitHub はアカウントを作るのも、ファイルの置き場を作るのも無料で始められます。
+        非公開の置き場（第4章で説明します）も無料で作れます。
+        AI 同士の受け渡しのような使い方なら、ふつうは無料の範囲に収まります。
+      </p>
+      <h3>人・ミューズ・Codex が、同じファイルを見られます</h3>
+      <p>
+        置き場がインターネット上にあるので、あなた自身も、ミューズも、Codex も、
+        <strong>同じファイルを読み書きできます</strong>。
+        「ミューズが書いた指示書を、Codex が読んで実行する」といった受け渡しは、この形だから成り立ちます。
+        メールの添付ファイルを送り合う形と違って、常に「最新の1つ」がそこにある、というのも利点です。
+      </p>
+      <h3>履歴が全部残ります</h3>
+      <ul>
+        <li>いつ、誰（どの AI）が、何を変えたかが記録されます</li>
+        <li>「昨日の状態に戻したい」が、履歴をたどってできます</li>
+        <li>指示書や報告も履歴ごと残るので、あとから経緯を確かめられます</li>
+      </ul>
+      <h3>色々なものを残せます</h3>
+      <p>
+        プログラムだけの場所ではありません。指示書、報告、仕様書、設計メモ、メモリーの写し、作った資料の一覧まで、
+        仕事の材料をまとめて置けます。詳しい例は第9章にまとめました。
+      </p>
+      <h3>置き場だけではありません</h3>
+      <div class="modes">
+        <div class="mode-card">
+          <div class="tag">置く</div>
+          <h4>置き場所</h4>
+          <p>ファイルと履歴を預ける保管庫。受け渡しの土台です（第4章・第5章）。</p>
+        </div>
+        <div class="mode-card">
+          <div class="tag">配る</div>
+          <h4>配る場所</h4>
+          <p>置いた HTML を、そのまま Web サイトとして公開できます。GitHub Pages の話です（第6章）。</p>
+        </div>
+        <div class="mode-card">
+          <div class="tag">回す</div>
+          <h4>自動で回す場所</h4>
+          <p>更新をきっかけに、決まった作業を自動で走らせられます。GitHub Actions の話です（第7章）。</p>
+        </div>
+      </div>
+      <p>
+        「置く・配る・回す」が1か所で済むのが、GitHub を土台にする一番の理由です。
+      </p>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="why"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第3章 -->
+  <section class="chapter" id="others">
+    <div class="ch-head">
+      <div class="ch-num">3</div>
+      <div>
+        <h2>他のやり方もある</h2>
+        <div class="sub">専用ツールや共有フォルダという道も。まずは無料の GitHub で十分です</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        AI の受け渡しの場所は、GitHub でなければならない、ということはありません。
+        よくある他のやり方も紹介しておきます。どれも立派な道具で、あとは好みと用途の問題です。
+      </p>
+      <h3>Obsidian のようなメモアプリの共有フォルダ</h3>
+      <p>
+        Obsidian（オブシディアン）は、手元のフォルダに文章（Markdown）をためるメモアプリです。
+        そのフォルダを共有すれば、AI との受け渡しの場所にも使えます。
+        「自分のメモ帳と地続き」という手軽さが魅力です。
+        一方で、他のパソコンや AI から見られるようにするには、共有の仕組みを別に用意する必要があることが多いです。
+      </p>
+      <h3>専用の連携ツール</h3>
+      <p>
+        AI 同士をつなぐための専用ツールやサービスもあります。
+        連携に特化している分、便利な機能が付いていることもあります。
+        ただ、道具が増えると、覚えることと管理する場所も増えます。
+      </p>
+      <h3>この資料の位置づけ</h3>
+      <div class="note">
+        <strong>まず無料の GitHub で十分、がこの資料の立場です。</strong>
+        置き場・履歴・受け渡し・公開・自動実行までが無料の範囲でそろうので、
+        最初の一歩は GitHub で始めて、足りないものが出てきたら、そのときに他の道具を足すのが無理のない順番です。
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="others"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第4章 -->
+  <section class="chapter" id="setup">
+    <div class="ch-head">
+      <div class="ch-num">4</div>
+      <div>
+        <h2>つなぎ方の手順</h2>
+        <div class="sub">アカウント作り → 非公開の置き場 → フォルダ分け → AI たちにつなぐ → 巡回</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        ここからは実際の手順です。画面は英語が多いので、出てくる言葉はその都度かみ砕きます。
+        画面の細部は時期によって少し変わりますが、大まかな流れは同じです。
+      </p>
+
+      <h3>手順1：アカウントを作る</h3>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div>
+          <h4>GitHub のサイトを開いて「Sign up」を押す</h4>
+          <p>ブラウザで <code class="inline">github.com</code> を開きます。右上にある <strong>Sign up</strong> は「登録する」という意味です。</p>
+        </div></div>
+        <div class="step"><div class="n">2</div><div>
+          <h4>メールアドレス・パスワード・アカウント名を入れる</h4>
+          <p><strong>Email</strong> はメールアドレス、<strong>Password</strong> はパスワード（合い言葉）、<strong>Username</strong> はアカウント名です。アカウント名は、あとで出てくる公開ページの住所にも使われる名前なので、人に見せても困らないものにします。</p>
+        </div></div>
+        <div class="step"><div class="n">3</div><div>
+          <h4>本人確認をして「Create account」を押す</h4>
+          <p>登録の途中で、「人間かどうか」の確認（絵や文字を選ぶ小さなテスト）や、メールに届く数字の入力を求められます。<strong>Create account</strong> は「アカウントを作る」という意味です。これで登録は完了です。</p>
+        </div></div>
+      </div>
+      <div class="note">
+        <strong>パスワードは他と使い回さないでください。</strong>
+        あわせて、ログイン時にスマホ等でもう一段階確認する「2要素認証」を入れておくと、アカウントを守れます。
+        設定の場所が分からなければ、ここも AI に聞きながら進めて大丈夫です。
+      </div>
+
+      <h3>手順2：非公開の置き場（リポジトリ）を作る</h3>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div>
+          <h4>「New repository」を押す</h4>
+          <p>ログインした画面で、緑色の <strong>New</strong>（新しい）ボタン、または <strong>New repository</strong> を選びます。repository が第1章の「置き場（リポジトリ）」のことです。</p>
+        </div></div>
+        <div class="step"><div class="n">2</div><div>
+          <h4>名前を付けて、Private を選ぶ</h4>
+          <p><strong>Repository name</strong> が置き場の名前です（例： ai-work）。公開範囲は2択で、<strong>Public</strong> は「誰でも見られる」、<strong>Private</strong> は「自分と、招待した人だけ」です。AI との受け渡し用には <strong>Private</strong> を選びます。</p>
+        </div></div>
+        <div class="step"><div class="n">3</div><div>
+          <h4>「Create repository」で完成</h4>
+          <p><strong>Create repository</strong>（置き場を作る）を押せば、空の置き場ができます。最初は空っぽで正常です。</p>
+        </div></div>
+      </div>
+      <div class="note">
+        <strong>Public と Private の線引き：</strong>
+        迷ったら Private です。人に見せるためのものだけ、別の Public の置き場に分けて置くのが安全です（第6章の公開の話にもつながります）。
+      </div>
+
+      <h3>手順3：フォルダの分け方を決める</h3>
+      <p>
+        置き場の中は、用途ごとにフォルダを分けておくと、AI 同士の受け渡しが迷子になりません。
+        分け方に決まりはありませんが、たとえばこういう形が使いやすいです。
+      </p>
+      <div class="codebox"><pre>（置き場の中身の例）
+
+tasks/    … 指示書を置く場所（AI への仕事の明細）
+reports/  … 報告が戻ってくる場所（実行した結果）
+docs/     … 仕様書や資料の場所
+memory/   … メモリーの写しを置く場所</pre><button class="copy-btn" type="button">コピー</button></div>
+      <p>
+        フォルダ名は英語の小文字にしておくと、どの道具からでも扱いやすくなります。
+        置き場の中にファイルやフォルダを作る作業も、ブラウザの画面からできますし、AI に頼んでも大丈夫です。
+      </p>
+
+      <h3>手順4：ミューズと Codex につなぐ</h3>
+      <p>
+        置き場ができたら、次は「それぞれが、その置き場を読み書きできる」状態にします。
+        イメージは、<strong>同じ保管庫の合鍵を、それぞれに1本ずつ渡す</strong>感じです。
+      </p>
+      <ul>
+        <li><strong>ミューズ側：</strong> 置き場のファイルを読み、指示書を書いて置けるようにします。多くの場合、ミューズに「このリポジトリで作業して」と頼むところから始まります。</li>
+        <li><strong>Codex 側：</strong> Codex が動くパソコンに置き場の写しを用意し、受け取って実行し、結果を送り返せるようにします。パソコン側の受け渡しには Git という道具が働きます。</li>
+        <li><strong>人（あなた）：</strong> ブラウザで置き場を開けば、いつでも中身と履歴を見られます。作業の「確認」はこの画面でできます。</li>
+      </ul>
+      <div class="note">
+        <strong>接続の設定は、AI に頼んでいい部分です。</strong>
+        「このリポジトリにつないで」「置き場の写しを用意して」と頼めば、具体的な操作は AI が進めてくれます。
+        あなたが覚えるのは、「誰が・どの置き場を・読み書きするか」の線引きだけです。
+      </div>
+
+      <h3>手順5：「巡回」という考え方を知る</h3>
+      <p>
+        置き場に指示書を置いても、相手が気づかなければ仕事は始まりません。
+        そこで使われるのが <strong>巡回（じゅんかい）</strong>です。
+        「決まった間隔で置き場を見に行き、新しい指示書があれば拾って実行する」という約束を、受け取る側の AI に持たせます。
+      </p>
+      <p>
+        人間同士で言えば、「置いておくから、ときどき見といてね」と同じです。
+        ずっと張り付くのではなく、間隔を決めて見に行くので、無駄も少なく済みます。
+        巡回の間隔や、拾ったら印を付ける等の約束ごとは、第5章の「往復の流れ」の中で効いてきます。
+      </p>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="setup"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第5章 -->
+  <section class="chapter" id="roundtrip">
+    <div class="ch-head">
+      <div class="ch-num">5</div>
+      <div>
+        <h2>往復の流れ</h2>
+        <div class="sub">指示書を置く → 読んで実行 → 報告が戻る → 人が確認する</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        つながったあとの、日常の回り方はこの往復です。会話と判断はミューズ、実行は Codex、確認は人、という分担が基本形です。
+      </p>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div>
+          <h4>人が頼む</h4>
+          <p>「これを作って」「これを直して」と、まずミューズに相談します。相談の中で、仕事の中身が決まっていきます。</p>
+        </div></div>
+        <div class="step"><div class="n">2</div><div>
+          <h4>ミューズが指示書を書いて置く</h4>
+          <p>決まった仕事を、指示書（Markdown のファイル）にして、置き場の <code class="inline">tasks/</code> フォルダに置きます。指示書には、目的・やること・材料の場所・報告の形を書きます。</p>
+        </div></div>
+        <div class="step"><div class="n">3</div><div>
+          <h4>Codex が読んで実行する</h4>
+          <p>巡回で指示書を見つけた Codex が、その仕事を実行します。着手したら、指示書に「実行中」の印を付けて戻す約束にしておくと、取り合いになりません。</p>
+        </div></div>
+        <div class="step"><div class="n">4</div><div>
+          <h4>報告が戻ってくる</h4>
+          <p>終わったら、結果を報告ファイルにして <code class="inline">reports/</code> に置き、指示書にも「完了」と状態を書き添えます。何をして、何ができて、何が残っているかが報告の中身です。</p>
+        </div></div>
+        <div class="step"><div class="n">5</div><div>
+          <h4>人が確認する</h4>
+          <p>報告を読んで、出来上がりを確かめます。違うところがあれば、またミューズに相談して直してもらいます。この「確認してから次へ」が、安全に回すコツです。</p>
+        </div></div>
+      </div>
+      <h3>指示書の見本</h3>
+      <p>指示書は、ふつうの文章ファイル（Markdown）です。形はこれくらいシンプルで十分です。</p>
+      <div class="codebox"><pre># 指示書：自己紹介ページを作る
+
+## 目的
+（何のための仕事か。例：お店の紹介ページを新しく作る）
+
+## やること
+- （具体的な作業を箇条書きで書く）
+- （できあがりのイメージもここに）
+
+## 材料
+- （使う文章や写真の置き場所を書く）
+
+## 報告
+- 終わったら reports/ に報告を書いてください
+- できなかったことがあれば、その理由も書いてください</pre><button class="copy-btn" type="button">コピー</button></div>
+      <h3>うまく回るコツ</h3>
+      <ul>
+        <li><strong>1つの指示書に、1つの仕事。</strong> 詰め込むと、どこまで終わったか分かりにくくなります。</li>
+        <li><strong>ファイル名に日付と短い名前を。</strong> たとえば <code class="inline">2026-11-08-intro-page.md</code> のようにすると、並びも探しやすさも良くなります。</li>
+        <li><strong>報告の形まで指定する。</strong> 報告が同じ形で戻ってくると、確認がぐっと楽になります。</li>
+        <li><strong>指示書を書くのも、ミューズに頼めます。</strong> 相談の内容をそのまま指示書に整えてもらうのが、この分担の基本形です。</li>
+      </ul>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="roundtrip"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第6章 -->
+  <section class="chapter" id="pages">
+    <div class="ch-head">
+      <div class="ch-num">6</div>
+      <div>
+        <h2>GitHub Pages：配る場所</h2>
+        <div class="sub">置いた HTML が、そのまま Web サイトになる仕組み</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        GitHub Pages（ページズ）は、<strong>置き場に置いた HTML ファイルを、そのまま Web サイトとして公開できる</strong>仕組みです。
+        資料や小さなサイトの「配る場所」として使えます。自分でサーバーを用意する必要はありません。
+      </p>
+      <h3>公開のされ方</h3>
+      <ul>
+        <li>公開すると、<code class="inline">https://＜アカウント名＞.github.io/＜置き場の名前＞/</code> のような住所（URL）で、誰でも開けるページになります。</li>
+        <li>ファイルを置いてから画面に反映されるまで、<strong>少し時間がかかります</strong>（数分ほど待つつもりで）。置いた直後に開いて古いまま見えても、故障ではありません。</li>
+        <li>無料の範囲で使えます。</li>
+      </ul>
+      <h3>配信の仕方は2通り</h3>
+      <div class="modes">
+        <div class="mode-card">
+          <div class="tag">そのまま方式</div>
+          <h4>置いたファイルを直接出す</h4>
+          <p>置き場の HTML を、そのまま公開します。作りが単純なページはこちらで十分です。</p>
+        </div>
+        <div class="mode-card">
+          <div class="tag">Actions 方式</div>
+          <h4>組み立ててから出す</h4>
+          <p>第7章の Actions に「サイトを組み立てる」作業をさせて、その結果を公開します。材料（Markdown 等）から自動でページを作る場合はこちらです。</p>
+        </div>
+        <div class="mode-card">
+          <div class="tag">共通</div>
+          <h4>どちらでも「置けば公開」</h4>
+          <p>入門の段階では、方式の違いを細かく覚える必要はありません。「置いたら、少し待つと表に出る」が共通の感覚です。</p>
+        </div>
+      </div>
+      <div class="note warn">
+        <strong>大事な注意：Pages で出したページは、基本的に誰でも見られます。</strong>
+        無料で Pages を使えるのは公開（Public）の置き場です。
+        だから、「内部の受け渡し用の置き場（Private）」と「人に見せる用の置き場（Public）」は分けるのが基本形です。
+        見せたくないものを、公開側に混ぜないでください。
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="pages"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第7章 -->
+  <section class="chapter" id="actions">
+    <div class="ch-head">
+      <div class="ch-num">7</div>
+      <div>
+        <h2>GitHub Actions：自動で回す場所</h2>
+        <div class="sub">「更新されたら、この作業をして」を自動で実行する仕組み</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        GitHub Actions（アクションズ）は、<strong>決まった作業を自動で回す係</strong>です。
+        「ファイルが更新されたら、この作業をして」「毎朝この時刻に、このチェックをして」という決まりを置いておくと、
+        GitHub の側が自動で実行してくれます。自分のパソコンを付けっぱなしにする必要はありません。
+      </p>
+      <h3>きっかけ（トリガー）は2種類</h3>
+      <ul>
+        <li><strong>更新をきっかけに：</strong> ファイルが置き場に送られた（プッシュされた）ときに走ります。</li>
+        <li><strong>時刻をきっかけに：</strong> 決まった時刻の定期実行もできます（例：毎朝の定期処理）。</li>
+      </ul>
+      <h3>一般的な使い方の例</h3>
+      <ul>
+        <li>Markdown が更新されたら、自動でサイトを組み立てて公開する（第6章の「Actions 方式」がこれです）</li>
+        <li>置いたファイルを、別の形に変換する（例：文章ファイルから、配布用のファイルを作る）</li>
+        <li>毎朝、決まったチェックや集計を自動で回して、結果をファイルに残す</li>
+      </ul>
+      <h3>決まりは「手順書ファイル」に書きます</h3>
+      <p>
+        自動作業の決まりは、<strong>ワークフロー</strong>という名前の手順書ファイルに書いて、置き場の
+        <code class="inline">.github/workflows/</code> というフォルダに置きます。書式は YAML（ヤムル）という形式です。
+        イメージはこのくらいです。
+      </p>
+      <div class="codebox"><pre># 手順書ファイルのイメージ（実際に使うときは AI に書いてもらえます）
+
+name: サイトを組み立てる        # この自動作業の名前
+on:
+  push:                        # ファイルが更新されたら走る
+  schedule:                    # 決まった時刻にも走る（定期実行）
+    - cron: "0 21 * * *"       # 毎朝6時ごろ（日本時間）</pre><button class="copy-btn" type="button">コピー</button></div>
+      <p class="dim">
+        ※ 時刻の書き方は世界標準時が基準で、日本時間とは9時間ずれるため、上の例では 21時＝翌朝6時、と書いています。
+        こういう細かい決まりも含め、手順書ファイル自体は AI に書いてもらうのが現実的です。
+      </p>
+      <div class="note">
+        <strong>まとめると：</strong>
+        GitHub は「置き場所」であると同時に、Pages で「配る場所」になり、Actions で「自動で回す場所」にもなります。
+        だから受け渡しの土台にすると、仕事の材料から公開・自動処理までが、1か所でつながります。
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="actions"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第8章 -->
+  <section class="chapter" id="safety">
+    <div class="ch-head">
+      <div class="ch-num">8</div>
+      <div>
+        <h2>守ること</h2>
+        <div class="sub">秘密は書かない、公開範囲を分ける、実行は人の承認から</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>便利な仕組みほど、最初に線引きを決めておくことが大事です。守ることは、大きく3つだけです。</p>
+      <h3>1. 秘密は、ファイルに書かない</h3>
+      <p>
+        パスワード、トークン（合鍵のような文字列）、鍵ファイルの中身は、指示書や資料に書いてはいけません。
+        GitHub は履歴が全部残る場所なので、<strong>一度書いたものは「履歴に残り続ける」前提</strong>で考えてください。
+        うっかり書いてしまったら、消して済ませようとせず、すぐに詳しい人に相談を。
+      </p>
+      <h3>2. 公開の置き場に、個人の情報を置かない</h3>
+      <ul>
+        <li>受け渡しや内部の資料は Private（非公開）の置き場へ</li>
+        <li>人に見せるものだけを、別の Public（公開）の置き場へ分ける</li>
+        <li>住所・連絡先・内部のマシン名など、個人に紐づく具体的な値は、公開側では一般的な言い方に置き換える</li>
+      </ul>
+      <h3>3. 実行の根拠は、人の承認</h3>
+      <p>
+        AI 同士の往復は便利ですが、「誰も見ていないところで勝手に回り続ける」形にはしないのが原則です。
+        仕事の実行は人の承認や依頼を根拠にして、公開・送信・お金が絡むことは、必ず人が確認してから進めます。
+        報告を読んで人が確かめる、第5章の往復の最後の段が、そのための仕組みです。
+      </p>
+      <div class="note warn">
+        <strong>合い言葉ひとつで言えば：</strong>
+        「秘密は書かない」「出す場所としまう場所を分ける」「要所は人が見る」。この3つを守れば、入門の範囲ではまず安全に回せます。
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="safety"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第9章 -->
+  <section class="chapter" id="keep">
+    <div class="ch-head">
+      <div class="ch-num">9</div>
+      <div>
+        <h2>残せるものの例</h2>
+        <div class="sub">プログラム以外にも、仕事の材料をまとめて残せます</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <p>
+        置き場は「AI への通り道」であると同時に、「仕事の記録の棚」でもあります。
+        たとえば、こういうものが残せます。
+      </p>
+      <dl class="glossary">
+        <div class="term"><dt>指示書</dt><dd>AI への仕事の明細（第5章）。何を頼んだかが、履歴と一緒に残ります。</dd></div>
+        <div class="term"><dt>報告</dt><dd>実行の結果。「何をして、何ができて、何が残ったか」があとから追えます。</dd></div>
+        <div class="term"><dt>仕様書・設計メモ</dt><dd>作るものの決め事。AI に読ませる材料であると同時に、人のための記録にもなります。</dd></div>
+        <div class="term"><dt>メモリーの写し</dt><dd>ミューズが覚えていることの控えを置けます。本体の記録が薄れても、写しから経緯を確かめられます。</dd></div>
+        <div class="term"><dt>作ったものの一覧</dt><dd>作った資料・公開したページ・作った画像などの目録。あとから探す手間が減ります。</dd></div>
+        <div class="term"><dt>資料そのもの</dt><dd>この資料のような HTML や文章のファイル。Pages で配る元にもなります。</dd></div>
+      </dl>
+      <div class="note">
+        <strong>置く場所が1か所だと、探す場所も1か所になります。</strong>
+        AI に「あの件の資料はどこ？」と聞くときも、まずこの置き場を探せば済む、という状態が理想です。
+      </div>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="keep"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <!-- 第10章 -->
+  <section class="chapter" id="glossary">
+    <div class="ch-head">
+      <div class="ch-num">10</div>
+      <div>
+        <h2>用語辞典</h2>
+        <div class="sub">出てきた言葉を、短く平たい言葉で</div>
+      </div>
+    </div>
+    <div class="ch-body">
+      <dl class="glossary">
+        <div class="term"><dt>GitHub（ギットハブ）</dt><dd>履歴のついた、インターネット上のファイル置き場サービス。この資料の主役です（第1章）。</dd></div>
+        <div class="term"><dt>Git（ギット）</dt><dd>ファイルの変更履歴を記録する仕組み。GitHub はこの仕組みを使ったサービスです。</dd></div>
+        <div class="term"><dt>リポジトリ（置き場）</dt><dd>GitHub の中に作る、プロジェクトごとの保管庫。英語では repository と書きます。</dd></div>
+        <div class="term"><dt>Public／Private</dt><dd>置き場の公開範囲。Public は誰でも見られる、Private は自分と招待した人だけです（第4章）。</dd></div>
+        <div class="term"><dt>コミット</dt><dd>その時点の状態を履歴として記録すること。あとから、その時点の状態に戻れます。</dd></div>
+        <div class="term"><dt>プッシュ／プル</dt><dd>プッシュは置き場へ送ること、プルは置き場から受け取ることです。</dd></div>
+        <div class="term"><dt>Markdown（マークダウン）</dt><dd>見出しや箇条書きを簡単な記号で書ける、文章ファイルの書式。指示書や仕様書によく使います。</dd></div>
+        <div class="term"><dt>指示書</dt><dd>AI への仕事の明細を書いたファイル。置き場経由で渡します（第5章）。</dd></div>
+        <div class="term"><dt>巡回</dt><dd>受け取る側の AI が、決まった間隔で置き場を見に行き、新しい指示書を拾う約束ごとです（第4章）。</dd></div>
+        <div class="term"><dt>GitHub Pages</dt><dd>置き場の HTML を、そのまま Web サイトとして公開できる仕組み（第6章）。</dd></div>
+        <div class="term"><dt>GitHub Actions</dt><dd>更新や時刻をきっかけに、決まった作業を自動で実行する仕組み（第7章）。</dd></div>
+        <div class="term"><dt>ワークフロー</dt><dd>Actions の自動作業の手順書ファイルのこと。<code class="inline">.github/workflows/</code> に置きます。</dd></div>
+        <div class="term"><dt>トークン（秘密の側）</dt><dd>パスワードの代わりに使う、合鍵のような長い文字列。ファイルには書きません（第8章）。</dd></div>
+        <div class="term"><dt>2要素認証</dt><dd>パスワードに加えて、もう一段階の確認でログインを守る仕組みです。</dd></div>
+      </dl>
+    </div>
+    <div class="read-check">
+      <label><input type="checkbox" data-read="glossary"> この章を読み終わった</label>
+      <span class="done-msg">✓ 読了</span>
+    </div>
+  </section>
+
+  <footer>
+    GitHub でつなぐ ― AI同士の受け渡し <span class="fver">v0.1</span><br>
+    読了チェックはこの端末のブラウザに保存されます。
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var KEY = "github-link-v01-read";
+  var chapters = ["intro","why","others","setup","roundtrip","pages","actions","safety","keep","glossary"];
+  var state = {};
+  try{ state = JSON.parse(localStorage.getItem(KEY) || "{}"); }catch(e){ state = {}; }
+
+  var boxes = document.querySelectorAll("input[data-read]");
+  function refresh(){
+    var done = 0;
+    chapters.forEach(function(id){
+      var on = !!state[id];
+      if(on) done++;
+      var sec = document.getElementById(id);
+      if(sec) sec.classList.toggle("is-done", on);
+      var nav = document.querySelector('[data-nav="'+id+'"]');
+      if(nav){
+        nav.classList.toggle("done", on);
+        var st = nav.querySelector(".st");
+        if(st) st.textContent = on ? "✓ 読了" : "未読";
+      }
+    });
+    document.getElementById("progressFill").style.width = (done / chapters.length * 100) + "%";
+    document.getElementById("progressText").textContent = "読了 " + done + " / " + chapters.length + " 章";
+  }
+  boxes.forEach(function(box){
+    var id = box.getAttribute("data-read");
+    box.checked = !!state[id];
+    box.addEventListener("change", function(){
+      state[id] = box.checked;
+      try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+      refresh();
+    });
+  });
+  refresh();
+
+  // コピーボタン
+  document.querySelectorAll(".codebox").forEach(function(box){
+    var btn = box.querySelector(".copy-btn");
+    var pre = box.querySelector("pre");
+    if(!btn || !pre) return;
+    btn.addEventListener("click", function(){
+      var text = pre.innerText;
+      function done(){
+        btn.textContent = "✓ コピー済み";
+        btn.classList.add("copied");
+        setTimeout(function(){
+          btn.textContent = "コピー";
+          btn.classList.remove("copied");
+        }, 1600);
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(); });
+      }else{ fallback(); }
+      function fallback(){
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try{ document.execCommand("copy"); }catch(e){}
+        document.body.removeChild(ta);
+        done();
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

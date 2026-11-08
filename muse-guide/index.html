@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ミューズ使い方ガイド（入門編）v0.2</title>
+<style>
+  :root{
+    --bg:#081426;
+    --bg2:#0b1d3a;
+    --panel:#0f2650;
+    --panel2:#12305f;
+    --line:#1e4176;
+    --ink:#e9f2ff;
+    --ink-dim:#a9c2e4;
+    --accent:#4da3ff;
+    --accent2:#7cc4ff;
+    --good:#3ecf8e;
+    --chip:#16386e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);
+    color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+    line-height:1.85;
+    font-size:16px;
+  }
+  a{color:var(--accent2);}
+  /* layout */
+  .wrap{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
+  aside{
+    width:264px;flex:0 0 264px;
+    position:sticky;top:0;height:100vh;overflow-y:auto;
+    padding:22px 18px 30px;
+    border-right:1px solid var(--line);
+    background:rgba(8,20,38,.85);
+  }
+  main{flex:1;min-width:0;padding:34px 38px 90px;}
+  /* sidebar */
+  .brand{font-size:13px;letter-spacing:.14em;color:var(--accent2);margin:0 0 4px;}
+  aside h1{font-size:20px;line-height:1.45;margin:0 0 6px;}
+  .ver{display:inline-block;font-size:12px;color:var(--ink-dim);border:1px solid var(--line);border-radius:999px;padding:1px 10px;margin-bottom:14px;}
+  .progress-box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:14px 0 18px;}
+  .progress-box p{margin:0 0 8px;font-size:13px;color:var(--ink-dim);}
+  .bar{height:10px;background:#0a1a33;border-radius:999px;overflow:hidden;border:1px solid var(--line);}
+  .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--good));transition:width .4s;}
+  .progress-num{font-size:20px;font-weight:700;color:var(--ink);}
+  nav a{
+    display:flex;justify-content:space-between;align-items:center;gap:8px;
+    color:var(--ink);text-decoration:none;
+    padding:8px 10px;border-radius:8px;font-size:14.5px;
+  }
+  nav a:hover{background:var(--panel);}
+  nav a .st{font-size:11px;color:var(--ink-dim);border:1px solid var(--line);border-radius:999px;padding:0 8px;white-space:nowrap;}
+  nav a.done .st{color:#062b18;background:var(--good);border-color:var(--good);font-weight:700;}
+  .side-note{font-size:12.5px;color:var(--ink-dim);margin-top:18px;line-height:1.7;}
+  /* main */
+  .hero{
+    background:linear-gradient(135deg,var(--panel2),var(--panel));
+    border:1px solid var(--line);border-radius:18px;
+    padding:30px 30px 26px;margin-bottom:30px;
+  }
+  .hero .kicker{font-size:12.5px;letter-spacing:.16em;color:var(--accent2);margin:0 0 8px;}
+  .hero h2{font-size:29px;line-height:1.4;margin:0 0 12px;}
+  .hero p{margin:0;color:var(--ink-dim);max-width:640px;}
+  section{
+    background:rgba(15,38,80,.55);
+    border:1px solid var(--line);border-radius:16px;
+    padding:26px 28px 22px;margin-bottom:26px;
+    scroll-margin-top:18px;
+  }
+  section h2{font-size:22px;margin:0 0 6px;line-height:1.45;}
+  section h2 .no{
+    display:inline-block;font-size:13px;color:#06203f;background:var(--accent2);
+    border-radius:8px;padding:1px 9px;margin-right:10px;vertical-align:2px;font-weight:700;
+  }
+  section h3{font-size:17px;margin:22px 0 6px;color:var(--accent2);}
+  section p{margin:8px 0;}
+  .lead{color:var(--ink-dim);margin-top:0;}
+  ul,ol{margin:8px 0 8px;padding-left:1.4em;}
+  li{margin:4px 0;}
+  .route{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0 6px;}
+  .step{
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 14px 10px;
+  }
+  .step .n{font-size:12px;color:var(--accent2);letter-spacing:.1em;}
+  .step h4{margin:4px 0 6px;font-size:16px;}
+  .step p{font-size:13.5px;color:var(--ink-dim);margin:0;line-height:1.7;}
+  .say{
+    background:#0a1c38;border:1px solid var(--line);border-left:4px solid var(--accent);
+    border-radius:8px;padding:10px 14px;margin:10px 0;font-size:15px;
+  }
+  .say::before{content:"言ってみる例　";font-size:11.5px;color:var(--accent2);letter-spacing:.08em;display:block;}
+  .tip{background:rgba(62,207,142,.08);border:1px solid rgba(62,207,142,.4);border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14.5px;}
+  .tip b{color:var(--good);}
+  /* prompts */
+  .prompt-cat{font-size:16px;margin:20px 0 4px;color:var(--ink);}
+  .prompt-cat span{font-size:12.5px;color:var(--ink-dim);margin-left:8px;}
+  .prompt{
+    display:flex;gap:10px;align-items:flex-start;
+    background:#0a1c38;border:1px solid var(--line);border-radius:10px;
+    padding:10px 12px;margin:8px 0;
+  }
+  .prompt code{flex:1;font-family:inherit;font-size:15px;line-height:1.7;white-space:pre-wrap;}
+  .copy-btn{
+    flex:0 0 auto;cursor:pointer;
+    background:var(--chip);color:var(--accent2);
+    border:1px solid var(--line);border-radius:8px;
+    font-size:12.5px;padding:5px 12px;font-family:inherit;
+  }
+  .copy-btn:hover{background:var(--panel2);}
+  .copy-btn.copied{color:#062b18;background:var(--good);border-color:var(--good);font-weight:700;}
+  /* read check */
+  .read-check{
+    margin-top:20px;border-top:1px dashed var(--line);padding-top:14px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .read-check label{cursor:pointer;display:flex;align-items:center;gap:10px;font-size:15px;}
+  .read-check input{width:20px;height:20px;accent-color:var(--good);cursor:pointer;}
+  .read-check .done-txt{color:var(--good);font-weight:700;display:none;}
+  section.is-done .done-txt{display:inline;}
+  /* glossary */
+  dl{margin:6px 0;}
+  .g-item{border-bottom:1px solid var(--line);padding:10px 2px;display:flex;gap:16px;}
+  .g-item:last-child{border-bottom:none;}
+  dt{flex:0 0 150px;font-weight:700;color:var(--accent2);}
+  dd{margin:0;flex:1;color:var(--ink);}
+  footer{color:var(--ink-dim);font-size:13px;text-align:center;padding:10px 0 0;}
+  /* responsive: phone landscape & narrow */
+  @media (max-width:820px){
+    .wrap{flex-direction:column;}
+    aside{width:100%;flex:none;position:static;height:auto;border-right:none;border-bottom:1px solid var(--line);}
+    nav{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+    main{padding:22px 16px 60px;}
+    .route{grid-template-columns:1fr 1fr;}
+    .hero h2{font-size:23px;}
+    section{padding:20px 16px 16px;}
+    .g-item{flex-direction:column;gap:2px;}
+    dt{flex:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside>
+    <p class="brand">MUSE BEGINNER GUIDE</p>
+    <h1>ミューズ使い方ガイド<br>（入門編）</h1>
+    <span class="ver">v0.2</span>
+    <div class="progress-box">
+      <p>読み終わった章</p>
+      <div><span class="progress-num" id="pnum">0</span> <span style="color:var(--ink-dim)">/ 15 章</span></div>
+      <div class="bar" style="margin-top:8px;"><i id="pbar"></i></div>
+    </div>
+    <nav id="toc">
+      <a href="#start" data-sec="start">1. 最初の15分 <span class="st">未読</span></a>
+      <a href="#howto" data-sec="howto">2. 頼み方のコツ <span class="st">未読</span></a>
+      <a href="#prompts" data-sec="prompts">3. 依頼文ライブラリ <span class="st">未読</span></a>
+      <a href="#chats" data-sec="chats">4. チャットとサイドチャット <span class="st">未読</span></a>
+      <a href="#memory" data-sec="memory">5. メモリー <span class="st">未読</span></a>
+      <a href="#schedule" data-sec="schedule">6. 定期タスクと見守り <span class="st">未読</span></a>
+      <a href="#connect" data-sec="connect">7. つながるサービスと承認 <span class="st">未読</span></a>
+      <a href="#library" data-sec="library">8. ライブラリ <span class="st">未読</span></a>
+      <a href="#feed" data-sec="feed">9. フィード <span class="st">未読</span></a>
+      <a href="#ideas" data-sec="ideas">10. アイデア <span class="st">未読</span></a>
+      <a href="#goals" data-sec="goals">11. 目標 <span class="st">未読</span></a>
+      <a href="#spaces" data-sec="spaces">12. スペース <span class="st">未読</span></a>
+      <a href="#codex" data-sec="codex">13. Codex と連動して使う <span class="st">未読</span></a>
+      <a href="#tabs" data-sec="tabs">14. 画面の地図 <span class="st">未読</span></a>
+      <a href="#glossary" data-sec="glossary">15. 用語辞典 <span class="st">未読</span></a>
+    </nav>
+    <p class="side-note">各章の終わりの「読み終わった」にチェックを付けると、進み具合がこの端末に保存されます。知りたい章だけ読んでも大丈夫です。</p>
+  </aside>
+
+  <main>
+    <div class="hero">
+      <p class="kicker">はじめてのミューズ</p>
+      <h2>話しかけるだけで、<br>調べて、作って、覚えてくれる。</h2>
+      <p>ミューズは、Meta のパーソナルAIエージェントです。あなた専用の担当として、会話の中で調べものをしたり、文章やファイルを作ったり、予定を知らせたりします。むずかしい設定は要りません。まずは声をかけるところから始めましょう。</p>
+    </div>
+
+    <section id="start">
+      <h2><span class="no">1</span>最初の15分</h2>
+      <p class="lead">最初の15分で、ミューズの基本の動きを一周できます。4つのステップを順に試してみてください。</p>
+      <div class="route">
+        <div class="step"><span class="n">STEP 1</span><h4>話しかける</h4><p>ふだんの言葉で大丈夫です。あいさつでも、質問でも、最初の一言は何でも構いません。</p></div>
+        <div class="step"><span class="n">STEP 2</span><h4>頼んでみる</h4><p>小さな頼みごとを1つ。「近くの天気は？」「この文を短くして」くらいのものから。</p></div>
+        <div class="step"><span class="n">STEP 3</span><h4>ファイルを受け取る</h4><p>「ファイルでちょうだい」と頼むと、文書や表を作って渡してくれます。作ったものはライブラリにたまります。</p></div>
+        <div class="step"><span class="n">STEP 4</span><h4>「覚えておいて」と言う</h4><p>好みや決まりごとを伝えると、次回から覚えた前提で話せます。</p></div>
+      </div>
+      <h3>試しに、このまま送ってみてください</h3>
+      <div class="say">はじめまして。あなたにできることを、3つだけ教えてください。</div>
+      <div class="say">私の名前と、呼んでほしい名前を覚えておいてください。</div>
+      <div class="say">週末に作れる、簡単な夕食の献立を考えて。買い物リストも付けて。</div>
+      <p>キーボードで打つのが面倒なときは、入力欄のマイクから声で話しかけることもできます。声は文字に直して届きます。</p>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="start"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="howto">
+      <h2><span class="no">2</span>頼み方のコツ</h2>
+      <p class="lead">上手な頼み方に、決まった型はありません。ただ、次の3つを意識すると、返ってくるものがぐっと合うようになります。</p>
+      <h3>コツ1：具体的に言う</h3>
+      <p>「いい感じにして」より、「3行くらいで」「小学生にも分かる言葉で」「箇条書きで」のように、長さ・相手・形を添えると意図が伝わります。数字が言えると、なお確かです。</p>
+      <div class="say">明日の会議の説明を、1分で話せる長さにまとめて。</div>
+      <h3>コツ2：材料を渡す</h3>
+      <p>写真、ファイル、リンクは、そのまま会話に添付して渡せます。「この写真の場所はどこ？」「この文書を要約して」「このリンク先を読んで教えて」のように、材料と頼みごとをセットにすると正確になります。</p>
+      <div class="say">添付した表の数字を、月ごとに合計して教えて。</div>
+      <h3>コツ3：違うと言えば、直してもらえる</h3>
+      <p>一度で完璧にしようとしなくて大丈夫です。「もっと短く」「やさしい言い方で」「2番目の案で進めて」のように、返ってきたものへの感想をそのまま伝えるのが一番の近道です。途中で方向を変えるのも自由です。</p>
+      <div class="tip"><b>迷ったら：</b>「どう頼めばいいか分からない」と、そのまま聞いても構いません。頼み方の案から一緒に考えます。</div>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="howto"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="prompts">
+      <h2><span class="no">3</span>依頼文ライブラリ</h2>
+      <p class="lead">コピーして、そのまま送れる頼み文の例です。名前や数字の部分を自分のものに変えて使ってください。もちろん、丸ごと真似しなくても、自分の言葉で十分伝わります。</p>
+
+      <h3 class="prompt-cat">調べもの <span>知りたいことを聞く</span></h3>
+      <div class="prompt"><code>「ガーデニング　初心者　秋」で検索して、始める前に知っておくことを3つに絞って教えて。参考にしたページのリンクも付けて。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>このリンク先の記事を読んで、要点を箇条書きで教えて。専門用語はやさしく言い換えて。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>エアコンの電気代を抑える方法を調べて、効果が大きそうな順に並べて。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>この写真に写っている花の名前と、育て方のポイントを教えて。</code><button class="copy-btn">コピー</button></div>
+
+      <h3 class="prompt-cat">文章を作る <span>書く・直す・まとめる</span></h3>
+      <div class="prompt"><code>友人へのお礼のメッセージを書いて。丁寧だけど、堅すぎない文面で、3文くらいで。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>この文章を、意味を変えずに半分くらいの長さに直して。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>新しく始める趣味の会の紹介文を書いて。初めての人が参加しやすい雰囲気で。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>このメモを、読みやすい報告書の形に整えて。見出しも付けて。</code><button class="copy-btn">コピー</button></div>
+
+      <h3 class="prompt-cat">予定とリマインド <span>知らせてほしいことを頼む</span></h3>
+      <div class="prompt"><code>明日の朝9時に「会議の資料を確認する」と知らせて。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>毎週月曜の朝に、今週の予定をまとめて教えて。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>来月の旅行までにやることを、期限の近い順に並べて。近づいたら知らせて。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>毎月1日に、更新が必要な契約や支払いがないか確認して教えて。</code><button class="copy-btn">コピー</button></div>
+
+      <h3 class="prompt-cat">ファイル作り <span>受け取れる形で作ってもらう</span></h3>
+      <div class="prompt"><code>旅行の持ち物リストを、チェックできる表にしてファイルでください。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>今月の支出メモを家計簿の表に整理して、ファイルでください。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>会議のメモから議事録を作って、決まったことと宿題を分けて書いてください。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>誕生日会の案内状を作って。日時と場所はあとで私が書き足せるように空けておいて。</code><button class="copy-btn">コピー</button></div>
+
+      <h3 class="prompt-cat">画像 <span>描いてもらう・相談する</span></h3>
+      <div class="prompt"><code>春の山里の風景を、水彩画のようなタッチで描いて。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>お店の看板に使える、シンプルで目立つロゴの案を3つ作って。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>この写真、どこで撮ったものか分かりますか？手がかりも教えて。</code><button class="copy-btn">コピー</button></div>
+
+      <h3 class="prompt-cat">日常の相談 <span>暮らしの困りごと</span></h3>
+      <div class="prompt"><code>冷蔵庫に卵とキャベツと豚肉があります。今夜の夕食の献立を3案ください。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>引っ越しでやることを、手続きと荷造りに分けて、やる順番に整理して。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>最近よく眠れません。生活の中で見直せることを、無理のない範囲で教えて。</code><button class="copy-btn">コピー</button></div>
+      <div class="prompt"><code>英語のこの文の意味と、似た言い方を教えて。発音のコツも。</code><button class="copy-btn">コピー</button></div>
+
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="prompts"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="chats">
+      <h2><span class="no">4</span>チャットとサイドチャット</h2>
+      <p class="lead">会話は、テーマごとに部屋を分けて整理できます。その部屋が「サイドチャット」です。</p>
+      <p>中心の会話（メインチャット）は何でも受け付ける窓口です。そこから、長く続きそうな話題——たとえば「旅行の計画」「家のリフォーム」「仕事の企画」——は、サイドチャットに分けると、あとから見返しやすくなります。</p>
+      <ul>
+        <li>分け方は自由です。話題が変わったと感じたら「この話は別のチャットで」と言えば作れます。</li>
+        <li>どの部屋でも、相手は同じあなたのミューズです。覚えていることは部屋をまたいで共通です。</li>
+        <li>ミューズの会話は、あなたとミューズだけのものです。他の人が入ってくることはありません。</li>
+        <li>過去の会話はアプリの検索で探せます。「前に話した、あの件」で聞いても探します。</li>
+      </ul>
+      <div class="say">旅行の計画用に、別のチャットを作って。行き先は北海道で相談したい。</div>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="chats"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="memory">
+      <h2><span class="no">5</span>メモリー ― 覚えていること</h2>
+      <p class="lead">ミューズは、あなたの大切な好みや決まりごとを覚えて、次回からの会話に活かします。</p>
+      <h3>覚えてもらう</h3>
+      <p>「覚えておいて」と言えば、その内容を保存します。名前の呼び方、よく行く店、苦手なもの、仕事の進め方の好みなど、くり返し効いてくる情報ほど向いています。会話の中で大切そうなことは、言われなくても少しずつ覚えていきます。</p>
+      <div class="say">コーヒーは浅煎りが好きです。覚えておいて。</div>
+      <h3>何を覚えているか、確認する</h3>
+      <p>「私について何を覚えている？」と聞けば、答えます。間違っていたら「それは違う」と言えば直します。</p>
+      <h3>忘れてもらう</h3>
+      <p>「さっきの住所は忘れて」のように言えば、その情報を忘れます。まとめて消したいときは、アプリの設定の「データコントロール」からリセットもできます（会話やファイルも消えるので、実行前に確認があります）。</p>
+      <div class="tip"><b>他のAIから引っ越すとき：</b>設定の「データコントロール」に「メモリのインポート」があり、他のAIアシスタントに覚えさせていたことを移してくることもできます。</div>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="memory"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="schedule">
+      <h2><span class="no">6</span>定期タスクと見守り</h2>
+      <p class="lead">「毎日」「毎週」と付けて頼むと、繰り返しの頼みごととして引き受けます。あなたがアプリを開いていない間も、裏側で実行されます。</p>
+      <ul>
+        <li>例：「毎朝、今日の天気と予定を教えて」「毎週金曜に、来週の買い物リストを作って」</li>
+        <li>見守りもできます。「この商品の在庫が戻ったら知らせて」のように頼むと、間隔をあけて確認し、変化があったときに知らせます。</li>
+        <li>結果は会話に届き、アプリを開いていないときはスマホへの通知でも届きます。</li>
+        <li>止めたいときは「あの毎朝の連絡は止めて」と言えば止まります。一覧はアプリの「今後の予定（Upcoming）」からも確認できます。</li>
+      </ul>
+      <p>見守りは一定の間隔で確認する仕組みなので、「変わった瞬間に必ず」ではなく「次の確認のタイミングで」届きます。その代わり、寝ている間も、スマホの電源が切れていても、確認自体は進んでいます。</p>
+      <div class="say">毎週日曜の夜に、来週の予定と天気をまとめて教えて。</div>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="schedule"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="connect">
+      <h2><span class="no">7</span>つながるサービスと承認</h2>
+      <p class="lead">メールやカレンダーなどのサービスとつなぐと、それらの中身を使った頼みごとができるようになります。つなぐかどうかは、あなたが決めます。</p>
+      <h3>コネクタ（連携）</h3>
+      <p>設定の「コネクタ」から、Gmail や Google カレンダー、SNS など、手持ちのサービスを連携できます。つないだ後は「昨日のメールで大事なものだけ教えて」「来週の予定に空きはある？」といった頼み方ができます。つないでいないサービスのことは読めません。</p>
+      <h3>大事なことは、勝手にしません</h3>
+      <ul>
+        <li>メールやメッセージを送る、買い物をする、公開する——外に影響が出ることは、実行前に必ずあなたの確認（承認）を取ります。</li>
+        <li>承認待ちのものは、アプリの「承認（Approvals）」にもたまります。スマホの通知からそのまま「許可／拒否」を答えることもできます。</li>
+        <li>「いつも許可」と決めた相手や操作だけ、次回から聞かずに進める設定もできます。取り消しもいつでもできます。</li>
+        <li>連携の解除や、サービスの権限の変更は、設定からいつでも行えます。</li>
+      </ul>
+      <div class="tip"><b>合言葉：</b>「やっていい？」と聞かれたら、それはミューズが一線を守っている証拠です。内容を確認してから答えてください。</div>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="connect"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="library">
+      <h2><span class="no">8</span>ライブラリ ― 作ったものの置き場</h2>
+      <p class="lead">ミューズに作ってもらった文書・表・画像・ページは、ライブラリにたまっていきます。「あのファイル、どこだっけ」は、まずここを探せば見つかります。</p>
+      <h3>何がたまる場所か</h3>
+      <ul>
+        <li>頼んで作ってもらった文書、表、スライド、画像、Webページや小さなアプリが並びます。</li>
+        <li>チャットであなたが送った写真やファイルは、ミューズが受け取ってその会話の材料に使います。作ってもらった成果物の置き場がライブラリです。</li>
+        <li>作ったものは会話が終わっても消えません。日がたってから「前に作ったアレを出して」と頼んでも大丈夫です。</li>
+      </ul>
+      <h3>取り出し方・扱い方</h3>
+      <ul>
+        <li>開く：項目を選ぶと、その場で中身が見られます。文書によっては、画面のまま言葉を直せるものもあります。</li>
+        <li>ダウンロード：手元のパソコンやスマホに保存して、自分のソフトで開いたり印刷したりできます。</li>
+        <li>ピン留め：よく使うものはピン留めしておくと、先頭に並んで目立つようになります。</li>
+        <li>名前の変更・削除：項目のメニューから行えます。消したファイルは、約30日はゴミ箱から戻せます。</li>
+        <li>人に渡す：チャットのリンクは自分のアプリの中でしか開きません。他の人に渡したいときは、共有用のリンクを作る方法があります（その都度、確認のうえ作成します）。</li>
+      </ul>
+      <div class="say">前に作ってもらった旅行の持ち物リスト、もう一度出して。</div>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="library"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="feed">
+      <h2><span class="no">9</span>フィード ― あなた向けの読みもの</h2>
+      <p class="lead">フィードは、ミューズがあなたのために書く短い記事が届くタブです。外のニュースを集めて並べ直すものではなく、あなたの関心に合わせてミューズ自身が書きます。</p>
+      <ul>
+        <li>記事は自動で、静かに追加されていきます。通知は来ないので、気が向いたときに開く読みものです。</li>
+        <li>読みたい内容は、会話で「もっと○○の話を」と伝えるか、フィードの画面にある「指示（プロンプト）」を書き換えることで変えられます。書き換えると、新しい方針で次の記事が作られます。</li>
+        <li>届くペースそのものは自動で決まる仕組みです。「もっと頻繁に」はできませんが、中身の方向はあなたが決められます。</li>
+        <li>気に入った記事はハートを付けたり、「これについて話す」で会話に持ち込んで深掘りしたりできます。不要な記事は削除できます。</li>
+      </ul>
+      <div class="say">フィードでは、地元のお店や季節の話題を多めにして。</div>
+      <div class="tip"><b>最初のうちは：</b>使い始めのフィードには、ミューズの使い方を紹介する定番の記事が並びます。読みながら分からないことがあれば、そのまま会話で聞いてください。</div>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="feed"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="ideas">
+      <h2><span class="no">10</span>アイデア ― 「作りましょうか」の提案</h2>
+      <p class="lead">アイデアのタブには、ミューズからの「こんなものを作りましょうか」という提案のカードが並びます。眺めるだけでも楽しい場所です。</p>
+      <ul>
+        <li>気に入ったカードで「作って（Let's do it）」を選ぶと、ミューズが実際に作り始めます。出来上がったものはライブラリに残ります。</li>
+        <li>提案はフィードの記事の中に混ざって届くこともあり、そこから直接作り始めることもできます。</li>
+        <li>いらないカードは、長押しで消せます。期限が来たカードや、すでに作り終わったカードは、放っておいても自然に消えていきます。</li>
+        <li>カードが消えたのは、たいてい期限切れです。もう一度頼めば、似た提案はまた作れます。</li>
+      </ul>
+      <div class="say">『アイデア』タブの提案、2番目のものを作ってください。</div>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="ideas"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="goals">
+      <h2><span class="no">11</span>目標 ― 長く取り組むことの置き場</h2>
+      <p class="lead">目標（Goals）のタブは、資格の勉強、健康づくり、大きな計画など、長く取り組むことのための置き場です。その日の用事ではなく、「続けること」を一緒に持つ場所だと思ってください。</p>
+      <h3>始め方と進め方</h3>
+      <ul>
+        <li>「これを目標にして」と会話で伝えると、目標が作られます。大きな目標には、一段だけ小さな小目標をぶら下げることもできます。</li>
+        <li>進み具合は、会話で伝えるたびに日付つきで記録され、履歴として積み上がります。記録が間違っていたら、直したり消したりもできます。</li>
+        <li>目標ごとに、近況をまとめた手紙のような「ブリーフィング」が届くことがあります。届くタイミングは自動で決まります。</li>
+        <li>やり遂げたら「完了」にします。お休みしたいときは、一度完了にして、再開したくなったら戻すこともできます。</li>
+      </ul>
+      <div class="tip"><b>定期タスクとの組み合わせ：</b>目標そのものは自動では動きません。「毎週月曜に先週の進み具合を聞いて」のような定期タスクを組み合わせると、声かけや見守りが加わります。</div>
+      <div class="say">来年の資格試験を目標にして。勉強した日は記録していって。</div>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="goals"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="spaces">
+      <h2><span class="no">12</span>スペース ― ページやアプリを作ってもらう</h2>
+      <p class="lead">Webページや小さなアプリを作ってもらうと、それは「スペース（成果物）」としてライブラリに残り、いつでも開いて使えます。一度きりの回答ではなく、残して使い続けるものを作る頼み方です。</p>
+      <h3>作れるものの種類</h3>
+      <ul>
+        <li>文書：PDF や表計算、スライドなど。ダウンロードすれば手元で使えます。</li>
+        <li>ページ：Webサイトとしてそのまま開けるもの。メモの公開ページや案内ページなどに。</li>
+        <li>アプリ：書き込んだ内容を覚えていられるもの。家計簿、記録帳、チェックリストの管理など、データをためる使い方に向きます。</li>
+      </ul>
+      <h3>使うときのポイント</h3>
+      <ul>
+        <li>直してほしいところは、会話で「ここをこう変えて」と頼めば更新されます。</li>
+        <li>ページは、公開リンクを作って他の人に見せることもできます。公開や更新のたびに、必ずあなたの確認を取ります。アプリは、保存したデータごと外に出ることはありません。</li>
+        <li>アプリに入れた記録は、ミューズの環境の中でそのアプリ用に保存され、作り直しても残ります。</li>
+      </ul>
+      <div class="tip"><b>削除は慎重に：</b>スペースを消すと、本体も保存データも完全になくなり、元に戻せません。いらなくなったときは、まずミューズに相談してください。</div>
+      <div class="say">家族で書き込める、今月の予定カレンダーのページを作って。</div>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="spaces"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="codex">
+      <h2><span class="no">13</span>Codex と連動して使う</h2>
+      <p class="lead">ミューズは、もう1つのAI「Codex」と分担して仕事をすることもできます。会話と判断はミューズ、実際の作業の実行は Codex、という分担です。</p>
+      <h3>考え方：直接つながず、ファイルで受け渡す</h3>
+      <p>2つのAIを直接つなぐのではなく、GitHub 上の Markdown ファイルを介して受け渡します。Markdown はただのテキストファイルなので、人が読んで内容を確認でき、あとから見返すこともできます。</p>
+      <h3>流れ</h3>
+      <ol>
+        <li>ミューズが指示書（Markdown）を書く ― 何をしてほしいか、目的と手順を文章でまとめたものです。</li>
+        <li>GitHub の、受け渡し用に決めたフォルダへ置く。</li>
+        <li>Codex が定期的に見に来て、指示書の作業を実行する。</li>
+        <li>Codex が結果を報告ファイルに書いて、同じ場所へ戻す。</li>
+        <li>人が報告を確認する。ミューズが報告を読んで要約を伝えることもできます。</li>
+      </ol>
+      <h3>ミューズ側の仕事</h3>
+      <ul>
+        <li>指示書を書くこと ― 目的、手順、注意点を、実行する側が迷わない文章にします。</li>
+        <li>報告を読んで要約すること ― 長い実行記録を、要点だけにまとめて伝えます。</li>
+        <li>次の一手を考えること ― 報告を見て、次に何を頼むか相談に乗ります。</li>
+      </ul>
+      <p>実行そのものは Codex に任せるので、ミューズとの会話は「何を頼むか」と「結果がどうだったか」に集中できます。</p>
+      <h3>安全の線引き</h3>
+      <ul>
+        <li>実行の根拠は、人の承認です。誰が頼んだのか分からない指示書は、実行されません。</li>
+        <li>公開や送信など、外に影響が出ることは、実行の前に人の確認を取ります。</li>
+      </ul>
+      <div class="say">サーバーの点検をしてほしい。Codex への指示書を書いて、決めた場所に置いておいて。</div>
+      <div class="tip"><b>この章の範囲：</b>ここでは考え方と往復の流れまでに留めます。GitHub へのつなぎ方の詳しい手順は、別資料『GitHub でつなぐ』にまとめます。</div>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="codex"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="tabs">
+      <h2><span class="no">14</span>画面の地図</h2>
+      <p class="lead">アプリの置き場を、地図としてまとめました。詳しくは、それぞれの章で説明しています。「作ったものはライブラリ」の1点だけ押さえれば、迷いません。</p>
+      <dl>
+        <div class="g-item"><dt>チャット</dt><dd>ミューズと話す場所（→ 4章）。</dd></div>
+        <div class="g-item"><dt>ライブラリ</dt><dd>作った文書・画像・ページの置き場（→ 8章・12章）。</dd></div>
+        <div class="g-item"><dt>フィード</dt><dd>ミューズが書く、あなた向けの読みもの（→ 9章）。</dd></div>
+        <div class="g-item"><dt>アイデア</dt><dd>「作りましょうか」という提案のカード（→ 10章）。</dd></div>
+        <div class="g-item"><dt>目標（Goals）</dt><dd>長く取り組む目標と進み具合（→ 11章）。</dd></div>
+      </dl>
+      <p>ミューズは Web（muse.ai）、スマホアプリ（iPhone／Android）、Mac アプリで使えます。どの入口からでも、同じミューズ・同じメモリーです。</p>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="tabs"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <section id="glossary">
+      <h2><span class="no">15</span>用語辞典</h2>
+      <p class="lead">このガイドとアプリに出てくる言葉を、短くまとめました。</p>
+      <dl>
+        <div class="g-item"><dt>ミューズ</dt><dd>Meta のパーソナルAIエージェント。あなたの専属の担当で、会話・ファイル・つないだサービスをまたいで手伝います。</dd></div>
+        <div class="g-item"><dt>メインチャット</dt><dd>中心の会話。何でも受け付ける窓口です。</dd></div>
+        <div class="g-item"><dt>サイドチャット</dt><dd>テーマごとに分けた会話の部屋。話題ごとに整理できます。</dd></div>
+        <div class="g-item"><dt>メモリー</dt><dd>ミューズが覚えている、あなたの好みや決まりごと。「覚えておいて」「忘れて」で出し入れできます。</dd></div>
+        <div class="g-item"><dt>コネクタ</dt><dd>メールやカレンダーなど、外のサービスとの連携。つないだ分だけ、できることが広がります。</dd></div>
+        <div class="g-item"><dt>定期タスク</dt><dd>「毎朝」「毎週」などの繰り返しの頼みごと。裏側で実行され、結果は会話と通知で届きます。</dd></div>
+        <div class="g-item"><dt>見守り</dt><dd>変化がないか間隔をあけて確認し、変わったときに知らせる頼み方。</dd></div>
+        <div class="g-item"><dt>指示書</dt><dd>Codex に渡す作業の明細を書いた Markdown ファイル。結果は報告ファイルで戻ってきます（→ 13章）。</dd></div>
+        <div class="g-item"><dt>スペース</dt><dd>作ってもらったWebページや小さなアプリのこと。ライブラリに残って、繰り返し開けます（→ 12章）。</dd></div>
+        <div class="g-item"><dt>承認</dt><dd>送信・買い物・公開など大事な操作の前に取る、あなたの確認。「許可／拒否」で答えます。</dd></div>
+        <div class="g-item"><dt>フィード</dt><dd>ミューズがあなた向けに書く短い読みものの置き場（タブ）。</dd></div>
+        <div class="g-item"><dt>アイデア</dt><dd>ミューズからの「作りましょうか」という提案のカード（タブ）。選ぶと実際に作ります。</dd></div>
+        <div class="g-item"><dt>目標（ゴール）</dt><dd>長く取り組む目標と、その進み具合の記録（タブ）。</dd></div>
+        <div class="g-item"><dt>ライブラリ</dt><dd>作った文書・画像・ページがたまる置き場（タブ）。受け取りと整理はここから。</dd></div>
+        <div class="g-item"><dt>成果物（アーティファクト）</dt><dd>ミューズが作った文書やページ、アプリのこと。ライブラリに残ります。</dd></div>
+      </dl>
+      <div class="read-check">
+        <label><input type="checkbox" class="read" data-sec="glossary"> 読み終わった <span class="done-txt">✓ 済み</span></label>
+      </div>
+    </section>
+
+    <footer>
+      ミューズ使い方ガイド（入門編）v0.2 ― まずは1つ、話しかけてみてください。
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  var KEY = "muse-guide-progress-v01";
+  var state = {};
+  try{ state = JSON.parse(localStorage.getItem(KEY) || "{}"); }catch(e){ state = {}; }
+
+  var boxes = Array.prototype.slice.call(document.querySelectorAll("input.read"));
+  var total = boxes.length;
+
+  function render(){
+    var done = 0;
+    boxes.forEach(function(b){
+      var sec = b.getAttribute("data-sec");
+      b.checked = !!state[sec];
+      var section = document.getElementById(sec);
+      if(section){ section.classList.toggle("is-done", b.checked); }
+      var link = document.querySelector('nav a[data-sec="' + sec + '"]');
+      if(link){
+        link.classList.toggle("done", b.checked);
+        var st = link.querySelector(".st");
+        if(st){ st.textContent = b.checked ? "読了" : "未読"; }
+      }
+      if(b.checked){ done++; }
+    });
+    document.getElementById("pnum").textContent = done;
+    document.getElementById("pbar").style.width = (total ? (done/total*100) : 0) + "%";
+  }
+
+  boxes.forEach(function(b){
+    b.addEventListener("change", function(){
+      state[b.getAttribute("data-sec")] = b.checked;
+      try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+      render();
+    });
+  });
+
+  // copy buttons for prompt library
+  document.querySelectorAll(".prompt").forEach(function(p){
+    var btn = p.querySelector(".copy-btn");
+    var code = p.querySelector("code");
+    if(!btn || !code){ return; }
+    btn.addEventListener("click", function(){
+      var text = code.textContent;
+      function ok(){
+        btn.textContent = "コピーしました";
+        btn.classList.add("copied");
+        setTimeout(function(){ btn.textContent = "コピー"; btn.classList.remove("copied"); }, 1600);
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(ok, function(){ fallback(); });
+      } else { fallback(); }
+      function fallback(){
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try{ document.execCommand("copy"); ok(); }catch(e){}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
