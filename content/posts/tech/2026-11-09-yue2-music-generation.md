@@ -24,7 +24,7 @@ type: article
 
 ```embed
 https://oosawak.github.io/music-player/#winter-muse
-4x1
+2x1
 100%
 ```
 
