@@ -80,7 +80,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "Making It Sound Like a Game",
+          "subtitle": "Putting the Sound of Classic Consoles and an Okinawan Scale into a BGM Generator",
+          "category": "Column",
+          "summary": "ArcadiaMusicForge, an app that generates game BGM in the browser, somehow did not sound like game music. I had Muse find out why, fix it, and compared before and after by ear under fixed conditions, again and again. Starting from a broken sound assignment, the sound engines of the NES, Game Boy, SNES, Mega Drive and PlayStation went in one by one, and an Okinawan scale came last. The adopted samples are collected on one page.",
+          "cover_alt": "An illustration of a workbench with sound chips, a handheld console and an Okinawan sanshin, with glowing waveforms flowing over them"
+        }
       }
     },
     {
