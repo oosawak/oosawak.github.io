@@ -1,0 +1,50 @@
+# CVE見張り台（試作）の毎朝更新
+# CISA KEVカタログを取得し、materials/cve-watch/build_data.py で data.json を生成。
+# 差分があれば自動コミットする。
+
+name: Update CVE watch stand (KEV daily)
+
+on:
+  schedule:
+    # 毎朝 06:00 JST（UTC 21:00 前日）
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: cve-watch-update
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  update:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch CISA KEV catalog
+        run: |
+          curl -fsSL -o materials/cve-watch/kev-raw.json \
+            https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+      - name: Generate data.json
+        working-directory: materials/cve-watch
+        run: python build_data.py
+      - name: Commit updated KEV data
+        run: |
+          git add materials/cve-watch/kev-raw.json materials/cve-watch/data.json
+          if git diff --cached --quiet; then
+            echo 'No KEV changes.'
+          else
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Update KEV data'
+            git push origin HEAD:main
+          fi
