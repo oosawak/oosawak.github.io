@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArcadiaMusicForge 採用サンプル集 | ゲームっぽくする改修の記録</title>
+<meta name="description" content="BGM生成アプリ ArcadiaMusicForge を「ゲームっぽく」直していく過程で作り、本人が耳で聴き比べて採用したサンプル曲の一覧です。">
+<style>
+  body { font-family: sans-serif; margin: 0; background: #101418; color: #e8ecf1; line-height: 1.7; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 1.5rem; margin-bottom: 4px; }
+  h2 { font-size: 1.15rem; margin-top: 40px; border-left: 4px solid #58a6ff; padding-left: 10px; }
+  .lead { color: #b9c4d0; }
+  .item { background: #171d24; border: 1px solid #2a333f; border-radius: 8px; padding: 14px 16px; margin: 14px 0; }
+  .item h3 { margin: 0 0 2px; font-size: 1.02rem; }
+  .meta { color: #8fa1b5; font-size: 0.85rem; margin: 0 0 6px; }
+  .desc { margin: 0 0 10px; font-size: 0.94rem; }
+  audio { width: 100%; }
+  a { color: #58a6ff; }
+  footer { color: #8fa1b5; font-size: 0.85rem; margin-top: 48px; }
+</style>
+</head>
+<body>
+<main>
+<h1>ArcadiaMusicForge 採用サンプル集</h1>
+<p class="lead">BGM生成アプリ <a href="https://oosawak.github.io/ArcadiaMusicForge/">ArcadiaMusicForge</a> の出力を「ゲームっぽく」直していく過程で作ったサンプル曲のうち、本人が耳で聴き比べて<strong>採用したもの</strong>を並べた一覧です。各改修はジャンルとシードを固定した Before／After の聴き比べで判定し、ここには採用側（After）だけを残しました。曲はすべてアプリの自動生成で、抜粋です。</p>
+
+<h2>基礎の改修（案1〜5）</h2>
+
+<div class="item">
+<h3>1. 音色の役割を直した</h3>
+<p class="meta">アクション・戦闘／シード42</p>
+<p class="desc">ジャンルプリセットの音色配列がトラック順とずれ、ベースにクワイアやベルが当たっていたのを、役割ベースの割り当てに直したもの。「ゲームっぽくなった」と判定された出発点です。</p>
+<audio controls preload="none" src="audio/01-roles-action.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>2. ファミコン風の専用発音経路</h3>
+<p class="meta">アクション・戦闘／音源スタイル: ファミコン風／シード42</p>
+<p class="desc">本物のデューティ比パルス波（12.5%／25%／50%）で鳴らす専用経路を新設。音量のカーブや残響を実機寄りに固定しました。</p>
+<audio controls preload="none" src="audio/02-chip-action.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>3. 和音を分散させた</h3>
+<p class="meta">アクション・戦闘／シード42</p>
+<p class="desc">同時に鳴っていた和音の音を、ジャンルごとに1〜4ステップずつ低→高へずらして分散。「軽くなった」と判定されました。</p>
+<audio controls preload="none" src="audio/03-spread-action.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>4. ベースに動きを付けた</h3>
+<p class="meta">アクション・戦闘／シード42</p>
+<p class="desc">土台の音は動かさず、隙間にオクターブ跳躍と5度の短いフィルを追加。ベースラインが平坦でなくなりました。</p>
+<audio controls preload="none" src="audio/04-bass-action.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>5. ループ構成プリセット</h3>
+<p class="meta">アクション・戦闘／ループ8／シード42</p>
+<p class="desc">アレンジに「ループ8」「ループ16」ボタンを追加し、ゲームでそのまま繰り返し使える形に組めるようにしたもの。</p>
+<audio controls preload="none" src="audio/05-loop8-action.mp3"></audio>
+</div>
+
+<h2>ジャンルとシーンの追加</h2>
+
+<div class="item">
+<h3>6. 和風・時代物</h3>
+<p class="meta">ゲームジャンル: 和風・時代物／シード42</p>
+<p class="desc">音楽スタイル「和風」を既定に持つ、初のゲームジャンル。間と反復で時代物の空気を出す設定です。</p>
+<audio controls preload="none" src="audio/06-wafu.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>7. RPG・戦闘</h3>
+<p class="meta">ゲームジャンル: RPG・戦闘／シード42</p>
+<p class="desc">アクションとは別に、RPGの通常戦闘向けのジャンルを新設。既定スタイルはオーケストラ風です。</p>
+<audio controls preload="none" src="audio/07-battle.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>8. エンディング・余韻</h3>
+<p class="meta">シーン: エンディング・余韻／シード42</p>
+<p class="desc">物語の終わりの余韻のためのシーン。静かな側の厚みを持たせています。</p>
+<audio controls preload="none" src="audio/08-ending.mp3"></audio>
+</div>
+
+<h2>音源スタイル 第1段</h2>
+
+<div class="item">
+<h3>9. ゲームボーイ風</h3>
+<p class="meta">アクション・戦闘／音源スタイル: ゲームボーイ風／シード42</p>
+<p class="desc">波形メモリチャンネル（32ステップ×4bitの粗い波形）と、リードだけに付く周波数スイープを実装。「ゲームボーイらしいのか少し分からないが、いいと思う」という留保つきで採用されました。</p>
+<audio controls preload="none" src="audio/09-gb1-action.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>10. スーファミ風トーンバンク（段階A）</h3>
+<p class="meta">アクション・戦闘／音源スタイル: スーファミ風／シード42</p>
+<p class="desc">音声ファイルを埋め込まず、倍音レシピから実行時にサンプル素材を生成する内蔵トーンバンクを新設。サンプル再生の構造で鳴らします。</p>
+<audio controls preload="none" src="audio/10-bank-action.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>11. PS1風 第1段</h3>
+<p class="meta">アクション・戦闘／音源スタイル: 初代PlayStation風／シード42</p>
+<p class="desc">スーファミと同じトーンバンクを、明るいフィルターと長めの残響設定で鳴らす第1段。</p>
+<audio controls preload="none" src="audio/11-ps1-1-action.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>12. 段階B バンク素材の吟味</h3>
+<p class="meta">街・日常／音源スタイル: スーファミ風／シード42</p>
+<p class="desc">バンク素材にアタックの表情（倍音構成が立ち上がりで変化する職人化）を追加。「音に生気が出た」と判定されました。</p>
+<audio controls preload="none" src="audio/12-stageb-town.mp3"></audio>
+</div>
+
+<h2>FM音源（メガドライブ風）</h2>
+
+<div class="item">
+<h3>13. FM音源 第1段（2オペレーター）</h3>
+<p class="meta">アクション・戦闘／音源スタイル: メガドライブ風／シード42</p>
+<p class="desc">変調の仕組み自体が無かったメガドライブ風に、2オペレーターFMと役割別プリセットを実装した第1段。</p>
+<audio controls preload="none" src="audio/13-fm1-action.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>14. FM 第2段・調整版（レーシング）</h3>
+<p class="meta">レーシング／音源スタイル: メガドライブ風／シード7</p>
+<p class="desc">4オペレーター化の初版は「音が汚くなった。やりすぎ」と差し戻され、変調の上段とフィードバックを絞った調整版が採用されました。これはその調整版です。</p>
+<audio controls preload="none" src="audio/14-fm2-racing.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>15. FM 第2段・調整版（街）</h3>
+<p class="meta">街・日常／音源スタイル: メガドライブ風／シード123</p>
+<p class="desc">同じ調整版を、遅い曲でも確認したもの。速い曲と遅い曲で破綻しないかを聴き比べました。</p>
+<audio controls preload="none" src="audio/15-fm2-town.mp3"></audio>
+</div>
+
+<h2>第2段シリーズと輪郭変奏</h2>
+
+<div class="item">
+<h3>16. 輪郭のパラメーター変奏（レーシング）</h3>
+<p class="meta">レーシング／シード7</p>
+<p class="desc">メロディの輪郭（山型・波型など）は候補が3〜4種しかなく、速いジャンル同士が似て聞こえる問題への対策。家族＋シード変奏で輪郭を実質無限にしました。</p>
+<audio controls preload="none" src="audio/16-contour-racing.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>17. 輪郭のパラメーター変奏（RPG戦闘・別シード）</h3>
+<p class="meta">RPG・戦闘／シード99</p>
+<p class="desc">同じ仕組みで、シードが変われば輪郭も変わることの確認用。16とは違う曲になっています。</p>
+<audio controls preload="none" src="audio/17-contour-battle.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>18. ゲームボーイ 第2段（プラットフォーマー）</h3>
+<p class="meta">プラットフォーマー／音源スタイル: ゲームボーイ風／シード5</p>
+<p class="desc">実機の同時4音（パルス2＋波形1＋ノイズ1）までの音数制限と、段階状の音量変化を実装。「音数が絞られてゲームボーイらしくなった」と判定されました。</p>
+<audio controls preload="none" src="audio/18-gb2-platformer.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>19. ゲームボーイ 第2段（パズル）</h3>
+<p class="meta">パズル／音源スタイル: ゲームボーイ風／シード77</p>
+<p class="desc">遅い曲では、音量がカクカクと段階で落ちる感じと、音数の少なさがよく分かります。</p>
+<audio controls preload="none" src="audio/19-gb2-puzzle.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>20. PS1 第2段（ダンジョン）</h3>
+<p class="meta">ローグライク・ダンジョンRPG／音源スタイル: 初代PlayStation風／シード42</p>
+<p class="desc">SPU風の残響ネットワーク（フィードバックコム＋オールパス）を新設し、再生とWAV書き出しで共有。書き出しにも初めて残響が乗るようになりました。</p>
+<audio controls preload="none" src="audio/20-ps12-dungeon.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>21. PS1 第2段（ノベル・タイトル）</h3>
+<p class="meta">ノベル・アドベンチャー／音源スタイル: 初代PlayStation風／シード7</p>
+<p class="desc">遅い曲で残響の尾を確認したもの。「残響が乗ってPS1らしくなった」と判定されました。</p>
+<audio controls preload="none" src="audio/21-ps12-menu.mp3"></audio>
+</div>
+
+<h2>琉球・沖縄風</h2>
+
+<div class="item">
+<h3>22. 琉球・沖縄風（街）</h3>
+<p class="meta">街・日常／音楽スタイル: 琉球・沖縄風／シード31</p>
+<p class="desc">GB第2段の「絞る」発想から生まれた音楽スタイル。琉球音階（ド・ミ・ファ・ソ・シ）とI–IV–I–Vの循環、三線寄せの撥弦と薄い編成です。</p>
+<audio controls preload="none" src="audio/22-ryukyu-town.mp3"></audio>
+</div>
+
+<div class="item">
+<h3>23. 琉球・沖縄風（コージー）</h3>
+<p class="meta">コージー・スローライフ／音楽スタイル: 琉球・沖縄風／シード77</p>
+<p class="desc">遅い土台でも試したもの。音の隙間が「間」に聞こえるかを聴き比べ、「沖縄らしく聞こえる」と判定されました。</p>
+<audio controls preload="none" src="audio/23-ryukyu-cozy.mp3"></audio>
+</div>
+
+<footer>
+<p>アプリ本体: <a href="https://oosawak.github.io/ArcadiaMusicForge/">ArcadiaMusicForge</a> ／ 経緯の記事: Gameブログ「ゲームっぽくする」</p>
+</footer>
+</main>
+</body>
+</html>
