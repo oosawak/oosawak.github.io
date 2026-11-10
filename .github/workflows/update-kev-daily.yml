@@ -1,8 +1,10 @@
 # CVE見張り台（試作）の毎朝更新
 # CISA KEVカタログを取得し、materials/cve-watch/build_data.py で data.json を生成。
+# あわせて NVD から直近7日の高深刻度 (CVSS 7以上) を取得し build_recent.py で recent.json を生成。
 # 差分があれば自動コミットする。
+# This product uses the NVD API but is not endorsed or certified by the NVD.
 
-name: Update CVE watch stand (KEV daily)
+name: Update CVE watch stand (KEV + NVD daily)
 
 on:
   schedule:
@@ -37,14 +39,19 @@ jobs:
       - name: Generate data.json
         working-directory: materials/cve-watch
         run: python build_data.py
-      - name: Commit updated KEV data
+      - name: Fetch NVD recent high severity and generate recent.json
+        working-directory: materials/cve-watch
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+        run: python build_recent.py
+      - name: Commit updated data
         run: |
-          git add materials/cve-watch/kev-raw.json materials/cve-watch/data.json
+          git add materials/cve-watch/kev-raw.json materials/cve-watch/data.json materials/cve-watch/recent.json
           if git diff --cached --quiet; then
-            echo 'No KEV changes.'
+            echo 'No changes.'
           else
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'Update KEV data'
+            git commit -m 'Update KEV/NVD data'
             git push origin HEAD:main
           fi
