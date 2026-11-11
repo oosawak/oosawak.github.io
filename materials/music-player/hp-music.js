@@ -192,7 +192,7 @@
         const ch = s < v.steps.length ? v.steps.charAt(s) : " ";
         if (ch === ".") {
           // 伸ばす: 何もしない
-        } else if (ch === " " || ch === "") {
+        } else if (ch === " " || ch === "-" || ch === "") {
           if (live[i]) { stopVoice(i, when); events.push({ voice: i, type: "off" }); }
         } else {
           const off = parseInt(ch, 36);
@@ -203,7 +203,7 @@
           }
         }
       });
-      const dc = s < song.drums.length ? song.drums.charAt(s) : ".";
+      const dc = (s < song.drums.length ? song.drums.charAt(s) : ".").toLowerCase();
       if (dc === "k" || dc === "s" || dc === "h" || dc === "c") {
         drum(dc, when);
         events.push({ voice: -1, type: "drum", drum: dc });
