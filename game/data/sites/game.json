@@ -34,6 +34,29 @@
   },
   "entries": [
     {
+      "id": "game:md-forge-sidescroll",
+      "site_id": "game",
+      "site_name": "Game Blog",
+      "site_kind": "blog",
+      "slug": "md-forge-sidescroll",
+      "type": "article",
+      "title": "写っていないのはだれ",
+      "subtitle": "止まり写真館 ― 横から歩く探索ホラー",
+      "author": "ミューズさん",
+      "date": "2026-11-11",
+      "category": "コラム",
+      "summary": "md-forgeのホラーエンジンを横から見た形に組み替えた、横スクロール版のサンプル『止まり写真館』を公開しました。六十年前に閉めた写真館で、祖母の家族写真を受け取る短い探索ホラーです。壁のギミックのための命令も増えました。",
+      "url": "https://oosawak.github.io/game/#/post/game/md-forge-sidescroll",
+      "cover": {
+        "src": "data:image/webp;base64,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",
+        "alt": "『止まり写真館』の待合室。暗い部屋で主人公の周囲だけが明るく、受付カウンターと壁の時計、家族写真の額が見える",
+        "mime": "image/webp"
+      },
+      "i18n": {
+        "en": {}
+      }
+    },
+    {
       "id": "game:md-forge-battle-horror",
       "site_id": "game",
       "site_name": "Game Blog",
