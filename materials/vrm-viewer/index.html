@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VRMビューアー</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; font-family: sans-serif; background: #eaf2f9; color: #23405c; }
+  #view { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+  header { position: fixed; top: 0; left: 0; right: 0; padding: 10px 12px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; background: rgba(255,255,255,0.82); backdrop-filter: blur(4px); z-index: 2; }
+  header .title { font-weight: bold; margin-right: 4px; }
+  button { font-size: 15px; padding: 9px 14px; border-radius: 999px; border: 1px solid #9db8d2; background: #fff; color: #23405c; cursor: pointer; }
+  button:active { background: #dbe9f7; }
+  #openBtn { background: #2f6fb4; border-color: #2f6fb4; color: #fff; font-weight: bold; }
+  #status { position: fixed; left: 0; right: 0; bottom: 0; padding: 10px 14px; font-size: 14px; background: rgba(255,255,255,0.88); z-index: 2; word-break: break-all; }
+  #status.error { color: #b03030; }
+  #exprs { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  #exprs:empty { display: none; }
+  body.drag::after { content: "ここに .vrm ファイルを落とすと開きます"; position: fixed; inset: 12px; border: 3px dashed #2f6fb4; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 20px; background: rgba(255,255,255,0.75); z-index: 5; pointer-events: none; }
+  .hint { font-size: 12.5px; color: #5a748f; width: 100%; }
+</style>
+</head>
+<body>
+<canvas id="view"></canvas>
+<header>
+  <span class="title">VRMビューアー</span>
+  <button id="openBtn">ファイルを開く</button>
+  <input type="file" id="fileInput" accept=".vrm,.glb" hidden>
+  <button id="frontBtn">正面</button>
+  <button id="sideBtn">横</button>
+  <button id="backBtn">後ろ</button>
+  <button id="fitBtn">全体表示</button>
+  <button id="armsBtn">腕を下ろす</button>
+  <button id="rotBtn">自動回転</button>
+  <span id="exprs"></span>
+  <span class="hint">.vrm ファイルを選ぶか、この画面に落としてください。保存場所はどこでも大丈夫です（ダウンロードフォルダーでも可）。ファイルはブラウザの中だけで読み込み、どこにも送信しません。ドラッグで回転、ホイール／ピンチで拡大縮小できます。</span>
+</header>
+<div id="status">まだファイルが開かれていません。</div>
+<script src="./vrm-viewer.js"></script>
+</body>
+</html>
