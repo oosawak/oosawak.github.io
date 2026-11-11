@@ -108,8 +108,17 @@ function loadLibrary() {
   let deleted = [];
   try { deleted = JSON.parse(localStorage.getItem(DEL_KEY) || "[]"); } catch (e) {}
   SAMPLES.forEach(function (s) {
-    if (!lib.some(e => e.id === s.id) && deleted.indexOf(s.id) < 0) {
-      lib.push({ id: s.id, title: s.song.t, kind: "step", text: JSON.stringify(s.song), added: 0, sample: true });
+    const text = JSON.stringify(s.song);
+    const hid = hashOf(text);
+    // 旧版の固定IDで入っている同じサンプルは、内容ハッシュのIDへ寄せる（二重登録の解消）
+    const oldIdx = lib.findIndex(e => e.id === s.id);
+    if (oldIdx >= 0) {
+      if (lib.some(e => e.id === hid)) lib.splice(oldIdx, 1);
+      else lib[oldIdx].id = hid;
+    }
+    const isDeleted = deleted.indexOf(s.id) >= 0 || deleted.indexOf(hid) >= 0;
+    if (!lib.some(e => e.id === hid) && !isDeleted) {
+      lib.push({ id: hid, title: s.song.t, kind: "step", text: text, added: 0, sample: true });
     }
   });
   try { localStorage.setItem(LS_KEY, JSON.stringify(lib)); } catch (e) {}
