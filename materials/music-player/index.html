@@ -85,7 +85,11 @@
 <script>
 "use strict";
 const LS_KEY = "mp-library-v1";
-const SAMPLE = {"t":"CANON - PACHELBEL","bpm":96,"v":[[62,"square",.13,"g.......e.......c.......b.......9.......7.......9.......b.......c.......b.......9.......7.......5.......4.......5.......2......."],[62,"square",.045,"0...7...4...7...7...e...b...e...9...g...c...g...4...b...7...b...5...c...9...c...7...e...b...e..."],[38,"triangle",.22,"c.......7.......9.......4.......5.......c.......5.......7.......c.......7.......9.......4.......5.......c.......5.......7......."]],"d":""};
+const SAMPLES = [
+  { id: "sample-canon", song: {"t":"CANON - PACHELBEL","bpm":96,"v":[[62,"square",.13,"g.......e.......c.......b.......9.......7.......9.......b.......c.......b.......9.......7.......5.......4.......5.......2......."],[62,"square",.045,"0...7...4...7...7...e...b...e...9...g...c...g...4...b...7...b...5...c...9...c...7...e...b...e..."],[38,"triangle",.22,"c.......7.......9.......4.......5.......c.......5.......7.......c.......7.......9.......4.......5.......c.......5.......7......."]],"d":""} },
+  { id: "sample-sky-ascent", song: {"t":"SKY ASCENT","bpm":144,"v":[[69,"square",.16,"0.3.7.c.a.7.5.7.8...c...f...c87.a...e...h...e.5.0.2.3.7.c.7.3.0."],[57,"square",.05,"037c037c037c037c8cfc8cfc8cfc8cfcaehaaehaaehaaeha037c037c037c037c"],[45,"triangle",.22,"0.0.c.0.0.0.c.0.8.8.k.8.8.8.k.8.a.a.m.a.a.a.m.a.0.0.c.0.7.7.c.0."]],"d":"K.h.S.h.K.h.S.hhK.h.S.h.K.h.S.hhK.h.S.h.K.h.S.hhK.h.S.h.K.h.SSSS"} }
+];
+const DEL_KEY = "mp-deleted-samples";
 const VOICE_COLORS = ["#ffd166", "#7bdff2", "#f7a6c4", "#b2f7a5", "#c3b2ff", "#ffb38a"];
 
 let library = loadLibrary();
@@ -96,13 +100,20 @@ let curStep = 0, curTotal = 0;
 function hashOf(s) { let h = 5381; for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0; return h.toString(36); }
 
 function loadLibrary() {
+  let lib = [];
   try {
     const raw = localStorage.getItem(LS_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) lib = JSON.parse(raw);
   } catch (e) {}
-  const seed = [{ id: "sample-canon", title: SAMPLE.t, kind: "step", text: JSON.stringify(SAMPLE), added: 0, sample: true }];
-  try { localStorage.setItem(LS_KEY, JSON.stringify(seed)); } catch (e) {}
-  return seed;
+  let deleted = [];
+  try { deleted = JSON.parse(localStorage.getItem(DEL_KEY) || "[]"); } catch (e) {}
+  SAMPLES.forEach(function (s) {
+    if (!lib.some(e => e.id === s.id) && deleted.indexOf(s.id) < 0) {
+      lib.push({ id: s.id, title: s.song.t, kind: "step", text: JSON.stringify(s.song), added: 0, sample: true });
+    }
+  });
+  try { localStorage.setItem(LS_KEY, JSON.stringify(lib)); } catch (e) {}
+  return lib;
 }
 function saveLibrary() { try { localStorage.setItem(LS_KEY, JSON.stringify(library)); } catch (e) {} }
 
@@ -154,6 +165,12 @@ function renderList() {
     del.className = "del"; del.textContent = "削除";
     del.onclick = () => {
       library = library.filter(e => e.id !== entry.id);
+      if (entry.sample) {
+        try {
+          const deleted = JSON.parse(localStorage.getItem(DEL_KEY) || "[]");
+          if (deleted.indexOf(entry.id) < 0) { deleted.push(entry.id); localStorage.setItem(DEL_KEY, JSON.stringify(deleted)); }
+        } catch (e) {}
+      }
       saveLibrary(); renderList();
     };
     card.appendChild(grow); card.appendChild(play); card.appendChild(del);
