@@ -33887,7 +33887,7 @@ void main() {
     const pb = document.getElementById("playBtn");
     if (pb) pb.textContent = "\u4E00\u6642\u505C\u6B62";
   }
-  async function playMotionFromBuffer(buf, name) {
+  async function playMotionFromBuffer(buf, name, once) {
     if (!vrm) {
       setStatus("\u5148\u306B .vrm \u30D5\u30A1\u30A4\u30EB\u3092\u958B\u3044\u3066\u304F\u3060\u3055\u3044\u3002", true);
       return;
@@ -33904,11 +33904,16 @@ void main() {
       const clip = createVRMAnimationClip(anims[0], vrm);
       mixer = new AnimationMixer(vrm.scene);
       action = mixer.clipAction(clip);
-      action.setLoop(LoopRepeat);
+      if (once) {
+        action.setLoop(LoopOnce);
+        action.clampWhenFinished = true;
+      } else {
+        action.setLoop(LoopRepeat);
+      }
       action.play();
       motionName = name;
       motionPlaying = true;
-      setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u518D\u751F\u4E2D: " + name + "\uFF08" + clip.duration.toFixed(1) + "\u79D2\u30EB\u30FC\u30D7\uFF09");
+      setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u518D\u751F\u4E2D: " + name + "\uFF08" + clip.duration.toFixed(1) + "\u79D2" + (once ? "" : "\u30EB\u30FC\u30D7") + "\uFF09");
     } catch (err) {
       console.error(err);
       setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u3092\u8AAD\u307F\u8FBC\u3081\u307E\u305B\u3093\u3067\u3057\u305F: " + (err && err.message ? err.message : err), true);
@@ -33924,12 +33929,12 @@ void main() {
       setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u30D5\u30A1\u30A4\u30EB\u3092\u958B\u3051\u307E\u305B\u3093\u3067\u3057\u305F: " + (err && err.message ? err.message : err), true);
     }
   }
-  async function playMotionUrl(url, label) {
+  async function playMotionUrl(url, label, once) {
     try {
       const res = await fetch(url);
       if (!res.ok) throw new Error("HTTP " + res.status);
       const buf = await res.arrayBuffer();
-      await playMotionFromBuffer(buf, label || url.split("/").pop());
+      await playMotionFromBuffer(buf, label || url.split("/").pop(), once);
     } catch (err) {
       console.error(err);
       setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u3092\u53D6\u5F97\u3067\u304D\u307E\u305B\u3093\u3067\u3057\u305F: " + (err && err.message ? err.message : err), true);
@@ -33987,10 +33992,11 @@ void main() {
     setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u3092\u6B62\u3081\u307E\u3057\u305F\u3002");
   };
   for (const b of document.querySelectorAll("[data-motion]")) {
-    b.onclick = () => playMotionUrl(b.getAttribute("data-motion"), b.textContent);
+    b.onclick = () => playMotionUrl(b.getAttribute("data-motion"), b.textContent, b.getAttribute("data-once") === "1");
   }
   function resize() {
-    const w = innerWidth, h = innerHeight;
+    const stage = document.getElementById("stage");
+    const w = stage.clientWidth || innerWidth, h = stage.clientHeight || innerHeight;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
@@ -34009,6 +34015,7 @@ void main() {
   });
   var q = new URLSearchParams(location.search);
   if (q.get("url")) loadUrl(q.get("url"));
+  else loadUrl("samples/quaternius-base-cc0.vrm");
   if (q.get("motion")) {
     const t = setInterval(() => {
       if (vrm) {
