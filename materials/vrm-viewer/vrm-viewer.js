@@ -33820,6 +33820,69 @@ void main() {
     };
     exprBox.appendChild(reset);
   }
+  function glbJson(buf) {
+    try {
+      const dv = new DataView(buf);
+      if (dv.getUint32(0, true) !== 1179937895) return null;
+      const len = dv.getUint32(12, true);
+      return JSON.parse(new TextDecoder().decode(new Uint8Array(buf, 20, len)));
+    } catch (e) {
+      return null;
+    }
+  }
+  function fmtNum(n) {
+    return Math.round(n).toLocaleString("ja-JP");
+  }
+  function showInfo(buf, name, theVrm, sizeVec) {
+    const el = document.getElementById("info");
+    if (!el) return;
+    el.innerHTML = "";
+    const add = (text, cls) => {
+      const d = document.createElement("div");
+      if (cls) d.className = cls;
+      d.textContent = text;
+      el.appendChild(d);
+    };
+    const j = glbJson(buf);
+    const ext = j && j.extensions || {};
+    let title = name, author = "", license = "";
+    if (ext.VRM && ext.VRM.meta) {
+      title = ext.VRM.meta.title || title;
+      author = ext.VRM.meta.author || "";
+      license = ext.VRM.meta.licenseName || "";
+    } else if (ext.VRMC_vrm && ext.VRMC_vrm.meta) {
+      title = ext.VRMC_vrm.meta.name || title;
+      author = (ext.VRMC_vrm.meta.authors || []).join(", ");
+      license = ext.VRMC_vrm.meta.licenseUrl ? "\u3042\u308A\uFF08URL\u53C2\u7167\uFF09" : "";
+    }
+    add(title, "t");
+    const metaLine = [author && "\u4F5C\u8005: " + author, license && "\u30E9\u30A4\u30BB\u30F3\u30B9: " + license].filter(Boolean).join(" / ");
+    if (metaLine) add(metaLine);
+    let tris = 0, meshes = 0;
+    theVrm.scene.traverse((o) => {
+      if (o.isMesh) {
+        meshes++;
+        const g = o.geometry;
+        const idx = g.getIndex();
+        tris += (idx ? idx.count : g.getAttribute("position").count) / 3;
+      }
+    });
+    let bones = 0;
+    try {
+      bones = Object.keys(theVrm.humanoid.humanBones).length;
+    } catch (e) {
+      bones = 0;
+    }
+    let exprs = 0;
+    try {
+      exprs = (theVrm.expressionManager.expressions || []).length;
+    } catch (e) {
+      exprs = 0;
+    }
+    add("VRM " + (theVrm.meta.metaVersion === "0" ? "0.x" : "1.0") + " / \u9AD8\u3055 " + sizeVec.y.toFixed(2) + "m / " + (buf.byteLength / 1048576).toFixed(1) + "MB");
+    add("\u4E09\u89D2\u5F62 " + fmtNum(tris) + " / \u30E1\u30C3\u30B7\u30E5 " + meshes + " / \u30DC\u30FC\u30F3 " + bones + " / \u8868\u60C5 " + exprs);
+    el.style.display = "block";
+  }
   async function loadFromArrayBuffer(buf, name) {
     setStatus("\u8AAD\u307F\u8FBC\u307F\u4E2D\u2026 " + name);
     try {
@@ -33846,6 +33909,7 @@ void main() {
       document.getElementById("armsBtn").textContent = "\u8155\u3092\u4E0B\u308D\u3059";
       frame();
       buildExpressionButtons();
+      showInfo(buf, name, newVrm, modelSize);
       setStatus("\u8868\u793A\u3057\u307E\u3057\u305F: " + name + "\uFF08VRM " + (vrm.meta.metaVersion === "0" ? "0.x" : "1.0") + "\uFF09");
     } catch (err) {
       console.error(err);
