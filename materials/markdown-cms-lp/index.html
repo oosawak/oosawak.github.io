@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<link rel="icon" href="data:," />
+<title>ホームページと毎日のお手伝いパッケージ — 文章を書くだけ、あとはミューズさん</title>
+<meta name="description" content="お店や小さな事業のための、ホームページと日々のお手伝いがセットになったパッケージ。文章と写真を用意するだけでページができ、AIのミューズさんが安全の見守りと領収書の整理をお手伝いします。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf7f1;
+    --bg-2:#f3eee3;
+    --surface:#ffffff;
+    --surface-2:#f6f1e7;
+    --ink:#22303a;
+    --ink-2:#475a66;
+    --muted:#7d8b93;
+    --line:#e6ddcb;
+    --teal:#0f766e;
+    --teal-dark:#0a544e;
+    --teal-soft:#e2f2ec;
+    --navy:#16323f;
+    --amber:#c2710a;
+    --amber-bg:#fdf0d5;
+    --radius:18px;
+    --shadow:0 10px 28px rgba(34,48,58,.07);
+  }
+  
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans JP",system-ui,-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;
+    line-height:1.8;-webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal);text-underline-offset:3px}
+  img{max-width:100%;height:auto;display:block}
+  .wrap{max-width:780px;margin:0 auto;padding:0 20px}
+  @media(min-width:900px){.wrap{max-width:840px;padding:0 28px}}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:48px 0 8px}
+  .hero-eyebrow{
+    display:inline-block;font-size:13px;font-weight:700;color:var(--teal-dark);
+    background:var(--teal-soft);padding:7px 14px;border-radius:999px;letter-spacing:.02em;
+  }
+  .hero h1{
+    font-weight:900;font-size:clamp(30px,7.6vw,46px);
+    line-height:1.42;letter-spacing:.01em;margin:20px 0 0;
+  }
+  .hero h1 .hl{color:var(--teal);white-space:nowrap}
+  .hero-lead{margin:18px 0 0;font-size:16.5px;line-height:1.95;color:var(--ink-2);max-width:36em}
+  .hero-lead strong{color:var(--ink)}
+  .hero-points{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+  .hero-points span{
+    font-size:13.5px;font-weight:700;background:var(--surface);
+    border:1px solid var(--line);padding:8px 14px;border-radius:999px;
+  }
+  .hero-points span::before{content:"✓ ";color:var(--teal);font-weight:900}
+  .hero-cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .btn-prep{
+    display:inline-flex;align-items:center;gap:9px;
+    background:#f59e0b;color:#221503;font-weight:900;font-size:15px;
+    padding:13px 22px;border-radius:999px;
+    box-shadow:0 8px 20px rgba(245,158,11,.25);
+  }
+  .btn-link{
+    display:inline-flex;align-items:center;min-height:48px;
+    font-weight:700;font-size:14.5px;text-decoration:none;
+    border:1.5px solid var(--teal);color:var(--teal-dark);
+    padding:11px 18px;border-radius:999px;background:var(--surface);
+  }
+  .btn-link:hover{background:var(--teal-soft)}
+  .hero-fig{margin:34px 0 0}
+  .hero-fig img{border-radius:22px;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .hero-fig figcaption{font-size:13px;color:var(--muted);margin-top:10px;text-align:center}
+
+  /* flow strip */
+  .how-flow{
+    margin-top:26px;background:var(--surface);border:1px solid var(--line);
+    border-radius:22px;box-shadow:var(--shadow);padding:22px 20px 18px;
+  }
+  .how-flow h2{font-size:17px;margin:0 0 16px;text-align:center}
+  .steps{display:grid;gap:12px}
+  @media(min-width:700px){.steps{grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch}}
+  .step{background:var(--surface-2);border-radius:14px;padding:16px 16px 14px;text-align:center}
+  .step .n{
+    display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;
+    background:var(--teal);color:#fff;font-weight:900;font-size:14px;margin-bottom:8px;
+  }
+  
+  .step strong{display:block;font-size:15.5px;margin-bottom:4px}
+  .step p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.75}
+  .step-arrow{display:none}
+  @media(min-width:700px){.step-arrow{display:grid;place-items:center;font-size:20px;color:var(--teal);font-weight:900}}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:54px 0 6px}
+  .sec-label{
+    display:inline-block;font-size:13px;font-weight:900;color:var(--teal-dark);
+    background:var(--teal-soft);padding:5px 13px;border-radius:999px;margin:0 0 14px;
+  }
+  h2.sec-title{
+    font-weight:900;font-size:clamp(23px,5.8vw,31px);
+    line-height:1.5;margin:0 0 12px;letter-spacing:.01em;
+  }
+  .sec-lead{color:var(--ink-2);font-size:15.5px;margin:0 0 24px;max-width:38em}
+  figure.illo{margin:0 0 24px}
+  figure.illo img{border-radius:22px;border:1px solid var(--line);box-shadow:var(--shadow)}
+  figure.illo figcaption{font-size:13px;color:var(--muted);margin-top:10px;text-align:center}
+
+  /* worries */
+  .worries{display:grid;gap:13px}
+  @media(min-width:700px){.worries{grid-template-columns:repeat(3,1fr)}}
+  .worry{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 19px 17px;box-shadow:var(--shadow);
+  }
+  .worry .face{font-size:15px;font-weight:900;color:var(--amber);margin:0 0 8px}
+  .worry h3{font-size:16.5px;margin:0 0 8px;line-height:1.55}
+  .worry p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.85}
+
+  /* benefits */
+  .points{display:grid;gap:13px}
+  @media(min-width:700px){.points{grid-template-columns:repeat(3,1fr)}}
+  .point{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:21px 20px 18px;box-shadow:var(--shadow);
+  }
+  .point .icon{
+    width:46px;height:46px;border-radius:14px;background:var(--teal-soft);
+    display:grid;place-items:center;margin-bottom:13px;
+  }
+  .point .icon svg{width:25px;height:25px;stroke:var(--teal-dark);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .point h3{font-size:16.5px;margin:0 0 8px;line-height:1.55}
+  .point p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.85}
+
+  /* Muse */
+  .muse-fig img{border-radius:22px 22px 0 0;border:1px solid var(--line);border-bottom:0;box-shadow:var(--shadow)}
+  .muse-card{
+    background:var(--surface);border:1px solid var(--line);border-top:0;
+    border-radius:0 0 22px 22px;box-shadow:var(--shadow);overflow:hidden;
+  }
+  .muse-head{padding:24px 22px 6px}
+  .muse-head h3{margin:0;font-size:20px;line-height:1.45}
+  .muse-head h3 small{display:block;font-size:13px;color:var(--muted);font-weight:500;margin-top:5px}
+  .muse-head p{margin:10px 0 14px;font-size:14.5px;color:var(--ink-2);line-height:1.9}
+  .muse-jobs{display:grid}
+  @media(min-width:700px){.muse-jobs{grid-template-columns:1fr 1fr}}
+  .job{padding:20px 22px 24px}
+  .job + .job{border-top:1px solid var(--line)}
+  @media(min-width:700px){.job + .job{border-top:0;border-left:1px solid var(--line)}}
+  .job-badge{
+    display:inline-block;font-size:12.5px;font-weight:900;
+    padding:5px 12px;border-radius:999px;margin-bottom:11px;
+  }
+  .job-badge.sec{background:var(--teal-soft);color:var(--teal-dark)}
+  .job-badge.acc{background:var(--amber-bg);color:var(--amber)}
+  .job h4{margin:0 0 8px;font-size:16.5px;line-height:1.55}
+  .job p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.9}
+  .job-fig{margin-top:26px}
+
+  /* watch flow */
+  .flow{list-style:none;margin:0;padding:0;counter-reset:step}
+  .flow li{position:relative;padding:0 0 21px 50px}
+  .flow li::before{
+    counter-increment:step;content:counter(step);
+    position:absolute;left:0;top:1px;width:35px;height:35px;border-radius:50%;
+    background:var(--teal);color:#fff;font-weight:900;font-size:15px;display:grid;place-items:center;
+  }
+  
+  .flow li::after{content:"";position:absolute;left:17px;top:43px;bottom:2px;width:2px;background:var(--line)}
+  .flow li:last-child::after{display:none}
+  .flow li:last-child{padding-bottom:4px}
+  .flow strong{display:block;font-size:16px;margin-bottom:3px}
+  .flow span{font-size:14.5px;color:var(--ink-2);line-height:1.85;display:block}
+  .note-box{
+    margin-top:22px;background:var(--surface-2);border:1px solid var(--line);border-radius:16px;
+    padding:16px 18px;font-size:13.5px;color:var(--ink-2);line-height:1.9;
+  }
+  .note-box strong{color:var(--ink)}
+  .watch-link{
+    margin-top:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+    background:var(--navy);color:#f2f6f3;border-radius:18px;padding:19px 21px;text-decoration:none;
+  }
+  
+  .watch-link .wl-t{font-weight:900;font-size:15.5px;line-height:1.5}
+  .watch-link .wl-d{font-size:13px;color:#b9cdc5;line-height:1.7}
+  .watch-link .wl-arrow{margin-left:auto;font-weight:900;color:#5eead4;font-size:19px}
+
+  /* audience */
+  .audience{display:grid;gap:14px}
+  @media(min-width:700px){.audience{grid-template-columns:1fr 1fr}}
+  .aud{border-radius:var(--radius);padding:23px 21px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
+  .aud h3{margin:0 0 10px;font-size:18px;line-height:1.5}
+  .aud h3 .tag{font-size:12px;font-weight:900;color:var(--teal-dark);background:var(--teal-soft);border-radius:999px;padding:3px 10px;margin-right:8px;vertical-align:2px;white-space:nowrap}
+  .aud ul{margin:0;padding:0;list-style:none}
+  .aud li{font-size:14.5px;color:var(--ink-2);padding:7px 0 7px 22px;position:relative;line-height:1.8;border-top:1px dashed var(--line)}
+  .aud li:first-child{border-top:0}
+  .aud li::before{content:"—";position:absolute;left:0;color:var(--teal);font-weight:700}
+
+  /* plans */
+  .plans{display:grid;gap:15px}
+  .plan{background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+  .plan.featured{border:2px solid var(--teal)}
+  .plan-top{padding:23px 21px 16px;display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+  .plan-top h3{margin:0;font-size:18.5px;line-height:1.5;flex:1;min-width:200px}
+  .plan-top h3 small{display:block;font-size:13px;color:var(--muted);font-weight:500;margin-top:5px;line-height:1.75}
+  .price{
+    font-weight:900;font-size:13px;background:var(--amber-bg);color:var(--amber);
+    padding:7px 13px;border-radius:999px;white-space:nowrap;
+  }
+  .plan ul{margin:0;padding:4px 21px 23px;list-style:none}
+  .plan li{font-size:14.5px;color:var(--ink-2);padding:8px 0 8px 26px;position:relative;border-top:1px dashed var(--line);line-height:1.85}
+  .plan li::before{content:"✓";position:absolute;left:2px;color:var(--teal);font-weight:900}
+  .plan li.inherit{color:var(--muted)}
+  .plan li.inherit::before{content:"＋";color:var(--muted)}
+
+  /* proof */
+  .proof{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:6px 21px;box-shadow:var(--shadow)}
+  .proof-row{display:flex;gap:18px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line)}
+  .proof-row:first-child{border-top:0}
+  .proof-num{font-family:"Noto Serif JP",serif;font-weight:900;font-size:clamp(27px,6.6vw,36px);color:var(--teal);white-space:nowrap;line-height:1.15}
+  .proof-num small{font-size:.45em;font-weight:700}
+  .proof-row p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.85}
+  .proof-row p strong{color:var(--ink)}
+
+  /* final */
+  .final{
+    margin:54px 0 0;background:var(--navy);color:#f2f6f3;border-radius:22px;
+    padding:34px 24px 30px;
+  }
+  
+  .final h2{font-size:clamp(23px,5.8vw,30px);font-weight:900;line-height:1.5;margin:0 0 10px;color:#fff}
+  .final p{color:#c9dcd4;font-size:15px;margin:0 0 22px;max-width:34em;line-height:1.9}
+  .final .sub{margin:18px 0 0;font-size:13px;color:#93b3a7}
+  footer{padding:30px 0 44px;text-align:center}
+  footer p{font-size:12.5px;color:var(--muted);margin:0;line-height:1.9}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="hero-eyebrow">お店と小さな事業のための、ホームページ＋お手伝いパッケージ</span>
+    <h1>ホームページは、<br><span class="hl">文章を書くだけ</span>。<br>あとの面倒は、おまかせください。</h1>
+    <p class="hero-lead">
+      お知らせの文章と写真を用意するだけで、ホームページが新しくなります。
+      さらに、<strong>安全の見守り</strong>と<strong>領収書や記録の整理</strong>といった毎日のこまごました仕事は、
+      AIの<strong>ミューズさん</strong>がお手伝い。ホームページを「作って終わり」にしないためのパッケージです。
+    </p>
+    <div class="hero-points">
+      <span>むずかしい操作はありません</span>
+      <span>大切な変更は、確認してから</span>
+      <span>やったことが記録に残ります</span>
+    </div>
+    <div class="hero-cta">
+      <span class="btn-prep" role="status">● 現在、受付の準備中です</span>
+      <a class="btn-link" href="https://oosawak.github.io/materials/cve-watch/" target="_blank" rel="noopener">見守りの様子を見る →</a>
+    </div>
+
+    <figure class="hero-fig">
+      <img src="assets/hero-flow.webp" alt="お店の人が原稿と写真を渡すと、タブレットとスマートフォンにホームページができあがる様子のイラスト" width="1920" height="1280" />
+      <figcaption>用意するのは、文章と写真だけ。ページの形に整えるのは、こちらで引き受けます。</figcaption>
+    </figure>
+
+    <div class="how-flow" aria-label="ホームページができるまで">
+      <h2>ホームページができるまで — 3つのステップ</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="n">1</span>
+          <strong>文章と写真を用意する</strong>
+          <p>お知らせやメニューなど、伝えたいことをいつもの言葉で書くだけです。</p>
+        </div>
+        <span class="step-arrow" aria-hidden="true">→</span>
+        <div class="step">
+          <span class="n">2</span>
+          <strong>そのまま渡す</strong>
+          <p>特別な画面の使い方を覚える必要はありません。原稿がそのまま材料になります。</p>
+        </div>
+        <span class="step-arrow" aria-hidden="true">→</span>
+        <div class="step">
+          <span class="n">3</span>
+          <strong>ページが新しくなる</strong>
+          <p>きれいに整ったページが公開されます。スマホでも見やすい形です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ WORRIES ============ -->
+  <section aria-labelledby="worry-h">
+    <p class="sec-label">こんなお困りごと、ありませんか</p>
+    <h2 class="sec-title" id="worry-h">日々の仕事の合間に、<br>後回しになってしまうこと。</h2>
+    <p class="sec-lead">本業が忙しいほど、ホームページや事務仕事は後回しになりがちです。放っておくと困るのに、手をつける時間がない — そんな声に応えるためのパッケージです。</p>
+
+    <figure class="illo">
+      <img src="assets/worries.webp" alt="古くなったホームページと山積みの領収書を前に、頭を抱えるお店の人のイラスト" width="1920" height="1280" loading="lazy" />
+      <figcaption>「やらなきゃ」と思いながら、毎日が過ぎていく — その状態から変えていきます。</figcaption>
+    </figure>
+
+    <div class="worries">
+      <article class="worry">
+        <p class="face">困りごと 1</p>
+        <h3>ホームページが作れない・直せない</h3>
+        <p>作りたいけれど何から始めればいいか分からない。作ったけれど、直し方が分からず情報が古いままになっている。</p>
+      </article>
+      <article class="worry">
+        <p class="face">困りごと 2</p>
+        <h3>領収書や申告の準備が溜まっていく</h3>
+        <p>領収書や日々の記録が少しずつ散らかって、申告の時期にまとめて慌てる。毎年その繰り返しになっている。</p>
+      </article>
+      <article class="worry">
+        <p class="face">困りごと 3</p>
+        <h3>安全のニュースを見ると不安になる</h3>
+        <p>「情報が漏れた」「サイトが書き換えられた」というニュースを見るたび、自分のところは大丈夫か心配になる。でも、何を確認すればいいか分からない。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT HELPS ============ -->
+  <section aria-labelledby="help-h">
+    <p class="sec-label">ホームページの仕組み</p>
+    <h2 class="sec-title" id="help-h">書くだけで、ページになる。<br>しかも、壊れにくい作りです。</h2>
+    <p class="sec-lead">このホームページは、原稿を渡すと出来上がったページを置いておく作りになっています。むずかしい仕組みの話は抜きにして、使う側にとっての良さを3つだけ紹介します。</p>
+
+    <div class="points">
+      <article class="point">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+        <h3>文章を書くだけで更新できる</h3>
+        <p>お知らせもメニューも、いつもの言葉で書いた原稿がそのままページになります。原稿は手元に残るので、あとから見返すこともできます。</p>
+      </article>
+      <article class="point">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>壊れにくく、狙われにくい</h3>
+        <p>ページは出来上がった形で置いておくだけで、裏側でプログラムを動かし続けません。動く部分が少ない分、壊れにくく、悪い人に狙われる入口も少なくなります。</p>
+      </article>
+      <article class="point">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5z"/></svg></div>
+        <h3>開くのが速く、読みやすい</h3>
+        <p>出来上がったページをそのまま届けるので、表示は軽快です。お客さんがスマホで開いたときも、待たせません。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ MUSE ============ -->
+  <section aria-labelledby="muse-h">
+    <p class="sec-label">毎日のお手伝い</p>
+    <h2 class="sec-title" id="muse-h">お手伝いは、ミューズさん。</h2>
+    <p class="sec-lead">ホームページは、作ったあとの毎日が本番です。その毎日の見守りと整理を担うのが、AIのミューズさんです。といっても、勝手に物事を進めることはありません。大切な変更は、必ず人の確認を挟みます。</p>
+
+    <figure class="illo muse-fig">
+      <img src="assets/muse-watch.webp" alt="雪景色の見える窓辺で、チェックリストと虫めがねを手に毎朝の見守りをする、冬毛でもふもふのミューズさんのイラスト" width="1920" height="1280" loading="lazy" />
+    </figure>
+    <div class="muse-card">
+      <div class="muse-head">
+        <h3>ミューズさん <small>AIのお手伝い担当 — 安全の見守り ／ 領収書と記録の整理</small></h3>
+        <p>毎朝の確認、散らかりがちな記録の整理、やったことの記録づけ。地味だけれど、止まると困る仕事を、毎日同じ手順で続けます。</p>
+      </div>
+      <div class="muse-jobs">
+        <div class="job">
+          <span class="job-badge sec">お手伝い 1 — 安全の見守り</span>
+          <h4>関係あるお知らせだけを、毎朝お届け</h4>
+          <p>世の中には、パソコンやホームページの「危ないところ」のお知らせが毎日のように出ています。ミューズさんは、その中から「あなたのところに関係あるもの」だけを選んでお知らせします。直しが必要なときも、確認をいただいてから進めます。</p>
+        </div>
+        <div class="job">
+          <span class="job-badge acc">お手伝い 2 — 領収書と記録の整理</span>
+          <h4>申告の時期に、慌てないために</h4>
+          <p>領収書や日々の記録を、普段から少しずつ仕分けして整えておきます。申告の直前にまとめて苦労するのではなく、毎日の小さな整理で本番を軽くします。</p>
+        </div>
+      </div>
+    </div>
+
+    <figure class="illo job-fig">
+      <img src="assets/receipts-calm.webp" alt="領収書や記録をファイルに仕分けして整理するお店の人と、もふもふの小さなお手伝いさんのイラスト" width="1920" height="1280" loading="lazy" />
+      <figcaption>領収書の整理も、普段から少しずつ。申告の時期の慌ただしさを減らします。</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ WATCH FLOW ============ -->
+  <section aria-labelledby="watch-h">
+    <p class="sec-label">安全の見守り</p>
+    <h2 class="sec-title" id="watch-h">見守りは、この流れで回ります</h2>
+    <p class="sec-lead">「ニュースを眺めて終わり」ではありません。自分の持ち物を把握するところから、直した記録を残すところまでを、一つの流れにしています。</p>
+
+    <ol class="flow">
+      <li>
+        <strong>まず、持ち物を書き出す</strong>
+        <span>自分がどんな道具や仕組みを使っているかを、一覧にしておきます。ここが全ての土台です。</span>
+      </li>
+      <li>
+        <strong>毎朝、新しいお知らせと見比べる</strong>
+        <span>日々出てくる「危ないところ」のお知らせを、その一覧と毎朝照らし合わせます。</span>
+      </li>
+      <li>
+        <strong>関係あるものだけをお知らせ</strong>
+        <span>関係のないお知らせは流して、あなたのところに当てはまるものだけをお伝えします。毎日の負担は小さく保ちます。</span>
+      </li>
+      <li>
+        <strong>直すときは、確認してから</strong>
+        <span>自動で勝手に直すことはしません。内容をお伝えし、了承をいただいてから直します。</span>
+      </li>
+      <li>
+        <strong>直した記録が残る</strong>
+        <span>いつ、何を、どう直したかが記録に残ります。あとから「あのときどうしたか」を振り返れます。</span>
+      </li>
+    </ol>
+
+    <div class="note-box">
+      <strong>安全について、正直にお伝えすると：</strong>
+      「絶対に安全です」とは言いません。ただ、このホームページは出来上がったページを置いておく作りで、裏側で動く部分が少ないため、狙われる入口そのものが少なくなっています。その上で、残る心配は毎朝の見守りで拾っていく — その二段構えです。
+    </div>
+
+    <a class="watch-link" href="https://oosawak.github.io/materials/cve-watch/" target="_blank" rel="noopener">
+      <span>
+        <span class="wl-t">見守りの様子は「CVE見張り台」で公開中</span><br>
+        <span class="wl-d">この見守りは実際に毎日動いていて、その様子を公開ページでご覧いただけます。</span>
+      </span>
+      <span class="wl-arrow" aria-hidden="true">→</span>
+    </a>
+  </section>
+
+  <!-- ============ AUDIENCE ============ -->
+  <section aria-labelledby="aud-h">
+    <p class="sec-label">こんな方に</p>
+    <h2 class="sec-title" id="aud-h">始める方にも、<br>すでに始めている方にも。</h2>
+    <p class="sec-lead">お役に立てるのは、大きく分けて2タイプの方です。どちらも、ホームページとその周りの仕事を「ちゃんと回る状態」にすることが目的です。</p>
+
+    <div class="audience">
+      <article class="aud">
+        <h3><span class="tag">これから</span>事業やお店を始める方</h3>
+        <ul>
+          <li>開業に合わせて、ホームページを用意したい</li>
+          <li>あとから直し方で困らない形で始めたい</li>
+          <li>領収書の整理も、最初から習慣にしておきたい</li>
+        </ul>
+      </article>
+      <article class="aud">
+        <h3><span class="tag">すでに</span>始めたけれど、回っていない方</h3>
+        <ul>
+          <li>ホームページはあるが、更新が止まっている</li>
+          <li>安全の確認まで手が回っていない</li>
+          <li>領収書や記録の整理が、申告の時期に集中してしまう</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PLANS ============ -->
+  <section aria-labelledby="plan-h">
+    <p class="sec-label">プランのご案内</p>
+    <h2 class="sec-title" id="plan-h">プランは、2つの段階をご用意</h2>
+    <p class="sec-lead">お店には、まずホームページだけを無理のない形で。始める方・続けている方には、お手伝いまで含めたプランを。料金と開始時期は、現在準備中です。</p>
+
+    <div class="plans">
+      <article class="plan">
+        <div class="plan-top">
+          <h3>お店向け — ホームページだけのプラン<small>まずはホームページを、無理のない形で持つところから。</small></h3>
+          <span class="price">料金 準備中</span>
+        </div>
+        <ul>
+          <li>ホームページの制作と公開</li>
+          <li>文章を書くだけで自分で直せる形でお渡し</li>
+          <li>壊れにくく、狙われにくい作り</li>
+        </ul>
+      </article>
+
+      <article class="plan featured">
+        <div class="plan-top">
+          <h3>始める方・続けている方 — お手伝い付きプラン<small>ホームページに、ミューズさんのお手伝いを加えたプランです。</small></h3>
+          <span class="price">料金 準備中</span>
+        </div>
+        <ul>
+          <li class="inherit">お店向けプランの内容すべて</li>
+          <li>安全の見守り（持ち物の把握 → 毎朝の見比べ → 関係あるものだけお知らせ → 確認してから直す → 記録が残る）</li>
+          <li>領収書や記録の整理のお手伝い（申告の下準備）</li>
+          <li>ホームページの更新や日々の運用の相談</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PROOF ============ -->
+  <section aria-labelledby="proof-h">
+    <p class="sec-label">実績のご紹介</p>
+    <h2 class="sec-title" id="proof-h">すでに、毎日の現場で使われています</h2>
+    <p class="sec-lead">この仕組みは思いつきの企画ではなく、実際のサイト運営の中で育ててきたものです。</p>
+
+    <div class="proof">
+      <div class="proof-row">
+        <div class="proof-num">約470<small> 件</small></div>
+        <p><strong>運営中のページや記事の数</strong>（2026年11月時点）。地域のお店やグルメの案内、読み物サイトなど、いくつものサイトをこの仕組みで運営しています。</p>
+      </div>
+      <div class="proof-row">
+        <div class="proof-num">毎朝</div>
+        <p><strong>安全の見比べを続けています。</strong>持ち物の一覧と新しいお知らせを毎朝照らし合わせ、関係あるものだけを拾う見守りを継続中です。その様子は「<a href="https://oosawak.github.io/materials/cve-watch/" target="_blank" rel="noopener">CVE見張り台</a>」で公開しています。</p>
+      </div>
+      <div class="proof-row">
+        <div class="proof-num">確認<br>してから</div>
+        <p><strong>大切な変更は、必ず人の確認を挟みます。</strong>ミューズさんが担うのは見守りと下準備まで。決めるのは人、という線引きを守っています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <div class="final">
+    <h2>ホームページを、<br>「作って終わり」にしないために。</h2>
+    <p>書くだけで更新できるホームページと、毎朝の見守り、領収書の整理のお手伝い。受付の準備が整い次第、こちらでご案内します。</p>
+    <span class="btn-prep" role="status">● 現在、受付の準備中です</span>
+    <p class="sub">料金・開始時期についても、決まり次第このページでお知らせします。</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>ホームページと毎日のお手伝いパッケージ<br>文章を書くだけのホームページに、AIのミューズさんのお手伝いを添えて</p>
+  </div>
+</footer>
+
+</body>
+</html>
