@@ -15,6 +15,7 @@
   #status { position: fixed; left: 0; right: 0; bottom: 0; padding: 10px 14px; font-size: 14px; background: rgba(255,255,255,0.88); z-index: 2; word-break: break-all; }
   #status.error { color: #b03030; }
   #exprs { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  #motions { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; }
   #exprs:empty { display: none; }
   body.drag::after { content: "ここに .vrm ファイルを落とすと開きます"; position: fixed; inset: 12px; border: 3px dashed #2f6fb4; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 20px; background: rgba(255,255,255,0.75); z-index: 5; pointer-events: none; }
   .hint { font-size: 12.5px; color: #5a748f; width: 100%; }
@@ -33,7 +34,18 @@
   <button id="armsBtn">腕を下ろす</button>
   <button id="rotBtn">自動回転</button>
   <span id="exprs"></span>
-  <span class="hint">.vrm ファイルを選ぶか、この画面に落としてください。保存場所はどこでも大丈夫です（ダウンロードフォルダーでも可）。ファイルはブラウザの中だけで読み込み、どこにも送信しません。ドラッグで回転、ホイール／ピンチで拡大縮小できます。</span>
+  <span id="motions">
+    <button id="motionBtn">モーションを開く</button>
+    <input type="file" id="motionInput" accept=".vrma" hidden>
+    <span>サンプル:</span>
+    <button data-motion="motions/Yes.vrma">うなずく</button>
+    <button data-motion="motions/Idle_Talking_Loop.vrma">話す</button>
+    <button data-motion="motions/Dance_Loop.vrma">ダンス</button>
+    <button data-motion="motions/Walk_Loop.vrma">歩く</button>
+    <button id="playBtn">一時停止</button>
+    <button id="stopBtn">モーション停止</button>
+  </span>
+  <span class="hint">.vrm ファイルを選ぶか、この画面に落としてください。保存場所はどこでも大丈夫です（ダウンロードフォルダーでも可）。ファイルはブラウザの中だけで読み込み、どこにも送信しません。ドラッグで回転、ホイール／ピンチで拡大縮小できます。モデルを開いた後に「サンプル」のボタンか「モーションを開く」（.vrma ファイル）で動きを付けられます。サンプルモーションは Quaternius Universal Animation Library（CC0）を open-vrma プロジェクトが VRMA 形式に変換したものです。</span>
 </header>
 <div id="status">まだファイルが開かれていません。</div>
 <script src="./vrm-viewer.js"></script>

@@ -130,6 +130,9 @@
   var SIGNED_RED_RGTC1_Format = 36284;
   var RED_GREEN_RGTC2_Format = 36285;
   var SIGNED_RED_GREEN_RGTC2_Format = 36286;
+  var LoopOnce = 2200;
+  var LoopRepeat = 2201;
+  var LoopPingPong = 2202;
   var InterpolateDiscrete = 2300;
   var InterpolateLinear = 2301;
   var InterpolateSmooth = 2302;
@@ -137,6 +140,7 @@
   var ZeroSlopeEnding = 2401;
   var WrapAroundEnding = 2402;
   var NormalAnimationBlendMode = 2500;
+  var AdditiveAnimationBlendMode = 2501;
   var TrianglesDrawMode = 0;
   var TriangleStripDrawMode = 1;
   var TriangleFanDrawMode = 2;
@@ -21085,6 +21089,157 @@ void main() {
   function now() {
     return performance.now();
   }
+  var PropertyMixer = class {
+    constructor(binding, typeName, valueSize) {
+      this.binding = binding;
+      this.valueSize = valueSize;
+      let mixFunction, mixFunctionAdditive, setIdentity;
+      switch (typeName) {
+        case "quaternion":
+          mixFunction = this._slerp;
+          mixFunctionAdditive = this._slerpAdditive;
+          setIdentity = this._setAdditiveIdentityQuaternion;
+          this.buffer = new Float64Array(valueSize * 6);
+          this._workIndex = 5;
+          break;
+        case "string":
+        case "bool":
+          mixFunction = this._select;
+          mixFunctionAdditive = this._select;
+          setIdentity = this._setAdditiveIdentityOther;
+          this.buffer = new Array(valueSize * 5);
+          break;
+        default:
+          mixFunction = this._lerp;
+          mixFunctionAdditive = this._lerpAdditive;
+          setIdentity = this._setAdditiveIdentityNumeric;
+          this.buffer = new Float64Array(valueSize * 5);
+      }
+      this._mixBufferRegion = mixFunction;
+      this._mixBufferRegionAdditive = mixFunctionAdditive;
+      this._setIdentity = setIdentity;
+      this._origIndex = 3;
+      this._addIndex = 4;
+      this.cumulativeWeight = 0;
+      this.cumulativeWeightAdditive = 0;
+      this.useCount = 0;
+      this.referenceCount = 0;
+    }
+    // accumulate data in the 'incoming' region into 'accu<i>'
+    accumulate(accuIndex, weight) {
+      const buffer = this.buffer, stride = this.valueSize, offset = accuIndex * stride + stride;
+      let currentWeight = this.cumulativeWeight;
+      if (currentWeight === 0) {
+        for (let i = 0; i !== stride; ++i) {
+          buffer[offset + i] = buffer[i];
+        }
+        currentWeight = weight;
+      } else {
+        currentWeight += weight;
+        const mix = weight / currentWeight;
+        this._mixBufferRegion(buffer, offset, 0, mix, stride);
+      }
+      this.cumulativeWeight = currentWeight;
+    }
+    // accumulate data in the 'incoming' region into 'add'
+    accumulateAdditive(weight) {
+      const buffer = this.buffer, stride = this.valueSize, offset = stride * this._addIndex;
+      if (this.cumulativeWeightAdditive === 0) {
+        this._setIdentity();
+      }
+      this._mixBufferRegionAdditive(buffer, offset, 0, weight, stride);
+      this.cumulativeWeightAdditive += weight;
+    }
+    // apply the state of 'accu<i>' to the binding when accus differ
+    apply(accuIndex) {
+      const stride = this.valueSize, buffer = this.buffer, offset = accuIndex * stride + stride, weight = this.cumulativeWeight, weightAdditive = this.cumulativeWeightAdditive, binding = this.binding;
+      this.cumulativeWeight = 0;
+      this.cumulativeWeightAdditive = 0;
+      if (weight < 1) {
+        const originalValueOffset = stride * this._origIndex;
+        this._mixBufferRegion(
+          buffer,
+          offset,
+          originalValueOffset,
+          1 - weight,
+          stride
+        );
+      }
+      if (weightAdditive > 0) {
+        this._mixBufferRegionAdditive(buffer, offset, this._addIndex * stride, 1, stride);
+      }
+      for (let i = stride, e = stride + stride; i !== e; ++i) {
+        if (buffer[i] !== buffer[i + stride]) {
+          binding.setValue(buffer, offset);
+          break;
+        }
+      }
+    }
+    // remember the state of the bound property and copy it to both accus
+    saveOriginalState() {
+      const binding = this.binding;
+      const buffer = this.buffer, stride = this.valueSize, originalValueOffset = stride * this._origIndex;
+      binding.getValue(buffer, originalValueOffset);
+      for (let i = stride, e = originalValueOffset; i !== e; ++i) {
+        buffer[i] = buffer[originalValueOffset + i % stride];
+      }
+      this._setIdentity();
+      this.cumulativeWeight = 0;
+      this.cumulativeWeightAdditive = 0;
+    }
+    // apply the state previously taken via 'saveOriginalState' to the binding
+    restoreOriginalState() {
+      const originalValueOffset = this.valueSize * 3;
+      this.binding.setValue(this.buffer, originalValueOffset);
+    }
+    _setAdditiveIdentityNumeric() {
+      const startIndex = this._addIndex * this.valueSize;
+      const endIndex = startIndex + this.valueSize;
+      for (let i = startIndex; i < endIndex; i++) {
+        this.buffer[i] = 0;
+      }
+    }
+    _setAdditiveIdentityQuaternion() {
+      this._setAdditiveIdentityNumeric();
+      this.buffer[this._addIndex * this.valueSize + 3] = 1;
+    }
+    _setAdditiveIdentityOther() {
+      const startIndex = this._origIndex * this.valueSize;
+      const targetIndex = this._addIndex * this.valueSize;
+      for (let i = 0; i < this.valueSize; i++) {
+        this.buffer[targetIndex + i] = this.buffer[startIndex + i];
+      }
+    }
+    // mix functions
+    _select(buffer, dstOffset, srcOffset, t, stride) {
+      if (t >= 0.5) {
+        for (let i = 0; i !== stride; ++i) {
+          buffer[dstOffset + i] = buffer[srcOffset + i];
+        }
+      }
+    }
+    _slerp(buffer, dstOffset, srcOffset, t) {
+      Quaternion.slerpFlat(buffer, dstOffset, buffer, dstOffset, buffer, srcOffset, t);
+    }
+    _slerpAdditive(buffer, dstOffset, srcOffset, t, stride) {
+      const workOffset = this._workIndex * stride;
+      Quaternion.multiplyQuaternionsFlat(buffer, workOffset, buffer, dstOffset, buffer, srcOffset);
+      Quaternion.slerpFlat(buffer, dstOffset, buffer, dstOffset, buffer, workOffset, t);
+    }
+    _lerp(buffer, dstOffset, srcOffset, t, stride) {
+      const s = 1 - t;
+      for (let i = 0; i !== stride; ++i) {
+        const j = dstOffset + i;
+        buffer[j] = buffer[j] * s + buffer[srcOffset + i] * t;
+      }
+    }
+    _lerpAdditive(buffer, dstOffset, srcOffset, t, stride) {
+      for (let i = 0; i !== stride; ++i) {
+        const j = dstOffset + i;
+        buffer[j] = buffer[j] + buffer[srcOffset + i] * t;
+      }
+    }
+  };
   var _RESERVED_CHARS_RE = "\\[\\]\\.:\\/";
   var _reservedRe = new RegExp("[" + _RESERVED_CHARS_RE + "]", "g");
   var _wordChar = "[^" + _RESERVED_CHARS_RE + "]";
@@ -21462,7 +21617,727 @@ void main() {
       PropertyBinding.prototype._setValue_fromArray_setMatrixWorldNeedsUpdate
     ]
   ];
+  var AnimationAction = class {
+    constructor(mixer2, clip, localRoot = null, blendMode = clip.blendMode) {
+      this._mixer = mixer2;
+      this._clip = clip;
+      this._localRoot = localRoot;
+      this.blendMode = blendMode;
+      const tracks = clip.tracks, nTracks = tracks.length, interpolants = new Array(nTracks);
+      const interpolantSettings = {
+        endingStart: ZeroCurvatureEnding,
+        endingEnd: ZeroCurvatureEnding
+      };
+      for (let i = 0; i !== nTracks; ++i) {
+        const interpolant = tracks[i].createInterpolant(null);
+        interpolants[i] = interpolant;
+        interpolant.settings = interpolantSettings;
+      }
+      this._interpolantSettings = interpolantSettings;
+      this._interpolants = interpolants;
+      this._propertyBindings = new Array(nTracks);
+      this._cacheIndex = null;
+      this._byClipCacheIndex = null;
+      this._timeScaleInterpolant = null;
+      this._weightInterpolant = null;
+      this.loop = LoopRepeat;
+      this._loopCount = -1;
+      this._startTime = null;
+      this.time = 0;
+      this.timeScale = 1;
+      this._effectiveTimeScale = 1;
+      this.weight = 1;
+      this._effectiveWeight = 1;
+      this.repetitions = Infinity;
+      this.paused = false;
+      this.enabled = true;
+      this.clampWhenFinished = false;
+      this.zeroSlopeAtStart = true;
+      this.zeroSlopeAtEnd = true;
+    }
+    // State & Scheduling
+    play() {
+      this._mixer._activateAction(this);
+      return this;
+    }
+    stop() {
+      this._mixer._deactivateAction(this);
+      return this.reset();
+    }
+    reset() {
+      this.paused = false;
+      this.enabled = true;
+      this.time = 0;
+      this._loopCount = -1;
+      this._startTime = null;
+      return this.stopFading().stopWarping();
+    }
+    isRunning() {
+      return this.enabled && !this.paused && this.timeScale !== 0 && this._startTime === null && this._mixer._isActiveAction(this);
+    }
+    // return true when play has been called
+    isScheduled() {
+      return this._mixer._isActiveAction(this);
+    }
+    startAt(time) {
+      this._startTime = time;
+      return this;
+    }
+    setLoop(mode, repetitions) {
+      this.loop = mode;
+      this.repetitions = repetitions;
+      return this;
+    }
+    // Weight
+    // set the weight stopping any scheduled fading
+    // although .enabled = false yields an effective weight of zero, this
+    // method does *not* change .enabled, because it would be confusing
+    setEffectiveWeight(weight) {
+      this.weight = weight;
+      this._effectiveWeight = this.enabled ? weight : 0;
+      return this.stopFading();
+    }
+    // return the weight considering fading and .enabled
+    getEffectiveWeight() {
+      return this._effectiveWeight;
+    }
+    fadeIn(duration) {
+      return this._scheduleFading(duration, 0, 1);
+    }
+    fadeOut(duration) {
+      return this._scheduleFading(duration, 1, 0);
+    }
+    crossFadeFrom(fadeOutAction, duration, warp) {
+      fadeOutAction.fadeOut(duration);
+      this.fadeIn(duration);
+      if (warp) {
+        const fadeInDuration = this._clip.duration, fadeOutDuration = fadeOutAction._clip.duration, startEndRatio = fadeOutDuration / fadeInDuration, endStartRatio = fadeInDuration / fadeOutDuration;
+        fadeOutAction.warp(1, startEndRatio, duration);
+        this.warp(endStartRatio, 1, duration);
+      }
+      return this;
+    }
+    crossFadeTo(fadeInAction, duration, warp) {
+      return fadeInAction.crossFadeFrom(this, duration, warp);
+    }
+    stopFading() {
+      const weightInterpolant = this._weightInterpolant;
+      if (weightInterpolant !== null) {
+        this._weightInterpolant = null;
+        this._mixer._takeBackControlInterpolant(weightInterpolant);
+      }
+      return this;
+    }
+    // Time Scale Control
+    // set the time scale stopping any scheduled warping
+    // although .paused = true yields an effective time scale of zero, this
+    // method does *not* change .paused, because it would be confusing
+    setEffectiveTimeScale(timeScale) {
+      this.timeScale = timeScale;
+      this._effectiveTimeScale = this.paused ? 0 : timeScale;
+      return this.stopWarping();
+    }
+    // return the time scale considering warping and .paused
+    getEffectiveTimeScale() {
+      return this._effectiveTimeScale;
+    }
+    setDuration(duration) {
+      this.timeScale = this._clip.duration / duration;
+      return this.stopWarping();
+    }
+    syncWith(action2) {
+      this.time = action2.time;
+      this.timeScale = action2.timeScale;
+      return this.stopWarping();
+    }
+    halt(duration) {
+      return this.warp(this._effectiveTimeScale, 0, duration);
+    }
+    warp(startTimeScale, endTimeScale, duration) {
+      const mixer2 = this._mixer, now2 = mixer2.time, timeScale = this.timeScale;
+      let interpolant = this._timeScaleInterpolant;
+      if (interpolant === null) {
+        interpolant = mixer2._lendControlInterpolant();
+        this._timeScaleInterpolant = interpolant;
+      }
+      const times = interpolant.parameterPositions, values = interpolant.sampleValues;
+      times[0] = now2;
+      times[1] = now2 + duration;
+      values[0] = startTimeScale / timeScale;
+      values[1] = endTimeScale / timeScale;
+      return this;
+    }
+    stopWarping() {
+      const timeScaleInterpolant = this._timeScaleInterpolant;
+      if (timeScaleInterpolant !== null) {
+        this._timeScaleInterpolant = null;
+        this._mixer._takeBackControlInterpolant(timeScaleInterpolant);
+      }
+      return this;
+    }
+    // Object Accessors
+    getMixer() {
+      return this._mixer;
+    }
+    getClip() {
+      return this._clip;
+    }
+    getRoot() {
+      return this._localRoot || this._mixer._root;
+    }
+    // Interna
+    _update(time, deltaTime, timeDirection, accuIndex) {
+      if (!this.enabled) {
+        this._updateWeight(time);
+        return;
+      }
+      const startTime = this._startTime;
+      if (startTime !== null) {
+        const timeRunning = (time - startTime) * timeDirection;
+        if (timeRunning < 0 || timeDirection === 0) {
+          deltaTime = 0;
+        } else {
+          this._startTime = null;
+          deltaTime = timeDirection * timeRunning;
+        }
+      }
+      deltaTime *= this._updateTimeScale(time);
+      const clipTime = this._updateTime(deltaTime);
+      const weight = this._updateWeight(time);
+      if (weight > 0) {
+        const interpolants = this._interpolants;
+        const propertyMixers = this._propertyBindings;
+        switch (this.blendMode) {
+          case AdditiveAnimationBlendMode:
+            for (let j = 0, m = interpolants.length; j !== m; ++j) {
+              interpolants[j].evaluate(clipTime);
+              propertyMixers[j].accumulateAdditive(weight);
+            }
+            break;
+          case NormalAnimationBlendMode:
+          default:
+            for (let j = 0, m = interpolants.length; j !== m; ++j) {
+              interpolants[j].evaluate(clipTime);
+              propertyMixers[j].accumulate(accuIndex, weight);
+            }
+        }
+      }
+    }
+    _updateWeight(time) {
+      let weight = 0;
+      if (this.enabled) {
+        weight = this.weight;
+        const interpolant = this._weightInterpolant;
+        if (interpolant !== null) {
+          const interpolantValue = interpolant.evaluate(time)[0];
+          weight *= interpolantValue;
+          if (time > interpolant.parameterPositions[1]) {
+            this.stopFading();
+            if (interpolantValue === 0) {
+              this.enabled = false;
+            }
+          }
+        }
+      }
+      this._effectiveWeight = weight;
+      return weight;
+    }
+    _updateTimeScale(time) {
+      let timeScale = 0;
+      if (!this.paused) {
+        timeScale = this.timeScale;
+        const interpolant = this._timeScaleInterpolant;
+        if (interpolant !== null) {
+          const interpolantValue = interpolant.evaluate(time)[0];
+          timeScale *= interpolantValue;
+          if (time > interpolant.parameterPositions[1]) {
+            this.stopWarping();
+            if (timeScale === 0) {
+              this.paused = true;
+            } else {
+              this.timeScale = timeScale;
+            }
+          }
+        }
+      }
+      this._effectiveTimeScale = timeScale;
+      return timeScale;
+    }
+    _updateTime(deltaTime) {
+      const duration = this._clip.duration;
+      const loop = this.loop;
+      let time = this.time + deltaTime;
+      let loopCount = this._loopCount;
+      const pingPong = loop === LoopPingPong;
+      if (deltaTime === 0) {
+        if (loopCount === -1) return time;
+        return pingPong && (loopCount & 1) === 1 ? duration - time : time;
+      }
+      if (loop === LoopOnce) {
+        if (loopCount === -1) {
+          this._loopCount = 0;
+          this._setEndings(true, true, false);
+        }
+        handle_stop: {
+          if (time >= duration) {
+            time = duration;
+          } else if (time < 0) {
+            time = 0;
+          } else {
+            this.time = time;
+            break handle_stop;
+          }
+          if (this.clampWhenFinished) this.paused = true;
+          else this.enabled = false;
+          this.time = time;
+          this._mixer.dispatchEvent({
+            type: "finished",
+            action: this,
+            direction: deltaTime < 0 ? -1 : 1
+          });
+        }
+      } else {
+        if (loopCount === -1) {
+          if (deltaTime >= 0) {
+            loopCount = 0;
+            this._setEndings(true, this.repetitions === 0, pingPong);
+          } else {
+            this._setEndings(this.repetitions === 0, true, pingPong);
+          }
+        }
+        if (time >= duration || time < 0) {
+          const loopDelta = Math.floor(time / duration);
+          time -= duration * loopDelta;
+          loopCount += Math.abs(loopDelta);
+          const pending = this.repetitions - loopCount;
+          if (pending <= 0) {
+            if (this.clampWhenFinished) this.paused = true;
+            else this.enabled = false;
+            time = deltaTime > 0 ? duration : 0;
+            this.time = time;
+            this._mixer.dispatchEvent({
+              type: "finished",
+              action: this,
+              direction: deltaTime > 0 ? 1 : -1
+            });
+          } else {
+            if (pending === 1) {
+              const atStart = deltaTime < 0;
+              this._setEndings(atStart, !atStart, pingPong);
+            } else {
+              this._setEndings(false, false, pingPong);
+            }
+            this._loopCount = loopCount;
+            this.time = time;
+            this._mixer.dispatchEvent({
+              type: "loop",
+              action: this,
+              loopDelta
+            });
+          }
+        } else {
+          this.time = time;
+        }
+        if (pingPong && (loopCount & 1) === 1) {
+          return duration - time;
+        }
+      }
+      return time;
+    }
+    _setEndings(atStart, atEnd, pingPong) {
+      const settings = this._interpolantSettings;
+      if (pingPong) {
+        settings.endingStart = ZeroSlopeEnding;
+        settings.endingEnd = ZeroSlopeEnding;
+      } else {
+        if (atStart) {
+          settings.endingStart = this.zeroSlopeAtStart ? ZeroSlopeEnding : ZeroCurvatureEnding;
+        } else {
+          settings.endingStart = WrapAroundEnding;
+        }
+        if (atEnd) {
+          settings.endingEnd = this.zeroSlopeAtEnd ? ZeroSlopeEnding : ZeroCurvatureEnding;
+        } else {
+          settings.endingEnd = WrapAroundEnding;
+        }
+      }
+    }
+    _scheduleFading(duration, weightNow, weightThen) {
+      const mixer2 = this._mixer, now2 = mixer2.time;
+      let interpolant = this._weightInterpolant;
+      if (interpolant === null) {
+        interpolant = mixer2._lendControlInterpolant();
+        this._weightInterpolant = interpolant;
+      }
+      const times = interpolant.parameterPositions, values = interpolant.sampleValues;
+      times[0] = now2;
+      values[0] = weightNow;
+      times[1] = now2 + duration;
+      values[1] = weightThen;
+      return this;
+    }
+  };
   var _controlInterpolantsResultBuffer = new Float32Array(1);
+  var AnimationMixer = class extends EventDispatcher {
+    constructor(root) {
+      super();
+      this._root = root;
+      this._initMemoryManager();
+      this._accuIndex = 0;
+      this.time = 0;
+      this.timeScale = 1;
+    }
+    _bindAction(action2, prototypeAction) {
+      const root = action2._localRoot || this._root, tracks = action2._clip.tracks, nTracks = tracks.length, bindings = action2._propertyBindings, interpolants = action2._interpolants, rootUuid = root.uuid, bindingsByRoot = this._bindingsByRootAndName;
+      let bindingsByName = bindingsByRoot[rootUuid];
+      if (bindingsByName === void 0) {
+        bindingsByName = {};
+        bindingsByRoot[rootUuid] = bindingsByName;
+      }
+      for (let i = 0; i !== nTracks; ++i) {
+        const track = tracks[i], trackName = track.name;
+        let binding = bindingsByName[trackName];
+        if (binding !== void 0) {
+          ++binding.referenceCount;
+          bindings[i] = binding;
+        } else {
+          binding = bindings[i];
+          if (binding !== void 0) {
+            if (binding._cacheIndex === null) {
+              ++binding.referenceCount;
+              this._addInactiveBinding(binding, rootUuid, trackName);
+            }
+            continue;
+          }
+          const path = prototypeAction && prototypeAction._propertyBindings[i].binding.parsedPath;
+          binding = new PropertyMixer(
+            PropertyBinding.create(root, trackName, path),
+            track.ValueTypeName,
+            track.getValueSize()
+          );
+          ++binding.referenceCount;
+          this._addInactiveBinding(binding, rootUuid, trackName);
+          bindings[i] = binding;
+        }
+        interpolants[i].resultBuffer = binding.buffer;
+      }
+    }
+    _activateAction(action2) {
+      if (!this._isActiveAction(action2)) {
+        if (action2._cacheIndex === null) {
+          const rootUuid = (action2._localRoot || this._root).uuid, clipUuid = action2._clip.uuid, actionsForClip = this._actionsByClip[clipUuid];
+          this._bindAction(
+            action2,
+            actionsForClip && actionsForClip.knownActions[0]
+          );
+          this._addInactiveAction(action2, clipUuid, rootUuid);
+        }
+        const bindings = action2._propertyBindings;
+        for (let i = 0, n = bindings.length; i !== n; ++i) {
+          const binding = bindings[i];
+          if (binding.useCount++ === 0) {
+            this._lendBinding(binding);
+            binding.saveOriginalState();
+          }
+        }
+        this._lendAction(action2);
+      }
+    }
+    _deactivateAction(action2) {
+      if (this._isActiveAction(action2)) {
+        const bindings = action2._propertyBindings;
+        for (let i = 0, n = bindings.length; i !== n; ++i) {
+          const binding = bindings[i];
+          if (--binding.useCount === 0) {
+            binding.restoreOriginalState();
+            this._takeBackBinding(binding);
+          }
+        }
+        this._takeBackAction(action2);
+      }
+    }
+    // Memory manager
+    _initMemoryManager() {
+      this._actions = [];
+      this._nActiveActions = 0;
+      this._actionsByClip = {};
+      this._bindings = [];
+      this._nActiveBindings = 0;
+      this._bindingsByRootAndName = {};
+      this._controlInterpolants = [];
+      this._nActiveControlInterpolants = 0;
+      const scope = this;
+      this.stats = {
+        actions: {
+          get total() {
+            return scope._actions.length;
+          },
+          get inUse() {
+            return scope._nActiveActions;
+          }
+        },
+        bindings: {
+          get total() {
+            return scope._bindings.length;
+          },
+          get inUse() {
+            return scope._nActiveBindings;
+          }
+        },
+        controlInterpolants: {
+          get total() {
+            return scope._controlInterpolants.length;
+          },
+          get inUse() {
+            return scope._nActiveControlInterpolants;
+          }
+        }
+      };
+    }
+    // Memory management for AnimationAction objects
+    _isActiveAction(action2) {
+      const index = action2._cacheIndex;
+      return index !== null && index < this._nActiveActions;
+    }
+    _addInactiveAction(action2, clipUuid, rootUuid) {
+      const actions = this._actions, actionsByClip = this._actionsByClip;
+      let actionsForClip = actionsByClip[clipUuid];
+      if (actionsForClip === void 0) {
+        actionsForClip = {
+          knownActions: [action2],
+          actionByRoot: {}
+        };
+        action2._byClipCacheIndex = 0;
+        actionsByClip[clipUuid] = actionsForClip;
+      } else {
+        const knownActions = actionsForClip.knownActions;
+        action2._byClipCacheIndex = knownActions.length;
+        knownActions.push(action2);
+      }
+      action2._cacheIndex = actions.length;
+      actions.push(action2);
+      actionsForClip.actionByRoot[rootUuid] = action2;
+    }
+    _removeInactiveAction(action2) {
+      const actions = this._actions, lastInactiveAction = actions[actions.length - 1], cacheIndex = action2._cacheIndex;
+      lastInactiveAction._cacheIndex = cacheIndex;
+      actions[cacheIndex] = lastInactiveAction;
+      actions.pop();
+      action2._cacheIndex = null;
+      const clipUuid = action2._clip.uuid, actionsByClip = this._actionsByClip, actionsForClip = actionsByClip[clipUuid], knownActionsForClip = actionsForClip.knownActions, lastKnownAction = knownActionsForClip[knownActionsForClip.length - 1], byClipCacheIndex = action2._byClipCacheIndex;
+      lastKnownAction._byClipCacheIndex = byClipCacheIndex;
+      knownActionsForClip[byClipCacheIndex] = lastKnownAction;
+      knownActionsForClip.pop();
+      action2._byClipCacheIndex = null;
+      const actionByRoot = actionsForClip.actionByRoot, rootUuid = (action2._localRoot || this._root).uuid;
+      delete actionByRoot[rootUuid];
+      if (knownActionsForClip.length === 0) {
+        delete actionsByClip[clipUuid];
+      }
+      this._removeInactiveBindingsForAction(action2);
+    }
+    _removeInactiveBindingsForAction(action2) {
+      const bindings = action2._propertyBindings;
+      for (let i = 0, n = bindings.length; i !== n; ++i) {
+        const binding = bindings[i];
+        if (--binding.referenceCount === 0) {
+          this._removeInactiveBinding(binding);
+        }
+      }
+    }
+    _lendAction(action2) {
+      const actions = this._actions, prevIndex = action2._cacheIndex, lastActiveIndex = this._nActiveActions++, firstInactiveAction = actions[lastActiveIndex];
+      action2._cacheIndex = lastActiveIndex;
+      actions[lastActiveIndex] = action2;
+      firstInactiveAction._cacheIndex = prevIndex;
+      actions[prevIndex] = firstInactiveAction;
+    }
+    _takeBackAction(action2) {
+      const actions = this._actions, prevIndex = action2._cacheIndex, firstInactiveIndex = --this._nActiveActions, lastActiveAction = actions[firstInactiveIndex];
+      action2._cacheIndex = firstInactiveIndex;
+      actions[firstInactiveIndex] = action2;
+      lastActiveAction._cacheIndex = prevIndex;
+      actions[prevIndex] = lastActiveAction;
+    }
+    // Memory management for PropertyMixer objects
+    _addInactiveBinding(binding, rootUuid, trackName) {
+      const bindingsByRoot = this._bindingsByRootAndName, bindings = this._bindings;
+      let bindingByName = bindingsByRoot[rootUuid];
+      if (bindingByName === void 0) {
+        bindingByName = {};
+        bindingsByRoot[rootUuid] = bindingByName;
+      }
+      bindingByName[trackName] = binding;
+      binding._cacheIndex = bindings.length;
+      bindings.push(binding);
+    }
+    _removeInactiveBinding(binding) {
+      const bindings = this._bindings, propBinding = binding.binding, rootUuid = propBinding.rootNode.uuid, trackName = propBinding.path, bindingsByRoot = this._bindingsByRootAndName, bindingByName = bindingsByRoot[rootUuid], lastInactiveBinding = bindings[bindings.length - 1], cacheIndex = binding._cacheIndex;
+      lastInactiveBinding._cacheIndex = cacheIndex;
+      bindings[cacheIndex] = lastInactiveBinding;
+      bindings.pop();
+      delete bindingByName[trackName];
+      if (Object.keys(bindingByName).length === 0) {
+        delete bindingsByRoot[rootUuid];
+      }
+    }
+    _lendBinding(binding) {
+      const bindings = this._bindings, prevIndex = binding._cacheIndex, lastActiveIndex = this._nActiveBindings++, firstInactiveBinding = bindings[lastActiveIndex];
+      binding._cacheIndex = lastActiveIndex;
+      bindings[lastActiveIndex] = binding;
+      firstInactiveBinding._cacheIndex = prevIndex;
+      bindings[prevIndex] = firstInactiveBinding;
+    }
+    _takeBackBinding(binding) {
+      const bindings = this._bindings, prevIndex = binding._cacheIndex, firstInactiveIndex = --this._nActiveBindings, lastActiveBinding = bindings[firstInactiveIndex];
+      binding._cacheIndex = firstInactiveIndex;
+      bindings[firstInactiveIndex] = binding;
+      lastActiveBinding._cacheIndex = prevIndex;
+      bindings[prevIndex] = lastActiveBinding;
+    }
+    // Memory management of Interpolants for weight and time scale
+    _lendControlInterpolant() {
+      const interpolants = this._controlInterpolants, lastActiveIndex = this._nActiveControlInterpolants++;
+      let interpolant = interpolants[lastActiveIndex];
+      if (interpolant === void 0) {
+        interpolant = new LinearInterpolant(
+          new Float32Array(2),
+          new Float32Array(2),
+          1,
+          _controlInterpolantsResultBuffer
+        );
+        interpolant.__cacheIndex = lastActiveIndex;
+        interpolants[lastActiveIndex] = interpolant;
+      }
+      return interpolant;
+    }
+    _takeBackControlInterpolant(interpolant) {
+      const interpolants = this._controlInterpolants, prevIndex = interpolant.__cacheIndex, firstInactiveIndex = --this._nActiveControlInterpolants, lastActiveInterpolant = interpolants[firstInactiveIndex];
+      interpolant.__cacheIndex = firstInactiveIndex;
+      interpolants[firstInactiveIndex] = interpolant;
+      lastActiveInterpolant.__cacheIndex = prevIndex;
+      interpolants[prevIndex] = lastActiveInterpolant;
+    }
+    // return an action for a clip optionally using a custom root target
+    // object (this method allocates a lot of dynamic memory in case a
+    // previously unknown clip/root combination is specified)
+    clipAction(clip, optionalRoot, blendMode) {
+      const root = optionalRoot || this._root, rootUuid = root.uuid;
+      let clipObject = typeof clip === "string" ? AnimationClip.findByName(root, clip) : clip;
+      const clipUuid = clipObject !== null ? clipObject.uuid : clip;
+      const actionsForClip = this._actionsByClip[clipUuid];
+      let prototypeAction = null;
+      if (blendMode === void 0) {
+        if (clipObject !== null) {
+          blendMode = clipObject.blendMode;
+        } else {
+          blendMode = NormalAnimationBlendMode;
+        }
+      }
+      if (actionsForClip !== void 0) {
+        const existingAction = actionsForClip.actionByRoot[rootUuid];
+        if (existingAction !== void 0 && existingAction.blendMode === blendMode) {
+          return existingAction;
+        }
+        prototypeAction = actionsForClip.knownActions[0];
+        if (clipObject === null)
+          clipObject = prototypeAction._clip;
+      }
+      if (clipObject === null) return null;
+      const newAction = new AnimationAction(this, clipObject, optionalRoot, blendMode);
+      this._bindAction(newAction, prototypeAction);
+      this._addInactiveAction(newAction, clipUuid, rootUuid);
+      return newAction;
+    }
+    // get an existing action
+    existingAction(clip, optionalRoot) {
+      const root = optionalRoot || this._root, rootUuid = root.uuid, clipObject = typeof clip === "string" ? AnimationClip.findByName(root, clip) : clip, clipUuid = clipObject ? clipObject.uuid : clip, actionsForClip = this._actionsByClip[clipUuid];
+      if (actionsForClip !== void 0) {
+        return actionsForClip.actionByRoot[rootUuid] || null;
+      }
+      return null;
+    }
+    // deactivates all previously scheduled actions
+    stopAllAction() {
+      const actions = this._actions, nActions = this._nActiveActions;
+      for (let i = nActions - 1; i >= 0; --i) {
+        actions[i].stop();
+      }
+      return this;
+    }
+    // advance the time and update apply the animation
+    update(deltaTime) {
+      deltaTime *= this.timeScale;
+      const actions = this._actions, nActions = this._nActiveActions, time = this.time += deltaTime, timeDirection = Math.sign(deltaTime), accuIndex = this._accuIndex ^= 1;
+      for (let i = 0; i !== nActions; ++i) {
+        const action2 = actions[i];
+        action2._update(time, deltaTime, timeDirection, accuIndex);
+      }
+      const bindings = this._bindings, nBindings = this._nActiveBindings;
+      for (let i = 0; i !== nBindings; ++i) {
+        bindings[i].apply(accuIndex);
+      }
+      return this;
+    }
+    // Allows you to seek to a specific time in an animation.
+    setTime(timeInSeconds) {
+      this.time = 0;
+      for (let i = 0; i < this._actions.length; i++) {
+        this._actions[i].time = 0;
+      }
+      return this.update(timeInSeconds);
+    }
+    // return this mixer's root target object
+    getRoot() {
+      return this._root;
+    }
+    // free all resources specific to a particular clip
+    uncacheClip(clip) {
+      const actions = this._actions, clipUuid = clip.uuid, actionsByClip = this._actionsByClip, actionsForClip = actionsByClip[clipUuid];
+      if (actionsForClip !== void 0) {
+        const actionsToRemove = actionsForClip.knownActions;
+        for (let i = 0, n = actionsToRemove.length; i !== n; ++i) {
+          const action2 = actionsToRemove[i];
+          this._deactivateAction(action2);
+          const cacheIndex = action2._cacheIndex, lastInactiveAction = actions[actions.length - 1];
+          action2._cacheIndex = null;
+          action2._byClipCacheIndex = null;
+          lastInactiveAction._cacheIndex = cacheIndex;
+          actions[cacheIndex] = lastInactiveAction;
+          actions.pop();
+          this._removeInactiveBindingsForAction(action2);
+        }
+        delete actionsByClip[clipUuid];
+      }
+    }
+    // free all resources specific to a particular root target object
+    uncacheRoot(root) {
+      const rootUuid = root.uuid, actionsByClip = this._actionsByClip;
+      for (const clipUuid in actionsByClip) {
+        const actionByRoot = actionsByClip[clipUuid].actionByRoot, action2 = actionByRoot[rootUuid];
+        if (action2 !== void 0) {
+          this._deactivateAction(action2);
+          this._removeInactiveAction(action2);
+        }
+      }
+      const bindingsByRoot = this._bindingsByRootAndName, bindingByName = bindingsByRoot[rootUuid];
+      if (bindingByName !== void 0) {
+        for (const trackName in bindingByName) {
+          const binding = bindingByName[trackName];
+          binding.restoreOriginalState();
+          this._removeInactiveBinding(binding);
+        }
+      }
+    }
+    // remove a targeted clip from the cache
+    uncacheAction(clip, optionalRoot) {
+      const action2 = this.existingAction(clip, optionalRoot);
+      if (action2 !== null) {
+        this._deactivateAction(action2);
+        this._removeInactiveAction(action2);
+      }
+    }
+  };
   var GLBufferAttribute = class {
     constructor(buffer, type, itemSize, elementSize, count) {
       this.isGLBufferAttribute = true;
@@ -30874,6 +31749,1983 @@ void main() {
   VRMUtils.removeUnnecessaryVertices = removeUnnecessaryVertices;
   VRMUtils.rotateVRM0 = rotateVRM0;
 
+  // node_modules/@pixiv/three-vrm-animation/lib/three-vrm-animation.module.js
+  var __async8 = (__this, __arguments, generator) => {
+    return new Promise((resolve, reject) => {
+      var fulfilled = (value) => {
+        try {
+          step(generator.next(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var rejected = (value) => {
+        try {
+          step(generator.throw(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+      step((generator = generator.apply(__this, __arguments)).next());
+    });
+  };
+  var __async22 = (__this, __arguments, generator) => {
+    return new Promise((resolve, reject) => {
+      var fulfilled = (value) => {
+        try {
+          step(generator.next(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var rejected = (value) => {
+        try {
+          step(generator.throw(value));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+      step((generator = generator.apply(__this, __arguments)).next());
+    });
+  };
+  var VRMExpression2 = class extends Object3D {
+    constructor(expressionName) {
+      super();
+      this.weight = 0;
+      this.isBinary = false;
+      this.overrideBlink = "none";
+      this.overrideLookAt = "none";
+      this.overrideMouth = "none";
+      this._binds = [];
+      this.name = `VRMExpression_${expressionName}`;
+      this.expressionName = expressionName;
+      this.type = "VRMExpression";
+      this.visible = false;
+    }
+    /**
+     * Binds that this expression influences.
+     */
+    get binds() {
+      return this._binds;
+    }
+    /**
+     * A value represents how much it should override blink expressions.
+     * `0.0` == no override at all, `1.0` == completely block the expressions.
+     */
+    get overrideBlinkAmount() {
+      if (this.overrideBlink === "block") {
+        return 0 < this.outputWeight ? 1 : 0;
+      } else if (this.overrideBlink === "blend") {
+        return this.outputWeight;
+      } else {
+        return 0;
+      }
+    }
+    /**
+     * A value represents how much it should override lookAt expressions.
+     * `0.0` == no override at all, `1.0` == completely block the expressions.
+     */
+    get overrideLookAtAmount() {
+      if (this.overrideLookAt === "block") {
+        return 0 < this.outputWeight ? 1 : 0;
+      } else if (this.overrideLookAt === "blend") {
+        return this.outputWeight;
+      } else {
+        return 0;
+      }
+    }
+    /**
+     * A value represents how much it should override mouth expressions.
+     * `0.0` == no override at all, `1.0` == completely block the expressions.
+     */
+    get overrideMouthAmount() {
+      if (this.overrideMouth === "block") {
+        return 0 < this.outputWeight ? 1 : 0;
+      } else if (this.overrideMouth === "blend") {
+        return this.outputWeight;
+      } else {
+        return 0;
+      }
+    }
+    /**
+     * An output weight of this expression, considering the {@link isBinary}.
+     */
+    get outputWeight() {
+      if (this.isBinary) {
+        return this.weight > 0.5 ? 1 : 0;
+      }
+      return this.weight;
+    }
+    /**
+     * Add an expression bind to the expression.
+     *
+     * @param bind A bind to add
+     */
+    addBind(bind) {
+      this._binds.push(bind);
+    }
+    /**
+     * Delete an expression bind from the expression.
+     *
+     * @param bind A bind to delete
+     */
+    deleteBind(bind) {
+      const index = this._binds.indexOf(bind);
+      if (index >= 0) {
+        this._binds.splice(index, 1);
+      }
+    }
+    /**
+     * Apply weight to every assigned blend shapes.
+     * Should be called every frame.
+     */
+    applyWeight(options) {
+      var _a;
+      let actualWeight = this.outputWeight;
+      actualWeight *= (_a = options == null ? void 0 : options.multiplier) != null ? _a : 1;
+      if (this.isBinary && actualWeight < 1) {
+        actualWeight = 0;
+      }
+      this._binds.forEach((bind) => bind.applyWeight(actualWeight));
+    }
+    /**
+     * Clear previously assigned blend shapes.
+     */
+    clearAppliedWeight() {
+      this._binds.forEach((bind) => bind.clearAppliedWeight());
+    }
+  };
+  function extractPrimitivesInternal2(gltf, nodeIndex, node) {
+    var _a, _b;
+    const json = gltf.parser.json;
+    const schemaNode = (_a = json.nodes) == null ? void 0 : _a[nodeIndex];
+    if (schemaNode == null) {
+      console.warn(`extractPrimitivesInternal: Attempt to use nodes[${nodeIndex}] of glTF but the node doesn't exist`);
+      return null;
+    }
+    const meshIndex = schemaNode.mesh;
+    if (meshIndex == null) {
+      return null;
+    }
+    const schemaMesh = (_b = json.meshes) == null ? void 0 : _b[meshIndex];
+    if (schemaMesh == null) {
+      console.warn(`extractPrimitivesInternal: Attempt to use meshes[${meshIndex}] of glTF but the mesh doesn't exist`);
+      return null;
+    }
+    const primitiveCount = schemaMesh.primitives.length;
+    const primitives = [];
+    node.traverse((object) => {
+      if (primitives.length < primitiveCount) {
+        if (object.isMesh) {
+          primitives.push(object);
+        }
+      }
+    });
+    return primitives;
+  }
+  function gltfExtractPrimitivesFromNode2(gltf, nodeIndex) {
+    return __async22(this, null, function* () {
+      const node = yield gltf.parser.getDependency("node", nodeIndex);
+      return extractPrimitivesInternal2(gltf, nodeIndex, node);
+    });
+  }
+  var VRMExpressionPresetName2 = {
+    Aa: "aa",
+    Ih: "ih",
+    Ou: "ou",
+    Ee: "ee",
+    Oh: "oh",
+    Blink: "blink",
+    Happy: "happy",
+    Angry: "angry",
+    Sad: "sad",
+    Relaxed: "relaxed",
+    LookUp: "lookUp",
+    Surprised: "surprised",
+    LookDown: "lookDown",
+    LookLeft: "lookLeft",
+    LookRight: "lookRight",
+    BlinkLeft: "blinkLeft",
+    BlinkRight: "blinkRight",
+    Neutral: "neutral"
+  };
+  function saturate2(value) {
+    return Math.max(Math.min(value, 1), 0);
+  }
+  var VRMExpressionManager2 = class _VRMExpressionManager2 {
+    /**
+     * Create a new {@link VRMExpressionManager}.
+     */
+    constructor() {
+      this.blinkExpressionNames = ["blink", "blinkLeft", "blinkRight"];
+      this.lookAtExpressionNames = ["lookLeft", "lookRight", "lookUp", "lookDown"];
+      this.mouthExpressionNames = ["aa", "ee", "ih", "oh", "ou"];
+      this._expressions = [];
+      this._expressionMap = {};
+    }
+    get expressions() {
+      return this._expressions.concat();
+    }
+    get expressionMap() {
+      return Object.assign({}, this._expressionMap);
+    }
+    /**
+     * A map from name to expression, but excluding custom expressions.
+     */
+    get presetExpressionMap() {
+      const result = {};
+      const presetNameSet = new Set(Object.values(VRMExpressionPresetName2));
+      Object.entries(this._expressionMap).forEach(([name, expression]) => {
+        if (presetNameSet.has(name)) {
+          result[name] = expression;
+        }
+      });
+      return result;
+    }
+    /**
+     * A map from name to expression, but excluding preset expressions.
+     */
+    get customExpressionMap() {
+      const result = {};
+      const presetNameSet = new Set(Object.values(VRMExpressionPresetName2));
+      Object.entries(this._expressionMap).forEach(([name, expression]) => {
+        if (!presetNameSet.has(name)) {
+          result[name] = expression;
+        }
+      });
+      return result;
+    }
+    /**
+     * Copy the given {@link VRMExpressionManager} into this one.
+     * @param source The {@link VRMExpressionManager} you want to copy
+     * @returns this
+     */
+    copy(source) {
+      const expressions = this._expressions.concat();
+      expressions.forEach((expression) => {
+        this.unregisterExpression(expression);
+      });
+      source._expressions.forEach((expression) => {
+        this.registerExpression(expression);
+      });
+      this.blinkExpressionNames = source.blinkExpressionNames.concat();
+      this.lookAtExpressionNames = source.lookAtExpressionNames.concat();
+      this.mouthExpressionNames = source.mouthExpressionNames.concat();
+      return this;
+    }
+    /**
+     * Returns a clone of this {@link VRMExpressionManager}.
+     * @returns Copied {@link VRMExpressionManager}
+     */
+    clone() {
+      return new _VRMExpressionManager2().copy(this);
+    }
+    /**
+     * Return a registered expression.
+     * If it cannot find an expression, it will return `null` instead.
+     *
+     * @param name Name or preset name of the expression
+     */
+    getExpression(name) {
+      var _a;
+      return (_a = this._expressionMap[name]) != null ? _a : null;
+    }
+    /**
+     * Register an expression.
+     *
+     * @param expression {@link VRMExpression} that describes the expression
+     */
+    registerExpression(expression) {
+      this._expressions.push(expression);
+      this._expressionMap[expression.expressionName] = expression;
+    }
+    /**
+     * Unregister an expression.
+     *
+     * @param expression The expression you want to unregister
+     */
+    unregisterExpression(expression) {
+      const index = this._expressions.indexOf(expression);
+      if (index === -1) {
+        console.warn("VRMExpressionManager: The specified expressions is not registered");
+      }
+      this._expressions.splice(index, 1);
+      delete this._expressionMap[expression.expressionName];
+    }
+    /**
+     * Get the current weight of the specified expression.
+     * If it doesn't have an expression of given name, it will return `null` instead.
+     *
+     * @param name Name of the expression
+     */
+    getValue(name) {
+      var _a;
+      const expression = this.getExpression(name);
+      return (_a = expression == null ? void 0 : expression.weight) != null ? _a : null;
+    }
+    /**
+     * Set a weight to the specified expression.
+     *
+     * @param name Name of the expression
+     * @param weight Weight
+     */
+    setValue(name, weight) {
+      const expression = this.getExpression(name);
+      if (expression) {
+        expression.weight = saturate2(weight);
+      }
+    }
+    /**
+     * Reset weights of all expressions to `0.0`.
+     */
+    resetValues() {
+      this._expressions.forEach((expression) => {
+        expression.weight = 0;
+      });
+    }
+    /**
+     * Get a track name of specified expression.
+     * This track name is needed to manipulate its expression via keyframe animations.
+     *
+     * @example Manipulate an expression using keyframe animation
+     * ```js
+     * const trackName = vrm.expressionManager.getExpressionTrackName( 'blink' );
+     * const track = new THREE.NumberKeyframeTrack(
+     *   name,
+     *   [ 0.0, 0.5, 1.0 ], // times
+     *   [ 0.0, 1.0, 0.0 ] // values
+     * );
+     *
+     * const clip = new THREE.AnimationClip(
+     *   'blink', // name
+     *   1.0, // duration
+     *   [ track ] // tracks
+     * );
+     *
+     * const mixer = new THREE.AnimationMixer( vrm.scene );
+     * const action = mixer.clipAction( clip );
+     * action.play();
+     * ```
+     *
+     * @param name Name of the expression
+     */
+    getExpressionTrackName(name) {
+      const expression = this.getExpression(name);
+      return expression ? `${expression.name}.weight` : null;
+    }
+    /**
+     * Update every expressions.
+     */
+    update() {
+      const weightMultipliers = this._calculateWeightMultipliers();
+      this._expressions.forEach((expression) => {
+        expression.clearAppliedWeight();
+      });
+      this._expressions.forEach((expression) => {
+        let multiplier = 1;
+        const name = expression.expressionName;
+        if (this.blinkExpressionNames.indexOf(name) !== -1) {
+          multiplier *= weightMultipliers.blink;
+        }
+        if (this.lookAtExpressionNames.indexOf(name) !== -1) {
+          multiplier *= weightMultipliers.lookAt;
+        }
+        if (this.mouthExpressionNames.indexOf(name) !== -1) {
+          multiplier *= weightMultipliers.mouth;
+        }
+        expression.applyWeight({ multiplier });
+      });
+    }
+    /**
+     * Calculate sum of override amounts to see how much we should multiply weights of certain expressions.
+     */
+    _calculateWeightMultipliers() {
+      let blink = 1;
+      let lookAt = 1;
+      let mouth = 1;
+      this._expressions.forEach((expression) => {
+        blink -= expression.overrideBlinkAmount;
+        lookAt -= expression.overrideLookAtAmount;
+        mouth -= expression.overrideMouthAmount;
+      });
+      blink = Math.max(0, blink);
+      lookAt = Math.max(0, lookAt);
+      mouth = Math.max(0, mouth);
+      return { blink, lookAt, mouth };
+    }
+  };
+  var VRMExpressionMaterialColorType2 = {
+    Color: "color",
+    EmissionColor: "emissionColor",
+    ShadeColor: "shadeColor",
+    MatcapColor: "matcapColor",
+    RimColor: "rimColor",
+    OutlineColor: "outlineColor"
+  };
+  var v0ExpressionMaterialColorMap2 = {
+    _Color: VRMExpressionMaterialColorType2.Color,
+    _EmissionColor: VRMExpressionMaterialColorType2.EmissionColor,
+    _ShadeColor: VRMExpressionMaterialColorType2.ShadeColor,
+    _RimColor: VRMExpressionMaterialColorType2.RimColor,
+    _OutlineColor: VRMExpressionMaterialColorType2.OutlineColor
+  };
+  var _color3 = new Color();
+  var _VRMExpressionMaterialColorBind3 = class _VRMExpressionMaterialColorBind22 {
+    constructor({
+      material,
+      type,
+      targetValue,
+      targetAlpha
+    }) {
+      this.material = material;
+      this.type = type;
+      this.targetValue = targetValue;
+      this.targetAlpha = targetAlpha != null ? targetAlpha : 1;
+      const color = this._initColorBindState();
+      const alpha = this._initAlphaBindState();
+      this._state = { color, alpha };
+    }
+    applyWeight(weight) {
+      const { color, alpha } = this._state;
+      if (color != null) {
+        const { propertyName, deltaValue } = color;
+        const target = this.material[propertyName];
+        if (target != void 0) {
+          target.add(_color3.copy(deltaValue).multiplyScalar(weight));
+        }
+      }
+      if (alpha != null) {
+        const { propertyName, deltaValue } = alpha;
+        const target = this.material[propertyName];
+        if (target != void 0) {
+          this.material[propertyName] += deltaValue * weight;
+        }
+      }
+    }
+    clearAppliedWeight() {
+      const { color, alpha } = this._state;
+      if (color != null) {
+        const { propertyName, initialValue } = color;
+        const target = this.material[propertyName];
+        if (target != void 0) {
+          target.copy(initialValue);
+        }
+      }
+      if (alpha != null) {
+        const { propertyName, initialValue } = alpha;
+        const target = this.material[propertyName];
+        if (target != void 0) {
+          this.material[propertyName] = initialValue;
+        }
+      }
+    }
+    _initColorBindState() {
+      var _a, _b, _c;
+      const { material, type, targetValue } = this;
+      const propertyNameMap = this._getPropertyNameMap();
+      const propertyName = (_b = (_a = propertyNameMap == null ? void 0 : propertyNameMap[type]) == null ? void 0 : _a[0]) != null ? _b : null;
+      if (propertyName == null) {
+        console.warn(
+          `Tried to add a material color bind to the material ${(_c = material.name) != null ? _c : "(no name)"}, the type ${type} but the material or the type is not supported.`
+        );
+        return null;
+      }
+      const target = material[propertyName];
+      const initialValue = target.clone();
+      const deltaValue = new Color(
+        targetValue.r - initialValue.r,
+        targetValue.g - initialValue.g,
+        targetValue.b - initialValue.b
+      );
+      return { propertyName, initialValue, deltaValue };
+    }
+    _initAlphaBindState() {
+      var _a, _b, _c;
+      const { material, type, targetAlpha } = this;
+      const propertyNameMap = this._getPropertyNameMap();
+      const propertyName = (_b = (_a = propertyNameMap == null ? void 0 : propertyNameMap[type]) == null ? void 0 : _a[1]) != null ? _b : null;
+      if (propertyName == null && targetAlpha !== 1) {
+        console.warn(
+          `Tried to add a material alpha bind to the material ${(_c = material.name) != null ? _c : "(no name)"}, the type ${type} but the material or the type does not support alpha.`
+        );
+        return null;
+      }
+      if (propertyName == null) {
+        return null;
+      }
+      const initialValue = material[propertyName];
+      const deltaValue = targetAlpha - initialValue;
+      return { propertyName, initialValue, deltaValue };
+    }
+    _getPropertyNameMap() {
+      var _a, _b;
+      return (_b = (_a = Object.entries(_VRMExpressionMaterialColorBind22._propertyNameMapMap).find(([distinguisher]) => {
+        return this.material[distinguisher] === true;
+      })) == null ? void 0 : _a[1]) != null ? _b : null;
+    }
+  };
+  _VRMExpressionMaterialColorBind3._propertyNameMapMap = {
+    isMeshStandardMaterial: {
+      color: ["color", "opacity"],
+      emissionColor: ["emissive", null]
+    },
+    isMeshBasicMaterial: {
+      color: ["color", "opacity"]
+    },
+    isMToonMaterial: {
+      color: ["color", "opacity"],
+      emissionColor: ["emissive", null],
+      outlineColor: ["outlineColorFactor", null],
+      matcapColor: ["matcapFactor", null],
+      rimColor: ["parametricRimColorFactor", null],
+      shadeColor: ["shadeColorFactor", null]
+    }
+  };
+  var VRMExpressionMaterialColorBind2 = _VRMExpressionMaterialColorBind3;
+  var VRMExpressionMorphTargetBind2 = class {
+    constructor({
+      primitives,
+      index,
+      weight
+    }) {
+      this.primitives = primitives;
+      this.index = index;
+      this.weight = weight;
+    }
+    applyWeight(weight) {
+      this.primitives.forEach((mesh) => {
+        var _a;
+        if (((_a = mesh.morphTargetInfluences) == null ? void 0 : _a[this.index]) != null) {
+          mesh.morphTargetInfluences[this.index] += this.weight * weight;
+        }
+      });
+    }
+    clearAppliedWeight() {
+      this.primitives.forEach((mesh) => {
+        var _a;
+        if (((_a = mesh.morphTargetInfluences) == null ? void 0 : _a[this.index]) != null) {
+          mesh.morphTargetInfluences[this.index] = 0;
+        }
+      });
+    }
+  };
+  var _v22 = new Vector2();
+  var _VRMExpressionTextureTransformBind3 = class _VRMExpressionTextureTransformBind22 {
+    constructor({
+      material,
+      scale,
+      offset
+    }) {
+      var _a, _b;
+      this.material = material;
+      this.scale = scale;
+      this.offset = offset;
+      const propertyNames = (_a = Object.entries(_VRMExpressionTextureTransformBind22._propertyNamesMap).find(
+        ([distinguisher]) => {
+          return material[distinguisher] === true;
+        }
+      )) == null ? void 0 : _a[1];
+      if (propertyNames == null) {
+        console.warn(
+          `Tried to add a texture transform bind to the material ${(_b = material.name) != null ? _b : "(no name)"} but the material is not supported.`
+        );
+        this._properties = [];
+      } else {
+        this._properties = [];
+        propertyNames.forEach((propertyName) => {
+          var _a2;
+          const texture = (_a2 = material[propertyName]) == null ? void 0 : _a2.clone();
+          if (!texture) {
+            return null;
+          }
+          material[propertyName] = texture;
+          const initialOffset = texture.offset.clone();
+          const initialScale = texture.repeat.clone();
+          const deltaOffset = offset.clone().sub(initialOffset);
+          const deltaScale = scale.clone().sub(initialScale);
+          this._properties.push({
+            name: propertyName,
+            initialOffset,
+            deltaOffset,
+            initialScale,
+            deltaScale
+          });
+        });
+      }
+    }
+    applyWeight(weight) {
+      this._properties.forEach((property) => {
+        const target = this.material[property.name];
+        if (target === void 0) {
+          return;
+        }
+        target.offset.add(_v22.copy(property.deltaOffset).multiplyScalar(weight));
+        target.repeat.add(_v22.copy(property.deltaScale).multiplyScalar(weight));
+      });
+    }
+    clearAppliedWeight() {
+      this._properties.forEach((property) => {
+        const target = this.material[property.name];
+        if (target === void 0) {
+          return;
+        }
+        target.offset.copy(property.initialOffset);
+        target.repeat.copy(property.initialScale);
+      });
+    }
+  };
+  _VRMExpressionTextureTransformBind3._propertyNamesMap = {
+    isMeshStandardMaterial: [
+      "map",
+      "emissiveMap",
+      "bumpMap",
+      "normalMap",
+      "displacementMap",
+      "roughnessMap",
+      "metalnessMap",
+      "alphaMap"
+    ],
+    isMeshBasicMaterial: ["map", "specularMap", "alphaMap"],
+    isMToonMaterial: [
+      "map",
+      "normalMap",
+      "emissiveMap",
+      "shadeMultiplyTexture",
+      "rimMultiplyTexture",
+      "outlineWidthMultiplyTexture",
+      "uvAnimationMaskTexture"
+    ]
+  };
+  var VRMExpressionTextureTransformBind2 = _VRMExpressionTextureTransformBind3;
+  var POSSIBLE_SPEC_VERSIONS9 = /* @__PURE__ */ new Set(["1.0", "1.0-beta"]);
+  var _VRMExpressionLoaderPlugin3 = class _VRMExpressionLoaderPlugin22 {
+    get name() {
+      return "VRMExpressionLoaderPlugin";
+    }
+    constructor(parser) {
+      this.parser = parser;
+    }
+    afterRoot(gltf) {
+      return __async22(this, null, function* () {
+        gltf.userData.vrmExpressionManager = yield this._import(gltf);
+      });
+    }
+    /**
+     * Import a {@link VRMExpressionManager} from a VRM.
+     *
+     * @param gltf A parsed result of GLTF taken from GLTFLoader
+     */
+    _import(gltf) {
+      return __async22(this, null, function* () {
+        const v1Result = yield this._v1Import(gltf);
+        if (v1Result) {
+          return v1Result;
+        }
+        const v0Result = yield this._v0Import(gltf);
+        if (v0Result) {
+          return v0Result;
+        }
+        return null;
+      });
+    }
+    _v1Import(gltf) {
+      return __async22(this, null, function* () {
+        var _a, _b;
+        const json = this.parser.json;
+        const isVRMUsed = ((_a = json.extensionsUsed) == null ? void 0 : _a.indexOf("VRMC_vrm")) !== -1;
+        if (!isVRMUsed) {
+          return null;
+        }
+        const extension = (_b = json.extensions) == null ? void 0 : _b["VRMC_vrm"];
+        if (!extension) {
+          return null;
+        }
+        const specVersion = extension.specVersion;
+        if (!POSSIBLE_SPEC_VERSIONS9.has(specVersion)) {
+          console.warn(`VRMExpressionLoaderPlugin: Unknown VRMC_vrm specVersion "${specVersion}"`);
+          return null;
+        }
+        const schemaExpressions = extension.expressions;
+        if (!schemaExpressions) {
+          return null;
+        }
+        const presetNameSet = new Set(Object.values(VRMExpressionPresetName2));
+        const nameSchemaExpressionMap = /* @__PURE__ */ new Map();
+        if (schemaExpressions.preset != null) {
+          Object.entries(schemaExpressions.preset).forEach(([name, schemaExpression]) => {
+            if (schemaExpression == null) {
+              return;
+            }
+            if (!presetNameSet.has(name)) {
+              console.warn(`VRMExpressionLoaderPlugin: Unknown preset name "${name}" detected. Ignoring the expression`);
+              return;
+            }
+            nameSchemaExpressionMap.set(name, schemaExpression);
+          });
+        }
+        if (schemaExpressions.custom != null) {
+          Object.entries(schemaExpressions.custom).forEach(([name, schemaExpression]) => {
+            if (presetNameSet.has(name)) {
+              console.warn(
+                `VRMExpressionLoaderPlugin: Custom expression cannot have preset name "${name}". Ignoring the expression`
+              );
+              return;
+            }
+            nameSchemaExpressionMap.set(name, schemaExpression);
+          });
+        }
+        const manager = new VRMExpressionManager2();
+        yield Promise.all(
+          Array.from(nameSchemaExpressionMap.entries()).map((_0) => __async22(this, [_0], function* ([name, schemaExpression]) {
+            var _a2, _b2, _c, _d, _e, _f, _g;
+            const expression = new VRMExpression2(name);
+            gltf.scene.add(expression);
+            expression.isBinary = (_a2 = schemaExpression.isBinary) != null ? _a2 : false;
+            expression.overrideBlink = (_b2 = schemaExpression.overrideBlink) != null ? _b2 : "none";
+            expression.overrideLookAt = (_c = schemaExpression.overrideLookAt) != null ? _c : "none";
+            expression.overrideMouth = (_d = schemaExpression.overrideMouth) != null ? _d : "none";
+            (_e = schemaExpression.morphTargetBinds) == null ? void 0 : _e.forEach((bind) => __async22(this, null, function* () {
+              var _a3;
+              if (bind.node === void 0 || bind.index === void 0) {
+                return;
+              }
+              const primitives = yield gltfExtractPrimitivesFromNode2(gltf, bind.node);
+              const morphTargetIndex = bind.index;
+              if (!primitives.every(
+                (primitive) => Array.isArray(primitive.morphTargetInfluences) && morphTargetIndex < primitive.morphTargetInfluences.length
+              )) {
+                console.warn(
+                  `VRMExpressionLoaderPlugin: ${schemaExpression.name} attempts to index morph #${morphTargetIndex} but not found.`
+                );
+                return;
+              }
+              expression.addBind(
+                new VRMExpressionMorphTargetBind2({
+                  primitives,
+                  index: morphTargetIndex,
+                  weight: (_a3 = bind.weight) != null ? _a3 : 1
+                })
+              );
+            }));
+            if (schemaExpression.materialColorBinds || schemaExpression.textureTransformBinds) {
+              const gltfMaterials = [];
+              gltf.scene.traverse((object) => {
+                const material = object.material;
+                if (material) {
+                  if (Array.isArray(material)) {
+                    gltfMaterials.push(...material);
+                  } else {
+                    gltfMaterials.push(material);
+                  }
+                }
+              });
+              (_f = schemaExpression.materialColorBinds) == null ? void 0 : _f.forEach((bind) => __async22(this, null, function* () {
+                const materials = gltfMaterials.filter((material) => {
+                  var _a3;
+                  const materialIndex = (_a3 = this.parser.associations.get(material)) == null ? void 0 : _a3.materials;
+                  return bind.material === materialIndex;
+                });
+                materials.forEach((material) => {
+                  expression.addBind(
+                    new VRMExpressionMaterialColorBind2({
+                      material,
+                      type: bind.type,
+                      targetValue: new Color().fromArray(bind.targetValue),
+                      targetAlpha: bind.targetValue[3]
+                    })
+                  );
+                });
+              }));
+              (_g = schemaExpression.textureTransformBinds) == null ? void 0 : _g.forEach((bind) => __async22(this, null, function* () {
+                const materials = gltfMaterials.filter((material) => {
+                  var _a3;
+                  const materialIndex = (_a3 = this.parser.associations.get(material)) == null ? void 0 : _a3.materials;
+                  return bind.material === materialIndex;
+                });
+                materials.forEach((material) => {
+                  var _a3, _b3;
+                  expression.addBind(
+                    new VRMExpressionTextureTransformBind2({
+                      material,
+                      offset: new Vector2().fromArray((_a3 = bind.offset) != null ? _a3 : [0, 0]),
+                      scale: new Vector2().fromArray((_b3 = bind.scale) != null ? _b3 : [1, 1])
+                    })
+                  );
+                });
+              }));
+            }
+            manager.registerExpression(expression);
+          }))
+        );
+        return manager;
+      });
+    }
+    _v0Import(gltf) {
+      return __async22(this, null, function* () {
+        var _a;
+        const json = this.parser.json;
+        const vrmExt = (_a = json.extensions) == null ? void 0 : _a.VRM;
+        if (!vrmExt) {
+          return null;
+        }
+        const schemaBlendShape = vrmExt.blendShapeMaster;
+        if (!schemaBlendShape) {
+          return null;
+        }
+        const manager = new VRMExpressionManager2();
+        const schemaBlendShapeGroups = schemaBlendShape.blendShapeGroups;
+        if (!schemaBlendShapeGroups) {
+          return manager;
+        }
+        const blendShapeNameSet = /* @__PURE__ */ new Set();
+        yield Promise.all(
+          schemaBlendShapeGroups.map((schemaGroup) => __async22(this, null, function* () {
+            var _a2;
+            const v0PresetName = schemaGroup.presetName;
+            const v1PresetName = v0PresetName != null && _VRMExpressionLoaderPlugin22.v0v1PresetNameMap[v0PresetName] || null;
+            const name = v1PresetName != null ? v1PresetName : schemaGroup.name;
+            if (name == null) {
+              console.warn("VRMExpressionLoaderPlugin: One of custom expressions has no name. Ignoring the expression");
+              return;
+            }
+            if (blendShapeNameSet.has(name)) {
+              console.warn(
+                `VRMExpressionLoaderPlugin: An expression preset ${v0PresetName} has duplicated entries. Ignoring the expression`
+              );
+              return;
+            }
+            blendShapeNameSet.add(name);
+            const expression = new VRMExpression2(name);
+            gltf.scene.add(expression);
+            expression.isBinary = (_a2 = schemaGroup.isBinary) != null ? _a2 : false;
+            if (schemaGroup.binds) {
+              schemaGroup.binds.forEach((bind) => __async22(this, null, function* () {
+                var _a3;
+                if (bind.mesh === void 0 || bind.index === void 0) {
+                  return;
+                }
+                const nodesUsingMesh = [];
+                (_a3 = json.nodes) == null ? void 0 : _a3.forEach((node, i) => {
+                  if (node.mesh === bind.mesh) {
+                    nodesUsingMesh.push(i);
+                  }
+                });
+                if (nodesUsingMesh.length === 0) {
+                  console.warn(
+                    `VRMExpressionLoaderPlugin: ${schemaGroup.name} attempts to bind a morph target to the mesh #${bind.mesh} but the mesh is not found or not used in the scene. Ignoring the bind.`
+                  );
+                  return;
+                }
+                const morphTargetIndex = bind.index;
+                yield Promise.all(
+                  nodesUsingMesh.map((nodeIndex) => __async22(this, null, function* () {
+                    var _a4;
+                    const primitives = yield gltfExtractPrimitivesFromNode2(gltf, nodeIndex);
+                    if (!primitives.every(
+                      (primitive) => Array.isArray(primitive.morphTargetInfluences) && morphTargetIndex < primitive.morphTargetInfluences.length
+                    )) {
+                      console.warn(
+                        `VRMExpressionLoaderPlugin: ${schemaGroup.name} attempts to index ${morphTargetIndex}th morph but not found.`
+                      );
+                      return;
+                    }
+                    expression.addBind(
+                      new VRMExpressionMorphTargetBind2({
+                        primitives,
+                        index: morphTargetIndex,
+                        weight: 0.01 * ((_a4 = bind.weight) != null ? _a4 : 100)
+                        // narrowing the range from [ 0.0 - 100.0 ] to [ 0.0 - 1.0 ]
+                      })
+                    );
+                  }))
+                );
+              }));
+            }
+            const materialValues = schemaGroup.materialValues;
+            if (materialValues && materialValues.length !== 0) {
+              materialValues.forEach((materialValue) => {
+                if (materialValue.materialName === void 0 || materialValue.propertyName === void 0 || materialValue.targetValue === void 0) {
+                  return;
+                }
+                const materials = [];
+                gltf.scene.traverse((object) => {
+                  if (object.material) {
+                    const material = object.material;
+                    if (Array.isArray(material)) {
+                      materials.push(
+                        ...material.filter(
+                          (mtl) => (mtl.name === materialValue.materialName || mtl.name === materialValue.materialName + " (Outline)") && materials.indexOf(mtl) === -1
+                        )
+                      );
+                    } else if (material.name === materialValue.materialName && materials.indexOf(material) === -1) {
+                      materials.push(material);
+                    }
+                  }
+                });
+                const materialPropertyName = materialValue.propertyName;
+                materials.forEach((material) => {
+                  if (materialPropertyName === "_MainTex_ST") {
+                    const scale = new Vector2(materialValue.targetValue[0], materialValue.targetValue[1]);
+                    const offset = new Vector2(materialValue.targetValue[2], materialValue.targetValue[3]);
+                    offset.y = 1 - offset.y - scale.y;
+                    expression.addBind(
+                      new VRMExpressionTextureTransformBind2({
+                        material,
+                        scale,
+                        offset
+                      })
+                    );
+                    return;
+                  }
+                  const materialColorType = v0ExpressionMaterialColorMap2[materialPropertyName];
+                  if (materialColorType) {
+                    expression.addBind(
+                      new VRMExpressionMaterialColorBind2({
+                        material,
+                        type: materialColorType,
+                        targetValue: new Color().fromArray(materialValue.targetValue),
+                        targetAlpha: materialValue.targetValue[3]
+                      })
+                    );
+                    return;
+                  }
+                  console.warn(materialPropertyName + " is not supported");
+                });
+              });
+            }
+            manager.registerExpression(expression);
+          }))
+        );
+        return manager;
+      });
+    }
+  };
+  _VRMExpressionLoaderPlugin3.v0v1PresetNameMap = {
+    a: "aa",
+    e: "ee",
+    i: "ih",
+    o: "oh",
+    u: "ou",
+    blink: "blink",
+    joy: "happy",
+    angry: "angry",
+    sorrow: "sad",
+    fun: "relaxed",
+    lookup: "lookUp",
+    lookdown: "lookDown",
+    lookleft: "lookLeft",
+    lookright: "lookRight",
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    blink_l: "blinkLeft",
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    blink_r: "blinkRight",
+    neutral: "neutral"
+  };
+  var _VRMFirstPerson3 = class _VRMFirstPerson22 {
+    /**
+     * Create a new VRMFirstPerson object.
+     *
+     * @param humanoid A {@link VRMHumanoid}
+     * @param meshAnnotations A {@link VRMFirstPersonMeshAnnotation}
+     */
+    constructor(humanoid, meshAnnotations) {
+      this._firstPersonOnlyLayer = _VRMFirstPerson22.DEFAULT_FIRSTPERSON_ONLY_LAYER;
+      this._thirdPersonOnlyLayer = _VRMFirstPerson22.DEFAULT_THIRDPERSON_ONLY_LAYER;
+      this._initializedLayers = false;
+      this.humanoid = humanoid;
+      this.meshAnnotations = meshAnnotations;
+    }
+    /**
+     * Copy the given {@link VRMFirstPerson} into this one.
+     * {@link humanoid} must be same as the source one.
+     * @param source The {@link VRMFirstPerson} you want to copy
+     * @returns this
+     */
+    copy(source) {
+      if (this.humanoid !== source.humanoid) {
+        throw new Error("VRMFirstPerson: humanoid must be same in order to copy");
+      }
+      this.meshAnnotations = source.meshAnnotations.map((annotation) => ({
+        meshes: annotation.meshes.concat(),
+        type: annotation.type
+      }));
+      return this;
+    }
+    /**
+     * Returns a clone of this {@link VRMFirstPerson}.
+     * @returns Copied {@link VRMFirstPerson}
+     */
+    clone() {
+      return new _VRMFirstPerson22(this.humanoid, this.meshAnnotations).copy(this);
+    }
+    /**
+     * A camera layer represents `FirstPersonOnly` layer.
+     * Note that **you must call {@link setup} first before you use the layer feature** or it does not work properly.
+     *
+     * The value is {@link DEFAULT_FIRSTPERSON_ONLY_LAYER} by default but you can change the layer by specifying via {@link setup} if you prefer.
+     *
+     * @see https://vrm.dev/en/univrm/api/univrm_use_firstperson/
+     * @see https://threejs.org/docs/#api/en/core/Layers
+     */
+    get firstPersonOnlyLayer() {
+      return this._firstPersonOnlyLayer;
+    }
+    /**
+     * A camera layer represents `ThirdPersonOnly` layer.
+     * Note that **you must call {@link setup} first before you use the layer feature** or it does not work properly.
+     *
+     * The value is {@link DEFAULT_THIRDPERSON_ONLY_LAYER} by default but you can change the layer by specifying via {@link setup} if you prefer.
+     *
+     * @see https://vrm.dev/en/univrm/api/univrm_use_firstperson/
+     * @see https://threejs.org/docs/#api/en/core/Layers
+     */
+    get thirdPersonOnlyLayer() {
+      return this._thirdPersonOnlyLayer;
+    }
+    /**
+     * In this method, it assigns layers for every meshes based on mesh annotations.
+     * You must call this method first before you use the layer feature.
+     *
+     * This is an equivalent of [VRMFirstPerson.Setup](https://github.com/vrm-c/UniVRM/blob/73a5bd8fcddaa2a7a8735099a97e63c9db3e5ea0/Assets/VRM/Runtime/FirstPerson/VRMFirstPerson.cs#L295-L299) of the UniVRM.
+     *
+     * The `cameraLayer` parameter specifies which layer will be assigned for `FirstPersonOnly` / `ThirdPersonOnly`.
+     * In UniVRM, we specified those by naming each desired layer as `FIRSTPERSON_ONLY_LAYER` / `THIRDPERSON_ONLY_LAYER`
+     * but we are going to specify these layers at here since we are unable to name layers in Three.js.
+     *
+     * @param cameraLayer Specify which layer will be for `FirstPersonOnly` / `ThirdPersonOnly`.
+     */
+    setup({
+      firstPersonOnlyLayer = _VRMFirstPerson22.DEFAULT_FIRSTPERSON_ONLY_LAYER,
+      thirdPersonOnlyLayer = _VRMFirstPerson22.DEFAULT_THIRDPERSON_ONLY_LAYER
+    } = {}) {
+      if (this._initializedLayers) {
+        return;
+      }
+      this._firstPersonOnlyLayer = firstPersonOnlyLayer;
+      this._thirdPersonOnlyLayer = thirdPersonOnlyLayer;
+      this.meshAnnotations.forEach((item) => {
+        item.meshes.forEach((mesh) => {
+          if (item.type === "firstPersonOnly") {
+            mesh.layers.set(this._firstPersonOnlyLayer);
+            mesh.traverse((child) => child.layers.set(this._firstPersonOnlyLayer));
+          } else if (item.type === "thirdPersonOnly") {
+            mesh.layers.set(this._thirdPersonOnlyLayer);
+            mesh.traverse((child) => child.layers.set(this._thirdPersonOnlyLayer));
+          } else if (item.type === "auto") {
+            this._createHeadlessModel(mesh);
+          }
+        });
+      });
+      this._initializedLayers = true;
+    }
+    _excludeTriangles(triangles, bws, skinIndex, exclude) {
+      let count = 0;
+      if (bws != null && bws.length > 0) {
+        for (let i = 0; i < triangles.length; i += 3) {
+          const a = triangles[i];
+          const b = triangles[i + 1];
+          const c = triangles[i + 2];
+          const bw0 = bws[a];
+          const skin0 = skinIndex[a];
+          if (bw0[0] > 0 && exclude.includes(skin0[0])) continue;
+          if (bw0[1] > 0 && exclude.includes(skin0[1])) continue;
+          if (bw0[2] > 0 && exclude.includes(skin0[2])) continue;
+          if (bw0[3] > 0 && exclude.includes(skin0[3])) continue;
+          const bw1 = bws[b];
+          const skin1 = skinIndex[b];
+          if (bw1[0] > 0 && exclude.includes(skin1[0])) continue;
+          if (bw1[1] > 0 && exclude.includes(skin1[1])) continue;
+          if (bw1[2] > 0 && exclude.includes(skin1[2])) continue;
+          if (bw1[3] > 0 && exclude.includes(skin1[3])) continue;
+          const bw2 = bws[c];
+          const skin2 = skinIndex[c];
+          if (bw2[0] > 0 && exclude.includes(skin2[0])) continue;
+          if (bw2[1] > 0 && exclude.includes(skin2[1])) continue;
+          if (bw2[2] > 0 && exclude.includes(skin2[2])) continue;
+          if (bw2[3] > 0 && exclude.includes(skin2[3])) continue;
+          triangles[count++] = a;
+          triangles[count++] = b;
+          triangles[count++] = c;
+        }
+      }
+      return count;
+    }
+    _createErasedMesh(src, erasingBonesIndex) {
+      const dst = new SkinnedMesh(src.geometry.clone(), src.material);
+      dst.name = `${src.name}(erase)`;
+      dst.frustumCulled = src.frustumCulled;
+      dst.layers.set(this._firstPersonOnlyLayer);
+      const geometry = dst.geometry;
+      const skinIndexAttr = geometry.getAttribute("skinIndex");
+      const skinIndexAttrArray = skinIndexAttr instanceof GLBufferAttribute ? [] : skinIndexAttr.array;
+      const skinIndex = [];
+      for (let i = 0; i < skinIndexAttrArray.length; i += 4) {
+        skinIndex.push([
+          skinIndexAttrArray[i],
+          skinIndexAttrArray[i + 1],
+          skinIndexAttrArray[i + 2],
+          skinIndexAttrArray[i + 3]
+        ]);
+      }
+      const skinWeightAttr = geometry.getAttribute("skinWeight");
+      const skinWeightAttrArray = skinWeightAttr instanceof GLBufferAttribute ? [] : skinWeightAttr.array;
+      const skinWeight = [];
+      for (let i = 0; i < skinWeightAttrArray.length; i += 4) {
+        skinWeight.push([
+          skinWeightAttrArray[i],
+          skinWeightAttrArray[i + 1],
+          skinWeightAttrArray[i + 2],
+          skinWeightAttrArray[i + 3]
+        ]);
+      }
+      const index = geometry.getIndex();
+      if (!index) {
+        throw new Error("The geometry doesn't have an index buffer");
+      }
+      const oldTriangles = Array.from(index.array);
+      const count = this._excludeTriangles(oldTriangles, skinWeight, skinIndex, erasingBonesIndex);
+      const newTriangle = [];
+      for (let i = 0; i < count; i++) {
+        newTriangle[i] = oldTriangles[i];
+      }
+      geometry.setIndex(newTriangle);
+      if (src.onBeforeRender) {
+        dst.onBeforeRender = src.onBeforeRender;
+      }
+      dst.bind(new Skeleton(src.skeleton.bones, src.skeleton.boneInverses), new Matrix4());
+      return dst;
+    }
+    _createHeadlessModelForSkinnedMesh(parent, mesh) {
+      const eraseBoneIndexes = [];
+      mesh.skeleton.bones.forEach((bone, index) => {
+        if (this._isEraseTarget(bone)) eraseBoneIndexes.push(index);
+      });
+      if (!eraseBoneIndexes.length) {
+        mesh.layers.enable(this._thirdPersonOnlyLayer);
+        mesh.layers.enable(this._firstPersonOnlyLayer);
+        return;
+      }
+      mesh.layers.set(this._thirdPersonOnlyLayer);
+      const newMesh = this._createErasedMesh(mesh, eraseBoneIndexes);
+      parent.add(newMesh);
+    }
+    _createHeadlessModel(node) {
+      if (node.type === "Group") {
+        node.layers.set(this._thirdPersonOnlyLayer);
+        if (this._isEraseTarget(node)) {
+          node.traverse((child) => child.layers.set(this._thirdPersonOnlyLayer));
+        } else {
+          const parent = new Group();
+          parent.name = `_headless_${node.name}`;
+          parent.layers.set(this._firstPersonOnlyLayer);
+          node.parent.add(parent);
+          node.children.filter((child) => child.type === "SkinnedMesh").forEach((child) => {
+            const skinnedMesh = child;
+            this._createHeadlessModelForSkinnedMesh(parent, skinnedMesh);
+          });
+        }
+      } else if (node.type === "SkinnedMesh") {
+        const skinnedMesh = node;
+        this._createHeadlessModelForSkinnedMesh(node.parent, skinnedMesh);
+      } else {
+        if (this._isEraseTarget(node)) {
+          node.layers.set(this._thirdPersonOnlyLayer);
+          node.traverse((child) => child.layers.set(this._thirdPersonOnlyLayer));
+        }
+      }
+    }
+    _isEraseTarget(bone) {
+      if (bone === this.humanoid.getRawBoneNode("head")) {
+        return true;
+      } else if (!bone.parent) {
+        return false;
+      } else {
+        return this._isEraseTarget(bone.parent);
+      }
+    }
+  };
+  _VRMFirstPerson3.DEFAULT_FIRSTPERSON_ONLY_LAYER = 9;
+  _VRMFirstPerson3.DEFAULT_THIRDPERSON_ONLY_LAYER = 10;
+  var _v3A8 = new Vector3();
+  var _v3B6 = new Vector3();
+  var _quatA9 = new Quaternion();
+  var VRMHumanBoneParentMap2 = {
+    hips: null,
+    spine: "hips",
+    chest: "spine",
+    upperChest: "chest",
+    neck: "upperChest",
+    head: "neck",
+    leftEye: "head",
+    rightEye: "head",
+    jaw: "head",
+    leftUpperLeg: "hips",
+    leftLowerLeg: "leftUpperLeg",
+    leftFoot: "leftLowerLeg",
+    leftToes: "leftFoot",
+    rightUpperLeg: "hips",
+    rightLowerLeg: "rightUpperLeg",
+    rightFoot: "rightLowerLeg",
+    rightToes: "rightFoot",
+    leftShoulder: "upperChest",
+    leftUpperArm: "leftShoulder",
+    leftLowerArm: "leftUpperArm",
+    leftHand: "leftLowerArm",
+    rightShoulder: "upperChest",
+    rightUpperArm: "rightShoulder",
+    rightLowerArm: "rightUpperArm",
+    rightHand: "rightLowerArm",
+    leftThumbMetacarpal: "leftHand",
+    leftThumbProximal: "leftThumbMetacarpal",
+    leftThumbDistal: "leftThumbProximal",
+    leftIndexProximal: "leftHand",
+    leftIndexIntermediate: "leftIndexProximal",
+    leftIndexDistal: "leftIndexIntermediate",
+    leftMiddleProximal: "leftHand",
+    leftMiddleIntermediate: "leftMiddleProximal",
+    leftMiddleDistal: "leftMiddleIntermediate",
+    leftRingProximal: "leftHand",
+    leftRingIntermediate: "leftRingProximal",
+    leftRingDistal: "leftRingIntermediate",
+    leftLittleProximal: "leftHand",
+    leftLittleIntermediate: "leftLittleProximal",
+    leftLittleDistal: "leftLittleIntermediate",
+    rightThumbMetacarpal: "rightHand",
+    rightThumbProximal: "rightThumbMetacarpal",
+    rightThumbDistal: "rightThumbProximal",
+    rightIndexProximal: "rightHand",
+    rightIndexIntermediate: "rightIndexProximal",
+    rightIndexDistal: "rightIndexIntermediate",
+    rightMiddleProximal: "rightHand",
+    rightMiddleIntermediate: "rightMiddleProximal",
+    rightMiddleDistal: "rightMiddleIntermediate",
+    rightRingProximal: "rightHand",
+    rightRingIntermediate: "rightRingProximal",
+    rightRingDistal: "rightRingIntermediate",
+    rightLittleProximal: "rightHand",
+    rightLittleIntermediate: "rightLittleProximal",
+    rightLittleDistal: "rightLittleIntermediate"
+  };
+  function quatInvertCompat3(target) {
+    if (target.invert) {
+      target.invert();
+    } else {
+      target.inverse();
+    }
+    return target;
+  }
+  var _v3A24 = new Vector3();
+  var _quatA23 = new Quaternion();
+  var _v3A34 = new Vector3();
+  var _quatA33 = new Quaternion();
+  var _boneWorldPos2 = new Vector3();
+  var _quatA42 = new Quaternion();
+  var _quatB5 = new Quaternion();
+  var _v3A44 = new Vector3();
+  var _v3B24 = new Vector3();
+  var SQRT_2_OVER_22 = Math.sqrt(2) / 2;
+  var QUAT_XY_CW902 = new Quaternion(0, 0, -SQRT_2_OVER_22, SQRT_2_OVER_22);
+  var VEC3_POSITIVE_Y2 = new Vector3(0, 1, 0);
+  var _position2 = new Vector3();
+  var _scale2 = new Vector3();
+  function getWorldQuaternionLite2(object, out) {
+    object.matrixWorld.decompose(_position2, out, _scale2);
+    return out;
+  }
+  function calcAzimuthAltitude2(vector) {
+    return [Math.atan2(-vector.z, vector.x), Math.atan2(vector.y, Math.sqrt(vector.x * vector.x + vector.z * vector.z))];
+  }
+  function sanitizeAngle2(angle) {
+    const roundTurn = Math.round(angle / 2 / Math.PI);
+    return angle - 2 * Math.PI * roundTurn;
+  }
+  var VEC3_POSITIVE_Z3 = new Vector3(0, 0, 1);
+  var _v3A53 = new Vector3();
+  var _v3B32 = new Vector3();
+  var _v3C4 = new Vector3();
+  var _quatA52 = new Quaternion();
+  var _quatB23 = new Quaternion();
+  var _quatC3 = new Quaternion();
+  var _quatD2 = new Quaternion();
+  var _eulerA3 = new Euler();
+  var _VRMLookAt3 = class _VRMLookAt22 {
+    /**
+     * Create a new {@link VRMLookAt}.
+     *
+     * @param humanoid A {@link VRMHumanoid}
+     * @param applier A {@link VRMLookAtApplier}
+     */
+    constructor(humanoid, applier) {
+      this.offsetFromHeadBone = new Vector3();
+      this.autoUpdate = true;
+      this.faceFront = new Vector3(0, 0, 1);
+      this.humanoid = humanoid;
+      this.applier = applier;
+      this._yaw = 0;
+      this._pitch = 0;
+      this._needsUpdate = true;
+      this._restHeadWorldQuaternion = this.getLookAtWorldQuaternion(new Quaternion());
+    }
+    /**
+     * Its current angle around Y axis, in degree.
+     */
+    get yaw() {
+      return this._yaw;
+    }
+    /**
+     * Its current angle around Y axis, in degree.
+     */
+    set yaw(value) {
+      this._yaw = value;
+      this._needsUpdate = true;
+    }
+    /**
+     * Its current angle around X axis, in degree.
+     */
+    get pitch() {
+      return this._pitch;
+    }
+    /**
+     * Its current angle around X axis, in degree.
+     */
+    set pitch(value) {
+      this._pitch = value;
+      this._needsUpdate = true;
+    }
+    /**
+     * @deprecated Use {@link getEuler} instead.
+     */
+    get euler() {
+      console.warn("VRMLookAt: euler is deprecated. use getEuler() instead.");
+      return this.getEuler(new Euler());
+    }
+    /**
+     * Get its yaw-pitch angles as an `Euler`.
+     * Does NOT consider {@link faceFront}; it returns `Euler(0, 0, 0; "YXZ")` by default regardless of the faceFront value.
+     *
+     * @param target The target euler
+     */
+    getEuler(target) {
+      return target.set(MathUtils.DEG2RAD * this._pitch, MathUtils.DEG2RAD * this._yaw, 0, "YXZ");
+    }
+    /**
+     * Copy the given {@link VRMLookAt} into this one.
+     * {@link humanoid} must be same as the source one.
+     * {@link applier} will reference the same instance as the source one.
+     * @param source The {@link VRMLookAt} you want to copy
+     * @returns this
+     */
+    copy(source) {
+      if (this.humanoid !== source.humanoid) {
+        throw new Error("VRMLookAt: humanoid must be same in order to copy");
+      }
+      this.offsetFromHeadBone.copy(source.offsetFromHeadBone);
+      this.applier = source.applier;
+      this.autoUpdate = source.autoUpdate;
+      this.target = source.target;
+      this.faceFront.copy(source.faceFront);
+      return this;
+    }
+    /**
+     * Returns a clone of this {@link VRMLookAt}.
+     * Note that {@link humanoid} and {@link applier} will reference the same instance as this one.
+     * @returns Copied {@link VRMLookAt}
+     */
+    clone() {
+      return new _VRMLookAt22(this.humanoid, this.applier).copy(this);
+    }
+    /**
+     * Reset the lookAt direction (yaw and pitch) to the initial direction.
+     */
+    reset() {
+      this._yaw = 0;
+      this._pitch = 0;
+      this._needsUpdate = true;
+    }
+    /**
+     * Get its lookAt position in world coordinate.
+     *
+     * @param target A target `THREE.Vector3`
+     */
+    getLookAtWorldPosition(target) {
+      const head = this.humanoid.getRawBoneNode("head");
+      return target.copy(this.offsetFromHeadBone).applyMatrix4(head.matrixWorld);
+    }
+    /**
+     * Get its lookAt rotation in world coordinate.
+     * Does NOT consider {@link faceFront}.
+     *
+     * @param target A target `THREE.Quaternion`
+     */
+    getLookAtWorldQuaternion(target) {
+      const head = this.humanoid.getRawBoneNode("head");
+      return getWorldQuaternionLite2(head, target);
+    }
+    /**
+     * Get a quaternion that rotates the +Z unit vector of the humanoid Head to the {@link faceFront} direction.
+     *
+     * @param target A target `THREE.Quaternion`
+     */
+    getFaceFrontQuaternion(target) {
+      if (this.faceFront.distanceToSquared(VEC3_POSITIVE_Z3) < 0.01) {
+        return target.copy(this._restHeadWorldQuaternion).invert();
+      }
+      const [faceFrontAzimuth, faceFrontAltitude] = calcAzimuthAltitude2(this.faceFront);
+      _eulerA3.set(0, 0.5 * Math.PI + faceFrontAzimuth, faceFrontAltitude, "YZX");
+      return target.setFromEuler(_eulerA3).premultiply(_quatD2.copy(this._restHeadWorldQuaternion).invert());
+    }
+    /**
+     * Get its LookAt direction in world coordinate.
+     *
+     * @param target A target `THREE.Vector3`
+     */
+    getLookAtWorldDirection(target) {
+      this.getLookAtWorldQuaternion(_quatB23);
+      this.getFaceFrontQuaternion(_quatC3);
+      return target.copy(VEC3_POSITIVE_Z3).applyQuaternion(_quatB23).applyQuaternion(_quatC3).applyEuler(this.getEuler(_eulerA3));
+    }
+    /**
+     * Set its lookAt target position.
+     *
+     * Note that its result will be instantly overwritten if {@link VRMLookAtHead.autoUpdate} is enabled.
+     *
+     * If you want to track an object continuously, you might want to use {@link target} instead.
+     *
+     * @param position A target position, in world space
+     */
+    lookAt(position) {
+      const headRotDiffInv = _quatA52.copy(this._restHeadWorldQuaternion).multiply(quatInvertCompat3(this.getLookAtWorldQuaternion(_quatB23)));
+      const headPos = this.getLookAtWorldPosition(_v3B32);
+      const lookAtDir = _v3C4.copy(position).sub(headPos).applyQuaternion(headRotDiffInv).normalize();
+      const [azimuthFrom, altitudeFrom] = calcAzimuthAltitude2(this.faceFront);
+      const [azimuthTo, altitudeTo] = calcAzimuthAltitude2(lookAtDir);
+      const yaw = sanitizeAngle2(azimuthTo - azimuthFrom);
+      const pitch = sanitizeAngle2(altitudeFrom - altitudeTo);
+      this._yaw = MathUtils.RAD2DEG * yaw;
+      this._pitch = MathUtils.RAD2DEG * pitch;
+      this._needsUpdate = true;
+    }
+    /**
+     * Update the VRMLookAtHead.
+     * If {@link autoUpdate} is enabled, this will make it look at the {@link target}.
+     *
+     * @param delta deltaTime, it isn't used though. You can use the parameter if you want to use this in your own extended {@link VRMLookAt}.
+     */
+    update(delta) {
+      if (this.target != null && this.autoUpdate) {
+        this.lookAt(this.target.getWorldPosition(_v3A53));
+      }
+      if (this._needsUpdate) {
+        this._needsUpdate = false;
+        this.applier.applyYawPitch(this._yaw, this._pitch);
+      }
+    }
+  };
+  _VRMLookAt3.EULER_ORDER = "YXZ";
+  var VRMLookAt2 = _VRMLookAt3;
+  var VEC3_POSITIVE_Z22 = new Vector3(0, 0, 1);
+  var _quatA62 = new Quaternion();
+  var _quatB33 = new Quaternion();
+  var _eulerA22 = new Euler(0, 0, 0, "YXZ");
+  var VRMLookAtBoneApplier2 = class {
+    /**
+     * Create a new {@link VRMLookAtBoneApplier}.
+     *
+     * @param humanoid A {@link VRMHumanoid}
+     * @param rangeMapHorizontalInner A {@link VRMLookAtRangeMap} used for inner transverse direction
+     * @param rangeMapHorizontalOuter A {@link VRMLookAtRangeMap} used for outer transverse direction
+     * @param rangeMapVerticalDown A {@link VRMLookAtRangeMap} used for down direction
+     * @param rangeMapVerticalUp A {@link VRMLookAtRangeMap} used for up direction
+     */
+    constructor(humanoid, rangeMapHorizontalInner, rangeMapHorizontalOuter, rangeMapVerticalDown, rangeMapVerticalUp) {
+      this.humanoid = humanoid;
+      this.rangeMapHorizontalInner = rangeMapHorizontalInner;
+      this.rangeMapHorizontalOuter = rangeMapHorizontalOuter;
+      this.rangeMapVerticalDown = rangeMapVerticalDown;
+      this.rangeMapVerticalUp = rangeMapVerticalUp;
+      this.faceFront = new Vector3(0, 0, 1);
+      this._restQuatLeftEye = new Quaternion();
+      this._restQuatRightEye = new Quaternion();
+      this._restLeftEyeParentWorldQuat = new Quaternion();
+      this._restRightEyeParentWorldQuat = new Quaternion();
+      const leftEye = this.humanoid.getRawBoneNode("leftEye");
+      const rightEye = this.humanoid.getRawBoneNode("rightEye");
+      if (leftEye) {
+        this._restQuatLeftEye.copy(leftEye.quaternion);
+        getWorldQuaternionLite2(leftEye.parent, this._restLeftEyeParentWorldQuat);
+      }
+      if (rightEye) {
+        this._restQuatRightEye.copy(rightEye.quaternion);
+        getWorldQuaternionLite2(rightEye.parent, this._restRightEyeParentWorldQuat);
+      }
+    }
+    /**
+     * Apply the input angle to its associated VRM model.
+     *
+     * @param yaw Rotation around Y axis, in degree
+     * @param pitch Rotation around X axis, in degree
+     */
+    applyYawPitch(yaw, pitch) {
+      const leftEye = this.humanoid.getRawBoneNode("leftEye");
+      const rightEye = this.humanoid.getRawBoneNode("rightEye");
+      const leftEyeNormalized = this.humanoid.getNormalizedBoneNode("leftEye");
+      const rightEyeNormalized = this.humanoid.getNormalizedBoneNode("rightEye");
+      if (leftEye) {
+        if (pitch < 0) {
+          _eulerA22.x = -MathUtils.DEG2RAD * this.rangeMapVerticalDown.map(-pitch);
+        } else {
+          _eulerA22.x = MathUtils.DEG2RAD * this.rangeMapVerticalUp.map(pitch);
+        }
+        if (yaw < 0) {
+          _eulerA22.y = -MathUtils.DEG2RAD * this.rangeMapHorizontalInner.map(-yaw);
+        } else {
+          _eulerA22.y = MathUtils.DEG2RAD * this.rangeMapHorizontalOuter.map(yaw);
+        }
+        _quatA62.setFromEuler(_eulerA22);
+        this._getWorldFaceFrontQuat(_quatB33);
+        leftEyeNormalized.quaternion.copy(_quatB33).multiply(_quatA62).multiply(_quatB33.invert());
+        _quatA62.copy(this._restLeftEyeParentWorldQuat);
+        leftEye.quaternion.copy(leftEyeNormalized.quaternion).multiply(_quatA62).premultiply(_quatA62.invert()).multiply(this._restQuatLeftEye);
+      }
+      if (rightEye) {
+        if (pitch < 0) {
+          _eulerA22.x = -MathUtils.DEG2RAD * this.rangeMapVerticalDown.map(-pitch);
+        } else {
+          _eulerA22.x = MathUtils.DEG2RAD * this.rangeMapVerticalUp.map(pitch);
+        }
+        if (yaw < 0) {
+          _eulerA22.y = -MathUtils.DEG2RAD * this.rangeMapHorizontalOuter.map(-yaw);
+        } else {
+          _eulerA22.y = MathUtils.DEG2RAD * this.rangeMapHorizontalInner.map(yaw);
+        }
+        _quatA62.setFromEuler(_eulerA22);
+        this._getWorldFaceFrontQuat(_quatB33);
+        rightEyeNormalized.quaternion.copy(_quatB33).multiply(_quatA62).multiply(_quatB33.invert());
+        _quatA62.copy(this._restRightEyeParentWorldQuat);
+        rightEye.quaternion.copy(rightEyeNormalized.quaternion).multiply(_quatA62).premultiply(_quatA62.invert()).multiply(this._restQuatRightEye);
+      }
+    }
+    /**
+     * @deprecated Use {@link applyYawPitch} instead.
+     */
+    lookAt(euler) {
+      console.warn("VRMLookAtBoneApplier: lookAt() is deprecated. use apply() instead.");
+      const yaw = MathUtils.RAD2DEG * euler.y;
+      const pitch = MathUtils.RAD2DEG * euler.x;
+      this.applyYawPitch(yaw, pitch);
+    }
+    /**
+     * Get a quaternion that rotates the world-space +Z unit vector to the {@link faceFront} direction.
+     *
+     * @param target A target `THREE.Quaternion`
+     */
+    _getWorldFaceFrontQuat(target) {
+      if (this.faceFront.distanceToSquared(VEC3_POSITIVE_Z22) < 0.01) {
+        return target.identity();
+      }
+      const [faceFrontAzimuth, faceFrontAltitude] = calcAzimuthAltitude2(this.faceFront);
+      _eulerA22.set(0, 0.5 * Math.PI + faceFrontAzimuth, faceFrontAltitude, "YZX");
+      return target.setFromEuler(_eulerA22);
+    }
+  };
+  VRMLookAtBoneApplier2.type = "bone";
+  var VRMLookAtExpressionApplier2 = class {
+    /**
+     * Create a new {@link VRMLookAtExpressionApplier}.
+     *
+     * @param expressions A {@link VRMExpressionManager}
+     * @param rangeMapHorizontalInner A {@link VRMLookAtRangeMap} used for inner transverse direction
+     * @param rangeMapHorizontalOuter A {@link VRMLookAtRangeMap} used for outer transverse direction
+     * @param rangeMapVerticalDown A {@link VRMLookAtRangeMap} used for down direction
+     * @param rangeMapVerticalUp A {@link VRMLookAtRangeMap} used for up direction
+     */
+    constructor(expressions, rangeMapHorizontalInner, rangeMapHorizontalOuter, rangeMapVerticalDown, rangeMapVerticalUp) {
+      this.expressions = expressions;
+      this.rangeMapHorizontalInner = rangeMapHorizontalInner;
+      this.rangeMapHorizontalOuter = rangeMapHorizontalOuter;
+      this.rangeMapVerticalDown = rangeMapVerticalDown;
+      this.rangeMapVerticalUp = rangeMapVerticalUp;
+    }
+    /**
+     * Apply the input angle to its associated VRM model.
+     *
+     * @param yaw Rotation around Y axis, in degree
+     * @param pitch Rotation around X axis, in degree
+     */
+    applyYawPitch(yaw, pitch) {
+      if (pitch < 0) {
+        this.expressions.setValue("lookDown", 0);
+        this.expressions.setValue("lookUp", this.rangeMapVerticalUp.map(-pitch));
+      } else {
+        this.expressions.setValue("lookUp", 0);
+        this.expressions.setValue("lookDown", this.rangeMapVerticalDown.map(pitch));
+      }
+      if (yaw < 0) {
+        this.expressions.setValue("lookLeft", 0);
+        this.expressions.setValue("lookRight", this.rangeMapHorizontalOuter.map(-yaw));
+      } else {
+        this.expressions.setValue("lookRight", 0);
+        this.expressions.setValue("lookLeft", this.rangeMapHorizontalOuter.map(yaw));
+      }
+    }
+    /**
+     * @deprecated Use {@link applyYawPitch} instead.
+     */
+    lookAt(euler) {
+      console.warn("VRMLookAtBoneApplier: lookAt() is deprecated. use apply() instead.");
+      const yaw = MathUtils.RAD2DEG * euler.y;
+      const pitch = MathUtils.RAD2DEG * euler.x;
+      this.applyYawPitch(yaw, pitch);
+    }
+  };
+  VRMLookAtExpressionApplier2.type = "expression";
+  var RAD2DEG2 = 180 / Math.PI;
+  var _eulerA32 = /* @__PURE__ */ new Euler();
+  var VRMLookAtQuaternionProxy = class extends Object3D {
+    constructor(lookAt) {
+      super();
+      this.vrmLookAt = lookAt;
+      this.type = "VRMLookAtQuaternionProxy";
+      const prevRotationOnChangeCallback = this.rotation._onChangeCallback;
+      this.rotation._onChange(() => {
+        prevRotationOnChangeCallback();
+        this._applyToLookAt();
+      });
+      const prevQuaternionOnChangeCallback = this.quaternion._onChangeCallback;
+      this.quaternion._onChange(() => {
+        prevQuaternionOnChangeCallback();
+        this._applyToLookAt();
+      });
+    }
+    _applyToLookAt() {
+      _eulerA32.setFromQuaternion(this.quaternion, VRMLookAt2.EULER_ORDER);
+      this.vrmLookAt.yaw = RAD2DEG2 * _eulerA32.y;
+      this.vrmLookAt.pitch = RAD2DEG2 * _eulerA32.x;
+    }
+  };
+  function createVRMAnimationHumanoidTracks(vrmAnimation, humanoid, metaVersion) {
+    var _a, _b;
+    const translation = /* @__PURE__ */ new Map();
+    const rotation = /* @__PURE__ */ new Map();
+    for (const [name, origTrack] of vrmAnimation.humanoidTracks.rotation.entries()) {
+      const nodeName = (_a = humanoid.getNormalizedBoneNode(name)) == null ? void 0 : _a.name;
+      if (nodeName != null) {
+        const track = new QuaternionKeyframeTrack(
+          `${nodeName}.quaternion`,
+          origTrack.times,
+          origTrack.values.map((v, i) => metaVersion === "0" && i % 2 === 0 ? -v : v)
+        );
+        rotation.set(name, track);
+      }
+    }
+    for (const [name, origTrack] of vrmAnimation.humanoidTracks.translation.entries()) {
+      const nodeName = (_b = humanoid.getNormalizedBoneNode(name)) == null ? void 0 : _b.name;
+      if (nodeName != null) {
+        const animationY = vrmAnimation.restHipsPosition.y;
+        const humanoidY = humanoid.normalizedRestPose.hips.position[1];
+        const scale = humanoidY / animationY;
+        const track = origTrack.clone();
+        track.values = track.values.map((v, i) => (metaVersion === "0" && i % 3 !== 1 ? -v : v) * scale);
+        track.name = `${nodeName}.position`;
+        translation.set(name, track);
+      }
+    }
+    return { translation, rotation };
+  }
+  function createVRMAnimationExpressionTracks(vrmAnimation, expressionManager) {
+    const preset = /* @__PURE__ */ new Map();
+    const custom = /* @__PURE__ */ new Map();
+    for (const [name, origTrack] of vrmAnimation.expressionTracks.preset.entries()) {
+      const trackName = expressionManager.getExpressionTrackName(name);
+      if (trackName != null) {
+        const track = origTrack.clone();
+        track.name = trackName;
+        preset.set(name, track);
+      }
+    }
+    for (const [name, origTrack] of vrmAnimation.expressionTracks.custom.entries()) {
+      const trackName = expressionManager.getExpressionTrackName(name);
+      if (trackName != null) {
+        const track = origTrack.clone();
+        track.name = trackName;
+        custom.set(name, track);
+      }
+    }
+    return { preset, custom };
+  }
+  function createVRMAnimationLookAtTrack(vrmAnimation, trackName) {
+    if (vrmAnimation.lookAtTrack == null) {
+      return null;
+    }
+    const track = vrmAnimation.lookAtTrack.clone();
+    track.name = trackName;
+    return track;
+  }
+  function createVRMAnimationClip(vrmAnimation, vrm2) {
+    const tracks = [];
+    const humanoidTracks = createVRMAnimationHumanoidTracks(vrmAnimation, vrm2.humanoid, vrm2.meta.metaVersion);
+    tracks.push(...humanoidTracks.translation.values());
+    tracks.push(...humanoidTracks.rotation.values());
+    if (vrm2.expressionManager != null) {
+      const expressionTracks = createVRMAnimationExpressionTracks(vrmAnimation, vrm2.expressionManager);
+      tracks.push(...expressionTracks.preset.values());
+      tracks.push(...expressionTracks.custom.values());
+    }
+    if (vrm2.lookAt != null) {
+      let proxy = vrm2.scene.children.find((obj) => obj instanceof VRMLookAtQuaternionProxy);
+      if (proxy == null) {
+        console.warn(
+          "createVRMAnimationClip: VRMLookAtQuaternionProxy is not found. Creating a new one automatically. To suppress this warning, create a VRMLookAtQuaternionProxy manually"
+        );
+        proxy = new VRMLookAtQuaternionProxy(vrm2.lookAt);
+        proxy.name = "VRMLookAtQuaternionProxy";
+        vrm2.scene.add(proxy);
+      } else if (proxy.name === "") {
+        console.warn(
+          "createVRMAnimationClip: VRMLookAtQuaternionProxy is found but its name is not set. Setting the name automatically. To suppress this warning, set the name manually"
+        );
+        proxy.name = "VRMLookAtQuaternionProxy";
+      }
+      const track = createVRMAnimationLookAtTrack(vrmAnimation, `${proxy.name}.quaternion`);
+      if (track != null) {
+        tracks.push(track);
+      }
+    }
+    return new AnimationClip("Clip", vrmAnimation.duration, tracks);
+  }
+  var VRMAnimation = class {
+    constructor() {
+      this.duration = 0;
+      this.restHipsPosition = new Vector3();
+      this.humanoidTracks = {
+        translation: /* @__PURE__ */ new Map(),
+        rotation: /* @__PURE__ */ new Map()
+      };
+      this.expressionTracks = {
+        preset: /* @__PURE__ */ new Map(),
+        custom: /* @__PURE__ */ new Map()
+      };
+      this.lookAtTrack = null;
+    }
+  };
+  function arrayChunk(array, every) {
+    const N = array.length;
+    const ret = [];
+    let current = [];
+    let remaining = 0;
+    for (let i = 0; i < N; i++) {
+      const el = array[i];
+      if (remaining <= 0) {
+        remaining = every;
+        current = [];
+        ret.push(current);
+      }
+      current.push(el);
+      remaining--;
+    }
+    return ret;
+  }
+  var MAT4_IDENTITY = /* @__PURE__ */ new Matrix4();
+  var _v3A62 = /* @__PURE__ */ new Vector3();
+  var _quatA72 = /* @__PURE__ */ new Quaternion();
+  var _quatB42 = /* @__PURE__ */ new Quaternion();
+  var _quatC22 = /* @__PURE__ */ new Quaternion();
+  var POSSIBLE_SPEC_VERSIONS22 = /* @__PURE__ */ new Set(["1.0", "1.0-draft"]);
+  var vrmExpressionPresetNameSet = /* @__PURE__ */ new Set(Object.values(VRMExpressionPresetName2));
+  var VRMAnimationLoaderPlugin = class {
+    constructor(parser) {
+      this.parser = parser;
+    }
+    get name() {
+      return "VRMC_vrm_animation";
+    }
+    afterRoot(gltf) {
+      return __async8(this, null, function* () {
+        var _a, _b, _c;
+        const defGltf = gltf.parser.json;
+        const defExtensionsUsed = defGltf.extensionsUsed;
+        if (defExtensionsUsed == null || defExtensionsUsed.indexOf(this.name) == -1) {
+          return;
+        }
+        const defExtension = (_a = defGltf.extensions) == null ? void 0 : _a[this.name];
+        if (defExtension == null) {
+          return;
+        }
+        const specVersion = defExtension.specVersion;
+        if (specVersion == null) {
+          console.warn(
+            "VRMAnimationLoaderPlugin: specVersion of the VRMA is not defined. Consider updating the animation file. Assuming the spec version is 1.0."
+          );
+        } else {
+          if (!POSSIBLE_SPEC_VERSIONS22.has(specVersion)) {
+            console.warn(`VRMAnimationLoaderPlugin: Unknown VRMC_vrm_animation spec version: ${specVersion}`);
+            return;
+          }
+          if (specVersion === "1.0-draft") {
+            console.warn(
+              "VRMAnimationLoaderPlugin: Using a draft spec version: 1.0-draft. Some behaviors may be different. Consider updating the animation file."
+            );
+          }
+        }
+        const nodeMap = this._createNodeMap(defExtension);
+        const worldMatrixMap = yield this._createBoneWorldMatrixMap(gltf, defExtension);
+        const hipsNode = (_c = (_b = defExtension.humanoid) == null ? void 0 : _b.humanBones["hips"]) == null ? void 0 : _c.node;
+        const hips = hipsNode != null ? yield gltf.parser.getDependency("node", hipsNode) : null;
+        const restHipsPosition = new Vector3();
+        hips == null ? void 0 : hips.getWorldPosition(restHipsPosition);
+        if (restHipsPosition.y < 1e-3) {
+          console.warn(
+            "VRMAnimationLoaderPlugin: The loaded VRM Animation might violate the VRM T-pose (The y component of the rest hips position is approximately zero or below.)"
+          );
+        }
+        const clips = gltf.animations;
+        const animations = clips.map((clip, iAnimation) => {
+          const defAnimation = defGltf.animations[iAnimation];
+          const animation = this._parseAnimation(clip, defAnimation, nodeMap, worldMatrixMap);
+          animation.restHipsPosition = restHipsPosition;
+          return animation;
+        });
+        gltf.userData.vrmAnimations = animations;
+      });
+    }
+    _createNodeMap(defExtension) {
+      var _a, _b, _c, _d, _e;
+      const humanoidIndexToName = /* @__PURE__ */ new Map();
+      const expressionsIndexToName = /* @__PURE__ */ new Map();
+      const humanBones = (_a = defExtension.humanoid) == null ? void 0 : _a.humanBones;
+      if (humanBones) {
+        Object.entries(humanBones).forEach(([name, bone]) => {
+          const node = bone == null ? void 0 : bone.node;
+          if (node != null) {
+            humanoidIndexToName.set(node, name);
+          }
+        });
+      }
+      const preset = (_b = defExtension.expressions) == null ? void 0 : _b.preset;
+      if (preset) {
+        Object.entries(preset).forEach(([name, expression]) => {
+          const node = expression == null ? void 0 : expression.node;
+          if (node != null) {
+            expressionsIndexToName.set(node, name);
+          }
+        });
+      }
+      const custom = (_c = defExtension.expressions) == null ? void 0 : _c.custom;
+      if (custom) {
+        Object.entries(custom).forEach(([name, expression]) => {
+          const { node } = expression;
+          expressionsIndexToName.set(node, name);
+        });
+      }
+      const lookAtIndex = (_e = (_d = defExtension.lookAt) == null ? void 0 : _d.node) != null ? _e : null;
+      return { humanoidIndexToName, expressionsIndexToName, lookAtIndex };
+    }
+    _createBoneWorldMatrixMap(gltf, defExtension) {
+      return __async8(this, null, function* () {
+        var _a, _b;
+        gltf.scene.updateWorldMatrix(false, true);
+        const threeNodes = yield gltf.parser.getDependencies("node");
+        const worldMatrixMap = /* @__PURE__ */ new Map();
+        if (defExtension.humanoid == null) {
+          return worldMatrixMap;
+        }
+        for (const [boneName, humanBone] of Object.entries(defExtension.humanoid.humanBones)) {
+          const node = humanBone == null ? void 0 : humanBone.node;
+          if (node != null) {
+            const threeNode = threeNodes[node];
+            worldMatrixMap.set(boneName, threeNode.matrixWorld);
+            if (boneName === "hips") {
+              worldMatrixMap.set("hipsParent", (_b = (_a = threeNode.parent) == null ? void 0 : _a.matrixWorld) != null ? _b : MAT4_IDENTITY);
+            }
+          }
+        }
+        return worldMatrixMap;
+      });
+    }
+    _parseAnimation(animationClip, defAnimation, nodeMap, worldMatrixMap) {
+      const tracks = animationClip.tracks;
+      const defChannels = defAnimation.channels;
+      const result = new VRMAnimation();
+      result.duration = animationClip.duration;
+      defChannels.forEach((channel, iChannel) => {
+        const { node, path } = channel.target;
+        const origTrack = tracks[iChannel];
+        if (node == null) {
+          return;
+        }
+        const boneName = nodeMap.humanoidIndexToName.get(node);
+        if (boneName != null) {
+          let parentBoneName = VRMHumanBoneParentMap2[boneName];
+          while (parentBoneName != null && worldMatrixMap.get(parentBoneName) == null) {
+            parentBoneName = VRMHumanBoneParentMap2[parentBoneName];
+          }
+          if (parentBoneName == null) {
+            parentBoneName = "hipsParent";
+          }
+          if (path === "translation") {
+            if (boneName !== "hips") {
+              console.warn(
+                `The loading animation contains a translation track for ${boneName}, which is not permitted in the VRMC_vrm_animation spec. ignoring the track`
+              );
+            } else {
+              const hipsParentWorldMatrix = worldMatrixMap.get("hipsParent");
+              const trackValues = arrayChunk(origTrack.values, 3).flatMap(
+                (v) => _v3A62.fromArray(v).applyMatrix4(hipsParentWorldMatrix).toArray()
+              );
+              const track = origTrack.clone();
+              track.values = new Float32Array(trackValues);
+              result.humanoidTracks.translation.set(boneName, track);
+            }
+          } else if (path === "rotation") {
+            const worldMatrix = worldMatrixMap.get(boneName);
+            const parentWorldMatrix = worldMatrixMap.get(parentBoneName);
+            worldMatrix.decompose(_v3A62, _quatA72, _v3A62);
+            _quatA72.invert();
+            parentWorldMatrix.decompose(_v3A62, _quatB42, _v3A62);
+            const trackValues = arrayChunk(origTrack.values, 4).flatMap(
+              (q2) => _quatC22.fromArray(q2).premultiply(_quatB42).multiply(_quatA72).toArray()
+            );
+            const track = origTrack.clone();
+            track.values = new Float32Array(trackValues);
+            result.humanoidTracks.rotation.set(boneName, track);
+          } else {
+            throw new Error(`Invalid path "${path}"`);
+          }
+          return;
+        }
+        const expressionName = nodeMap.expressionsIndexToName.get(node);
+        if (expressionName != null) {
+          if (path === "translation") {
+            const times = origTrack.times;
+            const values = new Float32Array(origTrack.values.length / 3);
+            for (let i = 0; i < values.length; i++) {
+              values[i] = origTrack.values[3 * i];
+            }
+            const newTrack = new NumberKeyframeTrack(`${expressionName}.weight`, times, values);
+            if (vrmExpressionPresetNameSet.has(expressionName)) {
+              result.expressionTracks.preset.set(expressionName, newTrack);
+            } else {
+              result.expressionTracks.custom.set(expressionName, newTrack);
+            }
+          } else {
+            throw new Error(`Invalid path "${path}"`);
+          }
+          return;
+        }
+        if (node === nodeMap.lookAtIndex) {
+          if (path === "rotation") {
+            result.lookAtTrack = origTrack;
+          } else {
+            throw new Error(`Invalid path "${path}"`);
+          }
+        }
+      });
+      return result;
+    }
+  };
+
   // app-src/app.js
   window.createImageBitmap = void 0;
   var canvas = document.getElementById("view");
@@ -30895,7 +33747,13 @@ void main() {
   scene.add(grid);
   var loader = new GLTFLoader();
   loader.register((parser) => new VRMLoaderPlugin(parser));
+  var animLoader = new GLTFLoader();
+  animLoader.register((parser) => new VRMAnimationLoaderPlugin(parser));
   var vrm = null;
+  var mixer = null;
+  var action = null;
+  var motionName = "";
+  var motionPlaying = false;
   var center = new Vector3(0, 0.85, 0);
   var radius = 1;
   var modelSize = new Vector3(1, 1.8, 1);
@@ -30972,6 +33830,7 @@ void main() {
         return;
       }
       if (vrm) {
+        stopMotion();
         scene.remove(vrm.scene);
         VRMUtils.deepDispose(vrm.scene);
       }
@@ -31014,6 +33873,68 @@ void main() {
       setStatus("URL\u304B\u3089\u8AAD\u307F\u8FBC\u3081\u307E\u305B\u3093\u3067\u3057\u305F: " + (err && err.message ? err.message : err), true);
     }
   }
+  function stopMotion() {
+    if (action) {
+      action.stop();
+      action = null;
+    }
+    if (mixer) {
+      mixer.uncacheRoot(mixer.getRoot());
+      mixer = null;
+    }
+    motionName = "";
+    motionPlaying = false;
+    const pb = document.getElementById("playBtn");
+    if (pb) pb.textContent = "\u4E00\u6642\u505C\u6B62";
+  }
+  async function playMotionFromBuffer(buf, name) {
+    if (!vrm) {
+      setStatus("\u5148\u306B .vrm \u30D5\u30A1\u30A4\u30EB\u3092\u958B\u3044\u3066\u304F\u3060\u3055\u3044\u3002", true);
+      return;
+    }
+    try {
+      setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u8AAD\u307F\u8FBC\u307F\u4E2D\u2026 " + name);
+      const gltf = await animLoader.parseAsync(buf, "");
+      const anims = gltf.userData.vrmAnimations;
+      if (!anims || !anims.length) {
+        setStatus("VRMA\u3068\u3057\u3066\u8AAD\u307F\u8FBC\u3081\u307E\u305B\u3093\u3067\u3057\u305F\uFF08\u30E2\u30FC\u30B7\u30E7\u30F3\u60C5\u5831\u304C\u3042\u308A\u307E\u305B\u3093\uFF09\u3002", true);
+        return;
+      }
+      stopMotion();
+      const clip = createVRMAnimationClip(anims[0], vrm);
+      mixer = new AnimationMixer(vrm.scene);
+      action = mixer.clipAction(clip);
+      action.setLoop(LoopRepeat);
+      action.play();
+      motionName = name;
+      motionPlaying = true;
+      setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u518D\u751F\u4E2D: " + name + "\uFF08" + clip.duration.toFixed(1) + "\u79D2\u30EB\u30FC\u30D7\uFF09");
+    } catch (err) {
+      console.error(err);
+      setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u3092\u8AAD\u307F\u8FBC\u3081\u307E\u305B\u3093\u3067\u3057\u305F: " + (err && err.message ? err.message : err), true);
+    }
+  }
+  async function playMotionFile(file) {
+    if (!file) return;
+    try {
+      const buf = await file.arrayBuffer();
+      await playMotionFromBuffer(buf, file.name);
+    } catch (err) {
+      console.error(err);
+      setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u30D5\u30A1\u30A4\u30EB\u3092\u958B\u3051\u307E\u305B\u3093\u3067\u3057\u305F: " + (err && err.message ? err.message : err), true);
+    }
+  }
+  async function playMotionUrl(url, label) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const buf = await res.arrayBuffer();
+      await playMotionFromBuffer(buf, label || url.split("/").pop());
+    } catch (err) {
+      console.error(err);
+      setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u3092\u53D6\u5F97\u3067\u304D\u307E\u305B\u3093\u3067\u3057\u305F: " + (err && err.message ? err.message : err), true);
+    }
+  }
   var fileInput = document.getElementById("fileInput");
   document.getElementById("openBtn").onclick = () => fileInput.click();
   fileInput.onchange = () => {
@@ -31045,6 +33966,29 @@ void main() {
     controls.autoRotate = !controls.autoRotate;
     e.target.textContent = controls.autoRotate ? "\u81EA\u52D5\u56DE\u8EE2\u3092\u6B62\u3081\u308B" : "\u81EA\u52D5\u56DE\u8EE2";
   };
+  var motionInput = document.getElementById("motionInput");
+  document.getElementById("motionBtn").onclick = () => motionInput.click();
+  motionInput.onchange = () => {
+    playMotionFile(motionInput.files[0]);
+    motionInput.value = "";
+  };
+  document.getElementById("playBtn").onclick = (e) => {
+    if (!action) {
+      setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u304C\u8AAD\u307F\u8FBC\u307E\u308C\u3066\u3044\u307E\u305B\u3093\u3002", true);
+      return;
+    }
+    motionPlaying = !motionPlaying;
+    action.paused = !motionPlaying;
+    e.target.textContent = motionPlaying ? "\u4E00\u6642\u505C\u6B62" : "\u518D\u751F";
+  };
+  document.getElementById("stopBtn").onclick = () => {
+    if (!vrm) return;
+    stopMotion();
+    setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u3092\u6B62\u3081\u307E\u3057\u305F\u3002");
+  };
+  for (const b of document.querySelectorAll("[data-motion]")) {
+    b.onclick = () => playMotionUrl(b.getAttribute("data-motion"), b.textContent);
+  }
   function resize() {
     const w = innerWidth, h = innerHeight;
     renderer.setSize(w, h, false);
@@ -31058,12 +34002,21 @@ void main() {
   var clock = new Clock();
   renderer.setAnimationLoop(() => {
     const dt = clock.getDelta();
+    if (mixer && motionPlaying) mixer.update(dt);
     if (vrm) vrm.update(dt);
     controls.update();
     renderer.render(scene, camera);
   });
   var q = new URLSearchParams(location.search);
   if (q.get("url")) loadUrl(q.get("url"));
+  if (q.get("motion")) {
+    const t = setInterval(() => {
+      if (vrm) {
+        playMotionUrl(q.get("motion"), q.get("motion").split("/").pop());
+        clearInterval(t);
+      }
+    }, 300);
+  }
   if (q.get("arms") === "down") {
     const t = setInterval(() => {
       if (vrm) {
@@ -31140,6 +34093,26 @@ three/build/three.module.js:
    *
    * Copyright (c) 2019-2024 pixiv Inc.
    * @pixiv/three-vrm-springbone is distributed under MIT License
+   * https://github.com/pixiv/three-vrm/blob/release/LICENSE
+   *)
+
+@pixiv/three-vrm-animation/lib/three-vrm-animation.module.js:
+  (*!
+   * @pixiv/three-vrm-animation v3.5.5
+   * The implementation of VRM Animation
+   *
+   * Copyright (c) 2019-2026 pixiv Inc.
+   * @pixiv/three-vrm-animation is distributed under MIT License
+   * https://github.com/pixiv/three-vrm/blob/release/LICENSE
+   *)
+
+@pixiv/three-vrm-animation/lib/three-vrm-animation.module.js:
+  (*!
+   * @pixiv/three-vrm-core v3.5.5
+   * The implementation of core features of VRM, for @pixiv/three-vrm
+   *
+   * Copyright (c) 2019-2026 pixiv Inc.
+   * @pixiv/three-vrm-core is distributed under MIT License
    * https://github.com/pixiv/three-vrm/blob/release/LICENSE
    *)
 */
