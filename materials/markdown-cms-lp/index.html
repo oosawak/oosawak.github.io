@@ -702,7 +702,10 @@
   }
   var saved = null;
   try{ saved = localStorage.getItem(storeKey); }catch(e){}
-  var initial = (saved === "ja" || saved === "en") ? saved
+  var param = null;
+  try{ param = new URLSearchParams(location.search).get("lang"); }catch(e){}
+  var initial = (param === "ja" || param === "en") ? param
+    : (saved === "ja" || saved === "en") ? saved
     : (((navigator.language || "ja").toLowerCase().indexOf("ja") === 0) ? "ja" : "en");
   apply(initial);
   [].forEach.call(document.querySelectorAll("[data-setlang]"), function(b){
