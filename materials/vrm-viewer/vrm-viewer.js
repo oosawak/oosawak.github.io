@@ -33764,9 +33764,21 @@ void main() {
     const dW = modelSize.x / 2 / (t * camera.aspect);
     return Math.max(dH, dW) * 1.28;
   }
+  var loadingEl = document.getElementById("loading");
+  var loadingTextEl = document.getElementById("loadingText");
+  function setLoading(on, label) {
+    if (on) {
+      if (label) loadingTextEl.textContent = label;
+      loadingEl.classList.add("on");
+    } else {
+      loadingEl.classList.remove("on");
+    }
+  }
   function setStatus(msg, isError) {
     statusEl.textContent = msg;
     statusEl.className = isError ? "error" : "";
+    if (msg.includes("\u8AAD\u307F\u8FBC\u307F\u4E2D")) setLoading(true, msg);
+    else setLoading(false);
   }
   function frameTarget() {
     return new Vector3(center.x, center.y + modelSize.y * 0.07, center.z);
@@ -33931,6 +33943,7 @@ void main() {
   }
   async function loadUrl(url) {
     try {
+      setStatus("\u8AAD\u307F\u8FBC\u307F\u4E2D\u2026 " + url.split("/").pop());
       const res = await fetch(url);
       if (!res.ok) throw new Error("HTTP " + res.status);
       const buf = await res.arrayBuffer();
@@ -33998,6 +34011,7 @@ void main() {
   }
   async function playMotionUrl(url, label, once) {
     try {
+      setStatus("\u30E2\u30FC\u30B7\u30E7\u30F3\u8AAD\u307F\u8FBC\u307F\u4E2D\u2026 " + (label || url.split("/").pop()));
       const res = await fetch(url);
       if (!res.ok) throw new Error("HTTP " + res.status);
       const buf = await res.arrayBuffer();
