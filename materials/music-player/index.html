@@ -60,8 +60,17 @@
 
 <div class="view" id="viewList">
   <h1>音楽データプレイヤー</h1>
-  <div class="sub">小さい曲データを受け取って鳴らすプレイヤーです。URL で届いた曲は、このブラウザの中に保存されます。</div>
+  <div class="sub">小さい曲データを受け取って鳴らすプレイヤーです。URL で届いた曲は、このブラウザの中に保存されます。各曲の「リンク」から、その曲のデータ入り URL が作れます。</div>
   <div id="songList"></div>
+  <div id="linkBox" class="hidden" style="background:rgba(13,20,42,.85);border:1px solid #2b3a63;border-radius:14px;padding:14px 16px;margin:14px 0;">
+    <div id="linkTitle" style="font-size:14px;letter-spacing:.06em;margin-bottom:8px;"></div>
+    <a id="shareUrl" href="#" style="font-size:11px;word-break:break-all;line-height:1.7;"></a>
+    <div style="margin-top:10px;display:flex;gap:8px;">
+      <button id="copyBtn">コピー</button>
+      <button id="linkClose" class="del">閉じる</button>
+    </div>
+    <div id="copyMsg" style="font-size:11px;color:#93a3c8;margin-top:8px;min-height:16px;"></div>
+  </div>
   <div class="empty hidden" id="emptyMsg">まだ曲がありません。曲データの URL（#m= つき）を開くと、ここに貯まっていきます。</div>
   <div class="foot">
     曲データは Markdown や JSON で書けます（ステップ形式／Arcadia の生成レシピ）。<br>
@@ -170,6 +179,9 @@ function renderList() {
     const play = document.createElement("button");
     play.textContent = "再生";
     play.onclick = () => openPlay(entry);
+    const link = document.createElement("button");
+    link.textContent = "リンク";
+    link.onclick = () => makeLink(entry);
     const del = document.createElement("button");
     del.className = "del"; del.textContent = "削除";
     del.onclick = () => {
@@ -182,10 +194,57 @@ function renderList() {
       }
       saveLibrary(); renderList();
     };
-    card.appendChild(grow); card.appendChild(play); card.appendChild(del);
+    card.appendChild(grow); card.appendChild(play); card.appendChild(link); card.appendChild(del);
     box.appendChild(card);
   });
 }
+
+/* ---------------- 曲データ入りリンクを作る ---------------- */
+
+async function encodePayload(text) {
+  const bytes = new TextEncoder().encode(text);
+  let out = bytes;
+  try {
+    const cs = new CompressionStream("gzip");
+    out = new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(cs)).arrayBuffer());
+  } catch (e) { /* 圧縮できない環境では、そのまま載せる */ }
+  let bin = "";
+  for (let i = 0; i < out.length; i++) bin += String.fromCharCode(out[i]);
+  return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+let shareURL = "";
+async function makeLink(entry) {
+  const payload = await encodePayload(entry.text);
+  shareURL = location.origin + location.pathname + "#m=" + payload;
+  document.getElementById("linkTitle").textContent = "「" + entry.title + "」のリンク（" + shareURL.length + "文字）";
+  const a = document.getElementById("shareUrl");
+  a.href = shareURL;
+  a.textContent = shareURL;
+  document.getElementById("copyMsg").textContent = "";
+  const box = document.getElementById("linkBox");
+  box.classList.remove("hidden");
+  box.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+document.getElementById("copyBtn").onclick = async function () {
+  const msg = document.getElementById("copyMsg");
+  try {
+    await navigator.clipboard.writeText(shareURL);
+    msg.textContent = "コピーしました。そのまま貼って送れます。";
+  } catch (e) {
+    const ta = document.createElement("textarea");
+    ta.value = shareURL;
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); msg.textContent = "コピーしました。そのまま貼って送れます。"; }
+    catch (e2) { msg.textContent = "コピーできませんでした。上のリンクを長押しでコピーしてください。"; }
+    ta.remove();
+  }
+};
+document.getElementById("linkClose").onclick = function () {
+  document.getElementById("linkBox").classList.add("hidden");
+};
 
 /* ---------------- 再生画面 ---------------- */
 
