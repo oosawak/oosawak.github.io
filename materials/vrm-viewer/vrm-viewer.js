@@ -33996,12 +33996,16 @@ void main() {
   }
   function resize() {
     const stage = document.getElementById("stage");
-    const w = stage.clientWidth || innerWidth, h = stage.clientHeight || innerHeight;
+    const w = stage && stage.clientWidth || innerWidth, h = stage && stage.clientHeight || innerHeight;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
   }
   addEventListener("resize", resize);
+  if (window.ResizeObserver) {
+    const st = document.getElementById("stage");
+    if (st) new ResizeObserver(resize).observe(st);
+  }
   resize();
   camera.position.set(0, 1, 3.2);
   controls.target.copy(center);
