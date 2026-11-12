@@ -240,6 +240,12 @@
   .final .sub{margin:18px 0 0;font-size:13px;color:#93b3a7}
   footer{padding:30px 0 44px;text-align:center}
   footer p{font-size:12.5px;color:var(--muted);margin:0;line-height:1.9}
+
+  /* language switch */
+  .topbar{display:flex;justify-content:flex-end;margin-bottom:20px}
+  .lang-switch{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;box-shadow:var(--shadow)}
+  .lang-switch button{appearance:none;border:0;background:transparent;font:inherit;font-size:13px;font-weight:700;color:var(--ink-2);padding:6px 15px;border-radius:999px;cursor:pointer;line-height:1.4}
+  .lang-switch button[aria-pressed="true"]{background:var(--teal);color:#fff}
 </style>
 </head>
 <body>
@@ -247,47 +253,48 @@
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="wrap">
-    <span class="hero-eyebrow">お店と小さな事業のための、ホームページ＋お手伝いパッケージ</span>
-    <h1>ホームページは、<br><span class="hl">文章を書くだけ</span>。<br>あとの面倒は、おまかせください。</h1>
-    <p class="hero-lead">
+    <div class="topbar"><div class="lang-switch" role="group" aria-label="言語 / Language"><button type="button" data-setlang="ja" aria-pressed="true">日本語</button><button type="button" data-setlang="en" aria-pressed="false">English</button></div></div>
+    <span class="hero-eyebrow" data-i18n="eyebrow">お店と小さな事業のための、ホームページ＋お手伝いパッケージ</span>
+    <h1 data-i18n="h1">ホームページは、<br><span class="hl">文章を書くだけ</span>。<br>あとの面倒は、おまかせください。</h1>
+    <p class="hero-lead" data-i18n="lead">
       お知らせの文章と写真を用意するだけで、ホームページが新しくなります。
       さらに、<strong>安全の見守り</strong>と<strong>領収書や記録の整理</strong>といった毎日のこまごました仕事は、
       AIの<strong>ミューズさん</strong>がお手伝い。ホームページを「作って終わり」にしないためのパッケージです。
     </p>
     <div class="hero-points">
-      <span>むずかしい操作はありません</span>
-      <span>大切な変更は、確認してから</span>
-      <span>やったことが記録に残ります</span>
+      <span data-i18n="hp1">むずかしい操作はありません</span>
+      <span data-i18n="hp2">大切な変更は、確認してから</span>
+      <span data-i18n="hp3">やったことが記録に残ります</span>
     </div>
     <div class="hero-cta">
-      <span class="btn-prep" role="status">● 現在、受付の準備中です</span>
-      <a class="btn-link" href="https://oosawak.github.io/materials/cve-watch/" target="_blank" rel="noopener">見守りの様子を見る →</a>
+      <span class="btn-prep" role="status" data-i18n="prep">● 現在、受付の準備中です</span>
+      <a class="btn-link" data-i18n="watchbtn" href="https://oosawak.github.io/materials/cve-watch/" target="_blank" rel="noopener">見守りの様子を見る →</a>
     </div>
 
     <figure class="hero-fig">
-      <img src="assets/hero-flow.webp" alt="お店の人が原稿と写真を渡すと、タブレットとスマートフォンにホームページができあがる様子のイラスト" width="1920" height="1280" />
-      <figcaption>用意するのは、文章と写真だけ。ページの形に整えるのは、こちらで引き受けます。</figcaption>
+      <img data-i18n-alt="alt-hero" src="assets/hero-flow.webp" alt="お店の人が原稿と写真を渡すと、タブレットとスマートフォンにホームページができあがる様子のイラスト" width="1920" height="1280" />
+      <figcaption data-i18n="cap-hero">用意するのは、文章と写真だけ。ページの形に整えるのは、こちらで引き受けます。</figcaption>
     </figure>
 
-    <div class="how-flow" aria-label="ホームページができるまで">
-      <h2>ホームページができるまで — 3つのステップ</h2>
+    <div class="how-flow" data-i18n-aria="aria-flow" aria-label="ホームページができるまで">
+      <h2 data-i18n="flow-h">ホームページができるまで — 3つのステップ</h2>
       <div class="steps">
         <div class="step">
           <span class="n">1</span>
-          <strong>文章と写真を用意する</strong>
-          <p>お知らせやメニューなど、伝えたいことをいつもの言葉で書くだけです。</p>
+          <strong data-i18n="s1t">文章と写真を用意する</strong>
+          <p data-i18n="s1p">お知らせやメニューなど、伝えたいことをいつもの言葉で書くだけです。</p>
         </div>
         <span class="step-arrow" aria-hidden="true">→</span>
         <div class="step">
           <span class="n">2</span>
-          <strong>そのまま渡す</strong>
-          <p>特別な画面の使い方を覚える必要はありません。原稿がそのまま材料になります。</p>
+          <strong data-i18n="s2t">そのまま渡す</strong>
+          <p data-i18n="s2p">特別な画面の使い方を覚える必要はありません。原稿がそのまま材料になります。</p>
         </div>
         <span class="step-arrow" aria-hidden="true">→</span>
         <div class="step">
           <span class="n">3</span>
-          <strong>ページが新しくなる</strong>
-          <p>きれいに整ったページが公開されます。スマホでも見やすい形です。</p>
+          <strong data-i18n="s3t">ページが新しくなる</strong>
+          <p data-i18n="s3p">きれいに整ったページが公開されます。スマホでも見やすい形です。</p>
         </div>
       </div>
     </div>
@@ -298,131 +305,131 @@
 
   <!-- ============ WORRIES ============ -->
   <section aria-labelledby="worry-h">
-    <p class="sec-label">こんなお困りごと、ありませんか</p>
-    <h2 class="sec-title" id="worry-h">日々の仕事の合間に、<br>後回しになってしまうこと。</h2>
-    <p class="sec-lead">本業が忙しいほど、ホームページや事務仕事は後回しになりがちです。放っておくと困るのに、手をつける時間がない — そんな声に応えるためのパッケージです。</p>
+    <p class="sec-label" data-i18n="wl">こんなお困りごと、ありませんか</p>
+    <h2 class="sec-title" id="worry-h" data-i18n="worry-h">日々の仕事の合間に、<br>後回しになってしまうこと。</h2>
+    <p class="sec-lead" data-i18n="worry-lead">本業が忙しいほど、ホームページや事務仕事は後回しになりがちです。放っておくと困るのに、手をつける時間がない — そんな声に応えるためのパッケージです。</p>
 
     <figure class="illo">
-      <img src="assets/worries.webp" alt="古くなったホームページと山積みの領収書を前に、頭を抱えるお店の人のイラスト" width="1920" height="1280" loading="lazy" />
-      <figcaption>「やらなきゃ」と思いながら、毎日が過ぎていく — その状態から変えていきます。</figcaption>
+      <img data-i18n-alt="alt-worry" src="assets/worries.webp" alt="古くなったホームページと山積みの領収書を前に、頭を抱えるお店の人のイラスト" width="1920" height="1280" loading="lazy" />
+      <figcaption data-i18n="cap-worry">「やらなきゃ」と思いながら、毎日が過ぎていく — その状態から変えていきます。</figcaption>
     </figure>
 
     <div class="worries">
       <article class="worry">
-        <p class="face">困りごと 1</p>
-        <h3>ホームページが作れない・直せない</h3>
-        <p>作りたいけれど何から始めればいいか分からない。作ったけれど、直し方が分からず情報が古いままになっている。</p>
+        <p class="face" data-i18n="worry-n1">困りごと 1</p>
+        <h3 data-i18n="w1t">ホームページが作れない・直せない</h3>
+        <p data-i18n="w1p">作りたいけれど何から始めればいいか分からない。作ったけれど、直し方が分からず情報が古いままになっている。</p>
       </article>
       <article class="worry">
-        <p class="face">困りごと 2</p>
-        <h3>領収書や申告の準備が溜まっていく</h3>
-        <p>領収書や日々の記録が少しずつ散らかって、申告の時期にまとめて慌てる。毎年その繰り返しになっている。</p>
+        <p class="face" data-i18n="worry-n2">困りごと 2</p>
+        <h3 data-i18n="w2t">領収書や申告の準備が溜まっていく</h3>
+        <p data-i18n="w2p">領収書や日々の記録が少しずつ散らかって、申告の時期にまとめて慌てる。毎年その繰り返しになっている。</p>
       </article>
       <article class="worry">
-        <p class="face">困りごと 3</p>
-        <h3>安全のニュースを見ると不安になる</h3>
-        <p>「情報が漏れた」「サイトが書き換えられた」というニュースを見るたび、自分のところは大丈夫か心配になる。でも、何を確認すればいいか分からない。</p>
+        <p class="face" data-i18n="worry-n3">困りごと 3</p>
+        <h3 data-i18n="w3t">安全のニュースを見ると不安になる</h3>
+        <p data-i18n="w3p">「情報が漏れた」「サイトが書き換えられた」というニュースを見るたび、自分のところは大丈夫か心配になる。でも、何を確認すればいいか分からない。</p>
       </article>
     </div>
   </section>
 
   <!-- ============ HOW IT HELPS ============ -->
   <section aria-labelledby="help-h">
-    <p class="sec-label">ホームページの仕組み</p>
-    <h2 class="sec-title" id="help-h">書くだけで、ページになる。<br>しかも、壊れにくい作りです。</h2>
-    <p class="sec-lead">このホームページは、原稿を渡すと出来上がったページを置いておく作りになっています。むずかしい仕組みの話は抜きにして、使う側にとっての良さを3つだけ紹介します。</p>
+    <p class="sec-label" data-i18n="hl-label">ホームページの仕組み</p>
+    <h2 class="sec-title" id="help-h" data-i18n="help-h">書くだけで、ページになる。<br>しかも、壊れにくい作りです。</h2>
+    <p class="sec-lead" data-i18n="help-lead">このホームページは、原稿を渡すと出来上がったページを置いておく作りになっています。むずかしい仕組みの話は抜きにして、使う側にとっての良さを3つだけ紹介します。</p>
 
     <div class="points">
       <article class="point">
         <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
-        <h3>文章を書くだけで更新できる</h3>
-        <p>お知らせもメニューも、いつもの言葉で書いた原稿がそのままページになります。原稿は手元に残るので、あとから見返すこともできます。</p>
+        <h3 data-i18n="how1t">文章を書くだけで更新できる</h3>
+        <p data-i18n="how1p">お知らせもメニューも、いつもの言葉で書いた原稿がそのままページになります。原稿は手元に残るので、あとから見返すこともできます。</p>
       </article>
       <article class="point">
         <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>壊れにくく、狙われにくい</h3>
-        <p>ページは出来上がった形で置いておくだけで、裏側でプログラムを動かし続けません。動く部分が少ない分、壊れにくく、悪い人に狙われる入口も少なくなります。</p>
+        <h3 data-i18n="how2t">壊れにくく、狙われにくい</h3>
+        <p data-i18n="how2p">ページは出来上がった形で置いておくだけで、裏側でプログラムを動かし続けません。動く部分が少ない分、壊れにくく、悪い人に狙われる入口も少なくなります。</p>
       </article>
       <article class="point">
         <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5z"/></svg></div>
-        <h3>開くのが速く、読みやすい</h3>
-        <p>出来上がったページをそのまま届けるので、表示は軽快です。お客さんがスマホで開いたときも、待たせません。</p>
+        <h3 data-i18n="how3t">開くのが速く、読みやすい</h3>
+        <p data-i18n="how3p">出来上がったページをそのまま届けるので、表示は軽快です。お客さんがスマホで開いたときも、待たせません。</p>
       </article>
     </div>
   </section>
 
   <!-- ============ MUSE ============ -->
   <section aria-labelledby="muse-h">
-    <p class="sec-label">毎日のお手伝い</p>
-    <h2 class="sec-title" id="muse-h">お手伝いは、ミューズさん。</h2>
-    <p class="sec-lead">ホームページは、作ったあとの毎日が本番です。その毎日の見守りと整理を担うのが、AIのミューズさんです。といっても、勝手に物事を進めることはありません。大切な変更は、必ず人の確認を挟みます。</p>
+    <p class="sec-label" data-i18n="mu-label">毎日のお手伝い</p>
+    <h2 class="sec-title" id="muse-h" data-i18n="muse-h">お手伝いは、ミューズさん。</h2>
+    <p class="sec-lead" data-i18n="muse-lead">ホームページは、作ったあとの毎日が本番です。その毎日の見守りと整理を担うのが、AIのミューズさんです。といっても、勝手に物事を進めることはありません。大切な変更は、必ず人の確認を挟みます。</p>
 
     <figure class="illo muse-fig">
-      <img src="assets/muse-watch.webp" alt="雪景色の見える窓辺で、チェックリストと虫めがねを手に毎朝の見守りをする、冬毛でもふもふのミューズさんのイラスト" width="1920" height="1280" loading="lazy" />
+      <img data-i18n-alt="alt-muse" src="assets/muse-watch.webp" alt="雪景色の見える窓辺で、チェックリストと虫めがねを手に毎朝の見守りをする、冬毛でもふもふのミューズさんのイラスト" width="1920" height="1280" loading="lazy" />
     </figure>
     <div class="muse-card">
       <div class="muse-head">
-        <h3>ミューズさん <small>AIのお手伝い担当 — 安全の見守り ／ 領収書と記録の整理</small></h3>
-        <p>毎朝の確認、散らかりがちな記録の整理、やったことの記録づけ。地味だけれど、止まると困る仕事を、毎日同じ手順で続けます。</p>
+        <h3 data-i18n="muse-name">ミューズさん <small>AIのお手伝い担当 — 安全の見守り ／ 領収書と記録の整理</small></h3>
+        <p data-i18n="muse-p">毎朝の確認、散らかりがちな記録の整理、やったことの記録づけ。地味だけれど、止まると困る仕事を、毎日同じ手順で続けます。</p>
       </div>
       <div class="muse-jobs">
         <div class="job">
-          <span class="job-badge sec">お手伝い 1 — 安全の見守り</span>
-          <h4>関係あるお知らせだけを、毎朝お届け</h4>
-          <p>世の中には、パソコンやホームページの「危ないところ」のお知らせが毎日のように出ています。ミューズさんは、その中から「あなたのところに関係あるもの」だけを選んでお知らせします。直しが必要なときも、確認をいただいてから進めます。</p>
+          <span class="job-badge sec" data-i18n="job1-badge">お手伝い 1 — 安全の見守り</span>
+          <h4 data-i18n="job1-h">関係あるお知らせだけを、毎朝お届け</h4>
+          <p data-i18n="job1-p">世の中には、パソコンやホームページの「危ないところ」のお知らせが毎日のように出ています。ミューズさんは、その中から「あなたのところに関係あるもの」だけを選んでお知らせします。直しが必要なときも、確認をいただいてから進めます。</p>
         </div>
         <div class="job">
-          <span class="job-badge acc">お手伝い 2 — 領収書と記録の整理</span>
-          <h4>申告の時期に、慌てないために</h4>
-          <p>領収書や日々の記録を、普段から少しずつ仕分けして整えておきます。申告の直前にまとめて苦労するのではなく、毎日の小さな整理で本番を軽くします。</p>
+          <span class="job-badge acc" data-i18n="job2-badge">お手伝い 2 — 領収書と記録の整理</span>
+          <h4 data-i18n="job2-h">申告の時期に、慌てないために</h4>
+          <p data-i18n="job2-p">領収書や日々の記録を、普段から少しずつ仕分けして整えておきます。申告の直前にまとめて苦労するのではなく、毎日の小さな整理で本番を軽くします。</p>
         </div>
       </div>
     </div>
 
     <figure class="illo job-fig">
-      <img src="assets/receipts-calm.webp" alt="領収書や記録をファイルに仕分けして整理するお店の人と、もふもふの小さなお手伝いさんのイラスト" width="1920" height="1280" loading="lazy" />
-      <figcaption>領収書の整理も、普段から少しずつ。申告の時期の慌ただしさを減らします。</figcaption>
+      <img data-i18n-alt="alt-receipts" src="assets/receipts-calm.webp" alt="領収書や記録をファイルに仕分けして整理するお店の人と、もふもふの小さなお手伝いさんのイラスト" width="1920" height="1280" loading="lazy" />
+      <figcaption data-i18n="cap-receipts">領収書の整理も、普段から少しずつ。申告の時期の慌ただしさを減らします。</figcaption>
     </figure>
   </section>
 
   <!-- ============ WATCH FLOW ============ -->
   <section aria-labelledby="watch-h">
-    <p class="sec-label">安全の見守り</p>
-    <h2 class="sec-title" id="watch-h">見守りは、この流れで回ります</h2>
-    <p class="sec-lead">「ニュースを眺めて終わり」ではありません。自分の持ち物を把握するところから、直した記録を残すところまでを、一つの流れにしています。</p>
+    <p class="sec-label" data-i18n="wa-label">安全の見守り</p>
+    <h2 class="sec-title" id="watch-h" data-i18n="watch-h">見守りは、この流れで回ります</h2>
+    <p class="sec-lead" data-i18n="watch-lead">「ニュースを眺めて終わり」ではありません。自分の持ち物を把握するところから、直した記録を残すところまでを、一つの流れにしています。</p>
 
     <ol class="flow">
       <li>
-        <strong>まず、持ち物を書き出す</strong>
-        <span>自分がどんな道具や仕組みを使っているかを、一覧にしておきます。ここが全ての土台です。</span>
+        <strong data-i18n="f1t">まず、持ち物を書き出す</strong>
+        <span data-i18n="f1p">自分がどんな道具や仕組みを使っているかを、一覧にしておきます。ここが全ての土台です。</span>
       </li>
       <li>
-        <strong>毎朝、新しいお知らせと見比べる</strong>
-        <span>日々出てくる「危ないところ」のお知らせを、その一覧と毎朝照らし合わせます。</span>
+        <strong data-i18n="f2t">毎朝、新しいお知らせと見比べる</strong>
+        <span data-i18n="f2p">日々出てくる「危ないところ」のお知らせを、その一覧と毎朝照らし合わせます。</span>
       </li>
       <li>
-        <strong>関係あるものだけをお知らせ</strong>
-        <span>関係のないお知らせは流して、あなたのところに当てはまるものだけをお伝えします。毎日の負担は小さく保ちます。</span>
+        <strong data-i18n="f3t">関係あるものだけをお知らせ</strong>
+        <span data-i18n="f3p">関係のないお知らせは流して、あなたのところに当てはまるものだけをお伝えします。毎日の負担は小さく保ちます。</span>
       </li>
       <li>
-        <strong>直すときは、確認してから</strong>
-        <span>自動で勝手に直すことはしません。内容をお伝えし、了承をいただいてから直します。</span>
+        <strong data-i18n="f4t">直すときは、確認してから</strong>
+        <span data-i18n="f4p">自動で勝手に直すことはしません。内容をお伝えし、了承をいただいてから直します。</span>
       </li>
       <li>
-        <strong>直した記録が残る</strong>
-        <span>いつ、何を、どう直したかが記録に残ります。あとから「あのときどうしたか」を振り返れます。</span>
+        <strong data-i18n="f5t">直した記録が残る</strong>
+        <span data-i18n="f5p">いつ、何を、どう直したかが記録に残ります。あとから「あのときどうしたか」を振り返れます。</span>
       </li>
     </ol>
 
-    <div class="note-box">
+    <div class="note-box" data-i18n="note">
       <strong>安全について、正直にお伝えすると：</strong>
       「絶対に安全です」とは言いません。ただ、このホームページは出来上がったページを置いておく作りで、裏側で動く部分が少ないため、狙われる入口そのものが少なくなっています。その上で、残る心配は毎朝の見守りで拾っていく — その二段構えです。
     </div>
 
     <a class="watch-link" href="https://oosawak.github.io/materials/cve-watch/" target="_blank" rel="noopener">
       <span>
-        <span class="wl-t">見守りの様子は「CVE見張り台」で公開中</span><br>
-        <span class="wl-d">この見守りは実際に毎日動いていて、その様子を公開ページでご覧いただけます。</span>
+        <span class="wl-t" data-i18n="wlt">見守りの様子は「CVE見張り台」で公開中</span><br>
+        <span class="wl-d" data-i18n="wld">この見守りは実際に毎日動いていて、その様子を公開ページでご覧いただけます。</span>
       </span>
       <span class="wl-arrow" aria-hidden="true">→</span>
     </a>
@@ -430,25 +437,25 @@
 
   <!-- ============ AUDIENCE ============ -->
   <section aria-labelledby="aud-h">
-    <p class="sec-label">こんな方に</p>
-    <h2 class="sec-title" id="aud-h">始める方にも、<br>すでに始めている方にも。</h2>
-    <p class="sec-lead">お役に立てるのは、大きく分けて2タイプの方です。どちらも、ホームページとその周りの仕事を「ちゃんと回る状態」にすることが目的です。</p>
+    <p class="sec-label" data-i18n="au-label">こんな方に</p>
+    <h2 class="sec-title" id="aud-h" data-i18n="aud-h">始める方にも、<br>すでに始めている方にも。</h2>
+    <p class="sec-lead" data-i18n="aud-lead">お役に立てるのは、大きく分けて2タイプの方です。どちらも、ホームページとその周りの仕事を「ちゃんと回る状態」にすることが目的です。</p>
 
     <div class="audience">
       <article class="aud">
-        <h3><span class="tag">これから</span>事業やお店を始める方</h3>
+        <h3 data-i18n="aud1-h"><span class="tag">これから</span>事業やお店を始める方</h3>
         <ul>
-          <li>開業に合わせて、ホームページを用意したい</li>
-          <li>あとから直し方で困らない形で始めたい</li>
-          <li>領収書の整理も、最初から習慣にしておきたい</li>
+          <li data-i18n="aud1-1">開業に合わせて、ホームページを用意したい</li>
+          <li data-i18n="aud1-2">あとから直し方で困らない形で始めたい</li>
+          <li data-i18n="aud1-3">領収書の整理も、最初から習慣にしておきたい</li>
         </ul>
       </article>
       <article class="aud">
-        <h3><span class="tag">すでに</span>始めたけれど、回っていない方</h3>
+        <h3 data-i18n="aud2-h"><span class="tag">すでに</span>始めたけれど、回っていない方</h3>
         <ul>
-          <li>ホームページはあるが、更新が止まっている</li>
-          <li>安全の確認まで手が回っていない</li>
-          <li>領収書や記録の整理が、申告の時期に集中してしまう</li>
+          <li data-i18n="aud2-1">ホームページはあるが、更新が止まっている</li>
+          <li data-i18n="aud2-2">安全の確認まで手が回っていない</li>
+          <li data-i18n="aud2-3">領収書や記録の整理が、申告の時期に集中してしまう</li>
         </ul>
       </article>
     </div>
@@ -456,45 +463,45 @@
 
   <!-- ============ PLANS ============ -->
   <section aria-labelledby="plan-h">
-    <p class="sec-label">プランのご案内</p>
-    <h2 class="sec-title" id="plan-h">プランは、2つの段階と載せ替えをご用意</h2>
-    <p class="sec-lead">お店には、まずホームページだけを無理のない形で。始める方・続けている方には、お手伝いまで含めたプランを。WordPressで作ったホームページからの載せ替えも、プランとして用意しています。料金と開始時期は、現在準備中です。</p>
+    <p class="sec-label" data-i18n="pl-label">プランのご案内</p>
+    <h2 class="sec-title" id="plan-h" data-i18n="plan-h">プランは、2つの段階と載せ替えをご用意</h2>
+    <p class="sec-lead" data-i18n="plan-lead">お店には、まずホームページだけを無理のない形で。始める方・続けている方には、お手伝いまで含めたプランを。WordPressで作ったホームページからの載せ替えも、プランとして用意しています。料金と開始時期は、現在準備中です。</p>
 
     <div class="plans">
       <article class="plan">
         <div class="plan-top">
-          <h3>お店向け — ホームページだけのプラン<small>まずはホームページを、無理のない形で持つところから。</small></h3>
-          <span class="price">料金 準備中</span>
+          <h3 data-i18n="plan1-h">お店向け — ホームページだけのプラン<small>まずはホームページを、無理のない形で持つところから。</small></h3>
+          <span class="price" data-i18n="price">料金 準備中</span>
         </div>
         <ul>
-          <li>ホームページの制作と公開</li>
-          <li>文章を書くだけで自分で直せる形でお渡し</li>
-          <li>壊れにくく、狙われにくい作り</li>
+          <li data-i18n="p1-1">ホームページの制作と公開</li>
+          <li data-i18n="p1-2">文章を書くだけで自分で直せる形でお渡し</li>
+          <li data-i18n="p1-3">壊れにくく、狙われにくい作り</li>
         </ul>
       </article>
 
       <article class="plan featured">
         <div class="plan-top">
-          <h3>始める方・続けている方 — お手伝い付きプラン<small>ホームページに、ミューズさんのお手伝いを加えたプランです。</small></h3>
-          <span class="price">料金 準備中</span>
+          <h3 data-i18n="plan2-h">始める方・続けている方 — お手伝い付きプラン<small>ホームページに、ミューズさんのお手伝いを加えたプランです。</small></h3>
+          <span class="price" data-i18n="price">料金 準備中</span>
         </div>
         <ul>
-          <li class="inherit">お店向けプランの内容すべて</li>
-          <li>安全の見守り（持ち物の把握 → 毎朝の見比べ → 関係あるものだけお知らせ → 確認してから直す → 記録が残る）</li>
-          <li>領収書や記録の整理のお手伝い（申告の下準備）</li>
-          <li>ホームページの更新や日々の運用の相談</li>
+          <li class="inherit" data-i18n="p2-1">お店向けプランの内容すべて</li>
+          <li data-i18n="p2-2">安全の見守り（持ち物の把握 → 毎朝の見比べ → 関係あるものだけお知らせ → 確認してから直す → 記録が残る）</li>
+          <li data-i18n="p2-3">領収書や記録の整理のお手伝い（申告の下準備）</li>
+          <li data-i18n="p2-4">ホームページの更新や日々の運用の相談</li>
         </ul>
       </article>
 
       <article class="plan">
         <div class="plan-top">
-          <h3>WordPressからの — 載せ替えプラン<small>今のホームページを、壊れにくい作りに載せ替えます。</small></h3>
-          <span class="price">料金 準備中</span>
+          <h3 data-i18n="plan3-h">WordPressからの — 載せ替えプラン<small>今のホームページを、壊れにくい作りに載せ替えます。</small></h3>
+          <span class="price" data-i18n="price">料金 準備中</span>
         </div>
         <ul>
-          <li>今のページの文章や写真を引き継いで移します</li>
-          <li>更新のたびに気を遣う作りから、出来上がったページを置いておく作りへ</li>
-          <li>載せ替えのあとは、お手伝い付きプランへ移ることもできます</li>
+          <li data-i18n="p3-1">今のページの文章や写真を引き継いで移します</li>
+          <li data-i18n="p3-2">更新のたびに気を遣う作りから、出来上がったページを置いておく作りへ</li>
+          <li data-i18n="p3-3">載せ替えのあとは、お手伝い付きプランへ移ることもできます</li>
         </ul>
       </article>
     </div>
@@ -502,41 +509,210 @@
 
   <!-- ============ PROOF ============ -->
   <section aria-labelledby="proof-h">
-    <p class="sec-label">実績のご紹介</p>
-    <h2 class="sec-title" id="proof-h">すでに、毎日の現場で使われています</h2>
-    <p class="sec-lead">この仕組みは思いつきの企画ではなく、実際のサイト運営の中で育ててきたものです。</p>
+    <p class="sec-label" data-i18n="pr-label">実績のご紹介</p>
+    <h2 class="sec-title" id="proof-h" data-i18n="proof-h">すでに、毎日の現場で使われています</h2>
+    <p class="sec-lead" data-i18n="proof-lead">この仕組みは思いつきの企画ではなく、実際のサイト運営の中で育ててきたものです。</p>
 
     <div class="proof">
       <div class="proof-row">
-        <div class="proof-num">約470<small> 件</small></div>
-        <p><strong>運営中のページや記事の数</strong>（2026年11月時点）。地域のお店やグルメの案内、読み物サイトなど、いくつものサイトをこの仕組みで運営しています。</p>
+        <div class="proof-num" data-i18n="proof-n1">約470<small> 件</small></div>
+        <p data-i18n="proof-1"><strong>運営中のページや記事の数</strong>（2026年11月時点）。地域のお店やグルメの案内、読み物サイトなど、いくつものサイトをこの仕組みで運営しています。</p>
       </div>
       <div class="proof-row">
-        <div class="proof-num">毎朝</div>
-        <p><strong>安全の見比べを続けています。</strong>持ち物の一覧と新しいお知らせを毎朝照らし合わせ、関係あるものだけを拾う見守りを継続中です。その様子は「<a href="https://oosawak.github.io/materials/cve-watch/" target="_blank" rel="noopener">CVE見張り台</a>」で公開しています。</p>
+        <div class="proof-num" data-i18n="proof-n2">毎朝</div>
+        <p data-i18n="proof-2"><strong>安全の見比べを続けています。</strong>持ち物の一覧と新しいお知らせを毎朝照らし合わせ、関係あるものだけを拾う見守りを継続中です。その様子は「<a href="https://oosawak.github.io/materials/cve-watch/" target="_blank" rel="noopener">CVE見張り台</a>」で公開しています。</p>
       </div>
       <div class="proof-row">
-        <div class="proof-num">確認<br>してから</div>
-        <p><strong>大切な変更は、必ず人の確認を挟みます。</strong>ミューズさんが担うのは見守りと下準備まで。決めるのは人、という線引きを守っています。</p>
+        <div class="proof-num" data-i18n="proof-n3">確認<br>してから</div>
+        <p data-i18n="proof-3"><strong>大切な変更は、必ず人の確認を挟みます。</strong>ミューズさんが担うのは見守りと下準備まで。決めるのは人、という線引きを守っています。</p>
       </div>
     </div>
   </section>
 
   <!-- ============ FINAL CTA ============ -->
   <div class="final">
-    <h2>ホームページを、<br>「作って終わり」にしないために。</h2>
-    <p>書くだけで更新できるホームページと、毎朝の見守り、領収書の整理のお手伝い。受付の準備が整い次第、こちらでご案内します。</p>
-    <span class="btn-prep" role="status">● 現在、受付の準備中です</span>
-    <p class="sub">料金・開始時期についても、決まり次第このページでお知らせします。</p>
+    <h2 data-i18n="fin-h">ホームページを、<br>「作って終わり」にしないために。</h2>
+    <p data-i18n="fin-p">書くだけで更新できるホームページと、毎朝の見守り、領収書の整理のお手伝い。受付の準備が整い次第、こちらでご案内します。</p>
+    <span class="btn-prep" role="status" data-i18n="prep">● 現在、受付の準備中です</span>
+    <p class="sub" data-i18n="fin-sub">料金・開始時期についても、決まり次第このページでお知らせします。</p>
   </div>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <p>ホームページと毎日のお手伝いパッケージ<br>文章を書くだけのホームページに、AIのミューズさんのお手伝いを添えて</p>
+    <p data-i18n="foot">ホームページと毎日のお手伝いパッケージ<br>文章を書くだけのホームページに、AIのミューズさんのお手伝いを添えて</p>
   </div>
 </footer>
 
+<script>
+(function(){
+  var EN = {
+    "__title": "Website and Everyday Help Package — Just Write and Leave the Rest to Muse",
+    "__desc": "A package for shops and small businesses that pairs a website with everyday help. Just prepare your words and photos to make your pages while Muse the AI helper watches over safety and tidies your receipts and records.",
+    "eyebrow": "A website plus everyday help package for shops and small businesses",
+    "h1": "A website that takes<br><span class='hl'>just your words</span>.<br>Leave the rest to us.",
+    "lead": "Give us your announcements and photos and your website is refreshed. And the small everyday jobs — <strong>safety watching</strong> and <strong>tidying receipts and records</strong> — are handled by <strong>Muse</strong> our AI helper. This package keeps your website from ending on launch day.",
+    "hp1": "No tricky tools to learn",
+    "hp2": "Important changes only after your OK",
+    "hp3": "Everything done is written down",
+    "prep": "● Now getting ready to accept requests",
+    "watchbtn": "See the safety watch at work →",
+    "alt-hero": "Illustration of a shop owner handing over drafts and photos while a website appears on a tablet and a smartphone",
+    "cap-hero": "All you prepare is words and photos. Shaping them into pages is our job.",
+    "aria-flow": "How your website comes together",
+    "flow-h": "How your website comes together — 3 steps",
+    "s1t": "Prepare your words and photos",
+    "s1p": "Write what you want to say — news or menu items — in your everyday words.",
+    "s2t": "Hand them over as they are",
+    "s2p": "No special screens to learn. Your draft becomes the material just as it is.",
+    "s3t": "Your pages go live renewed",
+    "s3p": "A neatly finished page is published. Easy to read on phones too.",
+    "wl": "Do any of these sound familiar?",
+    "worry-h": "The jobs that keep slipping<br>behind the busy day.",
+    "worry-lead": "The busier the real work gets the more the website and office jobs slip behind. They cause trouble if left alone yet there is never time to start — this package answers exactly that.",
+    "alt-worry": "Illustration of a shop owner holding their head in front of an outdated website and a pile of receipts",
+    "cap-worry": "Thinking \u201cI have to do it\u201d while the days go by — we change that state of things.",
+    "worry-n1": "Trouble 1",
+    "worry-n2": "Trouble 2",
+    "worry-n3": "Trouble 3",
+    "w1t": "Cannot build or fix the website",
+    "w1p": "You want a website but do not know where to start. Or you have one but cannot fix it so the information stays out of date.",
+    "w2t": "Receipts and filing prep keep piling up",
+    "w2p": "Receipts and daily records slowly scatter and filing season turns into a rush. The same thing happens every year.",
+    "w3t": "Safety news makes you uneasy",
+    "w3p": "Every time you see news about leaked information or a changed website you worry about your own place. But you do not know what you should check.",
+    "hl-label": "How the website works",
+    "help-h": "Write and it becomes a page.<br>Built to be hard to break.",
+    "help-lead": "This website is built so that handing over your words produces finished pages that simply sit online. Skipping the technical talk here are three good points for the people who use it.",
+    "how1t": "Update just by writing",
+    "how1p": "News and menus written in your everyday words become pages just as they are. Your drafts stay in your hands so you can look back at them anytime.",
+    "how2t": "Hard to break and hard to target",
+    "how2p": "Pages sit online in finished form with no programs running behind them. Fewer moving parts means fewer breakdowns and fewer doors for bad actors to try.",
+    "how3t": "Opens fast and reads easily",
+    "how3p": "Finished pages are delivered as they are so they open lightly. Customers who open them on a phone are not kept waiting.",
+    "mu-label": "Everyday help",
+    "muse-h": "Your helper is Muse.",
+    "muse-lead": "A website does its real work in the days after it is built. Muse the AI helper takes care of the daily watching and tidying. That said Muse never moves things forward on its own. Important changes always pass through a person's check first.",
+    "alt-muse": "Illustration of Muse with fluffy winter fur doing the morning watch by a snowy window holding a checklist and a magnifying glass",
+    "muse-name": "Muse <small>Your AI helper — safety watching / tidying receipts and records</small>",
+    "muse-p": "Morning checks. Tidying records that tend to scatter. Writing down what was done. Plain jobs that cause real trouble when they stop — carried out the same way every day.",
+    "job1-badge": "Help 1 — Safety watching",
+    "job1-h": "Only the notices that matter to you each morning",
+    "job1-p": "Warnings about weak spots in computers and websites come out almost every day. Muse picks out only the ones related to your place and lets you know. When a fix is needed it waits for your OK before going ahead.",
+    "job2-badge": "Help 2 — Tidying receipts and records",
+    "job2-h": "So filing season never becomes a scramble",
+    "job2-p": "Receipts and daily records are sorted little by little as part of everyday work. Instead of one hard push right before filing the small daily tidying keeps the real thing light.",
+    "alt-receipts": "Illustration of a shop owner sorting receipts and records into files together with a small fluffy helper",
+    "cap-receipts": "Receipts are tidied little by little too. Less rush when filing season comes.",
+    "wa-label": "Safety watching",
+    "watch-h": "The watch runs in this flow",
+    "watch-lead": "It does not end with a glance at the news. From knowing what you have to keeping a record of each fix it all runs as one flow.",
+    "f1t": "First we list what you have",
+    "f1p": "We write down the tools and systems you use as a list. This list is the foundation of everything.",
+    "f2t": "Every morning we compare with new notices",
+    "f2p": "The weak-spot warnings that come out each day are checked against that list every morning.",
+    "f3t": "Only the relevant ones are reported",
+    "f3p": "Unrelated warnings pass by. Only the ones that apply to your place are passed on so the daily burden stays small.",
+    "f4t": "Fixes happen only after your OK",
+    "f4p": "Nothing is fixed automatically without asking. We explain what it is and fix it after you agree.",
+    "f5t": "A record of every fix remains",
+    "f5p": "When and what and how it was fixed stays on record. You can look back at what was done back then.",
+    "note": "<strong>Honestly about safety:</strong> We never say \u201cabsolutely safe\u201d. This website is built from finished pages placed online with few moving parts behind them so there are fewer doors to target in the first place. On top of that the morning watch keeps picking up the worries that remain — two layers working together.",
+    "wlt": "See the watch live on the CVE Watchboard",
+    "wld": "This watch really runs every day and you can see how it is doing on a public page.",
+    "au-label": "Who this is for",
+    "aud-h": "For those about to start<br>and those already running.",
+    "aud-lead": "It mainly helps two kinds of people. For both the goal is the same — getting the website and the work around it into a state that actually keeps running.",
+    "aud1-h": "<span class='tag'>Starting</span>People starting a business or a shop",
+    "aud1-1": "Want a website ready in time for opening",
+    "aud1-2": "Want to start in a shape that will not trap you later",
+    "aud1-3": "Want receipt tidying as a habit from the start",
+    "aud2-h": "<span class='tag'>Running</span>Started but things are not running yet",
+    "aud2-1": "The website exists but updates have stopped",
+    "aud2-2": "Safety checks never quite get done",
+    "aud2-3": "Receipts and records all pile up at filing time",
+    "pl-label": "The plans",
+    "plan-h": "Two levels plus a move-over plan",
+    "plan-lead": "For shops start with just a website in a manageable shape. For people starting or running a business a plan with help included. Moving over from a WordPress website is also offered as a plan. Prices and start dates are now in preparation.",
+    "plan1-h": "For shops — Website-only plan<small>Start with owning a website in a shape that is not a burden.</small>",
+    "price": "Price in preparation",
+    "p1-1": "Website building and publishing",
+    "p1-2": "Handover in a shape you can fix yourself just by writing",
+    "p1-3": "Built to be hard to break and hard to target",
+    "plan2-h": "For starters and runners — Plan with help<small>The website plus Muse's help added on.</small>",
+    "p2-1": "Everything in the shop plan",
+    "p2-2": "Safety watching (list what you have → compare every morning → report only what matters → fix after your OK → a record remains)",
+    "p2-3": "Help tidying receipts and records (preparation for filing)",
+    "p2-4": "Advice on website updates and day-to-day running",
+    "plan3-h": "From WordPress — Move-over plan<small>We move your current website to a harder-to-break build.</small>",
+    "p3-1": "The words and photos of your current pages are carried over",
+    "p3-2": "From a build that needs care at every update to finished pages placed online",
+    "p3-3": "After the move you can also shift to the plan with help",
+    "pr-label": "Track record",
+    "proof-h": "Already at work in daily practice",
+    "proof-lead": "This system is not an idea on paper. It grew up inside the running of real websites.",
+    "proof-n1": "~470<small> pages</small>",
+    "proof-1": "<strong>Pages and posts now in operation</strong> (as of November 2026). Local shop and food guides and reading sites and more — several websites are run with this system.",
+    "proof-n2": "Daily",
+    "proof-2": "<strong>The safety comparison keeps running every morning.</strong> The list of what we have is matched against new warnings each morning and only the relevant ones are picked up. You can see how it is doing on the \u201c<a href='https://oosawak.github.io/materials/cve-watch/' target='_blank' rel='noopener'>CVE Watchboard</a>\u201d.",
+    "proof-n3": "After<br>your OK",
+    "proof-3": "<strong>Important changes always pass through a person's check.</strong> Muse's part is the watching and the preparation. Deciding stays with people — that line is always kept.",
+    "fin-h": "Your website should not<br>end at launch day.",
+    "fin-p": "A website you can update just by writing plus the morning watch and help tidying receipts. As soon as we are ready to accept requests we will announce it here.",
+    "fin-sub": "Prices and start dates will also be announced on this page once decided.",
+    "foot": "Website and Everyday Help Package<br>A website you update just by writing with help from Muse the AI assistant"
+  };
+  var storeKey = "mdcms-lp-lang";
+  var nodes = [].slice.call(document.querySelectorAll("[data-i18n]"));
+  var orig = {};
+  nodes.forEach(function(el){
+    var k = el.getAttribute("data-i18n");
+    if(!(k in orig)) orig[k] = el.innerHTML;
+  });
+  var altNodes = [].slice.call(document.querySelectorAll("[data-i18n-alt]"));
+  var origAlt = {};
+  altNodes.forEach(function(el){ origAlt[el.getAttribute("data-i18n-alt")] = el.getAttribute("alt"); });
+  var ariaNodes = [].slice.call(document.querySelectorAll("[data-i18n-aria]"));
+  var origAria = {};
+  ariaNodes.forEach(function(el){ origAria[el.getAttribute("data-i18n-aria")] = el.getAttribute("aria-label"); });
+  var origTitle = document.title;
+  var metaDesc = document.querySelector('meta[name="description"]');
+  var origDesc = metaDesc ? metaDesc.getAttribute("content") : "";
+  function apply(lang){
+    document.documentElement.lang = (lang === "en") ? "en" : "ja";
+    nodes.forEach(function(el){
+      var k = el.getAttribute("data-i18n");
+      var v = (lang === "en") ? EN[k] : orig[k];
+      if(v != null) el.innerHTML = v;
+    });
+    altNodes.forEach(function(el){
+      var k = el.getAttribute("data-i18n-alt");
+      el.setAttribute("alt", (lang === "en" && EN[k]) ? EN[k] : origAlt[k]);
+    });
+    ariaNodes.forEach(function(el){
+      var k = el.getAttribute("data-i18n-aria");
+      el.setAttribute("aria-label", (lang === "en" && EN[k]) ? EN[k] : origAria[k]);
+    });
+    document.title = (lang === "en") ? EN["__title"] : origTitle;
+    if(metaDesc) metaDesc.setAttribute("content", (lang === "en") ? EN["__desc"] : origDesc);
+    [].forEach.call(document.querySelectorAll("[data-setlang]"), function(b){
+      b.setAttribute("aria-pressed", b.getAttribute("data-setlang") === lang ? "true" : "false");
+    });
+  }
+  var saved = null;
+  try{ saved = localStorage.getItem(storeKey); }catch(e){}
+  var initial = (saved === "ja" || saved === "en") ? saved
+    : (((navigator.language || "ja").toLowerCase().indexOf("ja") === 0) ? "ja" : "en");
+  apply(initial);
+  [].forEach.call(document.querySelectorAll("[data-setlang]"), function(b){
+    b.addEventListener("click", function(){
+      var l = b.getAttribute("data-setlang");
+      try{ localStorage.setItem(storeKey, l); }catch(e){}
+      apply(l);
+    });
+  });
+})();
+</script>
 </body>
 </html>
