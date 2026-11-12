@@ -33910,6 +33910,7 @@ void main() {
       frame();
       buildExpressionButtons();
       showInfo(buf, name, newVrm, modelSize);
+      setupEdits(true);
       setStatus("\u8868\u793A\u3057\u307E\u3057\u305F: " + name + "\uFF08VRM " + (vrm.meta.metaVersion === "0" ? "0.x" : "1.0") + "\uFF09");
     } catch (err) {
       console.error(err);
@@ -34022,6 +34023,54 @@ void main() {
     const f = e.dataTransfer.files && e.dataTransfer.files[0];
     if (f) loadFile(f);
   });
+  var edits = { head: 1, body: 1, legs: 1 };
+  function editBone(name) {
+    try {
+      return vrm.humanoid.getNormalizedBoneNode(name);
+    } catch (e) {
+      return null;
+    }
+  }
+  function applyEdits() {
+    if (!vrm) return;
+    const h = editBone("head");
+    if (h) h.scale.setScalar(edits.head);
+    for (const n of ["spine", "chest", "upperChest"]) {
+      const b = editBone(n);
+      if (b) b.scale.set(edits.body, 1, edits.body);
+    }
+    for (const n of ["leftUpperLeg", "rightUpperLeg", "leftLowerLeg", "rightLowerLeg"]) {
+      const b = editBone(n);
+      if (b) b.scale.setScalar(edits.legs);
+    }
+    document.getElementById("editHeadVal").textContent = edits.head.toFixed(2);
+    document.getElementById("editBodyVal").textContent = edits.body.toFixed(2);
+    document.getElementById("editLegsVal").textContent = edits.legs.toFixed(2);
+  }
+  function setupEdits(fromParams) {
+    edits.head = 1;
+    edits.body = 1;
+    edits.legs = 1;
+    if (fromParams) {
+      const q2 = new URLSearchParams(location.search);
+      for (const k of ["head", "body", "legs"]) {
+        const v = parseFloat(q2.get(k));
+        if (v > 0.4 && v < 2) edits[k] = v;
+      }
+    }
+    document.getElementById("editHead").value = edits.head;
+    document.getElementById("editBody").value = edits.body;
+    document.getElementById("editLegs").value = edits.legs;
+    applyEdits();
+  }
+  for (const [id, key] of [["editHead", "head"], ["editBody", "body"], ["editLegs", "legs"]]) {
+    const el = document.getElementById(id);
+    el.addEventListener("input", () => {
+      edits[key] = parseFloat(el.value);
+      applyEdits();
+    });
+  }
+  document.getElementById("editReset").onclick = () => setupEdits(false);
   document.getElementById("frontBtn").onclick = () => setView(0);
   document.getElementById("sideBtn").onclick = () => setView(90);
   document.getElementById("backBtn").onclick = () => setView(180);

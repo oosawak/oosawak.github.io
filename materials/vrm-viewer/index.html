@@ -21,6 +21,9 @@
   #view { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
   #info { position: absolute; right: 10px; bottom: 10px; max-width: 52%; padding: 8px 11px; border-radius: 10px; background: rgba(255,255,255,0.86); backdrop-filter: blur(4px); font-size: 12.5px; line-height: 1.55; color: #23405c; z-index: 2; pointer-events: none; display: none; word-break: break-all; }
   #info .t { font-weight: bold; font-size: 13.5px; }
+  .slider { display: flex; align-items: center; gap: 6px; font-size: 12.5px; margin: 5px 0; }
+  .slider input[type=range] { flex: 1; min-width: 0; accent-color: #1f6fc4; }
+  .slider .val { width: 34px; text-align: right; font-variant-numeric: tabular-nums; }
   body.drag::after { content: "ここに .vrm ファイルを落とすと開きます"; position: fixed; inset: 12px; border: 3px dashed #2f6fb4; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 20px; background: rgba(255,255,255,0.75); z-index: 5; pointer-events: none; }
   .hint { font-size: 12.5px; color: #5a748f; line-height: 1.55; }
   @media (max-width: 700px) {
@@ -40,6 +43,7 @@
   </div>
   <div class="group">
     <span class="glabel">サンプルモデル</span>
+    <a class="btn" href="?url=samples/muse-san.vrm">ミューズさん</a>
     <a class="btn" href="?url=samples/quaternius-base-cc0.vrm">CC0素体（Quaternius）</a>
     <a class="btn" href="?url=samples/orion-cc0.vrm">CC0素体（Orion・ロボット）</a>
     <a class="btn" href="?url=samples/hair-sample-male-cc0.vrm">CC0素体（VRoid男性）</a>
@@ -48,6 +52,14 @@
     <a class="btn" href="?url=samples/bunny-01-cc0.vrm">着ぐるみ・ウサギ01</a>
     <a class="btn" href="?url=samples/bunny-02-cc0.vrm">着ぐるみ・ウサギ02</a>
     <a class="btn" href="?url=samples/bunny-03-cc0.vrm">着ぐるみ・ウサギ03</a>
+  </div>
+  <div class="group">
+    <span class="glabel">編集（試作）</span>
+    <label class="slider">頭の大きさ <input type="range" id="editHead" min="0.8" max="1.6" step="0.01" value="1"> <span class="val" id="editHeadVal">1.00</span></label>
+    <label class="slider">体の太さ <input type="range" id="editBody" min="0.8" max="1.4" step="0.01" value="1"> <span class="val" id="editBodyVal">1.00</span></label>
+    <label class="slider">脚の長さ <input type="range" id="editLegs" min="0.65" max="1.1" step="0.01" value="1"> <span class="val" id="editLegsVal">1.00</span></label>
+    <button class="btn" id="editReset" type="button">編集をリセット</button>
+    <span class="hint">まずは見た目の確認用です。決めた数値で実ファイルに焼き込む作業は、次の段でやります。</span>
   </div>
   <div class="group">
     <span class="glabel">視点</span>
