@@ -33911,6 +33911,8 @@ void main() {
       buildExpressionButtons();
       showInfo(buf, name, newVrm, modelSize);
       setupEdits(true);
+      const yaw = parseFloat(new URLSearchParams(location.search).get("yaw"));
+      if (!isNaN(yaw)) setView(yaw);
       setStatus("\u8868\u793A\u3057\u307E\u3057\u305F: " + name + "\uFF08VRM " + (vrm.meta.metaVersion === "0" ? "0.x" : "1.0") + "\uFF09");
     } catch (err) {
       console.error(err);
