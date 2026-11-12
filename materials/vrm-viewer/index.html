@@ -6,55 +6,81 @@
 <title>VRMビューアー</title>
 <style>
   html, body { margin: 0; height: 100%; overflow: hidden; font-family: sans-serif; background: #eaf2f9; color: #23405c; }
-  #view { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
-  header { position: fixed; top: 0; left: 0; right: 0; padding: 10px 12px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; background: rgba(255,255,255,0.82); backdrop-filter: blur(4px); z-index: 2; }
-  header .title { font-weight: bold; margin-right: 4px; }
-  button { font-size: 15px; padding: 9px 14px; border-radius: 999px; border: 1px solid #9db8d2; background: #fff; color: #23405c; cursor: pointer; }
+  body { display: flex; height: 100dvh; }
+  #menu { flex: 0 0 284px; height: 100%; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 10px; background: rgba(255,255,255,0.94); box-sizing: border-box; z-index: 2; }
+  #menu .title { font-weight: bold; font-size: 17px; }
+  .group { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .glabel { width: 100%; font-size: 12px; font-weight: bold; color: #5a748f; margin-top: 2px; }
+  button { font-size: 14px; padding: 8px 12px; border-radius: 999px; border: 1px solid #9db8d2; background: #fff; color: #23405c; cursor: pointer; }
   button:active { background: #dbe9f7; }
   #openBtn { background: #2f6fb4; border-color: #2f6fb4; color: #fff; font-weight: bold; }
-  #status { position: fixed; left: 0; right: 0; bottom: 0; padding: 10px 14px; font-size: 14px; background: rgba(255,255,255,0.88); z-index: 2; word-break: break-all; }
-  #status.error { color: #b03030; }
-  #exprs { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-  #motions { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-  #samples { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-  a.btn { font-size: 15px; padding: 9px 14px; border-radius: 999px; border: 1px solid #9db8d2; background: #fff; color: #23405c; text-decoration: none; }
-  #exprs:empty { display: none; }
+  a.btn { font-size: 14px; padding: 8px 12px; border-radius: 999px; border: 1px solid #9db8d2; background: #fff; color: #23405c; text-decoration: none; }
+  #status { font-size: 13.5px; padding: 9px 11px; border: 1px solid #cbdcEE; border-radius: 10px; background: #f4f9fd; word-break: break-all; }
+  #status.error { color: #b03030; border-color: #e0b4b4; background: #fdf4f4; }
+  #stage { flex: 1; position: relative; min-width: 0; }
+  #view { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
   body.drag::after { content: "ここに .vrm ファイルを落とすと開きます"; position: fixed; inset: 12px; border: 3px dashed #2f6fb4; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 20px; background: rgba(255,255,255,0.75); z-index: 5; pointer-events: none; }
-  .hint { font-size: 12.5px; color: #5a748f; width: 100%; }
+  .hint { font-size: 12.5px; color: #5a748f; line-height: 1.55; }
+  @media (max-width: 700px) {
+    #menu { flex-basis: 192px; padding: 9px; gap: 8px; }
+    #menu .title { font-size: 15px; }
+    button, a.btn { font-size: 12.5px; padding: 7px 9px; }
+    #status { font-size: 12px; }
+  }
 </style>
 </head>
 <body>
-<canvas id="view"></canvas>
-<header>
+<aside id="menu">
   <span class="title">VRMビューアー</span>
-  <button id="openBtn">ファイルを開く</button>
-  <input type="file" id="fileInput" accept=".vrm,.glb" hidden>
-  <button id="frontBtn">正面</button>
-  <button id="sideBtn">横</button>
-  <button id="backBtn">後ろ</button>
-  <button id="fitBtn">全体表示</button>
-  <button id="armsBtn">腕を下ろす</button>
-  <button id="rotBtn">自動回転</button>
-  <span id="exprs"></span>
-  <span id="motions">
+  <div class="group">
+    <button id="openBtn">ファイルを開く</button>
+    <input type="file" id="fileInput" accept=".vrm,.glb" hidden>
+  </div>
+  <div class="group">
+    <span class="glabel">サンプルモデル</span>
+    <a class="btn" href="?url=samples/quaternius-base-cc0.vrm">CC0素体（Quaternius）</a>
+    <a class="btn" href="?url=samples/hair-sample-female-cc0.vrm">CC0素体（VRoid）</a>
+  </div>
+  <div class="group">
+    <span class="glabel">視点</span>
+    <button id="frontBtn">正面</button>
+    <button id="sideBtn">横</button>
+    <button id="backBtn">後ろ</button>
+    <button id="fitBtn">全体表示</button>
+    <button id="armsBtn">腕を下ろす</button>
+    <button id="rotBtn">自動回転</button>
+  </div>
+  <div class="group" id="exprs"></div>
+  <div class="group">
+    <span class="glabel">モーション</span>
     <button id="motionBtn">モーションを開く</button>
     <input type="file" id="motionInput" accept=".vrma" hidden>
-    <span>サンプル:</span>
-    <button data-motion="motions/Yes.vrma">うなずく</button>
-    <button data-motion="motions/Idle_Talking_Loop.vrma">話す</button>
-    <button data-motion="motions/Dance_Loop.vrma">ダンス</button>
-    <button data-motion="motions/Walk_Loop.vrma">歩く</button>
     <button id="playBtn">一時停止</button>
     <button id="stopBtn">モーション停止</button>
-  </span>
-  <span id="samples">
-    <span>サンプルモデル:</span>
-    <a class="btn" href="?url=samples/hair-sample-female-cc0.vrm">CC0素体（VRoid）</a>
-    <a class="btn" href="?url=samples/quaternius-base-cc0.vrm">CC0素体（Quaternius）</a>
-  </span>
-  <span class="hint">.vrm ファイルを選ぶか、この画面に落としてください。保存場所はどこでも大丈夫です（ダウンロードフォルダーでも可）。ファイルはブラウザの中だけで読み込み、どこにも送信しません。ドラッグで回転、ホイール／ピンチで拡大縮小できます。モデルを開いた後に「サンプル」のボタンか「モーションを開く」（.vrma ファイル）で動きを付けられます。サンプルモーションは Quaternius Universal Animation Library（CC0）を open-vrma プロジェクトが VRMA 形式に変換したものです。サンプルモデルはどちらも CC0 の素体で、VRoid の HairSample_Female と、Quaternius の女性マネキンを VRM 形式に変換したものです。</span>
-</header>
-<div id="status">まだファイルが開かれていません。</div>
+    <span class="glabel">サンプルモーション</span>
+    <button data-motion="motions/Idle_Loop.vrma">待機</button>
+    <button data-motion="motions/Walk_Loop.vrma">歩く</button>
+    <button data-motion="motions/Jog_Fwd_Loop.vrma">走る</button>
+    <button data-motion="motions/Jump_Loop.vrma">ジャンプ</button>
+    <button data-motion="motions/Crouch_Idle_Loop.vrma">しゃがむ</button>
+    <button data-motion="motions/Sitting_Idle_Loop.vrma">座る</button>
+    <button data-motion="motions/Sword_Attack.vrma">剣で攻撃</button>
+    <button data-motion="motions/Punch_Jab.vrma">パンチ</button>
+    <button data-motion="motions/Spell_Simple_Shoot.vrma">魔法</button>
+    <button data-motion="motions/Hit_Chest.vrma" data-once="1">ダメージ</button>
+    <button data-motion="motions/Death01.vrma" data-once="1">倒れる</button>
+    <button data-motion="motions/Roll.vrma" data-once="1">転がる</button>
+    <button data-motion="motions/Yes.vrma">うなずく</button>
+    <button data-motion="motions/Idle_No_Loop.vrma">首を振る</button>
+    <button data-motion="motions/Idle_Talking_Loop.vrma">話す</button>
+    <button data-motion="motions/Dance_Loop.vrma">ダンス</button>
+  </div>
+  <div id="status">読み込み中…</div>
+  <span class="hint">開くと最初に CC0 素体（Quaternius）が表示されます。.vrm ファイルを選ぶか、この画面に落とすと、自分のモデルに差し替えられます。ファイルはブラウザの中だけで読み込み、どこにも送信しません。ドラッグで回転、ホイール／ピンチで拡大縮小できます。サンプルモーションは Quaternius Universal Animation Library（CC0）を open-vrma プロジェクトが VRMA 形式に変換したものです。サンプルモデルはどちらも CC0 の素体で、VRoid の HairSample_Female と、Quaternius の女性マネキンを VRM 形式に変換したものです。</span>
+</aside>
+<main id="stage">
+  <canvas id="view"></canvas>
+</main>
 <script src="./vrm-viewer.js"></script>
 </body>
 </html>
