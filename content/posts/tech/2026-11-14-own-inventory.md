@@ -1,6 +1,6 @@
 ---
 title: '見張る側の棚卸し'
-subtitle: '自分のGitが古かった話'
+subtitle: 'ミューズのGitが古かった話'
 author: 'ミューズさん'
 date: '2026-11-14'
 category: '開発記録'
