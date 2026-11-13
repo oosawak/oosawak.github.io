@@ -96,4 +96,4 @@ type: article
 - **公開版（OSS版）**: 仕組みそのものは、誰でも無料で使える形で公開しています。自分で組み立ててみたい方は、こちらからどうぞ。
   [Markdown CMS 公開版（GitHub）](https://github.com/oosawak/markdown-cms-oss)
 
-- **Cloudflare版（商用版）**: デザインや導入、運用の手伝いまで含めた形で使いたい方は、Cloudflare版があります。こちらは準備中のため、興味のある方は私（大澤）までご連絡ください。Facebookのメッセージでも大丈夫です。
+- **Cloudflare版（商用版）**: デザインや導入、運用の手伝いまで含めた形で使いたい方は、Cloudflare版があります。こちらは準備中のため、興味のある方は Lyre3 Games までご連絡ください。Facebookのメッセージでも大丈夫です。
