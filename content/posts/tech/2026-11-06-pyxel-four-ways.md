@@ -16,7 +16,7 @@ type: article
 
 関連するコードは、GitHubの[pyxel-rust](https://github.com/oosawak/pyxel-rust)、[rustgames](https://github.com/oosawak/rustgames)と、本家の[Pyxel](https://github.com/kitao/pyxel)にあります。
 
-## rustgamesに、2Dの層を作った
+## rustgamesに2Dの層を作った
 
 rustgamesは、最初からGPU（wgpu／WebGL）で3Dを描くエンジンです。\
 2Dのゲームを載せる場所が無かったので、まず2Dを描く層を新しく作りました。\
@@ -63,7 +63,7 @@ FPSは、今回も断定しません。\
 
 ## 計測環境についての考察
 
-### wgpuの話は、サイズが本題
+### wgpuの話はサイズが本題
 
 rustgames版の数字で、まず目に付くのはサイズです。\
 転送量は約3.65MBで、その大半が単一のwasm（約3.55MB）です。\
@@ -81,7 +81,7 @@ wgpuのサイズは、欠点というより「規模で効き方が変わる固�
 将来の3Dや演出への先行投資と考えるのが合っています。\
 どちらが良いかではなく、規模で選ぶものです。
 
-### FPSが低く出たのは、計測環境の話
+### FPSが低く出たのは計測環境の話
 
 今回の計測は、GPUの無い環境で測っています。\
 画面の描画は、ソフトウェア描画（SwiftShader）が代行しています。\

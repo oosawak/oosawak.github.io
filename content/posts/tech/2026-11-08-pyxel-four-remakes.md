@@ -10,7 +10,7 @@ cover_alt: '同じ四角いキャラクターが、ピクセルアート、歯�
 type: 'article'
 ---
 
-## これまでの3本と、この記事
+## これまでの3本とこの記事
 
 同じゲームを違う方式で作り直して比べる試みを、これまで3本の記事にしました。\
 [前編](https://oosawak.github.io/tech/#/post/tech/pyxel-three-implementations)では3つの実装の顔ぶれを、[計測編](https://oosawak.github.io/tech/#/post/tech/pyxel-benchmark-results)では転送量や動き出すまでの時間を、[4方式編](https://oosawak.github.io/tech/#/post/tech/pyxel-four-ways)ではGPUで描く4つ目の方式を扱いました。\
@@ -178,7 +178,7 @@ rustgames → JavaScriptの段で引き継がれたものは、生成の規則�
 手触りの核は運び、土台と周辺の作りが替わる。\
 コードから読み取れる全体像は、これでした。
 
-## 数字は、材料として
+## 数字は材料として
 
 仕組みの差は、数字にも出ています。\
 CubeBoyの実測（ヘッドレスChrome・ローカル配信、各2回平均）では、転送量が本家 約27.4MB、pyxel-rust 約2.1MB、JavaScript 約0.14MB、rustgames 約3.65MB（エンジン＋全タイトルの合算）でした。\
@@ -231,7 +231,7 @@ AIと協業でゲームを作ることと、早く動く環境を作ること。
 そして鎖の先で残ったのは、物理の数値という、いちばん地味で、いちばん大事な部分でした。\
 手触りは、土台が替わっても運べます。
 
-## おまけ ― LINE BOYも、4方式で
+## おまけ ― LINE BOYも4方式で
 
 もう1本の主役、LINE BOYも置いておきます。\
 同じ鎖をたどった、横スクロールのほうです。

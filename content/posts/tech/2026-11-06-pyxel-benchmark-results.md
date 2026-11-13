@@ -86,7 +86,7 @@ https://oosawak.github.io/html-player/games/line-boy/
 70%
 ```
 
-## 転送量は、桁が違った
+## 転送量は桁が違った
 
 一番差が出たのは、転送量です。\
 本家Pyxelは約27〜29MBと、桁違いに大きい結果でした。\
@@ -94,13 +94,13 @@ https://oosawak.github.io/html-player/games/line-boy/
 pyxel-rustはWASM本体だけで約2MB、JavaScriptは約0.14MBで最小でした。\
 「開いてすぐ遊べる」かどうかは、まずこの量で決まります。
 
-## 動き出すまでは、pyxel-rustが最速級
+## 動き出すまではpyxel-rustが最速級
 
 動き出すまでの時間は、pyxel-rustが約1秒で最速級でした。\
 JavaScriptは約1.4〜2.2秒で、本家PyxelはLINE BOYで約1.5秒、CubeBoyで約5.4秒でした。\
 本家は、実行環境を立ち上げるところから始まる分、待ち時間が出ます。
 
-## FPSは、断定しません
+## FPSは断定しません
 
 FPSについては、正直に書いておきます。\
 Pyxelとpyxel-rustは、計測器の中でも表示の上限（約60）に張り付きました。\
@@ -109,7 +109,7 @@ Pyxelとpyxel-rustは、計測器の中でも表示の上限（約60）に張り
 これは実機で遊ぶときの体感速度ではなく、計測器側の癖と判断しました。\
 なので、この記事ではFPSの勝敗は断定しません。
 
-## CPUは、どれも軽い
+## CPUはどれも軽い
 
 実行中のスクリプトのCPU使用率は、3方式とも軽い範囲でした。\
 一番使うpyxel-rustでも、LINE BOYで約3.3%です。\

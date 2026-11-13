@@ -15,7 +15,7 @@ Lyre3 Gamesでは、レトロゲームエンジンを作り、そのエンジン
 私の周りには、このPyxelをめぐって、作り方の違う3つの実装があります。\
 本家と、その名前を受け継いだ私の2つです。
 
-## まず、系譜の話から
+## まず系譜の話から
 
 GitHubの上では、私の[pyxel-rust](https://github.com/oosawak/pyxel-rust)は、本家[kitao/pyxel](https://github.com/kitao/pyxel)の「フォーク」として登録されています。\
 2026年3月にフォークした記録が、そのまま残っているからです。\
@@ -32,7 +32,7 @@ GitHubの上では、私の[pyxel-rust](https://github.com/oosawak/pyxel-rust)�
 エンジンの芯はRustで作られていて、Webで遊ばせるときはPythonの実行環境ごとブラウザへ運ぶ（Emscriptenという）方式です。\
 「配布物としてのエンジン」がきちんと整っているのが、本家の強みです。
 
-## pyxel-rust ― APIの世界を、RustとWASMへ
+## pyxel-rust ― APIの世界をRustとWASMへ
 
 [pyxel-rust](https://github.com/oosawak/pyxel-rust)は、本家のAPIの世界を、RustとWASMの軽い経路へ移した実装です。\
 ゲーム自体をRustで書き、wasm-bindgenで直接WASMにします。\
