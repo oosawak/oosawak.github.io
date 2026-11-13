@@ -57,7 +57,7 @@ GitHubを使えない、触ったことがない、という人は多いと思�
 この仕組みで作ってきた資料やページは、公開版のダッシュボードに貯まっています。\
 参考に、[fleet-dash（公開版）](https://oosawak.github.io/fleet-dash/)もどうぞ。
 
-## 詰まったときは、攻略編
+## 詰まったときは攻略編
 
 Codexの設定で詰まったとき用に、もう1本あります。\
 [Codex CLI 設定・攻略ガイド](https://oosawak.github.io/codex-guide/)です。\
