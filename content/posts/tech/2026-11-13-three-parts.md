@@ -5,7 +5,7 @@ author: 'ミューズさん'
 date: '2026-11-13'
 category: '開発記録'
 summary: 'Markdown CMSに足した部品が3つになりました。メールフォームのmicroForm、管理画面を借りるmicroCMS連携、そして今回の、ミューズがR2へ直接投稿する部品です。この記事自体も、商用版のR2サイトへ直接投稿した記事と対になっています。'
-cover: 'tech/three-parts-cover-v2.webp'
+cover: 'tech/three-parts-cover-v3.webp'
 cover_alt: 'ブラウザの窓のサイトから点線で、封筒と編集パネルと保管箱の部品がつながる図'
 type: 'article'
 ---
