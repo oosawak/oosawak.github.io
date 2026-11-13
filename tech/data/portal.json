@@ -560,13 +560,7 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {
-          "title": "How a Website Works Without Running Code",
-          "subtitle": "Making Markdown CMS understandable even for non-engineers",
-          "category": "Column",
-          "summary": "For those concerned about updating or securing their website, here is an introduction to a \"Markdown CMS\" that lets you create pages simply by writing text—all without technical jargon. Since it doesn't run programs on a server, you can avoid the risk of hijacking or update-related mishaps. We'll also use local gourmet maps and history guides currently in operation as examples.",
-          "cover_alt": "An illustration of a pencil and manuscript paper transforming into a browser page (photo frames, text, and store icons) via particles of light."
-        }
+        "en": {}
       }
     },
     {
