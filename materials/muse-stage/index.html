@@ -57,7 +57,7 @@
       <label class="chk" title="直送・フックで新しい返事が届いたら、自動で読み上げる"><input type="checkbox" id="chkAuto"> 新しい返事を自動で読む</label>
       <label class="chk" title="声分け版：文中の @user の下は本人の文として男性の声（VOICEVOX 玄野武宏）、@muse の下はミューズの文としてずんだもんで読む"><input type="checkbox" id="chkSplit"> 声分け（本人＝男性の声）</label>
       <label class="chk" title="公開MQTT中継経由で、ミューズの返事を即時に受け取る（Web版・アプリ版どちらでも）"><input type="checkbox" id="chkRelay"> Web直送（MQTT中継）</label>
-      <input type="text" id="relayTopic" placeholder="中継の合言葉" autocomplete="off"
+      <input type="text" id="relayTopic" placeholder="中継の合言葉" autocomplete="off" title="中継の合言葉：自分で決めた文字列を入れます。ミューズ側（~/workspace/stage-relay-topic.txt）と同じ値にしてください。同じ合言葉同士でだけ文が届きます"
         style="width:100%;box-sizing:border-box;margin:2px 0 6px;padding:5px 7px;border-radius:6px;border:1px solid #ffffff2a;background:#00000030;color:inherit;font-size:12px">
       <label class="chk" title="Muse.app の画面を2秒ごとに見て、新しい返事を取り込んで読み上げる（アクセシビリティの許可が要る）"><input type="checkbox" id="chkAutoGrab"> アプリから自動取り込み</label>
     </div>
