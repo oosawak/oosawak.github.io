@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muse Stage（ずんだもん版）</title>
+  <script type="module" crossorigin src="./assets/index-D6vQ4VdF.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DumhWz0G.css">
+</head>
+<body>
+  <!-- スライド：舞台の後ろに敷く（キャラクターはこの手前で動く） -->
+  <img id="slideImg" alt="">
+
+  <!-- 舞台：VRM のミューズを大きく表示する -->
+  <div id="stage"></div>
+
+  <!-- クレジット：利用条件に基づき左上に常時表示する（パネルを隠しても消えない） -->
+  <div id="credit" class="credit">音声: VOICEVOX:ずんだもん<br>キャラクター: ずんだもん（東北ずん子・ずんだもんプロジェクト）</div>
+
+  <!-- 読み上げ中の字幕（プロジェクターで読める大きさ） -->
+  <div id="caption" class="caption"></div>
+
+  <!-- 取り込んだ返事の一覧：右側に出し、選ぶとその返事を読み上げる -->
+  <div id="replies" class="replies">
+    <div class="replies-head">取り込んだ返事 <span id="repliesCount"></span></div>
+    <div id="replyList" class="reply-list"></div>
+  </div>
+
+  <!-- 操作系：発表の邪魔にならないよう、左下に小さく（右側は返事の一覧）。マウスを動かしたときだけ濃く見える -->
+  <div id="panel" class="panel">
+    <textarea id="text" rows="3" placeholder="ミューズの返事を貼り付けて「読み上げ」">こんばんは、ずんだもんなのだ。今日は一緒に発表するのだ</textarea>
+    <div class="row">
+      <button id="btnSpeak" class="primary">読み上げ</button>
+      <button id="btnStop">止める</button>
+      <button id="btnFull" title="全画面（F キー）">全画面</button>
+      <select id="engine" title="読み上げのしくみ">
+        <option value="voicevox">VOICEVOX（ずんだもん）</option>
+        <option value="auto">自動</option>
+        <option value="web">WebView の speechSynthesis</option>
+        <option value="say">macOS の say</option>
+      </select>
+      <select id="voice" title="say の声"></select>
+      <label class="chk" title="読み上げの速さ（[ と ] キーでも変えられます）">速さ <input type="range" id="rate" min="0.6" max="1.4" step="0.05" value="0.9"> <span id="rateVal">0.90</span></label>
+      <label class="chk"><input type="checkbox" id="chkCaption" checked> 字幕</label>
+      <label>動き <select id="motionMode"><option value="wander">おまかせ</option><option value="stay">その場</option><option value="off">なし</option></select></label>
+    </div>
+    <div class="row">
+      <label class="filebtn" title="スライド画像（PNG／JPG）を選ぶ。ファイル名の順に並ぶ">スライドを選ぶ<input type="file" id="slideFiles" accept="image/*" multiple hidden></label>
+      <button id="btnSlidePrev" title="前のスライド（←キー）">◀</button>
+      <button id="btnSlideNext" title="次のスライド（→キー、舞台をクリックでも進む）">▶</button>
+      <span id="slideCount" class="muted"></span>
+      <button id="btnSlideClear" title="スライドを消す">スライドを消す</button>
+    </div>
+    <div class="row">
+      <button id="btnGrab" title="Muse.app の画面から、いちばん新しい返事を取り込む（アクセシビリティの許可が要る）">Muse から取り込む</button>
+      <label class="chk" title="直送・フックで新しい返事が届いたら、自動で読み上げる"><input type="checkbox" id="chkAuto"> 新しい返事を自動で読む</label>
+      <label class="chk" title="公開MQTT中継経由で、ミューズの返事を即時に受け取る（Web版・アプリ版どちらでも）"><input type="checkbox" id="chkRelay"> Web直送（MQTT中継）</label>
+      <input type="text" id="relayTopic" placeholder="中継の合言葉" autocomplete="off"
+        style="width:100%;box-sizing:border-box;margin:2px 0 6px;padding:5px 7px;border-radius:6px;border:1px solid #ffffff2a;background:#00000030;color:inherit;font-size:12px">
+      <label class="chk" title="Muse.app の画面を2秒ごとに見て、新しい返事を取り込んで読み上げる（アクセシビリティの許可が要る）"><input type="checkbox" id="chkAutoGrab"> アプリから自動取り込み</label>
+    </div>
+    <div class="status-line"><span id="spinner" class="spinner"></span><div id="status" class="status">準備中…</div></div>
+    <div class="keys">Space 読み上げ ・ Esc 止める ・ F 全画面 ・ H パネルを隠す ・ ←→ スライド ・ [ ] 速さ ・ ⌘Enter 読み上げ ・ ⌘Q 終了</div>
+  </div>
+
+  <div id="loading" class="loading">ミューズを呼んでいます…</div>
+</body>
+</html>
