@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Muse Stage（ずんだもん版）</title>
-  <script type="module" crossorigin src="./assets/index-BkN5o-Qk.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DumhWz0G.css">
+  <script type="module" crossorigin src="./assets/index-B2ghhjGu.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-3AlangJY.css">
 </head>
 <body>
   <!-- スライド：舞台の後ろに敷く（キャラクターはこの手前で動く） -->
@@ -28,6 +28,7 @@
 
   <!-- 操作系：発表の邪魔にならないよう、左下に小さく（右側は返事の一覧）。マウスを動かしたときだけ濃く見える -->
   <div id="panel" class="panel">
+    <div class="foldbar"><button id="btnPanelFold" type="button" title="操作パネルを下に折りたたむ">パネルをたたむ ▾</button></div>
     <textarea id="text" rows="3" placeholder="ミューズの返事を貼り付けて「読み上げ」">こんばんは、ずんだもんなのだ。今日は一緒に発表するのだ</textarea>
     <div class="row">
       <button id="btnSpeak" class="primary">読み上げ</button>
@@ -45,7 +46,7 @@
       <label>動き <select id="motionMode"><option value="wander">おまかせ</option><option value="stay">その場</option><option value="off">なし</option></select></label>
     </div>
     <div class="row">
-      <label class="filebtn" title="スライド画像（PNG／JPG）を選ぶ。ファイル名の順に並ぶ">スライドを選ぶ<input type="file" id="slideFiles" accept="image/*" multiple hidden></label>
+      <label class="filebtn" title="スライド画像（PNG／JPG）かPDFを選ぶ。PDFは全ページがスライドになる。ファイル名の順に並ぶ">スライドを選ぶ<input type="file" id="slideFiles" accept="image/*,.pdf" multiple hidden></label>
       <button id="btnSlidePrev" title="前のスライド（←キー）">◀</button>
       <button id="btnSlideNext" title="次のスライド（→キー、舞台をクリックでも進む）">▶</button>
       <span id="slideCount" class="muted"></span>
