@@ -347,5 +347,16 @@
   }, { threshold: 0.6 });
   slides.forEach((s) => io.observe(s));
 </script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cdf4ee53507948e4a412f503875833cd"}'></script><!-- End Cloudflare Web Analytics --></body>
+
+<script>
+  // 舞台アプリ（親ページ）に埋め込まれているときだけ、←→キーを親へ渡す。
+  // ↑↓・スクロールは、この資料の中の移動に使う。単独で開いたときは何もしない。
+  if (window.parent !== window) {
+    addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') parent.postMessage({ museStageNav: 'next' }, '*');
+      if (e.key === 'ArrowLeft') parent.postMessage({ museStageNav: 'prev' }, '*');
+    });
+  }
+</script>
+</body>
 </html>
