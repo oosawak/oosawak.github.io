@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markdown CMS ― ピッチ資料（西日本FHビジネスコンテスト グロース部門）</title>
+<style>
+  @page { size: 33.87cm 19.05cm; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-snap-type: y mandatory; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans CJK JP", sans-serif;
+    background: #E9E2D2;
+    color: #2B2B28;
+  }
+  .slide {
+    width: 1280px; height: 720px;
+    margin: 24px auto;
+    background: #FAF6EE;
+    border-radius: 10px;
+    padding: 54px 76px 48px;
+    position: relative;
+    scroll-snap-align: start;
+    page-break-after: always;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  @media print { .slide { margin: 0; border-radius: 0; } .hint { display: none; } }
+  .kicker {
+    font-size: 15px; letter-spacing: 0.22em; color: #C4633C;
+    font-weight: 700; margin-bottom: 18px;
+  }
+  h1 { font-size: 58px; line-height: 1.25; font-weight: 800; }
+  h2 { font-size: 40px; line-height: 1.3; font-weight: 800; margin-bottom: 28px; }
+  h2 .accent { color: #6B7250; }
+  p, li { font-size: 24px; line-height: 1.75; }
+  ul { list-style: none; }
+  ul li { padding-left: 1.1em; text-indent: -1.1em; margin-bottom: 10px; }
+  ul li::before { content: "― "; color: #C4633C; font-weight: 700; }
+  .sub { font-size: 26px; line-height: 1.7; color: #4A4A44; margin-top: 26px; }
+  .foot {
+    position: absolute; left: 76px; right: 76px; bottom: 40px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 15px; color: #8A8578; border-top: 1px solid #DDD5C0; padding-top: 14px;
+  }
+  .big-num { font-size: 92px; font-weight: 800; color: #6B7250; line-height: 1.1; }
+  .cols { display: flex; gap: 48px; }
+  .col { flex: 1; }
+  .card {
+    background: #F1EAD8; border-left: 6px solid #6B7250;
+    padding: 13px 20px; margin-bottom: 11px; border-radius: 0 8px 8px 0;
+  }
+  .card h3 { font-size: 23px; margin-bottom: 4px; color: #2B2B28; }
+  .card p { font-size: 19px; line-height: 1.55; }
+  .card.hot { border-left-color: #C4633C; }
+  a { color: #C4633C; }
+  .demo-link {
+    display: block; background: #2B2B28; color: #FAF6EE; text-decoration: none;
+    border-radius: 8px; padding: 12px 22px; margin-bottom: 10px;
+  }
+  .demo-link .t { font-size: 23px; font-weight: 700; display: block; margin-bottom: 3px; }
+  .demo-link .u { font-size: 17px; color: #CFC8B4; word-break: break-all; }
+  .hint {
+    position: fixed; right: 18px; bottom: 14px; z-index: 10;
+    font-size: 13px; color: #8A8578; background: rgba(250,246,238,.9);
+    padding: 6px 12px; border-radius: 20px;
+  }
+  .flabel { font-size: 15px; letter-spacing: 0.18em; color: #C4633C; font-weight: 700; margin: 13px 0 8px; }
+  .flow { display: flex; align-items: stretch; }
+  .fbox {
+    flex: 1; background: #F1EAD8; border: 2px solid #6B7250; border-radius: 10px;
+    padding: 11px 10px; text-align: center;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .fbox .ft { font-size: 18px; font-weight: 700; line-height: 1.4; display: block; }
+  .fbox .fs { font-size: 14.5px; line-height: 1.5; color: #4A4A44; display: block; margin-top: 5px; }
+  .fbox.ai { border-color: #C4633C; background: #F7E9DF; }
+  .fbox.core { background: #2B2B28; border-color: #2B2B28; color: #FAF6EE; }
+  .fbox.core .fs { color: #CFC8B4; }
+  .farrow { align-self: center; font-size: 24px; color: #C4633C; padding: 0 4px; font-weight: 700; }
+  .parts { display: flex; gap: 14px; }
+  .pbox { flex: 1; border: 2px dashed #A39C88; border-radius: 10px; padding: 9px 14px; }
+  .pbox .pt { font-weight: 700; font-size: 18px; display: block; margin-bottom: 4px; }
+  .pbox .ps { font-size: 15px; color: #4A4A44; line-height: 1.5; display: block; }
+  .strip {
+    display: flex; align-items: center; gap: 12px; margin-top: 9px;
+    background: #F1EAD8; border-radius: 8px; padding: 9px 16px;
+  }
+  .strip .sl {
+    background: #6B7250; color: #FAF6EE; font-weight: 700; font-size: 16px;
+    border-radius: 6px; padding: 6px 12px; white-space: nowrap;
+  }
+  .strip.hot .sl { background: #C4633C; }
+  .strip .ss { font-size: 16.5px; line-height: 1.55; }
+  .strip .ss b { color: #C4633C; font-weight: 700; }
+  .slide.tight { padding-top: 42px; }
+  .slide.tight .kicker { margin-bottom: 8px; }
+  .slide.tight h2 { font-size: 36px; margin-bottom: 12px; }
+  .slide.tight .flabel { margin: 10px 0 6px; }
+  .slide.tight .fbox { padding: 9px 8px; }
+  .slide.tight .fbox .fs { font-size: 14px; line-height: 1.45; }
+  .slide.tight .pbox { padding: 7px 12px; }
+  .slide.tight .pbox .ps { font-size: 14.5px; }
+  .slide.tight .strip { margin-top: 7px; padding: 7px 14px; }
+  .slide.tight .strip .ss { font-size: 15.5px; line-height: 1.5; }
+  .stance {
+    font-size: 29px; font-weight: 700; line-height: 1.6;
+    color: #6B7250; margin-top: 28px;
+  }
+  .title-slide { justify-content: center; }
+  .title-slide .rule { width: 120px; height: 6px; background: #C4633C; margin: 34px 0; }
+</style>
+</head>
+<body>
+
+<!-- 1 表紙 -->
+<section class="slide title-slide">
+  <div class="kicker">事業紹介資料</div>
+  <h1>Markdown CMS<br>プログラムを動かさない、<br>静かなWebサイトの仕組み</h1>
+  <div class="rule"></div>
+  <p class="sub">原稿をMarkdown形式で書くだけで、静的なWebサイトを生成するCMSです。</p>
+  <div class="foot"><span>Lyre3 Games</span><span>1 / 11</span></div>
+</section>
+
+<!-- 2 事業概要 -->
+<section class="slide">
+  <div class="kicker">事業概要</div>
+  <h2>書くことに集中できる、<span class="accent">ホームページの仕組み</span></h2>
+  <p>ホームページの多くに使われるWordPress等の仕組みは、サーバー側でプログラムが常時動き、保守と脆弱性対応の負担が続きます。</p>
+  <p style="margin-top:18px;">本事業は、サーバー側のプログラムを持たない構成にすることでその負担を取り除き、小さな事業者でも無理なく情報発信を続けられるようにします。</p>
+  <p style="margin-top:18px;">オープンソース版は公開済みです。商用版は、デザイン制作と導入に加えて、WordPressからの移管やデザインされたホームページからの移管、SEO対策なども考慮しつつ、AIと一緒に運用するパッケージとして事業化を進めています。</p>
+  <div class="foot"><span>Markdown CMS</span><span>2 / 11</span></div>
+</section>
+
+<!-- 3 課題 -->
+<section class="slide">
+  <div class="kicker">課題</div>
+  <h2>小さな事業者にとって、<span class="accent">安全と更新がいちばんの不安</span></h2>
+  <ul>
+    <li>サーバーでプログラムが動き続ける限り、脆弱性への対応が終わらない</li>
+    <li>管理画面の習熟や専門知識が要り、更新そのものが止まってしまう</li>
+    <li>小さなパン屋のような事業者の方から、サイトの安全性について「怖い」という声を日常的に聞く</li>
+  </ul>
+  <p style="margin-top:22px;">「ホームページを作る仕組み」に見えますが、一般の商売の方にとって、サイトの安全性と更新は、いま一番不安で、一番解決したい問題です。</p>
+  <p class="stance">たかが、ホームページの話です。だからこそ、安心して簡単に運用できる仕組みを考えています。</p>
+  <div class="foot"><span>Markdown CMS</span><span>3 / 11</span></div>
+</section>
+
+<!-- 4 独創性 -->
+<section class="slide">
+  <div class="kicker">独創性</div>
+  <h2>「動かす」ではなく<span class="accent">「変換して配るだけ」</span>という逆転</h2>
+  <ul>
+    <li>サーバーで動かすのではなく、文章を変換して配るだけの構成</li>
+    <li><strong>AIを意識した設計</strong>：管理画面を持たず文章ファイルを正本にするため、AI（Meta Muse）と一緒に記事を書いたり、直したり、そのまま公開したりできる</li>
+    <li><strong>AIから直接書ける</strong>：置き場所（GitHub／CloudflareのR2）へAIが直接書き込めるため、「書く」から「公開」までが人を介さず一息でつながる</li>
+    <li>利用者は写真を撮ることと文章を書くことに集中でき、専門知識や管理画面の習熟が要らない</li>
+    <li>ソフト単体ではなく、文章とAI支援を組み合わせた「続けられる発信の仕組み」として提供する</li>
+    <li>サイト、小説、地図、動画、店舗の発信までが1つの土台の上で回るエコシステムである点が、他にはない形</li>
+  </ul>
+  <div class="foot"><span>Markdown CMS</span><span>4 / 11</span></div>
+</section>
+
+<!-- 5 全体像 -->
+<section class="slide">
+  <div class="kicker">仕組みの全体像</div>
+  <h2>本体は小さく、<span class="accent">部品で足せる</span></h2>
+  <div class="card">
+    <h3>microForm（稼働中）</h3>
+    <p>サイトにお問い合わせのメールフォームを足す部品です。</p>
+  </div>
+  <div class="card">
+    <h3>microCMS連携（仕組みを用意）</h3>
+    <p>管理画面が要る人には、既存の管理画面サービスとつなぎます。正本は手元の文章ファイルのままです。</p>
+  </div>
+  <div class="card">
+    <h3>置き場所の選択肢（テスト中）</h3>
+    <p>現在はGitHub Pagesで複数のサイトを運用中です。Cloudflare版とGCP版をテストしています。どの置き場所でも、正本はMarkdownで共通です。</p>
+  </div>
+  <p style="margin-top:6px;">足りないものを全部作り込まず、要る部品だけを足していく設計です。</p>
+  <div class="foot"><span>Markdown CMS</span><span>5 / 11</span></div>
+</section>
+
+<!-- 6 実績 -->
+
+<!-- 構成図 -->
+<section class="slide tight">
+  <div class="kicker">構成図</div>
+  <h2><span class="accent">プログラムを動かさない</span>構成</h2>
+  <div class="flabel">書く → 公開する</div>
+  <div class="flow">
+    <div class="fbox"><span class="ft">お店の人</span><span class="fs">写真を撮る<br>文章を書く</span></div>
+    <div class="farrow">→</div>
+    <div class="fbox ai"><span class="ft">AIと一緒に</span><span class="fs">Meta Museと<br>書く・直す</span></div>
+    <div class="farrow">→</div>
+    <div class="fbox core"><span class="ft">正本</span><span class="fs">Markdownの<br>文章ファイル</span></div>
+    <div class="farrow">→</div>
+    <div class="fbox"><span class="ft">変換</span><span class="fs">静的サイトを<br>生成する</span></div>
+    <div class="farrow">→</div>
+    <div class="fbox"><span class="ft">置き場所</span><span class="fs">GitHub Pages（運用中）<br>Cloudflare・GCP（テスト中）</span></div>
+    <div class="farrow">→</div>
+    <div class="fbox"><span class="ft">公開サイト</span><span class="fs">読者が見る<br>プログラムは動かない</span></div>
+  </div>
+  <div class="flabel">足せる部品と、周辺の仕組み</div>
+  <div class="parts">
+    <div class="pbox"><span class="pt">microForm（稼働中）</span><span class="ps">お問い合わせのメールフォームを足す部品</span></div>
+    <div class="pbox"><span class="pt">microCMS連携（仕組みを用意）</span><span class="ps">管理画面が要る人には、既存の管理画面サービスとつなぐ</span></div>
+    <div class="pbox"><span class="pt">周辺業務（これから準備）</span><span class="ps">セキュリティの見張りと、経理・申告の下処理</span></div>
+  </div>
+  <div class="flabel">毎日の運用の流れ</div>
+  <div class="strip hot">
+    <span class="sl">守りの流れ</span>
+    <span class="ss">棚卸しをする <b>→</b> 毎朝、脆弱性情報と照合 <b>→</b> 当たるものだけ報告 <b>→</b> 本人が承認 <b>→</b> 更新して履歴を残す</span>
+  </div>
+  <div class="strip">
+    <span class="sl">経理の流れ</span>
+    <span class="ss">レシート・請求書 <b>→</b> AIが仕訳の下書き <b>→</b> 月の帳簿を整える <b>→</b> 申告の下書き <b>→</b> 本人が確認して提出</span>
+  </div>
+  <div class="foot"><span>Markdown CMS</span><span>6 / 11</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">リリース状況・トラクション</div>
+  <h2>リリース済みで、<span class="accent">日常業務として回っています</span></h2>
+  <div class="cols">
+    <div class="col">
+      <div class="big-num">500件超</div>
+      <p>この仕組みで作ったWebサイト群の掲載コンテンツ総数（2026年11月時点）</p>
+    </div>
+    <div class="col">
+      <ul>
+        <li>技術ブログ、地域のグルメ情報サイト（3県分）</li>
+        <li>小説サイト、歴史資料サイト、歴史の本</li>
+        <li>用途の異なるサイトや本が、同じ仕組みで公開・運用中</li>
+        <li>オープンソース版はMITライセンスで公開し、誰でも試せる状態</li>
+        <li>記事作成、確認、公開、SNSでの告知まで含めた型が回っている</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Markdown CMS</span><span>7 / 11</span></div>
+</section>
+
+<!-- 6 運用パッケージ -->
+<section class="slide">
+  <div class="kicker">運用パッケージ</div>
+  <h2>シンプルだから、<span class="accent">周辺業務まで</span>面倒が見られる</h2>
+  <p style="margin-bottom:14px;">サイトの仕組みをシンプルに保つ分、先にある周辺業務にも手が回ります。AIとMarkdownの仕組みで、これから準備していく範囲です。</p>
+  <div class="card">
+    <h3>サイト更新の支援</h3>
+    <p>原稿を渡すだけで、AIと一緒に更新が回る形にします。</p>
+  </div>
+  <div class="card">
+    <h3>経理・申告の下処理</h3>
+    <p>レシートから帳簿、申告の下書きまでを下処理します。</p>
+  </div>
+  <div class="card hot">
+    <h3>セキュリティの見張り</h3>
+    <p>棚卸しをして、危ないものだけを知らせ、承認制で更新し、履歴も残します。この型は私自身の環境で毎朝回しています。</p>
+  </div>
+  <p style="margin-top:6px;">対象は「これから事業を始める人」と「始めたものの周辺業務が回っていない人」の2層です。</p>
+  <div class="foot"><span>Markdown CMS</span><span>8 / 11</span></div>
+</section>
+
+<!-- 7 地域貢献 -->
+<section class="slide">
+  <div class="kicker">地域貢献度・協力可能性</div>
+  <h2>同じ型を、<span class="accent">地域ごとに広げる</span></h2>
+  <ul>
+    <li>天童・長井・鶴岡では市町村単位のグルメ地図を公開し、地域の店の情報を地図で回す形を作った</li>
+    <li>松島の小さなパン屋では、既存サイトをこの仕組みへ移す試作まで進行中</li>
+    <li>西日本でも、宇和島のグルメサイトを同じ型で公開済み</li>
+    <li>福岡・九州では、この型を地元の店舗や地域団体、地元の支援機関と組んで広げる</li>
+    <li>金融機関の取引先である中小企業へのWeb支援という形でも、地域の事業者の役に立てる</li>
+  </ul>
+  <div class="foot"><span>Markdown CMS</span><span>9 / 11</span></div>
+</section>
+
+<!-- 8 将来性・賞金の使途 -->
+<section class="slide">
+  <div class="kicker">将来性・事業計画／賞金の使途</div>
+  <h2>入口は小さく、<span class="accent">届く先は全国</span></h2>
+  <ul>
+    <li>対象は、全国の「更新頻度は低いが保守負担は重い」中小企業・店舗のサイトで、母数は大きい</li>
+    <li>収益の形は、初期費用（デザイン制作と導入）と月額の運用パッケージを想定（料金体系は準備中）</li>
+    <li>導入する事業者側は、小規模事業者持続化補助金など公的支援の対象になり得ます</li>
+    <li>オープンソース版で利用者を広げ、商用版で地域ごとの導入支援先と組んで展開する二段構え</li>
+  </ul>
+  <p style="margin-top:20px;"><strong>賞金の使途：</strong>商用版の提供開始に向けた整備（管理画面の仕上げ、案内資料の制作）。福岡・九州での協業先開拓と、導入事例づくりのための検証費用。</p>
+  <div class="foot"><span>Markdown CMS</span><span>10 / 11</span></div>
+</section>
+
+<!-- 9 実物 -->
+<section class="slide">
+  <div class="kicker">実物</div>
+  <h2>説明は、<span class="accent">開けば動く実物</span>で</h2>
+  <p style="margin-bottom:16px;">審査の場でも、説明は文章だけではありません。この資料そのものがHTMLでできていて、下のリンクを開けば、実際に公開・運用されているサイトがそのまま見られます。</p>
+  <a class="demo-link" target="_blank" rel="noopener" href="https://oosawak.github.io/markdown-cms-oss/">
+    <span class="t">Markdown CMS オープンソース版：仕組みそのものの実物</span>
+    <span class="u">https://oosawak.github.io/markdown-cms-oss/</span>
+  </a>
+  <a class="demo-link" target="_blank" rel="noopener" href="https://oosawak.github.io/yamagata-gourmet/">
+    <span class="t">山形グルメ：地域の店の情報を回す実物</span>
+    <span class="u">https://oosawak.github.io/yamagata-gourmet/</span>
+  </a>
+  <a class="demo-link" target="_blank" rel="noopener" href="https://oosawak.github.io/materials/markdown-cms-lp/">
+    <span class="t">Markdown CMS のLP：お店の方向けの案内ページ</span>
+    <span class="u">https://oosawak.github.io/materials/markdown-cms-lp/</span>
+  </a>
+  <div class="foot"><span>Markdown CMS</span><span>11 / 11</span></div>
+</section>
+
+
+<!-- 12 紹介（デモ版の追加） -->
+<section class="slide">
+  <div class="kicker">紹介</div>
+  <h2>作っているのは、<span class="accent">Lyre3 Games</span></h2>
+  <p style="margin-bottom:16px;">ゲームとWebの仕組みを作る制作ブランドです。この資料の Markdown CMS も、舞台で喋る相方アプリ muse-stage も、Lyre3 Games の作り物です。</p>
+  <div class="demo-link">
+    <span class="t">Markdown CMS：静かなWebサイトの仕組み</span>
+    <span class="u">「プログラムを動かさない」を形にした、事業の芯です</span>
+  </div>
+  <div class="demo-link">
+    <span class="t">よむきく：本を読んで、聴けるサイト</span>
+    <span class="u">青空文庫などの本を、読んで聴ける形にしました</span>
+  </div>
+  <div class="demo-link">
+    <span class="t">地域グルメと舞台アプリ</span>
+    <span class="u">山形・宮城・福島のグルメサイトと、発表の相方 muse-stage</span>
+  </div>
+  <div class="foot"><span>Lyre3 Games</span><span>おわり</span></div>
+</section>
+
+<div class="hint">↑↓キー、またはスクロールでめくれます</div>
+<script>
+  const slides = [...document.querySelectorAll('.slide')];
+  let cur = 0;
+  function go(i) {
+    cur = Math.max(0, Math.min(slides.length - 1, i));
+    slides[cur].scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  addEventListener('keydown', (e) => {
+    if (['ArrowDown', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); go(cur + 1); }
+    if (['ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); go(cur - 1); }
+  });
+  const io = new IntersectionObserver((es) => {
+    es.forEach((en) => { if (en.isIntersecting) cur = slides.indexOf(en.target); });
+  }, { threshold: 0.6 });
+  slides.forEach((s) => io.observe(s));
+</script>
+</body>
+</html>
