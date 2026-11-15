@@ -11,7 +11,11 @@
     "slides/pitch/slide-08.png",
     "slides/pitch/slide-09.png",
     "slides/pitch/slide-10.png",
-    "slides/pitch/slide-11.png"
+    "slides/pitch/slide-11.png",
+    {
+      "src": "slides/yomukiku-sangokushi.mp4",
+      "type": "video"
+    }
   ],
   "links": {
     "11": [
