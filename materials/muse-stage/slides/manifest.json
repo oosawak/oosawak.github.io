@@ -16,6 +16,35 @@
     {
       "src": "slides/yomukiku-sangokushi.mp4",
       "type": "video"
+    },
+    {
+      "type": "games",
+      "games": [
+        {
+          "label": "CubeCoreDungeon",
+          "src": "https://oosawak.github.io/CubeCoreDungeon/"
+        },
+        {
+          "label": "xDimensionGameEngine",
+          "src": "https://oosawak.github.io/xDimensionGameEngine/"
+        },
+        {
+          "label": "ArisaQuest",
+          "src": "https://oosawak.github.io/arisa-quest/"
+        },
+        {
+          "label": "ArcadiaMusicForge",
+          "src": "https://oosawak.github.io/ArcadiaMusicForge/"
+        },
+        {
+          "label": "CubeBoy",
+          "src": "https://oosawak.github.io/html-player/#g=games/cube-boy/"
+        },
+        {
+          "label": "LineBoy",
+          "src": "https://oosawak.github.io/html-player/#g=games/line-boy/"
+        }
+      ]
     }
   ],
   "links": {
