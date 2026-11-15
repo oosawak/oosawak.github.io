@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Muse Stage（ずんだもん版）</title>
-  <script type="module" crossorigin src="./assets/index-D-HF1kI4.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DJ6agFrA.css">
+  <script type="module" crossorigin src="./assets/index-Cr20mqg5.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B_INqxDf.css">
 </head>
 <body>
   <!-- スライド：舞台の後ろに敷く（キャラクターはこの手前で動く） -->
@@ -16,6 +16,12 @@
 
   <!-- 動画スライド（スライドの1枚として動画を置ける。表示中だけ最前面に出る） -->
   <video id="slideVideo" playsinline controls preload="metadata"></video>
+
+  <!-- ゲームスライド（タブで切り替えて、その場で遊べる実物を置く） -->
+  <div id="slideGame">
+    <div id="gameTabs"></div>
+    <iframe id="gameFrame" title="ゲームデモ" allow="autoplay; fullscreen; gamepad" allowfullscreen></iframe>
+  </div>
 
   <!-- 舞台：VRM のミューズを大きく表示する -->
   <div id="stage"></div>
