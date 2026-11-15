@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ミューズさん 3Dモデル（夏版・冬毛版）｜ Lyre3 Games</title>
-<meta name="description" content="ミューズさんの夏版と冬毛版の3Dモデル。正面・背面のプレビューを確認し、テクスチャ付きGLBをダウンロードできます。ボーンなしの静止モデルです。">
+<meta name="description" content="ミューズさんの夏版と冬毛版の3Dモデル。正面・背面のプレビューを確認し、テクスチャ付きGLBをダウンロードできます。ボーン入りのVRM「真ミューズさん v1」もダウンロードできます。">
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
@@ -41,10 +41,22 @@
 </head>
 <body>
 <main class="wrap">
-  <span class="badge">3Dモデル · GLB</span>
+  <span class="badge">3Dモデル · GLB / VRM</span>
   <h1>ミューズさん 3Dモデル</h1>
-  <p class="lead">夏版と冬毛版、ふたつのミューズさん。画像から生成したテクスチャ付きの3Dモデルをダウンロードできます。</p>
-  <p class="note">どちらもボーンなしの静止モデルです。画像を押すと大きなプレビューを開けます。</p>
+  <p class="lead">夏版と冬毛版、ふたつのミューズさん。画像から生成したテクスチャ付きの3Dモデルをダウンロードできます。夏版にボーンを入れたVRM「真ミューズさん v1」も置きました。</p>
+  <p class="note">GLBはボーンなしの静止モデル、VRMはボーン入りでモーションを当てて動かせます。画像を押すと大きなプレビューを開けます。</p>
+
+  <section class="model" aria-labelledby="vrm-title">
+    <h2 id="vrm-title">真ミューズさん v1（VRM）</h2>
+    <p class="description">夏版にボーンを入れてVRM 1.0にした、動かせるミューズさん。VRMA形式のモーションで踊ります。</p>
+    <div class="previews">
+      <figure><a href="2026-11-15-muse-san-vrm-tpose.png"><img src="2026-11-15-muse-san-vrm-tpose.png" alt="真ミューズさん v1の静止姿勢" width="948" height="859"></a><figcaption>静止姿勢</figcaption></figure>
+      <figure><a href="2026-11-15-muse-san-vrm-dance.png"><img src="2026-11-15-muse-san-vrm-dance.png" alt="真ミューズさん v1がダンスモーションで動いているところ" width="948" height="859" loading="lazy"></a><figcaption>ダンス中</figcaption></figure>
+    </div>
+    <a class="dl" href="muse-san.vrm" download="muse-san.vrm">真ミューズさん v1（VRM）をダウンロード</a>
+    <p class="dl-note">VRM 1.0 · 16.9 MB · 22関節のヒューマノイド／表情・口パク・まばたきはありません</p>
+    <p class="dl-note">利用と再配布ができます（個人の商用利用まで。詳しい条件はファイル内のメタ情報にあります）。ブラウザでそのまま動かすなら <a href="../vrm-viewer/?url=../muse-3d/muse-san.vrm">VRMビューアーで開く</a> が便利です。</p>
+  </section>
 
   <section class="model" aria-labelledby="summer-title">
     <h2 id="summer-title">夏版</h2>
@@ -69,7 +81,7 @@
   </section>
 
   <div class="details">
-    <p>Blender などの GLB 対応ソフトで開けます。動かして使う場合は、取り込み後にボーンの追加とリギングを行ってください。</p>
+    <p>GLBは Blender などの GLB 対応ソフトで開けます。動かして使う場合は、取り込み後にボーンの追加とリギングを行ってください。VRMはボーン入りなので、VRM対応のビューアーやアプリでそのまま動かせます。</p>
     <p>正面画像から生成した試作モデルです。毛並みや細部には生成による凹凸があるため、必要に応じて手直ししてください。</p>
   </div>
   <footer><a href="/">Lyre3 Games</a></footer>
