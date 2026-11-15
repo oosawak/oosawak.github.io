@@ -96,7 +96,10 @@ UniRig の処理は、骨格の推定、スキニング、元のモデルへの�
 
 ![ダンスモーションを当てた画像。頬が横に帯状に伸びている](tech/muse-3d-dance-before.png)
 
-[ダンスの動画はこちら](https://oosawak.github.io/content/images/tech/muse-3d-dance-before.webm)
+```video
+https://oosawak.github.io/content/images/tech/muse-3d-dance-before.webm
+948x859
+```
 
 2回目の調整では、顔とフードを楕円体で囲んで頭の骨へ寄せ、肩の帯は骨からの距離で配分し直しました。\
 頬の伸びは解消して、フードの板状の伸びも大きく縮みました。
@@ -106,7 +109,10 @@ UniRig の処理は、骨格の推定、スキニング、元のモデルへの�
 残っているのは、首元と胸の毛の伸び、歩行で膝の曲がりが見えにくいこと、裾の毛が脚に引かれること、足が床に沈むことです。\
 261頂点が5本の影響を持っていて、普通のビューアーの上限である4本に揃える作業も残っています。
 
-[歩行の動画はこちら](https://oosawak.github.io/content/images/tech/muse-3d-walk-after.webm)
+```video
+https://oosawak.github.io/content/images/tech/muse-3d-walk-after.webm
+948x859
+```
 
 ## Blender の Python で直す
 

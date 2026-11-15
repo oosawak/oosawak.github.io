@@ -69,8 +69,9 @@ def article_attribute(tag,name,value):
             if value.startswith('#'):return True
             return value.startswith(('https://','http://','mailto:'))
     if tag=='code':
-        # Only the embed marker survives; expand_embeds consumes it.
-        return name=='class' and value=='language-embed'
+        # Only the embed and video markers survive; expand_embeds and
+        # expand_videos consume them.
+        return name=='class' and value in ('language-embed','language-video')
     return False
 
 EMBED_CLASSES=set()
@@ -109,14 +110,49 @@ def expand_embeds(html_text):
                 f'loading="lazy" allowfullscreen></iframe>')
     return re.sub(r'<pre><code class="language-embed">(.*?)</code></pre>',repl,html_text,flags=re.S)
 
+VIDEO_CLASSES=set()
+
+def expand_videos(html_text):
+    # A fenced ```video block in the source (the URL on the first line, an
+    # optional WxH size on the second, an optional width like 70% on the
+    # third) becomes a <video> element. The same rules as embeds apply:
+    # only URLs on the site's own origin are expanded, anything else is
+    # dropped, and sizing goes through a generated CSS class because the
+    # page CSP forbids inline styles.
+    def repl(match):
+        lines=[line.strip() for line in unescape(match.group(1)).splitlines() if line.strip()]
+        if not lines:return ''
+        url=lines[0]
+        prefix=embed_src_prefix()
+        if not prefix or not url.startswith(prefix):return ''
+        w,h=4,3
+        if len(lines)>1:
+            size=re.fullmatch(r'(\d+)x(\d+)',lines[1])
+            if size and int(size.group(1))>0 and int(size.group(2))>0:
+                w,h=int(size.group(1)),int(size.group(2))
+        width_pct=100
+        if len(lines)>2:
+            pct=re.fullmatch(r'(\d+)%',lines[2])
+            if pct and 10<=int(pct.group(1))<=100:
+                width_pct=int(pct.group(1))
+        cls=f'video-{w}-{h}-{width_pct}'
+        VIDEO_CLASSES.add((cls,w,h,width_pct))
+        return (f'<video class="{cls}" src="{escape(url,quote=True)}" '
+                f'controls playsinline preload="metadata"></video>')
+    return re.sub(r'<pre><code class="language-video">(.*?)</code></pre>',repl,html_text,flags=re.S)
+
 def embed_style_rules():
     rules=['iframe[class^="embed-"]{border:0;display:block;margin:22px auto;background:#000;border-radius:10px}']
     for cls,w,h,pct in sorted(EMBED_CLASSES):
         rules.append(f'.{cls}{{width:{pct}%;aspect-ratio:{w} / {h}}}')
+    if VIDEO_CLASSES:
+        rules.append('video[class^="video-"]{display:block;margin:22px auto;background:#000;border-radius:10px;max-width:100%;height:auto}')
+        for cls,w,h,pct in sorted(VIDEO_CLASSES):
+            rules.append(f'.{cls}{{width:{pct}%;aspect-ratio:{w} / {h}}}')
     return '\n'.join(rules)+'\n'
 
 def sanitize_article_html(content):
-    return expand_embeds(bleach.clean(content,tags=ALLOWED_MARKDOWN_TAGS,attributes=article_attribute,protocols=['http','https','mailto','data'],strip=True))
+    return expand_embeds(expand_videos(bleach.clean(content,tags=ALLOWED_MARKDOWN_TAGS,attributes=article_attribute,protocols=['http','https','mailto','data'],strip=True)))
 
 @lru_cache(maxsize=200)
 def image_uri(rel: str, kind: str) -> tuple[str,int]:
@@ -143,10 +179,13 @@ class InlineImageRenderer(mistune.HTMLRenderer):
         uri,_=image_uri(url,'detail')
         return f'<img src="{escape(uri,quote=True)}" alt="{escape(text,quote=True)}" loading="lazy">'
     def block_code(self,code:str,info:str|None=None)->str:
-        # Only the ```embed fence is marked; expand_embeds turns it into an
-        # iframe later. Other fences render exactly as before.
+        # Only the ```embed and ```video fences are marked; expand_embeds
+        # and expand_videos turn them into an iframe or a video element
+        # later. Other fences render exactly as before.
         if info and info.strip()=='embed':
             return f'<pre><code class="language-embed">{escape(code)}</code></pre>\n'
+        if info and info.strip()=='video':
+            return f'<pre><code class="language-video">{escape(code)}</code></pre>\n'
         return super().block_code(code,info)
 
 md=mistune.create_markdown(renderer=InlineImageRenderer(escape=True),plugins=['table'])
@@ -300,7 +339,7 @@ def generate():
     en_page=f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{escape(en_desc,quote=True)}"><meta http-equiv="refresh" content="0; url=../#/en/"><title>{escape(en_name)}</title></head><body><p><a href="../#/en/">{escape(en_name)} &mdash; English</a></p></body></html>"""
     (DIST/'en').mkdir(parents=True,exist_ok=True)
     (DIST/'en'/'index.html').write_text(en_page,encoding='utf-8')
-    if EMBED_CLASSES:
+    if EMBED_CLASSES or VIDEO_CLASSES:
         with (DIST/'assets/style.css').open('a',encoding='utf-8') as css:
             css.write(embed_style_rules())
     print(f'Built independent {SITE_ID}: {len(summaries)} items at {origin}')
