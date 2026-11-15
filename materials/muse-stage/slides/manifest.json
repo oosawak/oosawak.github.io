@@ -12,5 +12,33 @@
     "slides/pitch/slide-09.png",
     "slides/pitch/slide-10.png",
     "slides/pitch/slide-11.png"
-  ]
+  ],
+  "links": {
+    "11": [
+      {
+        "x": 0.055,
+        "y": 0.375,
+        "w": 0.89,
+        "h": 0.125,
+        "url": "https://oosawak.github.io/markdown-cms-oss/",
+        "label": "Markdown CMS オープンソース版"
+      },
+      {
+        "x": 0.055,
+        "y": 0.51,
+        "w": 0.89,
+        "h": 0.125,
+        "url": "https://oosawak.github.io/yamagata-gourmet/",
+        "label": "山形グルメ"
+      },
+      {
+        "x": 0.055,
+        "y": 0.645,
+        "w": 0.89,
+        "h": 0.125,
+        "url": "https://oosawak.github.io/materials/markdown-cms-lp/",
+        "label": "Markdown CMS のLP"
+      }
+    ]
+  }
 }
