@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Muse Stage（ずんだもん版）</title>
-  <script type="module" crossorigin src="./assets/index-CAnRsQbg.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BkJbXUgr.css">
+  <script type="module" crossorigin src="./assets/index-D-HF1kI4.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DJ6agFrA.css">
 </head>
 <body>
   <!-- スライド：舞台の後ろに敷く（キャラクターはこの手前で動く） -->
@@ -13,6 +13,9 @@
 
   <!-- スライド上のリンク領域（同梱スライドの manifest で指定された場所だけ、透明なリンクを重ねる） -->
   <div id="slideLinks"></div>
+
+  <!-- 動画スライド（スライドの1枚として動画を置ける。表示中だけ最前面に出る） -->
+  <video id="slideVideo" playsinline controls preload="metadata"></video>
 
   <!-- 舞台：VRM のミューズを大きく表示する -->
   <div id="stage"></div>
@@ -49,7 +52,7 @@
       <label>動き <select id="motionMode"><option value="wander">おまかせ</option><option value="stay">その場</option><option value="off">なし</option></select></label>
     </div>
     <div class="row">
-      <label class="filebtn" title="スライド画像（PNG／JPG）かPDFを選ぶ。PDFは全ページがスライドになる。ファイル名の順に並ぶ">スライドを選ぶ<input type="file" id="slideFiles" accept="image/*,.pdf" multiple hidden></label>
+      <label class="filebtn" title="スライド画像（PNG／JPG）・PDF・動画（MP4など）を選ぶ。PDFは全ページがスライドに、動画は1枚の動画スライドになる。ファイル名の順に並ぶ">スライドを選ぶ<input type="file" id="slideFiles" accept="image/*,.pdf,video/*" multiple hidden></label>
       <button id="btnSlidePrev" title="前のスライド（←キー）">◀</button>
       <button id="btnSlideNext" title="次のスライド（→キー、舞台をクリックでも進む）">▶</button>
       <span id="slideCount" class="muted"></span>
