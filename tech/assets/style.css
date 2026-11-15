@@ -72,3 +72,5 @@
 .embed-2-1-100{width:100%;aspect-ratio:2 / 1}
 .embed-512-512-70{width:70%;aspect-ratio:512 / 512}
 .embed-512-768-70{width:70%;aspect-ratio:512 / 768}
+video[class^="video-"]{display:block;margin:22px auto;background:#000;border-radius:10px;max-width:100%;height:auto}
+.video-948-859-100{width:100%;aspect-ratio:948 / 859}
