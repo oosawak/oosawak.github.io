@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Muse Stage（ずんだもん版）</title>
-  <script type="module" crossorigin src="./assets/index-DGVYT8eI.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DezIjd52.css">
+<title>Muse Stage</title>
+  <script type="module" crossorigin src="./assets/index-ecHGlNrB.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-s3Yf5BQ9.css">
 </head>
 <body>
   <!-- スライド：舞台の後ろに敷く（キャラクターはこの手前で動く） -->
@@ -37,7 +37,7 @@
 
   <!-- 取り込んだ返事の一覧：右側に出し、選ぶとその返事を読み上げる -->
   <div id="replies" class="replies">
-    <div class="replies-head">取り込んだ返事 <span id="repliesCount"></span></div>
+    <div class="replies-head"><span>取り込んだ返事 <span id="repliesCount"></span></span><button id="btnRepliesFold" type="button" title="一覧を折りたたむ">たたむ ▾</button></div>
     <div id="replyList" class="reply-list"></div>
   </div>
 
@@ -62,19 +62,20 @@
     </div>
     <div class="row">
       <label class="filebtn" title="スライド画像（PNG／JPG）・PDF・動画（MP4など）を選ぶ。PDFは全ページがスライドに、動画は1枚の動画スライドになる。ファイル名の順に並ぶ">スライドを選ぶ<input type="file" id="slideFiles" accept="image/*,.pdf,video/*" multiple hidden></label>
+      <label class="filebtn" title="VRM ファイル（.vrm）を選ぶと、キャラクターがそのモデルに入れ替わる。画面へドラッグ＆ドロップでも読み込める（どちらも保存はしない）">VRMを選ぶ<input type="file" id="vrmFile" accept=".vrm" hidden></label>
       <button id="btnSlidePrev" title="前のスライド（←キー）">◀</button>
       <button id="btnSlideNext" title="次のスライド（→キー、舞台をクリックでも進む）">▶</button>
       <span id="slideCount" class="muted"></span>
       <button id="btnSlideClear" title="スライドを消す">スライドを消す</button>
     </div>
     <div class="row">
-      <button id="btnGrab" title="Muse.app の画面から、いちばん新しい返事を取り込む（アクセシビリティの許可が要る）">Muse から取り込む</button>
       <label class="chk" title="直送・フックで新しい返事が届いたら、自動で読み上げる"><input type="checkbox" id="chkAuto"> 新しい返事を自動で読む</label>
       <label class="chk" title="声分け版：文中の @user の下は本人の文として男性の声（VOICEVOX 玄野武宏）、@muse の下はミューズの文としてずんだもんで読む"><input type="checkbox" id="chkSplit"> 声分け（本人＝男性の声）</label>
       <label class="chk" title="公開MQTT中継経由で、ミューズの返事を即時に受け取る（Web版・アプリ版どちらでも）"><input type="checkbox" id="chkRelay"> Web直送（MQTT中継）</label>
       <input type="text" id="relayTopic" placeholder="中継の合言葉" autocomplete="off" title="中継の合言葉：自分で決めた文字列を入れます。ミューズ側（~/workspace/stage-relay-topic.txt）と同じ値にしてください。同じ合言葉同士でだけ文が届きます"
         style="width:100%;box-sizing:border-box;margin:2px 0 6px;padding:5px 7px;border-radius:6px;border:1px solid #ffffff2a;background:#00000030;color:inherit;font-size:12px">
-      <label class="chk" title="Muse.app の画面を2秒ごとに見て、新しい返事を取り込んで読み上げる（アクセシビリティの許可が要る）"><input type="checkbox" id="chkAutoGrab"> アプリから自動取り込み</label>
+      <label class="chk" title="Muse.app の画面を2秒ごとに見て、新しい返事を取り込んで読み上げる（アクセシビリティの許可が要る）"><input type="checkbox" id="chkAutoGrab"> AX自動取り込み</label>
+      <button id="btnGrab" title="Muse.app の画面から、いちばん新しい返事をアクセシビリティで取り込む（許可が要る）">AX取り込み</button>
     </div>
     <div class="status-line"><span id="spinner" class="spinner"></span><div id="status" class="status">準備中…</div></div>
     <div class="keys">Space 読み上げ ・ Esc 止める ・ F 全画面 ・ H パネルを隠す ・ ←→ スライド ・ [ ] 速さ ・ キャラをクリック よける／戻る ・ ⌘Enter 読み上げ ・ ⌘Q 終了</div>
