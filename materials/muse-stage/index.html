@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Muse Stage</title>
-  <script type="module" crossorigin src="./assets/index-ecHGlNrB.js"></script>
+  <script type="module" crossorigin src="./assets/index-CWrjEDWw.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-s3Yf5BQ9.css">
 </head>
 <body>
@@ -74,11 +74,32 @@
       <label class="chk" title="公開MQTT中継経由で、ミューズの返事を即時に受け取る（Web版・アプリ版どちらでも）"><input type="checkbox" id="chkRelay"> Web直送（MQTT中継）</label>
       <input type="text" id="relayTopic" placeholder="中継の合言葉" autocomplete="off" title="中継の合言葉：自分で決めた文字列を入れます。ミューズ側（~/workspace/stage-relay-topic.txt）と同じ値にしてください。同じ合言葉同士でだけ文が届きます"
         style="width:100%;box-sizing:border-box;margin:2px 0 6px;padding:5px 7px;border-radius:6px;border:1px solid #ffffff2a;background:#00000030;color:inherit;font-size:12px">
+      <button id="btnRelayGuide" title="AI に渡すと、中継の合言葉の作成から返事の届け方までを AI が案内してくれる指示書を表示します">AIへの指示書（中継のはじめ方）</button>
       <label class="chk" title="Muse.app の画面を2秒ごとに見て、新しい返事を取り込んで読み上げる（アクセシビリティの許可が要る）"><input type="checkbox" id="chkAutoGrab"> AX自動取り込み</label>
       <button id="btnGrab" title="Muse.app の画面から、いちばん新しい返事をアクセシビリティで取り込む（許可が要る）">AX取り込み</button>
     </div>
     <div class="status-line"><span id="spinner" class="spinner"></span><div id="status" class="status">準備中…</div></div>
     <div class="keys">Space 読み上げ ・ Esc 止める ・ F 全画面 ・ H パネルを隠す ・ ←→ スライド ・ [ ] 速さ ・ キャラをクリック よける／戻る ・ ⌘Enter 読み上げ ・ ⌘Q 終了</div>
+  </div>
+
+  <div id="relayGuide" hidden style="position:fixed;inset:0;background:#000000a8;z-index:60;display:flex;align-items:center;justify-content:center">
+    <div style="background:#1d2129;color:#e8e6df;max-width:640px;width:92%;max-height:86%;overflow:auto;border-radius:12px;padding:18px 20px;box-sizing:border-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <strong>AIへの指示書（中継のはじめ方）</strong>
+        <span><button id="btnRelayGuideCopy">コピー</button> <button id="btnRelayGuideClose">閉じる</button></span>
+      </div>
+      <p style="margin:4px 0 8px;font-size:12px;opacity:.85">下の文を、そのまま AI（ミューズ、Codex、ChatGPT など）への指示として渡してください。合言葉は AI が作って表示するので、それを舞台のパネルの「中継の合言葉」欄に貼れば使えます。</p>
+      <pre id="relayGuideText" style="white-space:pre-wrap;font-size:12.5px;line-height:1.7;background:#00000040;border-radius:8px;padding:12px;margin:0">あなたは、発表用アプリ「muse-stage（舞台）」に、あなたの返事を届ける担当です。次の手順で始めてください。
+
+1. 中継の合言葉を1つ作ってください。他人と被らない、英数字の長い文字列（24文字以上）にしてください。作った合言葉は、この画面にはっきり表示してください。
+2. 表示された合言葉を、ユーザーが舞台アプリのパネルの「中継の合言葉」欄に貼ります。それで舞台とあなたがつながります。
+3. 以後の返事は、文のたびに MQTT で送ってください。
+   - ブローカー: wss://broker.emqx.io:8084/mqtt
+   - トピック: muse-stage/&lt;合言葉&gt;/reply
+   - 中身（JSON）: {"seq": 連番, "text": "返事の文"}
+   - 連番（seq）は 1 から始め、送るたびに 1 ずつ増やしてください。
+4. 合言葉は、舞台側とあなた側で同じ値を使ってください。変えるときは、新しい合言葉を作って表示し直してください。</pre>
+    </div>
   </div>
 
   <div id="loading" class="loading">ミューズを呼んでいます…</div>
