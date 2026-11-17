@@ -68,7 +68,15 @@
 .brandicon-gourmet svg{width:54px}
 @media(max-width:650px){.brandicon{width:39px;height:39px}.brandicon svg{width:38px;height:38px}.brandicon-gourmet svg{width:42px}}
 .tsub{display:block;font-size:.6em;font-weight:500;letter-spacing:.02em;opacity:.72;margin-top:.16em}
-.listenbar{margin-bottom:20px}iframe[class^="embed-"]{border:0;display:block;margin:22px auto;background:#000;border-radius:10px}
+.listenbar{margin-bottom:20px}.article .rightnote{position:sticky;top:96px;max-height:calc(100vh - 116px);overflow-y:auto;scrollbar-width:thin}
+.sidemenu{margin-top:26px;border-top:1px solid var(--line);padding-top:18px}
+.sidemenu h3{font:600 15px Georgia,serif;margin-bottom:10px}
+.sidemenu ul{list-style:none;margin:0;padding:0}
+.sidemenu li{margin:0 0 9px;font-size:12px;line-height:1.6}
+.sidemenu li.sub{padding-left:14px}
+.sidemenu .recdate{display:block;font-size:10px;color:var(--muted)}
+.prose h2,.prose h3{scroll-margin-top:100px}
+iframe[class^="embed-"]{border:0;display:block;margin:22px auto;background:#000;border-radius:10px}
 .embed-2-1-100{width:100%;aspect-ratio:2 / 1}
 .embed-512-512-70{width:70%;aspect-ratio:512 / 512}
 .embed-512-768-70{width:70%;aspect-ratio:512 / 768}
