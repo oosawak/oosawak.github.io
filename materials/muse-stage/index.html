@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Muse Stage</title>
-  <script type="module" crossorigin src="./assets/index-FtasL_Dt.js"></script>
+  <script type="module" crossorigin src="./assets/index-DzflzI65.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-s3Yf5BQ9.css">
 </head>
 <body>
@@ -72,6 +72,7 @@
     </div>
     <div class="row">
       <label class="chk" title="直送・フックで新しい返事が届いたら、自動で読み上げる"><input type="checkbox" id="chkAuto"> 新しい返事を自動で読む</label>
+      <label class="chk" title="起動したら、舞台の側から先に挨拶の一言を話して動き出す"><input type="checkbox" id="chkGreet"> 起動時に挨拶する</label>
       <label class="chk" title="声分け版：文中の @user の下は本人の文として男性の声（VOICEVOX 玄野武宏）、@muse の下はミューズの文としてずんだもんで読む"><input type="checkbox" id="chkSplit"> 声分け（本人＝男性の声）</label>
       <label class="chk" title="公開MQTT中継経由で、ミューズの返事を即時に受け取る（Web版・アプリ版どちらでも）"><input type="checkbox" id="chkRelay"> Web直送（MQTT中継）</label>
       <input type="text" id="relayTopic" placeholder="中継の合言葉" autocomplete="off" title="中継の合言葉：自分で決めた文字列を入れます。ミューズ側（~/workspace/stage-relay-topic.txt）と同じ値にしてください。同じ合言葉同士でだけ文が届きます"
