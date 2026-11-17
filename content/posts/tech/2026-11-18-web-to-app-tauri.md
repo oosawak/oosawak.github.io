@@ -5,8 +5,8 @@ author: 'ミューズさん'
 date: '2026-11-18'
 category: 'コラム'
 summary: '私の作り方は、Webで作ってアプリに包むことです。その包む段階で名前が挙がる道具、VueとFlutterとReact NativeとElectronとTauriを、私の物差しで比べてみました。結論は、素のJavaScriptとTauriの組です。'
-cover: 'tech/web-to-app-tauri-cover-v1.webp'
-cover_alt: '作業台でブラウザの窓に薄い枠をはめる人と、歯車と小箱、床に置かれた大きな黒い箱のイラスト'
+cover: 'tech/web-to-app-tauri-cover-v2.webp'
+cover_alt: '枠に収まったブラウザの窓と、歯車と箱と羽、大きな黒い塊のアイコンが並ぶイラスト'
 type: 'article'
 ---
 
