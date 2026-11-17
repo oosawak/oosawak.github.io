@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VRM Sprite Recorder</title>
+<style>
+  html,body{margin:0;padding:0;background:#202020;color:#eee;font-family:sans-serif}
+  main{padding:10px}
+  canvas#stage{background:#00ff00;max-width:100%;height:auto;display:block}
+  .row{margin:10px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  button,a.btn{background:#444;color:#fff;border:1px solid #777;border-radius:6px;padding:8px 14px;text-decoration:none;font-size:14px}
+  #status{font-size:13px;color:#9e9}
+  #sheetPreview{max-width:100%;image-rendering:pixelated;background:#00ff00}
+  pre#manifest{background:#111;color:#9e9;padding:10px;overflow:auto;font-size:12px;max-height:300px}
+</style>
+</head>
+<body>
+<main>
+  <h1 style="font-size:18px">VRM Sprite Recorder v0.1</h1>
+  <p style="font-size:13px">VRMモデルとCC0モーションから、方向×アクションのグリッド動画と土台シートを作ります。切り出しは FrameCut Studio で行う前提です。指定はURLパラメータでもできます（model / layout=2x2,4x2,4x4 / bg / frames / loops / capture=sheet）。</p>
+  <canvas id="stage" width="1280" height="720"></canvas>
+  <div class="row">
+    <button id="btnSheet">シート画像を作る</button>
+    <button id="btnVideo">動画を録画する</button>
+    <a class="btn" id="sheetLink" download="sheet.png">シートを保存</a>
+    <a class="btn" id="videoLink" download="grid.webm">動画を保存</a>
+    <span id="status">loading</span>
+  </div>
+  <img id="sheetPreview" alt="">
+  <h2 style="font-size:15px">マニフェスト（セルの対応）</h2>
+  <pre id="manifest">{}</pre>
+</main>
+<script type="module" src="./recorder-bundle.js"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cdf4ee53507948e4a412f503875833cd"}'></script><!-- End Cloudflare Web Analytics --></body>
+</html>
