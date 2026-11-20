@@ -244,12 +244,21 @@ function amedasLine(st) {
 
 /* ---------- data/*.json（ビューア部分） ---------- */
 async function loadLocalData() {
-  const [cl, th, cam] = await Promise.all([
+  const [cl, th, cam, br] = await Promise.all([
     fetchJSON('data/closures.json').catch(() => null),
     fetchJSON('data/threads.json').catch(() => null),
     fetchJSON('data/cameras.json').catch(() => ({ cameras: [] })),
+    fetchJSON('data/bears.json').catch(() => null),
   ]);
   state.closures = cl; state.threads = th; state.cameras = cam.cameras || [];
+  state.bears = br;
+}
+function bearsFor(place) {
+  if (!state.bears?.records) return [];
+  return state.bears.records.filter(r => r.area === place.name);
+}
+function daysAgo(dateStr) {
+  return (Date.now() - new Date(dateStr + 'T00:00:00+09:00').getTime()) / 86400000;
 }
 
 /* ---------- 描画 ---------- */
@@ -347,6 +356,15 @@ function renderCards(places) {
     for (const c of cams) {
       h += `<div class="cam"><h4>ライブカメラ: ${esc(c.name)}</h4><img src="${esc(c.imageUrl)}" alt="${esc(c.name)}" loading="lazy"><div class="cap">出典: ${esc(c.source)}（${esc(c.updateInterval)}更新 / 画像は表示のみで保存しません）</div></div>`;
     }
+    const bears = bearsFor(p);
+    if (p.pref.name === '山形県') {
+      h += `<h4>熊の目撃（県公式）</h4><div class="muted">山形県は市町村別の件数（PDF）のみ公表のため一覧はありません: <a href="https://www.pref.yamagata.jp/050011/kurashi/shizen/seibutsu/about_kuma/kumamokugeki.html" target="_blank" rel="noopener">県のクマ目撃情報</a></div>`;
+    } else if (bears.length) {
+      const n30 = bears.filter(r => daysAgo(r.date) <= 30).length;
+      h += `<h4>熊の目撃（県公式）</h4><div class="bears">` +
+        bears.slice(0, 3).map(r => `<div>${esc(r.date.slice(5).replace('-', '/'))} ${esc(r.time)} ${esc(r.district.slice(0, 30))} ${esc(r.kind)}${r.count ? ` ${r.count}頭` : ''}${r.urban === '住居集合地域等' ? '（市街地）' : ''}</div>`).join('') +
+        `<div class="muted">直近30日で${n30}件（${esc(bears[0].pref)}発表）</div></div>`;
+    }
     h += `<h4>現地の声（Threads・いいねから）</h4>`;
     if (p.pref.name === '宮城県') h += `<div class="muted">宮城の天気コーナーは TBC「ウォッチン！みやぎ」: <a href="https://www.tbc-sendai.co.jp/watchin/" target="_blank" rel="noopener">公式ページ</a></div>`;
     h += shown.length ? shown.map(postHTML).join('') : '<div class="muted">いいねした投稿はまだありません</div>';
@@ -394,6 +412,10 @@ function renderTicker(places) {
     else parts.push(`【通行止め】${o.office}の規制情報は状態不明です`);
   }
   for (const q of state.quakes.slice(0, 3)) parts.push(`【地震】${q.at.slice(5, 16).replace('T', ' ')} ${q.anm} M${q.mag} 最大震度${q.maxi}`);
+  for (const p of places) {
+    const b = bearsFor(p).find(r => daysAgo(r.date) <= 2);
+    if (b) parts.push(`【熊】${p.short}: ${b.district.slice(0, 20)}で${b.kind}（${b.date.slice(5).replace('-', '/')}）`);
+  }
   if (!parts.length) parts.push('現在、警報・通行止め・大きな地震はありません');
   document.getElementById('tickerInner').innerHTML = parts.map(t => `<span>${esc(t)}</span>`).join('');
   let tState = '';
@@ -466,6 +488,15 @@ function renderMap(places) {
     return mk;
   });
   state.cameras.forEach(c => bounds.push([c.lat, c.lon]));
+  const placeNames = new Set(places.map(p => p.name));
+  const bearPins = (state.bears?.records || [])
+    .filter(r => r.lat && placeNames.has(r.area) && daysAgo(r.date) <= 14)
+    .slice(0, 60);
+  for (const r of bearPins) {
+    const icon = L.divIcon({ className: '', html: '<div class="bear-pin">熊</div>', iconSize: [22, 22], iconAnchor: [11, 11] });
+    L.marker([r.lat, r.lon], { icon }).addTo(state.layers)
+      .bindPopup(`<h4>熊の${esc(r.kind)}</h4>${esc(r.date)} ${esc(r.time)}<br>${esc(r.muni)} ${esc(r.district)}<br>${r.count ? `${r.count}頭 / ` : ''}出典: ${esc(r.source)}`);
+  }
   if (bounds.length) state.map.fitBounds(bounds, { padding: [30, 30] });
 }
 function focusCamera(i) {
@@ -520,7 +551,7 @@ async function refreshBoard(refetch = true) {
   for (const r of renders) { try { r(); } catch (e) { console.warn('render', e); } }
   const now = new Date();
   document.getElementById('updatedLine').textContent =
-    `最終更新: ${now.toLocaleString('ja-JP')}（気象庁データを直接取得 / 通行止め・現地の声は定期生成データ）`;
+    `最終更新: ${now.toLocaleString('ja-JP')}（気象庁データを直接取得 / 通行止め・現地の声・熊情報は定期生成データ）`;
 }
 
 /* ---------- 時計 ---------- */
