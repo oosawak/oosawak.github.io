@@ -749,6 +749,11 @@ async function setupSnapshots() {
     if (note && snapDate) {
       note.hidden = false;
       note.textContent = `${snapDate.toLocaleString('ja-JP')} 時点の表示を見ています`;
+      const a = document.createElement('a');
+      a.href = `data/snapshots/${encodeURIComponent(SNAP_ID)}/snapshot.html`;
+      a.textContent = '単一HTML版（見せる用）';
+      a.style.marginLeft = '10px';
+      note.appendChild(a);
     }
   }
   sel.addEventListener('change', () => {
