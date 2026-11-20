@@ -332,7 +332,7 @@ function renderCards(places) {
       h += `<div class="temps">${fc.tmin != null && fc.tmin !== '' ? `最低 ${esc(fc.tmin)}℃ / ` : ''}${fc.tmax != null && fc.tmax !== '' ? `最高 ${esc(fc.tmax)}℃` : ''}</div>`;
       h += `<div class="temps">週間: ${fc.week.slice(0, 5).map(w => `${esc(w.date)} ${WX_ICON[w.code] || ''}${w.tmax != null && w.tmax !== '' ? ` ${esc(w.tmax)}℃` : ''}`).join(' ・ ')}</div>`;
     } else h += '<div class="muted">予報を取得できませんでした</div>';
-    h += `<div class="amedas">アメダス ${esc(amedasLine(st))}</div>`;
+    h += `<div class="amedas">アメダス ${amedasLine(st)}</div>`;
     for (const c of cams) {
       h += `<div class="cam"><h4>ライブカメラ: ${esc(c.name)}</h4><img src="${esc(c.imageUrl)}" alt="${esc(c.name)}" loading="lazy"><div class="cap">出典: ${esc(c.source)}（${esc(c.updateInterval)}更新 / 画像は表示のみで保存しません）</div></div>`;
     }
@@ -392,8 +392,8 @@ function renderCameraBar() {
 /* ---------- 地図 ---------- */
 function initMap() {
   state.map = L.map('map');
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '© OpenStreetMap contributors © CARTO', maxZoom: 18, subdomains: 'abcd',
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors', maxZoom: 18,
   }).addTo(state.map);
   state.layers = L.layerGroup().addTo(state.map);
 }
@@ -408,7 +408,7 @@ function placePopup(p, idx) {
   let h = `<h4>${idx + 1}. ${esc(p.name)}</h4>`;
   h += `<div>${ws.length ? ws.map(chip).join('') : '<span class="muted">警報・注意報なし</span>'}</div>`;
   if (fc) h += `<div>${WX_ICON[fc.code] || ''} ${esc(fc.weather)}</div>`;
-  h += `<div class="muted">アメダス ${esc(amedasLine(st))}</div>`;
+  h += `<div class="muted">アメダス ${amedasLine(st)}</div>`;
   if (posts.length) h += `<div><b>人間アメダス最新:</b> ${esc(posts[0].text.slice(0, 80))} <a href="${esc(posts[0].url)}" target="_blank" rel="noopener">元投稿</a></div>`;
   for (const c of cams) h += `<div><img src="${esc(c.imageUrl)}" alt="${esc(c.name)}"><div class="muted">${esc(c.name)} / 出典: ${esc(c.source)}</div></div>`;
   return h;

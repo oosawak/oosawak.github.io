@@ -70,6 +70,8 @@ body{max-width:1600px;margin:0 auto;padding:0 16px 64px}
 #mapSec{margin:.8rem 0}
 #map{height:380px;border-radius:var(--radius);border:1px solid var(--border);
   background:var(--surface-2)}
+/* 地図タイルだけを暗くする（マーカーやポップアップには効かせない） */
+.leaflet-tile-pane img{filter:invert(1) hue-rotate(180deg) brightness(.92) contrast(.92) saturate(.65)}
 @media (min-width:640px){#map{height:460px}}
 #cameraBar{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
 #cameraBar button{font-size:.85rem}
