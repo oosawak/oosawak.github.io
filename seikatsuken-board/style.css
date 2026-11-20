@@ -191,3 +191,8 @@ body.wallpaper .title-block h1{font-size:1.6rem}
 .mp-sum{font-size:.88rem}
 .mp-form input{display:block;width:200px;max-width:70vw;margin:.4rem 0;padding:.35rem;background:var(--surface-2);border:1px solid var(--border);border-radius:6px;color:var(--text)}
 .mp-actions{margin-top:.5rem}
+
+/* 現地の声アーカイブ */
+#archiveSec { margin-top: 18px; }
+#archiveSec h3 { font-size: 16px; font-weight: 900; margin: 0 0 8px; }
+.arch-place { font-size: 12px; font-weight: 700; color: var(--accent); margin-top: 12px; }
