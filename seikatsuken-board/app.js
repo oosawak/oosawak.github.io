@@ -315,8 +315,10 @@ function postHTML(p) {
   let h = `<div class="post${p.promo ? ' promo' : ''}"><div class="meta">@${esc(p.username)} ・ ${esc(p.takenAt.replace('T', ' ').slice(0, 16))} ・ ♥${p.likeCount}${p.liked ? ' ・ ★本人のいいね' : ''}${p.spot ? ' ・ ' + esc(p.spot) : ''}${p.promo ? ' ・ 宣伝の可能性' : ''}</div>` +
     `<div class="text">${esc(p.text)}</div><div class="meta"><a href="${esc(p.url)}" target="_blank" rel="noopener">元投稿を見る</a>${p.hasImage ? '（画像つき）' : ''}</div>`;
   // ★本人のいいね投稿だけ、公式埋め込みで画像・動画も出す（Pages版では表示できることを確認済み）
+  // 最初は折りたたみ。広げた時に初めて埋め込みを作って embed.js に描画させる
+  // （隠れたまま描画させると iframe の大きさが決まらないため）。
   if (p.liked && p.hasImage) {
-    h += `<blockquote class="text-post-media" data-text-post-permalink="${esc(p.url)}" data-text-post-version="0"><a href="${esc(p.url)}" target="_blank" rel="noopener">Threadsで元投稿を見る</a></blockquote>`;
+    h += `<button type="button" class="embed-btn">写真・動画を見る</button><div class="embed-box" hidden data-permalink="${esc(p.url)}"></div>`;
   }
   return h + '</div>';
 }
@@ -365,7 +367,19 @@ function renderCards(places) {
       b.textContent = m.hidden ? label : '閉じる';
     });
   });
-  loadThreadEmbeds();
+  wrap.querySelectorAll('.embed-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      const box = b.nextElementSibling;
+      box.hidden = !box.hidden;
+      b.textContent = box.hidden ? '写真・動画を見る' : '閉じる';
+      if (!box.hidden && !box.dataset.built) {
+        box.dataset.built = '1';
+        const url = box.dataset.permalink;
+        box.innerHTML = `<blockquote class="text-post-media" data-text-post-permalink="${url}" data-text-post-version="0"><a href="${url}" target="_blank" rel="noopener">Threadsで元投稿を見る</a></blockquote>`;
+        loadThreadEmbeds();
+      }
+    });
+  });
 }
 function renderWall(places) {
   const list = document.getElementById('wallWarningList');

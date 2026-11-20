@@ -119,6 +119,8 @@ body{max-width:1600px;margin:0 auto;padding:0 16px 64px}
 .post.promo{opacity:.55}
 .post blockquote.text-post-media{margin:.5rem auto;max-width:100%}
 .post iframe{max-width:100%}
+.embed-btn{margin-top:.3rem;font-size:.85rem}
+.embed-box{margin-top:.4rem}
 .more-btn{margin-top:.3rem;font-size:.85rem}
 
 /* フッター */
