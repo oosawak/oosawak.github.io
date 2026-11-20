@@ -1,107 +1,95 @@
 # 人間アメダス（Threads）— 生活圏防災ライブボード
 
-生成日時: 2026-11-20 12:50（日本時間）
+生成日時: 2026-11-20 13:58（日本時間）
 各地名で Threads の新着投稿を検索した結果。地名キーワード検索であり、位置情報ではない。
 宣伝色の強い投稿には「宣伝?」印を付け、並びでは後ろに下げている。
 
 ## 仙台
-- [2026-11-20 12:49] @ichi.shu.hu いいね0
-  - ささ寒いねぇ🥶仙台なう。
-  - https://www.threads.com/@ichi.shu.hu/post/Df8umduD7hc
-- [2026-11-20 12:48] @kananyon11 いいね0
-  - 多分ルスツの方が樹氷綺麗ですよ✨️そして宿からほぼ目の前、仙台は車でウェスティンから2時間💦 https://ameblo.jp/t-r1209/entry-12779803867.html
-  - https://www.threads.com/@kananyon11/post/Df8udbekvap
-- [2026-11-20 12:37] @eri.amakusa いいね1
-  - 樹氷を見てみたかったので仙台チョイスでした。宿泊特典をムダなく使うならルスツですね
-  - https://www.threads.com/@eri.amakusa/post/Df8tMxOoLDA
-- [2026-11-20 12:48] @yukiyokawa_81 いいね0 宣伝?
-  - Googleプロフィール  ウェブサイト→STEKINA  reservation  SALOWIN仙台本町店  YU kiyokawa  hair  #レディースパーマ仙台 #メンズパーマ仙台 #メンズ曲がる縮毛矯正 #KERAFFECT #SALOWIN仙台本町店
-  - https://www.threads.com/@yukiyokawa_81/post/Df8ubv2owYQ
-- [2026-11-20 12:48] @moment_flowercake_cafe いいね0 宣伝?
-  - Today's Order Cake 💐  淡いパープルとアイボリーのローズ、グリーンのアクセントを合わせたお誕生日ケーキをお作りしました🎂✨ 大切な日の特別なひとときに、心がふっと華やぐようなデザインに🕊️  お祝いのシーンや贈る方のイメージに合わせて、カラーや雰囲気のご相談も承っております。  【オーダー方法】 ご
-  - https://www.threads.com/@moment_flowercake_cafe/post/Df8ubn9EyM8
+- [2026-11-20 13:55] @clean_kk_sendai いいね0 画像つき
+  - ついに仙台も初雪⛄️
+  - https://www.threads.com/@clean_kk_sendai/post/Df82HM6kgUy
+- [2026-11-20 13:23] @eri2leon いいね307 画像つき
+  - 仙台駅前に居るんだけど、、、 すんごい雪❄
+  - https://www.threads.com/@eri2leon/post/Df8ygK6DiGp
+- [2026-11-20 13:57] @hoshi_yoshikazu いいね0
+  - 仙台も降っているんですねー。
+  - https://www.threads.com/@hoshi_yoshikazu/post/Df82XsSllc3
+- [2026-11-20 13:56] @takako.1210 いいね0 画像つき
+  - 姉の推し活に付き添い💙 推しが来たから行きたいって話ですぐに行ってきたぁ〜🤭 推しが座った席に座る姉がドキドキ💓しててやばかったぁ〜💙  お店の人も皆優しかったぁ〜🧡 美味しかったぁ〜❤️  sendai_ajiyoshi  #仙台辛味噌ラーメン🍜 #姉の推し活💙
+  - https://www.threads.com/@takako.1210/post/Df82PG1kVC-
+- [2026-11-20 13:57] @marone_sendai いいね0 画像つき 宣伝?
+  - 🐈‍⬛ ༶ ┈┈┈ ✦ ┈┈┈ ༶  🐈 猫は、猫同士より人間によく鳴く？  猫ちゃんがこちらを見つめながら 「ニャー」と鳴くこと、ありませんか？  ある研究では、38匹の猫を対象に 飼い主さんがいる場合と いない場合の鳴き声を比較  すると、 飼い主さんがいるときの鳴き声は 合計86回、猫だけのときは20回  なんと
+  - https://www.threads.com/@marone_sendai/post/Df82Yc0D745
 
 ## 松島
-- [2026-11-20 12:48] @umikaze.keiko いいね0
-  - 宮城県　日本三景松島⛩️初雪…❄️⛄️積もってはいませんけど…これから☃️❄️寒いわけです🥶🥶
-  - https://www.threads.com/@umikaze.keiko/post/Df8uftgD1Ic
-- [2026-11-20 12:43] @rook020425 いいね1
-  - 死ぬまでに一度は見たい 日本三景①松島②天橋立③宮島 まずは宮城県の松島へ 来月🚗行く予定です💨💨💨 宿選びで迷ってます  素敵な宿が沢山あるけど 外国人宿泊客が少なめの 宿に泊まりたいです‼️  調べる術がない・・・
-  - https://www.threads.com/@rook020425/post/Df8t9Tsic6R
-- [2026-11-20 12:40] @bloomb_mirai2026 いいね0
-  - 先日、父や妹と一緒に九州から神戸へ行った際に乗ったカーフェリー。  今回は行きも帰りもフェリーでしたが、フェリーの旅に魅了されてしまいました🚢 （船酔いだけが心配ですが…😥）  私が いつか乗ってみたいのが、 名古屋から仙台までの太平洋フェリー。 そして、松島に行くのが私の夢です。  弟の息子（小学6年生）は、以前、私
-  - https://www.threads.com/@bloomb_mirai2026/post/Df8tkCXmvQC
-- [2026-11-20 12:31] @chaka.27_ いいね11
-  - 聡ちゃんのお誕生日まであと7️⃣日💚 『そちゃ祭』始めていく〜〜🏮💚 だいすきな亮介から💚💚💚
-  - https://www.threads.com/@chaka.27_/post/Df8sk-oj376
+- [2026-11-20 13:53] @catloversakich いいね0
+  - 早川と松島行って来た🫠💕
+  - https://www.threads.com/@catloversakich/post/Df814nIkWbN
+- [2026-11-20 13:54] @mikaaash_so いいね0
+  - メガ割でリップマスクも買ってみた🫶🩷 はあ〜かわいいかわいい▓
+  - https://www.threads.com/@mikaaash_so/post/Df81_dsEnMH
+- [2026-11-20 13:54] @mikaaash_so いいね0
+  - 
+  - https://www.threads.com/@mikaaash_so/post/Df81_c5Em6J
+- [2026-11-20 13:48] @zunda.bayside いいね0 画像つき 宣伝?
+  - 🍵✨ ホット抹茶ラテ、本日より販売スタート！  ご好評いただいている抹茶ラテに、待望のホットが仲間入り💚  宇治抹茶を一杯ずつ丁寧にたてて、ミルクと合わせています。  抹茶の豊かな香りと、まろやかな味わいをぜひお楽しみください☺️  ホットもアイスもご用意しています♪  松島散策のお供にぜひ！⁡ ⁡雪が降っていますので
+  - https://www.threads.com/@zunda.bayside/post/Df81Y3GkSsq
 
 ## 山形
-- [2026-11-20 12:48] @taro.236 いいね0
-  - 早速雪いらねーと思っている 山形
-  - https://www.threads.com/@taro.236/post/Df8uc5rkQrr
-- [2026-11-20 12:48] @giuliachang いいね1
-  - 1. 6月中到月底的紅王櫻桃(山形)後悔吃太少，要吃的時候已經沒了(不能帶回來) 2. 別樓有推薦的觀光巴士車車，超可愛又好玩 3. 萩之月，不愛日本甜點的朋友也是諸多好評 4. 魚板真空包笹かまぼこ，除了肉以外的口味可帶回台灣，有一款干貝口味超好吃 5. 金蛇水神社黑卡(每年不同)跟戒指 6. 仙台麻雀饅頭(吃起來有
-  - https://www.threads.com/@giuliachang/post/Df8ubgZID0Z
-- [2026-11-20 12:48] @yasuhirotakamura3959 いいね0
-  - 出てないのが意外だったけど、山形の蔵王温泉。最初入った時はこれどんな病気でも治るんじゃないかと思った。
-  - https://www.threads.com/@yasuhirotakamura3959/post/Df8uiR7EvIu
-- [2026-11-20 12:48] @masa.syo いいね0 画像つき
-  - 積もって来ました❄️ 東根現場終わったらすぐ、山形市で22時まで仕事なのに…
-  - https://www.threads.com/@masa.syo/post/Df8ug1eAVWi
-- [2026-11-20 04:03] @elephantno1 いいね26
-  - 我自行宣布 《threads仙台不買會後悔的最值得買的東西》 正式開始 選手如下： 拜託大家了🥺🙏🏻
-  - https://www.threads.com/@elephantno1/post/Df7yXCrH7pZ
-- [2026-11-19 17:11] @manjushaka.sensei いいね547
-  - 死ぬまでに絶対に行っとけ って温泉 あります？
-  - https://www.threads.com/@manjushaka.sensei/post/Df6n0P8j3U3
+- [2026-11-20 13:58] @4629_hiro いいね1 画像つき
+  - 本当にそうです！ 宮城の山形との県境、作並もこんな 感じですよ。 スタッドレス履かないで雪道は ダメよダメダメ🙅
+  - https://www.threads.com/@4629_hiro/post/Df82eOgI8ud
+- [2026-11-20 13:47] @16ajmd いいね4
+  - 三連休、山形県にノーマルタイヤで来る予定の方へ。  高速道路、山形市、天童市など雪が少ない地域でも、道路に雪が積もってます！ 雪の降り始めで、連休なので除雪車も必要最低限しか出動しません！  お願いです！ 安全のために、ノーマルタイヤの車は来ないで下さい！  三連休は忙しくて、県内をぐーるぐる走らなくてはいけないのです
+  - https://www.threads.com/@16ajmd/post/Df81RNxmQa2
+- [2026-11-20 13:57] @3841arischan いいね0 宣伝?
+  - 毎年恒例のラ・フランス🍐のタルト焼きましたー🍐✨💖 夫の後輩君が山形産の立派なラ・フランスを贈ってくれるので、感謝です🍐💓🥰 ラ・フランスは、やわらかくなると、コンポートにはし難くなるので、硬いうちに🍐✨💖👌 サクサクにカラ焼きでシュクレ生地を焼いておきます。シュクレとダマンドは、いつもお世話になっている@ko_ko.
+  - https://www.threads.com/@3841arischan/post/Df82VDLlGH4
+- [2026-11-20 13:56] @ohsyofruitsfarm いいね0 宣伝?
+  - 【拡散希望】 11月21日（土）、22日（日）、23日（月）の三連休に、内閣総理大臣受賞記念感謝セールを開催します！ 今シーズンの営業は23日まで。最後に大盤振舞いしちゃいますので、ぜひご来園くださいね〜🍐🍎🍏🍇 #王将果樹園 #山形 #セール #パフェ
+  - https://www.threads.com/@ohsyofruitsfarm/post/Df82Qn-Grb4
+- [2026-11-20 13:55] @hide_ymgt いいね0 画像つき 宣伝?
+  - ケンチャンラーメン山形 中華そば(大盛、濃い口、油ぽく、身入り)  数年ぶりのケンチャン 前回の記憶とは大分違う味に感じた 俺の記憶ってアテにならんなぁ  #山形 #ラーメン #山形ラーメン #麺スタグラム #ケンチャンラーメン山形
+  - https://www.threads.com/@hide_ymgt/post/Df82H1SjwG1
 
 ## 東根
-- [2026-11-20 12:21] @sachi.s1216 いいね5 画像つき
-  - やんだぐなった😭 帰れる？ 東根… ノーマルタイヤ😭
-  - https://www.threads.com/@sachi.s1216/post/Df8rQXHkfV-
-- [2026-11-20 12:48] @masa.syo いいね0 画像つき
-  - 積もって来ました❄️ 東根現場終わったらすぐ、山形市で22時まで仕事なのに…
-  - https://www.threads.com/@masa.syo/post/Df8ug1eAVWi
-- [2026-11-20 12:36] @sachi.s1216 いいね1
-  - ありがとう😊 東根… すげー⛄️😭
-  - https://www.threads.com/@sachi.s1216/post/Df8tFo-IFtW
-- [2026-11-20 12:23] @sachi.s1216 いいね0
-  - 山形市内は積もんないと思う 東根すげー⛄️ やんだぐなったは😭
-  - https://www.threads.com/@sachi.s1216/post/Df8rj9ToJzK
-- [2026-11-20 10:16] @kk_sh4386 いいね1
-  - スタッドレスじゃないの？これからつもるよ😱😱
-  - https://www.threads.com/@kk_sh4386/post/Df8dCQEFDgI
-- [2026-11-20 08:19] @ilys__number_i いいね1
-  - わぁ~結構降ってるのね❄️ 気をつけてね〜！
-  - https://www.threads.com/@ilys__number_i/post/Df8PuI-EypQ
+- [2026-11-20 13:07] @116ayaka いいね27 画像つき
+  - 山形県東根市 雪の粒が大きくなってきました☃️ 積もってきてます☃️☃️☃️
+  - https://www.threads.com/@116ayaka/post/Df8wsSuoFCj
+- [2026-11-20 13:00] @shikachan315 いいね0 画像つき
+  - (*´ο`*) 山形空港着😊 東根に近づくにつれて雪の量が…🥹⛄️ ま、旅立つんで関係ないですけどね〜🤗 ⁡  #山形空港  #今から三重旅✈️  #夜ご飯は…松坂牛🐂💗
+  - https://www.threads.com/@shikachan315/post/Df8v4ybo_oO
+- [2026-11-20 13:19] @hiroer34006 いいね0 画像つき
+  - 東根某所
+  - https://www.threads.com/@hiroer34006/post/Df8x8OJj9O1
 
 ## 米沢
-- [2026-11-20 12:07] @hiramama0110 いいね2
-  - 米沢は雪が降ってきました。山形はどうですか？寒くない場所にいてくれたら安心ですが、米沢から心配してます。早くパパとママに帰ってきてほしいです。ニコちゃん、出てきて～～。
-  - https://www.threads.com/@hiramama0110/post/Df8p0cOiGvs
-- [2026-11-20 12:19] @haruyasu2114 いいね0 画像つき
-  - 同業者の方と 米沢ラーメン山形屋(盛岡市寺林平森) 焼きアゴだしラーメン 2026年11月18日
-  - https://www.threads.com/@haruyasu2114/post/Df8rIXuGdWp
-- [2026-11-20 11:59] @merry.boss_nob いいね5 画像つき
-  - 米沢の栗子は別世界
-  - https://www.threads.com/@merry.boss_nob/post/Df8o2O7Eip_
-- [2026-11-20 12:00] @cafegoot いいね2 画像つき 宣伝?
-  - 【冬を待つ色、降りてきた冬】  ​白川湖の水没林から見上げた、  白い雲の海に浮かぶ雪化粧の飯豊連峰。  火曜日に訪れたときは、  その足元にまだ秋の色が残り、  名残惜しそうに最後の灯をともしていた。  ​雲の帯を挟んで、上は真冬、下は晩秋。  ほんのわずかな季節の交差だった。  ​そして今日、米沢にも初雪が舞う。 
-  - https://www.threads.com/@cafegoot/post/Df8o-RGjaoR
-- [2026-11-20 10:49] @mariofamily07.10 いいね138 宣伝?
-  - ニコちゃんが迷子になって8日目になりました。 まだ発見にはいたっておりません。  何度もになりますが、 引き続きご自宅の【カーポート・車庫の奥・軒下・物置の隙間・ 停めている車の下】などに雨宿りしていないか、 少しだけ覗いていただけないでしょうか？ また、乾いた場所やお庭の畑などに小さな足跡がついているか 見ていただけ
-  - https://www.threads.com/@mariofamily07.10/post/Df8g406iEw_
+- [2026-11-20 13:46] @saya295521 いいね0
+  - 予報と違うよ_(:3 」∠)_ 雪に気をつけて米沢堪能してください٩( 'ω' )و
+  - https://www.threads.com/@saya295521/post/Df81H8WIGTs
+- [2026-11-20 13:54] @conacancan いいね0
+  - ポリと言われて米沢紬⁉︎ なんてラッキーな！　ぜんぜんワンコインに見えません！素敵です！　お手入れだけ間違えないで済むなら、もう何でもいいんですよね😊 昔、イタリア製のポリがすっごく手触りが良くて素敵なんだよ、と教えてもらったことがあります。科学の発展のおかげで、もっと着物が着やすくなったら嬉しいです。
+  - https://www.threads.com/@conacancan/post/Df82AMDkZru
+- [2026-11-20 13:14] @ko_11060229 いいね0 画像つき
+  - うどん、焼肉丼〜😋
+  - https://www.threads.com/@ko_11060229/post/Df8xd8QCdP9
+- [2026-11-20 10:04] @gonthebluesbreaker いいね3 画像つき
+  - お邪魔致します🙇‍♂️。  いやあ……最近の化繊は凄いなと思います。間違えた事ありますよ😌。  リサイクル着物を買い始めた超初心者の頃、多分ポリだよ、と店の人に言われて買ったワンコインの羽織。洗ってエライ目に遭いました😂。 正絹でした😆。  同じ時期にやはりワンコインの長着を買い、コレもポリじゃない？と言われたのですが
+  - https://www.threads.com/@gonthebluesbreaker/post/Df8bvqekspj
+- [2026-11-20 08:31] @kappa_namisen いいね1
+  - 無事米沢着いたところです🚗！ みぞれ混じりになってきましたね😳
+  - https://www.threads.com/@kappa_namisen/post/Df8RFfcias_
+- [2026-11-20 13:15] @iiyone2020 いいね1 画像つき 宣伝?
+  - 2026年11月20日（金）に山形県米沢市（やまがたけん よねざわし）の平地でも雪が降りました☃️  朝は水を多く含んだミゾレだったのですが、だんだん雪に。毎年、11月に降った雪はそんなに積もりはしないのですが、本格的な冬が近づいてきました😱  #山形県米沢市 #米沢駅前 #初雪 #みぞれ #冬の景色
+  - https://www.threads.com/@iiyone2020/post/Df8xl1-EQ-T
 
 ## 福島
-- [2026-11-20 12:50] @tyo11_8 いいね0 画像つき
-  - 村の除雪機来てくれたけど 全然止まねえ  ココは会津 裏磐梯より奥桧原湖周辺です
-  - https://www.threads.com/@tyo11_8/post/Df8uk44DqWL
-- [2026-11-20 12:49] @cocowow_str_28 いいね0 宣伝?
-  - 福島県いわき市でメンズパーマ、曲がる縮毛矯正ならお任せ下さい🙆‍♂️  投稿は保存してカウンセリングの際にお使いください✊  一人一人のライフスタイルに沿った髪型を提案、提供させていただきます！  【ケアパーマ】 ・薬剤がクリーム状のため、ダメージレベルによって塗り分けが可能 ・頭皮に付着することもないので、負担があり
-  - https://www.threads.com/@cocowow_str_28/post/Df8umvMjcOm
-- [2026-11-20 12:48] @sknd.yaoyorozu いいね0 画像つき 宣伝?
-  - MAGARI 仕込 笹正宗×天明 生原酒(福島)  今復旧をすすめてる笹正宗酒造の仕入れ酒米を使った、天明での間借り仕込みのスルッとした口当たりで飲みやすくおすすめの一本です✨  #日本酒 #sake #隠れ家 #1人飲み #酒 肴 izakaya 迷店 日曜営業 火水定休日 天明 ささまさむね 間借り
-  - https://www.threads.com/@sknd.yaoyorozu/post/Df8uhtLkQ79
-- [2026-11-20 12:48] @sunfruit_mochizuki いいね0 画像つき 宣伝?
-  - 赤い洋梨 福島県「レッド・コミス」 ロウのように艶やかで 美しい果実色。 滑らかな食感はラ・フランスを 上まわります。 秋の夜長はボジョレーと美味しい洋梨 でお過ごしください。  #静岡洋梨 #コミス #赤い #フルーツ #ボジョレー
-  - https://www.threads.com/@sunfruit_mochizuki/post/Df8ufMUEmjs
+- [2026-11-20 13:57] @tsubota.sn いいね0
+  - 福島県内で車探してます。 乗れれば良いので10万以下でお願いします。 #車🚗
+  - https://www.threads.com/@tsubota.sn/post/Df82atqn46_
+- [2026-11-20 13:55] @aokisatoe いいね0
+  - 🔃経済産業省さんのXより https://x.com/meti_NIPPON/status/2122996875313713557?a=Rp9KQFPCY0lqAL5A_mU&s=19 三陸・常磐の水産物「三陸・常磐もの」の魅力発信・消費拡大に向けて、「三陸・常磐ウィークス」を11/1（日）～12/6（日）にかけて実施
+  - https://www.threads.com/@aokisatoe/post/Df82LQoE9z7
+- [2026-11-20 13:57] @irie_yawd_yu いいね0 画像つき 宣伝?
+  - 華金ですねー(´･Д･)」 本日もアイリーヤードは元気に営業しております❗️ 夜が本格的に冷えてきましたな ホットカクテル多数ご用意してるので 呑んで温まりましょー それでは今宵も皆様のご来店をお待ちしております٩( ᐛ )و  ・ *BAR Irie yawd*(バー アイリーヤード) ・ Open:20:00 Cl
+  - https://www.threads.com/@irie_yawd_yu/post/Df82WOuGw9b
