@@ -27,13 +27,25 @@ fetch_threads.py が生成時に threads.json へ反映する。★いいね投�
   - 明日の朝、どうなってるかなぁ…🫠 ①国道112号月山第2トンネル ②国道47号最上町堺田 ③国道48号関山トンネル ④国道13号主寝坂トンネル
   - https://www.threads.com/@izu_mi20/post/Df7MexnD5HP
 
+- [2026-11-19 04:58] @tomohisa_takeda いいね228 画像つき 地名:作並（仙台市青葉区）
+  - 作並も降ってきたか…
+  - https://www.threads.com/@tomohisa_takeda/post/Df7ImpIHT_S
+
 ## 松島
 
 - [2026-11-19 20:59] @hanapyon.87 いいね2 画像つき 地名:松島町
   - 仕事で松島に行ったら雪やばっ▓ 30分後の隣町…青空🍁(2枚目)
   - https://www.threads.com/@hanapyon.87/post/Df82ksBI25f
 
+- [2026-11-19 21:51] @kazu.shibuya いいね15 画像つき 地名:尾花沢市
+  - 今日は山形県尾花沢市で初雪。
+  - https://www.threads.com/@kazu.shibuya/post/Df88mX7llj0
+
 ## 東根
+
+- [2026-11-19 21:34] @hiroshi0700 いいね7 画像つき 地名:東根市内
+  - 東根、雪スゴいな☃️
+  - https://www.threads.com/@hiroshi0700/post/Df86qYSkqgG
 - [2026-11-19 20:07] @116ayaka いいね37 画像つき 地名:東根市内
   - 山形県東根市 雪の粒が大きくなってきました☃️ 積もってきてます☃️☃️☃️
   - https://www.threads.com/@116ayaka/post/Df8wsSuoFCj
