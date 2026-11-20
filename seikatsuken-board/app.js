@@ -354,7 +354,7 @@ function renderCards(places) {
     } else h += '<div class="muted">予報を取得できませんでした</div>';
     h += `<div class="amedas">アメダス ${amedasLine(st)}</div>`;
     for (const c of cams) {
-      h += `<div class="cam"><h4>ライブカメラ: ${esc(c.name)}</h4><img src="${esc(c.imageUrl)}" alt="${esc(c.name)}" loading="lazy"><div class="cap">出典: ${esc(c.source)}（${esc(c.updateInterval)}更新 / 画像は表示のみで保存しません）</div></div>`;
+      h += `<div class="cam"><button type="button" class="cam-btn">ライブカメラ: ${esc(c.name)} を見る</button><div class="cam-box" hidden data-src="${esc(c.imageUrl)}"><img alt="${esc(c.name)}" loading="lazy"><div class="cap">出典: ${esc(c.source)}（${esc(c.updateInterval)}更新 / 画像は表示のみで保存しません）</div></div></div>`;
     }
     const bears = bearsFor(p);
     if (p.pref.name === '山形県') {
@@ -377,6 +377,18 @@ function renderCards(places) {
     b.addEventListener('click', () => {
       const m = b.previousElementSibling; m.hidden = !m.hidden;
       b.textContent = m.hidden ? label : '閉じる';
+    });
+  });
+  wrap.querySelectorAll('.cam-btn').forEach(b => {
+    const label = b.textContent;
+    b.addEventListener('click', () => {
+      const box = b.nextElementSibling;
+      box.hidden = !box.hidden;
+      b.textContent = box.hidden ? label : '閉じる';
+      if (!box.hidden && !box.dataset.built) {
+        box.dataset.built = '1';
+        box.querySelector('img').src = box.dataset.src;
+      }
     });
   });
   wrap.querySelectorAll('.embed-btn').forEach(b => {
