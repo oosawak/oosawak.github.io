@@ -1,13 +1,19 @@
 # 現地の声（Threads・本人のいいね）— 生活圏防災ライブボード
 
-生成日時: 2026-11-20 17:38（日本時間）
+生成日時: 2026-11-20 19:05（日本時間）
 本人が Threads で「いいね」した投稿だけを、place-aliases.md の対応で各場所に振り分けたもの。
 正本は liked.md。地名キーワード検索による収集は 2026-11-20 に廃止した。
 
 ## 仙台
+- [2026-11-20 17:03] @trafficlip いいね11 本人のいいね 地名:国道48号・関山峠
+  - #国道48号 #関山峠 で集中除雪 通行止め解除まで長時間の見通し 広域迂回呼びかけ。国道48号[関山峠]で車両スタックが発生し、集中除雪作業のため11月20日15:45から上下線の仙台市青葉区作並〜東根市関山間で通行止めとなっています
+  - https://www.threads.com/@trafficlip/post/Df9LsckmncH
 - [2026-11-20 00:04] @woodbellmotor いいね7 本人のいいね 地名:国道48号 画像つき
   - 大雪のため 店の前の国道48号線 通行止めとなっています💦
   - https://www.threads.com/@woodbellmotor/post/Df9LvZ9j3xH
+- [2026-11-19 22:37] @ta._.s2 いいね334 本人のいいね 地名:国道48号 画像つき
+  - 48号線進まない ガソリンも入ってない 携帯の充電もない
+  - https://www.threads.com/@ta._.s2/post/Df9ByUDH3Bt
 - [2026-11-19 22:19] @kimukei._8 いいね12 本人のいいね 地名:仙台市内 画像つき
   - 今年の仙台は雪が多いのかな？ 🙄
   - https://www.threads.com/@kimukei._8/post/Df8_pGWAeOg
@@ -17,6 +23,9 @@
 - [2026-11-19 20:38] @gochideli.sendai いいね36 本人のいいね 地名:仙台市内 画像つき
   - 大雪恐怖感じるほど 仙台帰れないかと思った
   - https://www.threads.com/@gochideli.sendai/post/Df80KQhnWwy
+- [2026-11-19 20:29] @sennan_tusin いいね89 本人のいいね 地名:仙台市内 画像つき
+  - 仙台めっちゃ雪
+  - https://www.threads.com/@sennan_tusin/post/Df8zFZQjr0b
 - [2026-11-19 20:24] @careee_sendai いいね39 本人のいいね 地名:仙台市内 画像つき
   - 仙台初雪だー！！❄
   - https://www.threads.com/@careee_sendai/post/Df8ymUTD5Js
@@ -33,6 +42,9 @@
   - https://www.threads.com/@hanapyon.87/post/Df82ksBI25f
 
 ## 山形
+- [2026-11-20 00:24] @hiroyukiss216 いいね10 本人のいいね 地名:寒河江・大江町 画像つき
+  - 2026.11.20 寒河江、大江町付近 湿った雪がみるみる降り積もる 今年は随分早い雪です。皆様、雪道の運転どうぞお気をつけください #寒河江市 #雪道 #山形県
+  - https://www.threads.com/@hiroyukiss216/post/Df9OD37ExoV
 - [2026-11-19 22:28] @tomohisa_takeda いいね29 本人のいいね 地名:月山道 画像つき
   - なぜ、この月山道路を夏タイヤで行けると思うのか… 迷惑だわ〜
   - https://www.threads.com/@tomohisa_takeda/post/Df9AwHzHTe5
@@ -42,12 +54,21 @@
 - [2026-11-19 21:49] @pekopokokuma いいね24 本人のいいね 地名:月山道 画像つき
   - 用事を済ませて、再び月山道を帰る 綿雪、圧雪になってきた
   - https://www.threads.com/@pekopokokuma/post/Df88WRUIH-J
+- [2026-11-19 19:22] @xianshenabu いいね6 本人のいいね 地名:山形市七日町 画像つき
+  - すごい雪が降って来ましたよ。油断してたら雪が積もって来ました😭 #山形市七日町 #雪 #雪景色
+  - https://www.threads.com/@xianshenabu/post/Df8rg7Vk-jR
 - [2026-11-19 19:04] @hideya_style いいね31 本人のいいね 地名:山辺町大蕨地区 画像つき
   - ※撮影 助手席の同乗者。 初雪で木の枝が雪の重みで道路まで倒れています。皆様、気を付けて通行ください。 山形県 山辺町 大蕨地区
   - https://www.threads.com/@hideya_style/post/Df8pGpjDnIJ
 - [2026-11-19 18:17] @izu_mi20 いいね95 本人のいいね 地名:月山道・県内峠道 画像つき
   - さすが月山道… 積雪45cmだって💦 ①国道112号月山第2トンネル ②国道47号最上町堺田 ③国道48号関山トンネル ④国道13号主寝坂トンネル タイヤ交換してない方は移動禁止ですね
   - https://www.threads.com/@izu_mi20/post/Df8kFmmm4fx
+- [2026-11-19 16:35] @hanaretemokawaiine いいね798 本人のいいね 地名:山形県内 画像つき
+  - あの、すみません。初雪ですよね😅💦？ 山形の現在、山の方は大雪になりそうです⛄️
+  - https://www.threads.com/@hanaretemokawaiine/post/Df8YazagWGg
+- [2026-11-19 15:29] @sharehouse_digls いいね178 本人のいいね 地名:山形県内 画像つき
+  - 山形、初雪から本気出しすぎじゃない？笑 いきなり積もりすぎなのよ😂 冬将軍、ちょっと落ち着いてもらっていいですか
+  - https://www.threads.com/@sharehouse_digls/post/Df8Quvsktq9
 - [2026-11-19 05:32] @izu_mi20 いいね111 本人のいいね 地名:月山道・県内峠道 画像つき
   - 明日の朝、どうなってるかなぁ…🫠 ①国道112号月山第2トンネル ②国道47号最上町堺田 ③国道48号関山トンネル ④国道13号主寝坂トンネル
   - https://www.threads.com/@izu_mi20/post/Df7MexnD5HP
@@ -64,6 +85,9 @@
 - [2026-11-19 22:16] @_onakapekopeko_5 いいね389 本人のいいね 地名:大峠（国道121号） 画像つき
   - 本日の喜多方米沢間大峠超えた感想 スタック多すぎ 道路ガタガタ 除雪ありがとう 来るんじゃなかった
   - https://www.threads.com/@_onakapekopeko_5/post/Df8_aRYESiO
+- [2026-11-19 21:36] @ldh.manamana.15 いいね12 本人のいいね 地名:米沢市内 画像つき
+  - 降りました☃️ 2枚目は、1枚目を撮ってから2時間くらいあとのもの。積もりましたね☺️ #山形県米沢市
+  - https://www.threads.com/@ldh.manamana.15/post/Df86yb1n4ba
 - [2026-11-19 20:10] @watanabehiroshi31 いいね2 本人のいいね 地名:米沢市内 画像つき
   - #そういえば日本には冬がありました #米沢 #積み重ねが大事 #新しいことはじめよう #東北から始めよう
   - https://www.threads.com/@watanabehiroshi31/post/Df8xARLEb2c

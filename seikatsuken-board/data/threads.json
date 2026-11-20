@@ -1,16 +1,42 @@
 {
-  "generatedAt": "2026-11-20T17:38:19+09:00",
+  "generatedAt": "2026-11-20T19:05:18+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-20T17:38:19+09:00",
+      "fetchedAt": "2026-11-20T19:05:18+09:00",
       "posts": [
+        {
+          "username": "trafficlip",
+          "url": "https://www.threads.com/@trafficlip/post/Df9LsckmncH",
+          "text": "#国道48号 #関山峠 で集中除雪 通行止め解除まで長時間の見通し 広域迂回呼びかけ。国道48号[関山峠]で車両スタックが発生し、集中除雪作業のため11月20日15:45から上下線の仙台市青葉区作並〜東根市関山間で通行止めとなっています",
+          "likeCount": 11,
+          "takenAt": "2026-11-20T17:03:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "国道48号・関山峠"
+        },
         {
           "username": "woodbellmotor",
           "url": "https://www.threads.com/@woodbellmotor/post/Df9LvZ9j3xH",
           "text": "大雪のため 店の前の国道48号線 通行止めとなっています💦",
           "likeCount": 7,
           "takenAt": "2026-11-20T00:04:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "国道48号"
+        },
+        {
+          "username": "ta._.s2",
+          "url": "https://www.threads.com/@ta._.s2/post/Df9ByUDH3Bt",
+          "text": "48号線進まない ガソリンも入ってない 携帯の充電もない",
+          "likeCount": 334,
+          "takenAt": "2026-11-19T22:37:00+09:00",
           "hasImage": true,
           "imageCount": 1,
           "promo": false,
@@ -50,6 +76,19 @@
           "text": "大雪恐怖感じるほど 仙台帰れないかと思った",
           "likeCount": 36,
           "takenAt": "2026-11-19T20:38:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "仙台市内"
+        },
+        {
+          "username": "sennan_tusin",
+          "url": "https://www.threads.com/@sennan_tusin/post/Df8zFZQjr0b",
+          "text": "仙台めっちゃ雪",
+          "likeCount": 89,
+          "takenAt": "2026-11-19T20:29:00+09:00",
           "hasImage": true,
           "imageCount": 1,
           "promo": false,
@@ -101,7 +140,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-20T17:38:19+09:00",
+      "fetchedAt": "2026-11-20T19:05:18+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -121,8 +160,21 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-20T17:38:19+09:00",
+      "fetchedAt": "2026-11-20T19:05:18+09:00",
       "posts": [
+        {
+          "username": "hiroyukiss216",
+          "url": "https://www.threads.com/@hiroyukiss216/post/Df9OD37ExoV",
+          "text": "2026.11.20 寒河江、大江町付近 湿った雪がみるみる降り積もる 今年は随分早い雪です。皆様、雪道の運転どうぞお気をつけください #寒河江市 #雪道 #山形県",
+          "likeCount": 10,
+          "takenAt": "2026-11-20T00:24:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "寒河江・大江町"
+        },
         {
           "username": "tomohisa_takeda",
           "url": "https://www.threads.com/@tomohisa_takeda/post/Df9AwHzHTe5",
@@ -163,6 +215,19 @@
           "spot": "月山道"
         },
         {
+          "username": "xianshenabu",
+          "url": "https://www.threads.com/@xianshenabu/post/Df8rg7Vk-jR",
+          "text": "すごい雪が降って来ましたよ。油断してたら雪が積もって来ました😭 #山形市七日町 #雪 #雪景色",
+          "likeCount": 6,
+          "takenAt": "2026-11-19T19:22:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "山形市七日町"
+        },
+        {
           "username": "hideya_style",
           "url": "https://www.threads.com/@hideya_style/post/Df8pGpjDnIJ",
           "text": "※撮影 助手席の同乗者。 初雪で木の枝が雪の重みで道路まで倒れています。皆様、気を付けて通行ください。 山形県 山辺町 大蕨地区",
@@ -189,6 +254,32 @@
           "spot": "月山道・県内峠道"
         },
         {
+          "username": "hanaretemokawaiine",
+          "url": "https://www.threads.com/@hanaretemokawaiine/post/Df8YazagWGg",
+          "text": "あの、すみません。初雪ですよね😅💦？ 山形の現在、山の方は大雪になりそうです⛄️",
+          "likeCount": 798,
+          "takenAt": "2026-11-19T16:35:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "山形県内"
+        },
+        {
+          "username": "sharehouse_digls",
+          "url": "https://www.threads.com/@sharehouse_digls/post/Df8Quvsktq9",
+          "text": "山形、初雪から本気出しすぎじゃない？笑 いきなり積もりすぎなのよ😂 冬将軍、ちょっと落ち着いてもらっていいですか",
+          "likeCount": 178,
+          "takenAt": "2026-11-19T15:29:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "山形県内"
+        },
+        {
           "username": "izu_mi20",
           "url": "https://www.threads.com/@izu_mi20/post/Df7MexnD5HP",
           "text": "明日の朝、どうなってるかなぁ…🫠 ①国道112号月山第2トンネル ②国道47号最上町堺田 ③国道48号関山トンネル ④国道13号主寝坂トンネル",
@@ -206,7 +297,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-20T17:38:19+09:00",
+      "fetchedAt": "2026-11-20T19:05:18+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -239,7 +330,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-20T17:38:19+09:00",
+      "fetchedAt": "2026-11-20T19:05:18+09:00",
       "posts": [
         {
           "username": "_onakapekopeko_5",
@@ -253,6 +344,19 @@
           "scene": true,
           "liked": true,
           "spot": "大峠（国道121号）"
+        },
+        {
+          "username": "ldh.manamana.15",
+          "url": "https://www.threads.com/@ldh.manamana.15/post/Df86yb1n4ba",
+          "text": "降りました☃️ 2枚目は、1枚目を撮ってから2時間くらいあとのもの。積もりましたね☺️ #山形県米沢市",
+          "likeCount": 12,
+          "takenAt": "2026-11-19T21:36:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "米沢市内"
         },
         {
           "username": "watanabehiroshi31",
@@ -285,7 +389,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-20T17:38:19+09:00",
+      "fetchedAt": "2026-11-20T19:05:18+09:00",
       "posts": [
         {
           "username": "tatsuyan321",
