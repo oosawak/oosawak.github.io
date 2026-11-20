@@ -121,6 +121,7 @@ body{max-width:1600px;margin:0 auto;padding:0 16px 64px}
 .post iframe{max-width:100%}
 .embed-btn{margin-top:.3rem;font-size:.85rem}
 .embed-box{margin-top:.4rem}
+.embed-box iframe{width:100%;height:660px;border:0;border-radius:8px;background:#fff}
 .more-btn{margin-top:.3rem;font-size:.85rem}
 
 /* フッター */
