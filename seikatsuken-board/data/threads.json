@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-20T23:57:50+09:00",
+  "generatedAt": "2026-11-21T01:57:23+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-20T23:57:50+09:00",
+      "fetchedAt": "2026-11-21T01:57:23+09:00",
       "posts": [
         {
           "username": "taeko.kiyomoto",
@@ -175,7 +175,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-20T23:57:50+09:00",
+      "fetchedAt": "2026-11-21T01:57:23+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -197,7 +197,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-20T23:57:50+09:00",
+      "fetchedAt": "2026-11-21T01:57:23+09:00",
       "posts": [
         {
           "username": "meguru_inc",
@@ -243,6 +243,21 @@
           "watched": true,
           "community": "#通行止",
           "spot": "山形"
+        },
+        {
+          "username": "nobu1966a",
+          "url": "https://www.threads.com/@nobu1966a/post/Df8QF1bE-nz",
+          "text": "山形道関山峠 こんな感じでした",
+          "likeCount": 475,
+          "takenAt": "2026-11-20T08:23:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "関山峠"
         },
         {
           "username": "kurihiro_mogami",
@@ -414,7 +429,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-20T23:57:50+09:00",
+      "fetchedAt": "2026-11-21T01:57:23+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -451,7 +466,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-20T23:57:50+09:00",
+      "fetchedAt": "2026-11-21T01:57:23+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -533,7 +548,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-20T23:57:50+09:00",
+      "fetchedAt": "2026-11-21T01:57:23+09:00",
       "posts": [
         {
           "username": "trafficlip",
