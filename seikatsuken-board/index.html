@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>生活圏防災ライブボード</title>
 <meta name="description" content="仙台・松島・山形・東根・米沢・福島の警報・天気・地震・通行止め・ライブカメラ・現地の声を一枚に見るボード">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -66,7 +69,7 @@
       <li>ライブカメラ: 各河川国道事務所の公開画像を表示しているだけです（保存はしません）。出典は各画像の下に表示しています。</li>
       <li>人間アメダス: Threads の公開投稿を地名キーワードで検索したものです。位置情報ではなく、その場所の現在の様子とは限りません。</li>
       <li>渋滞・事故: <a href="https://www.jartic.or.jp/" target="_blank" rel="noopener">日本道路交通情報センター</a> / <a href="https://www.driveplaza.com/" target="_blank" rel="noopener">NEXCO東日本 ドラとら</a> / <a href="https://www.road-info-prvs.mlit.go.jp/roadinfo/pc/" target="_blank" rel="noopener">道路情報提供システム</a></li>
-      <li>地図: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors</li>
+      <li>地図: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a></li>
     </ul>
   </footer>
 </main>
@@ -87,7 +90,7 @@
   </div>
 </div>
 
-<div id="ticker"><div id="tickerInner"></div></div>
+<div id="ticker"><span id="tickerLabel">警報・通行止め・地震</span><div id="tickerScroll"><div id="tickerInner"></div></div><button id="tickerExpand" type="button">詳細を表示</button></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="app.js"></script>
