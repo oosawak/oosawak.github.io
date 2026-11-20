@@ -1,6 +1,6 @@
 # 現地の声（Threads・本人のいいね）— 生活圏防災ライブボード
 
-生成日時: 2026-11-20 15:02（日本時間）
+生成日時: 2026-11-20 15:17（日本時間）
 本人が Threads で「いいね」した投稿だけを、place-aliases.md の対応で各場所に振り分けたもの。
 正本は liked.md。地名キーワード検索による収集は 2026-11-20 に廃止した。
 
@@ -16,7 +16,9 @@
   - https://www.threads.com/@eri2leon/post/Df8ygK6DiGp
 
 ## 松島
-- 投稿なし
+- [2026-11-19 20:59] @hanapyon.87 いいね2 本人のいいね 地名:松島町 画像つき
+  - 仕事で松島に行ったら雪やばっ▓ 30分後の隣町…青空🍁(2枚目)
+  - https://www.threads.com/@hanapyon.87/post/Df82ksBI25f
 
 ## 山形
 - [2026-11-19 19:04] @hideya_style いいね31 本人のいいね 地名:山辺町大蕨地区 画像つき
@@ -35,7 +37,12 @@
   - https://www.threads.com/@116ayaka/post/Df8wsSuoFCj
 
 ## 米沢
-- 投稿なし
+- [2026-11-19 20:10] @watanabehiroshi31 いいね2 本人のいいね 地名:米沢市内 画像つき
+  - #そういえば日本には冬がありました #米沢 #積み重ねが大事 #新しいことはじめよう #東北から始めよう
+  - https://www.threads.com/@watanabehiroshi31/post/Df8xARLEb2c
+- [2026-11-19 18:59] @merry.boss_nob いいね8 本人のいいね 地名:栗子（米沢市） 画像つき
+  - 米沢の栗子は別世界
+  - https://www.threads.com/@merry.boss_nob/post/Df8o2O7Eip_
 
 ## 福島
 - [2026-11-19 20:23] @tatsuyan321 いいね121 本人のいいね 地名:土湯（道の駅つちゆ） 画像つき
