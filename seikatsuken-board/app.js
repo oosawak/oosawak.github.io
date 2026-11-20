@@ -312,8 +312,23 @@ function threadsFor(place) {
   return e ? e.posts : [];
 }
 function postHTML(p) {
-  return `<div class="post${p.promo ? ' promo' : ''}"><div class="meta">@${esc(p.username)} ・ ${esc(p.takenAt.replace('T', ' ').slice(0, 16))} ・ ♥${p.likeCount}${p.liked ? ' ・ ★本人のいいね' : ''}${p.spot ? ' ・ ' + esc(p.spot) : ''}${p.promo ? ' ・ 宣伝の可能性' : ''}</div>` +
-    `<div class="text">${esc(p.text)}</div><div class="meta"><a href="${esc(p.url)}" target="_blank" rel="noopener">元投稿を見る</a>${p.hasImage ? '（画像つき）' : ''}</div></div>`;
+  let h = `<div class="post${p.promo ? ' promo' : ''}"><div class="meta">@${esc(p.username)} ・ ${esc(p.takenAt.replace('T', ' ').slice(0, 16))} ・ ♥${p.likeCount}${p.liked ? ' ・ ★本人のいいね' : ''}${p.spot ? ' ・ ' + esc(p.spot) : ''}${p.promo ? ' ・ 宣伝の可能性' : ''}</div>` +
+    `<div class="text">${esc(p.text)}</div><div class="meta"><a href="${esc(p.url)}" target="_blank" rel="noopener">元投稿を見る</a>${p.hasImage ? '（画像つき）' : ''}</div>`;
+  // ★本人のいいね投稿だけ、公式埋め込みで画像・動画も出す（Pages版では表示できることを確認済み）
+  if (p.liked && p.hasImage) {
+    h += `<blockquote class="text-post-media" data-text-post-permalink="${esc(p.url)}" data-text-post-version="0"><a href="${esc(p.url)}" target="_blank" rel="noopener">Threadsで元投稿を見る</a></blockquote>`;
+  }
+  return h + '</div>';
+}
+function loadThreadEmbeds() {
+  if (!document.querySelector('.text-post-media')) return;
+  const old = document.getElementById('threads-embed-js');
+  if (old) old.remove();
+  const s = document.createElement('script');
+  s.id = 'threads-embed-js';
+  s.async = true;
+  s.src = 'https://www.threads.net/embed.js';
+  document.body.appendChild(s);
 }
 function renderCards(places) {
   const wrap = document.getElementById('cards');
@@ -350,6 +365,7 @@ function renderCards(places) {
       b.textContent = m.hidden ? label : '閉じる';
     });
   });
+  loadThreadEmbeds();
 }
 function renderWall(places) {
   const list = document.getElementById('wallWarningList');

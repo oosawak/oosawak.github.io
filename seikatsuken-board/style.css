@@ -117,6 +117,8 @@ body{max-width:1600px;margin:0 auto;padding:0 16px 64px}
 .post .meta{color:var(--dim);font-size:.8rem}
 .post .text{white-space:pre-wrap;word-break:break-word;font-size:.92rem}
 .post.promo{opacity:.55}
+.post blockquote.text-post-media{margin:.5rem auto;max-width:100%}
+.post iframe{max-width:100%}
 .more-btn{margin-top:.3rem;font-size:.85rem}
 
 /* フッター */
