@@ -353,9 +353,9 @@ function renderCards(places) {
     for (const c of cams) {
       h += `<div class="cam"><h4>ライブカメラ: ${esc(c.name)}</h4><img src="${esc(c.imageUrl)}" alt="${esc(c.name)}" loading="lazy"><div class="cap">出典: ${esc(c.source)}（${esc(c.updateInterval)}更新 / 画像は表示のみで保存しません）</div></div>`;
     }
-    h += `<h4>人間アメダス（Threads・地名検索）</h4>`;
-    if (p.pref.name === '宮城県') h += `<div class="muted">宮城の公式の人間アメダスは TBC「ウォッチン！みやぎ」: <a href="https://www.tbc-sendai.co.jp/watchin/" target="_blank" rel="noopener">公式ページ</a></div>`;
-    h += shown.length ? shown.map(postHTML).join('') : '<div class="muted">新しい投稿はまだありません</div>';
+    h += `<h4>現地の声（Threads・いいねから）</h4>`;
+    if (p.pref.name === '宮城県') h += `<div class="muted">宮城の天気コーナーは TBC「ウォッチン！みやぎ」: <a href="https://www.tbc-sendai.co.jp/watchin/" target="_blank" rel="noopener">公式ページ</a></div>`;
+    h += shown.length ? shown.map(postHTML).join('') : '<div class="muted">いいねした投稿はまだありません</div>';
     if (rest.length) h += `<div class="more" hidden>${rest.map(postHTML).join('')}</div><button type="button" class="more-btn">もっと見る（${rest.length}件）</button>`;
     h += '</article>';
     return h;
@@ -439,7 +439,7 @@ function placePopup(p, idx) {
   h += `<div>${ws.length ? ws.map(chip).join('') : '<span class="muted">警報・注意報なし</span>'}</div>`;
   if (fc) h += `<div>${WX_ICON[fc.code] || ''} ${esc(fc.weather)}</div>`;
   h += `<div class="muted">アメダス ${amedasLine(st)}</div>`;
-  if (posts.length) h += `<div><b>人間アメダス最新:</b> ${esc(posts[0].text.slice(0, 80))} <a href="${esc(posts[0].url)}" target="_blank" rel="noopener">元投稿</a></div>`;
+  if (posts.length) h += `<div><b>現地の声・最新:</b> ${esc(posts[0].text.slice(0, 80))} <a href="${esc(posts[0].url)}" target="_blank" rel="noopener">元投稿</a></div>`;
   for (const c of cams) h += `<div><img src="${esc(c.imageUrl)}" alt="${esc(c.name)}"><div class="muted">${esc(c.name)} / 出典: ${esc(c.source)}</div></div>`;
   return h;
 }
@@ -454,7 +454,7 @@ function renderMap(places) {
     const icon = L.divIcon({ className: '', html: `<div class="pin-wrap"><div class="pin-num">${i + 1}</div>${posts ? `<span class="pin-badge">${posts}</span>` : ''}</div>`, iconSize: [26, 26], iconAnchor: [13, 13] });
     L.marker(c, { icon }).addTo(state.layers)
       .bindPopup(placePopup(p, i))
-      .bindTooltip(`${esc(p.short)}${posts ? `（人間アメダス ${posts}件）` : ''}`);
+      .bindTooltip(`${esc(p.short)}${posts ? `（現地の声 ${posts}件）` : ''}`);
   });
   for (const q of state.quakes) {
     const color = ['6-', '6+', '7'].includes(q.maxi) ? '#e5484d'
@@ -524,7 +524,7 @@ async function refreshBoard(refetch = true) {
   for (const r of renders) { try { r(); } catch (e) { console.warn('render', e); } }
   const now = new Date();
   document.getElementById('updatedLine').textContent =
-    `最終更新: ${now.toLocaleString('ja-JP')}（気象庁データを直接取得 / 通行止め・人間アメダスは定期生成データ）`;
+    `最終更新: ${now.toLocaleString('ja-JP')}（気象庁データを直接取得 / 通行止め・現地の声は定期生成データ）`;
 }
 
 /* ---------- 時計 ---------- */
