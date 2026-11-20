@@ -1,10 +1,49 @@
 {
-  "generatedAt": "2026-11-20T15:31:50+09:00",
+  "generatedAt": "2026-11-20T17:38:19+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-20T15:31:50+09:00",
+      "fetchedAt": "2026-11-20T17:38:19+09:00",
       "posts": [
+        {
+          "username": "woodbellmotor",
+          "url": "https://www.threads.com/@woodbellmotor/post/Df9LvZ9j3xH",
+          "text": "大雪のため 店の前の国道48号線 通行止めとなっています💦",
+          "likeCount": 7,
+          "takenAt": "2026-11-20T00:04:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "国道48号"
+        },
+        {
+          "username": "kimukei._8",
+          "url": "https://www.threads.com/@kimukei._8/post/Df8_pGWAeOg",
+          "text": "今年の仙台は雪が多いのかな？ 🙄",
+          "likeCount": 12,
+          "takenAt": "2026-11-19T22:19:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "仙台市内"
+        },
+        {
+          "username": "animal_soul_asami",
+          "url": "https://www.threads.com/@animal_soul_asami/post/Df84i7KDosH",
+          "text": "ひぇ〜ぼた雪の仙台⛄️ 仕事帰り、気をつけてね〜✨",
+          "likeCount": 91,
+          "takenAt": "2026-11-19T21:17:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "仙台市内"
+        },
         {
           "username": "gochideli.sendai",
           "url": "https://www.threads.com/@gochideli.sendai/post/Df80KQhnWwy",
@@ -62,7 +101,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-20T15:31:50+09:00",
+      "fetchedAt": "2026-11-20T17:38:19+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -82,8 +121,21 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-20T15:31:50+09:00",
+      "fetchedAt": "2026-11-20T17:38:19+09:00",
       "posts": [
+        {
+          "username": "tomohisa_takeda",
+          "url": "https://www.threads.com/@tomohisa_takeda/post/Df9AwHzHTe5",
+          "text": "なぜ、この月山道路を夏タイヤで行けると思うのか… 迷惑だわ〜",
+          "likeCount": 29,
+          "takenAt": "2026-11-19T22:28:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "月山道"
+        },
         {
           "username": "kazu.shibuya",
           "url": "https://www.threads.com/@kazu.shibuya/post/Df88mX7llj0",
@@ -96,6 +148,19 @@
           "scene": true,
           "liked": true,
           "spot": "尾花沢市"
+        },
+        {
+          "username": "pekopokokuma",
+          "url": "https://www.threads.com/@pekopokokuma/post/Df88WRUIH-J",
+          "text": "用事を済ませて、再び月山道を帰る 綿雪、圧雪になってきた",
+          "likeCount": 24,
+          "takenAt": "2026-11-19T21:49:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "月山道"
         },
         {
           "username": "hideya_style",
@@ -141,7 +206,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-20T15:31:50+09:00",
+      "fetchedAt": "2026-11-20T17:38:19+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -174,8 +239,21 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-20T15:31:50+09:00",
+      "fetchedAt": "2026-11-20T17:38:19+09:00",
       "posts": [
+        {
+          "username": "_onakapekopeko_5",
+          "url": "https://www.threads.com/@_onakapekopeko_5/post/Df8_aRYESiO",
+          "text": "本日の喜多方米沢間大峠超えた感想 スタック多すぎ 道路ガタガタ 除雪ありがとう 来るんじゃなかった",
+          "likeCount": 389,
+          "takenAt": "2026-11-19T22:16:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "大峠（国道121号）"
+        },
         {
           "username": "watanabehiroshi31",
           "url": "https://www.threads.com/@watanabehiroshi31/post/Df8xARLEb2c",
@@ -207,7 +285,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-20T15:31:50+09:00",
+      "fetchedAt": "2026-11-20T17:38:19+09:00",
       "posts": [
         {
           "username": "tatsuyan321",

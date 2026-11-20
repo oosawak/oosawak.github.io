@@ -6,6 +6,15 @@ fetch_threads.py が生成時に threads.json へ反映する。★いいね投�
 書式は threads.md と同じ: 見出し行 `- [日時] @ユーザー いいね数 [画像つき/動画つき] [地名:メモ]`、本文、URL。
 
 ## 仙台
+- [2026-11-20 00:04] @woodbellmotor いいね7 画像つき 地名:国道48号
+  - 大雪のため 店の前の国道48号線 通行止めとなっています💦
+  - https://www.threads.com/@woodbellmotor/post/Df9LvZ9j3xH
+- [2026-11-19 22:19] @kimukei._8 いいね12 動画つき 地名:仙台市内
+  - 今年の仙台は雪が多いのかな？ 🙄
+  - https://www.threads.com/@kimukei._8/post/Df8_pGWAeOg
+- [2026-11-19 21:17] @animal_soul_asami いいね91 動画つき 地名:仙台市内
+  - ひぇ〜ぼた雪の仙台⛄️ 仕事帰り、気をつけてね〜✨
+  - https://www.threads.com/@animal_soul_asami/post/Df84i7KDosH
 - [2026-11-19 20:38] @gochideli.sendai いいね36 画像つき 地名:仙台市内
   - 大雪恐怖感じるほど 仙台帰れないかと思った
   - https://www.threads.com/@gochideli.sendai/post/Df80KQhnWwy
@@ -21,6 +30,12 @@ fetch_threads.py が生成時に threads.json へ反映する。★いいね投�
   - https://www.threads.com/@tomohisa_takeda/post/Df7ImpIHT_S
 
 ## 山形
+- [2026-11-19 22:28] @tomohisa_takeda いいね29 画像つき 地名:月山道
+  - なぜ、この月山道路を夏タイヤで行けると思うのか… 迷惑だわ〜
+  - https://www.threads.com/@tomohisa_takeda/post/Df9AwHzHTe5
+- [2026-11-19 21:49] @pekopokokuma いいね24 画像つき 地名:月山道
+  - 用事を済ませて、再び月山道を帰る 綿雪、圧雪になってきた
+  - https://www.threads.com/@pekopokokuma/post/Df88WRUIH-J
 - [2026-11-19 19:04] @hideya_style いいね31 動画つき 地名:山辺町大蕨地区
   - ※撮影 助手席の同乗者。 初雪で木の枝が雪の重みで道路まで倒れています。皆様、気を付けて通行ください。 山形県 山辺町 大蕨地区
   - https://www.threads.com/@hideya_style/post/Df8pGpjDnIJ
@@ -52,6 +67,9 @@ fetch_threads.py が生成時に threads.json へ反映する。★いいね投�
 
 ## 米沢
 
+- [2026-11-19 22:16] @_onakapekopeko_5 いいね389 画像つき 地名:大峠（国道121号）
+  - 本日の喜多方米沢間大峠超えた感想 スタック多すぎ 道路ガタガタ 除雪ありがとう 来るんじゃなかった
+  - https://www.threads.com/@_onakapekopeko_5/post/Df8_aRYESiO
 - [2026-11-19 20:10] @watanabehiroshi31 いいね2 画像つき 地名:米沢市内
   - #そういえば日本には冬がありました #米沢 #積み重ねが大事 #新しいことはじめよう #東北から始めよう
   - https://www.threads.com/@watanabehiroshi31/post/Df8xARLEb2c

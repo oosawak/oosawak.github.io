@@ -1,10 +1,19 @@
 # 現地の声（Threads・本人のいいね）— 生活圏防災ライブボード
 
-生成日時: 2026-11-20 15:31（日本時間）
+生成日時: 2026-11-20 17:38（日本時間）
 本人が Threads で「いいね」した投稿だけを、place-aliases.md の対応で各場所に振り分けたもの。
 正本は liked.md。地名キーワード検索による収集は 2026-11-20 に廃止した。
 
 ## 仙台
+- [2026-11-20 00:04] @woodbellmotor いいね7 本人のいいね 地名:国道48号 画像つき
+  - 大雪のため 店の前の国道48号線 通行止めとなっています💦
+  - https://www.threads.com/@woodbellmotor/post/Df9LvZ9j3xH
+- [2026-11-19 22:19] @kimukei._8 いいね12 本人のいいね 地名:仙台市内 画像つき
+  - 今年の仙台は雪が多いのかな？ 🙄
+  - https://www.threads.com/@kimukei._8/post/Df8_pGWAeOg
+- [2026-11-19 21:17] @animal_soul_asami いいね91 本人のいいね 地名:仙台市内 画像つき
+  - ひぇ〜ぼた雪の仙台⛄️ 仕事帰り、気をつけてね〜✨
+  - https://www.threads.com/@animal_soul_asami/post/Df84i7KDosH
 - [2026-11-19 20:38] @gochideli.sendai いいね36 本人のいいね 地名:仙台市内 画像つき
   - 大雪恐怖感じるほど 仙台帰れないかと思った
   - https://www.threads.com/@gochideli.sendai/post/Df80KQhnWwy
@@ -24,9 +33,15 @@
   - https://www.threads.com/@hanapyon.87/post/Df82ksBI25f
 
 ## 山形
+- [2026-11-19 22:28] @tomohisa_takeda いいね29 本人のいいね 地名:月山道 画像つき
+  - なぜ、この月山道路を夏タイヤで行けると思うのか… 迷惑だわ〜
+  - https://www.threads.com/@tomohisa_takeda/post/Df9AwHzHTe5
 - [2026-11-19 21:51] @kazu.shibuya いいね15 本人のいいね 地名:尾花沢市 画像つき
   - 今日は山形県尾花沢市で初雪。
   - https://www.threads.com/@kazu.shibuya/post/Df88mX7llj0
+- [2026-11-19 21:49] @pekopokokuma いいね24 本人のいいね 地名:月山道 画像つき
+  - 用事を済ませて、再び月山道を帰る 綿雪、圧雪になってきた
+  - https://www.threads.com/@pekopokokuma/post/Df88WRUIH-J
 - [2026-11-19 19:04] @hideya_style いいね31 本人のいいね 地名:山辺町大蕨地区 画像つき
   - ※撮影 助手席の同乗者。 初雪で木の枝が雪の重みで道路まで倒れています。皆様、気を付けて通行ください。 山形県 山辺町 大蕨地区
   - https://www.threads.com/@hideya_style/post/Df8pGpjDnIJ
@@ -46,6 +61,9 @@
   - https://www.threads.com/@116ayaka/post/Df8wsSuoFCj
 
 ## 米沢
+- [2026-11-19 22:16] @_onakapekopeko_5 いいね389 本人のいいね 地名:大峠（国道121号） 画像つき
+  - 本日の喜多方米沢間大峠超えた感想 スタック多すぎ 道路ガタガタ 除雪ありがとう 来るんじゃなかった
+  - https://www.threads.com/@_onakapekopeko_5/post/Df8_aRYESiO
 - [2026-11-19 20:10] @watanabehiroshi31 いいね2 本人のいいね 地名:米沢市内 画像つき
   - #そういえば日本には冬がありました #米沢 #積み重ねが大事 #新しいことはじめよう #東北から始めよう
   - https://www.threads.com/@watanabehiroshi31/post/Df8xARLEb2c
