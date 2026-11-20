@@ -312,7 +312,7 @@ function threadsFor(place) {
   return e ? e.posts : [];
 }
 function postHTML(p) {
-  return `<div class="post${p.promo ? ' promo' : ''}"><div class="meta">@${esc(p.username)} ・ ${esc(p.takenAt.replace('T', ' ').slice(0, 16))} ・ ♥${p.likeCount}${p.promo ? ' ・ 宣伝の可能性' : ''}</div>` +
+  return `<div class="post${p.promo ? ' promo' : ''}"><div class="meta">@${esc(p.username)} ・ ${esc(p.takenAt.replace('T', ' ').slice(0, 16))} ・ ♥${p.likeCount}${p.liked ? ' ・ ★本人のいいね' : ''}${p.spot ? ' ・ ' + esc(p.spot) : ''}${p.promo ? ' ・ 宣伝の可能性' : ''}</div>` +
     `<div class="text">${esc(p.text)}</div><div class="meta"><a href="${esc(p.url)}" target="_blank" rel="noopener">元投稿を見る</a>${p.hasImage ? '（画像つき）' : ''}</div></div>`;
 }
 function renderCards(places) {
