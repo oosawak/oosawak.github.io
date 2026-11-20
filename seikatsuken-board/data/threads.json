@@ -1,10 +1,25 @@
 {
-  "generatedAt": "2026-11-21T02:57:08+09:00",
+  "generatedAt": "2026-11-21T03:57:22+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-21T02:57:08+09:00",
+      "fetchedAt": "2026-11-21T03:57:22+09:00",
       "posts": [
+        {
+          "username": "momoten.chan",
+          "url": "https://www.threads.com/@momoten.chan/post/Df9zs-cEk4a",
+          "text": "明日郡山市から仙台へ帰るんだけど、普通タイヤヤバいかな。 福島県北部と、宮城南部も雪あるんか！るそれ度解けるかなぁ😭",
+          "likeCount": 1,
+          "takenAt": "2026-11-20T22:53:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "仙台"
+        },
         {
           "username": "taeko.kiyomoto",
           "url": "https://www.threads.com/@taeko.kiyomoto/post/Df9hI46kttZ",
@@ -175,7 +190,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-21T02:57:08+09:00",
+      "fetchedAt": "2026-11-21T03:57:22+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -197,7 +212,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-21T02:57:08+09:00",
+      "fetchedAt": "2026-11-21T03:57:22+09:00",
       "posts": [
         {
           "username": "meguru_inc",
@@ -395,6 +410,21 @@
           "spot": "月山道・県内峠道"
         },
         {
+          "username": "trafficlip",
+          "url": "https://www.threads.com/@trafficlip/post/Df6nanWGscE",
+          "text": "#国道48号 天童市内で事故 一部通行止め #trafficlip #通行止 #山形県道路情報 山形河川国道事務所などによると、山形県天童市の国道48号で事故が発生し、11月19日15:50から、天童市山口小学校付近の上下線で通行止めとなっています。 https://news.jp/i/1496059625584181497",
+          "likeCount": 4,
+          "takenAt": "2026-11-19T17:08:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "国道48号"
+        },
+        {
           "username": "hanaretemokawaiine",
           "url": "https://www.threads.com/@hanaretemokawaiine/post/Df8YazagWGg",
           "text": "あの、すみません。初雪ですよね😅💦？ 山形の現在、山の方は大雪になりそうです⛄️",
@@ -444,7 +474,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-21T02:57:08+09:00",
+      "fetchedAt": "2026-11-21T03:57:22+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -481,7 +511,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-21T02:57:08+09:00",
+      "fetchedAt": "2026-11-21T03:57:22+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -563,7 +593,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-21T02:57:08+09:00",
+      "fetchedAt": "2026-11-21T03:57:22+09:00",
       "posts": [
         {
           "username": "trafficlip",
