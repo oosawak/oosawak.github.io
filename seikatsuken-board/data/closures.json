@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T18:13:39+09:00",
+  "generatedAt": "2026-11-20T18:26:07+09:00",
   "sources": [
     {
       "office": "仙台河川国道事務所",
@@ -45,7 +45,8 @@
           "link": "https://www.thr.mlit.go.jp/Bumon/kisya/kisyah/images/107454_1.pdf"
         }
       ],
-      "error": ""
+      "error": "",
+      "pressStatus": "ok"
     },
     {
       "office": "山形河川国道事務所",
@@ -109,7 +110,8 @@
           "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
         }
       ],
-      "error": ""
+      "error": "",
+      "pressStatus": "ok"
     },
     {
       "office": "福島河川国道事務所",
@@ -119,7 +121,8 @@
       "pageUpdated": "",
       "items": [],
       "error": "RemoteDisconnected: Remote end closed connection without response",
-      "note": "福島河川国道事務所には仙台・山形のような通行規制の一覧ページがなく、リアルタイムの規制情報は道路情報提供システム（https://www.road-info-prvs.mlit.go.jp/roadinfo/pc/）に委ねられている。事務所の東北中央自動車道通行規制情報ページから取得を試みる。"
+      "note": "福島河川国道事務所には仙台・山形のような通行規制の一覧ページがなく、リアルタイムの規制情報は道路情報提供システム（https://www.road-info-prvs.mlit.go.jp/roadinfo/pc/）に委ねられている。事務所の東北中央自動車道通行規制情報ページから取得を試みる。",
+      "pressStatus": "ok"
     }
   ]
 }
