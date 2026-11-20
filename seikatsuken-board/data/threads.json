@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-21T07:57:21+09:00",
+  "generatedAt": "2026-11-21T08:57:57+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-21T07:57:21+09:00",
+      "fetchedAt": "2026-11-21T08:57:57+09:00",
       "posts": [
         {
           "username": "momoten.chan",
@@ -49,6 +49,21 @@
           "watched": false,
           "community": "",
           "spot": "国道48号・関山峠"
+        },
+        {
+          "username": "ponyosan.0",
+          "url": "https://www.threads.com/@ponyosan.0/post/Df8qbAbH7lE",
+          "text": "おはようございます☀ 今日も大型吸引車で、石巻〜仙台👍 めっちゃ寒いと思ったら 雪降ってきた❄️ 今年初雪です😌 防寒ツナギ持ってきてよかった☺️ みなさん、運転には気をつけましょう▓ ご安全に♪",
+          "likeCount": 45,
+          "takenAt": "2026-11-20T12:13:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "仙台"
         },
         {
           "username": "woodbellmotor",
@@ -190,7 +205,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-21T07:57:21+09:00",
+      "fetchedAt": "2026-11-21T08:57:57+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -212,7 +227,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-21T07:57:21+09:00",
+      "fetchedAt": "2026-11-21T08:57:57+09:00",
       "posts": [
         {
           "username": "meguru_inc",
@@ -333,6 +348,21 @@
           "watched": true,
           "community": "#山形県道路情報",
           "spot": "国道47号"
+        },
+        {
+          "username": "jihankiojisan",
+          "url": "https://www.threads.com/@jihankiojisan/post/Df8Ii9Wkwah",
+          "text": "この間言った山形県上山のスカイタワー付近の13号4車線化工事 片付けも終わりまして、片側二車線ずつにした場所が今日から全部使えるようになりました と言っても、コスモ石油まで4車線だったのが1キロ南に伸びただけなんで、そんなに変わらないですけど",
+          "likeCount": 46,
+          "takenAt": "2026-11-20T07:17:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
         },
         {
           "username": "hiroyukiss216",
@@ -489,7 +519,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-21T07:57:21+09:00",
+      "fetchedAt": "2026-11-21T08:57:57+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -526,7 +556,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-21T07:57:21+09:00",
+      "fetchedAt": "2026-11-21T08:57:57+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -608,7 +638,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-21T07:57:21+09:00",
+      "fetchedAt": "2026-11-21T08:57:57+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
