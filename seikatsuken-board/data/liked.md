@@ -27,10 +27,25 @@ fetch_threads.py が生成時に threads.json へ反映する。★いいね投�
   - 明日の朝、どうなってるかなぁ…🫠 ①国道112号月山第2トンネル ②国道47号最上町堺田 ③国道48号関山トンネル ④国道13号主寝坂トンネル
   - https://www.threads.com/@izu_mi20/post/Df7MexnD5HP
 
+## 松島
+
+- [2026-11-19 20:59] @hanapyon.87 いいね2 画像つき 地名:松島町
+  - 仕事で松島に行ったら雪やばっ▓ 30分後の隣町…青空🍁(2枚目)
+  - https://www.threads.com/@hanapyon.87/post/Df82ksBI25f
+
 ## 東根
 - [2026-11-19 20:07] @116ayaka いいね37 画像つき 地名:東根市内
   - 山形県東根市 雪の粒が大きくなってきました☃️ 積もってきてます☃️☃️☃️
   - https://www.threads.com/@116ayaka/post/Df8wsSuoFCj
+
+## 米沢
+
+- [2026-11-19 20:10] @watanabehiroshi31 いいね2 画像つき 地名:米沢市内
+  - #そういえば日本には冬がありました #米沢 #積み重ねが大事 #新しいことはじめよう #東北から始めよう
+  - https://www.threads.com/@watanabehiroshi31/post/Df8xARLEb2c
+- [2026-11-19 18:59] @merry.boss_nob いいね8 画像つき 地名:栗子（米沢市）
+  - 米沢の栗子は別世界
+  - https://www.threads.com/@merry.boss_nob/post/Df8o2O7Eip_
 
 ## 福島
 - [2026-11-19 20:23] @tatsuyan321 いいね121 画像つき 地名:土湯（道の駅つちゆ）

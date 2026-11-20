@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-20T15:02:48+09:00",
+  "generatedAt": "2026-11-20T15:17:53+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-20T15:02:48+09:00",
+      "fetchedAt": "2026-11-20T15:17:53+09:00",
       "posts": [
         {
           "username": "gochideli.sendai",
@@ -49,13 +49,27 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-20T15:02:48+09:00",
-      "posts": [],
+      "fetchedAt": "2026-11-20T15:17:53+09:00",
+      "posts": [
+        {
+          "username": "hanapyon.87",
+          "url": "https://www.threads.com/@hanapyon.87/post/Df82ksBI25f",
+          "text": "仕事で松島に行ったら雪やばっ▓ 30分後の隣町…青空🍁(2枚目)",
+          "likeCount": 2,
+          "takenAt": "2026-11-19T20:59:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "松島町"
+        }
+      ],
       "error": ""
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-20T15:02:48+09:00",
+      "fetchedAt": "2026-11-20T15:17:53+09:00",
       "posts": [
         {
           "username": "hideya_style",
@@ -101,7 +115,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-20T15:02:48+09:00",
+      "fetchedAt": "2026-11-20T15:17:53+09:00",
       "posts": [
         {
           "username": "116ayaka",
@@ -121,13 +135,40 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-20T15:02:48+09:00",
-      "posts": [],
+      "fetchedAt": "2026-11-20T15:17:53+09:00",
+      "posts": [
+        {
+          "username": "watanabehiroshi31",
+          "url": "https://www.threads.com/@watanabehiroshi31/post/Df8xARLEb2c",
+          "text": "#そういえば日本には冬がありました #米沢 #積み重ねが大事 #新しいことはじめよう #東北から始めよう",
+          "likeCount": 2,
+          "takenAt": "2026-11-19T20:10:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "米沢市内"
+        },
+        {
+          "username": "merry.boss_nob",
+          "url": "https://www.threads.com/@merry.boss_nob/post/Df8o2O7Eip_",
+          "text": "米沢の栗子は別世界",
+          "likeCount": 8,
+          "takenAt": "2026-11-19T18:59:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "栗子（米沢市）"
+        }
+      ],
       "error": ""
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-20T15:02:48+09:00",
+      "fetchedAt": "2026-11-20T15:17:53+09:00",
       "posts": [
         {
           "username": "tatsuyan321",
