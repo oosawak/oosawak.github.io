@@ -1,0 +1,128 @@
+:root{
+  --bg:#0b1020; --panel:#131a2e; --panel2:#0f1626; --line:#26304d;
+  --text:#e8ecf4; --sub:#9fb0cc; --accent:#6ea8ff;
+  --warn:#ffcf4d; --alert:#ff6b5e; --special:#c792ff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",system-ui,sans-serif;}
+a{color:var(--accent)}
+button{font:inherit;cursor:pointer;background:var(--panel);color:var(--text);
+  border:1px solid var(--line);border-radius:8px;padding:.45rem .8rem}
+button:hover{border-color:var(--accent)}
+body{padding-bottom:44px}
+
+/* ヘッダー */
+#topbar{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;
+  padding:.7rem 1rem .2rem}
+.title-block h1{font-size:1.25rem;margin:0}
+#dateLine{color:var(--sub);font-size:.9rem;margin-top:.15rem}
+#clock{font-size:2.6rem;font-weight:700;font-variant-numeric:tabular-nums;
+  margin-left:auto;line-height:1}
+.top-actions{display:flex;gap:.5rem}
+#updatedLine{color:var(--sub);font-size:.82rem;padding:0 1rem .5rem}
+
+/* 折りたたみセクション */
+.alert-sec{margin:.5rem 1rem;background:var(--panel2);border:1px solid var(--line);
+  border-radius:10px;overflow:hidden}
+.sec-head{width:100%;display:flex;gap:.8rem;align-items:baseline;text-align:left;
+  background:none;border:none;border-radius:0;padding:.6rem .9rem}
+.sec-title{font-weight:700}
+.sec-summary{color:var(--sub);font-size:.9rem;flex:1;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+.sec-arrow{color:var(--sub)}
+.sec-body{padding:.4rem .9rem .8rem;border-top:1px solid var(--line)}
+.sec-body h3{margin:.7rem 0 .3rem;font-size:.95rem}
+.sec-body ul{margin:.2rem 0 .6rem;padding-left:1.2rem}
+.sec-body li{margin:.15rem 0}
+.muted{color:var(--sub);font-size:.85rem}
+
+/* 警報チップ */
+.chip{display:inline-block;border-radius:999px;padding:.05rem .55rem;margin:.1rem .2rem .1rem 0;
+  font-size:.82rem;border:1px solid var(--line)}
+.chip.special{background:#3a2456;color:var(--special);border-color:var(--special)}
+.chip.warning{background:#4a2b12;color:var(--warn);border-color:var(--warn)}
+.chip.advisory{background:#22304d;color:#bcd0f5}
+.chip.none{background:none;color:var(--sub)}
+
+/* 地図 */
+#mapSec{margin:.8rem 1rem}
+#map{height:52vh;min-height:340px;border-radius:10px;border:1px solid var(--line);
+  background:#10182c}
+#cameraBar{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+#cameraBar button{font-size:.85rem}
+.pin-num{background:var(--accent);color:#081226;border:2px solid #fff;border-radius:50%;
+  width:26px;height:26px;line-height:22px;text-align:center;font-weight:700;font-size:.85rem;
+  box-shadow:0 1px 4px rgba(0,0,0,.5)}
+.cam-icon{background:#ffd166;color:#231a00;border:2px solid #fff;border-radius:6px;
+  width:24px;height:24px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 1px 4px rgba(0,0,0,.5)}
+.leaflet-popup-content{color:#14203a;font-size:.88rem;line-height:1.5;max-width:320px}
+.leaflet-popup-content h4{margin:.1rem 0 .3rem;font-size:1rem}
+.leaflet-popup-content img{max-width:100%;border-radius:6px}
+.leaflet-popup-content .muted{color:#5a6a86}
+
+/* 場所カード */
+#cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+  gap:.8rem;margin:.8rem 1rem}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:.8rem .9rem}
+.card h3{margin:0 0 .4rem;font-size:1.1rem}
+.card h3 .num{display:inline-block;background:var(--accent);color:#081226;border-radius:50%;
+  width:1.5em;height:1.5em;line-height:1.5em;text-align:center;margin-right:.4rem;font-size:.9em}
+.card h4{margin:.7rem 0 .3rem;font-size:.92rem;color:var(--sub);font-weight:600}
+.card .wx{font-size:1.02rem}
+.card .wx .wxicon{font-size:1.25rem;margin-right:.3rem}
+.card .temps{color:var(--sub);font-size:.9rem}
+.card .amedas{font-size:.92rem}
+.card .cam img{width:100%;border-radius:8px;display:block}
+.card .cam .cap{color:var(--sub);font-size:.8rem;margin-top:.2rem}
+.post{border-top:1px dashed var(--line);padding:.45rem 0}
+.post .meta{color:var(--sub);font-size:.8rem}
+.post .text{white-space:pre-wrap;word-break:break-word;font-size:.92rem}
+.post.promo{opacity:.55}
+.more-btn{margin-top:.3rem;font-size:.85rem}
+
+/* フッター */
+#boardFooter{margin:1rem;color:var(--sub);font-size:.85rem}
+#boardFooter h2{font-size:1rem;color:var(--text)}
+#boardFooter li{margin:.25rem 0}
+
+/* ティッカー */
+#ticker{position:fixed;left:0;right:0;bottom:0;height:36px;background:#05080f;
+  border-top:1px solid var(--line);overflow:hidden;display:flex;align-items:center;z-index:900}
+#tickerInner{white-space:nowrap;display:inline-block;padding-left:100%;
+  animation:tick 60s linear infinite;font-size:.92rem}
+#tickerInner span{margin-right:3rem}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+
+/* 設定パネル */
+#settingsPanel{position:fixed;inset:0;background:rgba(3,6,12,.7);z-index:1200;
+  display:flex;align-items:flex-start;justify-content:center;overflow:auto}
+#settingsPanel[hidden]{display:none}
+.settings-box{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  margin:3vh 1rem;padding:1rem;width:min(680px,94vw)}
+.settings-head{display:flex;justify-content:space-between;align-items:center}
+.settings-head h2{margin:0}
+.settings-search{display:block;margin:.7rem 0}
+.settings-search input{width:100%;margin-top:.3rem;padding:.5rem;border-radius:8px;
+  border:1px solid var(--line);background:var(--panel2);color:var(--text)}
+#placeList{max-height:46vh;overflow:auto;border:1px solid var(--line);border-radius:8px;padding:.4rem}
+#placeList h3{margin:.5rem .2rem .2rem;font-size:.9rem;color:var(--sub)}
+#placeList label{display:inline-block;margin:.15rem .5rem .15rem .2rem;font-size:.92rem}
+.settings-toggle{display:block;margin:.8rem 0}
+.settings-note{color:var(--sub);font-size:.82rem}
+
+/* 壁紙モード */
+body.wallpaper #board, body.wallpaper #updatedLine{display:none}
+body.wallpaper #clock{font-size:6rem}
+body.wallpaper .title-block h1{font-size:1.6rem}
+#wallWarnings{margin:1rem;padding:1rem;background:var(--panel2);
+  border:1px solid var(--line);border-radius:12px}
+#wallWarnings h2{margin:.2rem 0 .6rem}
+#wallWarnings .wall-item{font-size:1.3rem;margin:.35rem 0}
+@media (max-width:640px){
+  #clock{font-size:2rem;margin-left:0}
+  body.wallpaper #clock{font-size:3.4rem}
+  #map{height:44vh}
+}
