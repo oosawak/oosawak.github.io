@@ -31,6 +31,14 @@ const WX_ICON = { '100': '☀', '101': '☀', '102': '☀', '110': '☀', '111':
 const WIND_DIR = ['北', '北北東', '北東', '東北東', '東', '東南東', '南東', '南南東',
   '南', '南南西', '南西', '西南西', '西', '西北西', '北西', '北北西'];
 
+const SECTIONS = [
+  ['warnings', '警報・注意報'], ['closures', '通行止め'], ['quakes', '地震情報'],
+  ['forecast', '天気予報'], ['cameras', 'ライブカメラ'], ['posts', '現地の声'],
+  ['bears', '熊の目撃'], ['volcano', '火山情報'], ['flood', '洪水予報'],
+  ['radiation', '放射線（モニタリングポスト）'], ['outage', '停電情報'], ['wbgt', '暑さ指数'],
+];
+function defaultShow() { const o = {}; for (const [k] of SECTIONS) o[k] = true; return o; }
+
 const state = {
   settings: loadSettings(),
   catalog: null,          // Map name -> {name, short, pref, regionCode, warnAreas[]}
@@ -47,13 +55,6 @@ const state = {
   map: null, layers: null,
 };
 
-const SECTIONS = [
-  ['warnings', '警報・注意報'], ['closures', '通行止め'], ['quakes', '地震情報'],
-  ['forecast', '天気予報'], ['cameras', 'ライブカメラ'], ['posts', '現地の声'],
-  ['bears', '熊の目撃'], ['volcano', '火山情報'], ['flood', '洪水予報'],
-  ['radiation', '放射線（モニタリングポスト）'], ['outage', '停電情報'], ['wbgt', '暑さ指数'],
-];
-function defaultShow() { const o = {}; for (const [k] of SECTIONS) o[k] = true; return o; }
 function loadSettings() {
   try {
     const s = JSON.parse(localStorage.getItem(LS_KEY));
