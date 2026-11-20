@@ -429,6 +429,9 @@ function initMap() {
     attribution: '© OpenStreetMap contributors', maxZoom: 18,
   }).addTo(state.map);
   state.layers = L.layerGroup().addTo(state.map);
+  state.myLayer = L.layerGroup().addTo(state.map);
+  state.map.on('contextmenu', onMapContextMenu);
+  drawMyPoints();
 }
 const CAM_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#231a00" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>';
 function placePopup(p, idx) {
@@ -581,3 +584,161 @@ document.getElementById('settingsDefaults').addEventListener('click', () => {
   await refreshBoard(true);
   setInterval(() => refreshBoard(true), 10 * 60 * 1000);
 })();
+
+// ===== 登録地点（自宅・仕事場など）: 長押しで登録、判定は登録時だけ、保存は localStorage のみ =====
+const MYPOINTS_KEY = 'seikatsuken.mypoints.v1';
+let myPoints = [];
+try { myPoints = JSON.parse(localStorage.getItem(MYPOINTS_KEY) || '[]'); } catch (e) { myPoints = []; }
+let hazardIndex = null;
+let hazardBoundaries = null;
+let mpPending = null;
+
+function saveMyPoints() { try { localStorage.setItem(MYPOINTS_KEY, JSON.stringify(myPoints)); } catch (e) {} }
+
+function pipRing(lon, lat, ring) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
+    if (((yi > lat) !== (yj > lat)) && (lon < (xj - xi) * (lat - yi) / (yj - yi) + xi)) inside = !inside;
+  }
+  return inside;
+}
+function pipPolygon(lon, lat, polys) {
+  if (!polys.length || !pipRing(lon, lat, polys[0])) return false;
+  for (let k = 1; k < polys.length; k++) if (pipRing(lon, lat, polys[k])) return false;
+  return true;
+}
+function pipGeom(lon, lat, geom) {
+  if (!geom) return false;
+  if (geom.type === 'Polygon') return pipPolygon(lon, lat, geom.coordinates);
+  if (geom.type === 'MultiPolygon') return geom.coordinates.some(p => pipPolygon(lon, lat, p));
+  return false;
+}
+
+async function loadHazardMeta() {
+  if (!hazardIndex) hazardIndex = await (await fetch('data/hazard-muni/index.json')).json();
+  if (!hazardBoundaries) hazardBoundaries = await (await fetch('data/hazard-muni/boundaries.geojson')).json();
+}
+function findMuni(lon, lat) {
+  if (!hazardBoundaries) return null;
+  for (const f of hazardBoundaries.features) {
+    if (pipGeom(lon, lat, f.geometry)) return f.properties;
+  }
+  return null;
+}
+
+const FLOOD_RANKS = { 1: '0.5m未満', 2: '0.5〜1m', 3: '1〜2m', 4: '2〜5m', 5: '5〜10m', 6: '10〜20m', 7: '20m以上' };
+const SLIDE_KINDS = { 1: '急傾斜地の崩壊', 2: '土石流', 3: '地すべり' };
+const SLIDE_ZONES = { 1: '警戒区域', 2: '特別警戒区域' };
+
+async function judgePoint(lat, lon) {
+  await loadHazardMeta();
+  const muni = findMuni(lon, lat);
+  const out = { muni: muni ? { code: muni.code, name: muni.name, pref: muni.pref } : null,
+                judgedAt: new Date().toISOString(), landslide: null, flood: null, tsunami: null };
+  if (!muni) return out;
+  const entry = (hazardIndex.municipalities || []).find(m => m.code === muni.code);
+  for (const type of ['landslide', 'flood', 'tsunami']) {
+    if (type === 'flood' && entry && entry.flood_covered === false) { out.flood = { status: 'notcovered' }; continue; }
+    if (!entry || !entry.types.includes(type)) { out[type] = { status: 'nodata' }; continue; }
+    const gj = await (await fetch(`data/hazard-muni/${muni.code}-${type}.geojson`)).json();
+    const hits = gj.features.filter(f => pipGeom(lon, lat, f.geometry)).map(f => f.properties);
+    if (!hits.length) { out[type] = { status: 'outside' }; continue; }
+    if (type === 'landslide') {
+      const seen = new Map();
+      for (const p of hits) {
+        const h = { zone: p.A33_002, kind: p.A33_001, name: p.A33_005 || '', loc: p.A33_006 || '' };
+        seen.set(`${h.zone}|${h.kind}|${h.name}`, h);
+      }
+      out.landslide = { status: 'inside', hits: [...seen.values()] };
+    } else if (type === 'flood') {
+      out.flood = { status: 'inside', rank: Math.max(...hits.map(p => p.A31b_201 || 0)) };
+    } else {
+      out.tsunami = { status: 'inside', dists: [...new Set(hits.map(p => p.A40_003).filter(Boolean))] };
+    }
+  }
+  return out;
+}
+
+function hazardSummary(pt) {
+  const s = [];
+  const L = pt.landslide, F = pt.flood, T = pt.tsunami;
+  if (L) s.push('土砂: ' + (L.status === 'inside'
+    ? L.hits.map(h => `${SLIDE_ZONES[h.zone] || '警戒区域'}（${SLIDE_KINDS[h.kind] || ''}）`).join('・')
+    : L.status === 'outside' ? '区域外' : '区域なし'));
+  if (F) s.push('洪水: ' + (F.status === 'inside' ? `区域内（浸水深 ${FLOOD_RANKS[F.rank] || ''}）`
+    : F.status === 'outside' ? '区域外' : F.status === 'notcovered' ? 'データ対象外' : '区域なし'));
+  if (T) s.push('津波: ' + (T.status === 'inside' ? `区域内（${T.dists.join('・')}）`
+    : T.status === 'outside' ? '区域外' : '区域なし'));
+  return s;
+}
+function myPointPopup(pt) {
+  let h = `<h4>${esc(pt.name)}</h4>`;
+  h += `<div class="muted">${pt.muni ? esc(pt.muni.pref) + ' ' + esc(pt.muni.name) : '市町村を特定できませんでした'} / 判定: ${esc((pt.judgedAt || '').slice(0, 10))}</div>`;
+  for (const line of hazardSummary(pt)) h += `<div>${esc(line)}</div>`;
+  if (pt.landslide && pt.landslide.status === 'inside') {
+    for (const hit of pt.landslide.hits) {
+      if (hit.name) h += `<div class="muted">区域名: ${esc(hit.name)}${hit.loc ? '（' + esc(hit.loc) + '）' : ''}</div>`;
+    }
+  }
+  h += `<div class="muted">国土数値情報の区域データによる目安です（精度1/25,000）。</div>`;
+  h += `<div class="mp-actions"><button type="button" onclick="mpRejudge('${pt.id}')">再判定</button> <button type="button" onclick="mpDelete('${pt.id}')">削除</button></div>`;
+  return h;
+}
+function drawMyPoints() {
+  if (!state.map || !state.myLayer) return;
+  state.myLayer.clearLayers();
+  for (const pt of myPoints) {
+    const icon = L.divIcon({ className: '', html: '<div class="mypoint-pin">⌂</div>', iconSize: [26, 26], iconAnchor: [13, 13] });
+    pt._marker = L.marker([pt.lat, pt.lon], { icon }).addTo(state.myLayer).bindPopup(myPointPopup(pt));
+  }
+  const list = document.getElementById('myPointsList');
+  if (!list) return;
+  if (!myPoints.length) { list.innerHTML = '<p class="muted">まだ登録がありません</p>'; return; }
+  list.innerHTML = myPoints.map(pt =>
+    `<div class="mp-row" onclick="mpFocus('${pt.id}')"><b>${esc(pt.name)}</b> <span class="muted">${pt.muni ? esc(pt.muni.name) : ''}</span><br><span class="mp-sum">${hazardSummary(pt).map(esc).join(' / ')}</span></div>`
+  ).join('');
+}
+function mpFocus(id) {
+  const pt = myPoints.find(p => p.id === id);
+  if (!pt || !state.map) return;
+  state.map.setView([pt.lat, pt.lon], Math.max(state.map.getZoom(), 14));
+  if (pt._marker) pt._marker.openPopup();
+}
+function onMapContextMenu(e) {
+  mpPending = e.latlng;
+  const html = `<div class="mp-form"><b>地点を登録</b><br>` +
+    `<input id="mpName" type="text" placeholder="名前（自宅・仕事場など）" maxlength="30">` +
+    `<button type="button" onclick="mpRegister()">登録して判定</button>` +
+    `<div class="muted">登録した時だけ判定します。保存はこの端末の中だけです。</div></div>`;
+  L.popup().setLatLng(e.latlng).setContent(html).openOn(state.map);
+  setTimeout(() => { const i = document.getElementById('mpName'); if (i) i.focus(); }, 100);
+}
+async function mpRegister() {
+  if (!mpPending) return;
+  const input = document.getElementById('mpName');
+  const name = (input && input.value.trim()) || '地点';
+  const { lat, lng } = mpPending;
+  state.map.closePopup();
+  const judged = await judgePoint(lat, lng);
+  const pt = { id: 'mp' + Date.now().toString(36), name, lat, lon: lng, ...judged };
+  myPoints.push(pt);
+  saveMyPoints();
+  drawMyPoints();
+  mpFocus(pt.id);
+}
+async function mpRejudge(id) {
+  const pt = myPoints.find(p => p.id === id);
+  if (!pt) return;
+  const judged = await judgePoint(pt.lat, pt.lon);
+  Object.assign(pt, judged);
+  saveMyPoints();
+  drawMyPoints();
+  mpFocus(id);
+}
+function mpDelete(id) {
+  myPoints = myPoints.filter(p => p.id !== id);
+  saveMyPoints();
+  drawMyPoints();
+  if (state.map) state.map.closePopup();
+}

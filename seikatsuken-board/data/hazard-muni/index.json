@@ -1,0 +1,2226 @@
+{
+ "generated": "2026-11-20 15:45 JST",
+ "source": "data/hazard/ (build_hazard.py) を N03-20250101 市町村界で切り出し",
+ "municipalities": [
+  {
+   "code": "04100",
+   "name": "仙台市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 2702158,
+    "flood": 10847969,
+    "tsunami": 4609949
+   },
+   "features": {
+    "landslide": 2789,
+    "flood": 377,
+    "tsunami": 167
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04202",
+   "name": "石巻市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 3805045,
+    "flood": 9229168,
+    "tsunami": 11489854
+   },
+   "features": {
+    "landslide": 3922,
+    "flood": 443,
+    "tsunami": 945
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04203",
+   "name": "塩竈市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 363203,
+    "tsunami": 1132204
+   },
+   "features": {
+    "landslide": 419,
+    "tsunami": 85
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04205",
+   "name": "気仙沼市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 1601848,
+    "tsunami": 5084531
+   },
+   "features": {
+    "landslide": 1502,
+    "tsunami": 341
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "04206",
+   "name": "白石市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 823650,
+    "flood": 1719331
+   },
+   "features": {
+    "landslide": 708,
+    "flood": 82
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04207",
+   "name": "名取市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 461332,
+    "flood": 6811509,
+    "tsunami": 2113875
+   },
+   "features": {
+    "landslide": 525,
+    "flood": 106,
+    "tsunami": 103
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04208",
+   "name": "角田市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 823811,
+    "flood": 2628190
+   },
+   "features": {
+    "landslide": 960,
+    "flood": 92
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04209",
+   "name": "多賀城市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 52840,
+    "flood": 507517,
+    "tsunami": 1451859
+   },
+   "features": {
+    "landslide": 67,
+    "flood": 20,
+    "tsunami": 53
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04211",
+   "name": "岩沼市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 258208,
+    "flood": 2517229,
+    "tsunami": 1362912
+   },
+   "features": {
+    "landslide": 292,
+    "flood": 89,
+    "tsunami": 104
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04212",
+   "name": "登米市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 1813611,
+    "flood": 5333630
+   },
+   "features": {
+    "landslide": 2008,
+    "flood": 246
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04213",
+   "name": "栗原市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 1268317,
+    "flood": 64666
+   },
+   "features": {
+    "landslide": 1347,
+    "flood": 9
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04214",
+   "name": "東松島市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 634224,
+    "flood": 1863282,
+    "tsunami": 5492014
+   },
+   "features": {
+    "landslide": 743,
+    "flood": 143,
+    "tsunami": 216
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04215",
+   "name": "大崎市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 1342688,
+    "flood": 7175302
+   },
+   "features": {
+    "landslide": 1517,
+    "flood": 222
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04216",
+   "name": "富谷市",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 242692,
+    "flood": 31529
+   },
+   "features": {
+    "landslide": 320,
+    "flood": 10
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04301",
+   "name": "蔵王町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 445261,
+    "flood": 280587
+   },
+   "features": {
+    "landslide": 301,
+    "flood": 22
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04302",
+   "name": "七ヶ宿町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 152525,
+    "flood": 322080
+   },
+   "features": {
+    "landslide": 107,
+    "flood": 30
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04321",
+   "name": "大河原町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 204314,
+    "flood": 700228
+   },
+   "features": {
+    "landslide": 219,
+    "flood": 35
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04322",
+   "name": "村田町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 598382,
+    "flood": 910858
+   },
+   "features": {
+    "landslide": 560,
+    "flood": 58
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04323",
+   "name": "柴田町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 377874,
+    "flood": 1583600
+   },
+   "features": {
+    "landslide": 384,
+    "flood": 53
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04324",
+   "name": "川崎町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 544961,
+    "flood": 219407
+   },
+   "features": {
+    "landslide": 526,
+    "flood": 23
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04341",
+   "name": "丸森町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 1163363,
+    "flood": 2311134
+   },
+   "features": {
+    "landslide": 1153,
+    "flood": 148
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04361",
+   "name": "亘理町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 141570,
+    "flood": 2174784,
+    "tsunami": 1752127
+   },
+   "features": {
+    "landslide": 145,
+    "flood": 54,
+    "tsunami": 106
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04362",
+   "name": "山元町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 192207,
+    "flood": 1105576,
+    "tsunami": 1151027
+   },
+   "features": {
+    "landslide": 151,
+    "flood": 33,
+    "tsunami": 93
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04401",
+   "name": "松島町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 734284,
+    "flood": 495239,
+    "tsunami": 1051232
+   },
+   "features": {
+    "landslide": 885,
+    "flood": 71,
+    "tsunami": 70
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04404",
+   "name": "七ヶ浜町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 108579,
+    "tsunami": 898257
+   },
+   "features": {
+    "landslide": 141,
+    "tsunami": 72
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04406",
+   "name": "利府町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 311081,
+    "flood": 566500,
+    "tsunami": 171804
+   },
+   "features": {
+    "landslide": 381,
+    "flood": 23,
+    "tsunami": 23
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04421",
+   "name": "大和町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 485145,
+    "flood": 1017673
+   },
+   "features": {
+    "landslide": 587,
+    "flood": 77
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04422",
+   "name": "大郷町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 319061,
+    "flood": 281189
+   },
+   "features": {
+    "landslide": 411,
+    "flood": 26
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04424",
+   "name": "大衡村",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 120086,
+    "flood": 210658
+   },
+   "features": {
+    "landslide": 173,
+    "flood": 22
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04444",
+   "name": "色麻町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 51889,
+    "flood": 550481
+   },
+   "features": {
+    "landslide": 58,
+    "flood": 49
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04445",
+   "name": "加美町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 123884,
+    "flood": 3374135
+   },
+   "features": {
+    "landslide": 115,
+    "flood": 123
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04501",
+   "name": "涌谷町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 236025,
+    "flood": 1168862
+   },
+   "features": {
+    "landslide": 255,
+    "flood": 122
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04505",
+   "name": "美里町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 27317,
+    "flood": 2996
+   },
+   "features": {
+    "landslide": 37,
+    "flood": 3
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04581",
+   "name": "女川町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 702029,
+    "tsunami": 2050574
+   },
+   "features": {
+    "landslide": 687,
+    "tsunami": 231
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "04606",
+   "name": "南三陸町",
+   "pref": "宮城県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 635760,
+    "flood": 232301,
+    "tsunami": 3652692
+   },
+   "features": {
+    "landslide": 632,
+    "flood": 21,
+    "tsunami": 276
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06201",
+   "name": "山形市",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 870600,
+    "flood": 9558901
+   },
+   "features": {
+    "landslide": 512,
+    "flood": 383
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06202",
+   "name": "米沢市",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 634162,
+    "flood": 5394507
+   },
+   "features": {
+    "landslide": 464,
+    "flood": 103
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06203",
+   "name": "鶴岡市",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 2260954,
+    "tsunami": 966129
+   },
+   "features": {
+    "landslide": 1781,
+    "tsunami": 147
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06204",
+   "name": "酒田市",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 949684,
+    "tsunami": 1820462
+   },
+   "features": {
+    "landslide": 775,
+    "tsunami": 183
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "06205",
+   "name": "新庄市",
+   "pref": "山形県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 97027
+   },
+   "features": {
+    "landslide": 79
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "06206",
+   "name": "寒河江市",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 373449,
+    "flood": 3892193
+   },
+   "features": {
+    "landslide": 260,
+    "flood": 164
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06207",
+   "name": "上山市",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 768664,
+    "flood": 4648516
+   },
+   "features": {
+    "landslide": 414,
+    "flood": 245
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06208",
+   "name": "村山市",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 232490,
+    "flood": 3023789
+   },
+   "features": {
+    "landslide": 162,
+    "flood": 184
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06209",
+   "name": "長井市",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 229432,
+    "flood": 1629345
+   },
+   "features": {
+    "landslide": 128,
+    "flood": 51
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06210",
+   "name": "天童市",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 179981,
+    "flood": 4616624
+   },
+   "features": {
+    "landslide": 120,
+    "flood": 115
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06211",
+   "name": "東根市",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 176471,
+    "flood": 3887010
+   },
+   "features": {
+    "landslide": 134,
+    "flood": 188
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06212",
+   "name": "尾花沢市",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 161667,
+    "flood": 4019649
+   },
+   "features": {
+    "landslide": 135,
+    "flood": 271
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06213",
+   "name": "南陽市",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 582666,
+    "flood": 2934406
+   },
+   "features": {
+    "landslide": 419,
+    "flood": 97
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06301",
+   "name": "山辺町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 149508,
+    "flood": 1218833
+   },
+   "features": {
+    "landslide": 104,
+    "flood": 72
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06302",
+   "name": "中山町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 13612,
+    "flood": 1808353
+   },
+   "features": {
+    "landslide": 12,
+    "flood": 52
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06321",
+   "name": "河北町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 66647,
+    "flood": 3528897
+   },
+   "features": {
+    "landslide": 46,
+    "flood": 105
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06322",
+   "name": "西川町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 450935,
+    "flood": 838286
+   },
+   "features": {
+    "landslide": 300,
+    "flood": 88
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06323",
+   "name": "朝日町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 593895,
+    "flood": 947339
+   },
+   "features": {
+    "landslide": 336,
+    "flood": 125
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06324",
+   "name": "大江町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 379251,
+    "flood": 1027842
+   },
+   "features": {
+    "landslide": 195,
+    "flood": 134
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06341",
+   "name": "大石田町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 79196,
+    "flood": 1474702
+   },
+   "features": {
+    "landslide": 62,
+    "flood": 100
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06361",
+   "name": "金山町",
+   "pref": "山形県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 193453
+   },
+   "features": {
+    "landslide": 153
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "06362",
+   "name": "最上町",
+   "pref": "山形県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 239480
+   },
+   "features": {
+    "landslide": 171
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06363",
+   "name": "舟形町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 200711,
+    "flood": 81704
+   },
+   "features": {
+    "landslide": 170,
+    "flood": 20
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06364",
+   "name": "真室川町",
+   "pref": "山形県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 510092
+   },
+   "features": {
+    "landslide": 447
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "06365",
+   "name": "大蔵村",
+   "pref": "山形県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 223939
+   },
+   "features": {
+    "landslide": 156
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06366",
+   "name": "鮭川村",
+   "pref": "山形県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 423259
+   },
+   "features": {
+    "landslide": 204
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "06367",
+   "name": "戸沢村",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 343101,
+    "flood": 2321
+   },
+   "features": {
+    "landslide": 263,
+    "flood": 3
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06381",
+   "name": "高畠町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 223469,
+    "flood": 2471662
+   },
+   "features": {
+    "landslide": 180,
+    "flood": 45
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06382",
+   "name": "川西町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 129067,
+    "flood": 2545259
+   },
+   "features": {
+    "landslide": 106,
+    "flood": 67
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06401",
+   "name": "小国町",
+   "pref": "山形県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 477313
+   },
+   "features": {
+    "landslide": 371
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "06402",
+   "name": "白鷹町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 546385,
+    "flood": 1113153
+   },
+   "features": {
+    "landslide": 313,
+    "flood": 48
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06403",
+   "name": "飯豊町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 209690,
+    "flood": 304517
+   },
+   "features": {
+    "landslide": 108,
+    "flood": 12
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06426",
+   "name": "三川町",
+   "pref": "山形県",
+   "types": [
+    "tsunami"
+   ],
+   "sizes": {
+    "tsunami": 47106
+   },
+   "features": {
+    "tsunami": 19
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "06428",
+   "name": "庄内町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 185870,
+    "flood": 1604,
+    "tsunami": 20265
+   },
+   "features": {
+    "landslide": 136,
+    "flood": 3,
+    "tsunami": 12
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "06461",
+   "name": "遊佐町",
+   "pref": "山形県",
+   "types": [
+    "landslide",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 75906,
+    "tsunami": 509472
+   },
+   "features": {
+    "landslide": 66,
+    "tsunami": 62
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07201",
+   "name": "福島市",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 711533,
+    "flood": 4684040
+   },
+   "features": {
+    "landslide": 678,
+    "flood": 102
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07202",
+   "name": "会津若松市",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 325863
+   },
+   "features": {
+    "landslide": 286
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07203",
+   "name": "郡山市",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 764025,
+    "flood": 2848353
+   },
+   "features": {
+    "landslide": 893,
+    "flood": 186
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07204",
+   "name": "いわき市",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 4070013,
+    "tsunami": 4864999
+   },
+   "features": {
+    "landslide": 4494,
+    "tsunami": 300
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07205",
+   "name": "白河市",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 518252
+   },
+   "features": {
+    "landslide": 690
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07207",
+   "name": "須賀川市",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 262410,
+    "flood": 37761
+   },
+   "features": {
+    "landslide": 254,
+    "flood": 8
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07208",
+   "name": "喜多方市",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 485186
+   },
+   "features": {
+    "landslide": 451
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07209",
+   "name": "相馬市",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 210608,
+    "flood": 226144,
+    "tsunami": 2556415
+   },
+   "features": {
+    "landslide": 238,
+    "flood": 34,
+    "tsunami": 145
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07210",
+   "name": "二本松市",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 901014,
+    "flood": 678082
+   },
+   "features": {
+    "landslide": 913,
+    "flood": 59
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07211",
+   "name": "田村市",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 1359816
+   },
+   "features": {
+    "landslide": 1642
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07212",
+   "name": "南相馬市",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 324097,
+    "flood": 2412297,
+    "tsunami": 3620853
+   },
+   "features": {
+    "landslide": 392,
+    "flood": 106,
+    "tsunami": 220
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07213",
+   "name": "伊達市",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 1378105,
+    "flood": 3132991
+   },
+   "features": {
+    "landslide": 1354,
+    "flood": 141
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07214",
+   "name": "本宮市",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 119714,
+    "flood": 652954
+   },
+   "features": {
+    "landslide": 155,
+    "flood": 53
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07301",
+   "name": "桑折町",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 82861,
+    "flood": 410959
+   },
+   "features": {
+    "landslide": 71,
+    "flood": 23
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07303",
+   "name": "国見町",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 85580,
+    "flood": 230071
+   },
+   "features": {
+    "landslide": 51,
+    "flood": 24
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07308",
+   "name": "川俣町",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 684610,
+    "flood": 257213
+   },
+   "features": {
+    "landslide": 657,
+    "flood": 23
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07322",
+   "name": "大玉村",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 98561,
+    "flood": 259417
+   },
+   "features": {
+    "landslide": 57,
+    "flood": 29
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07342",
+   "name": "鏡石町",
+   "pref": "福島県",
+   "types": [],
+   "sizes": {},
+   "features": {},
+   "flood_covered": false
+  },
+  {
+   "code": "07344",
+   "name": "天栄村",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 164414
+   },
+   "features": {
+    "landslide": 219
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07362",
+   "name": "下郷町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 170644
+   },
+   "features": {
+    "landslide": 213
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07364",
+   "name": "檜枝岐村",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 27423
+   },
+   "features": {
+    "landslide": 23
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07367",
+   "name": "只見町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 138025
+   },
+   "features": {
+    "landslide": 149
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07368",
+   "name": "南会津町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 378721
+   },
+   "features": {
+    "landslide": 449
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07402",
+   "name": "北塩原村",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 82444
+   },
+   "features": {
+    "landslide": 68
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07405",
+   "name": "西会津町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 327008
+   },
+   "features": {
+    "landslide": 352
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07407",
+   "name": "磐梯町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 33652
+   },
+   "features": {
+    "landslide": 13
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07408",
+   "name": "猪苗代町",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood"
+   ],
+   "sizes": {
+    "landslide": 204846,
+    "flood": 1576944
+   },
+   "features": {
+    "landslide": 147,
+    "flood": 54
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07421",
+   "name": "会津坂下町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 114247
+   },
+   "features": {
+    "landslide": 88
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07422",
+   "name": "湯川村",
+   "pref": "福島県",
+   "types": [],
+   "sizes": {},
+   "features": {},
+   "flood_covered": false
+  },
+  {
+   "code": "07423",
+   "name": "柳津町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 166474
+   },
+   "features": {
+    "landslide": 186
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07444",
+   "name": "三島町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 139330
+   },
+   "features": {
+    "landslide": 153
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07445",
+   "name": "金山町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 218982
+   },
+   "features": {
+    "landslide": 227
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07446",
+   "name": "昭和村",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 103423
+   },
+   "features": {
+    "landslide": 98
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07447",
+   "name": "会津美里町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 244037
+   },
+   "features": {
+    "landslide": 207
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07461",
+   "name": "西郷村",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 84831
+   },
+   "features": {
+    "landslide": 96
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07464",
+   "name": "泉崎村",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 20592
+   },
+   "features": {
+    "landslide": 27
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07465",
+   "name": "中島村",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 8021
+   },
+   "features": {
+    "landslide": 9
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07466",
+   "name": "矢吹町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 19481
+   },
+   "features": {
+    "landslide": 30
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07481",
+   "name": "棚倉町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 177017
+   },
+   "features": {
+    "landslide": 246
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07482",
+   "name": "矢祭町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 385024
+   },
+   "features": {
+    "landslide": 445
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07483",
+   "name": "塙町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 321314
+   },
+   "features": {
+    "landslide": 451
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07484",
+   "name": "鮫川村",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 304324
+   },
+   "features": {
+    "landslide": 474
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07501",
+   "name": "石川町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 286545
+   },
+   "features": {
+    "landslide": 332
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07502",
+   "name": "玉川村",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 85633
+   },
+   "features": {
+    "landslide": 88
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07503",
+   "name": "平田村",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 344649
+   },
+   "features": {
+    "landslide": 323
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07504",
+   "name": "浅川町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 108792
+   },
+   "features": {
+    "landslide": 119
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07505",
+   "name": "古殿町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 556215
+   },
+   "features": {
+    "landslide": 595
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07521",
+   "name": "三春町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 232051
+   },
+   "features": {
+    "landslide": 316
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07522",
+   "name": "小野町",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 268765
+   },
+   "features": {
+    "landslide": 368
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07541",
+   "name": "広野町",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 78434,
+    "tsunami": 248052
+   },
+   "features": {
+    "landslide": 97,
+    "tsunami": 45
+   },
+   "flood_covered": false
+  },
+  {
+   "code": "07542",
+   "name": "楢葉町",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 58536,
+    "tsunami": 420538
+   },
+   "features": {
+    "landslide": 65,
+    "tsunami": 43
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07543",
+   "name": "富岡町",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 66250,
+    "flood": 254850,
+    "tsunami": 328697
+   },
+   "features": {
+    "landslide": 85,
+    "flood": 20,
+    "tsunami": 46
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07544",
+   "name": "川内村",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 197871
+   },
+   "features": {
+    "landslide": 228
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07545",
+   "name": "大熊町",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 27231,
+    "tsunami": 354575
+   },
+   "features": {
+    "landslide": 32,
+    "tsunami": 37
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07546",
+   "name": "双葉町",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 60085,
+    "tsunami": 412458
+   },
+   "features": {
+    "landslide": 72,
+    "tsunami": 32
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07547",
+   "name": "浪江町",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "flood",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 112572,
+    "flood": 823629,
+    "tsunami": 437770
+   },
+   "features": {
+    "landslide": 113,
+    "flood": 46,
+    "tsunami": 44
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07548",
+   "name": "葛尾村",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 149632
+   },
+   "features": {
+    "landslide": 152
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07561",
+   "name": "新地町",
+   "pref": "福島県",
+   "types": [
+    "landslide",
+    "tsunami"
+   ],
+   "sizes": {
+    "landslide": 32256,
+    "tsunami": 928276
+   },
+   "features": {
+    "landslide": 34,
+    "tsunami": 60
+   },
+   "flood_covered": true
+  },
+  {
+   "code": "07564",
+   "name": "飯舘村",
+   "pref": "福島県",
+   "types": [
+    "landslide"
+   ],
+   "sizes": {
+    "landslide": 328142
+   },
+   "features": {
+    "landslide": 341
+   },
+   "flood_covered": true
+  }
+ ]
+}

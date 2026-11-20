@@ -174,3 +174,10 @@ body.wallpaper .title-block h1{font-size:1.6rem}
   body.wallpaper #clock{font-size:clamp(4rem,24vw,19rem)}
   #map{height:44vh}
 }
+#myPointsSec{margin:1.2rem 0}
+#myPointsSec h3{font-size:1.05rem;font-weight:900;margin:.4rem 0}
+.mypoint-pin{width:26px;height:26px;border-radius:50%;background:#eef2f7;color:#0a101d;border:2px solid #e5484d;font-size:15px;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 5px rgba(0,0,0,.55)}
+.mp-row{padding:.5rem .2rem;border-top:1px solid var(--border);cursor:pointer}
+.mp-sum{font-size:.88rem}
+.mp-form input{display:block;width:200px;max-width:70vw;margin:.4rem 0;padding:.35rem;background:var(--surface-2);border:1px solid var(--border);border-radius:6px;color:var(--text)}
+.mp-actions{margin-top:.5rem}
