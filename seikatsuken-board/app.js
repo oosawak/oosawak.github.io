@@ -401,7 +401,7 @@ function renderCards(places) {
     const og = state.extra?.outage?.places?.[p.name];
     if (show('outage') && og && og.households > 0) h += `<div class="amedas">停電: 約${esc(og.households)}軒（東北電力ネットワーク）</div>`;
     if (show('cameras')) for (const c of cams) {
-      h += `<div class="cam"><button type="button" class="cam-btn">ライブカメラ: ${esc(c.name)} を見る</button><div class="cam-box" hidden data-src="${esc(c.imageUrl)}"><img alt="${esc(c.name)}" loading="lazy"><div class="cap">出典: ${esc(c.source)}（${esc(c.updateInterval)}更新 / 画像は表示のみで保存しません）</div></div></div>`;
+      h += `<div class="cam"><button type="button" class="cam-btn" data-open-label="ライブカメラ: ${esc(c.name)} を見る" data-close-label="ライブカメラ: ${esc(c.name)} を閉じる">ライブカメラ: ${esc(c.name)} を閉じる</button><div class="cam-box" data-built="1"><img src="${esc(c.imageUrl)}" alt="${esc(c.name)}" loading="lazy"><div class="cap">出典: ${esc(c.source)}（${esc(c.updateInterval)}更新 / 画像は表示のみで保存しません）</div></div></div>`;
     }
     const bears = bearsFor(p);
     if (show('bears') && p.pref.name === '山形県') {
@@ -429,15 +429,10 @@ function renderCards(places) {
     });
   });
   wrap.querySelectorAll('.cam-btn').forEach(b => {
-    const label = b.textContent;
     b.addEventListener('click', () => {
       const box = b.nextElementSibling;
       box.hidden = !box.hidden;
-      b.textContent = box.hidden ? label : '閉じる';
-      if (!box.hidden && !box.dataset.built) {
-        box.dataset.built = '1';
-        box.querySelector('img').src = box.dataset.src;
-      }
+      b.textContent = box.hidden ? b.dataset.openLabel : b.dataset.closeLabel;
     });
   });
   wrap.querySelectorAll('.embed-btn').forEach(b => {
@@ -499,8 +494,17 @@ function renderTicker(places) {
 }
 function renderCameraBar() {
   const bar = document.getElementById('cameraBar');
-  bar.innerHTML = (show('cameras') ? state.cameras : []).map((c, i) => `<button type="button" data-cam="${i}">カメラ: ${esc(c.name)}</button>`).join('');
-  bar.querySelectorAll('button').forEach(b => b.addEventListener('click', () => focusCamera(parseInt(b.dataset.cam, 10))));
+  const cams = show('cameras') ? state.cameras : [];
+  if (!cams.length) { bar.innerHTML = ''; return; }
+  bar.innerHTML = `<button type="button" class="cambar-toggle">ライブカメラ一覧（${cams.length}台）を開く</button>`
+    + `<div class="cambar-list" hidden>${cams.map((c, i) => `<button type="button" data-cam="${i}">カメラ: ${esc(c.name)}</button>`).join('')}</div>`;
+  const list = bar.querySelector('.cambar-list');
+  const toggle = bar.querySelector('.cambar-toggle');
+  toggle.addEventListener('click', () => {
+    list.hidden = !list.hidden;
+    toggle.textContent = list.hidden ? `ライブカメラ一覧（${cams.length}台）を開く` : 'ライブカメラ一覧を閉じる';
+  });
+  list.querySelectorAll('button').forEach(b => b.addEventListener('click', () => focusCamera(parseInt(b.dataset.cam, 10))));
 }
 
 /* ---------- 地図 ---------- */

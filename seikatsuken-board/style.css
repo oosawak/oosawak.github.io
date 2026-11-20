@@ -73,8 +73,10 @@ body{max-width:1600px;margin:0 auto;padding:0 16px 64px}
 /* 地図タイルだけを暗くする（マーカーやポップアップには効かせない） */
 .leaflet-tile-pane img{filter:invert(1) hue-rotate(180deg) brightness(.92) contrast(.92) saturate(.65)}
 @media (min-width:640px){#map{height:460px}}
-#cameraBar{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+#cameraBar{margin-top:.5rem}
 #cameraBar button{font-size:.85rem}
+.cambar-list{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.4rem}
+.cambar-list[hidden]{display:none}
 .pin-wrap{position:relative;width:26px;height:26px}
 .pin-num{background:var(--accent);color:#0a101d;border:2px solid #0a101d;border-radius:50%;
   width:26px;height:26px;line-height:22px;text-align:center;font-weight:900;font-size:13px;
