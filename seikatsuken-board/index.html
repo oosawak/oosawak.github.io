@@ -4,31 +4,93 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>生活圏防災ライブボード</title>
-<style>
-  html,body{margin:0;height:100%;background:#0b1020;color:#e8ecf4;font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif}
-  main{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-align:center;padding:1rem;box-sizing:border-box}
-  #clock{font-size:clamp(3rem,14vw,8rem);font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
-  #date{font-size:clamp(1rem,3.5vw,1.5rem);color:#aeb8cc}
-  h1{font-size:clamp(1.1rem,4vw,1.8rem);margin:.5rem 0 0}
-  p{color:#aeb8cc;margin:0}
-</style>
+<meta name="description" content="仙台・松島・山形・東根・米沢・福島の警報・天気・地震・通行止め・ライブカメラ・現地の声を一枚に見るボード">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <div id="date"></div>
+<header id="topbar">
+  <div class="title-block">
+    <h1>生活圏防災ライブボード</h1>
+    <div id="dateLine">----年--月--日</div>
+  </div>
   <div id="clock">--:--:--</div>
-  <h1>生活圏防災ライブボード</h1>
-  <p>公開準備中です。警報・天気・地震・通行止め・ライブカメラを、このURLで見られるようにしています。</p>
+  <div class="top-actions">
+    <button id="refreshBtn" type="button">更新</button>
+    <button id="wallBtn" type="button">壁紙モード</button>
+    <button id="settingsBtn" type="button">設定</button>
+  </div>
+</header>
+<div id="updatedLine">データを読み込んでいます…</div>
+
+<!-- 壁紙モード用: 時計と警報だけ -->
+<section id="wallWarnings" hidden>
+  <h2>警報・注意報</h2>
+  <div id="wallWarningList"></div>
+</section>
+
+<main id="board">
+  <section class="alert-sec" id="sec-warnings">
+    <button class="sec-head" type="button" data-target="body-warnings">
+      <span class="sec-title">警報・注意報</span><span class="sec-summary" id="sum-warnings">読み込み中</span><span class="sec-arrow">▸</span>
+    </button>
+    <div class="sec-body" id="body-warnings" hidden></div>
+  </section>
+
+  <section class="alert-sec" id="sec-closures">
+    <button class="sec-head" type="button" data-target="body-closures">
+      <span class="sec-title">通行止め</span><span class="sec-summary" id="sum-closures">読み込み中</span><span class="sec-arrow">▸</span>
+    </button>
+    <div class="sec-body" id="body-closures" hidden></div>
+  </section>
+
+  <section class="alert-sec" id="sec-quakes">
+    <button class="sec-head" type="button" data-target="body-quakes">
+      <span class="sec-title">地震情報</span><span class="sec-summary" id="sum-quakes">読み込み中</span><span class="sec-arrow">▸</span>
+    </button>
+    <div class="sec-body" id="body-quakes" hidden></div>
+  </section>
+
+  <section id="mapSec">
+    <div id="map"></div>
+    <div id="cameraBar"></div>
+  </section>
+
+  <section id="cards"></section>
+
+  <footer id="boardFooter">
+    <h2>情報源とリンク</h2>
+    <ul>
+      <li>警報・予報・地震・アメダス: <a href="https://www.jma.go.jp/" target="_blank" rel="noopener">気象庁</a>の公開データを直接取得しています。</li>
+      <li>通行止め: 国土交通省 東北地方整備局 <a href="https://www.thr.mlit.go.jp/sendai/douro/kisei/index.html" target="_blank" rel="noopener">仙台</a>・<a href="https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/" target="_blank" rel="noopener">山形</a>・福島の各河川国道事務所の規制情報ページから定期取得したデータを表示しています（福島は<a href="https://www.road-info-prvs.mlit.go.jp/roadinfo/pc/" target="_blank" rel="noopener">道路情報提供システム</a>も参照）。</li>
+      <li>ライブカメラ: 各河川国道事務所の公開画像を表示しているだけです（保存はしません）。出典は各画像の下に表示しています。</li>
+      <li>人間アメダス: Threads の公開投稿を地名キーワードで検索したものです。位置情報ではなく、その場所の現在の様子とは限りません。</li>
+      <li>渋滞・事故: <a href="https://www.jartic.or.jp/" target="_blank" rel="noopener">日本道路交通情報センター</a> / <a href="https://www.driveplaza.com/" target="_blank" rel="noopener">NEXCO東日本 ドラとら</a> / <a href="https://www.road-info-prvs.mlit.go.jp/roadinfo/pc/" target="_blank" rel="noopener">道路情報提供システム</a></li>
+      <li>地図: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors</li>
+    </ul>
+  </footer>
 </main>
-<script>
-  function tick(){
-    const n=new Date();
-    const p=v=>String(v).padStart(2,'0');
-    document.getElementById('clock').textContent=p(n.getHours())+':'+p(n.getMinutes())+':'+p(n.getSeconds());
-    document.getElementById('date').textContent=n.getFullYear()+'年'+(n.getMonth()+1)+'月'+n.getDate()+'日';
-  }
-  tick(); setInterval(tick,1000);
-</script>
+
+<div id="settingsPanel" hidden>
+  <div class="settings-box">
+    <div class="settings-head">
+      <h2>設定</h2>
+      <button id="settingsClose" type="button">閉じる</button>
+    </div>
+    <label class="settings-search">場所を探す <input id="placeSearch" type="search" placeholder="市町村名"></label>
+    <div id="placeList"></div>
+    <label class="settings-toggle"><input type="checkbox" id="hidePromoToggle"> 宣伝っぽい投稿を隠す（人間アメダス）</label>
+    <div class="settings-actions">
+      <button id="settingsDefaults" type="button">既定の6か所に戻す</button>
+    </div>
+    <p class="settings-note">選択はこのブラウザに保存されます。既定は仙台・松島・山形・東根・米沢・福島です。</p>
+  </div>
+</div>
+
+<div id="ticker"><div id="tickerInner"></div></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cdf4ee53507948e4a412f503875833cd"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
