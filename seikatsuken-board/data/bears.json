@@ -1,9 +1,9 @@
 {
- "generatedAt": "2026-11-20T16:35:37+09:00",
+ "generatedAt": "2026-11-20T16:43:47+09:00",
  "windowDays": 45,
  "sources": {
   "宮城県": {
-   "status": "ok",
+   "status": "unchanged",
    "page": "https://www.pref.miyagi.jp/soshiki/sizenhogo/r8kumamokugeki.html"
   },
   "福島県": {
