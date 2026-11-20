@@ -31,6 +31,10 @@ body{max-width:1600px;margin:0 auto;padding:0 16px 64px}
 .top-actions{display:flex;gap:.5rem}
 #wallBtn{background:var(--accent);color:#0a101d;border-color:var(--accent);font-weight:900}
 #updatedLine{color:var(--dim);font-size:.85rem;padding:0 0 .5rem}
+#snapBar{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;color:var(--dim);font-size:.85rem;padding:0 0 .6rem}
+#snapBar select{background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:.25rem .4rem;font:inherit}
+#snapNote{color:var(--advisory);font-weight:700}
+body.wallpaper #snapBar{display:none}
 
 /* 折りたたみセクション（状態で色が変わる帯） */
 .alert-sec{margin:.5rem 0;background:var(--surface);border:2px solid var(--border);
