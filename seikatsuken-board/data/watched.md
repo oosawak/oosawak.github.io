@@ -34,9 +34,6 @@ fetch_threads.py が liked と合わせて threads.json へ反映する。
 - [2026-11-20 07:52] @kanji_sato いいね70 画像つき コミュニティ:#山形県道路情報 地名:国道47号
   - 初雪❄️ 山形県新庄市国道47号線の積雪状況です☃️ 時折、5cm程の大粒の雪も落ちてきています こちらを走行される方はご注意ください^ ^
   - https://www.threads.com/@kanji_sato/post/Df8Mli6HTdO
-- [2026-11-19 17:08] @trafficlip いいね4 コミュニティ:#山形県道路情報 地名:国道48号
-  - #国道48号 天童市内で事故 一部通行止め #trafficlip #通行止 #山形県道路情報 山形河川国道事務所などによると、山形県天童市の国道48号で事故が発生し、11月19日15:50から、天童市山口小学校付近の上下線で通行止めとなっています。 https://news.jp/i/1496059625584181497
-  - https://www.threads.com/@trafficlip/post/Df6nanWGscE
 
 ## 東根
 
