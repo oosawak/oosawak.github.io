@@ -3,6 +3,10 @@
    気象庁データはブラウザから直接取得。通行止め・Threads・カメラは data/*.json を読むだけのビューア。
    data/*.json は Markdown 正本から Muse 側の定期ジョブが生成する。 */
 const JMA = 'https://www.jma.go.jp/bosai';
+/* スナップショット表示: ?snap=<id> のとき、その時点に保存したデータ一式を読む */
+const SNAP_ID = new URLSearchParams(location.search).get('snap');
+const SNAP_BASE = SNAP_ID ? `data/snapshots/${SNAP_ID}/` : null;
+let snapDate = null;
 const PREFS = [
   { name: '宮城県', code: '04', office: '040000' },
   { name: '山形県', code: '06', office: '060000' },
@@ -90,7 +94,7 @@ async function buildCatalog() {
 
 /* ---------- 警報（extra.xml → VPWW54） ---------- */
 async function loadWarnings() {
-  const feed = await fetchText(JMA + '/developer/xml/feed/extra.xml');
+  const feed = await fetchText(SNAP_BASE ? SNAP_BASE + 'extra.xml' : 'https://www.data.jma.go.jp/developer/xml/feed/extra.xml');
   const urls = {};
   for (const m of feed.matchAll(/<link[^>]*href="([^"]*VPWW54_(\d{6})[^"]*)"/g)) {
     if (!urls[m[2]]) urls[m[2]] = m[1];
@@ -131,8 +135,8 @@ async function loadForecasts(offices) {
   await Promise.all(offices.map(async office => {
     try {
       const [fc, ov] = await Promise.all([
-        fetchJSON(`${JMA}/forecast/data/forecast/${office}.json`),
-        fetchJSON(`${JMA}/forecast/data/overview_forecast/${office}.json`).catch(() => null),
+        fetchJSON(SNAP_BASE ? `${SNAP_BASE}forecast-${office}.json` : `${JMA}/forecast/data/forecast/${office}.json`),
+        fetchJSON(SNAP_BASE ? `${SNAP_BASE}overview-${office}.json` : `${JMA}/forecast/data/overview_forecast/${office}.json`).catch(() => null),
       ]);
       state.forecast[office] = { fc, ov };
     } catch (e) { console.warn('forecast', office, e); }
@@ -181,7 +185,7 @@ function regionForecast(place) {
 
 /* ---------- 地震 ---------- */
 async function loadQuakes() {
-  const list = await fetchJSON(JMA + '/quake/data/list.json');
+  const list = await fetchJSON(SNAP_BASE ? SNAP_BASE + 'quake-list.json' : JMA + '/quake/data/list.json');
   const out = [];
   for (const q of list) {
     const m = String(q.cod || '').match(/^\+([\d.]+)\+([\d.]+)-(\d+)\/$/);
@@ -202,13 +206,13 @@ async function loadQuakes() {
 /* ---------- アメダス ---------- */
 async function loadAmedas() {
   if (!state.amedas.table) state.amedas.table = await fetchJSON(JMA + '/amedas/const/amedastable.json');
-  const latestTxt = (await fetchText(JMA + '/amedas/data/latest_time.txt')).trim();
+  const latestTxt = (await fetchText(SNAP_BASE ? SNAP_BASE + 'amedas-latest_time.txt' : JMA + '/amedas/data/latest_time.txt')).trim();
   const fmt = iso => iso.replace(/[-:T]/g, '').slice(0, 14);
   const latestKey = fmt(latestTxt);
   const hourKey = latestKey.slice(0, 10) + '0000';
   const [latest, hourly] = await Promise.all([
-    fetchJSON(`${JMA}/amedas/data/map/${latestKey}.json`),
-    fetchJSON(`${JMA}/amedas/data/map/${hourKey}.json`).catch(() => ({})),
+    fetchJSON(SNAP_BASE ? SNAP_BASE + 'amedas-map-latest.json' : `${JMA}/amedas/data/map/${latestKey}.json`),
+    fetchJSON(SNAP_BASE ? SNAP_BASE + 'amedas-map-hour.json' : `${JMA}/amedas/data/map/${hourKey}.json`).catch(() => ({})),
   ]);
   state.amedas.latest = latest; state.amedas.hourly = hourly;
   state.amedas.latestTime = latestTxt;
@@ -259,12 +263,13 @@ function amedasLine(st) {
 
 /* ---------- data/*.json（ビューア部分） ---------- */
 async function loadLocalData() {
+  const base = SNAP_BASE || 'data/';
   const [cl, th, cam, br, ex] = await Promise.all([
-    fetchJSON('data/closures.json').catch(() => null),
-    fetchJSON('data/threads.json').catch(() => null),
-    fetchJSON('data/cameras.json').catch(() => ({ cameras: [] })),
-    fetchJSON('data/bears.json').catch(() => null),
-    fetchJSON('data/extra.json').catch(() => null),
+    fetchJSON(base + 'closures.json').catch(() => null),
+    fetchJSON(base + 'threads.json').catch(() => null),
+    fetchJSON(base + 'cameras.json').catch(() => ({ cameras: [] })),
+    fetchJSON(base + 'bears.json').catch(() => null),
+    fetchJSON(base + 'extra.json').catch(() => null),
   ]);
   state.closures = cl; state.threads = th; state.cameras = cam.cameras || [];
   state.bears = br;
@@ -672,13 +677,14 @@ async function refreshBoard(refetch = true) {
   ];
   for (const r of renders) { try { r(); } catch (e) { console.warn('render', e); } }
   const now = new Date();
-  document.getElementById('updatedLine').textContent =
-    `最終更新: ${now.toLocaleString('ja-JP')}（気象庁データを直接取得 / 通行止め・現地の声・熊・火山・洪水予報・放射線・停電は定期生成データ）`;
+  document.getElementById('updatedLine').textContent = SNAP_BASE
+    ? `スナップショット表示: ${snapDate ? snapDate.toLocaleString('ja-JP') : SNAP_ID} 時点のデータです（カメラ画像だけは現在のものが表示されます）`
+    : `最終更新: ${now.toLocaleString('ja-JP')}（気象庁データを直接取得 / 通行止め・現地の声・熊・火山・洪水予報・放射線・停電は定期生成データ）`;
 }
 
 /* ---------- 時計 ---------- */
 function tickClock() {
-  const now = new Date();
+  const now = snapDate || new Date();
   const wd = ['日', '月', '火', '水', '木', '金', '土'][now.getDay()];
   const pad = n => String(n).padStart(2, '0');
   document.getElementById('clock').innerHTML =
@@ -718,14 +724,48 @@ document.getElementById('settingsDefaults').addEventListener('click', () => {
   state.settings.places = DEFAULT_PLACES.slice(); saveSettings(); renderSettings(); refreshBoard(false);
 });
 
+/* ---------- スナップショット（過去の表示） ---------- */
+async function setupSnapshots() {
+  const sel = document.getElementById('snapSelect');
+  if (!sel) return;
+  let index = [];
+  try { index = await fetchJSON('data/snapshots/index.json'); } catch (e) { index = []; }
+  for (const e of index) {
+    const d = new Date(e.at);
+    const opt = document.createElement('option');
+    opt.value = e.id;
+    opt.textContent = d.toLocaleString('ja-JP', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' }) + ' 時点';
+    sel.appendChild(opt);
+  }
+  if (SNAP_ID) {
+    sel.value = SNAP_ID;
+    const hit = index.find(e => e.id === SNAP_ID);
+    if (hit) snapDate = new Date(hit.at);
+    else {
+      const m = SNAP_ID.match(/^(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})$/);
+      if (m) snapDate = new Date(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]);
+    }
+    const note = document.getElementById('snapNote');
+    if (note && snapDate) {
+      note.hidden = false;
+      note.textContent = `${snapDate.toLocaleString('ja-JP')} 時点の表示を見ています`;
+    }
+  }
+  sel.addEventListener('change', () => {
+    location.href = sel.value ? `?snap=${encodeURIComponent(sel.value)}` : location.pathname;
+  });
+}
+
 (async () => {
   tickClock(); setInterval(tickClock, 1000);
   try { await buildCatalog(); } catch (e) {
     document.getElementById('updatedLine').textContent = '地域カタログの取得に失敗しました。通信を確認して「更新」を押してください。';
     return;
   }
+  await setupSnapshots();
+  tickClock();
   await refreshBoard(true);
-  setInterval(() => refreshBoard(true), 10 * 60 * 1000);
+  if (!SNAP_BASE) setInterval(() => refreshBoard(true), 10 * 60 * 1000);
 })();
 
 // ===== 登録地点（自宅・仕事場など）: 長押しで登録、判定は登録時だけ、保存は localStorage のみ =====
