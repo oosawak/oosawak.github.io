@@ -248,7 +248,10 @@ function amedasLine(st) {
   const parts = [];
   if (o.temp) parts.push(`<span class="amedas-temp">${o.temp[0]}<span class="amedas-unit">℃</span></span>`);
   if (o.precipitation1h) parts.push(`降水 ${o.precipitation1h[0]}mm/h`);
-  if (o.wind) parts.push(`風 ${o.windDirection != null ? WIND_DIR[o.windDirection[0]] + ' ' : ''}${o.wind[0]}m/s`);
+  if (o.wind) {
+    const wd = o.windDirection != null ? WIND_DIR[o.windDirection[0]] : null;
+    parts.push(`風 ${wd ? wd + ' ' : ''}${o.wind[0]}m/s`);
+  }
   const snow = state.amedas.hourly[st.id]?.snow;
   if (snow) parts.push(`積雪 ${snow[0]}cm`);
   return `${esc(st.name)}: ${parts.join(' / ') || '観測値なし'}`;
