@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-20T20:57:15+09:00",
+  "generatedAt": "2026-11-20T21:57:20+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-20T20:57:15+09:00",
+      "fetchedAt": "2026-11-20T21:57:20+09:00",
       "posts": [
         {
           "username": "taeko.kiyomoto",
@@ -175,7 +175,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-20T20:57:15+09:00",
+      "fetchedAt": "2026-11-20T21:57:20+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -197,8 +197,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-20T20:57:15+09:00",
+      "fetchedAt": "2026-11-20T21:57:20+09:00",
       "posts": [
+        {
+          "username": "meguru_inc",
+          "url": "https://www.threads.com/@meguru_inc/post/Df9qj1VE_id",
+          "text": "山形市街に初雪 今年の初雪は 色気のない降り方をして。 こんな日は、 樹木診断のカルテや 報告書を書き、 タイヤ交換を。 （屋根があるのはありがたい） パンフレットその2や 会社のポスターを。 みんな、 ぶつぶつ言いながら。 #山形市 #初雪 #樹木医 #環meguru",
+          "likeCount": 0,
+          "takenAt": "2026-11-20T21:33:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
         {
           "username": "16ajmd",
           "url": "https://www.threads.com/@16ajmd/post/Df81RNxmQa2",
@@ -399,7 +414,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-20T20:57:15+09:00",
+      "fetchedAt": "2026-11-20T21:57:20+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -436,7 +451,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-20T20:57:15+09:00",
+      "fetchedAt": "2026-11-20T21:57:20+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -518,7 +533,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-20T20:57:15+09:00",
+      "fetchedAt": "2026-11-20T21:57:20+09:00",
       "posts": [
         {
           "username": "trafficlip",
