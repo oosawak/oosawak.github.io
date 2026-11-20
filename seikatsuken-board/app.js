@@ -234,7 +234,7 @@ function amedasLine(st) {
   if (!st) return '観測値なし';
   const o = st.obs;
   const parts = [];
-  if (o.temp) parts.push(`${o.temp[0]}℃`);
+  if (o.temp) parts.push(`<span class="amedas-temp">${o.temp[0]}<span class="amedas-unit">℃</span></span>`);
   if (o.precipitation1h) parts.push(`降水 ${o.precipitation1h[0]}mm/h`);
   if (o.wind) parts.push(`風 ${o.windDirection != null ? WIND_DIR[o.windDirection[0]] + ' ' : ''}${o.wind[0]}m/s`);
   const snow = state.amedas.hourly[st.id]?.snow;
@@ -259,10 +259,12 @@ function selectedPlaces() {
 function renderWarningsSection(places) {
   const body = document.getElementById('body-warnings');
   const sum = document.getElementById('sum-warnings');
-  let html = '', activeCount = 0;
+  let html = '', activeCount = 0, topLevel = '';
   for (const p of places) {
     const ws = warningsFor(p);
     if (ws.length) activeCount++;
+    if (ws.some(k => k.level !== 'advisory')) topLevel = 'warning';
+    else if (ws.length && topLevel !== 'warning') topLevel = 'advisory';
     html += `<h3>${esc(p.name)}</h3><div>${ws.length ? ws.map(chip).join('') : '<span class="chip none">発表なし</span>'}</div>`;
   }
   for (const p of PREFS) {
@@ -271,12 +273,13 @@ function renderWarningsSection(places) {
   }
   body.innerHTML = html || '<p class="muted">取得できませんでした</p>';
   sum.textContent = activeCount ? `${activeCount}か所で発表中` : '選択中の場所に発表なし';
+  document.getElementById('sec-warnings').dataset.state = topLevel;
 }
 function renderClosuresSection() {
   const body = document.getElementById('body-closures');
   const sum = document.getElementById('sum-closures');
   const c = state.closures;
-  if (!c) { body.innerHTML = '<p class="muted">データを取得できませんでした</p>'; sum.textContent = 'データなし'; return; }
+  if (!c) { body.innerHTML = '<p class="muted">データを取得できませんでした</p>'; sum.textContent = 'データなし'; document.getElementById('sec-closures').dataset.state = ''; return; }
   let html = '', total = 0, unknown = 0;
   for (const o of c.sources) {
     html += `<h3>${esc(o.office)}（<a href="${esc(o.sourceUrl)}" target="_blank" rel="noopener">出典</a>）</h3>`;
@@ -293,6 +296,7 @@ function renderClosuresSection() {
   html += `<p class="muted">取得: ${esc(c.generatedAt || '')}</p>`;
   body.innerHTML = html;
   sum.textContent = `通行規制 ${total}件` + (unknown ? ` / ${unknown}事務所は状態不明` : '');
+  document.getElementById('sec-closures').dataset.state = total > 0 ? 'warning' : '';
 }
 function renderQuakesSection() {
   const body = document.getElementById('body-quakes');
@@ -321,7 +325,7 @@ function renderCards(places) {
     const cams = state.cameras.filter(c => c.place === p.short);
     const posts = threadsFor(p).filter(x => !(state.settings.hidePromo && x.promo));
     const shown = posts.slice(0, 3), rest = posts.slice(3);
-    let h = `<article class="card" id="card-${i}"><h3><span class="num">${i + 1}</span>${esc(p.name)}</h3>`;
+    let h = `<article class="card" id="card-${i}"><h3><span class="num">${i + 1}</span>${esc(p.name)}<span class="card-pref">${esc(p.pref.name)}</span></h3>`;
     h += `<div>${ws.length ? ws.map(chip).join('') : '<span class="chip none">警報・注意報なし</span>'}</div>`;
     if (fc) {
       h += `<div class="wx"><span class="wxicon">${WX_ICON[fc.code] || ''}</span>${esc(fc.weather)}${fc.pop != null && fc.pop !== '' ? ` <span class="temps">降水確率 ${esc(fc.pop)}%</span>` : ''}</div>`;
@@ -369,6 +373,15 @@ function renderTicker(places) {
   for (const q of state.quakes.slice(0, 3)) parts.push(`【地震】${q.at.slice(5, 16).replace('T', ' ')} ${q.anm} M${q.mag} 最大震度${q.maxi}`);
   if (!parts.length) parts.push('現在、警報・通行止め・大きな地震はありません');
   document.getElementById('tickerInner').innerHTML = parts.map(t => `<span>${esc(t)}</span>`).join('');
+  let tState = '';
+  for (const p of places) {
+    const ws = warningsFor(p);
+    if (ws.some(k => k.level !== 'advisory')) tState = 'warning';
+    else if (ws.length && tState !== 'warning') tState = 'advisory';
+  }
+  if (state.closures && state.closures.sources.some(o => o.status === 'ok' && o.items.length)) tState = 'warning';
+  if (state.quakes.some(q => ['3', '4', '5-', '5+', '6-', '6+', '7'].includes(q.maxi))) tState = 'warning';
+  document.getElementById('ticker').dataset.state = tState;
 }
 function renderCameraBar() {
   const bar = document.getElementById('cameraBar');
@@ -379,8 +392,8 @@ function renderCameraBar() {
 /* ---------- 地図 ---------- */
 function initMap() {
   state.map = L.map('map');
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors', maxZoom: 18,
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap contributors © CARTO', maxZoom: 18, subdomains: 'abcd',
   }).addTo(state.map);
   state.layers = L.layerGroup().addTo(state.map);
 }
@@ -407,15 +420,15 @@ function renderMap(places) {
   places.forEach((p, i) => {
     const c = placeCoords(p);
     bounds.push(c);
-    const icon = L.divIcon({ className: '', html: `<div class="pin-num">${i + 1}</div>`, iconSize: [26, 26], iconAnchor: [13, 13] });
     const posts = threadsFor(p).length;
+    const icon = L.divIcon({ className: '', html: `<div class="pin-wrap"><div class="pin-num">${i + 1}</div>${posts ? `<span class="pin-badge">${posts}</span>` : ''}</div>`, iconSize: [26, 26], iconAnchor: [13, 13] });
     L.marker(c, { icon }).addTo(state.layers)
       .bindPopup(placePopup(p, i))
       .bindTooltip(`${esc(p.short)}${posts ? `（人間アメダス ${posts}件）` : ''}`);
   });
   for (const q of state.quakes) {
-    const color = ['5-', '5+', '6-', '6+', '7'].includes(q.maxi) ? '#ff5040'
-      : q.maxi === '4' ? '#ff9f43' : q.maxi === '3' ? '#ffd166' : '#7f9cc4';
+    const color = ['6-', '6+', '7'].includes(q.maxi) ? '#e5484d'
+      : ['5-', '5+'].includes(q.maxi) ? '#e8762d' : q.maxi === '4' ? '#f0a832' : '#6fc3ff';
     L.circleMarker([q.lat, q.lon], { radius: 4 + parseFloat(q.mag || 0) * 2.2, color, fillColor: color, fillOpacity: .55, weight: 1 })
       .addTo(state.layers)
       .bindPopup(`<h4>地震</h4>${esc(q.at.replace('T', ' ').slice(0, 16))}<br>${esc(q.anm)} M${esc(q.mag)}<br>最大震度 ${esc(q.maxi)} / 深さ ${q.depthKm}km`);
@@ -488,7 +501,9 @@ async function refreshBoard(refetch = true) {
 function tickClock() {
   const now = new Date();
   const wd = ['日', '月', '火', '水', '木', '金', '土'][now.getDay()];
-  document.getElementById('clock').textContent = now.toLocaleTimeString('ja-JP', { hour12: false });
+  const pad = n => String(n).padStart(2, '0');
+  document.getElementById('clock').innerHTML =
+    `${pad(now.getHours())}<span class="c-colon">:</span>${pad(now.getMinutes())}<span class="c-sec">:${pad(now.getSeconds())}</span>`;
   document.getElementById('dateLine').textContent =
     `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日（${wd}）`;
 }
@@ -500,6 +515,11 @@ document.querySelectorAll('.sec-head').forEach(b => b.addEventListener('click', 
   b.querySelector('.sec-arrow').textContent = body.hidden ? '▸' : '▾';
 }));
 document.getElementById('refreshBtn').addEventListener('click', () => refreshBoard(true));
+document.getElementById('tickerExpand').addEventListener('click', () => {
+  document.querySelectorAll('.sec-body').forEach(b => { b.hidden = false; });
+  document.querySelectorAll('.sec-head .sec-arrow').forEach(a => { a.textContent = '▾'; });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 document.getElementById('wallBtn').addEventListener('click', () => {
   const on = document.body.classList.toggle('wallpaper');
   document.getElementById('wallWarnings').hidden = !on;
