@@ -137,6 +137,16 @@ function regionForecast(place) {
   const pops = ts1.areas.find(a => a.area.code === place.regionCode);
   const point = REGION_POINT[place.regionCode];
   const temps = point && ts2 ? ts2.areas.find(a => a.area.name === point) : null;
+  // 短期予報の気温系列は tempsMin/tempsMax ではなく temps 配列（00時=最低・09時=最高）
+  const targetDate = ts0.timeDefines[idx].slice(0, 10);
+  let dayMin = null, dayMax = null;
+  if (temps && temps.temps && ts2.timeDefines) {
+    ts2.timeDefines.forEach((td, i) => {
+      if (td.slice(0, 10) !== targetDate) return;
+      if (td.slice(11, 13) === '00') dayMin = temps.temps[i];
+      if (td.slice(11, 13) === '09') dayMax = temps.temps[i];
+    });
+  }
   const weekly = d.fc[1];
   const wTs0 = weekly.timeSeries[0];
   const wArea = wTs0.areas.find(a => a.area.code === place.pref.code + '0000') || wTs0.areas[0];
@@ -146,11 +156,12 @@ function regionForecast(place) {
     date: ts0.timeDefines[idx].slice(0, 10),
     weather: reg.weathers[idx], code: reg.weatherCodes[idx],
     pop: pops ? pops.pops[idx] : null,
-    tmin: temps ? temps.tempsMin[idx] : null, tmax: temps ? temps.tempsMax[idx] : null,
-    week: wArea.timeDefines.map((t, i) => ({
+    tmin: dayMin, tmax: dayMax,
+    week: wTs0.timeDefines.map((t, i) => ({
       date: t.slice(5, 10), code: wArea.weatherCodes[i],
       pop: wArea.pops ? wArea.pops[i] : null,
-      tmin: wTemps ? wTemps.tempsMin[i] : null, tmax: wTemps ? wTemps.tempsMax[i] : null,
+      tmin: wTemps && wTemps.tempsMin ? wTemps.tempsMin[i] : null,
+      tmax: wTemps && wTemps.tempsMax ? wTemps.tempsMax[i] : null,
     })),
     overview: d.ov ? (d.ov.headlineText || '') : '',
   };
@@ -456,14 +467,18 @@ async function refreshBoard(refetch = true) {
       loadWarnings(), loadForecasts(offices), loadQuakes(), loadAmedas(), loadLocalData(),
     ]);
   }
-  renderWarningsSection(places);
-  renderClosuresSection();
-  renderQuakesSection();
-  renderCards(places);
-  renderWall(places);
-  renderTicker(places);
-  renderCameraBar();
-  renderMap(places);
+  // 1か所の描画失敗で全体が止まらないように、各描画を個別に守る
+  const renders = [
+    () => renderWarningsSection(places),
+    () => renderClosuresSection(),
+    () => renderQuakesSection(),
+    () => renderCards(places),
+    () => renderWall(places),
+    () => renderTicker(places),
+    () => renderCameraBar(),
+    () => renderMap(places),
+  ];
+  for (const r of renders) { try { r(); } catch (e) { console.warn('render', e); } }
   const now = new Date();
   document.getElementById('updatedLine').textContent =
     `最終更新: ${now.toLocaleString('ja-JP')}（気象庁データを直接取得 / 通行止め・人間アメダスは定期生成データ）`;
