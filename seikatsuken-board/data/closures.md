@@ -1,11 +1,12 @@
 # 通行止め情報（生活圏防災ライブボード）
 
-生成日時: 2026-11-20 18:13（日本時間）
+生成日時: 2026-11-20 18:26（日本時間）
 出典: 国土交通省 東北地方整備局 各河川国道事務所の道路規制情報ページ。
 取得に失敗した事務所は「なし」とせず、状態不明として記録する。
 
 ## 仙台河川国道事務所（宮城県）
 - 状態: 取得OK
+- 記者発表の確認: OK（東北地方整備局の一覧、新着のみ72時間表示）
 - 出典ページ: https://www.thr.mlit.go.jp/sendai/douro/kisei/index.html
 - 一般国道4号 宮城県名取市増田地内 夜間通行止めのお知らせ
   - 期間: 詳細はリンク先PDFを参照 / 詳細: https://www.thr.mlit.go.jp/Bumon/kisya/kisyah/images/103696_1.pdf
@@ -18,6 +19,7 @@
 
 ## 山形河川国道事務所（山形県）
 - 状態: 取得OK
+- 記者発表の確認: OK（東北地方整備局の一覧、新着のみ72時間表示）
 - 出典ページ: https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/
 - ページ更新日: 2026-11-18
 - 【E13】東北中央自動車道(村山名取IC⇔尾花沢北IC)上下線夜間通行止め
@@ -35,6 +37,7 @@
 
 ## 福島河川国道事務所（福島県）
 - 状態: 状態不明
+- 記者発表の確認: OK（東北地方整備局の一覧、新着のみ72時間表示）
 - 出典ページ: http://www1a.thr.mlit.go.jp/Bumon/J77101/homepage/antenna/tochudokisei.html
 - 備考: 福島河川国道事務所には仙台・山形のような通行規制の一覧ページがなく、リアルタイムの規制情報は道路情報提供システム（https://www.road-info-prvs.mlit.go.jp/roadinfo/pc/）に委ねられている。事務所の東北中央自動車道通行規制情報ページから取得を試みる。
 - 取得エラー: RemoteDisconnected: Remote end closed connection without response
