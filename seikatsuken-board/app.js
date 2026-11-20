@@ -361,6 +361,41 @@ function threadsFor(place) {
   const e = state.threads?.places?.[place.short];
   return e ? e.posts : [];
 }
+function renderArchive() {
+  const sec = document.getElementById('archiveSec');
+  if (!sec) return;
+  sec.hidden = !show('posts');
+  if (!show('posts')) return;
+  const all = [];
+  for (const [place, entry] of Object.entries(state.threads?.places || {})) {
+    for (const p of entry.posts || []) all.push({ ...p, _place: place });
+  }
+  const posts = all.filter(x => !(state.settings.hidePromo && x.promo))
+    .sort((a, b) => (a.takenAt < b.takenAt ? 1 : -1));
+  const btn = document.getElementById('archiveBtn');
+  const list = document.getElementById('archiveList');
+  btn.textContent = list.hidden ? `過去の投稿を全件見る（${posts.length}件）` : '閉じる';
+  btn.onclick = () => {
+    list.hidden = !list.hidden;
+    btn.textContent = list.hidden ? `過去の投稿を全件見る（${posts.length}件）` : '閉じる';
+  };
+  list.innerHTML = posts.length
+    ? posts.map(p => `<div class="arch-place">${esc(p._place)}</div>` + postHTML(p)).join('')
+    : '<div class="muted">投稿はまだありません</div>';
+  // アーカイブ内の埋め込みボタンはカード側と同じ配線（初回展開時に iframe を直接作る）
+  list.querySelectorAll('.embed-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      const box = b.nextElementSibling;
+      box.hidden = !box.hidden;
+      b.textContent = box.hidden ? '写真・動画を見る' : '閉じる';
+      if (!box.hidden && !box.dataset.built) {
+        box.dataset.built = '1';
+        const src = box.dataset.permalink.replace('threads.com', 'threads.net') + '/embed';
+        box.innerHTML = `<iframe src="${src}" loading="lazy" allowfullscreen title="Threads埋め込み"></iframe>`;
+      }
+    });
+  });
+}
 function postHTML(p) {
   // 埋め込みボタンがある投稿は、埋め込み側にも「Threadsで見る」があるので上のリンクは付けない（二重回避）
   const withEmbed = p.liked && p.hasImage;
@@ -629,6 +664,7 @@ async function refreshBoard(refetch = true) {
     () => renderFloodSection(),
     () => renderVolcanoSection(),
     () => renderCards(places),
+    () => renderArchive(),
     () => renderWall(places),
     () => renderTicker(places),
     () => renderCameraBar(),
