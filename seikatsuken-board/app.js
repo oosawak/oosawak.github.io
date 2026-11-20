@@ -441,7 +441,7 @@ function renderCards(places) {
     const og = state.extra?.outage?.places?.[p.name];
     if (show('outage') && og && og.households > 0) h += `<div class="amedas">停電: 約${esc(og.households)}軒（東北電力ネットワーク）</div>`;
     if (show('cameras')) for (const c of cams) {
-      h += `<div class="cam"><button type="button" class="cam-btn" data-open-label="ライブカメラ: ${esc(c.name)} を見る" data-close-label="ライブカメラ: ${esc(c.name)} を閉じる">ライブカメラ: ${esc(c.name)} を閉じる</button><div class="cam-box" data-built="1"><img src="${esc(c.imageUrl)}" alt="${esc(c.name)}" loading="lazy"><div class="cap">出典: ${esc(c.source)}（${esc(c.updateInterval)}更新 / 画像は表示のみで保存しません）</div></div></div>`;
+      h += `<div class="cam"><button type="button" class="cam-btn" data-open-label="ライブカメラ: ${esc(c.name)} を見る" data-close-label="ライブカメラ: ${esc(c.name)} を閉じる">ライブカメラ: ${esc(c.name)} を閉じる</button><div class="cam-box" data-built="1"><img src="${esc(c.imageUrl)}" alt="${esc(c.name)}" loading="lazy"><div class="cap">出典: ${esc(c.source)}（${esc(c.updateInterval)}更新${SNAP_ID ? ' / スナップショット時点の画像' : ' / 画像は表示のみで保存しません'}）</div></div></div>`;
     }
     const bears = bearsFor(p);
     if (show('bears') && p.pref.name === '山形県') {
@@ -678,7 +678,7 @@ async function refreshBoard(refetch = true) {
   for (const r of renders) { try { r(); } catch (e) { console.warn('render', e); } }
   const now = new Date();
   document.getElementById('updatedLine').textContent = SNAP_BASE
-    ? `スナップショット表示: ${snapDate ? snapDate.toLocaleString('ja-JP') : SNAP_ID} 時点のデータです（カメラ画像だけは現在のものが表示されます）`
+    ? `スナップショット表示: ${snapDate ? snapDate.toLocaleString('ja-JP') : SNAP_ID} 時点のデータです`
     : `最終更新: ${now.toLocaleString('ja-JP')}（気象庁データを直接取得 / 通行止め・現地の声・熊・火山・洪水予報・放射線・停電は定期生成データ）`;
 }
 

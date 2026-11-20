@@ -1,0 +1,128 @@
+{
+  "generatedAt": "2026-11-21T06:13:44+09:00",
+  "sources": [
+    {
+      "office": "仙台河川国道事務所",
+      "pref": "宮城県",
+      "sourceUrl": "https://www.thr.mlit.go.jp/sendai/douro/kisei/index.html",
+      "status": "ok",
+      "pageUpdated": "",
+      "items": [
+        {
+          "route": "一般国道4号",
+          "section": "宮城県名取市増田地内",
+          "type": "夜間通行止め",
+          "period": "詳細はリンク先PDFを参照",
+          "reason": "",
+          "title": "一般国道4号 宮城県名取市増田地内 夜間通行止めのお知らせ",
+          "link": "https://www.thr.mlit.go.jp/Bumon/kisya/kisyah/images/103696_1.pdf"
+        },
+        {
+          "route": "一般国道6号",
+          "section": "上り線",
+          "type": "夜間通行止め",
+          "period": "詳細はリンク先PDFを参照",
+          "reason": "",
+          "title": "一般国道6号上り線 夜間通行止めのお知らせ",
+          "link": "https://www.thr.mlit.go.jp/Bumon/kisya/kisyah/images/106461_1.pdf"
+        },
+        {
+          "route": "一般国道45号",
+          "section": "(小船越横断歩道橋) 終日",
+          "type": "通行規制",
+          "period": "詳細はリンク先PDFを参照",
+          "reason": "",
+          "title": "一般国道45号(小船越横断歩道橋) 終日通行規制のお知らせ",
+          "link": "https://www.thr.mlit.go.jp/Bumon/kisya/kisyah/images/104420_1.pdf"
+        },
+        {
+          "route": "一般国道48号",
+          "section": "仙台西道路(立町トンネル下り)",
+          "type": "夜間通行止め",
+          "period": "詳細はリンク先PDFを参照",
+          "reason": "",
+          "title": "一般国道48号仙台西道路(立町トンネル下り)夜間通行止めのお知らせ",
+          "link": "https://www.thr.mlit.go.jp/Bumon/kisya/kisyah/images/107454_1.pdf"
+        }
+      ],
+      "error": "",
+      "pressStatus": "ok"
+    },
+    {
+      "office": "山形河川国道事務所",
+      "pref": "山形県",
+      "sourceUrl": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/",
+      "status": "ok",
+      "pageUpdated": "2026-11-18",
+      "items": [
+        {
+          "route": "東北中央自動車道（E13）",
+          "section": "",
+          "type": "上下線夜間通行止め",
+          "period": "11月12日~11月27日",
+          "reason": "道路工事",
+          "title": "【E13】東北中央自動車道(村山名取IC⇔尾花沢北IC)上下線夜間通行止め",
+          "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
+        },
+        {
+          "route": "東北中央自動車道（E13）",
+          "section": "",
+          "type": "夜間通行止め",
+          "period": "1上り線 舟形IC~川原子IC 11月20日)(2下り線 舟形IC~新庄IC 11月27日",
+          "reason": "道路工事",
+          "title": "【E13】東北中央自動車道(新庄IC⇔川原子IC)夜間通行止め",
+          "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
+        },
+        {
+          "route": "東北中央自動車道（E13）",
+          "section": "",
+          "type": "上下線夜間通行止め",
+          "period": "1東根IC~東根北IC 12月2日)(2東根北IC~村山IC 12月3日",
+          "reason": "道路工事",
+          "title": "【E13】東北中央自動車道(東根IC⇔村山IC)上下線夜間通行止め",
+          "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
+        },
+        {
+          "route": "主寝坂道路（E13）",
+          "section": "",
+          "type": "上下線どちらか片側を通行止め",
+          "period": "10月13日~11月20日",
+          "reason": "道路工事",
+          "title": "【E13】主寝坂道路(金山北IC(仮称)⇔中田IC(仮称))上下線どちらか片側を通行止め",
+          "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
+        },
+        {
+          "route": "赤湯バイパス 鍋田交差点⇔深沼交差点 上下線夜間通行止め",
+          "section": "",
+          "type": "上下線夜間通行止め",
+          "period": "11月24日~12月11日",
+          "reason": "道路工事",
+          "title": "【国道113号】赤湯バイパス 鍋田交差点⇔深沼交差点 上下線夜間通行止め",
+          "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
+        },
+        {
+          "route": "赤湯バイパス 高梨交差点⇔鍋田交差点 上下線夜間通行止め",
+          "section": "",
+          "type": "上下線夜間通行止め",
+          "period": "12月14日~12月25日",
+          "reason": "道路工事",
+          "title": "【国道113号】赤湯バイパス 高梨交差点⇔鍋田交差点 上下線夜間通行止め",
+          "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
+        }
+      ],
+      "error": "",
+      "pressStatus": "ok"
+    },
+    {
+      "office": "福島河川国道事務所",
+      "pref": "福島県",
+      "sourceUrl": "http://www1a.thr.mlit.go.jp/Bumon/J77101/homepage/antenna/tochudokisei.html",
+      "status": "unknown",
+      "pageUpdated": "",
+      "items": [],
+      "error": "RemoteDisconnected: Remote end closed connection without response",
+      "note": "福島河川国道事務所には仙台・山形のような通行規制の一覧ページがなく、リアルタイムの規制情報は道路情報提供システム（https://www.road-info-prvs.mlit.go.jp/roadinfo/pc/）に委ねられている。事務所の東北中央自動車道通行規制情報ページから取得を試みる。",
+      "pressStatus": "ok"
+    }
+  ]
+}
