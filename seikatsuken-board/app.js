@@ -41,17 +41,28 @@ const state = {
   amedas: { table: null, latest: null, hourly: null },
   closures: null,
   threads: null,
+  bears: null,
+  extra: null,
   cameras: [],
   map: null, layers: null,
 };
 
+const SECTIONS = [
+  ['warnings', '警報・注意報'], ['closures', '通行止め'], ['quakes', '地震情報'],
+  ['forecast', '天気予報'], ['cameras', 'ライブカメラ'], ['posts', '現地の声'],
+  ['bears', '熊の目撃'], ['volcano', '火山情報'], ['flood', '洪水予報'],
+  ['radiation', '放射線（モニタリングポスト）'], ['outage', '停電情報'], ['wbgt', '暑さ指数'],
+];
+function defaultShow() { const o = {}; for (const [k] of SECTIONS) o[k] = true; return o; }
 function loadSettings() {
   try {
     const s = JSON.parse(localStorage.getItem(LS_KEY));
-    if (s && Array.isArray(s.places) && s.places.length) return { places: s.places, hidePromo: !!s.hidePromo };
+    if (s && Array.isArray(s.places) && s.places.length)
+      return { places: s.places, hidePromo: !!s.hidePromo, show: Object.assign(defaultShow(), s.show || {}) };
   } catch (e) { /* ignore */ }
-  return { places: DEFAULT_PLACES.slice(), hidePromo: true };
+  return { places: DEFAULT_PLACES.slice(), hidePromo: true, show: defaultShow() };
 }
+const show = key => state.settings.show[key] !== false;
 function saveSettings() { localStorage.setItem(LS_KEY, JSON.stringify(state.settings)); }
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const shortName = name => name.replace(/(市|町|村)$/, '');
@@ -244,14 +255,16 @@ function amedasLine(st) {
 
 /* ---------- data/*.json（ビューア部分） ---------- */
 async function loadLocalData() {
-  const [cl, th, cam, br] = await Promise.all([
+  const [cl, th, cam, br, ex] = await Promise.all([
     fetchJSON('data/closures.json').catch(() => null),
     fetchJSON('data/threads.json').catch(() => null),
     fetchJSON('data/cameras.json').catch(() => ({ cameras: [] })),
     fetchJSON('data/bears.json').catch(() => null),
+    fetchJSON('data/extra.json').catch(() => null),
   ]);
   state.closures = cl; state.threads = th; state.cameras = cam.cameras || [];
   state.bears = br;
+  state.extra = ex;
 }
 function bearsFor(place) {
   if (!state.bears?.records) return [];
@@ -316,6 +329,30 @@ function renderQuakesSection() {
   const q0 = state.quakes[0];
   sum.textContent = `最新: ${q0.anm} M${q0.mag} 最大震度${q0.maxi}`;
 }
+function renderFloodSection() {
+  const body = document.getElementById('body-flood');
+  const sum = document.getElementById('sum-flood');
+  if (!body || !sum) return;
+  const items = state.extra?.flood?.items || [];
+  if (state.extra && state.extra.flood?.status === 'unknown') {
+    body.innerHTML = '<p class="muted">洪水予報の取得状態が不明です</p>'; sum.textContent = '状態不明'; return;
+  }
+  if (!items.length) { body.innerHTML = '<p class="muted">発表中の洪水予報はありません</p>'; sum.textContent = 'なし'; return; }
+  body.innerHTML = '<ul>' + items.map(f =>
+    `<li>${esc(f.issued)} ${esc(f.river)}: ${esc(f.level)}（${esc(f.area)}）</li>`).join('') + '</ul>';
+  sum.textContent = `${items[0].river} ${items[0].level} ほか${items.length}件`;
+}
+function renderVolcanoSection() {
+  const body = document.getElementById('body-volcano');
+  const sum = document.getElementById('sum-volcano');
+  if (!body || !sum) return;
+  const vols = state.extra?.volcano?.items || [];
+  if (!vols.length) { body.innerHTML = '<p class="muted">火山データがまだありません</p>'; sum.textContent = '—'; return; }
+  body.innerHTML = '<ul>' + vols.map(v =>
+    `<li>${esc(v.name)}: 噴火警戒レベル${esc(v.level)}${v.headline ? ` — ${esc(v.headline)}` : ''}${v.updated ? `（${esc(v.updated)}）` : ''}</li>`).join('') + '</ul>';
+  const top = vols.reduce((a, v) => Math.max(a, parseInt(v.level, 10) || 1), 1);
+  sum.textContent = vols.map(v => `${v.name} レベル${v.level}`).join(' / ');
+}
 function threadsFor(place) {
   const e = state.threads?.places?.[place.short];
   return e ? e.posts : [];
@@ -346,29 +383,37 @@ function renderCards(places) {
     const posts = threadsFor(p).filter(x => !(state.settings.hidePromo && x.promo));
     const shown = posts.slice(0, 3), rest = posts.slice(3);
     let h = `<article class="card" id="card-${i}"><h3><span class="num">${i + 1}</span>${esc(p.name)}<span class="card-pref">${esc(p.pref.name)}</span></h3>`;
-    h += `<div>${ws.length ? ws.map(chip).join('') : '<span class="chip none">警報・注意報なし</span>'}</div>`;
-    if (fc) {
+    if (show('warnings')) h += `<div>${ws.length ? ws.map(chip).join('') : '<span class="chip none">警報・注意報なし</span>'}</div>`;
+    if (show('forecast') && fc) {
       h += `<div class="wx"><span class="wxicon">${WX_ICON[fc.code] || ''}</span>${esc(fc.weather)}${fc.pop != null && fc.pop !== '' ? ` <span class="temps">降水確率 ${esc(fc.pop)}%</span>` : ''}</div>`;
       h += `<div class="temps">${fc.tmin != null && fc.tmin !== '' ? `最低 ${esc(fc.tmin)}℃ / ` : ''}${fc.tmax != null && fc.tmax !== '' ? `最高 ${esc(fc.tmax)}℃` : ''}</div>`;
       h += `<div class="temps">週間: ${fc.week.slice(0, 5).map(w => `${esc(w.date)} ${WX_ICON[w.code] || ''}${w.tmax != null && w.tmax !== '' ? ` ${esc(w.tmax)}℃` : ''}`).join(' ・ ')}</div>`;
-    } else h += '<div class="muted">予報を取得できませんでした</div>';
-    h += `<div class="amedas">アメダス ${amedasLine(st)}</div>`;
-    for (const c of cams) {
+    } else if (show('forecast')) h += '<div class="muted">予報を取得できませんでした</div>';
+    if (show('forecast')) h += `<div class="amedas">アメダス ${amedasLine(st)}</div>`;
+    const rad = state.extra?.radiation?.places?.[p.name];
+    if (show('radiation') && rad) h += `<div class="amedas">放射線 ${esc(rad.value)} μSv/h（${esc(rad.post)}・${esc(rad.at)}）</div>`;
+    const wv = state.extra?.wbgt?.places?.[p.name];
+    if (show('wbgt') && wv) h += `<div class="amedas">暑さ指数 ${esc(wv.value)}（${esc(wv.level)}）</div>`;
+    const og = state.extra?.outage?.places?.[p.name];
+    if (show('outage') && og && og.households > 0) h += `<div class="amedas">停電: 約${esc(og.households)}軒（東北電力ネットワーク）</div>`;
+    if (show('cameras')) for (const c of cams) {
       h += `<div class="cam"><button type="button" class="cam-btn">ライブカメラ: ${esc(c.name)} を見る</button><div class="cam-box" hidden data-src="${esc(c.imageUrl)}"><img alt="${esc(c.name)}" loading="lazy"><div class="cap">出典: ${esc(c.source)}（${esc(c.updateInterval)}更新 / 画像は表示のみで保存しません）</div></div></div>`;
     }
     const bears = bearsFor(p);
-    if (p.pref.name === '山形県') {
+    if (show('bears') && p.pref.name === '山形県') {
       h += `<h4>熊の目撃（県公式）</h4><div class="muted">山形県は市町村別の件数（PDF）のみ公表のため一覧はありません: <a href="https://www.pref.yamagata.jp/050011/kurashi/shizen/seibutsu/about_kuma/kumamokugeki.html" target="_blank" rel="noopener">県のクマ目撃情報</a></div>`;
-    } else if (bears.length) {
+    } else if (show('bears') && bears.length) {
       const n30 = bears.filter(r => daysAgo(r.date) <= 30).length;
       h += `<h4>熊の目撃（県公式）</h4><div class="bears">` +
         bears.slice(0, 3).map(r => `<div>${esc(r.date.slice(5).replace('-', '/'))} ${esc(r.time)} ${esc(r.district.slice(0, 30))} ${esc(r.kind)}${r.count ? ` ${r.count}頭` : ''}${r.urban === '住居集合地域等' ? '（市街地）' : ''}</div>`).join('') +
         `<div class="muted">直近30日で${n30}件（${esc(bears[0].pref)}発表）</div></div>`;
     }
-    h += `<h4>現地の声（Threads・いいねから）</h4>`;
-    if (p.pref.name === '宮城県') h += `<div class="muted">宮城の天気コーナーは TBC「ウォッチン！みやぎ」: <a href="https://www.tbc-sendai.co.jp/watchin/" target="_blank" rel="noopener">公式ページ</a></div>`;
-    h += shown.length ? shown.map(postHTML).join('') : '<div class="muted">いいねした投稿はまだありません</div>';
-    if (rest.length) h += `<div class="more" hidden>${rest.map(postHTML).join('')}</div><button type="button" class="more-btn">もっと見る（${rest.length}件）</button>`;
+    if (show('posts')) {
+      h += `<h4>現地の声（Threads・いいねから）</h4>`;
+      if (p.pref.name === '宮城県') h += `<div class="muted">宮城の天気コーナーは TBC「ウォッチン！みやぎ」: <a href="https://www.tbc-sendai.co.jp/watchin/" target="_blank" rel="noopener">公式ページ</a></div>`;
+      h += shown.length ? shown.map(postHTML).join('') : '<div class="muted">いいねした投稿はまだありません</div>';
+      if (rest.length) h += `<div class="more" hidden>${rest.map(postHTML).join('')}</div><button type="button" class="more-btn">もっと見る（${rest.length}件）</button>`;
+    }
     h += '</article>';
     return h;
   }).join('');
@@ -407,7 +452,7 @@ function renderCards(places) {
 function renderWall(places) {
   const list = document.getElementById('wallWarningList');
   const items = [];
-  for (const p of places) {
+  if (show('warnings')) for (const p of places) {
     const ws = warningsFor(p);
     if (ws.length) items.push(`<div class="wall-item">${esc(p.short)}: ${ws.map(chip).join('')}</div>`);
   }
@@ -415,16 +460,24 @@ function renderWall(places) {
 }
 function renderTicker(places) {
   const parts = [];
-  for (const p of places) {
+  if (show('warnings')) for (const p of places) {
     const ws = warningsFor(p);
     if (ws.length) parts.push(`【警報】${p.short}: ${ws.map(w => w.name).join('・')}`);
   }
-  if (state.closures) for (const o of state.closures.sources) {
+  if (show('closures') && state.closures) for (const o of state.closures.sources) {
     if (o.status === 'ok') for (const i of o.items) parts.push(`【通行止め】${i.title}`);
     else parts.push(`【通行止め】${o.office}の規制情報は状態不明です`);
   }
-  for (const q of state.quakes.slice(0, 3)) parts.push(`【地震】${q.at.slice(5, 16).replace('T', ' ')} ${q.anm} M${q.mag} 最大震度${q.maxi}`);
-  for (const p of places) {
+  if (show('quakes')) for (const q of state.quakes.slice(0, 3)) parts.push(`【地震】${q.at.slice(5, 16).replace('T', ' ')} ${q.anm} M${q.mag} 最大震度${q.maxi}`);
+  if (show('flood') && state.extra?.flood?.items) for (const f of state.extra.flood.items.slice(0, 3)) parts.push(`【洪水】${f.river}: ${f.level}`);
+  if (show('volcano') && state.extra?.volcano?.items) for (const v of state.extra.volcano.items) {
+    if ((parseInt(v.level, 10) || 1) >= 2) parts.push(`【火山】${v.name}: 噴火警戒レベル${v.level}`);
+  }
+  if (show('outage') && state.extra?.outage?.places) for (const p of places) {
+    const og = state.extra.outage.places[p.name];
+    if (og && og.households > 0) parts.push(`【停電】${p.short}: 約${og.households}軒`);
+  }
+  if (show('bears')) for (const p of places) {
     const b = bearsFor(p).find(r => daysAgo(r.date) <= 2);
     if (b) parts.push(`【熊】${p.short}: ${b.district.slice(0, 20)}で${b.kind}（${b.date.slice(5).replace('-', '/')}）`);
   }
@@ -442,7 +495,7 @@ function renderTicker(places) {
 }
 function renderCameraBar() {
   const bar = document.getElementById('cameraBar');
-  bar.innerHTML = state.cameras.map((c, i) => `<button type="button" data-cam="${i}">カメラ: ${esc(c.name)}</button>`).join('');
+  bar.innerHTML = (show('cameras') ? state.cameras : []).map((c, i) => `<button type="button" data-cam="${i}">カメラ: ${esc(c.name)}</button>`).join('');
   bar.querySelectorAll('button').forEach(b => b.addEventListener('click', () => focusCamera(parseInt(b.dataset.cam, 10))));
 }
 
@@ -480,20 +533,20 @@ function renderMap(places) {
   places.forEach((p, i) => {
     const c = placeCoords(p);
     bounds.push(c);
-    const posts = threadsFor(p).length;
+    const posts = show('posts') ? threadsFor(p).length : 0;
     const icon = L.divIcon({ className: '', html: `<div class="pin-wrap"><div class="pin-num">${i + 1}</div>${posts ? `<span class="pin-badge">${posts}</span>` : ''}</div>`, iconSize: [26, 26], iconAnchor: [13, 13] });
     L.marker(c, { icon }).addTo(state.layers)
       .bindPopup(placePopup(p, i))
       .bindTooltip(`${esc(p.short)}${posts ? `（現地の声 ${posts}件）` : ''}`);
   });
-  for (const q of state.quakes) {
+  if (show('quakes')) for (const q of state.quakes) {
     const color = ['6-', '6+', '7'].includes(q.maxi) ? '#e5484d'
       : ['5-', '5+'].includes(q.maxi) ? '#e8762d' : q.maxi === '4' ? '#f0a832' : '#6fc3ff';
     L.circleMarker([q.lat, q.lon], { radius: 4 + parseFloat(q.mag || 0) * 2.2, color, fillColor: color, fillOpacity: .55, weight: 1 })
       .addTo(state.layers)
       .bindPopup(`<h4>地震</h4>${esc(q.at.replace('T', ' ').slice(0, 16))}<br>${esc(q.anm)} M${esc(q.mag)}<br>最大震度 ${esc(q.maxi)} / 深さ ${q.depthKm}km`);
   }
-  state.cameraMarkers = state.cameras.map(c => {
+  state.cameraMarkers = (show('cameras') ? state.cameras : []).map(c => {
     const icon = L.divIcon({ className: '', html: `<div class="cam-icon">${CAM_SVG}</div>`, iconSize: [24, 24], iconAnchor: [12, 12] });
     const mk = L.marker([c.lat, c.lon], { icon }).addTo(state.layers)
       .bindPopup(`<h4>${esc(c.name)}</h4><img src="${esc(c.imageUrl)}" alt="${esc(c.name)}"><div class="muted">出典: ${esc(c.source)}（${esc(c.updateInterval)}更新）</div>`);
@@ -501,7 +554,7 @@ function renderMap(places) {
   });
   state.cameras.forEach(c => bounds.push([c.lat, c.lon]));
   const placeNames = new Set(places.map(p => p.name));
-  const bearPins = (state.bears?.records || [])
+  const bearPins = (show('bears') ? (state.bears?.records || []) : [])
     .filter(r => r.lat && placeNames.has(r.area) && daysAgo(r.date) <= 14)
     .slice(0, 60);
   for (const r of bearPins) {
@@ -538,6 +591,13 @@ function renderSettings() {
     saveSettings(); refreshBoard(false);
   }));
   document.getElementById('hidePromoToggle').checked = state.settings.hidePromo;
+  const st = document.getElementById('sectionToggles');
+  st.innerHTML = SECTIONS.map(([k, label]) =>
+    `<label><input type="checkbox" data-section="${k}" ${show(k) ? 'checked' : ''}> ${esc(label)}</label>`).join('');
+  st.querySelectorAll('input[data-section]').forEach(cb => cb.addEventListener('change', () => {
+    state.settings.show[cb.dataset.section] = cb.checked;
+    saveSettings(); refreshBoard(false);
+  }));
 }
 
 /* ---------- 全体更新 ---------- */
@@ -549,11 +609,17 @@ async function refreshBoard(refetch = true) {
       loadWarnings(), loadForecasts(offices), loadQuakes(), loadAmedas(), loadLocalData(),
     ]);
   }
+  // 表示トグル（設定画面）で選ばれていない帯は丸ごと隠す
+  const band = (id, key) => { const el = document.getElementById(id); if (el) el.hidden = !show(key); };
+  band('sec-warnings', 'warnings'); band('sec-closures', 'closures'); band('sec-quakes', 'quakes');
+  band('sec-flood', 'flood'); band('sec-volcano', 'volcano');
   // 1か所の描画失敗で全体が止まらないように、各描画を個別に守る
   const renders = [
     () => renderWarningsSection(places),
     () => renderClosuresSection(),
     () => renderQuakesSection(),
+    () => renderFloodSection(),
+    () => renderVolcanoSection(),
     () => renderCards(places),
     () => renderWall(places),
     () => renderTicker(places),
@@ -563,7 +629,7 @@ async function refreshBoard(refetch = true) {
   for (const r of renders) { try { r(); } catch (e) { console.warn('render', e); } }
   const now = new Date();
   document.getElementById('updatedLine').textContent =
-    `最終更新: ${now.toLocaleString('ja-JP')}（気象庁データを直接取得 / 通行止め・現地の声・熊情報は定期生成データ）`;
+    `最終更新: ${now.toLocaleString('ja-JP')}（気象庁データを直接取得 / 通行止め・現地の声・熊・火山・洪水予報・放射線・停電は定期生成データ）`;
 }
 
 /* ---------- 時計 ---------- */

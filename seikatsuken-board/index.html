@@ -54,6 +54,20 @@
     <div class="sec-body" id="body-quakes" hidden></div>
   </section>
 
+  <section class="alert-sec" id="sec-flood">
+    <button class="sec-head" type="button" data-target="body-flood">
+      <span class="sec-title">洪水予報</span><span class="sec-summary" id="sum-flood">読み込み中</span><span class="sec-arrow">▸</span>
+    </button>
+    <div class="sec-body" id="body-flood" hidden></div>
+  </section>
+
+  <section class="alert-sec" id="sec-volcano">
+    <button class="sec-head" type="button" data-target="body-volcano">
+      <span class="sec-title">火山情報</span><span class="sec-summary" id="sum-volcano">読み込み中</span><span class="sec-arrow">▸</span>
+    </button>
+    <div class="sec-body" id="body-volcano" hidden></div>
+  </section>
+
   <section id="mapSec">
     <div id="map"></div>
     <div id="cameraBar"></div>
@@ -75,6 +89,10 @@
       <li>ライブカメラ: 各河川国道事務所の公開画像を表示しているだけです（保存はしません）。出典は各画像の下に表示しています。</li>
       <li>登録地点のハザード判定: 国土交通省「国土数値情報」の土砂災害警戒区域・洪水浸水想定区域（想定最大規模）・津波浸水想定の区域データを使い、登録した時だけ判定します。区域データの精度は1/25,000が目安で、判定は目安として見てください。登録地点は端末内にのみ保存されます。</li>
       <li>熊の目撃: 宮城県「令和8年度クマ目撃等情報」（出典明記で二次利用可）と、福島県のクマ目撃情報（県警に寄せられた目撃情報を県が集計したもの）を定期取得して表示しています。山形県は市町村別件数のPDF公表のみのため、県ページへのリンクを置いています。</li>
+      <li>火山・洪水予報: 気象庁の防災情報XMLから定期取得しています（洪水予報は気象庁・国土交通省の共同発表）。</li>
+      <li>放射線: 原子力規制委員会「放射線モニタリング情報」（RAMIS）の公開データから、各場所の最寄りのモニタリングポストの値を表示しています。</li>
+      <li>停電: 東北電力ネットワークの停電情報（速報値・概数）を定期取得しています。</li>
+      <li>暑さ指数: 環境省 熱中症予防情報サイトのデータ（提供期間は例年4月下旬〜10月中旬）です。</li>
       <li>現地の声: 本人が Threads で「いいね」した公開投稿です。場所は地名からの振り分けで、位置情報ではありません。</li>
       <li>渋滞・事故: <a href="https://www.jartic.or.jp/" target="_blank" rel="noopener">日本道路交通情報センター</a> / <a href="https://www.driveplaza.com/" target="_blank" rel="noopener">NEXCO東日本 ドラとら</a> / <a href="https://www.road-info-prvs.mlit.go.jp/roadinfo/pc/" target="_blank" rel="noopener">道路情報提供システム</a></li>
       <li>地図: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors</li>
@@ -91,6 +109,8 @@
     <label class="settings-search">場所を探す <input id="placeSearch" type="search" placeholder="市町村名"></label>
     <div id="placeList"></div>
     <label class="settings-toggle"><input type="checkbox" id="hidePromoToggle"> 宣伝っぽい投稿を隠す（現地の声）</label>
+    <h3 class="settings-sub">表示する情報</h3>
+    <div id="sectionToggles"></div>
     <div class="settings-actions">
       <button id="settingsDefaults" type="button">既定の6か所に戻す</button>
     </div>
