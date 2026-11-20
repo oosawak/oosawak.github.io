@@ -1,10 +1,25 @@
 {
-  "generatedAt": "2026-11-20T19:10:07+09:00",
+  "generatedAt": "2026-11-20T20:57:15+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-20T19:10:07+09:00",
+      "fetchedAt": "2026-11-20T20:57:15+09:00",
       "posts": [
+        {
+          "username": "taeko.kiyomoto",
+          "url": "https://www.threads.com/@taeko.kiyomoto/post/Df9hI46kttZ",
+          "text": "今日は登米市迫町へ。高速道路で築館IC付近から、雨がみぞれに変わる。中田町から、移動する途中、宮城県の晩秋の風物詩＝稲わらロールが見られる。古川大幡で検査を終え、富谷市へ向かう途中で、みぞれがボタ雪になってくる。仙台で初雪。事務所へ戻り、今日の検査の処理、来週の検査の準備をしつつ、雪が気になる。雪が積もれば、ノーマルタイヤで鶴ケ谷の坂は上れない。路面が濡れた状態で無事に帰宅。 #晩秋の風物詩 #稲",
+          "likeCount": 2,
+          "takenAt": "2026-11-20T20:11:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "仙台"
+        },
         {
           "username": "trafficlip",
           "url": "https://www.threads.com/@trafficlip/post/Df9LsckmncH",
@@ -160,7 +175,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-20T19:10:07+09:00",
+      "fetchedAt": "2026-11-20T20:57:15+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -182,7 +197,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-20T19:10:07+09:00",
+      "fetchedAt": "2026-11-20T20:57:15+09:00",
       "posts": [
         {
           "username": "16ajmd",
@@ -384,7 +399,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-20T19:10:07+09:00",
+      "fetchedAt": "2026-11-20T20:57:15+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -421,8 +436,23 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-20T19:10:07+09:00",
+      "fetchedAt": "2026-11-20T20:57:15+09:00",
       "posts": [
+        {
+          "username": "iiyone2020",
+          "url": "https://www.threads.com/@iiyone2020/post/Df9gEr0I6oD",
+          "text": "引き続き2026年11月20日（金）の山形県米沢市（やまがたけん よねざわし）の初雪より☃️ 米沢市立第一中学校の近くから撮ってみました😊 #山形県米沢市 #初雪 #米沢市立第一中学校 #米沢市立第一中学校近く #米沢駅前",
+          "likeCount": 2,
+          "takenAt": "2026-11-20T20:01:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "米沢市"
+        },
         {
           "username": "_onakapekopeko_5",
           "url": "https://www.threads.com/@_onakapekopeko_5/post/Df8_aRYESiO",
@@ -488,8 +518,38 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-20T19:10:07+09:00",
+      "fetchedAt": "2026-11-20T20:57:15+09:00",
       "posts": [
+        {
+          "username": "trafficlip",
+          "url": "https://www.threads.com/@trafficlip/post/Df9lL1gGpzv",
+          "text": "#国道459号 猪苗代町内で倒木相次ぐ 通行止め解除時間未定 #trafficlip #通行止 #福島県道路情報 福島県などによると、11月20日夕方、猪苗代町の国道459号で倒木が相次ぎ、18:00から、上下線の北塩原村檜原南黄蓮沢山＝猪苗代町三ツ屋間で通行止めとなっています。 https://news.jp/i/1496477003616666548",
+          "likeCount": 0,
+          "takenAt": "2026-11-20T20:46:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#通行止",
+          "spot": "猪苗代"
+        },
+        {
+          "username": "tc_highway",
+          "url": "https://www.threads.com/@tc_highway/post/Df9i59gk-Ar",
+          "text": "#磐越道 福島県会津で大雪 通行止め解除時間未定 #tc_highway #通行止 #福島県道路情報 NEXCO東日本などによると、福島県会津で大雪のため、11月20日20:10から、磐越自動車道は、上下線の磐梯熱海IC＝会津若松IC間で通行止めとなっています。 https://news.jp/i/1496472045406028317",
+          "likeCount": 0,
+          "takenAt": "2026-11-20T20:26:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "道路交通情報",
+          "spot": "福島"
+        },
         {
           "username": "tatsuyan321",
           "url": "https://www.threads.com/@tatsuyan321/post/Df8ycr8E7Fo",
