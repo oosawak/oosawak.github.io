@@ -14,16 +14,19 @@
 - [2026-11-19 20:23] @eri2leon いいね1068 本人のいいね 地名:仙台駅前 画像つき
   - 仙台駅前に居るんだけど、、、 すんごい雪❄
   - https://www.threads.com/@eri2leon/post/Df8ygK6DiGp
+- [2026-11-19 04:58] @tomohisa_takeda いいね228 本人のいいね 地名:作並（仙台市青葉区） 画像つき
+  - 作並も降ってきたか…
+  - https://www.threads.com/@tomohisa_takeda/post/Df7ImpIHT_S
 
 ## 松島
-- [2026-11-19 21:51] @kazu.shibuya いいね15 本人のいいね 地名:尾花沢市 画像つき
-  - 今日は山形県尾花沢市で初雪。
-  - https://www.threads.com/@kazu.shibuya/post/Df88mX7llj0
 - [2026-11-19 20:59] @hanapyon.87 いいね2 本人のいいね 地名:松島町 画像つき
   - 仕事で松島に行ったら雪やばっ▓ 30分後の隣町…青空🍁(2枚目)
   - https://www.threads.com/@hanapyon.87/post/Df82ksBI25f
 
 ## 山形
+- [2026-11-19 21:51] @kazu.shibuya いいね15 本人のいいね 地名:尾花沢市 画像つき
+  - 今日は山形県尾花沢市で初雪。
+  - https://www.threads.com/@kazu.shibuya/post/Df88mX7llj0
 - [2026-11-19 19:04] @hideya_style いいね31 本人のいいね 地名:山辺町大蕨地区 画像つき
   - ※撮影 助手席の同乗者。 初雪で木の枝が雪の重みで道路まで倒れています。皆様、気を付けて通行ください。 山形県 山辺町 大蕨地区
   - https://www.threads.com/@hideya_style/post/Df8pGpjDnIJ
@@ -33,9 +36,6 @@
 - [2026-11-19 05:32] @izu_mi20 いいね111 本人のいいね 地名:月山道・県内峠道 画像つき
   - 明日の朝、どうなってるかなぁ…🫠 ①国道112号月山第2トンネル ②国道47号最上町堺田 ③国道48号関山トンネル ④国道13号主寝坂トンネル
   - https://www.threads.com/@izu_mi20/post/Df7MexnD5HP
-- [2026-11-19 04:58] @tomohisa_takeda いいね228 本人のいいね 地名:作並（仙台市青葉区） 画像つき
-  - 作並も降ってきたか…
-  - https://www.threads.com/@tomohisa_takeda/post/Df7ImpIHT_S
 
 ## 東根
 - [2026-11-19 21:34] @hiroshi0700 いいね7 本人のいいね 地名:東根市内 画像つき

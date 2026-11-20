@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-20T15:31:25+09:00",
+  "generatedAt": "2026-11-20T15:31:50+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-20T15:31:25+09:00",
+      "fetchedAt": "2026-11-20T15:31:50+09:00",
       "posts": [
         {
           "username": "gochideli.sendai",
@@ -43,27 +43,27 @@
           "scene": true,
           "liked": true,
           "spot": "仙台駅前"
+        },
+        {
+          "username": "tomohisa_takeda",
+          "url": "https://www.threads.com/@tomohisa_takeda/post/Df7ImpIHT_S",
+          "text": "作並も降ってきたか…",
+          "likeCount": 228,
+          "takenAt": "2026-11-19T04:58:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "作並（仙台市青葉区）"
         }
       ],
       "error": ""
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-20T15:31:25+09:00",
+      "fetchedAt": "2026-11-20T15:31:50+09:00",
       "posts": [
-        {
-          "username": "kazu.shibuya",
-          "url": "https://www.threads.com/@kazu.shibuya/post/Df88mX7llj0",
-          "text": "今日は山形県尾花沢市で初雪。",
-          "likeCount": 15,
-          "takenAt": "2026-11-19T21:51:00+09:00",
-          "hasImage": true,
-          "imageCount": 1,
-          "promo": false,
-          "scene": true,
-          "liked": true,
-          "spot": "尾花沢市"
-        },
         {
           "username": "hanapyon.87",
           "url": "https://www.threads.com/@hanapyon.87/post/Df82ksBI25f",
@@ -82,8 +82,21 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-20T15:31:25+09:00",
+      "fetchedAt": "2026-11-20T15:31:50+09:00",
       "posts": [
+        {
+          "username": "kazu.shibuya",
+          "url": "https://www.threads.com/@kazu.shibuya/post/Df88mX7llj0",
+          "text": "今日は山形県尾花沢市で初雪。",
+          "likeCount": 15,
+          "takenAt": "2026-11-19T21:51:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": true,
+          "spot": "尾花沢市"
+        },
         {
           "username": "hideya_style",
           "url": "https://www.threads.com/@hideya_style/post/Df8pGpjDnIJ",
@@ -122,26 +135,13 @@
           "scene": true,
           "liked": true,
           "spot": "月山道・県内峠道"
-        },
-        {
-          "username": "tomohisa_takeda",
-          "url": "https://www.threads.com/@tomohisa_takeda/post/Df7ImpIHT_S",
-          "text": "作並も降ってきたか…",
-          "likeCount": 228,
-          "takenAt": "2026-11-19T04:58:00+09:00",
-          "hasImage": true,
-          "imageCount": 1,
-          "promo": false,
-          "scene": true,
-          "liked": true,
-          "spot": "作並（仙台市青葉区）"
         }
       ],
       "error": ""
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-20T15:31:25+09:00",
+      "fetchedAt": "2026-11-20T15:31:50+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -174,7 +174,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-20T15:31:25+09:00",
+      "fetchedAt": "2026-11-20T15:31:50+09:00",
       "posts": [
         {
           "username": "watanabehiroshi31",
@@ -207,7 +207,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-20T15:31:25+09:00",
+      "fetchedAt": "2026-11-20T15:31:50+09:00",
       "posts": [
         {
           "username": "tatsuyan321",

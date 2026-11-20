@@ -16,6 +16,10 @@ fetch_threads.py が生成時に threads.json へ反映する。★いいね投�
   - 仙台駅前に居るんだけど、、、 すんごい雪❄
   - https://www.threads.com/@eri2leon/post/Df8ygK6DiGp
 
+- [2026-11-19 04:58] @tomohisa_takeda いいね228 画像つき 地名:作並（仙台市青葉区）
+  - 作並も降ってきたか…
+  - https://www.threads.com/@tomohisa_takeda/post/Df7ImpIHT_S
+
 ## 山形
 - [2026-11-19 19:04] @hideya_style いいね31 動画つき 地名:山辺町大蕨地区
   - ※撮影 助手席の同乗者。 初雪で木の枝が雪の重みで道路まで倒れています。皆様、気を付けて通行ください。 山形県 山辺町 大蕨地区
@@ -27,19 +31,15 @@ fetch_threads.py が生成時に threads.json へ反映する。★いいね投�
   - 明日の朝、どうなってるかなぁ…🫠 ①国道112号月山第2トンネル ②国道47号最上町堺田 ③国道48号関山トンネル ④国道13号主寝坂トンネル
   - https://www.threads.com/@izu_mi20/post/Df7MexnD5HP
 
-- [2026-11-19 04:58] @tomohisa_takeda いいね228 画像つき 地名:作並（仙台市青葉区）
-  - 作並も降ってきたか…
-  - https://www.threads.com/@tomohisa_takeda/post/Df7ImpIHT_S
+- [2026-11-19 21:51] @kazu.shibuya いいね15 画像つき 地名:尾花沢市
+  - 今日は山形県尾花沢市で初雪。
+  - https://www.threads.com/@kazu.shibuya/post/Df88mX7llj0
 
 ## 松島
 
 - [2026-11-19 20:59] @hanapyon.87 いいね2 画像つき 地名:松島町
   - 仕事で松島に行ったら雪やばっ▓ 30分後の隣町…青空🍁(2枚目)
   - https://www.threads.com/@hanapyon.87/post/Df82ksBI25f
-
-- [2026-11-19 21:51] @kazu.shibuya いいね15 画像つき 地名:尾花沢市
-  - 今日は山形県尾花沢市で初雪。
-  - https://www.threads.com/@kazu.shibuya/post/Df88mX7llj0
 
 ## 東根
 
