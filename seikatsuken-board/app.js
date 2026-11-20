@@ -364,7 +364,7 @@ function threadsFor(place) {
 function postHTML(p) {
   // 埋め込みボタンがある投稿は、埋め込み側にも「Threadsで見る」があるので上のリンクは付けない（二重回避）
   const withEmbed = p.liked && p.hasImage;
-  let h = `<div class="post${p.promo ? ' promo' : ''}"><div class="meta">@${esc(p.username)} ・ ${esc(p.takenAt.replace('T', ' ').slice(0, 16))} ・ ♥${p.likeCount}${p.liked ? ' ・ ★本人のいいね' : ''}${p.spot ? ' ・ ' + esc(p.spot) : ''}${p.promo ? ' ・ 宣伝の可能性' : ''}</div>` +
+  let h = `<div class="post${p.promo ? ' promo' : ''}"><div class="meta">@${esc(p.username)} ・ ${esc(p.takenAt.replace('T', ' ').slice(0, 16))} ・ ♥${p.likeCount}${p.liked ? ' ・ ★本人のいいね' : ''}${p.watched ? ' ・ 見張り:' + esc(p.community || '') : ''}${p.spot ? ' ・ ' + esc(p.spot) : ''}${p.promo ? ' ・ 宣伝の可能性' : ''}</div>` +
     `<div class="text">${esc(p.text)}</div>` +
     (withEmbed ? '' : `<div class="meta"><a href="${esc(p.url)}" target="_blank" rel="noopener">元投稿を見る</a>${p.hasImage ? '（画像つき）' : ''}</div>`);
   // ★本人のいいね投稿だけ、埋め込みで画像・動画も出す。最初は折りたたみ。

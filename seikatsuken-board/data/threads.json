@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-20T19:05:18+09:00",
+  "generatedAt": "2026-11-20T19:10:07+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-20T19:05:18+09:00",
+      "fetchedAt": "2026-11-20T19:10:07+09:00",
       "posts": [
         {
           "username": "trafficlip",
@@ -16,6 +16,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "国道48号・関山峠"
         },
         {
@@ -29,6 +31,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "国道48号"
         },
         {
@@ -42,6 +46,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "国道48号"
         },
         {
@@ -55,6 +61,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "仙台市内"
         },
         {
@@ -68,6 +76,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "仙台市内"
         },
         {
@@ -81,6 +91,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "仙台市内"
         },
         {
@@ -94,6 +106,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "仙台市内"
         },
         {
@@ -107,6 +121,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "仙台市内"
         },
         {
@@ -120,6 +136,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "仙台駅前"
         },
         {
@@ -133,6 +151,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "作並（仙台市青葉区）"
         }
       ],
@@ -140,7 +160,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-20T19:05:18+09:00",
+      "fetchedAt": "2026-11-20T19:10:07+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -153,6 +173,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "松島町"
         }
       ],
@@ -160,8 +182,53 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-20T19:05:18+09:00",
+      "fetchedAt": "2026-11-20T19:10:07+09:00",
       "posts": [
+        {
+          "username": "16ajmd",
+          "url": "https://www.threads.com/@16ajmd/post/Df81RNxmQa2",
+          "text": "三連休、山形県にノーマルタイヤで来る予定の方へ。 高速道路、山形市、天童市など雪が少ない地域でも、道路に雪が積もってます！ 雪の降り始めで、連休なので除雪車も必要最低限しか出動しません！ お願いです！ 安全のために、ノーマルタイヤの車は来ないで下さい！ 三連休は忙しくて、県内をぐーるぐる走らなくてはいけないのです。 ひさしぶりの雪道なので、スタッドレスでも事故らないか緊張してます！ 事故や渋滞に巻",
+          "likeCount": 45,
+          "takenAt": "2026-11-20T13:47:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "山形"
+        },
+        {
+          "username": "tc_highway",
+          "url": "https://www.threads.com/@tc_highway/post/Df8Ybj-k1uD",
+          "text": "#東北中央道 #泉田道路 で事故 一部通行止め #tc_highway #通行止 #山形県道路情報 山形河川国道事務所などによると、山形県新庄市の東北中央自動車道[泉田道路]で事故が発生し、11月20日09:15から、下り線(北行/金山方面)の新庄鮭川IC→新庄真室川IC間で通行止めとなっています。 https://news.jp/i/1496307255318315460",
+          "likeCount": 1,
+          "takenAt": "2026-11-20T09:35:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#通行止",
+          "spot": "山形"
+        },
+        {
+          "username": "kurihiro_mogami",
+          "url": "https://www.threads.com/@kurihiro_mogami/post/Df8OBAWkykK",
+          "text": "昨日の夕方から雪になりました❄️ あわててタイヤ🛞交換 朝になってビックリ😳 町の除雪車はまだ来ていませんが、 国道47号線は除雪してあるそうです #いきなり大雪❄️ #除雪車早く来て‼️ #山形県最上町 #最上町前森",
+          "likeCount": 15,
+          "takenAt": "2026-11-20T08:04:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "国道47号"
+        },
         {
           "username": "hiroyukiss216",
           "url": "https://www.threads.com/@hiroyukiss216/post/Df9OD37ExoV",
@@ -173,6 +240,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "寒河江・大江町"
         },
         {
@@ -186,6 +255,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "月山道"
         },
         {
@@ -199,6 +270,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "尾花沢市"
         },
         {
@@ -212,6 +285,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "月山道"
         },
         {
@@ -225,6 +300,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "山形市七日町"
         },
         {
@@ -238,6 +315,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "山辺町大蕨地区"
         },
         {
@@ -251,6 +330,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "月山道・県内峠道"
         },
         {
@@ -264,6 +345,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "山形県内"
         },
         {
@@ -277,6 +360,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "山形県内"
         },
         {
@@ -290,6 +375,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "月山道・県内峠道"
         }
       ],
@@ -297,7 +384,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-20T19:05:18+09:00",
+      "fetchedAt": "2026-11-20T19:10:07+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -310,6 +397,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "東根市内"
         },
         {
@@ -323,6 +412,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "東根市内"
         }
       ],
@@ -330,7 +421,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-20T19:05:18+09:00",
+      "fetchedAt": "2026-11-20T19:10:07+09:00",
       "posts": [
         {
           "username": "_onakapekopeko_5",
@@ -343,6 +434,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "大峠（国道121号）"
         },
         {
@@ -356,6 +449,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "米沢市内"
         },
         {
@@ -369,6 +464,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "米沢市内"
         },
         {
@@ -382,6 +479,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "栗子（米沢市）"
         }
       ],
@@ -389,7 +488,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-20T19:05:18+09:00",
+      "fetchedAt": "2026-11-20T19:10:07+09:00",
       "posts": [
         {
           "username": "tatsuyan321",
@@ -402,6 +501,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "土湯（道の駅つちゆ）"
         },
         {
@@ -415,6 +516,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "沼尻（国道115号）"
         },
         {
@@ -428,6 +531,8 @@
           "promo": false,
           "scene": true,
           "liked": true,
+          "watched": false,
+          "community": "",
           "spot": "裏磐梯"
         }
       ],
