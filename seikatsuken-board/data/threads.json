@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-20T21:57:20+09:00",
+  "generatedAt": "2026-11-20T23:57:50+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-20T21:57:20+09:00",
+      "fetchedAt": "2026-11-20T23:57:50+09:00",
       "posts": [
         {
           "username": "taeko.kiyomoto",
@@ -175,7 +175,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-20T21:57:20+09:00",
+      "fetchedAt": "2026-11-20T23:57:50+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -197,7 +197,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-20T21:57:20+09:00",
+      "fetchedAt": "2026-11-20T23:57:50+09:00",
       "posts": [
         {
           "username": "meguru_inc",
@@ -414,7 +414,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-20T21:57:20+09:00",
+      "fetchedAt": "2026-11-20T23:57:50+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -451,7 +451,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-20T21:57:20+09:00",
+      "fetchedAt": "2026-11-20T23:57:50+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -533,7 +533,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-20T21:57:20+09:00",
+      "fetchedAt": "2026-11-20T23:57:50+09:00",
       "posts": [
         {
           "username": "trafficlip",
@@ -564,6 +564,21 @@
           "watched": true,
           "community": "道路交通情報",
           "spot": "福島"
+        },
+        {
+          "username": "mypl.aizu",
+          "url": "https://www.threads.com/@mypl.aizu/post/Df9iyEVD6fA",
+          "text": "【会津 交通情報】11/20 19時頃確認 ・磐越道：事故で車線規制5か所（磐梯山SA付近上下線、新中山TN、鞍手山TN、高玉東TN、磐梯河東IC入口） ・磐越道 津川IC〜安田ICの大雨通行止めは18時頃に解除 ・国道459号 猪苗代〜北塩原：雪で通行止め ・中の沢熱海線：倒木で通行止め 【事件】会津若松市で詐欺の容疑で男が逮捕（3度目の逮捕） 帰り道、気をつけて🚗",
+          "likeCount": 48,
+          "takenAt": "2026-11-20T20:25:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "道路交通情報",
+          "spot": "猪苗代"
         },
         {
           "username": "tatsuyan321",
