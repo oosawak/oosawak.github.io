@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-22T04:57:08+09:00",
+  "generatedAt": "2026-11-22T07:57:25+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-22T04:57:08+09:00",
+      "fetchedAt": "2026-11-22T07:57:25+09:00",
       "posts": [
         {
           "username": "nakatty01",
@@ -280,7 +280,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-22T04:57:08+09:00",
+      "fetchedAt": "2026-11-22T07:57:25+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -302,7 +302,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-22T04:57:08+09:00",
+      "fetchedAt": "2026-11-22T07:57:25+09:00",
       "posts": [
         {
           "username": "ri2618it0630072",
@@ -759,7 +759,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-22T04:57:08+09:00",
+      "fetchedAt": "2026-11-22T07:57:25+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -796,7 +796,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-22T04:57:08+09:00",
+      "fetchedAt": "2026-11-22T07:57:25+09:00",
       "posts": [
         {
           "username": "cb750f_sa22c",
@@ -893,8 +893,23 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-22T04:57:08+09:00",
+      "fetchedAt": "2026-11-22T07:57:25+09:00",
       "posts": [
+        {
+          "username": "mypl.aizu",
+          "url": "https://www.threads.com/@mypl.aizu/post/DgBQijbD5Fr",
+          "text": "【11/22(日)朝の交通情報】 ・国道459号（猪苗代町〜北塩原村）：雪で通行止め継続。裏磐梯地区で514世帯948人と宿泊客が孤立中、復旧の見通しは立っていません ・磐越道：通行止めなし。安田IC〜磐梯熱海ICで冬用タイヤ装着＋50キロ規制が継続中 ・JR磐越西線：郡山〜会津若松は終日運休、喜多方〜津川も終日運休（23日昼頃の再開見込み）、会津若松〜喜多方は折り返し運転 ・只見線：遅れや運休の",
+          "likeCount": 27,
+          "takenAt": "2026-11-22T07:03:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "道路交通情報",
+          "spot": "裏磐梯"
+        },
         {
           "username": "mypl.aizu",
           "url": "https://www.threads.com/@mypl.aizu/post/Df-MMxLE88E",
