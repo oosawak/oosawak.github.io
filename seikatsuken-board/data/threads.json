@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-21T10:57:37+09:00",
+  "generatedAt": "2026-11-21T11:57:21+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-21T10:57:37+09:00",
+      "fetchedAt": "2026-11-21T11:57:21+09:00",
       "posts": [
         {
           "username": "sakunami_ichinobo",
@@ -220,7 +220,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-21T10:57:37+09:00",
+      "fetchedAt": "2026-11-21T11:57:21+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -242,8 +242,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-21T10:57:37+09:00",
+      "fetchedAt": "2026-11-21T11:57:21+09:00",
       "posts": [
+        {
+          "username": "tc_highway",
+          "url": "https://www.threads.com/@tc_highway/post/Df_M2EckyTf",
+          "text": "#山形道 鶴岡市内で大雨 通行止め解除時間未定 #tc_highway #通行止 #山形県道路情報 NEXCO東日本などによると、山形県庄内で大雨のため、11月21日11:36から、山形自動車道は、上下線の庄内あさひIC＝鶴岡IC間で通行止めとなっています。 https://news.jp/i/1496705066727014624",
+          "likeCount": 0,
+          "takenAt": "2026-11-21T11:52:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#通行止",
+          "spot": "山形"
+        },
         {
           "username": "meguru_inc",
           "url": "https://www.threads.com/@meguru_inc/post/Df9qj1VE_id",
@@ -534,7 +549,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-21T10:57:37+09:00",
+      "fetchedAt": "2026-11-21T11:57:21+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -571,7 +586,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-21T10:57:37+09:00",
+      "fetchedAt": "2026-11-21T11:57:21+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -653,7 +668,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-21T10:57:37+09:00",
+      "fetchedAt": "2026-11-21T11:57:21+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
