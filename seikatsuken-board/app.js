@@ -577,7 +577,7 @@ function renderMap(places) {
     bounds.push(c);
     const posts = show('posts') ? threadsFor(p).length : 0;
     const icon = L.divIcon({ className: '', html: `<div class="pin-wrap"><div class="pin-num">${i + 1}</div>${posts ? `<span class="pin-badge">${posts}</span>` : ''}</div>`, iconSize: [26, 26], iconAnchor: [13, 13] });
-    L.marker(c, { icon }).addTo(state.layers)
+    L.marker(c, { icon, zIndexOffset: 1000 }).addTo(state.layers)
       .bindPopup(placePopup(p, i))
       .bindTooltip(`${esc(p.short)}${posts ? `（現地の声 ${posts}件）` : ''}`);
   });
