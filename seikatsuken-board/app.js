@@ -606,6 +606,50 @@ function renderMap(places) {
   }
   if (bounds.length) state.map.fitBounds(bounds, { padding: [16, 16] });
 }
+/* 地図の両脇パネル（大画面のみ表示。左=警報・通行止めの要約、右=天気・気温と地震） */
+function renderMapSides(places) {
+  const left = document.getElementById('mapSideLeft');
+  const right = document.getElementById('mapSideRight');
+  if (!left || !right) return;
+  let lh = '';
+  if (show('warnings')) {
+    lh += '<h3>警報・注意報</h3>';
+    let any = false;
+    for (const p of places) {
+      const ws = warningsFor(p);
+      if (ws.length) { any = true; lh += `<div class="ms-row"><span class="ms-name">${esc(p.short)}</span>${ws.map(chip).join('')}</div>`; }
+    }
+    if (!any) lh += '<div class="ms-row muted">選択中の場所に発表はありません</div>';
+  }
+  if (show('closures') && state.closures) {
+    let total = 0, unknown = 0; const titles = [];
+    for (const o of state.closures.sources) {
+      if (o.status === 'ok') { total += o.items.length; for (const i of o.items) titles.push(i.title); }
+      else unknown++;
+    }
+    lh += `<h3>通行止め</h3><div class="ms-row">通行規制 ${total}件${unknown ? `（${unknown}事務所は状態不明）` : ''}</div>`;
+    lh += titles.slice(0, 2).map(t => `<div class="ms-row ms-sub">${esc(t)}</div>`).join('');
+    if (!total && !unknown) lh += '<div class="ms-row muted">現在、掲載されている通行規制はありません</div>';
+  }
+  left.innerHTML = lh;
+  let rh = '';
+  if (show('forecast')) {
+    rh += '<h3>各地の天気・気温</h3>';
+    rh += places.map(p => {
+      const fc = regionForecast(p);
+      const coords = placeCoords(p);
+      const st = state.amedas.latest ? nearestStation(coords[0], coords[1]) : null;
+      const temp = st && st.obs.temp ? ` <span class="ms-temp">${esc(st.obs.temp[0])}℃</span>` : '';
+      const pop = fc && fc.pop != null && fc.pop !== '' ? ` <span class="muted">降水 ${esc(fc.pop)}%</span>` : '';
+      return `<div class="ms-row"><span class="ms-name">${esc(p.short)}</span>${fc ? (WX_ICON[fc.code] || '') : ''}${temp}${pop}</div>`;
+    }).join('');
+  }
+  if (show('quakes') && state.quakes.length) {
+    const q = state.quakes[0];
+    rh += `<h3>地震</h3><div class="ms-row">最新 ${esc(q.at.slice(5, 16).replace('T', ' '))} ${esc(q.anm)} M${esc(q.mag)} 最大震度${esc(q.maxi)}</div>`;
+  }
+  right.innerHTML = rh;
+}
 function focusCamera(i) {
   const c = state.cameras[i];
   if (!c || !state.map) return;
@@ -667,6 +711,7 @@ async function refreshBoard(refetch = true) {
     () => renderTicker(places),
     () => renderCameraBar(),
     () => renderMap(places),
+    () => renderMapSides(places),
   ];
   for (const r of renders) { try { r(); } catch (e) { console.warn('render', e); } }
   const now = new Date();
