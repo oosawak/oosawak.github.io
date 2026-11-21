@@ -224,6 +224,10 @@ body.simple .leaflet-control-zoom{display:none}
   .ms-row .ms-name{font-weight:900;margin-right:.4rem}
   .ms-row .ms-temp{color:var(--accent);font-weight:900}
   .ms-sub{color:var(--dim);font-size:.9em}
+  /* 右パネル最下部へ移した現地の声アーカイブ */
+  #mapSideRight #archiveSec{margin-top:1rem}
+  #mapSideRight #archiveSec h3{font-size:1.05rem;font-weight:900;margin:.5rem 0}
+  #mapSideRight #archiveList{margin-top:.5rem}
   .sec-title{font-size:1.3rem}
   .sec-summary{font-size:1rem}
   .card{padding:20px 16px}
