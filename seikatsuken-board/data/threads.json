@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-21T16:57:05+09:00",
+  "generatedAt": "2026-11-21T19:57:00+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-21T16:57:05+09:00",
+      "fetchedAt": "2026-11-21T19:57:00+09:00",
       "posts": [
         {
           "username": "xxumicha",
@@ -250,7 +250,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-21T16:57:05+09:00",
+      "fetchedAt": "2026-11-21T19:57:00+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -272,7 +272,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-21T16:57:05+09:00",
+      "fetchedAt": "2026-11-21T19:57:00+09:00",
       "posts": [
         {
           "username": "uchinokensetsu",
@@ -500,6 +500,21 @@
           "spot": "山形"
         },
         {
+          "username": "fumiya1118_09",
+          "url": "https://www.threads.com/@fumiya1118_09/post/Df8E327kz2i",
+          "text": "朝5:55〜朝6:20にかけて3センチ降ったのか？ 山形県長井市の平野部でゲリラ豪雪観測しています！！ ゲリラ豪雨に匹敵するレベルです！！ 大雪警報いつでてもおかしくないと思います！！ 山沿いはかなり雪多そう！！ 明日はマカロニえんぴつのセキスイスーパーアリーナのライブへ行きます！！",
+          "likeCount": 14,
+          "takenAt": "2026-11-20T06:44:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
+        {
           "username": "hiroyukiss216",
           "url": "https://www.threads.com/@hiroyukiss216/post/Df9OD37ExoV",
           "text": "2026.11.20 寒河江、大江町付近 湿った雪がみるみる降り積もる 今年は随分早い雪です。皆様、雪道の運転どうぞお気をつけください #寒河江市 #雪道 #山形県",
@@ -654,7 +669,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-21T16:57:05+09:00",
+      "fetchedAt": "2026-11-21T19:57:00+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -691,7 +706,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-21T16:57:05+09:00",
+      "fetchedAt": "2026-11-21T19:57:00+09:00",
       "posts": [
         {
           "username": "cb750f_sa22c",
@@ -788,7 +803,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-21T16:57:05+09:00",
+      "fetchedAt": "2026-11-21T19:57:00+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
