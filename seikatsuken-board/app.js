@@ -542,7 +542,8 @@ function renderCameraBar() {
 
 /* ---------- 地図 ---------- */
 function initMap() {
-  state.map = L.map('map');
+  // zoomSnap 0.25: fitBounds が整数ズームへ切り捨てられず、対象範囲にきちんと寄せるため
+  state.map = L.map('map', { zoomSnap: 0.25, zoomDelta: 0.5 });
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors', maxZoom: 18,
   }).addTo(state.map);
@@ -603,7 +604,7 @@ function renderMap(places) {
     L.marker([r.lat, r.lon], { icon }).addTo(state.layers)
       .bindPopup(`<h4>熊の${esc(r.kind)}</h4>${esc(r.date)} ${esc(r.time)}<br>${esc(r.muni)} ${esc(r.district)}<br>${r.count ? `${r.count}頭 / ` : ''}出典: ${esc(r.source)}`);
   }
-  if (bounds.length) state.map.fitBounds(bounds, { padding: [30, 30] });
+  if (bounds.length) state.map.fitBounds(bounds, { padding: [16, 16] });
 }
 function focusCamera(i) {
   const c = state.cameras[i];
