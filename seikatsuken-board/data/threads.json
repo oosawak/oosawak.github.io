@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-22T00:57:22+09:00",
+  "generatedAt": "2026-11-22T01:57:11+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-22T00:57:22+09:00",
+      "fetchedAt": "2026-11-22T01:57:11+09:00",
       "posts": [
         {
           "username": "xxumicha",
@@ -265,7 +265,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-22T00:57:22+09:00",
+      "fetchedAt": "2026-11-22T01:57:11+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -287,8 +287,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-22T00:57:22+09:00",
+      "fetchedAt": "2026-11-22T01:57:11+09:00",
       "posts": [
+        {
+          "username": "yy809141",
+          "url": "https://www.threads.com/@yy809141/post/DgADkb4Izjn",
+          "text": "雪の月山道路の走り方。 自分の車は雪に弱いFR車ですが、 多くの人が避けたがる雪の月山道路でも 自分は特に何とも思わず走れます。 それは、月山道路の除雪レベルが高いからで、 雪が多くても走りやすくされてます。 ほんとにありがたいし、凄いです。 とは言え、基本的な雪道の走り方は 知っておいて損はないわけで。 今日の月山道路は、 路面がザクザクなシャーベットでした。 こういう路面は、轍をなぞって走りま",
+          "likeCount": 30,
+          "takenAt": "2026-11-21T19:50:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "月山道"
+        },
         {
           "username": "tutiya.yakkyoku",
           "url": "https://www.threads.com/@tutiya.yakkyoku/post/Df_vJD1kqST",
@@ -714,7 +729,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-22T00:57:22+09:00",
+      "fetchedAt": "2026-11-22T01:57:11+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -751,7 +766,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-22T00:57:22+09:00",
+      "fetchedAt": "2026-11-22T01:57:11+09:00",
       "posts": [
         {
           "username": "cb750f_sa22c",
@@ -848,7 +863,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-22T00:57:22+09:00",
+      "fetchedAt": "2026-11-22T01:57:11+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
