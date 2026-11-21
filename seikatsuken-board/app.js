@@ -440,8 +440,10 @@ function renderCards(places) {
     if (show('wbgt') && wv) h += `<div class="amedas">暑さ指数 ${esc(wv.value)}（${esc(wv.level)}）</div>`;
     const og = state.extra?.outage?.places?.[p.name];
     if (show('outage') && og && og.households > 0) h += `<div class="amedas">停電: 約${esc(og.households)}軒（東北電力ネットワーク）</div>`;
-    if (show('cameras')) for (const c of cams) {
-      h += `<div class="cam"><button type="button" class="cam-btn" data-open-label="ライブカメラ: ${esc(c.name)} を見る" data-close-label="ライブカメラ: ${esc(c.name)} を閉じる">ライブカメラ: ${esc(c.name)} を閉じる</button><div class="cam-box" data-built="1"><img src="${esc(c.imageUrl)}" alt="${esc(c.name)}" loading="lazy"><div class="cap">出典: ${esc(c.source)}（${esc(c.updateInterval)}更新${SNAP_ID ? ' / スナップショット時点の画像' : ' / 画像は表示のみで保存しません'}）</div></div></div>`;
+    if (show('cameras') && cams.length) {
+      h += '<div class="cams">' + cams.map(c =>
+        `<div class="cam"><button type="button" class="cam-btn" data-open-label="ライブカメラ: ${esc(c.name)} を見る" data-close-label="ライブカメラ: ${esc(c.name)} を閉じる">ライブカメラ: ${esc(c.name)} を閉じる</button><div class="cam-box" data-built="1"><img src="${esc(c.imageUrl)}" alt="${esc(c.name)}" loading="lazy"><div class="cap">出典: ${esc(c.source)}（${esc(c.updateInterval)}更新${SNAP_ID ? ' / スナップショット時点の画像' : ' / 画像は表示のみで保存しません'}）</div></div></div>`
+      ).join('') + '</div>';
     }
     const bears = bearsFor(p);
     if (show('bears') && p.pref.name === '山形県') {
