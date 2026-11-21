@@ -1,10 +1,25 @@
 {
-  "generatedAt": "2026-11-21T08:57:57+09:00",
+  "generatedAt": "2026-11-21T10:57:37+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-21T08:57:57+09:00",
+      "fetchedAt": "2026-11-21T10:57:37+09:00",
       "posts": [
+        {
+          "username": "sakunami_ichinobo",
+          "url": "https://www.threads.com/@sakunami_ichinobo/post/Df_D-0UGC4H",
+          "text": ". 紅葉の名残に雪化粧のコントラスト。 作並の楽しみはこれからも。。 2枚目の写真は本日9時時点での道路状況です。 スタッドレスタイヤで問題なく走行可能な状況です。 いつも丁寧に除雪作業をしていただいている方々に本当に感謝いたします。 ご来館の際はどうぞお気をつけてお越しくださいませ。 #仙台 #ゆづくしsalon一の坊 #宮城温泉 #雪見風呂 #冬の里山 #冬景色",
+          "likeCount": 1,
+          "takenAt": "2026-11-21T10:34:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "作並"
+        },
         {
           "username": "momoten.chan",
           "url": "https://www.threads.com/@momoten.chan/post/Df9zs-cEk4a",
@@ -205,7 +220,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-21T08:57:57+09:00",
+      "fetchedAt": "2026-11-21T10:57:37+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -227,7 +242,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-21T08:57:57+09:00",
+      "fetchedAt": "2026-11-21T10:57:37+09:00",
       "posts": [
         {
           "username": "meguru_inc",
@@ -519,7 +534,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-21T08:57:57+09:00",
+      "fetchedAt": "2026-11-21T10:57:37+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -556,7 +571,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-21T08:57:57+09:00",
+      "fetchedAt": "2026-11-21T10:57:37+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -638,7 +653,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-21T08:57:57+09:00",
+      "fetchedAt": "2026-11-21T10:57:37+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
