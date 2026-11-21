@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-21T21:57:26+09:00",
+  "generatedAt": "2026-11-21T22:57:09+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-21T21:57:26+09:00",
+      "fetchedAt": "2026-11-21T22:57:09+09:00",
       "posts": [
         {
           "username": "xxumicha",
@@ -19,6 +19,21 @@
           "watched": true,
           "community": "#宮城県道路情報",
           "spot": "仙台"
+        },
+        {
+          "username": "suekouinsta",
+          "url": "https://www.threads.com/@suekouinsta/post/Df_dA5BH8kN",
+          "text": "仙台市内で昨日初雪が観測 されたらしいですね。 昼頃、日本三景松島も 大雪となりました⛄️⁡ #宮城 #松島 #日本三景 #初雪 #松島さかな市場",
+          "likeCount": 7,
+          "takenAt": "2026-11-21T14:13:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "仙台市内"
         },
         {
           "username": "umashika_mono",
@@ -250,7 +265,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-21T21:57:26+09:00",
+      "fetchedAt": "2026-11-21T22:57:09+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -272,7 +287,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-21T21:57:26+09:00",
+      "fetchedAt": "2026-11-21T22:57:09+09:00",
       "posts": [
         {
           "username": "tutiya.yakkyoku",
@@ -684,7 +699,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-21T21:57:26+09:00",
+      "fetchedAt": "2026-11-21T22:57:09+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -721,7 +736,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-21T21:57:26+09:00",
+      "fetchedAt": "2026-11-21T22:57:09+09:00",
       "posts": [
         {
           "username": "cb750f_sa22c",
@@ -818,7 +833,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-21T21:57:26+09:00",
+      "fetchedAt": "2026-11-21T22:57:09+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
