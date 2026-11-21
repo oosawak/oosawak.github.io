@@ -1,10 +1,25 @@
 {
-  "generatedAt": "2026-11-21T12:57:23+09:00",
+  "generatedAt": "2026-11-21T13:57:20+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-21T12:57:23+09:00",
+      "fetchedAt": "2026-11-21T13:57:20+09:00",
       "posts": [
+        {
+          "username": "umashika_mono",
+          "url": "https://www.threads.com/@umashika_mono/post/Df_O_z9EvGt",
+          "text": "昨夜仙台から岩手へ🚗³₃ 途中ぼた雪過ぎて前が見えない( ˊᵕˋ ;)💦 連休車検でタイヤ交換も合わせるから、 タイヤは夏タイヤだけど 道路は積もらないから心配ナス だか視界不良のストレスがシンドい ナニワトモアレ無事到着",
+          "likeCount": 0,
+          "takenAt": "2026-11-21T12:11:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "道路交通情報",
+          "spot": "仙台"
+        },
         {
           "username": "sakunami_ichinobo",
           "url": "https://www.threads.com/@sakunami_ichinobo/post/Df_D-0UGC4H",
@@ -220,7 +235,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-21T12:57:23+09:00",
+      "fetchedAt": "2026-11-21T13:57:20+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -242,8 +257,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-21T12:57:23+09:00",
+      "fetchedAt": "2026-11-21T13:57:20+09:00",
       "posts": [
+        {
+          "username": "uchinokensetsu",
+          "url": "https://www.threads.com/@uchinokensetsu/post/Df_XhtqgczG",
+          "text": "今日は山形県建築士会青年大会へ向かっています。 途中で山形といえばのラーメンを食べました🍜 金ちゃんはいつも味噌ラーメンを食べますが、初めての中華そば。美味しかったです✨ 道中一ノ関まで雪、笹谷トンネル辺りもかなりの雪。 山形市内は雨、南陽市に入ったら15cm位は積もってます💦",
+          "likeCount": 1,
+          "takenAt": "2026-11-21T13:25:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
         {
           "username": "tc_highway",
           "url": "https://www.threads.com/@tc_highway/post/Df_M2EckyTf",
@@ -579,7 +609,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-21T12:57:23+09:00",
+      "fetchedAt": "2026-11-21T13:57:20+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -616,8 +646,23 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-21T12:57:23+09:00",
+      "fetchedAt": "2026-11-21T13:57:20+09:00",
       "posts": [
+        {
+          "username": "cb750f_sa22c",
+          "url": "https://www.threads.com/@cb750f_sa22c/post/Df_WQx6o-ig",
+          "text": "今回は米沢より南陽の方が降ってるねぇ･･･(￣▽￣;)除雪入ってる位だから( ꒪꒫꒪) 結局今年もオーガ換えそびれた=͟͞͞('､3)_ヽ)＿",
+          "likeCount": 1,
+          "takenAt": "2026-11-21T13:14:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "米沢"
+        },
         {
           "username": "iiyone2020",
           "url": "https://www.threads.com/@iiyone2020/post/Df9gEr0I6oD",
@@ -698,7 +743,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-21T12:57:23+09:00",
+      "fetchedAt": "2026-11-21T13:57:20+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
