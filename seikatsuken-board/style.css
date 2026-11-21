@@ -178,7 +178,6 @@ body.simple #snapBar{display:none}
    専用画面はやめ、通常画面そのままを、操作系だけ隠して見せる。情報は通常画面と同じ。
    折りたたみは app.js 側で全部開く。 */
 body.simple #refreshBtn, body.simple #settingsBtn{display:none}
-body.simple #clock{font-size:clamp(5rem,19vw,13rem)}
 body.simple .sec-head{pointer-events:none}
 body.simple .sec-arrow{display:none}
 body.simple #cameraBar{display:none}
@@ -187,7 +186,6 @@ body.simple #tickerExpand{display:none}
 body.simple .leaflet-control-zoom{display:none}
 @media (max-width:640px){
   #clock{font-size:clamp(3.4rem,17vw,10.5rem)}
-  body.simple #clock{font-size:clamp(4.4rem,20vw,13rem)}
   #map{height:44vh}
 }
 #myPointsSec{margin:1.2rem 0}
