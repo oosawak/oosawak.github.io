@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-21T11:57:21+09:00",
+  "generatedAt": "2026-11-21T12:57:23+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-21T11:57:21+09:00",
+      "fetchedAt": "2026-11-21T12:57:23+09:00",
       "posts": [
         {
           "username": "sakunami_ichinobo",
@@ -220,7 +220,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-21T11:57:21+09:00",
+      "fetchedAt": "2026-11-21T12:57:23+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -242,7 +242,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-21T11:57:21+09:00",
+      "fetchedAt": "2026-11-21T12:57:23+09:00",
       "posts": [
         {
           "username": "tc_highway",
@@ -257,6 +257,36 @@
           "liked": false,
           "watched": true,
           "community": "#通行止",
+          "spot": "山形"
+        },
+        {
+          "username": "hanaretemokawaiine",
+          "url": "https://www.threads.com/@hanaretemokawaiine/post/Df-03oPgTT2",
+          "text": "いま現在の山形県の雪です☃️❄️ すでに昨日スリップしてる車あったがら みんな安全運転すっぺなぁ〜🚗",
+          "likeCount": 82,
+          "takenAt": "2026-11-21T08:24:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
+        {
+          "username": "gucchi_yamagatalife",
+          "url": "https://www.threads.com/@gucchi_yamagatalife/post/Df-k16Skvi4",
+          "text": "【雪が降るとテンションが上がる、元北海道民】 ◎今回の話のポイント ①【雪が降ってテンションが上がった】 昨日雪が降りましたが、積もるかはまだ分かりません。 北海道出身の僕は、雪が降るとテンションが上がります。 どうせ来るなら早く来いと、思うタイプなんですよね。 ②【山形の雪道は運転が大変】 山形の道路は車線が少なく、雪山で道幅が削られてしまいます。 すれ違いがしづらくなって、スピードも落ちて混み",
+          "likeCount": 2,
+          "takenAt": "2026-11-21T06:02:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
           "spot": "山形"
         },
         {
@@ -549,7 +579,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-21T11:57:21+09:00",
+      "fetchedAt": "2026-11-21T12:57:23+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -586,7 +616,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-21T11:57:21+09:00",
+      "fetchedAt": "2026-11-21T12:57:23+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -668,7 +698,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-21T11:57:21+09:00",
+      "fetchedAt": "2026-11-21T12:57:23+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
