@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-21T13:57:20+09:00",
+  "generatedAt": "2026-11-21T15:58:38+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-21T13:57:20+09:00",
+      "fetchedAt": "2026-11-21T15:58:38+09:00",
       "posts": [
         {
           "username": "umashika_mono",
@@ -235,7 +235,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-21T13:57:20+09:00",
+      "fetchedAt": "2026-11-21T15:58:38+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -257,7 +257,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-21T13:57:20+09:00",
+      "fetchedAt": "2026-11-21T15:58:38+09:00",
       "posts": [
         {
           "username": "uchinokensetsu",
@@ -302,6 +302,21 @@
           "liked": false,
           "watched": true,
           "community": "#山形県道路情報",
+          "spot": "山形"
+        },
+        {
+          "username": "kawausokun1300",
+          "url": "https://www.threads.com/@kawausokun1300/post/Df-qJgtk_tT",
+          "text": "山形県道18号 山形朝日線",
+          "likeCount": 1,
+          "takenAt": "2026-11-21T06:49:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "道路交通情報",
           "spot": "山形"
         },
         {
@@ -609,7 +624,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-21T13:57:20+09:00",
+      "fetchedAt": "2026-11-21T15:58:38+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -646,7 +661,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-21T13:57:20+09:00",
+      "fetchedAt": "2026-11-21T15:58:38+09:00",
       "posts": [
         {
           "username": "cb750f_sa22c",
@@ -743,7 +758,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-21T13:57:20+09:00",
+      "fetchedAt": "2026-11-21T15:58:38+09:00",
       "posts": [
         {
           "username": "mypl.aizu",

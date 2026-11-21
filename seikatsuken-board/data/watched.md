@@ -34,6 +34,9 @@ fetch_threads.py が liked と合わせて threads.json へ反映する。
 - [2026-11-21 08:24] @hanaretemokawaiine いいね82 動画つき コミュニティ:#山形県道路情報 地名:山形
   - いま現在の山形県の雪です☃️❄️ すでに昨日スリップしてる車あったがら みんな安全運転すっぺなぁ〜🚗
   - https://www.threads.com/@hanaretemokawaiine/post/Df-03oPgTT2
+- [2026-11-21 06:49] @kawausokun1300 いいね1 画像つき コミュニティ:道路交通情報 地名:山形
+  - 山形県道18号 山形朝日線
+  - https://www.threads.com/@kawausokun1300/post/Df-qJgtk_tT
 - [2026-11-21 06:02] @gucchi_yamagatalife いいね2 画像つき コミュニティ:#山形県道路情報 地名:山形
   - 【雪が降るとテンションが上がる、元北海道民】 ◎今回の話のポイント ①【雪が降ってテンションが上がった】 昨日雪が降りましたが、積もるかはまだ分かりません。 北海道出身の僕は、雪が降るとテンションが上がります。 どうせ来るなら早く来いと、思うタイプなんですよね。 ②【山形の雪道は運転が大変】 山形の道路は車線が少なく、雪山で道幅が削られてしまいます。 すれ違いがしづらくなって、スピードも落ちて混み
   - https://www.threads.com/@gucchi_yamagatalife/post/Df-k16Skvi4
