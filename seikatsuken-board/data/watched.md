@@ -6,6 +6,9 @@ place-aliases.md の地名に当たった投稿のうち、現地の状況を伝
 fetch_threads.py が liked と合わせて threads.json へ反映する。
 
 ## 仙台
+- [2026-11-21 17:30] @nakatty01 いいね15 画像つき コミュニティ:道路交通情報 地名:仙台市内
+  - 用があって雪降る山形蔵王。早くオープンしないかな。連休のせいか高速道路や仙台市内はレンタカー多いな。雪のせいだろうか。
+  - https://www.threads.com/@nakatty01/post/Df_ziCNlLpP
 - [2026-11-21 16:47] @xxumicha いいね2 画像つき コミュニティ:#宮城県道路情報 地名:仙台
   - なんかここの交差点で恐らく交通事故で、今救急車着いたところ。 286を仙台南IC方面行く方は迂回した方良さげな感じです…🥲
   - https://www.threads.com/@xxumicha/post/Df_un2yjwwZ

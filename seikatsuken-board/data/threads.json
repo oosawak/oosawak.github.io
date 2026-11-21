@@ -1,10 +1,25 @@
 {
-  "generatedAt": "2026-11-22T01:57:11+09:00",
+  "generatedAt": "2026-11-22T03:57:09+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-22T01:57:11+09:00",
+      "fetchedAt": "2026-11-22T03:57:09+09:00",
       "posts": [
+        {
+          "username": "nakatty01",
+          "url": "https://www.threads.com/@nakatty01/post/Df_ziCNlLpP",
+          "text": "用があって雪降る山形蔵王。早くオープンしないかな。連休のせいか高速道路や仙台市内はレンタカー多いな。雪のせいだろうか。",
+          "likeCount": 15,
+          "takenAt": "2026-11-21T17:30:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "道路交通情報",
+          "spot": "仙台市内"
+        },
         {
           "username": "xxumicha",
           "url": "https://www.threads.com/@xxumicha/post/Df_un2yjwwZ",
@@ -265,7 +280,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-22T01:57:11+09:00",
+      "fetchedAt": "2026-11-22T03:57:09+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -287,7 +302,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-22T01:57:11+09:00",
+      "fetchedAt": "2026-11-22T03:57:09+09:00",
       "posts": [
         {
           "username": "yy809141",
@@ -729,7 +744,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-22T01:57:11+09:00",
+      "fetchedAt": "2026-11-22T03:57:09+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -766,7 +781,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-22T01:57:11+09:00",
+      "fetchedAt": "2026-11-22T03:57:09+09:00",
       "posts": [
         {
           "username": "cb750f_sa22c",
@@ -863,7 +878,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-22T01:57:11+09:00",
+      "fetchedAt": "2026-11-22T03:57:09+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
