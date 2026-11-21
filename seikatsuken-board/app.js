@@ -490,59 +490,6 @@ function renderCards(places) {
     });
   });
 }
-function renderWall(places) {
-  const list = document.getElementById('wallWarningList');
-  const items = [];
-  if (show('warnings')) for (const p of places) {
-    const ws = warningsFor(p);
-    if (ws.length) items.push(`<div class="wall-item">${esc(p.short)}: ${ws.map(chip).join('')}</div>`);
-  }
-  list.innerHTML = items.length ? items.join('') : '<div class="wall-item">選択中の場所に警報・注意報はありません</div>';
-  // 壁紙モードでも主要情報は出す (2026-11-21 本人指摘: 情報量を削りすぎない)
-  const info = document.getElementById('wallInfo');
-  if (!info) return;
-  let panels = '';
-  // 天気 (場所ごと: アイコン・気温・降水確率)
-  if (show('forecast')) {
-    const lines = places.map(p => {
-      const fc = regionForecast(p);
-      const coords = placeCoords(p);
-      const st = state.amedas.latest ? nearestStation(coords[0], coords[1]) : null;
-      const temp = st && st.obs.temp ? `<span class="wp-temp">${esc(st.obs.temp[0])}℃</span>` : '';
-      const pop = fc && fc.pop != null && fc.pop !== '' ? ` <span class="wp-dim">降水 ${esc(fc.pop)}%</span>` : '';
-      return `<div class="wp-line">${esc(p.short)} ${fc ? (WX_ICON[fc.code] || '') : ''} ${temp}${pop}</div>`;
-    }).join('');
-    panels += `<div class="wall-panel"><h3>各地の天気・気温</h3>${lines}</div>`;
-  }
-  // 通行止め
-  if (show('closures') && state.closures) {
-    let total = 0; const titles = [];
-    for (const o of state.closures.sources) {
-      if (o.status === 'ok') { total += o.items.length; for (const i of o.items) titles.push(i.title); }
-    }
-    const lines = titles.slice(0, 4).map(t => `<div class="wp-line">${esc(t)}</div>`).join('');
-    panels += `<div class="wall-panel"><h3>通行止め・交通規制 ${total}件</h3>${total ? lines : '<div class="wp-line">現在、掲載されている通行規制はありません</div>'}</div>`;
-  }
-  // 地震・火山・洪水・停電
-  {
-    const lines = [];
-    if (show('quakes')) for (const q of state.quakes.slice(0, 2)) {
-      lines.push(`<div class="wp-line">地震 ${esc(q.at.slice(5, 16).replace('T', ' '))} ${esc(q.anm)} M${esc(q.mag)} 最大震度${esc(q.maxi)}</div>`);
-    }
-    if (show('flood') && state.extra?.flood?.items) for (const f of state.extra.flood.items.slice(0, 2)) {
-      lines.push(`<div class="wp-line">洪水 ${esc(f.river)}: ${esc(f.level)}</div>`);
-    }
-    if (show('volcano') && state.extra?.volcano?.items) {
-      lines.push(`<div class="wp-line">火山 ${state.extra.volcano.items.map(v => `${esc(v.name)} レベル${esc(v.level)}`).join(' / ')}</div>`);
-    }
-    if (show('outage') && state.extra?.outage?.places) for (const p of places) {
-      const og = state.extra.outage.places[p.name];
-      if (og && og.households > 0) lines.push(`<div class="wp-line">停電 ${esc(p.short)}: 約${esc(og.households)}軒</div>`);
-    }
-    if (lines.length) panels += `<div class="wall-panel"><h3>地震・火山・停電など</h3>${lines.join('')}</div>`;
-  }
-  info.innerHTML = panels;
-}
 function renderTicker(places) {
   const parts = [];
   if (show('warnings')) for (const p of places) {
@@ -716,7 +663,6 @@ async function refreshBoard(refetch = true) {
     () => renderVolcanoSection(),
     () => renderCards(places),
     () => renderArchive(),
-    () => renderWall(places),
     () => renderTicker(places),
     () => renderCameraBar(),
     () => renderMap(places),
@@ -752,10 +698,23 @@ document.getElementById('tickerExpand').addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 document.getElementById('wallBtn').addEventListener('click', () => {
-  const on = document.body.classList.toggle('wallpaper');
-  document.getElementById('wallWarnings').hidden = !on;
-  document.getElementById('wallBtn').textContent = on ? '通常表示に戻す' : '壁紙モード';
+  const on = document.body.classList.toggle('simple');
+  document.getElementById('wallBtn').textContent = on ? '通常表示に戻す' : '簡易モード';
+  if (on) {
+    // 簡易モードでは折りたたみを全部開いて見せる（操作はさせない）
+    document.querySelectorAll('.sec-body').forEach(b => { b.hidden = false; });
+    document.querySelectorAll('.sec-head .sec-arrow').forEach(a => { a.textContent = '▾'; });
+    document.querySelectorAll('#cards .more').forEach(m => { m.hidden = false; });
+  }
+  setMapInteractive(!on);
 });
+function setMapInteractive(on) {
+  const m = state.map; if (!m) return;
+  for (const h of ['dragging', 'scrollWheelZoom', 'doubleClickZoom', 'touchZoom', 'boxZoom', 'keyboard']) {
+    if (m[h]) { if (on) m[h].enable(); else m[h].disable(); }
+  }
+  if (on) m.on('contextmenu', onMapContextMenu); else m.off('contextmenu', onMapContextMenu);
+}
 document.getElementById('settingsBtn').addEventListener('click', () => {
   document.getElementById('settingsPanel').hidden = false; renderSettings();
 });

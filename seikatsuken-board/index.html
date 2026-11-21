@@ -20,7 +20,7 @@
   <div id="clock">--:--:--</div>
   <div class="top-actions">
     <button id="refreshBtn" type="button">更新</button>
-    <button id="wallBtn" type="button">壁紙モード</button>
+    <button id="wallBtn" type="button">簡易モード</button>
     <button id="settingsBtn" type="button">設定</button>
   </div>
 </header>
@@ -29,13 +29,6 @@
   <label>過去の表示 <select id="snapSelect"><option value="">最新（ライブ）</option></select></label>
   <span id="snapNote" hidden></span>
 </div>
-
-<!-- 壁紙モード用: 時計と警報 + 主要情報 -->
-<section id="wallWarnings" hidden>
-  <h2>警報・注意報</h2>
-  <div id="wallWarningList"></div>
-  <div id="wallInfo"></div>
-</section>
 
 <main id="board">
   <section class="alert-sec" id="sec-warnings">

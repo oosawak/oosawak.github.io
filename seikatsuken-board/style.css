@@ -34,7 +34,7 @@ body{max-width:2560px;margin:0 auto;padding:0 16px 64px}
 #snapBar{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;color:var(--dim);font-size:.85rem;padding:0 0 .6rem}
 #snapBar select{background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:.25rem .4rem;font:inherit}
 #snapNote{color:var(--advisory);font-weight:700}
-body.wallpaper #snapBar{display:none}
+body.simple #snapBar{display:none}
 
 /* 折りたたみセクション（状態で色が変わる帯） */
 .alert-sec{margin:.5rem 0;background:var(--surface);border:2px solid var(--border);
@@ -174,25 +174,20 @@ body.wallpaper #snapBar{display:none}
 .settings-toggle{display:block;margin:.8rem 0}
 .settings-note{color:var(--dim);font-size:.82rem}
 
-/* 壁紙モード */
-body.wallpaper #board, body.wallpaper #updatedLine{display:none}
-body.wallpaper #topbar{flex-direction:column;align-items:center;text-align:center}
-body.wallpaper #clock{font-size:clamp(5rem,24vw,19rem);margin-left:0}
-body.wallpaper .title-block h1{font-size:1.6rem}
-#wallWarnings{margin:1rem 0;padding:1rem;background:var(--surface-2);
-  border:1px solid var(--border);border-radius:var(--radius);text-align:center}
-#wallWarnings h2{margin:.2rem 0 .6rem;font-weight:900}
-#wallWarnings .wall-item{font-size:clamp(1.5rem,4vw,2.25rem);font-weight:900;margin:.35rem 0}
-#wallInfo{display:grid;grid-template-columns:1fr;gap:12px;margin-top:1rem;text-align:left}
-@media (min-width:1000px){#wallInfo{grid-template-columns:repeat(3,1fr)}}
-.wall-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.8rem 1rem}
-.wall-panel h3{margin:.1rem 0 .5rem;font-size:1.15rem;font-weight:900}
-.wall-panel .wp-line{font-size:clamp(1rem,1.6vw,1.3rem);font-weight:700;margin:.3rem 0;line-height:1.45}
-.wall-panel .wp-line .wp-temp{color:var(--accent);font-weight:900}
-.wall-panel .wp-dim{color:var(--dim);font-weight:500;font-size:.92em}
+/* 簡易モード（旧・壁紙モードを2026-11-21に作り替え）:
+   専用画面はやめ、通常画面そのままを、操作系だけ隠して見せる。情報は通常画面と同じ。
+   折りたたみは app.js 側で全部開く。 */
+body.simple #refreshBtn, body.simple #settingsBtn{display:none}
+body.simple #clock{font-size:clamp(5rem,19vw,13rem)}
+body.simple .sec-head{pointer-events:none}
+body.simple .sec-arrow{display:none}
+body.simple #cameraBar{display:none}
+body.simple .cam-btn, body.simple .more-btn, body.simple .embed-btn, body.simple #archiveBtn{display:none}
+body.simple #tickerExpand{display:none}
+body.simple .leaflet-control-zoom{display:none}
 @media (max-width:640px){
   #clock{font-size:clamp(3.4rem,17vw,10.5rem)}
-  body.wallpaper #clock{font-size:clamp(4rem,24vw,19rem)}
+  body.simple #clock{font-size:clamp(4.4rem,20vw,13rem)}
   #map{height:44vh}
 }
 #myPointsSec{margin:1.2rem 0}
@@ -249,7 +244,6 @@ body.wallpaper .title-block h1{font-size:1.6rem}
   .card .wx .wxicon{font-size:40px}
   .amedas-temp{font-size:34px}
   .post .text{font-size:1.08rem}
-  .wall-panel .wp-line{font-size:clamp(1.1rem,1.6vw,1.8rem)}
 }
 @media (min-width:3000px){
   #cards{grid-template-columns:repeat(6,1fr)}
