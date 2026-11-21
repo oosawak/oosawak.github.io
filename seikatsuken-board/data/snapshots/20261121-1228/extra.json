@@ -1,0 +1,78 @@
+{
+ "generatedAt": "2026-11-21T12:14:07+09:00",
+ "volcano": {
+  "status": "ok",
+  "items": [
+   {
+    "name": "蔵王山",
+    "level": 1,
+    "headline": "",
+    "updated": ""
+   },
+   {
+    "name": "吾妻山",
+    "level": 1,
+    "headline": "",
+    "updated": ""
+   },
+   {
+    "name": "安達太良山",
+    "level": 1,
+    "headline": "",
+    "updated": ""
+   }
+  ]
+ },
+ "flood": {
+  "status": "ok",
+  "items": []
+ },
+ "radiation": {
+  "status": "ok",
+  "places": {
+   "仙台市": {
+    "post": "仙台市　県環境放射線監視センター",
+    "value": "0.036",
+    "at": "12:00"
+   },
+   "松島町": {
+    "post": "鳴瀬",
+    "value": "0.057",
+    "at": "12:00"
+   },
+   "山形市": {
+    "post": "山形市　県衛生研究所",
+    "value": "0.05",
+    "at": "12:00"
+   },
+   "東根市": {
+    "post": "村山市　県環境科学研究センター",
+    "value": "0.044",
+    "at": "12:00"
+   },
+   "米沢市": {
+    "post": "米沢市　置賜総合支庁",
+    "value": "0.055",
+    "at": "12:00"
+   },
+   "福島市": {
+    "post": "県北保健福祉事務所",
+    "value": "0.098",
+    "at": "12:00"
+   }
+  }
+ },
+ "outage": {
+  "status": "ok",
+  "at": "2026年11月21日 12:00 現在",
+  "places": {
+   "福島市": {
+    "households": 20
+   }
+  }
+ },
+ "wbgt": {
+  "status": "out_of_season",
+  "places": {}
+ }
+}
