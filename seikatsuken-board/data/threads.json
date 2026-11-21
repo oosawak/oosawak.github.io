@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-21T19:57:00+09:00",
+  "generatedAt": "2026-11-21T21:57:26+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-21T19:57:00+09:00",
+      "fetchedAt": "2026-11-21T21:57:26+09:00",
       "posts": [
         {
           "username": "xxumicha",
@@ -250,7 +250,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-21T19:57:00+09:00",
+      "fetchedAt": "2026-11-21T21:57:26+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -272,8 +272,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-21T19:57:00+09:00",
+      "fetchedAt": "2026-11-21T21:57:26+09:00",
       "posts": [
+        {
+          "username": "tutiya.yakkyoku",
+          "url": "https://www.threads.com/@tutiya.yakkyoku/post/Df_vJD1kqST",
+          "text": "今日の我が家の庭です。11月の初雪が2月にみたいな本気の雪で豪雪。朝の3時に除雪車が薬局駐車場を掃いてくれて助かりました。 さて、雪だるまできたかなー☃️ #山形県 #東根市 #初雪",
+          "likeCount": 2,
+          "takenAt": "2026-11-21T16:52:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
         {
           "username": "uchinokensetsu",
           "url": "https://www.threads.com/@uchinokensetsu/post/Df_XhtqgczG",
@@ -669,7 +684,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-21T19:57:00+09:00",
+      "fetchedAt": "2026-11-21T21:57:26+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -706,7 +721,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-21T19:57:00+09:00",
+      "fetchedAt": "2026-11-21T21:57:26+09:00",
       "posts": [
         {
           "username": "cb750f_sa22c",
@@ -803,7 +818,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-21T19:57:00+09:00",
+      "fetchedAt": "2026-11-21T21:57:26+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
