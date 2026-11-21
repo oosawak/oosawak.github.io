@@ -74,6 +74,8 @@ body.simple #snapBar{display:none}
 #mapSec{margin:.8rem 0}
 #map{height:380px;border-radius:var(--radius);border:1px solid var(--border);
   background:var(--surface-2)}
+/* 地図の両脇パネル（大画面でのみ表示する） */
+.map-side{display:none}
 /* 地図タイルだけを暗くする（マーカーやポップアップには効かせない） */
 .leaflet-tile-pane img{filter:invert(1) hue-rotate(180deg) brightness(.92) contrast(.92) saturate(.65)}
 @media (min-width:640px){#map{height:460px}}
@@ -211,6 +213,17 @@ body.simple .leaflet-control-zoom{display:none}
    地図は今のまま（大きくしても情報は増えない）。スマホ・通常幅には効かない。 */
 @media (min-width:1800px){
   body{max-width:none;padding:0 32px 72px}
+  /* 地図は中央に置き、両脇に情報パネルを並べる（帯状の地図を四角に近づける） */
+  #mapSec{display:grid;grid-template-columns:minmax(300px,26%) 1fr minmax(300px,26%);
+    gap:12px;align-items:stretch}
+  .map-side{display:block;background:var(--surface-2);border:1px solid var(--border);
+    border-radius:var(--radius);padding:.8rem 1rem;overflow-y:auto;font-size:.95rem}
+  .map-side h3{margin:.5rem 0;font-size:1.05rem;font-weight:900}
+  .map-side h3:first-child{margin-top:0}
+  .ms-row{margin:.35rem 0;line-height:1.55}
+  .ms-row .ms-name{font-weight:900;margin-right:.4rem}
+  .ms-row .ms-temp{color:var(--accent);font-weight:900}
+  .ms-sub{color:var(--dim);font-size:.9em}
   .sec-title{font-size:1.3rem}
   .sec-summary{font-size:1rem}
   .card{padding:20px 16px}
@@ -242,6 +255,8 @@ body.simple .leaflet-control-zoom{display:none}
   .card .wx .wxicon{font-size:40px}
   .amedas-temp{font-size:34px}
   .post .text{font-size:1.08rem}
+  .map-side{font-size:1.05rem}
+  .map-side h3{font-size:1.15rem}
 }
 @media (min-width:3000px){
   #cards{grid-template-columns:repeat(6,1fr)}
