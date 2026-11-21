@@ -1,10 +1,25 @@
 {
-  "generatedAt": "2026-11-21T15:58:38+09:00",
+  "generatedAt": "2026-11-21T16:57:05+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-21T15:58:38+09:00",
+      "fetchedAt": "2026-11-21T16:57:05+09:00",
       "posts": [
+        {
+          "username": "xxumicha",
+          "url": "https://www.threads.com/@xxumicha/post/Df_un2yjwwZ",
+          "text": "なんかここの交差点で恐らく交通事故で、今救急車着いたところ。 286を仙台南IC方面行く方は迂回した方良さげな感じです…🥲",
+          "likeCount": 2,
+          "takenAt": "2026-11-21T16:47:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "仙台"
+        },
         {
           "username": "umashika_mono",
           "url": "https://www.threads.com/@umashika_mono/post/Df_O_z9EvGt",
@@ -235,7 +250,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-21T15:58:38+09:00",
+      "fetchedAt": "2026-11-21T16:57:05+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -257,7 +272,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-21T15:58:38+09:00",
+      "fetchedAt": "2026-11-21T16:57:05+09:00",
       "posts": [
         {
           "username": "uchinokensetsu",
@@ -333,6 +348,21 @@
           "watched": true,
           "community": "#山形県道路情報",
           "spot": "山形"
+        },
+        {
+          "username": "niconico_taabou",
+          "url": "https://www.threads.com/@niconico_taabou/post/Df9vhbfjmro",
+          "text": "おぉ、山形県地元の方が仰られる通り 11月下旬の月山道路は雪路面☃️❄️だった #月山道路",
+          "likeCount": 22,
+          "takenAt": "2026-11-20T22:16:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "月山道"
         },
         {
           "username": "meguru_inc",
@@ -624,7 +654,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-21T15:58:38+09:00",
+      "fetchedAt": "2026-11-21T16:57:05+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -661,7 +691,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-21T15:58:38+09:00",
+      "fetchedAt": "2026-11-21T16:57:05+09:00",
       "posts": [
         {
           "username": "cb750f_sa22c",
@@ -758,7 +788,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-21T15:58:38+09:00",
+      "fetchedAt": "2026-11-21T16:57:05+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
