@@ -649,6 +649,18 @@ function renderMapSides(places) {
     rh += `<h3>地震</h3><div class="ms-row">最新 ${esc(q.at.slice(5, 16).replace('T', ' '))} ${esc(q.anm)} M${esc(q.mag)} 最大震度${esc(q.maxi)}</div>`;
   }
   right.innerHTML = rh;
+  placeArchive();
+}
+/* 大画面では現地の声アーカイブを右パネルの一番下へ移す（パネルの中でスクロールして見る） */
+let archiveHome = null;
+function placeArchive() {
+  const sec = document.getElementById('archiveSec');
+  const panel = document.getElementById('mapSideRight');
+  if (!sec || !panel) return;
+  if (!archiveHome) archiveHome = { parent: sec.parentElement, next: sec.nextElementSibling };
+  const wide = window.matchMedia('(min-width:1800px)').matches;
+  if (wide) { if (sec.parentElement !== panel) panel.appendChild(sec); }
+  else if (sec.parentElement !== archiveHome.parent) archiveHome.parent.insertBefore(sec, archiveHome.next);
 }
 function focusCamera(i) {
   const c = state.cameras[i];
@@ -761,6 +773,14 @@ function setMapInteractive(on) {
   }
   if (on) m.on('contextmenu', onMapContextMenu); else m.off('contextmenu', onMapContextMenu);
 }
+let resizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    placeArchive();
+    if (state.map) { state.map.invalidateSize(); renderMap(selectedPlaces()); }
+  }, 200);
+});
 document.getElementById('settingsBtn').addEventListener('click', () => {
   document.getElementById('settingsPanel').hidden = false; renderSettings();
 });
