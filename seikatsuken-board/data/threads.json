@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-21T22:57:09+09:00",
+  "generatedAt": "2026-11-22T00:57:22+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-21T22:57:09+09:00",
+      "fetchedAt": "2026-11-22T00:57:22+09:00",
       "posts": [
         {
           "username": "xxumicha",
@@ -265,7 +265,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-21T22:57:09+09:00",
+      "fetchedAt": "2026-11-22T00:57:22+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -287,7 +287,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-21T22:57:09+09:00",
+      "fetchedAt": "2026-11-22T00:57:22+09:00",
       "posts": [
         {
           "username": "tutiya.yakkyoku",
@@ -370,6 +370,21 @@
           "text": "【雪が降るとテンションが上がる、元北海道民】 ◎今回の話のポイント ①【雪が降ってテンションが上がった】 昨日雪が降りましたが、積もるかはまだ分かりません。 北海道出身の僕は、雪が降るとテンションが上がります。 どうせ来るなら早く来いと、思うタイプなんですよね。 ②【山形の雪道は運転が大変】 山形の道路は車線が少なく、雪山で道幅が削られてしまいます。 すれ違いがしづらくなって、スピードも落ちて混み",
           "likeCount": 2,
           "takenAt": "2026-11-21T06:02:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
+        {
+          "username": "fujioseino",
+          "url": "https://www.threads.com/@fujioseino/post/Df-C6pAkRnJ",
+          "text": "#山形県 #雪 #オーマイガー ⁡ 予想してたけど雪降ってるなんてぇ😱 オーマイガー😱😱😱w",
+          "likeCount": 1,
+          "takenAt": "2026-11-21T01:06:00+09:00",
           "hasImage": true,
           "imageCount": 1,
           "promo": false,
@@ -699,7 +714,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-21T22:57:09+09:00",
+      "fetchedAt": "2026-11-22T00:57:22+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -736,7 +751,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-21T22:57:09+09:00",
+      "fetchedAt": "2026-11-22T00:57:22+09:00",
       "posts": [
         {
           "username": "cb750f_sa22c",
@@ -833,7 +848,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-21T22:57:09+09:00",
+      "fetchedAt": "2026-11-22T00:57:22+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
