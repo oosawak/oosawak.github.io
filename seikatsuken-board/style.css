@@ -118,6 +118,7 @@ body.wallpaper #snapBar{display:none}
 .card .amedas{font-size:.95rem;margin-top:.35rem}
 .amedas-temp{font-size:24px;font-weight:900}
 .amedas-unit{font-size:14px;color:var(--dim);font-weight:700}
+.cams{display:grid;grid-template-columns:1fr;column-gap:12px}
 .card .cam{margin-top:.6rem}
 .card .cam h4{color:var(--dim);font-weight:700}
 .card .cam img{width:100%;border-radius:var(--radius);border:1px solid var(--border);display:block}
@@ -210,3 +211,46 @@ body.wallpaper .title-block h1{font-size:1.6rem}
 #archiveSec { margin-top: 18px; }
 #archiveSec h3 { font-size: 16px; font-weight: 900; margin: 0 0 8px; }
 .arch-place { font-size: 12px; font-weight: 700; color: var(--accent); margin-top: 12px; }
+
+/* 大画面（2026-11-21 本人指摘で作り直し）:
+   幅の上限をなくして画面いっぱいに広げ、列を増やすのではなくカード自体を大きくする。
+   カメラは横並びにしてカードを低くし、1画面に多く収まるようにする。
+   地図は今のまま（大きくしても情報は増えない）。スマホ・通常幅には効かない。 */
+@media (min-width:1800px){
+  body{max-width:none;padding:0 32px 72px}
+  .sec-title{font-size:1.3rem}
+  .sec-summary{font-size:1rem}
+  .card{padding:20px 16px}
+  .card h3{font-size:28px}
+  .card h3 .num{width:28px;height:28px;line-height:28px;font-size:16px}
+  .card-pref{font-size:16px}
+  .card h4{font-size:16px}
+  .card .wx{font-size:19px}
+  .card .wx .wxicon{font-size:36px}
+  .card .wx .temps{font-size:1.05rem}
+  .card .temps{font-size:1rem}
+  .card .amedas{font-size:1.05rem}
+  .amedas-temp{font-size:30px}
+  .card .cam .cap{font-size:13px}
+  .cam-btn{font-size:1rem}
+  .post .text{font-size:1rem}
+  .post .meta{font-size:.88rem}
+  .bears div{font-size:1rem}
+}
+@media (min-width:2200px){
+  .cams{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:2600px){
+  body{padding:0 48px 80px}
+  #cards{gap:16px}
+  .card h3{font-size:32px}
+  .card h3 .num{width:32px;height:32px;line-height:32px;font-size:18px}
+  .card .wx{font-size:21px}
+  .card .wx .wxicon{font-size:40px}
+  .amedas-temp{font-size:34px}
+  .post .text{font-size:1.08rem}
+  .wall-panel .wp-line{font-size:clamp(1.1rem,1.6vw,1.8rem)}
+}
+@media (min-width:3000px){
+  #cards{grid-template-columns:repeat(6,1fr)}
+}
