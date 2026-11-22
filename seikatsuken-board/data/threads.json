@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-22T21:57:59+09:00",
+  "generatedAt": "2026-11-22T22:57:21+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-22T21:57:59+09:00",
+      "fetchedAt": "2026-11-22T22:57:21+09:00",
       "posts": [
         {
           "username": "nakatty01",
@@ -280,7 +280,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-22T21:57:59+09:00",
+      "fetchedAt": "2026-11-22T22:57:21+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -302,7 +302,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-22T21:57:59+09:00",
+      "fetchedAt": "2026-11-22T22:57:21+09:00",
       "posts": [
         {
           "username": "c_photo.0131",
@@ -348,6 +348,21 @@
           "watched": true,
           "community": "#山形県道路情報",
           "spot": "国道47号"
+        },
+        {
+          "username": "ryuititenchan",
+          "url": "https://www.threads.com/@ryuititenchan/post/DgCRo_qD2_r",
+          "text": "これからの時期で 宮城県 と 山形の違い 奥羽山脈から雪の量が減り 東北自動車道から また振り方が減るが…山おろし（から風）みたいに強風になる。 また 月山・湯殿山高速辺りでも 雪・風の量が変わるので、【大雪での急勾配】に慣れてない方は、新庄から酒田に抜ける国道４７号線をお薦めします。 勾配は無いものの…今度は凍結やシャーベットに気おつけてお通り下さい🚘",
+          "likeCount": 3,
+          "takenAt": "2026-11-22T16:31:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "山形"
         },
         {
           "username": "masaharu.ks2kp",
@@ -864,7 +879,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-22T21:57:59+09:00",
+      "fetchedAt": "2026-11-22T22:57:21+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -901,7 +916,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-22T21:57:59+09:00",
+      "fetchedAt": "2026-11-22T22:57:21+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1028,8 +1043,38 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-22T21:57:59+09:00",
+      "fetchedAt": "2026-11-22T22:57:21+09:00",
       "posts": [
+        {
+          "username": "munakata_1962",
+          "url": "https://www.threads.com/@munakata_1962/post/DgCykE-gfaJ",
+          "text": "猪苗代のとある場所、停電と通行止寸前。",
+          "likeCount": 50,
+          "takenAt": "2026-11-22T21:19:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#通行止",
+          "spot": "猪苗代"
+        },
+        {
+          "username": "heartfulcoach",
+          "url": "https://www.threads.com/@heartfulcoach/post/DgCn3zYo-hQ",
+          "text": "【大雪で陸の孤島になった北塩原村から、 無事に帰宅しました！】 福島県の猪苗代周辺では、 20日〜21日に降った大雪の影響で、 倒木による道路の通行止めや停電など、 大変な状況が、まだ続いています。 おかげさまで、 喜多方市方面へ抜けるルートが 開通したため、 遠回りにはなりましたが、 無事に帰宅することができました🚙 気温−2℃の真冬の世界から、 10℃の仙台へ帰宅できたことに、 ホッとしていま",
+          "likeCount": 55,
+          "takenAt": "2026-11-22T19:46:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "道路交通情報",
+          "spot": "裏磐梯"
+        },
         {
           "username": "mypl.aizu",
           "url": "https://www.threads.com/@mypl.aizu/post/DgBQijbD5Fr",
