@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-22T11:57:06+09:00",
+  "generatedAt": "2026-11-22T14:57:21+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-22T11:57:06+09:00",
+      "fetchedAt": "2026-11-22T14:57:21+09:00",
       "posts": [
         {
           "username": "nakatty01",
@@ -280,7 +280,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-22T11:57:06+09:00",
+      "fetchedAt": "2026-11-22T14:57:21+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -302,7 +302,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-22T11:57:06+09:00",
+      "fetchedAt": "2026-11-22T14:57:21+09:00",
       "posts": [
         {
           "username": "naoto.nishi_lc",
@@ -789,7 +789,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-22T11:57:06+09:00",
+      "fetchedAt": "2026-11-22T14:57:21+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -826,8 +826,23 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-22T11:57:06+09:00",
+      "fetchedAt": "2026-11-22T14:57:21+09:00",
       "posts": [
+        {
+          "username": "iiyone2020",
+          "url": "https://www.threads.com/@iiyone2020/post/DgCDGWxI7tZ",
+          "text": "🌈2026年11月22日（日）の山形県米沢市（やまがたけん よねざわし）の米沢市立第一中学校を撮ってみました😊 米沢市内には雪は積もりませんでした。 ニュースを見ると凄く積もった地域もあるようですが、米沢は今、こんな感じです。 参考にして頂けると嬉しいです✨ #山形県米沢市 #米沢市立第一中学校 #校舎 #米沢駅前 #雪の状況",
+          "likeCount": 1,
+          "takenAt": "2026-11-22T14:24:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "米沢市"
+        },
         {
           "username": "cb750f_sa22c",
           "url": "https://www.threads.com/@cb750f_sa22c/post/Df_WQx6o-ig",
@@ -923,7 +938,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-22T11:57:06+09:00",
+      "fetchedAt": "2026-11-22T14:57:21+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
