@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>どこでもソース管理 ― Source Control Anywhere</title>
+<style>
+  :root{
+    --cream:#faf6ec; --ink:#2e2a24; --olive:#6b7250; --terra:#c96f4a; --line:#ddd3bd;
+    --card:#fffdf7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+    line-height:1.9;font-size:16px}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 64px}
+  header{padding:56px 0 8px;text-align:center}
+  .kicker{color:var(--terra);font-weight:700;letter-spacing:.18em;font-size:13px}
+  h1{font-size:40px;margin:10px 0 4px;letter-spacing:.02em}
+  .en{color:var(--olive);font-size:15px;letter-spacing:.12em}
+  .lead{font-size:19px;margin:28px auto 0;max-width:640px}
+  h2{font-size:24px;margin:52px 0 14px;padding-left:12px;border-left:6px solid var(--olive)}
+  p{margin:10px 0}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .card h3{margin:0 0 6px;font-size:17px;color:var(--olive)}
+  .card p{margin:0;font-size:14.5px}
+  .diagram{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:22px 20px;margin-top:18px;font-size:15px}
+  .diagram .box{border:2px solid var(--olive);border-radius:10px;padding:14px 16px;margin-top:10px}
+  .diagram .data{border-color:var(--terra)}
+  .diagram .t{font-weight:700}
+  table{width:100%;border-collapse:collapse;margin-top:14px;background:var(--card)}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;font-size:15px}
+  th{background:#f1ead6}
+  .note{font-size:13.5px;color:#6d675c}
+  .status{background:#f1ead6;border-radius:12px;padding:18px 20px;margin-top:18px}
+  footer{margin-top:56px;text-align:center;color:#6d675c;font-size:13.5px}
+  @media (max-width:560px){ h1{font-size:31px} .lead{font-size:17px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">開発中</div>
+  <h1>どこでもソース管理</h1>
+  <div class="en">SOURCE CONTROL ANYWHERE</div>
+  <p class="lead">アプリを1つ起動するだけ。<br>
+  ソースの置き場と、編集画面と、公開プレビューが、自分の機械の中にそろいます。<br>
+  ネットが無くても動きます。</p>
+</header>
+
+<h2>これは何か</h2>
+<p>GitHub のような「ソースコードの置き場」を、クラウドではなく自分のパソコンの中で動かすアプリです。アカウント登録も、サーバーの用意も要りません。アプリの中に小さな Linux の箱が入っていて、その中で置き場と編集画面が動きます。</p>
+
+<div class="diagram">
+  <div class="t">アプリの中身</div>
+  <div class="box">
+    <span class="t">箱（Ubuntu）</span> ― 起動すると中で動くもの<br>
+    ・Forgejo ― ソースの置き場（GitHub の役割）<br>
+    ・VS Code Server ― ブラウザで開く編集画面。ターミナル付き<br>
+    ・Pages ― 作ったサイトをその場で表示する仕組み<br>
+    ・Node／Python／Rust ― もの作りの道具<br>
+    ・壁紙 ― 箱が動いていることを見せる「顔」
+  </div>
+  <div class="box data">
+    <span class="t">データ（箱とは別）</span> ― 利用者のもの全部<br>
+    リポジトリ、ホームフォルダ、ソースコード、データベースのデータ。<br>
+    箱は作り直せます。守るのはこのデータだけです。
+  </div>
+</div>
+
+<h2>できること</h2>
+<div class="cards">
+  <div class="card"><h3>起動するだけ</h3><p>環境構築がありません。アプリを開けば、置き場と編集画面がもう使えます。教える側が用意するのはアプリ1個だけです。</p></div>
+  <div class="card"><h3>ネットなしで完結</h3><p>教室、ネットに繋げない役場の現場、船の上、災害時。ネットが無い場所でも、作る・置く・見るが全部できます。</p></div>
+  <div class="card"><h3>USB 1本で持ち運ぶ</h3><p>Mac 版と Windows 版と共通データを USB に入れれば、どちらの機械に挿しても同じ置き場が開きます。</p></div>
+  <div class="card"><h3>バックアップはコピーだけ</h3><p>データは1つにまとまっているので、コピーすればバックアップ完了です。箱の側は作り直せます。</p></div>
+  <div class="card"><h3>更新は承認してから</h3><p>勝手に更新しません。棚卸しをして、脆弱性と照合して、報告が出て、承認してから更新します。ネットが無い場所へは、更新パッケージを持ち込めます。</p></div>
+  <div class="card"><h3>壊しても戻せる</h3><p>箱の中は本物の Linux です。学習や実験で壊しても、箱を作り直せば元通り。データは無事です。</p></div>
+  <div class="card"><h3>VS Code と一緒に</h3><p>普段の道具は VS Code のままで大丈夫です。置き場と実行環境だけ、箱が引き受けます。VS Code の無い機械では、ブラウザの編集画面も使えます。</p></div>
+</div>
+
+<h2>いつもの VS Code からつなぐ</h2>
+<p>普段の VS Code がメインの道具なら、そのまま箱につないで使えます。やり方は、いつものリモート接続と同じです。</p>
+<div class="cards">
+  <div class="card"><h3>1. 左下から接続</h3><p>VS Code の左下にあるリモートのボタンから「ホストに接続」を選びます。</p></div>
+  <div class="card"><h3>2. 箱のアドレスを入れる</h3><p>このツールのアドレスを入れると、VS Code が箱の中につながります。</p></div>
+  <div class="card"><h3>3. すぐ作業</h3><p>フォルダを開いて、下のターミナルでそのまま作業が始められます。ファイルは箱の中、置き場も箱の中です。</p></div>
+</div>
+
+<h2>実測（試行構成）</h2>
+<table>
+  <tr><th>項目</th><th>数字</th></tr>
+  <tr><td>起動（編集画面が開くまで）</td><td>中央値 約12秒</td></tr>
+  <tr><td>git の push</td><td>約0.8秒</td></tr>
+  <tr><td>箱の大きさ（最小構成）</td><td>1.6GB（圧縮すると 0.82GB）</td></tr>
+</table>
+<p class="note">※ 試行構成（Ubuntu の箱、Mac／HVF）での実測です。全部載せ構成の実測はこれから行います。</p>
+
+<h2>こんな場所で</h2>
+<div class="cards">
+  <div class="card"><h3>学校</h3><p>学生の「相方」として。アカウント登録なしで、git の練習、Linux の学習、プログラミングに使えます。メインの道具は普段の VS Code のままで、生徒の機械にサーバーを用意する必要がありません。</p></div>
+  <div class="card"><h3>小さな役場・現場</h3><p>閉じたネットワークの中でも、文書とデータの置き場と公開ができます。</p></div>
+  <div class="card"><h3>個人の開発</h3><p>自分のソースを自分の手元に置いて、クラウドに依存しない開発環境として。</p></div>
+</div>
+
+<div class="status">
+  <p style="margin:0"><strong>状態</strong>：開発中です。価格と発売時期は未定です。このページは仕組みの説明用に作った下書きで、数字は実測がそろい次第、更新します。</p>
+</div>
+
+<footer>Lyre3 Games</footer>
+
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cdf4ee53507948e4a412f503875833cd"}'></script><!-- End Cloudflare Web Analytics --></body>
+</html>

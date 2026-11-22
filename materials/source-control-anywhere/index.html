@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<link rel="icon" href="data:," />
+<title>どこでもソース管理 ― ネットがなくても、自分の置き場でもの作り</title>
+<meta name="description" content="アプリを開くだけで、自分のパソコンの中に「作ったものをしまう場所」と「書く場所」と「見せる場所」がそろいます。ネットがなくても、アカウントがなくても使えます。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf7f1; --bg-2:#f3eee3; --surface:#ffffff; --surface-2:#f6f1e7;
+    --ink:#22303a; --ink-2:#475a66; --muted:#7d8b93; --line:#e6ddcb;
+    --teal:#0f766e; --teal-dark:#0a544e; --teal-soft:#e2f2ec;
+    --amber:#c2710a; --amber-bg:#fdf0d5;
+    --radius:18px; --shadow:0 10px 28px rgba(34,48,58,.07);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans JP",system-ui,-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;
+    line-height:1.8;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:780px;margin:0 auto;padding:0 20px 64px}
+  @media(min-width:900px){.wrap{max-width:840px;padding:0 28px}}
+
+  .hero{padding:48px 0 8px}
+  .hero-eyebrow{display:inline-block;font-size:13px;font-weight:700;color:var(--teal-dark);
+    background:var(--teal-soft);padding:7px 14px;border-radius:999px}
+  .hero h1{font-weight:900;font-size:clamp(29px,7.4vw,44px);line-height:1.45;margin:20px 0 0}
+  .hero h1 .hl{color:var(--teal)}
+  .hero-lead{margin:18px 0 0;font-size:16.5px;line-height:1.95;color:var(--ink-2);max-width:36em}
+  .hero-lead strong{color:var(--ink)}
+  .hero-points{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+  .hero-points span{font-size:13.5px;font-weight:700;background:var(--surface);
+    border:1px solid var(--line);padding:8px 14px;border-radius:999px}
+  .hero-points span::before{content:"✓ ";color:var(--teal);font-weight:900}
+  .btn-prep{display:inline-flex;align-items:center;gap:9px;margin-top:26px;
+    background:#f59e0b;color:#221503;font-weight:900;font-size:15px;
+    padding:13px 22px;border-radius:999px;box-shadow:0 8px 20px rgba(245,158,11,.25)}
+
+  .how-flow{margin-top:30px;background:var(--surface);border:1px solid var(--line);
+    border-radius:22px;box-shadow:var(--shadow);padding:22px 20px 18px}
+  .how-flow h2{font-size:17px;margin:0 0 16px;text-align:center}
+  .steps{display:grid;gap:12px}
+  @media(min-width:700px){.steps{grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch}}
+  .step{background:var(--surface-2);border-radius:14px;padding:16px;text-align:center}
+  .step .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;
+    background:var(--teal);color:#fff;font-weight:900;font-size:14px;margin-bottom:8px}
+  .step strong{display:block;font-size:15.5px;margin-bottom:4px}
+  .step p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.75}
+  .step-arrow{display:none}
+  @media(min-width:700px){.step-arrow{display:grid;place-items:center;font-size:20px;color:var(--teal);font-weight:900}}
+
+  section{padding:54px 0 6px}
+  .sec-label{display:inline-block;font-size:13px;font-weight:900;color:var(--teal-dark);
+    background:var(--teal-soft);padding:5px 13px;border-radius:999px;margin:0 0 14px}
+  h2.sec-title{font-weight:900;font-size:clamp(23px,5.8vw,31px);line-height:1.5;margin:0 0 12px}
+  .sec-lead{color:var(--ink-2);font-size:15.5px;margin:0 0 24px;max-width:38em}
+
+  .worries,.cards{display:grid;gap:13px}
+  @media(min-width:700px){.worries{grid-template-columns:repeat(3,1fr)} .cards{grid-template-columns:repeat(2,1fr)}}
+  .worry,.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 20px;box-shadow:var(--shadow)}
+  .worry p,.card p{margin:0;font-size:14.5px;color:var(--ink-2)}
+  .worry strong,.card h3{color:var(--ink)}
+  .card h3{margin:0 0 6px;font-size:16.5px;color:var(--teal-dark)}
+  .card p{margin:0}
+
+  figure.illo{margin:26px 0 0}
+  figure.illo img{width:100%;border-radius:22px;border:1px solid var(--line);box-shadow:var(--shadow)}
+  figure.illo figcaption{font-size:13px;color:var(--muted);margin-top:10px;text-align:center}
+
+  .split{background:var(--surface);border:1px solid var(--line);border-radius:22px;
+    box-shadow:var(--shadow);padding:22px;margin-top:6px}
+  .split .row{border-radius:14px;padding:16px 18px;margin-top:12px}
+  .split .app{background:var(--teal-soft)}
+  .split .data{background:var(--amber-bg)}
+  .split .row strong{display:block;margin-bottom:4px}
+  .split .row p{margin:0;font-size:14.5px;color:var(--ink-2)}
+
+  .status{background:var(--bg-2);border-radius:var(--radius);padding:18px 20px;margin-top:22px}
+  .status p{margin:0;font-size:14.5px;color:var(--ink-2)}
+  footer{margin-top:56px;text-align:center;color:var(--muted);font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <span class="hero-eyebrow">開発中の新しい道具です</span>
+  <h1>アプリを開くだけ。<br>自分のパソコンが、<span class="hl">もの作りの場所</span>になります。</h1>
+  <p class="hero-lead">作ったプログラムや原稿をしまう「置き場」と、書くための「編集画面」と、作ったものをすぐ見せる「公開の仕組み」。その全部が、<strong>自分のパソコンの中</strong>にそろいます。ネットがなくても、アカウントを作らなくても使えます。</p>
+  <div class="hero-points">
+    <span>ネットがなくても使える</span>
+    <span>アカウント登録いらない</span>
+    <span>USBで持ち運べる</span>
+    <span>壊しても戻せる</span>
+  </div>
+  <span class="btn-prep">現在、開発中です</span>
+
+  <div class="how-flow">
+    <h2>使い方は、3つだけ</h2>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><strong>アプリを開く</strong><p>十数秒で、置き場と編集の準備が整います。用意するものはアプリ1個だけです。</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><span class="n">2</span><strong>いつもの道具で書く</strong><p>普段の VS Code からそのままつないで書けます。ない機械では、ブラウザの編集画面も使えます。</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><span class="n">3</span><strong>しまう・見せる</strong><p>置き場にしまうと履歴が残ります。作ったサイトは、その場で表示して確認できます。</p></div>
+    </div>
+  </div>
+
+  <figure class="illo">
+    <img src="assets/media-generation-sca-lp-hero-v1-0-455c4455-0724-40bc-ba0a-9b2626e451cd.webp" alt="パソコンの中に、自分の置き場ができるイメージ">
+    <figcaption>パソコンの中に、自分だけの置き場ができます</figcaption>
+  </figure>
+</div>
+
+<section>
+  <span class="sec-label">こんな困りごとに</span>
+  <h2 class="sec-title">ネットとアカウントが、最初の壁になっていませんか</h2>
+  <div class="worries">
+    <div class="worry"><p><strong>学校でアカウントが作れない</strong><br>生徒全員分の登録は大変で、そもそも許可が下りないこともあります。</p></div>
+    <div class="worry"><p><strong>ネットがない場所では使えない</strong><br>閉じたネットワークの現場や、災害のときには、クラウドの道具は止まってしまいます。</p></div>
+    <div class="worry"><p><strong>大事なものが外にある不安</strong><br>原稿やソースが遠くのサーバーにあると、無くなったときの心配が残ります。</p></div>
+  </div>
+  <p class="sec-lead" style="margin-top:20px">この道具は、その3つを「自分のパソコンの中で完結させる」ことで解きます。データはずっと手元にあります。</p>
+</section>
+
+<section>
+  <span class="sec-label">仕組み</span>
+  <h2 class="sec-title">「箱」と「データ」は、別々です</h2>
+  <p class="sec-lead">アプリの中には小さな「箱」が入っていて、その中で置き場や編集画面が動きます。そして、あなたの作ったものは、箱とは別の「データ」として置かれます。</p>
+  <div class="split">
+    <div class="row app"><strong>箱（アプリの側）</strong><p>置き場、編集画面、公開の仕組みが入っています。壊れたら作り直せます。Mac でも Windows でも動きます。</p></div>
+    <div class="row data"><strong>データ（あなたの側）</strong><p>作ったもの全部。原稿、ソース、写真、データベースの中身まで。守るのはこれだけです。</p></div>
+  </div>
+  <figure class="illo">
+    <img src="assets/media-generation-sca-lp-split-v2-0-60cbd2e2-dfa9-48b2-9739-e93699d2154e.webp" alt="パソコンの中の置き場と、自分のノートやドライブが、別々に置かれているイメージ">
+    <figcaption>道具の箱と、あなたの大事なものは、別々に置かれます</figcaption>
+  </figure>
+  <div class="cards" style="margin-top:16px">
+    <div class="card"><h3>USB 1本で、どの機械でも</h3><p>Mac 版と Windows 版とデータを USB に入れておけば、どちらの機械に挿しても、同じ置き場が開きます。</p></div>
+    <div class="card"><h3>バックアップは、コピーだけ</h3><p>データは1つにまとまっているので、別の場所にコピーすれば、それでバックアップ完了です。</p></div>
+    <div class="card"><h3>更新は、勝手にしません</h3><p>新しい版が出ても、まず中身を調べて、報告を見て、よいと言ってから更新します。ネットのない場所へは、更新を持ち込むこともできます。</p></div>
+    <div class="card"><h3>壊しても、戻せます</h3><p>箱の中は本物の Linux です。学習や実験で壊しても、箱を作り直せば元通り。データは無事なままです。</p></div>
+  </div>
+</section>
+
+<section>
+  <span class="sec-label">使う場面</span>
+  <h2 class="sec-title">学生の「相方」に。小さな現場の「置き場」に</h2>
+  <figure class="illo" style="margin:0 0 24px">
+    <img src="assets/media-generation-sca-lp-school-v1-0-7df7933f-a38d-466a-b59b-d95a42a5219e.webp" alt="教室でノートパソコンに向かう学生のイメージ">
+  </figure>
+  <div class="cards">
+    <div class="card"><h3>学校で</h3><p>プログラムを書く練習、Linux の学習、その相方として。メインの道具は普段の VS Code のままで、生徒の機械にサーバーを用意する必要がありません。</p></div>
+    <div class="card"><h3>AI の相方にも</h3><p>ミューズさんのような AI が、作業の置き場として使えます。人と AI が、同じ置き場を見て一緒に作業できます。</p></div>
+    <div class="card"><h3>小さな役場・現場で</h3><p>ネットに繋げない場所でも、文書とデータの置き場と、作ったものの公開ができます。</p></div>
+    <div class="card"><h3>個人のもの作りに</h3><p>自分の原稿やソースを、自分の手元に置いておきたい人に。クラウドに依存しない置き場です。</p></div>
+    <div class="card"><h3>持ち運んで</h3><p>USB に入れて持ち歩けば、教室でも自宅でも、同じ続きから始められます。</p></div>
+  </div>
+  <div class="status">
+    <p><strong>状態</strong>：開発中です。価格と発売の時期は、まだ決まっていません。仕組みの詳しい数字（速さや大きさの実測）を知りたい方には、<a href="tech.html">技術版のページ</a>も用意しています。</p>
+  </div>
+</section>
+
+<section>
+  <span class="sec-label">続報について</span>
+  <h2 class="sec-title">欲しくなったら、その後は</h2>
+  <p class="sec-lead">開発の様子と、発売が決まった時のお知らせは、Lyre3 Games のサイトと SNS（Facebook／Threads）で出します。今は、作っている様子を見守っていただければうれしいです。</p>
+</section>
+
+<footer>どこでもソース管理 ― Source Control Anywhere ／ Lyre3 Games</footer>
+
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cdf4ee53507948e4a412f503875833cd"}'></script><!-- End Cloudflare Web Analytics --></body>
+</html>
