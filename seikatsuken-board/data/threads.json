@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-22T15:57:07+09:00",
+  "generatedAt": "2026-11-22T16:57:23+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-22T15:57:07+09:00",
+      "fetchedAt": "2026-11-22T16:57:23+09:00",
       "posts": [
         {
           "username": "nakatty01",
@@ -280,7 +280,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-22T15:57:07+09:00",
+      "fetchedAt": "2026-11-22T16:57:23+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -302,7 +302,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-22T15:57:07+09:00",
+      "fetchedAt": "2026-11-22T16:57:23+09:00",
       "posts": [
         {
           "username": "masaharu.ks2kp",
@@ -333,6 +333,21 @@
           "watched": true,
           "community": "#宮城県道路情報",
           "spot": "月山道"
+        },
+        {
+          "username": "gucchi_yamagatalife",
+          "url": "https://www.threads.com/@gucchi_yamagatalife/post/DgBTwAFkjXK",
+          "text": "【雪の山道、米沢通いがやばい】 ◎今回の話のポイント ①【混む王道を避けて山道を回っていく米沢通い】 僕は今川西と米沢に通っていて 山形市から長井へ向かう途中から川西経由で向かっています。 王道の道は交通量が多くて混むので、山の方をぐるっと回っていく道を通っています。 ②【地域が変わると雪の量が全然違う】 山道は雪が結構降っていて、さっき事故っている車もいました。 山形市側は全然積もっていないのに",
+          "likeCount": 8,
+          "takenAt": "2026-11-22T07:31:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
         },
         {
           "username": "ri2618it0630072",
@@ -804,7 +819,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-22T15:57:07+09:00",
+      "fetchedAt": "2026-11-22T16:57:23+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -841,8 +856,23 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-22T15:57:07+09:00",
+      "fetchedAt": "2026-11-22T16:57:23+09:00",
       "posts": [
+        {
+          "username": "iiyone2020",
+          "url": "https://www.threads.com/@iiyone2020/post/DgCOf28o5AL",
+          "text": "🌈2026年11月22日（日）の山形県米沢市（やまがたけん よねざわし）の住之江橋（すみのえばし）からの景色です😊✨ 山の方には雪が積もっていますが、他はほとんど積もっていません☃️ 今日は天気も良いです☀️ #山形県米沢市 #米沢駅前 #米沢市立第一中学校近く #雪のある景色 #住之江橋",
+          "likeCount": 2,
+          "takenAt": "2026-11-22T16:04:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "米沢市"
+        },
         {
           "username": "iiyone2020",
           "url": "https://www.threads.com/@iiyone2020/post/DgCDGWxI7tZ",
@@ -953,7 +983,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-22T15:57:07+09:00",
+      "fetchedAt": "2026-11-22T16:57:23+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
