@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-22T17:57:19+09:00",
+  "generatedAt": "2026-11-22T20:57:03+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-22T17:57:19+09:00",
+      "fetchedAt": "2026-11-22T20:57:03+09:00",
       "posts": [
         {
           "username": "nakatty01",
@@ -280,7 +280,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-22T17:57:19+09:00",
+      "fetchedAt": "2026-11-22T20:57:03+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -302,8 +302,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-22T17:57:19+09:00",
+      "fetchedAt": "2026-11-22T20:57:03+09:00",
       "posts": [
+        {
+          "username": "trafficlip",
+          "url": "https://www.threads.com/@trafficlip/post/DgCqh08Gp6E",
+          "text": "#国道13号 #主寝坂道路 で事故 一部通行止め #trafficlip #通行止 #山形県道路情報 山形河川国道事務所などによると、山形県最上の国道13号[主寝坂道路]で事故が発生し、11月22日19:40から、上り線(南行/金山北方面)の及位IC→中田IC間で通行止めとなっています。 https://news.jp/i/1497192459384471840",
+          "likeCount": 0,
+          "takenAt": "2026-11-22T20:09:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "国道13号"
+        },
         {
           "username": "trafficlip",
           "url": "https://www.threads.com/@trafficlip/post/DgCWvv1GnqN",
@@ -834,7 +849,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-22T17:57:19+09:00",
+      "fetchedAt": "2026-11-22T20:57:03+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -871,7 +886,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-22T17:57:19+09:00",
+      "fetchedAt": "2026-11-22T20:57:03+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -998,7 +1013,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-22T17:57:19+09:00",
+      "fetchedAt": "2026-11-22T20:57:03+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
