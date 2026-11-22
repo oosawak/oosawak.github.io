@@ -2,43 +2,27 @@
 <Report xmlns="http://xml.kishou.go.jp/jmaxml1/" xmlns:jmx="http://xml.kishou.go.jp/jmaxml1/" xmlns:jmx_add="http://xml.kishou.go.jp/jmaxml1/addition1/">
 <Control>
 <Title>気象警報・注意報（Ｈ２７）</Title>
-<DateTime>2026-11-20T19:58:02Z</DateTime>
+<DateTime>2026-11-22T07:22:47Z</DateTime>
 <Status>通常</Status>
 <EditorialOffice>福島地方気象台</EditorialOffice>
 <PublishingOffice>福島地方気象台</PublishingOffice>
 </Control>
 <Head xmlns="http://xml.kishou.go.jp/jmaxml1/informationBasis1/">
 <Title>福島県気象警報・注意報</Title>
-<ReportDateTime>2026-11-21T04:58:00+09:00</ReportDateTime>
-<TargetDateTime>2026-11-21T04:58:00+09:00</TargetDateTime>
+<ReportDateTime>2026-11-22T16:22:00+09:00</ReportDateTime>
+<TargetDateTime>2026-11-22T16:22:00+09:00</TargetDateTime>
 <EventID/>
 <InfoType>発表</InfoType>
 <Serial/>
 <InfoKind>気象警報・注意報</InfoKind>
 <InfoKindVersion>1.2_2</InfoKindVersion>
 <Headline>
-<Text>会津では、大雪や竜巻などの激しい突風、落雷、なだれ、電線等への着雪に注意してください。福島県では、霜に対する農作物の管理に注意してください。</Text>
+<Text>福島県では、霜に対する農作物の管理に注意してください。</Text>
 <Information type="気象警報・注意報（府県予報区等）">
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</Kind>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </Kind>
 <Areas codeType="気象情報／府県予報区・細分区域等">
 <Area>
@@ -75,24 +59,8 @@
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</Kind>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </Kind>
 <Areas codeType="気象情報／府県予報区・細分区域等">
 <Area>
@@ -177,24 +145,8 @@
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</Kind>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </Kind>
 <Areas codeType="気象情報／府県予報区・細分区域等">
 <Area>
@@ -204,10 +156,6 @@
 </Areas>
 </Item>
 <Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
 <Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
@@ -220,10 +168,6 @@
 </Areas>
 </Item>
 <Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
 <Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
@@ -251,10 +195,6 @@
 </Item>
 <Item>
 <Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
 </Kind>
@@ -278,10 +218,6 @@
 </Areas>
 </Item>
 <Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
 <Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
@@ -331,24 +267,8 @@
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</Kind>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
@@ -503,10 +423,6 @@
 </Item>
 <Item>
 <Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
 </Kind>
@@ -518,10 +434,6 @@
 </Areas>
 </Item>
 <Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
 <Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
@@ -535,10 +447,6 @@
 </Item>
 <Item>
 <Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
 </Kind>
@@ -550,10 +458,6 @@
 </Areas>
 </Item>
 <Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
 <Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
@@ -567,10 +471,6 @@
 </Item>
 <Item>
 <Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
 </Kind>
@@ -583,24 +483,8 @@
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</Kind>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
@@ -611,24 +495,8 @@
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</Kind>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
@@ -639,24 +507,8 @@
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</Kind>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
@@ -667,24 +519,8 @@
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</Kind>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
@@ -694,10 +530,6 @@
 </Areas>
 </Item>
 <Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
 <Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
@@ -711,10 +543,6 @@
 </Item>
 <Item>
 <Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
 </Kind>
@@ -726,10 +554,6 @@
 </Areas>
 </Item>
 <Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
 <Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
@@ -743,10 +567,6 @@
 </Item>
 <Item>
 <Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
 </Kind>
@@ -758,10 +578,6 @@
 </Areas>
 </Item>
 <Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
 <Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
@@ -775,10 +591,6 @@
 </Item>
 <Item>
 <Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
 </Kind>
@@ -790,10 +602,6 @@
 </Areas>
 </Item>
 <Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
 <Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
@@ -1109,42 +917,6 @@
 <Information type="気象警報・注意報（警報注意報種別毎）">
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</Kind>
-<Areas codeType="気象情報／府県予報区・細分区域等">
-<Area>
-<Name>会津北部</Name>
-<Code>070031</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-</Kind>
-<Areas codeType="気象情報／府県予報区・細分区域等">
-<Area>
-<Name>会津</Name>
-<Code>070030</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-</Kind>
-<Areas codeType="気象情報／府県予報区・細分区域等">
-<Area>
-<Name>会津北部</Name>
-<Code>070031</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
 </Kind>
@@ -1152,18 +924,6 @@
 <Area>
 <Name>福島県</Name>
 <Code>070000</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-</Kind>
-<Areas codeType="気象情報／府県予報区・細分区域等">
-<Area>
-<Name>会津北部</Name>
-<Code>070031</Code>
 </Area>
 </Areas>
 </Item>
@@ -1176,37 +936,12 @@
 <Warning type="気象警報・注意報（府県予報区等）">
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</LastKind>
-<Addition>
-<Note>降雪による交通障害</Note>
-</Addition>
-</Kind>
-<Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-</LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
 </LastKind>
 </Kind>
 <Kind>
@@ -1216,24 +951,15 @@
 <LastKind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</LastKind>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </LastKind>
 </Kind>
 <Area>
 <Name>福島県</Name>
 <Code>070000</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 <FullStatus>一部</FullStatus>
-<EditingMark>0</EditingMark>
+<EditingMark>1</EditingMark>
 </Item>
 </Warning>
 <Warning type="気象警報・注意報（一次細分区域等）">
@@ -1253,7 +979,7 @@
 </Area>
 <ChangeStatus>変化無</ChangeStatus>
 <FullStatus>全域</FullStatus>
-<EditingMark>1</EditingMark>
+<EditingMark>0</EditingMark>
 </Item>
 <Item>
 <Kind>
@@ -1271,41 +997,16 @@
 </Area>
 <ChangeStatus>変化無</ChangeStatus>
 <FullStatus>全域</FullStatus>
-<EditingMark>1</EditingMark>
+<EditingMark>0</EditingMark>
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</LastKind>
-<Addition>
-<Note>降雪による交通障害</Note>
-</Addition>
-</Kind>
-<Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-</LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
 </LastKind>
 </Kind>
 <Kind>
@@ -1315,23 +1016,14 @@
 <LastKind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</LastKind>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </LastKind>
 </Kind>
 <Area>
 <Name>会津</Name>
 <Code>070030</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
-<FullStatus>一部</FullStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
+<FullStatus>全域</FullStatus>
 <EditingMark>0</EditingMark>
 </Item>
 </Warning>
@@ -1446,37 +1138,12 @@
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</LastKind>
-<Addition>
-<Note>降雪による交通障害</Note>
-</Addition>
-</Kind>
-<Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-</LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
 </LastKind>
 </Kind>
 <Kind>
@@ -1486,38 +1153,25 @@
 <LastKind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</LastKind>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </LastKind>
 </Kind>
 <Area>
 <Name>会津北部</Name>
 <Code>070031</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 <FullStatus>全域</FullStatus>
-<EditingMark>1</EditingMark>
+<EditingMark>0</EditingMark>
 </Item>
 <Item>
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -1532,23 +1186,19 @@
 <Name>会津中部</Name>
 <Code>070032</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 <FullStatus>全域</FullStatus>
-<EditingMark>1</EditingMark>
+<EditingMark>0</EditingMark>
 </Item>
 <Item>
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -1563,9 +1213,9 @@
 <Name>会津南部</Name>
 <Code>070033</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 <FullStatus>全域</FullStatus>
-<EditingMark>1</EditingMark>
+<EditingMark>0</EditingMark>
 </Item>
 </Warning>
 <Warning type="気象警報・注意報（市町村等）">
@@ -1589,15 +1239,11 @@
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -1612,7 +1258,7 @@
 <Name>会津若松市</Name>
 <Code>0720200</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
@@ -1634,15 +1280,11 @@
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -1657,7 +1299,7 @@
 <Name>郡山市湖南</Name>
 <Code>0720302</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
@@ -1709,37 +1351,12 @@
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</LastKind>
-<Addition>
-<Note>降雪による交通障害</Note>
-</Addition>
-</Kind>
-<Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-</LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
 </LastKind>
 </Kind>
 <Kind>
@@ -1749,22 +1366,13 @@
 <LastKind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</LastKind>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </LastKind>
 </Kind>
 <Area>
 <Name>喜多方市</Name>
 <Code>0720800</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
@@ -1962,15 +1570,11 @@
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -1985,21 +1589,17 @@
 <Name>天栄村湯本</Name>
 <Code>0734402</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -2014,21 +1614,17 @@
 <Name>下郷町</Name>
 <Code>0736200</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -2043,21 +1639,17 @@
 <Name>檜枝岐村</Name>
 <Code>0736400</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -2072,21 +1664,17 @@
 <Name>只見町</Name>
 <Code>0736700</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -2101,41 +1689,16 @@
 <Name>南会津町</Name>
 <Code>0736800</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</LastKind>
-<Addition>
-<Note>降雪による交通障害</Note>
-</Addition>
-</Kind>
-<Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-</LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
 </LastKind>
 </Kind>
 <Kind>
@@ -2145,56 +1708,22 @@
 <LastKind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</LastKind>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </LastKind>
 </Kind>
 <Area>
 <Name>北塩原村</Name>
 <Code>0740200</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</LastKind>
-<Addition>
-<Note>降雪による交通障害</Note>
-</Addition>
-</Kind>
-<Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-</LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
 </LastKind>
 </Kind>
 <Kind>
@@ -2204,56 +1733,22 @@
 <LastKind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</LastKind>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </LastKind>
 </Kind>
 <Area>
 <Name>西会津町</Name>
 <Code>0740500</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</LastKind>
-<Addition>
-<Note>降雪による交通障害</Note>
-</Addition>
-</Kind>
-<Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-</LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
 </LastKind>
 </Kind>
 <Kind>
@@ -2263,56 +1758,22 @@
 <LastKind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</LastKind>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </LastKind>
 </Kind>
 <Area>
 <Name>磐梯町</Name>
 <Code>0740700</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-</LastKind>
-<Addition>
-<Note>降雪による交通障害</Note>
-</Addition>
-</Kind>
-<Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-</LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Kind>
-<Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
 </LastKind>
 </Kind>
 <Kind>
@@ -2322,36 +1783,23 @@
 <LastKind>
 <Name>霜注意報</Name>
 <Code>24</Code>
-</LastKind>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
 </LastKind>
 </Kind>
 <Area>
 <Name>猪苗代町</Name>
 <Code>0740800</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -2366,21 +1814,17 @@
 <Name>会津坂下町</Name>
 <Code>0742100</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -2395,21 +1839,17 @@
 <Name>湯川村</Name>
 <Code>0742200</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -2424,21 +1864,17 @@
 <Name>柳津町</Name>
 <Code>0742300</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -2453,21 +1889,17 @@
 <Name>三島町</Name>
 <Code>0744400</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -2482,21 +1914,17 @@
 <Name>金山町</Name>
 <Code>0744500</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -2511,21 +1939,17 @@
 <Name>昭和村</Name>
 <Code>0744600</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>雷注意報</Name>
 <Code>14</Code>
-<Status>継続</Status>
+<Status>解除</Status>
 <LastKind>
 <Name>雷注意報</Name>
 <Code>14</Code>
 </LastKind>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
 </Kind>
 <Kind>
 <Name>霜注意報</Name>
@@ -2540,7 +1964,7 @@
 <Name>会津美里町</Name>
 <Code>0744700</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
@@ -2947,1865 +2371,19 @@
 <TimeSeriesInfo>
 <TimeDefines>
 <TimeDefine timeId="1">
-<DateTime>2026-11-21T03:00:00+09:00</DateTime>
-<Duration>PT3H</Duration>
-<Name>２１日明け方</Name>
-</TimeDefine>
-<TimeDefine timeId="2">
-<DateTime>2026-11-21T06:00:00+09:00</DateTime>
-<Duration>PT3H</Duration>
-<Name>２１日朝</Name>
-</TimeDefine>
-<TimeDefine timeId="3">
-<DateTime>2026-11-21T09:00:00+09:00</DateTime>
-<Duration>PT3H</Duration>
-<Name>２１日昼前</Name>
-</TimeDefine>
-<TimeDefine timeId="4">
-<DateTime>2026-11-21T12:00:00+09:00</DateTime>
-<Duration>PT3H</Duration>
-<Name>２１日昼過ぎ</Name>
-</TimeDefine>
-<TimeDefine timeId="5">
-<DateTime>2026-11-21T15:00:00+09:00</DateTime>
-<Duration>PT3H</Duration>
-<Name>２１日夕方</Name>
-</TimeDefine>
-<TimeDefine timeId="6">
-<DateTime>2026-11-21T18:00:00+09:00</DateTime>
-<Duration>PT3H</Duration>
-<Name>２１日夜のはじめ頃</Name>
-</TimeDefine>
-<TimeDefine timeId="7">
-<DateTime>2026-11-21T21:00:00+09:00</DateTime>
-<Duration>PT3H</Duration>
-<Name>２１日夜遅く</Name>
-</TimeDefine>
-<TimeDefine timeId="8">
-<DateTime>2026-11-22T00:00:00+09:00</DateTime>
-<Duration>PT3H</Duration>
-<Name>２２日未明</Name>
-</TimeDefine>
-<TimeDefine timeId="9">
-<DateTime>2026-11-22T03:00:00+09:00</DateTime>
-<Duration>PT3H</Duration>
-<Name>２２日明け方</Name>
-</TimeDefine>
-</TimeDefines>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>会津若松市</Name>
-<Code>0720200</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>郡山市湖南</Name>
-<Code>0720302</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Local>
-<AreaName>山沿い</AreaName>
-<Significancy refID="1" type="雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Addition>
-<Note>降雪による交通障害</Note>
-</Addition>
-</Local>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>雪</Type>
-<SnowfallDepthPart>
-<Base>
-<Local>
-<AreaName>山沿い</AreaName>
-<jmx_eb:SnowfallDepth description="２５センチ" type="１２時間最大降雪量" unit="cm">25</jmx_eb:SnowfallDepth>
-</Local>
-</Base>
-</SnowfallDepthPart>
-</Property>
-</Kind>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="着雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="着雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>喜多方市</Name>
-<Code>0720800</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>天栄村湯本</Name>
-<Code>0734402</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>下郷町</Name>
-<Code>0736200</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>檜枝岐村</Name>
-<Code>0736400</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>只見町</Name>
-<Code>0736700</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>南会津町</Name>
-<Code>0736800</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Local>
-<AreaName>山沿い</AreaName>
-<Significancy refID="1" type="雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Addition>
-<Note>降雪による交通障害</Note>
-</Addition>
-</Local>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>雪</Type>
-<SnowfallDepthPart>
-<Base>
-<Local>
-<AreaName>山沿い</AreaName>
-<jmx_eb:SnowfallDepth description="２５センチ" type="１２時間最大降雪量" unit="cm">25</jmx_eb:SnowfallDepth>
-</Local>
-</Base>
-</SnowfallDepthPart>
-</Property>
-</Kind>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="着雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="着雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>北塩原村</Name>
-<Code>0740200</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Local>
-<AreaName>山沿い</AreaName>
-<Significancy refID="1" type="雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Addition>
-<Note>降雪による交通障害</Note>
-</Addition>
-</Local>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>雪</Type>
-<SnowfallDepthPart>
-<Base>
-<Local>
-<AreaName>山沿い</AreaName>
-<jmx_eb:SnowfallDepth description="２５センチ" type="１２時間最大降雪量" unit="cm">25</jmx_eb:SnowfallDepth>
-</Local>
-</Base>
-</SnowfallDepthPart>
-</Property>
-</Kind>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="着雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="着雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>西会津町</Name>
-<Code>0740500</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Addition>
-<Note>降雪による交通障害</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>雪</Type>
-<SnowfallDepthPart>
-<Base>
-<jmx_eb:SnowfallDepth description="２５センチ" type="１２時間最大降雪量" unit="cm">25</jmx_eb:SnowfallDepth>
-</Base>
-</SnowfallDepthPart>
-</Property>
-</Kind>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="着雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="着雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>磐梯町</Name>
-<Code>0740700</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>大雪注意報</Name>
-<Code>12</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Addition>
-<Note>降雪による交通障害</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>雪</Type>
-<SnowfallDepthPart>
-<Base>
-<jmx_eb:SnowfallDepth description="２５センチ" type="１２時間最大降雪量" unit="cm">25</jmx_eb:SnowfallDepth>
-</Base>
-</SnowfallDepthPart>
-</Property>
-</Kind>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Kind>
-<Name>着雪注意報</Name>
-<Code>26</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="着雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="着雪危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="着雪危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>猪苗代町</Name>
-<Code>0740800</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>会津坂下町</Name>
-<Code>0742100</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>湯川村</Name>
-<Code>0742200</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>柳津町</Name>
-<Code>0742300</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>三島町</Name>
-<Code>0744400</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>金山町</Name>
-<Code>0744500</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>昭和村</Name>
-<Code>0744600</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>雷注意報</Name>
-<Code>14</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="雷危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="5" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="6" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="7" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="8" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="9" type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Addition>
-<Note>竜巻</Note>
-<Note>ひょう</Note>
-</Addition>
-</Base>
-</SignificancyPart>
-<SubsequentSignificancyPart>
-<Base>
-<Significancy type="雷危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Sentence>以後も注意報級</Sentence>
-</Base>
-</SubsequentSignificancyPart>
-</Property>
-</Kind>
-<Area>
-<Name>会津美里町</Name>
-<Code>0744700</Code>
-</Area>
-</Item>
-</TimeSeriesInfo>
-<TimeSeriesInfo>
-<TimeDefines>
-<TimeDefine timeId="1">
-<DateTime>2026-11-21T00:00:00+09:00</DateTime>
-<Duration>P1D</Duration>
-<Name>２１日</Name>
-</TimeDefine>
-<TimeDefine timeId="2">
 <DateTime>2026-11-22T00:00:00+09:00</DateTime>
 <Duration>P1D</Duration>
 <Name>２２日</Name>
 </TimeDefine>
-<TimeDefine timeId="3">
+<TimeDefine timeId="2">
 <DateTime>2026-11-23T00:00:00+09:00</DateTime>
 <Duration>P1D</Duration>
 <Name>２３日</Name>
+</TimeDefine>
+<TimeDefine timeId="3">
+<DateTime>2026-11-24T00:00:00+09:00</DateTime>
+<Duration>P1D</Duration>
+<Name>２４日</Name>
 </TimeDefine>
 </TimeDefines>
 <Item>
@@ -4817,19 +2395,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -4850,19 +2428,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -4883,19 +2461,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -4916,19 +2494,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -4949,19 +2527,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -4982,19 +2560,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5015,19 +2593,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5041,29 +2619,6 @@
 </Item>
 <Item>
 <Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="なだれ危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="なだれ危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="3" type="なだれ危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
 <Property>
@@ -5071,19 +2626,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5104,19 +2659,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5137,19 +2692,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5170,19 +2725,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5203,19 +2758,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5236,19 +2791,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5269,19 +2824,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5302,19 +2857,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5335,19 +2890,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5368,19 +2923,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5401,19 +2956,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5434,19 +2989,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5467,19 +3022,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5500,19 +3055,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5533,19 +3088,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5566,19 +3121,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5599,19 +3154,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5632,19 +3187,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5658,29 +3213,6 @@
 </Item>
 <Item>
 <Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="なだれ危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="なだれ危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="3" type="なだれ危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
 <Property>
@@ -5688,19 +3220,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5714,29 +3246,6 @@
 </Item>
 <Item>
 <Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="なだれ危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="なだれ危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="3" type="なだれ危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
 <Property>
@@ -5744,19 +3253,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5770,29 +3279,6 @@
 </Item>
 <Item>
 <Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="なだれ危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="なだれ危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="3" type="なだれ危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
 <Property>
@@ -5800,19 +3286,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5826,29 +3312,6 @@
 </Item>
 <Item>
 <Kind>
-<Name>なだれ注意報</Name>
-<Code>22</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="なだれ危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="なだれ危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="3" type="なだれ危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-</Kind>
-<Kind>
 <Name>霜注意報</Name>
 <Code>24</Code>
 <Property>
@@ -5856,19 +3319,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5889,19 +3352,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5922,19 +3385,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5955,19 +3418,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -5988,19 +3451,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6021,19 +3484,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6054,19 +3517,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6087,19 +3550,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6120,19 +3583,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6153,19 +3616,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6186,19 +3649,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6219,19 +3682,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6252,19 +3715,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6285,19 +3748,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6318,19 +3781,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6351,19 +3814,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6384,19 +3847,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6417,19 +3880,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6450,19 +3913,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6483,19 +3946,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6516,19 +3979,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6549,19 +4012,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6582,19 +4045,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6615,19 +4078,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6648,19 +4111,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6681,19 +4144,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6714,19 +4177,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6747,19 +4210,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6780,19 +4243,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6813,19 +4276,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6846,19 +4309,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6879,19 +4342,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
@@ -6912,19 +4375,19 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="霜危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
+</Significancy>
+<Significancy refID="2" type="霜危険度">
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="霜危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
 </Significancy>
 <PeakTime>
-<Date>２１日</Date>
+<Date>２３日</Date>
 <Term>朝</Term>
 </PeakTime>
 </Base>
