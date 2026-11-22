@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-22T20:57:03+09:00",
+  "generatedAt": "2026-11-22T21:57:59+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-22T20:57:03+09:00",
+      "fetchedAt": "2026-11-22T21:57:59+09:00",
       "posts": [
         {
           "username": "nakatty01",
@@ -280,7 +280,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-22T20:57:03+09:00",
+      "fetchedAt": "2026-11-22T21:57:59+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -302,8 +302,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-22T20:57:03+09:00",
+      "fetchedAt": "2026-11-22T21:57:59+09:00",
       "posts": [
+        {
+          "username": "c_photo.0131",
+          "url": "https://www.threads.com/@c_photo.0131/post/DgC1mm5EksV",
+          "text": "⁡2026年11月22日 山形市「坂巻跨線橋」⁡ ⁡いよいよ、山形にも本格的な冬が来ました💦⁡ ⁡その前にメロン🍈タンクと新幹線のコラボを撮りに行ってきたよ🚄⁡⁡ ⁡おまけに在来線もパシャリ📸 ⁡⁡ ⁡SPECIAL THANKS noboribow_0716 ⁡ ⁡⁡ ⁡のりさんに教えてもらった橋で寒い中、のりさんにも来て頂き・・・ホントありがとうございました⁡ ⁡やはり夜の新幹線は難しい😭⁡",
+          "likeCount": 2,
+          "takenAt": "2026-11-22T21:46:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
         {
           "username": "trafficlip",
           "url": "https://www.threads.com/@trafficlip/post/DgCqh08Gp6E",
@@ -849,7 +864,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-22T20:57:03+09:00",
+      "fetchedAt": "2026-11-22T21:57:59+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -886,7 +901,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-22T20:57:03+09:00",
+      "fetchedAt": "2026-11-22T21:57:59+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1013,7 +1028,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-22T20:57:03+09:00",
+      "fetchedAt": "2026-11-22T21:57:59+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
