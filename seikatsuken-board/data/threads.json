@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-22T09:57:24+09:00",
+  "generatedAt": "2026-11-22T10:57:32+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-22T09:57:24+09:00",
+      "fetchedAt": "2026-11-22T10:57:32+09:00",
       "posts": [
         {
           "username": "nakatty01",
@@ -280,7 +280,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-22T09:57:24+09:00",
+      "fetchedAt": "2026-11-22T10:57:32+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -302,8 +302,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-22T09:57:24+09:00",
+      "fetchedAt": "2026-11-22T10:57:32+09:00",
       "posts": [
+        {
+          "username": "naoto.nishi_lc",
+          "url": "https://www.threads.com/@naoto.nishi_lc/post/DgBkyGmkrPN",
+          "text": "いやいやいやいや、早いって（笑）月山道路がもう1月ですww 3連休、月山道路使ってお出かけ予定のかた、今朝、こんな状況です。 積もりたての木々は美しいけど、足回り（タイヤ回り？！）はシャバシャバで、毎年のこととはいえ、シーズン初めの運転はちょい身が引き締まりますね #月山道路 #まだ11月なのに #冬が本気出してきた #雪道運転 #集中集中",
+          "likeCount": 1,
+          "takenAt": "2026-11-22T09:59:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "月山道"
+        },
         {
           "username": "ri2618it0630072",
           "url": "https://www.threads.com/@ri2618it0630072/post/DgAzzigjwVF",
@@ -759,7 +774,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-22T09:57:24+09:00",
+      "fetchedAt": "2026-11-22T10:57:32+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -796,7 +811,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-22T09:57:24+09:00",
+      "fetchedAt": "2026-11-22T10:57:32+09:00",
       "posts": [
         {
           "username": "cb750f_sa22c",
@@ -893,7 +908,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-22T09:57:24+09:00",
+      "fetchedAt": "2026-11-22T10:57:32+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
