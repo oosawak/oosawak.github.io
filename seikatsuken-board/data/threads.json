@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-22T10:57:32+09:00",
+  "generatedAt": "2026-11-22T11:57:06+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-22T10:57:32+09:00",
+      "fetchedAt": "2026-11-22T11:57:06+09:00",
       "posts": [
         {
           "username": "nakatty01",
@@ -280,7 +280,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-22T10:57:32+09:00",
+      "fetchedAt": "2026-11-22T11:57:06+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -302,7 +302,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-22T10:57:32+09:00",
+      "fetchedAt": "2026-11-22T11:57:06+09:00",
       "posts": [
         {
           "username": "naoto.nishi_lc",
@@ -408,6 +408,21 @@
           "watched": true,
           "community": "#山形県道路情報",
           "spot": "山形"
+        },
+        {
+          "username": "pikopiko29",
+          "url": "https://www.threads.com/@pikopiko29/post/Df-zBfkkpz_",
+          "text": "昨日通行止めになった関山峠。 今朝6時30分頃 東根→仙台走りました。 夏タイヤは無理よ。",
+          "likeCount": 567,
+          "takenAt": "2026-11-21T08:06:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "関山峠"
         },
         {
           "username": "kawausokun1300",
@@ -774,7 +789,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-22T10:57:32+09:00",
+      "fetchedAt": "2026-11-22T11:57:06+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -811,7 +826,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-22T10:57:32+09:00",
+      "fetchedAt": "2026-11-22T11:57:06+09:00",
       "posts": [
         {
           "username": "cb750f_sa22c",
@@ -908,7 +923,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-22T10:57:32+09:00",
+      "fetchedAt": "2026-11-22T11:57:06+09:00",
       "posts": [
         {
           "username": "mypl.aizu",

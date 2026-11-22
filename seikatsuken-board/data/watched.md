@@ -55,6 +55,9 @@ fetch_threads.py が liked と合わせて threads.json へ反映する。
 - [2026-11-21 08:24] @hanaretemokawaiine いいね82 動画つき コミュニティ:#山形県道路情報 地名:山形
   - いま現在の山形県の雪です☃️❄️ すでに昨日スリップしてる車あったがら みんな安全運転すっぺなぁ〜🚗
   - https://www.threads.com/@hanaretemokawaiine/post/Df-03oPgTT2
+- [2026-11-21 08:06] @pikopiko29 いいね567 画像つき コミュニティ:#宮城県道路情報 地名:関山峠
+  - 昨日通行止めになった関山峠。 今朝6時30分頃 東根→仙台走りました。 夏タイヤは無理よ。
+  - https://www.threads.com/@pikopiko29/post/Df-zBfkkpz_
 - [2026-11-21 06:49] @kawausokun1300 いいね1 画像つき コミュニティ:道路交通情報 地名:山形
   - 山形県道18号 山形朝日線
   - https://www.threads.com/@kawausokun1300/post/Df-qJgtk_tT
