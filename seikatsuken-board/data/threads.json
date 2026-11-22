@@ -1,10 +1,25 @@
 {
-  "generatedAt": "2026-11-23T07:57:29+09:00",
+  "generatedAt": "2026-11-23T08:57:25+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-23T07:57:29+09:00",
+      "fetchedAt": "2026-11-23T08:57:25+09:00",
       "posts": [
+        {
+          "username": "kokounoojisan",
+          "url": "https://www.threads.com/@kokounoojisan/post/DgDaX5WEmwk",
+          "text": "今帰りました。 北仙台周辺もめちゃくちゃ寒いですけど 天気、道路は問題無いです。 それでは スレッズ見回り してきます。🤠",
+          "likeCount": 4,
+          "takenAt": "2026-11-23T03:07:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "仙台"
+        },
         {
           "username": "nakatty01",
           "url": "https://www.threads.com/@nakatty01/post/Df_ziCNlLpP",
@@ -280,7 +295,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-23T07:57:29+09:00",
+      "fetchedAt": "2026-11-23T08:57:25+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -302,7 +317,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-23T07:57:29+09:00",
+      "fetchedAt": "2026-11-23T08:57:25+09:00",
       "posts": [
         {
           "username": "c_photo.0131",
@@ -894,7 +909,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-23T07:57:29+09:00",
+      "fetchedAt": "2026-11-23T08:57:25+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -931,7 +946,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-23T07:57:29+09:00",
+      "fetchedAt": "2026-11-23T08:57:25+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1058,7 +1073,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-23T07:57:29+09:00",
+      "fetchedAt": "2026-11-23T08:57:25+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
