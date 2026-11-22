@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-23T04:57:48+09:00",
+  "generatedAt": "2026-11-23T07:57:29+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-23T04:57:48+09:00",
+      "fetchedAt": "2026-11-23T07:57:29+09:00",
       "posts": [
         {
           "username": "nakatty01",
@@ -280,7 +280,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-23T04:57:48+09:00",
+      "fetchedAt": "2026-11-23T07:57:29+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -302,7 +302,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-23T04:57:48+09:00",
+      "fetchedAt": "2026-11-23T07:57:29+09:00",
       "posts": [
         {
           "username": "c_photo.0131",
@@ -894,7 +894,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-23T04:57:48+09:00",
+      "fetchedAt": "2026-11-23T07:57:29+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -931,7 +931,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-23T04:57:48+09:00",
+      "fetchedAt": "2026-11-23T07:57:29+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1058,8 +1058,23 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-23T04:57:48+09:00",
+      "fetchedAt": "2026-11-23T07:57:29+09:00",
       "posts": [
+        {
+          "username": "mypl.aizu",
+          "url": "https://www.threads.com/@mypl.aizu/post/DgD5HIBEvib",
+          "text": "【11/23の会津の交通情報】 JR磐越西線の計画が変更になっています。 ・郡山〜会津若松は本日終日運休です（当初は始発から運転の予定でした） ・喜多方〜津川は8:30頃から順次再開の予定です（会津若松8:14発の野沢行きから） ・会津若松〜喜多方は折り返し運転です 磐越道は通行止め・事故・渋滞なし。 停電は今朝7時時点で県内約1,900軒が継続中です（北塩原村約900軒、猪苗代町約1,000軒）",
+          "likeCount": 19,
+          "takenAt": "2026-11-23T07:36:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "道路交通情報",
+          "spot": "猪苗代"
+        },
         {
           "username": "yoshikiyoosaka",
           "url": "https://www.threads.com/@yoshikiyoosaka/post/DgDA2Vwk_HX",

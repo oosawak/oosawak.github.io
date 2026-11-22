@@ -139,6 +139,9 @@ fetch_threads.py が liked と合わせて threads.json へ反映する。
   - https://www.threads.com/@iiyone2020/post/Df9gEr0I6oD
 
 ## 福島
+- [2026-11-23 07:36] @mypl.aizu いいね19 コミュニティ:道路交通情報 地名:猪苗代
+  - 【11/23の会津の交通情報】 JR磐越西線の計画が変更になっています。 ・郡山〜会津若松は本日終日運休です（当初は始発から運転の予定でした） ・喜多方〜津川は8:30頃から順次再開の予定です（会津若松8:14発の野沢行きから） ・会津若松〜喜多方は折り返し運転です 磐越道は通行止め・事故・渋滞なし。 停電は今朝7時時点で県内約1,900軒が継続中です（北塩原村約900軒、猪苗代町約1,000軒）
+  - https://www.threads.com/@mypl.aizu/post/DgD5HIBEvib
 - [2026-11-22 23:24] @yoshikiyoosaka いいね3 コミュニティ:道路交通情報 地名:猪苗代
   - https://www.vill.kitashiobara.fukushima.jp/soshiki/0/10352.html 2026年11月22日夜（現時点）の続報です。 道路・孤立状況 北塩原村の公式発表（22日午後7時時点）によると、国道459号と主要な県道の通行止めは午後6時に解除され、孤立状態は解消されました。 残る通行止めは、県道米沢猪苗代線の早稲沢地区〜狐鷹森間のみです。 大型車も
   - https://www.threads.com/@yoshikiyoosaka/post/DgDA2Vwk_HX
