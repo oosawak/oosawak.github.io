@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-23T03:57:16+09:00",
+  "generatedAt": "2026-11-23T04:57:48+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-23T03:57:16+09:00",
+      "fetchedAt": "2026-11-23T04:57:48+09:00",
       "posts": [
         {
           "username": "nakatty01",
@@ -280,7 +280,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-23T03:57:16+09:00",
+      "fetchedAt": "2026-11-23T04:57:48+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -302,7 +302,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-23T03:57:16+09:00",
+      "fetchedAt": "2026-11-23T04:57:48+09:00",
       "posts": [
         {
           "username": "c_photo.0131",
@@ -333,6 +333,21 @@
           "watched": true,
           "community": "#山形県道路情報",
           "spot": "国道13号"
+        },
+        {
+          "username": "yorozuyasince_2026",
+          "url": "https://www.threads.com/@yorozuyasince_2026/post/DgCi4Snknxn",
+          "text": "今年は夏が短かったというか、死ぬほど暑いという日が例年より少ない感じがしたということは、今年の冬は豪雪なのかな。。。 雪の影響で車５０台が一時立ち往生、山形・宮城結ぶ国道…ノーマルタイヤの大型トラックなど複数スタック : 読売新聞 https://share.google/RbrmN01iMKgghTXzb",
+          "likeCount": 0,
+          "takenAt": "2026-11-22T19:02:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
         },
         {
           "username": "trafficlip",
@@ -879,7 +894,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-23T03:57:16+09:00",
+      "fetchedAt": "2026-11-23T04:57:48+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -916,7 +931,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-23T03:57:16+09:00",
+      "fetchedAt": "2026-11-23T04:57:48+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1043,7 +1058,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-23T03:57:16+09:00",
+      "fetchedAt": "2026-11-23T04:57:48+09:00",
       "posts": [
         {
           "username": "yoshikiyoosaka",
