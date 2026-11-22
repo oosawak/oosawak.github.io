@@ -136,6 +136,9 @@ fetch_threads.py が liked と合わせて threads.json へ反映する。
   - https://www.threads.com/@iiyone2020/post/Df9gEr0I6oD
 
 ## 福島
+- [2026-11-22 23:24] @yoshikiyoosaka いいね3 コミュニティ:道路交通情報 地名:猪苗代
+  - https://www.vill.kitashiobara.fukushima.jp/soshiki/0/10352.html 2026年11月22日夜（現時点）の続報です。 道路・孤立状況 北塩原村の公式発表（22日午後7時時点）によると、国道459号と主要な県道の通行止めは午後6時に解除され、孤立状態は解消されました。 残る通行止めは、県道米沢猪苗代線の早稲沢地区〜狐鷹森間のみです。 大型車も
+  - https://www.threads.com/@yoshikiyoosaka/post/DgDA2Vwk_HX
 - [2026-11-22 21:19] @munakata_1962 いいね50 画像つき コミュニティ:#通行止 地名:猪苗代
   - 猪苗代のとある場所、停電と通行止寸前。
   - https://www.threads.com/@munakata_1962/post/DgCykE-gfaJ

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-22T22:57:21+09:00",
+  "generatedAt": "2026-11-23T03:57:16+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-22T22:57:21+09:00",
+      "fetchedAt": "2026-11-23T03:57:16+09:00",
       "posts": [
         {
           "username": "nakatty01",
@@ -280,7 +280,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-22T22:57:21+09:00",
+      "fetchedAt": "2026-11-23T03:57:16+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -302,7 +302,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-22T22:57:21+09:00",
+      "fetchedAt": "2026-11-23T03:57:16+09:00",
       "posts": [
         {
           "username": "c_photo.0131",
@@ -879,7 +879,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-22T22:57:21+09:00",
+      "fetchedAt": "2026-11-23T03:57:16+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -916,7 +916,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-22T22:57:21+09:00",
+      "fetchedAt": "2026-11-23T03:57:16+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1043,8 +1043,23 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-22T22:57:21+09:00",
+      "fetchedAt": "2026-11-23T03:57:16+09:00",
       "posts": [
+        {
+          "username": "yoshikiyoosaka",
+          "url": "https://www.threads.com/@yoshikiyoosaka/post/DgDA2Vwk_HX",
+          "text": "",
+          "likeCount": 3,
+          "takenAt": "2026-11-22T23:24:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "道路交通情報",
+          "spot": "猪苗代"
+        },
         {
           "username": "munakata_1962",
           "url": "https://www.threads.com/@munakata_1962/post/DgCykE-gfaJ",

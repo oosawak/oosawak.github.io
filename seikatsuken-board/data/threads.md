@@ -1,6 +1,6 @@
 # 現地の声（Threads・本人のいいね）— 生活圏防災ライブボード
 
-生成日時: 2026-11-22 22:57（日本時間）
+生成日時: 2026-11-23 03:57（日本時間）
 本人が Threads で「いいね」した投稿だけを、place-aliases.md の対応で各場所に振り分けたもの。
 正本は liked.md。地名キーワード検索による収集は 2026-11-20 に廃止した。
 
@@ -216,6 +216,9 @@
   - https://www.threads.com/@merry.boss_nob/post/Df8o2O7Eip_
 
 ## 福島
+- [2026-11-22 23:24] @yoshikiyoosaka いいね3 見張り:道路交通情報 地名:猪苗代
+  - 
+  - https://www.threads.com/@yoshikiyoosaka/post/DgDA2Vwk_HX
 - [2026-11-22 21:19] @munakata_1962 いいね50 見張り:#通行止 地名:猪苗代 画像つき
   - 猪苗代のとある場所、停電と通行止寸前。
   - https://www.threads.com/@munakata_1962/post/DgCykE-gfaJ
