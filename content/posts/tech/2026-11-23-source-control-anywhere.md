@@ -134,7 +134,7 @@ Androidでも、同じようなことができました。\
 電話には箱を使わず、電話の土台の上で、道具を直接動かします。\
 作ったアプリの名前はPocketGitです。\
 殻はKotlin、制御はRustで、Ubuntuはprootで載せました。\
-Pixel 3aで、ForgejoとPagesとSSHが動いています。\
+Pixel 3aとPixel 4で、ForgejoとPagesとSSHと、VS Codeのサーバーが動いています。\
 初期化は12.9ミリ秒でした。\
 MacのVS Codeから、電話の中のリポジトリに繋いで編集できました。
 
