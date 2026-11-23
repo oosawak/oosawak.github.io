@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-23T23:57:46+09:00",
+  "generatedAt": "2026-11-24T01:57:09+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-23T23:57:46+09:00",
+      "fetchedAt": "2026-11-24T01:57:09+09:00",
       "posts": [
         {
           "username": "katakura_totto",
@@ -310,7 +310,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-23T23:57:46+09:00",
+      "fetchedAt": "2026-11-24T01:57:09+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -332,8 +332,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-23T23:57:46+09:00",
+      "fetchedAt": "2026-11-24T01:57:09+09:00",
       "posts": [
+        {
+          "username": "inaka_rabbit_",
+          "url": "https://www.threads.com/@inaka_rabbit_/post/DgFrrVZE5-l",
+          "text": "雪と紅葉のコラボ🍁🍂☃️ ⁡ 山形県は雪が降りました まだ紅葉が残っているこの11月に ⁡ この早さの積雪は珍しいかも ⁡ とうとう冬の足音が聞こえてきましたね… ⁡ 仕事の後の撮影 ⁡ 丘の上に積もった雪と紅葉が街灯に照らされて綺麗だったので セルフポートレート📸してみました ⁡ 2026.11月中旬撮影📸 ⁡ #山形県 #やまがた景観物語2026秋冬 #discover_yamagata⁡ #",
+          "likeCount": 1,
+          "takenAt": "2026-11-24T00:17:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
         {
           "username": "deel.829",
           "url": "https://www.threads.com/@deel.829/post/DgFPYlKkoIy",
@@ -969,7 +984,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-23T23:57:46+09:00",
+      "fetchedAt": "2026-11-24T01:57:09+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1006,7 +1021,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-23T23:57:46+09:00",
+      "fetchedAt": "2026-11-24T01:57:09+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1133,7 +1148,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-23T23:57:46+09:00",
+      "fetchedAt": "2026-11-24T01:57:09+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
@@ -1164,6 +1179,21 @@
           "watched": true,
           "community": "道路交通情報",
           "spot": "猪苗代"
+        },
+        {
+          "username": "minokappa.s",
+          "url": "https://www.threads.com/@minokappa.s/post/DgD-zkuj6I8",
+          "text": "閖上から帰りルートを検証中。 寒くて記憶に無いので(^^ゞ 角田からのR349がバイパス完成してて片交無し、信号ほぼ無しでヨキカナ。 福島県に突入した途端に昔のままの酷道の名残りが(^^ゞ",
+          "likeCount": 1,
+          "takenAt": "2026-11-23T08:25:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "福島"
         },
         {
           "username": "mypl.aizu",
