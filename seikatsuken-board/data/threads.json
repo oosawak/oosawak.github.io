@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-23T22:57:22+09:00",
+  "generatedAt": "2026-11-23T23:57:46+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-23T22:57:22+09:00",
+      "fetchedAt": "2026-11-23T23:57:46+09:00",
       "posts": [
         {
           "username": "katakura_totto",
@@ -310,7 +310,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-23T22:57:22+09:00",
+      "fetchedAt": "2026-11-23T23:57:46+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -332,8 +332,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-23T22:57:22+09:00",
+      "fetchedAt": "2026-11-23T23:57:46+09:00",
       "posts": [
+        {
+          "username": "deel.829",
+          "url": "https://www.threads.com/@deel.829/post/DgFPYlKkoIy",
+          "text": "11/23 山は雪の為、海沿い走って山形県鶴岡市までのツーリング道中、道の駅あつみで山形ケーブルTVの取材を受けちゃいました😊取材受けたの俺じゃないけど😅帰りは極寒🥶誰も空飛ばなくてよかった😉",
+          "likeCount": 3,
+          "takenAt": "2026-11-23T20:09:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
         {
           "username": "jihankiojisan",
           "url": "https://www.threads.com/@jihankiojisan/post/DgD3PJFE8fz",
@@ -954,7 +969,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-23T22:57:22+09:00",
+      "fetchedAt": "2026-11-23T23:57:46+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -991,7 +1006,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-23T22:57:22+09:00",
+      "fetchedAt": "2026-11-23T23:57:46+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1118,7 +1133,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-23T22:57:22+09:00",
+      "fetchedAt": "2026-11-23T23:57:46+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
