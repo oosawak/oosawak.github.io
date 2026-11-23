@@ -49,6 +49,8 @@ Windows版は、Mac版と同じ箱の形です。\
 どちらも最終確認が済み次第、同じ商品に追加します。\
 購入した方は、再ダウンロードで入手できます。
 
+![Pixel 7aで動くAndroid版の画面。部品の状態と接続先が出ている](tech/source-control-anywhere-release-pocketgit-v1.png)
+
 ## 正直な所も書いておきます
 
 お試し版です。\
