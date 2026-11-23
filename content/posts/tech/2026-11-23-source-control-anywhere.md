@@ -129,18 +129,25 @@ WindowsやMacでは、結局裏で仮想の機械が動きますし、作法も�
 
 ## Androidでも
 
-Androidでも、同じようなことができます。\
+Androidでも、同じようなことができました。\
 仕組みは少し違います。\
 電話には箱を使わず、電話の土台の上で、道具を直接動かします。\
-殻はKotlin、制御はRustで考えています。\
-道具は全部は入れず、シェルとgitと置き場など、要る分だけに閉じます。\
-できる根拠は、Termuxという実物があることです。\
-電話が置き場と作業場になる形で、今は実験の段取りまで用意しました。
+作ったアプリの名前はPocketGitです。\
+殻はKotlin、制御はRustで、Ubuntuはprootで載せました。\
+Pixel 3aで、ForgejoとPagesとSSHが動いています。\
+初期化は12.9ミリ秒でした。\
+MacのVS Codeから、電話の中のリポジトリに繋いで編集できました。
+
+![Pixel 3aで動くPocketGitの画面。ForgejoとPagesとSSHの接続情報と、起動した部品の一覧が出ている](tech/source-control-anywhere-pocketgit-photo-v1.jpg)
+
+![MacのVS Codeから、電話の中のリポジトリに繋いだ画面](tech/source-control-anywhere-pocketgit-vscode-v1.png)
 
 ## 今の状態
 
 開発中です。\
-今朝、私の機械で、編集して、しまって、確認ページに出る所までを通しました。\
+今朝、私の機械で、編集して、しまって、確認ページに出る所までを通しました。
+
+![開発中の画面。ランチャーと編集画面と確認ページが並んでいる](tech/source-control-anywhere-dev-screen-v1.png)
 普通に使える、というのが正直な感想です。\
 これから、初回の準備を利用者が迷わない形に仕上げていきます。\
 価格と発売の時期は、まだ決まっていません。\
