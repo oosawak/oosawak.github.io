@@ -13,8 +13,6 @@ type: 'article'
 ## 概要
 
 「どこでもソース管理」のMac版とWindows版は、QEMUで仮想のコンピューターを丸ごと作り、その中に置き場と編集環境を入れる作りです。\
-[Android版](https://oosawak.github.io/tech/#/post/tech/source-control-anywhere-android)とは、対の設計になっています。\
-Android版は電話のカーネルをそのまま使い、こちらは環境を丸ごと箱に入れます。\
 Mac版は、[BOOTH](https://lyre3-games.booth.pm/items/9205179)でお試し販売中です。\
 Windows版は、試作が実機で動いている段階です。
 
