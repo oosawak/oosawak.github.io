@@ -91,7 +91,7 @@
   <table class="spec"><tr><th>ジャンル</th><td>データ・通信</td></tr><tr><th>状態</th><td>候補</td></tr><tr><th>方式</th><td>レシピ候補</td></tr></table>
   <p><code class="cmd">hako up redis</code></p>
   <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td>レシピが用意できたら <code>hako up redis</code>（予定）</td></tr><tr><th>消す</th><td><code>hako down redis</code> で停止、<code>hako remove redis</code> で削除（予定）</td></tr><tr><th>上げる（更新）</th><td>新しい版のレシピで <code>hako up redis</code> の入れ直し（予定）</td></tr></table>
-  <h2 style="font-size:19px;margin:30px 0 4px">土台ごとの操作</h2><p style="font-size:14px;color:var(--ink-2)">基本は、土台によらず hako の決まったコマンドで対応します。土台の中で直接操作する場合の違いは、下の通りです。</p><table class="spec"><tr><th>Ubuntu の場合</th><td>レシピは apt 型で用意する予定。入れる・消す・上げるは <code>hako up redis</code>、<code>hako remove redis</code> の決まった操作で（予定）</td></tr><tr><th>Alpine の場合</th><td>レシピは apk 型で用意する予定。操作は Ubuntu と同じ決まった形で（予定）</td></tr></table>
+  <h2 style="font-size:19px;margin:30px 0 4px">土台ごとの操作</h2><p style="font-size:14px;color:var(--ink-2)">基本は、土台によらず hako の決まったコマンドで対応します。土台の中で直接操作する場合の違いは、下の通りです。</p><table class="spec"><tr><th>Ubuntu の場合</th><td>入れる・消す・上げるは <code>hako up redis</code>、<code>hako remove redis</code> の決まった操作で（レシピは用意する予定）</td></tr><tr><th>Alpine の場合</th><td>操作は Ubuntu と同じく hako のコマンドだけ（レシピは用意する予定）</td></tr></table>
   <div class="detail">
 <h2>概要</h2>
 <p>キャッシュと小さなデータの置き場。</p>
