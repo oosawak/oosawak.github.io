@@ -27,6 +27,15 @@
   "page": "archlinux.html"
  },
  {
+  "id": "bionic-only",
+  "name": "Bionicのみ（土台なし）",
+  "genre": "base",
+  "status": "plan",
+  "version": "",
+  "command": "",
+  "page": "bionic-only.html"
+ },
+ {
   "id": "debian",
   "name": "Debian",
   "genre": "base",

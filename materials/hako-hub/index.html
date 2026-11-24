@@ -105,12 +105,13 @@
   <h2>カタログ</h2>
   <p class="sec-lead">土台はセットアップの時に選びます。レシピは、箱の中から <code>hako up 名前</code> で取って入れます。各行を押すと、詳細のページに進みます。</p>
   <div class="list" id="list">
-<a class="row" data-genre="base" data-keywords="alpine アルパイン 軽量 土台 os linux" href="alpine.html"><span class="row-main"><span class="row-name">Alpine 3.24<span class="ver">3.24.4</span></span><span class="row-sum" style="display:block">超軽量・速さ特化の土台。軽いサーバーを常駐させる向け。</span></span><span class="row-meta"><span class="badge b-done">実機実証済み</span><span class="row-genre">土台</span></span></a>
-<a class="row" data-genre="base" data-keywords="ubuntu ウブンツ 土台 os linux 互換 glibc 開発" href="ubuntu-2404.html"><span class="row-main"><span class="row-name">Ubuntu 24.04<span class="ver">24.04</span></span><span class="row-sum" style="display:block">互換性・全部入り特化の土台。glibc が要るソフトはこちらで動かす。</span></span><span class="row-meta"><span class="badge b-base">現行の標準</span><span class="row-genre">土台</span></span></a>
-<a class="row" data-genre="base" data-keywords="arch アーチ 土台 os linux pacman" href="archlinux.html"><span class="row-main"><span class="row-name">Arch Linux</span><span class="row-sum" style="display:block">いつも新しい版が入る系統の土台の候補。</span></span><span class="row-meta"><span class="badge b-plan">候補</span><span class="row-genre">土台</span></span></a>
-<a class="row" data-genre="base" data-keywords="debian デビアン 土台 os linux apt" href="debian.html"><span class="row-main"><span class="row-name">Debian</span><span class="row-sum" style="display:block">Ubuntu と役割が重なるため、今は入れていない。</span></span><span class="row-meta"><span class="badge b-plan">後回し</span><span class="row-genre">土台</span></span></a>
-<a class="row" data-genre="base" data-keywords="fedora フェドラ 土台 os linux glibc dnf" href="fedora.html"><span class="row-main"><span class="row-name">Fedora</span><span class="row-sum" style="display:block">glibc 系の土台の候補。Ubuntu とは別の系統が要る時に。</span></span><span class="row-meta"><span class="badge b-plan">候補</span><span class="row-genre">土台</span></span></a>
-<a class="row" data-genre="base" data-keywords="ubuntu ウブンツ 土台 os linux 新しい" href="ubuntu-2604.html"><span class="row-main"><span class="row-name">Ubuntu 26.04<span class="ver">26.04</span></span><span class="row-sum" style="display:block">パソコン版の箱と版を揃えるための候補。</span></span><span class="row-meta"><span class="badge b-plan">候補</span><span class="row-genre">土台</span></span></a>
+<a class="row" data-genre="base" data-keywords="alpine アルパイン 軽量 土台 os linux" href="alpine.html"><span class="row-main"><span class="row-name">Alpine 3.24<span class="ver">3.24.4</span></span><span class="row-sum" style="display:block">超軽量・速さ特化の土台。軽いサーバーを常駐させる向け。</span></span><span class="row-meta"><span class="badge b-done">実機実証済み</span><span class="row-genre">土台</span><span class="row-genre">musl</span></span></a>
+<a class="row" data-genre="base" data-keywords="ubuntu ウブンツ 土台 os linux 互換 glibc 開発" href="ubuntu-2404.html"><span class="row-main"><span class="row-name">Ubuntu 24.04<span class="ver">24.04</span></span><span class="row-sum" style="display:block">互換性・全部入り特化の土台。glibc が要るソフトはこちらで動かす。</span></span><span class="row-meta"><span class="badge b-base">現行の標準</span><span class="row-genre">土台</span><span class="row-genre">glibc</span></span></a>
+<a class="row" data-genre="base" data-keywords="arch アーチ 土台 os linux pacman" href="archlinux.html"><span class="row-main"><span class="row-name">Arch Linux</span><span class="row-sum" style="display:block">いつも新しい版が入る系統の土台の候補。</span></span><span class="row-meta"><span class="badge b-plan">候補</span><span class="row-genre">土台</span><span class="row-genre">glibc</span></span></a>
+<a class="row" data-genre="base" data-keywords="bionic バイオニック 土台なし ネイティブ 軽量 os" href="bionic-only.html"><span class="row-main"><span class="row-name">Bionicのみ（土台なし）</span><span class="row-sum" style="display:block">土台（rootfs）を使わず、Bionic 側の部品だけで動かす一番軽い形。</span></span><span class="row-meta"><span class="badge b-plan">候補</span><span class="row-genre">土台</span><span class="row-genre">Bionic</span></span></a>
+<a class="row" data-genre="base" data-keywords="debian デビアン 土台 os linux apt" href="debian.html"><span class="row-main"><span class="row-name">Debian</span><span class="row-sum" style="display:block">Ubuntu と役割が重なるため、今は入れていない。</span></span><span class="row-meta"><span class="badge b-plan">後回し</span><span class="row-genre">土台</span><span class="row-genre">glibc</span></span></a>
+<a class="row" data-genre="base" data-keywords="fedora フェドラ 土台 os linux glibc dnf" href="fedora.html"><span class="row-main"><span class="row-name">Fedora</span><span class="row-sum" style="display:block">glibc 系の土台の候補。Ubuntu とは別の系統が要る時に。</span></span><span class="row-meta"><span class="badge b-plan">候補</span><span class="row-genre">土台</span><span class="row-genre">glibc</span></span></a>
+<a class="row" data-genre="base" data-keywords="ubuntu ウブンツ 土台 os linux 新しい" href="ubuntu-2604.html"><span class="row-main"><span class="row-name">Ubuntu 26.04<span class="ver">26.04</span></span><span class="row-sum" style="display:block">パソコン版の箱と版を揃えるための候補。</span></span><span class="row-meta"><span class="badge b-plan">候補</span><span class="row-genre">土台</span><span class="row-genre">glibc</span></span></a>
 <a class="row" data-genre="dev" data-keywords="forgejo フォージジョ git ソース管理 リポジトリ 開発 release" href="forgejo.html"><span class="row-main"><span class="row-name">Forgejo<span class="ver">15.0.11</span></span><span class="row-sum" style="display:block">Git の置き場。同梱をやめて、Hub のレシピから入れる形に移した。</span></span><span class="row-meta"><span class="badge b-done">実機実証済み・release 型</span><span class="row-genre">開発</span></span></a>
 <a class="row" data-genre="dev" data-keywords="code-server vscode vs code エディタ 開発 release ブラウザ" href="code-server.html"><span class="row-main"><span class="row-name">code-server<span class="ver">4.146.0</span></span><span class="row-sum" style="display:block">ブラウザで使う VS Code。Forgejo と同じく、レシピから入れる形。</span></span><span class="row-meta"><span class="badge b-done">実機実証済み・release 型</span><span class="row-genre">開発</span></span></a>
 <a class="row" data-genre="dev" data-keywords="hugo 静的 サイト 生成 go 開発" href="hugo.html"><span class="row-main"><span class="row-name">Hugo</span><span class="row-sum" style="display:block">静的サイトの生成ツール。Go 製の単体バイナリ。</span></span><span class="row-meta"><span class="badge b-plan">候補</span><span class="row-genre">開発</span></span></a>
@@ -173,6 +174,19 @@
     <p>GitHub で公開されている OSS は、リリースに実行ファイルが出ていれば、レシピでそのまま入れられます。Forgejo や code-server が、その形です（本体は GitHub のリリースから取り、ハッシュで照合します）。ソースしか無い物は、箱の中で組み立てる形になります。電話（arm64）では、arm64 向けの実行ファイルが出ているかどうかが分かれ目です。</p>
     <p>機械が読む一覧は <a href="catalog.json">catalog.json</a> にあります（全項目の名前・状態・版・コマンド）。</p>
     <p>更新があるかどうかは、箱が入手先（GitHub のリリースや、パッケージの置き場）を見に行って、今入っている版と比べて知ります。勝手に上げることはせず、「新しい版あり」を知らせて、上げるかどうかは <code>hako up</code> で決める形です。</p>
+  </div>
+
+  <h2>土台と標準ライブラリ</h2>
+  <p class="note">
+    土台には、標準ライブラリの違いがあります。一覧と詳細では、各土台にタグで示しています。
+  </p>
+  <div class="howto">
+    <ul>
+      <li><strong>glibc</strong> ― Ubuntu、Debian、Fedora、Arch の土台。配布されている実行ファイルは、この前提で作られている物が多い</li>
+      <li><strong>musl</strong> ― Alpine の土台。軽いのが特徴。glibc 前提の実行ファイルは、そのままでは動かない</li>
+      <li><strong>Bionic</strong> ― Android の標準ライブラリ。箱のネイティブ側の部品（制御コア、git、sshd など）は、この前提で作られている</li>
+    </ul>
+    <p>公式の実行ファイルが Alpine で動かないのは、glibc 前提で作られていて、Alpine 側は musl だからです。逆に、Bionic 向けに作った部品は、土台が無くても動きます。</p>
   </div>
 
   <footer>
