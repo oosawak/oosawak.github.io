@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light" />
 <link rel="icon" href="data:," />
 <title>Hako Hub ― 箱の中身のカタログ</title>
-<meta name="description" content="hako（箱）の土台とレシピのカタログ。巨大なイメージではなく、数KBのレシピを置く場所。VS Code や Forgejo は同梱せず、ここから設定を取って入れる。名前やジャンルで検索できます。" />
+<meta name="description" content="hako（箱）の土台とレシピのカタログ。巨大なイメージではなく、数KBのレシピを置く場所。名前やジャンルで検索できます。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -44,27 +44,39 @@
   .noresult{display:none;background:var(--amber-bg);color:var(--amber);border-radius:12px;
     padding:12px 16px;font-size:14.5px;font-weight:700;margin-top:14px}
   h2{font-size:22px;font-weight:900;margin:44px 0 6px}
-  h3.genre{margin:26px 0 10px;font-size:17px}
   .sec-lead{color:var(--ink-2);margin:0 0 18px}
-  .cards{display:grid;gap:14px}
-  @media(min-width:700px){.cards{grid-template-columns:1fr 1fr}}
-  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-    padding:18px 20px;box-shadow:var(--shadow)}
-  .card h3{margin:0 0 4px;font-size:18px;font-weight:900}
-  .card p{margin:6px 0;font-size:14.5px;color:var(--ink-2)}
-  .card .spec{font-size:13px;color:var(--muted)}
-  .badge{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .list{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden}
+  .row{display:flex;gap:12px;align-items:baseline;padding:14px 18px;border-bottom:1px solid var(--line);
+    text-decoration:none;color:var(--ink)}
+  .row:last-child{border-bottom:none}
+  .row:hover{background:var(--surface-2)}
+  .row-main{flex:1;min-width:0}
+  .row-name{font-weight:900;font-size:16.5px}
+  .row-name .ver{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+  .row-sum{font-size:14px;color:var(--ink-2);margin-top:2px}
+  .row-meta{white-space:nowrap;text-align:right}
+  .row-genre{font-size:12px;color:var(--muted);display:block}
+  .badge{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
   .b-done{background:var(--teal-soft);color:var(--teal-dark)}
   .b-base{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
   .b-plan{background:var(--amber-bg);color:var(--amber)}
-  code.cmd{display:block;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;
-    padding:8px 12px;font-size:14px;margin-top:10px;color:var(--ink)}
   .howto{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
     padding:18px 20px;box-shadow:var(--shadow)}
   .howto code{background:var(--surface-2);padding:1px 7px;border-radius:6px;font-size:14px}
   .howto li{margin:6px 0}
   .note{font-size:14px;color:var(--ink-2)}
   footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .backlink{display:inline-block;margin-top:26px;font-size:14px;color:var(--teal-dark);font-weight:700;text-decoration:none}
+  table.spec{border-collapse:collapse;margin:16px 0;background:var(--surface);
+    border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  table.spec th,table.spec td{padding:8px 14px;font-size:14.5px;border-bottom:1px solid var(--line);text-align:left}
+  table.spec th{background:var(--surface-2);color:var(--ink-2);white-space:nowrap}
+  table.spec tr:last-child th,table.spec tr:last-child td{border-bottom:none}
+  .detail h2{font-size:19px;margin:30px 0 4px}
+  .detail p{margin:8px 0}
+  code.cmd{display:inline-block;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;
+    padding:6px 12px;font-size:14.5px}
 </style>
 </head>
 <body>
@@ -85,127 +97,30 @@
 
   <div class="searchbox">
     <input id="q" type="search" placeholder="名前やキーワードで探す（例: git、Web、データベース）" autocomplete="off" />
-    <div class="chips" id="chips">
-      <button class="chip on" data-genre="">すべて</button>
-      <button class="chip" data-genre="base">土台</button>
-      <button class="chip" data-genre="dev">開発</button>
-      <button class="chip" data-genre="web">Web</button>
-      <button class="chip" data-genre="data">データ・通信</button>
-      <button class="chip" data-genre="learn">学習</button>
-      <button class="chip" data-genre="builtin">同梱部品</button>
-    </div>
+    <div class="chips" id="chips"><button class="chip on" data-genre="">すべて</button><button class="chip" data-genre="base">土台</button><button class="chip" data-genre="dev">開発</button><button class="chip" data-genre="web">Web</button><button class="chip" data-genre="data">データ・通信</button><button class="chip" data-genre="learn">学習</button><button class="chip" data-genre="builtin">同梱部品</button></div>
     <div class="hitcount" id="hitcount"></div>
     <div class="noresult" id="noresult">見つかりませんでした。言葉を変えるか、ジャンルを「すべて」に戻してみてください。</div>
   </div>
 
-  <section data-section>
-    <h2>土台（セットアップで選ぶ中身）</h2>
-    <p class="sec-lead">箱の中身は、セットアップの時に選べます。複数入れて切り替えることも、同時に動かすこともできます。作業場所は箱ごと、共有したいデータは共通の共有領域に置く形です。</p>
-    <div class="cards">
-      <div class="card" data-genre="base" data-keywords="alpine アルパイン 軽量 土台 os linux">
-        <span class="badge b-done">実機実証済み</span>
-        <h3>Alpine 3.24</h3>
-        <p>超軽量・速さ特化の土台。軽いサーバーを常駐させる向けです。</p>
-        <p class="spec">土台 3.84 MiB ／ 展開 0.51 秒 ／ git・nginx・Python を入れても 69.5 MiB ／ セットアップ約11秒（Pixel 3a 実測）</p>
-      </div>
-      <div class="card" data-genre="base" data-keywords="ubuntu ウブンツ 土台 os linux 互換 glibc 開発">
-        <span class="badge b-base">現行の標準</span>
-        <h3>Ubuntu 24.04</h3>
-        <p>互換性・全部入り特化の土台。code-server や VS Code からの接続など、glibc が要るソフトはこちらで動かします。</p>
-        <p class="spec">土台 約643 MiB（Pixel 3a 実測）</p>
-      </div>
-      <div class="card" data-genre="base" data-keywords="ubuntu ウブンツ 土台 os linux 新しい">
-        <span class="badge b-plan">候補</span>
-        <h3>Ubuntu 26.04</h3>
-        <p>パソコン版の箱と版を揃えるための候補。公式の土台ファイルの存在は確認済みです。</p>
-      </div>
-      <div class="card" data-genre="base" data-keywords="debian デビアン 土台 os linux apt">
-        <span class="badge b-plan">後回し</span>
-        <h3>Debian</h3>
-        <p>Ubuntu と役割が重なるため、今は入れていません。必要になった時に追加します。</p>
-      </div>
-    </div>
-  </section>
-
-  <section data-section>
-    <h2>レシピ（Hub から取って入れるソフト）</h2>
-    <p class="sec-lead">レシピには2つの型があります。<strong>apt 型</strong>は土台のパッケージから入れ、<strong>release 型</strong>は公式の配布ファイルを取得して、ハッシュ（SHA-256）で確かめてから入れます。</p>
-
-    <h3 class="genre" data-genre-head="dev">開発</h3>
-    <div class="cards">
-      <div class="card" data-genre="dev" data-keywords="forgejo フォージジョ git ソース管理 リポジトリ 開発 release">
-        <span class="badge b-done">実機実証済み・release 型</span>
-        <h3>Forgejo</h3>
-        <p>Git の置き場。同梱をやめて、Hub のレシピから入れる形に移しました。</p>
-        <p class="spec">v15.0.11 ／ 103 MB ／ 取得32秒、初回起動15.1秒で応答確認（Pixel 3a 実測）</p>
-        <code class="cmd">hako up forgejo</code>
-      </div>
-      <div class="card" data-genre="dev" data-keywords="code-server vscode vs code エディタ 開発 release ブラウザ">
-        <span class="badge b-done">実機実証済み・release 型</span>
-        <h3>code-server</h3>
-        <p>ブラウザで使う VS Code。Forgejo と同じく、レシピから入れる形です。</p>
-        <p class="spec">v4.146.0 ／ 254 MB ／ 取得24秒、初回起動まで66.7秒で応答確認（Pixel 3a 実測）</p>
-        <code class="cmd">hako up code-server</code>
-      </div>
-    </div>
-
-    <h3 class="genre" data-genre-head="web">Web サーバー</h3>
-    <div class="cards">
-      <div class="card" data-genre="web" data-keywords="nginx エンジンエックス web サーバー http apt">
-        <span class="badge b-done">実機実証済み・apt 型</span>
-        <h3>nginx</h3>
-        <p>Web サーバー。初回は導入込みで46.9秒、2回目以降は即起動します。</p>
-        <p class="spec">nginx 1.24.0（Pixel 3a 実測）</p>
-        <code class="cmd">hako up nginx</code>
-      </div>
-      <div class="card" data-genre="web" data-keywords="caddy apache アパッチ web サーバー http">
-        <span class="badge b-plan">候補</span>
-        <h3>Caddy ／ Apache</h3>
-        <p>Web サーバーの他の選択肢。レシピの追加を予定しています。</p>
-      </div>
-    </div>
-
-    <h3 class="genre" data-genre-head="data">データ・通信</h3>
-    <div class="cards">
-      <div class="card" data-genre="data" data-keywords="redis mariadb データベース db キャッシュ データ">
-        <span class="badge b-plan">候補</span>
-        <h3>Redis ／ MariaDB</h3>
-        <p>データとキャッシュの置き場。レシピの追加を予定しています。</p>
-      </div>
-      <div class="card" data-genre="data" data-keywords="mosquitto mqtt iot センサー 通信 ブローカー">
-        <span class="badge b-base">実績あり</span>
-        <h3>Mosquitto（MQTT）</h3>
-        <p>センサーなどの合図を受け渡すブローカー。パソコン版の箱では標準部品の実績があります。</p>
-      </div>
-    </div>
-
-    <h3 class="genre" data-genre-head="learn">学習・サンプル</h3>
-    <div class="cards">
-      <div class="card" data-genre="learn" data-keywords="web-and-collector サンプル 学習 例 収集 計測 compose">
-        <span class="badge b-done">実証済み</span>
-        <h3>web-and-collector</h3>
-        <p>Web ページを出す係と、定期的に測って記録する係の組。hako の使い方の見本です。</p>
-        <code class="cmd">hako up（compose の定義から）</code>
-      </div>
-    </div>
-  </section>
-
-  <section data-section>
-    <h2>箱に最初から入っている物</h2>
-    <p class="sec-lead">入り口と制御だけは、最初から入っています。SSH は「箱に入るための入り口」なので、後から入れる形にはできません。</p>
-    <div class="cards">
-      <div class="card" data-genre="builtin" data-keywords="openssh ssh sshd 入り口 接続 ネイティブ">
-        <span class="badge b-base">ネイティブ同梱</span>
-        <h3>OpenSSH（sshd）</h3>
-        <p>箱への入り口。Android ネイティブで直接動きます。proot と合わせてもメモリは約6.5 MiB（Pixel 3a 実測）。</p>
-      </div>
-      <div class="card" data-genre="builtin" data-keywords="rust 制御 コア git 基本 コマンド ネイティブ">
-        <span class="badge b-base">ネイティブ同梱</span>
-        <h3>Rust 制御コア ／ git ／ 基本コマンド</h3>
-        <p>サービスの起動と停止、状態の確認を担う中心と、作業の基本道具。アプリ本体の待機メモリは 37.9 MiB（Pixel 3a 実測）です。</p>
-      </div>
-    </div>
-  </section>
+  <h2>カタログ</h2>
+  <p class="sec-lead">土台はセットアップの時に選びます。レシピは、箱の中から <code>hako up 名前</code> で取って入れます。各行を押すと、詳細のページに進みます。</p>
+  <div class="list" id="list">
+<a class="row" data-genre="base" data-keywords="alpine アルパイン 軽量 土台 os linux" href="alpine.html"><span class="row-main"><span class="row-name">Alpine 3.24<span class="ver">3.24.4</span></span><span class="row-sum" style="display:block">超軽量・速さ特化の土台。軽いサーバーを常駐させる向け。</span></span><span class="row-meta"><span class="badge b-done">実機実証済み</span><span class="row-genre">土台</span></span></a>
+<a class="row" data-genre="base" data-keywords="ubuntu ウブンツ 土台 os linux 互換 glibc 開発" href="ubuntu-2404.html"><span class="row-main"><span class="row-name">Ubuntu 24.04<span class="ver">24.04</span></span><span class="row-sum" style="display:block">互換性・全部入り特化の土台。glibc が要るソフトはこちらで動かす。</span></span><span class="row-meta"><span class="badge b-base">現行の標準</span><span class="row-genre">土台</span></span></a>
+<a class="row" data-genre="base" data-keywords="debian デビアン 土台 os linux apt" href="debian.html"><span class="row-main"><span class="row-name">Debian</span><span class="row-sum" style="display:block">Ubuntu と役割が重なるため、今は入れていない。</span></span><span class="row-meta"><span class="badge b-plan">後回し</span><span class="row-genre">土台</span></span></a>
+<a class="row" data-genre="base" data-keywords="ubuntu ウブンツ 土台 os linux 新しい" href="ubuntu-2604.html"><span class="row-main"><span class="row-name">Ubuntu 26.04<span class="ver">26.04</span></span><span class="row-sum" style="display:block">パソコン版の箱と版を揃えるための候補。</span></span><span class="row-meta"><span class="badge b-plan">候補</span><span class="row-genre">土台</span></span></a>
+<a class="row" data-genre="dev" data-keywords="forgejo フォージジョ git ソース管理 リポジトリ 開発 release" href="forgejo.html"><span class="row-main"><span class="row-name">Forgejo<span class="ver">15.0.11</span></span><span class="row-sum" style="display:block">Git の置き場。同梱をやめて、Hub のレシピから入れる形に移した。</span></span><span class="row-meta"><span class="badge b-done">実機実証済み・release 型</span><span class="row-genre">開発</span></span></a>
+<a class="row" data-genre="dev" data-keywords="code-server vscode vs code エディタ 開発 release ブラウザ" href="code-server.html"><span class="row-main"><span class="row-name">code-server<span class="ver">4.146.0</span></span><span class="row-sum" style="display:block">ブラウザで使う VS Code。Forgejo と同じく、レシピから入れる形。</span></span><span class="row-meta"><span class="badge b-done">実機実証済み・release 型</span><span class="row-genre">開発</span></span></a>
+<a class="row" data-genre="web" data-keywords="nginx エンジンエックス web サーバー http apt" href="nginx.html"><span class="row-main"><span class="row-name">nginx<span class="ver">1.24.0</span></span><span class="row-sum" style="display:block">Web サーバー。初回は導入込みで46.9秒、2回目以降は即起動。</span></span><span class="row-meta"><span class="badge b-done">実機実証済み・apt 型</span><span class="row-genre">Web</span></span></a>
+<a class="row" data-genre="web" data-keywords="apache アパッチ web サーバー http apt" href="apache2.html"><span class="row-main"><span class="row-name">Apache</span><span class="row-sum" style="display:block">Web サーバーの選択肢の1つ。レシピの追加を予定。</span></span><span class="row-meta"><span class="badge b-plan">候補</span><span class="row-genre">Web</span></span></a>
+<a class="row" data-genre="web" data-keywords="caddy web サーバー http https" href="caddy.html"><span class="row-main"><span class="row-name">Caddy</span><span class="row-sum" style="display:block">Web サーバーの選択肢の1つ。レシピの追加を予定。</span></span><span class="row-meta"><span class="badge b-plan">候補</span><span class="row-genre">Web</span></span></a>
+<a class="row" data-genre="data" data-keywords="mosquitto mqtt iot センサー 通信 ブローカー" href="mosquitto.html"><span class="row-main"><span class="row-name">Mosquitto（MQTT）<span class="ver">2.0.22（パソコン版）</span></span><span class="row-sum" style="display:block">センサーなどの合図を受け渡すブローカー。</span></span><span class="row-meta"><span class="badge b-base">実績あり</span><span class="row-genre">データ・通信</span></span></a>
+<a class="row" data-genre="data" data-keywords="mariadb mysql データベース db データ" href="mariadb.html"><span class="row-main"><span class="row-name">MariaDB</span><span class="row-sum" style="display:block">データベース。レシピの追加を予定。</span></span><span class="row-meta"><span class="badge b-plan">候補</span><span class="row-genre">データ・通信</span></span></a>
+<a class="row" data-genre="data" data-keywords="redis データ キャッシュ データベース" href="redis.html"><span class="row-main"><span class="row-name">Redis</span><span class="row-sum" style="display:block">キャッシュと小さなデータの置き場。レシピの追加を予定。</span></span><span class="row-meta"><span class="badge b-plan">候補</span><span class="row-genre">データ・通信</span></span></a>
+<a class="row" data-genre="learn" data-keywords="web-and-collector サンプル 学習 例 収集 計測 compose" href="web-and-collector.html"><span class="row-main"><span class="row-name">web-and-collector</span><span class="row-sum" style="display:block">Web を出す係と、定期的に測って記録する係の組。hako の使い方の見本。</span></span><span class="row-meta"><span class="badge b-done">実証済み</span><span class="row-genre">学習</span></span></a>
+<a class="row" data-genre="builtin" data-keywords="openssh ssh sshd 入り口 接続 ネイティブ" href="openssh.html"><span class="row-main"><span class="row-name">OpenSSH（sshd）</span><span class="row-sum" style="display:block">箱への入り口。Android ネイティブで直接動く。</span></span><span class="row-meta"><span class="badge b-base">ネイティブ同梱</span><span class="row-genre">同梱部品</span></span></a>
+<a class="row" data-genre="builtin" data-keywords="rust 制御 コア git 基本 コマンド ネイティブ uutils" href="rust-core.html"><span class="row-main"><span class="row-name">Rust 制御コア／git／基本コマンド</span><span class="row-sum" style="display:block">サービスの起動と停止、状態の確認を担う中心と、作業の基本道具。</span></span><span class="row-meta"><span class="badge b-base">ネイティブ同梱</span><span class="row-genre">同梱部品</span></span></a>
+  </div>
 
   <h2>使い方</h2>
   <div class="howto">
@@ -235,33 +150,19 @@
   var chips = document.getElementById('chips');
   var hitcount = document.getElementById('hitcount');
   var noresult = document.getElementById('noresult');
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.card[data-genre]'));
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.row[data-genre]'));
   var genre = '';
   function norm(s){ return (s||'').toLowerCase(); }
   function apply(){
     var query = norm(q.value).trim();
     var shown = 0;
-    cards.forEach(function(card){
-      var hay = norm(card.textContent + ' ' + (card.getAttribute('data-keywords')||''));
-      var okGenre = !genre || card.getAttribute('data-genre') === genre;
-      var okQuery = !query || hay.indexOf(query) !== -1;
-      var ok = okGenre && okQuery;
-      card.style.display = ok ? '' : 'none';
+    rows.forEach(function(row){
+      var hay = norm(row.textContent + ' ' + (row.getAttribute('data-keywords')||''));
+      var ok = (!genre || row.getAttribute('data-genre') === genre) && (!query || hay.indexOf(query) !== -1);
+      row.style.display = ok ? '' : 'none';
       if (ok) shown++;
     });
-    document.querySelectorAll('[data-section]').forEach(function(sec){
-      var any = false;
-      sec.querySelectorAll('.card[data-genre]').forEach(function(c){ if (c.style.display !== 'none') any = true; });
-      sec.style.display = any ? '' : 'none';
-    });
-    document.querySelectorAll('[data-genre-head]').forEach(function(h){
-      var g = h.getAttribute('data-genre-head');
-      var any = cards.some(function(c){ return c.getAttribute('data-genre') === g && c.style.display !== 'none'; });
-      h.style.display = any ? '' : 'none';
-      var grid = h.nextElementSibling;
-      if (grid) grid.style.display = any ? '' : 'none';
-    });
-    hitcount.textContent = (query || genre) ? (shown + ' 件が見つかりました') : ('全 ' + cards.length + ' 件');
+    hitcount.textContent = (query || genre) ? (shown + ' 件が見つかりました') : ('全 ' + rows.length + ' 件');
     noresult.style.display = shown === 0 ? 'block' : 'none';
   }
   q.addEventListener('input', apply);
