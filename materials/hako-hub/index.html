@@ -3175,6 +3175,13 @@
     proot の変換の仕組みと新しいライブラリが合わず、箱が動かなくなるのを防ぐためです。土台を上げる時は、新しい土台（rootfs）に差し替える形で行います。
   </p>
 
+  <div class="note">
+    <h2 style="font-size:19px;margin:0 0 8px">GitHub から入れる仕組み</h2>
+    <p>このカタログの正本は GitHub にあります。箱の中の hako は、GitHub からレシピ（設定ファイル）を取ってきて、その通りにソフトを入れます。release 型のレシピは、本体も GitHub のリリースから取ります。</p>
+    <p>ネイティブ候補の自動収録分は、Termux の置き場の作りが専用のため、そのままでは入りません。箱用にビルドし直した物を GitHub のリリースに置けば、同じ仕組みで入れられるようになります。</p>
+    <p>機械が読む一覧は <a href="catalog.json">catalog.json</a> にあります（全項目の名前・状態・版・コマンド）。</p>
+  </div>
+
   <footer>
     Hako Hub ― hako（箱）のカタログ。数値は Pixel 3a 実機の実測です。
   </footer>
