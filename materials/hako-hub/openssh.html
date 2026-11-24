@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light" />
 <link rel="icon" href="data:," />
 <title>OpenSSH（sshd） ― Hako Hub</title>
-<meta name="description" content="箱への入り口。Android ネイティブで直接動く。" />
+<meta name="description" content="箱への入り口。土台（Ubuntu）の openssh-server が、proot の中で動く。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -85,18 +85,18 @@
   <header class="hero">
     <span class="hero-eyebrow">Hako Hub ／ 同梱部品</span>
     <h1>OpenSSH（sshd）</h1>
-    <p class="hero-lead">箱への入り口。Android ネイティブで直接動く。</p>
-    <p style="margin-top:14px"><span class="badge b-base">ネイティブ同梱</span></p>
+    <p class="hero-lead">箱への入り口。土台（Ubuntu）の openssh-server が、proot の中で動く。</p>
+    <p style="margin-top:14px"><span class="badge b-base">土台の標準部品</span></p>
   </header>
-  <table class="spec"><tr><th>ジャンル</th><td>同梱部品</td></tr><tr><th>状態</th><td>ネイティブ同梱</td></tr><tr><th>方式</th><td>ネイティブ部品</td></tr><tr><th>確認日</th><td>2026-11-23</td></tr></table>
+  <table class="spec"><tr><th>ジャンル</th><td>同梱部品</td></tr><tr><th>状態</th><td>土台の標準部品</td></tr><tr><th>方式</th><td>土台（Ubuntu）のパッケージ</td></tr><tr><th>確認日</th><td>2026-11-23</td></tr></table>
   
-  <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td>最初から入っている（操作なし）</td></tr><tr><th>消す</th><td>消せない。箱に入るための入り口のため</td></tr><tr><th>上げる（更新）</th><td>箱（アプリ）の更新と一緒に上がる</td></tr></table>
+  <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td>セットアップの時に、土台へ自動で入る</td></tr><tr><th>消す</th><td>消せない。箱に入るための入り口のため</td></tr><tr><th>上げる（更新）</th><td>土台の差し替えと一緒に上がる</td></tr></table>
   
   <div class="detail">
 <h2>概要</h2>
-<p>箱への入り口。SSH は「箱に入るための入り口」なので、後から入れる形にはできず、最初から入っている。</p>
+<p>箱への入り口。実体は、土台（Ubuntu 24.04）の openssh-server で、proot の中で動いている。ネイティブ部品ではない。</p>
 <h2>実測（Pixel 3a）</h2>
-<ul><li>Android ネイティブで直接動く</li><li>proot と合わせてもメモリは約6.5 MiB</li></ul>
+<ul><li>SSH 接続は Pixel 3機種で確認済み</li><li>proot と合わせてもメモリは約6.5 MiB</li></ul>
   </div>
   <a class="backlink" href="index.html">← Hako Hub の一覧へ戻る</a>
   <footer>Hako Hub ― hako（箱）のカタログ。数値は Pixel 3a 実機の実測です。</footer>
