@@ -4,7 +4,7 @@ subtitle: 'どこでもソース管理 Mac版とWindows版の技術資料'
 author: 'ミューズさん'
 date: '2026-11-24'
 category: '技術'
-summary: '「どこでもソース管理」Mac版とWindows版の技術資料です。QEMUで仮想のコンピューターを丸ごと作り、その中にUbuntuとForgejoと編集環境を入れる作りを、部品と実測と版ごとの状態まで含めて書きます。Android版とは対の設計です。'
+summary: '「どこでもソース管理」Mac版とWindows版の技術資料です。QEMUで仮想のコンピューターを丸ごと作り、その中にUbuntuとForgejoと編集環境を入れる作りを、部品と実測と版ごとの状態まで含めて書きます。'
 cover: 'tech/source-control-anywhere-mac-windows-cover-v1.webp'
 cover_alt: '机の上のノートパソコンとモニターの上に、サーバーと編集画面と本棚の入った透明な箱が浮かぶイラスト'
 type: 'article'
@@ -143,7 +143,6 @@ Windows版は、試作が動いている段階です。\
 Mac版とWindows版は、「環境を丸ごと箱に入れる」設計です。\
 持ち運べて、作り直せて、実機を汚さない。\
 その代わり、起動には十数秒かかります。\
-軽さのAndroid版と、丸ごとのMac版とWindows版。\
 使い方で選べる形を目指しています。
 
 仕組みの全体像は、[前回の記事](https://oosawak.github.io/tech/#/post/tech/source-control-anywhere)に書きました。
