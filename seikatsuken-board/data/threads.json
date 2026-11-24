@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-24T21:57:50+09:00",
+  "generatedAt": "2026-11-25T01:57:19+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-24T21:57:50+09:00",
+      "fetchedAt": "2026-11-25T01:57:19+09:00",
       "posts": [
         {
           "username": "trafficlip",
@@ -355,7 +355,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-24T21:57:50+09:00",
+      "fetchedAt": "2026-11-25T01:57:19+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -377,7 +377,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-24T21:57:50+09:00",
+      "fetchedAt": "2026-11-25T01:57:19+09:00",
       "posts": [
         {
           "username": "izumizyuusetu",
@@ -1089,7 +1089,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-24T21:57:50+09:00",
+      "fetchedAt": "2026-11-25T01:57:19+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1126,7 +1126,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-24T21:57:50+09:00",
+      "fetchedAt": "2026-11-25T01:57:19+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1253,8 +1253,23 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-24T21:57:50+09:00",
+      "fetchedAt": "2026-11-25T01:57:19+09:00",
       "posts": [
+        {
+          "username": "aizu1988",
+          "url": "https://www.threads.com/@aizu1988/post/DgG54j5DjJq",
+          "text": "先程、国道115号を通りましたが猪苗代の高森の直売所も今回のドカ雪でプレハブの建物が潰れていました😭 どれだけ今回の雪が重かったのか🥺 この他、あちらこちらで路肩に倒木があり一部は走行車線スレスレまで迫っていて道幅が狭くなっているので通行の際はご注意ください🙇",
+          "likeCount": 11,
+          "takenAt": "2026-11-24T11:40:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "猪苗代"
+        },
         {
           "username": "mypl.aizu",
           "url": "https://www.threads.com/@mypl.aizu/post/DgFfkg2D6sQ",
