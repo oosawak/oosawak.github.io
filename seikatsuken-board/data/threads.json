@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-25T01:57:19+09:00",
+  "generatedAt": "2026-11-25T05:57:10+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-25T01:57:19+09:00",
+      "fetchedAt": "2026-11-25T05:57:10+09:00",
       "posts": [
         {
           "username": "trafficlip",
@@ -355,7 +355,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-25T01:57:19+09:00",
+      "fetchedAt": "2026-11-25T05:57:10+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -377,8 +377,38 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-25T01:57:19+09:00",
+      "fetchedAt": "2026-11-25T05:57:10+09:00",
       "posts": [
+        {
+          "username": "tc_highway",
+          "url": "https://www.threads.com/@tc_highway/post/DgI1p-9E9Vh",
+          "text": "#冬用タイヤ規制 #山形道＝宮城/山形県内で実施 #tc_highway #宮城県道路情報 #山形県道路情報 NEXCO東日本などによると、東北南部で路面凍結のため、11月24日夜遅くから、山形自動車道で冬用タイヤ規制を実施しています。 https://news.jp/i/1497974400452838099",
+          "likeCount": 0,
+          "takenAt": "2026-11-25T05:42:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
+        {
+          "username": "yahagi20021225",
+          "url": "https://www.threads.com/@yahagi20021225/post/DgIuVtnkpPu",
+          "text": "【山形県】👉ニュース拾い読み 『山形県内で11月20日からの雪により14市町村で農作物に被害 積雪深は平年値29倍の地点も（YBC山形放送）』 https://news.yahoo.co.jp/articles/38f16af69bcda394921dc1129666238a89c761a5 🖊️「まさかこの時期にこの量が降るとは…」 想定外の事態で、意表を突かれた感もあったですね",
+          "likeCount": 1,
+          "takenAt": "2026-11-25T04:38:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
         {
           "username": "izumizyuusetu",
           "url": "https://www.threads.com/@izumizyuusetu/post/DgH10atGdRA",
@@ -1089,7 +1119,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-25T01:57:19+09:00",
+      "fetchedAt": "2026-11-25T05:57:10+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1126,7 +1156,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-25T01:57:19+09:00",
+      "fetchedAt": "2026-11-25T05:57:10+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1253,7 +1283,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-25T01:57:19+09:00",
+      "fetchedAt": "2026-11-25T05:57:10+09:00",
       "posts": [
         {
           "username": "aizu1988",
