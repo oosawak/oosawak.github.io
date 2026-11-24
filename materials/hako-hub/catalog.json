@@ -72,15 +72,6 @@
   "page": "code-server.html"
  },
  {
-  "id": "gitea",
-  "name": "Gitea",
-  "genre": "dev",
-  "status": "plan",
-  "version": "",
-  "command": "hako up gitea",
-  "page": "gitea.html"
- },
- {
   "id": "hugo",
   "name": "Hugo",
   "genre": "dev",
