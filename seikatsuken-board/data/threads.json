@@ -1,10 +1,25 @@
 {
-  "generatedAt": "2026-11-24T16:57:10+09:00",
+  "generatedAt": "2026-11-24T17:57:14+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-24T16:57:10+09:00",
+      "fetchedAt": "2026-11-24T17:57:14+09:00",
       "posts": [
+        {
+          "username": "trafficlip",
+          "url": "https://www.threads.com/@trafficlip/post/DgHgF-GmGdL",
+          "text": "#国道4号 泉区内で事故 一部通行止め #trafficlip #通行止 #宮城県道路情報 仙台河川国道事務所などによると、11月24日16:45頃、宮城県仙台市泉区の国道4号で事故が発生し、泉区七北田滝原付近の上り線(南行/仙台バイパス方面)で通行止めとなっています。 https://news.jp/i/1497873236644414300",
+          "likeCount": 1,
+          "takenAt": "2026-11-24T17:14:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "仙台"
+        },
         {
           "username": "tc_highway",
           "url": "https://www.threads.com/@tc_highway/post/DgHJ8n1kz4A",
@@ -325,7 +340,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-24T16:57:10+09:00",
+      "fetchedAt": "2026-11-24T17:57:14+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -347,8 +362,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-24T16:57:10+09:00",
+      "fetchedAt": "2026-11-24T17:57:14+09:00",
       "posts": [
+        {
+          "username": "tc_highway",
+          "url": "https://www.threads.com/@tc_highway/post/DgHjJEWkxG2",
+          "text": "#山形道 鶴岡市内で故障車 一部通行止め #tc_highway #通行止 #山形県道路情報 NEXCO東日本などによると、山形県鶴岡市の山形自動車道で故障車のため、11月24日17:35から、上下線の湯殿山IC＝庄内あさひIC間で通行止めとなっています。 https://news.jp/i/1497880004726833797",
+          "likeCount": 0,
+          "takenAt": "2026-11-24T17:41:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
         {
           "username": "tc_highway",
           "url": "https://www.threads.com/@tc_highway/post/DgHcfxBEzZS",
@@ -1029,7 +1059,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-24T16:57:10+09:00",
+      "fetchedAt": "2026-11-24T17:57:14+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1066,7 +1096,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-24T16:57:10+09:00",
+      "fetchedAt": "2026-11-24T17:57:14+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1193,7 +1223,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-24T16:57:10+09:00",
+      "fetchedAt": "2026-11-24T17:57:14+09:00",
       "posts": [
         {
           "username": "mypl.aizu",

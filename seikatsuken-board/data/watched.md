@@ -6,6 +6,9 @@ place-aliases.md の地名に当たった投稿のうち、現地の状況を伝
 fetch_threads.py が liked と合わせて threads.json へ反映する。
 
 ## 仙台
+- [2026-11-24 17:14] @trafficlip いいね1 コミュニティ:#宮城県道路情報 地名:仙台
+  - #国道4号 泉区内で事故 一部通行止め #trafficlip #通行止 #宮城県道路情報 仙台河川国道事務所などによると、11月24日16:45頃、宮城県仙台市泉区の国道4号で事故が発生し、泉区七北田滝原付近の上り線(南行/仙台バイパス方面)で通行止めとなっています。 https://news.jp/i/1497873236644414300
+  - https://www.threads.com/@trafficlip/post/DgHgF-GmGdL
 - [2026-11-24 14:00] @tc_highway いいね0 コミュニティ:#通行止 地名:仙台
   - #仙台北部道路 利府町内で事故 一部通行止め #tc_highway #通行止 #宮城県道路情報 NEXCO東日本などによると、宮城県利府町の仙台北部道路で事故が発生し、11月24日13:48から、上下線の利府しらかし台IC＝利府JCT間で通行止めとなっています。 https://news.jp/i/1497824623142912946
   - https://www.threads.com/@tc_highway/post/DgHJ8n1kz4A
@@ -43,6 +46,9 @@ fetch_threads.py が liked と合わせて threads.json へ反映する。
 ## 松島
 
 ## 山形
+- [2026-11-24 17:41] @tc_highway いいね0 コミュニティ:#山形県道路情報 地名:山形
+  - #山形道 鶴岡市内で故障車 一部通行止め #tc_highway #通行止 #山形県道路情報 NEXCO東日本などによると、山形県鶴岡市の山形自動車道で故障車のため、11月24日17:35から、上下線の湯殿山IC＝庄内あさひIC間で通行止めとなっています。 https://news.jp/i/1497880004726833797
+  - https://www.threads.com/@tc_highway/post/DgHjJEWkxG2
 - [2026-11-24 16:43] @tc_highway いいね0 コミュニティ:#山形県道路情報 地名:山形
   - #日本海東北道 鶴岡市内で事故 一部通行止め #tc_highway #通行止 #山形県道路情報 酒田河川国道事務所などによると、山形県鶴岡市の日本海東北自動車道で事故が発生し、11月24日16:23から、上下線のあつみ温泉IC＝鶴岡西IC間で通行止めとなっています。 https://news.jp/i/1497865273956614957
   - https://www.threads.com/@tc_highway/post/DgHcfxBEzZS
