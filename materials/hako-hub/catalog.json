@@ -252,15 +252,6 @@
   "page": "rust-core.html"
  },
  {
-  "id": "bionic-guide",
-  "name": "Bionic で動くソフトについて",
-  "genre": "native",
-  "status": "base",
-  "version": "",
-  "command": "",
-  "page": "bionic-guide.html"
- },
- {
   "id": "native-golang",
   "name": "Go（ネイティブ）",
   "genre": "native",
@@ -319,7 +310,7 @@
   "name": "Rust（ネイティブ）",
   "genre": "native",
   "status": "plan",
-  "version": "1.100.0（Termux のビルド実績）",
+  "version": "",
   "command": "",
   "page": "native-rust.html"
  },
@@ -394,5 +385,14 @@
   "version": "",
   "command": "",
   "page": "native-wget.html"
+ },
+ {
+  "id": "bionic-guide",
+  "name": "Bionic とは（解説）",
+  "genre": "native",
+  "status": "ok",
+  "version": "",
+  "command": "",
+  "page": "bionic-guide.html"
  }
 ]

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light" />
 <link rel="icon" href="data:," />
-<title>Bionic で動くソフトについて ― Hako Hub</title>
-<meta name="description" content="Android の標準ライブラリ（Bionic）で直接動くソフトの見分け方と、候補の出所。" />
+<title>Bionic とは（解説） ― Hako Hub</title>
+<meta name="description" content="Android の標準ライブラリの名前。ネイティブ部品は、これに合わせて作る。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -84,22 +84,23 @@
 
   <header class="hero">
     <span class="hero-eyebrow">Hako Hub ／ ネイティブ候補</span>
-    <h1>Bionic で動くソフトについて</h1>
-    <p class="hero-lead">Android の標準ライブラリ（Bionic）で直接動くソフトの見分け方と、候補の出所。</p>
-    <p style="margin-top:14px"><span class="badge b-base">解説</span></p>
+    <h1>Bionic とは（解説）</h1>
+    <p class="hero-lead">Android の標準ライブラリの名前。ネイティブ部品は、これに合わせて作る。</p>
+    <p style="margin-top:14px"><span class="badge b-plan">解説</span></p>
   </header>
   <table class="spec"><tr><th>ジャンル</th><td>ネイティブ候補</td></tr><tr><th>状態</th><td>解説</td></tr><tr><th>方式</th><td>解説</td></tr><tr><th>確認日</th><td>2026-11-24</td></tr></table>
   
-  
+  <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td>解説ページのため、操作はない</td></tr><tr><th>消す</th><td>解説ページのため、操作はない</td></tr><tr><th>上げる（更新）</th><td>解説ページのため、操作はない</td></tr></table>
   
   <div class="detail">
 <h2>Bionic とは</h2>
-<p>Android の標準ライブラリ。箱のネイティブ部品は、この Bionic に合わせてビルドされていて、proot の変換を通さずに直接動く。その分、速い。</p>
-<h2>候補の出所</h2>
-<p>Termux のパッケージ置き場にあるのは、Termux 用に作られた物の一覧で、「Bionic で動く物の一覧」ではない。ただ、「Bionic 向けに作れる」ことの前例としては参考になる。1,000種を超えるソフトに、Bionic 向けビルドの前例がある。</p>
-<h2>注意</h2>
-<p>Termux のパッケージは置き場所（接頭辞）が Termux 専用の作りなので、そのまま箱には入らない。箱のネイティブ部品にするには、箱用にビルドし直す必要がある。</p>
-<p>当面は、同じソフトを proot 側（Ubuntu や Alpine の土台）で使うのが早い。ネイティブ化は、速さが要る物から順に行う。</p>
+<p>Android の標準ライブラリ（libc）の名前。電話の Android の上で直接動くプログラムは、これに合わせて作られている。</p>
+<h2>箱との関係</h2>
+<p>箱のネイティブ部品（OpenSSH や Rust 制御コア）は、Bionic に合わせてビルドしてあるので、変換なしでそのまま速く動く。</p>
+<p>一方、箱の中の土台（Ubuntu や Alpine）で動くソフトは glibc 前提で、proot の変換を通る分だけ遅くなる。</p>
+<h2>候補の確かめ方</h2>
+<p>あるソフトがネイティブ部品にできるかどうかは、実際に箱用にビルドして、実機で動かして確かめる。Go 製や Rust 製は単体バイナリにしやすく、相性がいい。C 製は、Bionic への移植の手間がかかることが多い。</p>
+<p>この区分の項目は、その候補の一覧。当面は proot 側の土台で同じソフトを使う。</p>
   </div>
   <a class="backlink" href="index.html">← Hako Hub の一覧へ戻る</a>
   <footer>Hako Hub ― hako（箱）のカタログ。数値は Pixel 3a 実機の実測です。</footer>
