@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<link rel="icon" href="data:," />
+<title>libandroid-selinux ― Hako Hub</title>
+<meta name="description" content="Android fork of libselinux, an SELinux userland library" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf7f1; --surface:#ffffff; --surface-2:#f6f1e7;
+    --ink:#22303a; --ink-2:#475a66; --muted:#7d8b93; --line:#e6ddcb;
+    --teal:#0f766e; --teal-dark:#0a544e; --teal-soft:#e2f2ec;
+    --amber:#c2710a; --amber-bg:#fdf0d5;
+    --radius:18px; --shadow:0 10px 28px rgba(34,48,58,.07);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans JP",system-ui,-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;
+    line-height:1.8;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:780px;margin:0 auto;padding:0 20px 64px}
+  @media(min-width:900px){.wrap{max-width:840px;padding:0 28px}}
+  .hero{padding:48px 0 8px}
+  .hero-eyebrow{display:inline-block;font-size:13px;font-weight:700;color:var(--teal-dark);
+    background:var(--teal-soft);padding:7px 14px;border-radius:999px}
+  .hero h1{font-weight:900;font-size:clamp(29px,7.4vw,44px);line-height:1.45;margin:20px 0 0}
+  .hero h1 .hl{color:var(--teal)}
+  .hero-lead{margin:18px 0 0;font-size:16.5px;line-height:1.95;color:var(--ink-2)}
+  .hero-lead strong{color:var(--ink)}
+  .searchbox{margin:30px 0 4px;background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+  .searchbox input{width:100%;font-size:17px;padding:12px 14px;border:1px solid var(--line);
+    border-radius:12px;background:var(--surface-2);color:var(--ink);font-family:inherit}
+  .searchbox input:focus{outline:2px solid var(--teal);background:var(--surface)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .chip{font-size:13.5px;font-weight:700;padding:6px 14px;border-radius:999px;cursor:pointer;
+    background:var(--surface);border:1px solid var(--line);color:var(--ink-2);font-family:inherit}
+  .chip.on{background:var(--teal);border-color:var(--teal);color:#fff}
+  .hitcount{font-size:13px;color:var(--muted);margin-top:10px}
+  .noresult{display:none;background:var(--amber-bg);color:var(--amber);border-radius:12px;
+    padding:12px 16px;font-size:14.5px;font-weight:700;margin-top:14px}
+  h2{font-size:22px;font-weight:900;margin:44px 0 6px}
+  .sec-lead{color:var(--ink-2);margin:0 0 18px}
+  .list{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden}
+  .row{display:flex;gap:12px;align-items:baseline;padding:14px 18px;border-bottom:1px solid var(--line);
+    text-decoration:none;color:var(--ink)}
+  .row:last-child{border-bottom:none}
+  .row:hover{background:var(--surface-2)}
+  .row-main{flex:1;min-width:0}
+  .row-name{font-weight:900;font-size:16.5px}
+  .row-name .ver{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+  .row-sum{font-size:14px;color:var(--ink-2);margin-top:2px}
+  .row-meta{white-space:nowrap;text-align:right}
+  .row-genre{font-size:12px;color:var(--muted);display:block}
+  .badge{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
+  .b-done{background:var(--teal-soft);color:var(--teal-dark)}
+  .b-base{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
+  .b-plan{background:var(--amber-bg);color:var(--amber)}
+  .howto{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 20px;box-shadow:var(--shadow)}
+  .howto code{background:var(--surface-2);padding:1px 7px;border-radius:6px;font-size:14px}
+  .howto li{margin:6px 0}
+  .note{font-size:14px;color:var(--ink-2)}
+  footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .backlink{display:inline-block;margin-top:26px;font-size:14px;color:var(--teal-dark);font-weight:700;text-decoration:none}
+  table.spec{border-collapse:collapse;margin:16px 0;background:var(--surface);
+    border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  table.spec th,table.spec td{padding:8px 14px;font-size:14.5px;border-bottom:1px solid var(--line);text-align:left}
+  table.spec th{background:var(--surface-2);color:var(--ink-2);white-space:nowrap}
+  table.spec tr:last-child th,table.spec tr:last-child td{border-bottom:none}
+  .detail h2{font-size:19px;margin:30px 0 4px}
+  .detail p{margin:8px 0}
+  code.cmd{display:inline-block;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;
+    padding:6px 12px;font-size:14.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="hero-eyebrow">Hako Hub ／ ネイティブ候補</span>
+    <h1>libandroid-selinux</h1>
+    <p class="hero-lead">Android fork of libselinux, an SELinux userland library</p>
+    <p style="margin-top:14px"><span class="badge b-plan">Bionic実績あり</span></p>
+  </header>
+  <table class="spec"><tr><th>ジャンル</th><td>ネイティブ候補</td></tr><tr><th>状態</th><td>Bionic実績あり</td></tr><tr><th>方式</th><td>ネイティブ部品の候補（自動収録）</td></tr><tr><th>版</th><td>14.0.0.11-2</td></tr></table>
+  
+  <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td>今は proot 側（Ubuntu／Alpine の土台）で利用できる。ネイティブ版は、箱用にビルドし直してから入れる</td></tr><tr><th>消す</th><td>同梱部品と同じ扱い（箱の更新と一緒）</td></tr><tr><th>上げる（更新）</th><td>箱（アプリ）の更新と一緒に上がる</td></tr></table>
+  
+  <div class="detail">
+<h2>状態</h2>
+<p>Termux の公式リポジトリに、Bionic 向けビルドの実績がある。この項目は、その置き場から自動で収録した。</p>
+<h2>箱での扱い</h2>
+<p>そのままでは箱に入らない（置き場所の作りが Termux 専用のため）。当面は proot 側（Ubuntu や Alpine の土台）で同じソフトを使う。ネイティブ化は、速さが要る物から順に行う。</p>
+  </div>
+  <a class="backlink" href="index.html">← Hako Hub の一覧へ戻る</a>
+  <footer>Hako Hub ― hako（箱）のカタログ。数値は Pixel 3a 実機の実測です。</footer>
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cdf4ee53507948e4a412f503875833cd"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
