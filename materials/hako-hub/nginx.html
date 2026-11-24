@@ -88,7 +88,7 @@
     <p class="hero-lead">Web サーバー。初回は導入込みで46.9秒、2回目以降は即起動。</p>
     <p style="margin-top:14px"><span class="badge b-done">実機実証済み・apt 型</span></p>
   </header>
-  <table class="spec"><tr><th>ジャンル</th><td>Web</td></tr><tr><th>状態</th><td>実機実証済み・apt 型</td></tr><tr><th>方式</th><td>apt 型レシピ</td></tr><tr><th>版</th><td>1.24.0</td></tr></table>
+  <table class="spec"><tr><th>ジャンル</th><td>Web</td></tr><tr><th>状態</th><td>実機実証済み・apt 型</td></tr><tr><th>方式</th><td>apt 型レシピ</td></tr><tr><th>版</th><td>1.24.0</td></tr><tr><th>確認日</th><td>2026-11-24</td></tr></table>
   <p><code class="cmd">hako up nginx</code></p>
   <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td><code>hako up nginx</code>（未導入なら、土台のパッケージから自動で入れて起動する）</td></tr><tr><th>消す</th><td><code>hako down nginx</code> で停止。<code>hako remove nginx</code> で作業場所ごと削除（<code>--purge</code> でパッケージ自体も削除）</td></tr><tr><th>上げる（更新）</th><td><code>hako remove nginx --purge</code> の後に <code>hako up nginx</code> で、新しい版を入れ直す</td></tr></table>
   <h2 style="font-size:19px;margin:30px 0 4px">土台ごとの操作</h2><p style="font-size:14px;color:var(--ink-2)">基本は、土台によらず hako の決まったコマンドで対応します。土台の中で直接操作する場合の違いは、下の通りです。</p><table class="spec"><tr><th>Ubuntu の場合</th><td>基本は <code>hako up nginx</code> で対応する。土台の中で直接やる場合は、入れる: <code>apt install nginx-light</code>、消す: <code>apt remove nginx-light</code>。上げる: <code>apt upgrade</code> は使わず、<code>hako remove nginx --purge</code> の後に <code>hako up nginx</code> で入れ直す</td></tr><tr><th>Alpine の場合</th><td>入れる: <code>apk add nginx</code>（実測済み）。消す: <code>apk del nginx</code>。上げる: 土台全体の更新はせず、<code>hako up nginx</code> の入れ直しか、単体で <code>apk add -u nginx</code></td></tr></table>

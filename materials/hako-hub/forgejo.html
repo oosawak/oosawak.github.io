@@ -88,7 +88,7 @@
     <p class="hero-lead">Git の置き場。同梱をやめて、Hub のレシピから入れる形に移した。</p>
     <p style="margin-top:14px"><span class="badge b-done">実機実証済み・release 型</span></p>
   </header>
-  <table class="spec"><tr><th>ジャンル</th><td>開発</td></tr><tr><th>状態</th><td>実機実証済み・release 型</td></tr><tr><th>方式</th><td>release 型レシピ</td></tr><tr><th>版</th><td>15.0.11</td></tr></table>
+  <table class="spec"><tr><th>ジャンル</th><td>開発</td></tr><tr><th>状態</th><td>実機実証済み・release 型</td></tr><tr><th>方式</th><td>release 型レシピ</td></tr><tr><th>版</th><td>15.0.11</td></tr><tr><th>確認日</th><td>2026-11-24</td></tr></table>
   <p><code class="cmd">hako up forgejo</code></p>
   <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td><code>hako up forgejo</code>（未導入なら、公式の配布ファイルを取得し、SHA-256で確かめてから入れて起動する）</td></tr><tr><th>消す</th><td><code>hako down forgejo</code> で停止。<code>hako remove forgejo</code> で作業場所ごと削除</td></tr><tr><th>上げる（更新）</th><td>新しい版のレシピが出たら <code>hako up forgejo</code> で入れ直す（取得と検証からやり直す）</td></tr></table>
   <h2 style="font-size:19px;margin:30px 0 4px">土台ごとの操作</h2><p style="font-size:14px;color:var(--ink-2)">基本は、土台によらず hako の決まったコマンドで対応します。土台の中で直接操作する場合の違いは、下の通りです。</p><table class="spec"><tr><th>Ubuntu の場合</th><td>release 型なので apt は使わない。入れる: <code>hako up forgejo</code>（公式バイナリを取得して検証）。消す: <code>hako remove forgejo</code>。上げる: 新しい版のレシピで <code>hako up forgejo</code> の入れ直し</td></tr><tr><th>Alpine の場合</th><td>公式バイナリが glibc 前提のため、Alpine の土台では未確認。使う場合は Ubuntu の箱で</td></tr></table>

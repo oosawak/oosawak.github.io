@@ -88,7 +88,7 @@
     <p class="hero-lead">Web を出す係と、定期的に測って記録する係の組。hako の使い方の見本。</p>
     <p style="margin-top:14px"><span class="badge b-done">実証済み</span></p>
   </header>
-  <table class="spec"><tr><th>ジャンル</th><td>学習</td></tr><tr><th>状態</th><td>実証済み</td></tr><tr><th>方式</th><td>サンプル（compose 定義）</td></tr></table>
+  <table class="spec"><tr><th>ジャンル</th><td>学習</td></tr><tr><th>状態</th><td>実証済み</td></tr><tr><th>方式</th><td>サンプル（compose 定義）</td></tr><tr><th>確認日</th><td>2026-11-24</td></tr></table>
   <p><code class="cmd">hako up（compose の定義から）</code></p>
   <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td>定義ファイル（compose.yaml）のある場所で <code>hako up</code></td></tr><tr><th>消す</th><td><code>hako down</code> で両方とも停止。片付けは定義ファイルと作業場所を消す</td></tr><tr><th>上げる（更新）</th><td>定義ファイルを書き換えて <code>hako up</code> し直す</td></tr></table>
   <h2 style="font-size:19px;margin:30px 0 4px">土台ごとの操作</h2><p style="font-size:14px;color:var(--ink-2)">基本は、土台によらず hako の決まったコマンドで対応します。土台の中で直接操作する場合の違いは、下の通りです。</p><table class="spec"><tr><th>Ubuntu の場合</th><td>Python があれば動く。入れる: 定義ファイルのある場所で <code>hako up</code>（Python は <code>apt install python3</code>）。消す: <code>hako down</code> の後に定義と作業場所を削除。上げる: 定義ファイルを書き換えて <code>hako up</code> し直す</td></tr><tr><th>Alpine の場合</th><td>Python があれば動く。入れる: 定義ファイルのある場所で <code>hako up</code>（Python は <code>apk add python3</code>、実測済み）。消す: <code>hako down</code> の後に定義と作業場所を削除。上げる: 定義ファイルを書き換えて <code>hako up</code> し直す</td></tr></table>
