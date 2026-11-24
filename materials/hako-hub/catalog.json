@@ -90,6 +90,15 @@
   "page": "hugo.html"
  },
  {
+  "id": "nodejs",
+  "name": "Node.js",
+  "genre": "dev",
+  "status": "plan",
+  "version": "\"\"",
+  "command": "hako up nodejs",
+  "page": "nodejs.html"
+ },
+ {
   "id": "nginx",
   "name": "nginx",
   "genre": "web",
