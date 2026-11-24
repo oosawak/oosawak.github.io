@@ -57,6 +57,7 @@
   .row-sum{font-size:14px;color:var(--ink-2);margin-top:2px}
   .row-meta{white-space:nowrap;text-align:right}
   .row-genre{font-size:12px;color:var(--muted);display:block}
+  .testbar{background:#b3541e;color:#fff;text-align:center;font-weight:700;font-size:14px;padding:9px 16px;letter-spacing:.02em}
   .row.off{opacity:.45}
   .row .off-note{display:none;font-size:12px;color:var(--muted);display:none}
   .row.off .off-note{display:block;font-size:12px;color:#a33;font-weight:700}
@@ -83,6 +84,7 @@
 </style>
 </head>
 <body>
+<div class="testbar">テスト公開中 ― このサイトは試行中のものです。内容は変わることがあります</div>
 <div class="wrap">
 
   <header class="hero">
@@ -95,13 +97,15 @@
     </p>
     <p class="hero-lead">
       hako は独立した土台です。土台とレシピの仕組みだけを用意しておき、その上に用途ごとの構成を載せます。ソース管理の道具一式を載せた構成は、その一例です。
+      アプリ本体は約12 MiB と小さく、SSH サーバーまで含めて最初から入っているのは入り口と土台だけです。
     </p>
   </header>
 
   <h2>土台を選ぶ</h2>
   <p class="sec-lead">土台は、この枠で選びます。選ぶと、下のカタログがその土台に合わせて見えます。使えない物は消えずに、薄くなって「この土台では使えません」と出ます。</p>
-  <div class="chips" id="base-chips"><button class="chip on" data-base="">選ばない</button><button class="chip" data-base="glibc">Ubuntu 24.04（glibc）</button><button class="chip" data-base="musl">Alpine 3.24（musl）</button><button class="chip" data-base="Bionic">Bionicのみ（土台なし）（Bionic）</button><button class="chip" data-base="glibc">Ubuntu 26.04（glibc）</button><button class="chip" data-base="glibc">Fedora（glibc）</button><button class="chip" data-base="glibc">Arch Linux（glibc）</button><button class="chip" data-base="glibc">Debian（glibc）</button></div>
-  <p class="sec-lead">土台の詳細： <a href="ubuntu-2404.html">Ubuntu 24.04</a> ／ <a href="alpine.html">Alpine 3.24</a> ／ <a href="bionic-only.html">Bionicのみ（土台なし）</a> ／ <a href="ubuntu-2604.html">Ubuntu 26.04</a> ／ <a href="fedora.html">Fedora</a> ／ <a href="archlinux.html">Arch Linux</a> ／ <a href="debian.html">Debian</a></p>
+  <div class="chips" id="base-chips"><button class="chip on" data-base="">選ばない</button><button class="chip" data-base="glibc">Ubuntu 24.04（glibc）</button><button class="chip" data-base="musl">Alpine 3.24（musl）</button><button class="chip" data-base="Bionic">Bionicのみ（土台なし）（Bionic）</button></div>
+  <p class="sec-lead">土台の詳細： <a href="ubuntu-2404.html">Ubuntu 24.04</a> ／ <a href="alpine.html">Alpine 3.24</a> ／ <a href="bionic-only.html">Bionicのみ（土台なし）</a> ｜ 将来の候補： <a href="ubuntu-2604.html">Ubuntu 26.04</a> ／ <a href="fedora.html">Fedora</a> ／ <a href="archlinux.html">Arch Linux</a> ／ <a href="debian.html">Debian</a></p>
+  <p class="sec-lead">初回セットアップでは、土台と一緒に、初期ユーザー名（既定は hako）と、そのパスワード、root のパスワード（空欄なら初期ユーザーと共通）を設定します。パスワードが未設定の間は、SSH は開きません。</p>
 
   <h2>カタログ（レシピ）</h2>
   <p class="sec-lead">土台の中へ足す物のカタログです。箱の中から <code>hako up 名前</code> で取って入れます。各行を押すと、詳細のページに進みます。</p>
@@ -137,8 +141,8 @@
   <h2>箱に入っている物</h2>
   <p class="sec-lead">選んで入れる物ではなく、箱に最初から入っている部品です。中身の説明として置いています。</p>
   <div class="list">
-<a class="row" data-genre="builtin" data-libc="glibc musl" data-keywords="openssh ssh sshd 入り口 接続" href="openssh.html"><span class="row-main"><span class="row-name">OpenSSH（sshd）</span><span class="row-sum" style="display:block">箱への入り口。土台（Ubuntu）の openssh-server が、proot の中で動く。</span></span><span class="row-meta"><span class="badge b-base">土台の標準部品</span><span class="row-genre">同梱部品</span><span class="row-genre">土台のパッケージ</span></span></a>
 <a class="row" data-genre="builtin" data-libc="Bionic" data-keywords="rust 制御 コア git 基本 コマンド ネイティブ uutils" href="rust-core.html"><span class="row-main"><span class="row-name">Rust 制御コア／git／基本コマンド</span><span class="row-sum" style="display:block">サービスの起動と停止、状態の確認を担う中心と、作業の基本道具。</span></span><span class="row-meta"><span class="badge b-base">ネイティブ同梱</span><span class="row-genre">同梱部品</span><span class="row-genre">Bionic</span></span></a>
+<a class="row" data-genre="builtin" data-libc="Bionic" data-keywords="ssh sshd russh 入り口 接続 sftp ポート転送" href="sshd.html"><span class="row-main"><span class="row-name">SSH サーバー（russh）<span class="ver">russh 0.65.4</span></span><span class="row-sum" style="display:block">箱への入り口。Rust の russh で作ったネイティブの SSH サーバー。土台が無くても動く。</span></span><span class="row-meta"><span class="badge b-base">ネイティブ同梱</span><span class="row-genre">同梱部品</span><span class="row-genre">Bionic</span></span></a>
   </div>
 
   <h2>これから（ネイティブ部品の候補）</h2>

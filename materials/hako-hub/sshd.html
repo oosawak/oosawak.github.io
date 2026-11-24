@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light" />
 <link rel="icon" href="data:," />
-<title>OpenSSH（sshd） ― Hako Hub</title>
-<meta name="description" content="箱への入り口。土台（Ubuntu）の openssh-server が、proot の中で動く。" />
+<title>SSH サーバー（russh） ― Hako Hub</title>
+<meta name="description" content="箱への入り口。Rust の russh で作ったネイティブの SSH サーバー。土台が無くても動く。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -57,6 +57,7 @@
   .row-sum{font-size:14px;color:var(--ink-2);margin-top:2px}
   .row-meta{white-space:nowrap;text-align:right}
   .row-genre{font-size:12px;color:var(--muted);display:block}
+  .testbar{background:#b3541e;color:#fff;text-align:center;font-weight:700;font-size:14px;padding:9px 16px;letter-spacing:.02em}
   .row.off{opacity:.45}
   .row .off-note{display:none;font-size:12px;color:var(--muted);display:none}
   .row.off .off-note{display:block;font-size:12px;color:#a33;font-weight:700}
@@ -83,23 +84,27 @@
 </style>
 </head>
 <body>
+<div class="testbar">テスト公開中 ― このサイトは試行中のものです。内容は変わることがあります</div>
 <div class="wrap">
 
   <header class="hero">
     <span class="hero-eyebrow">Hako Hub ／ 同梱部品</span>
-    <h1>OpenSSH（sshd）</h1>
-    <p class="hero-lead">箱への入り口。土台（Ubuntu）の openssh-server が、proot の中で動く。</p>
-    <p style="margin-top:14px"><span class="badge b-base">土台の標準部品</span></p>
+    <h1>SSH サーバー（russh）</h1>
+    <p class="hero-lead">箱への入り口。Rust の russh で作ったネイティブの SSH サーバー。土台が無くても動く。</p>
+    <p style="margin-top:14px"><span class="badge b-base">ネイティブ同梱</span></p>
   </header>
-  <table class="spec"><tr><th>ジャンル</th><td>同梱部品</td></tr><tr><th>状態</th><td>土台の標準部品</td></tr><tr><th>方式</th><td>土台（Ubuntu）のパッケージ</td></tr><tr><th>確認日</th><td>2026-11-23</td></tr><tr><th>入り口</th><td>土台のパッケージ（どの土台でも、その土台の版が入ります）</td></tr></table>
+  <table class="spec"><tr><th>ジャンル</th><td>同梱部品</td></tr><tr><th>状態</th><td>ネイティブ同梱</td></tr><tr><th>方式</th><td>ネイティブ部品</td></tr><tr><th>標準ライブラリ</th><td>Bionic</td></tr><tr><th>版</th><td>russh 0.65.4</td></tr><tr><th>確認日</th><td>2026-11-25</td></tr></table>
   
-  <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td>セットアップの時に、土台へ自動で入る</td></tr><tr><th>消す</th><td>消せない。箱に入るための入り口のため</td></tr><tr><th>上げる（更新）</th><td>土台の差し替えと一緒に上がる</td></tr></table>
+  <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td>最初から入っている（操作なし）</td></tr><tr><th>消す</th><td>消せない。箱に入るための入り口のため</td></tr><tr><th>上げる（更新）</th><td>箱（アプリ）の更新と一緒に上がる</td></tr></table>
   
   <div class="detail">
 <h2>概要</h2>
-<p>箱への入り口。実体は、土台（Ubuntu 24.04）の openssh-server で、proot の中で動いている。ネイティブ部品ではない。</p>
-<h2>実測（Pixel 3a）</h2>
-<ul><li>SSH 接続は Pixel 3機種で確認済み</li><li>proot と合わせてもメモリは約6.5 MiB</li></ul>
+<p>箱への入り口の SSH サーバーです。Rust のライブラリ russh で作ったネイティブ部品で、土台（proot）に依存しません。以前の構成で土台の中に入っていた OpenSSH は、もう使いません。</p>
+<p>パスワードの照合は Argon2id のハッシュで行います。パスワードが未設定の間は、SSH を開きません。</p>
+<p>土台が動いている時は、その土台のシェルへつなぎます。土台が止まっている時は、Bionic 側のシェル（bash、git、curl、基本コマンド）で応答するので、復旧の入り口にもなります。</p>
+<p>ファイルのやり取りは SFTP で実ファイルを読み書きできます。ポート転送にも対応し、VS Code の Remote-SSH の基盤になります。</p>
+<h2>実測（Pixel 4）</h2>
+<ul><li>本体の大きさ 1.70 MiB</li><li>起動 14.0 ミリ秒（鍵の初回生成込みでも 42.7 ミリ秒）</li><li>待ち受けのメモリ 2.43 MiB</li><li>LAN からの接続、PTY、SFTP の往復（64 KiB、ハッシュ一致）、ポート転送まで確認済み</li></ul>
   </div>
   <a class="backlink" href="index.html">← Hako Hub の一覧へ戻る</a>
   <footer>Hako Hub ― hako（箱）のカタログ。数値は Pixel 3a 実機の実測です。</footer>

@@ -9,6 +9,15 @@
   "page": "alpine.html"
  },
  {
+  "id": "bionic-only",
+  "name": "Bionicのみ（土台なし）",
+  "genre": "base",
+  "status": "base",
+  "version": "",
+  "command": "",
+  "page": "bionic-only.html"
+ },
+ {
   "id": "ubuntu-2404",
   "name": "Ubuntu 24.04",
   "genre": "base",
@@ -25,15 +34,6 @@
   "version": "",
   "command": "",
   "page": "archlinux.html"
- },
- {
-  "id": "bionic-only",
-  "name": "Bionicのみ（土台なし）",
-  "genre": "base",
-  "status": "plan",
-  "version": "",
-  "command": "",
-  "page": "bionic-only.html"
  },
  {
   "id": "debian",
@@ -243,15 +243,6 @@
   "page": "jupyter.html"
  },
  {
-  "id": "openssh",
-  "name": "OpenSSH（sshd）",
-  "genre": "builtin",
-  "status": "base",
-  "version": "",
-  "command": "",
-  "page": "openssh.html"
- },
- {
   "id": "rust-core",
   "name": "Rust 制御コア／git／基本コマンド",
   "genre": "builtin",
@@ -259,6 +250,15 @@
   "version": "",
   "command": "",
   "page": "rust-core.html"
+ },
+ {
+  "id": "sshd",
+  "name": "SSH サーバー（russh）",
+  "genre": "builtin",
+  "status": "base",
+  "version": "russh 0.65.4",
+  "command": "",
+  "page": "sshd.html"
  },
  {
   "id": "native-golang",

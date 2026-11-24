@@ -57,6 +57,7 @@
   .row-sum{font-size:14px;color:var(--ink-2);margin-top:2px}
   .row-meta{white-space:nowrap;text-align:right}
   .row-genre{font-size:12px;color:var(--muted);display:block}
+  .testbar{background:#b3541e;color:#fff;text-align:center;font-weight:700;font-size:14px;padding:9px 16px;letter-spacing:.02em}
   .row.off{opacity:.45}
   .row .off-note{display:none;font-size:12px;color:var(--muted);display:none}
   .row.off .off-note{display:block;font-size:12px;color:#a33;font-weight:700}
@@ -83,6 +84,7 @@
 </style>
 </head>
 <body>
+<div class="testbar">テスト公開中 ― このサイトは試行中のものです。内容は変わることがあります</div>
 <div class="wrap">
 
   <header class="hero">
@@ -91,16 +93,16 @@
     <p class="hero-lead">サービスの起動と停止、状態の確認を担う中心と、作業の基本道具。</p>
     <p style="margin-top:14px"><span class="badge b-base">ネイティブ同梱</span></p>
   </header>
-  <table class="spec"><tr><th>ジャンル</th><td>同梱部品</td></tr><tr><th>状態</th><td>ネイティブ同梱</td></tr><tr><th>方式</th><td>ネイティブ部品</td></tr><tr><th>標準ライブラリ</th><td>Bionic</td></tr><tr><th>確認日</th><td>2026-11-23</td></tr></table>
+  <table class="spec"><tr><th>ジャンル</th><td>同梱部品</td></tr><tr><th>状態</th><td>ネイティブ同梱</td></tr><tr><th>方式</th><td>ネイティブ部品</td></tr><tr><th>標準ライブラリ</th><td>Bionic</td></tr><tr><th>確認日</th><td>2026-11-25</td></tr></table>
   
   <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td>最初から入っている（操作なし）</td></tr><tr><th>消す</th><td>消せない。箱の制御の中心のため</td></tr><tr><th>上げる（更新）</th><td>箱（アプリ）の更新と一緒に上がる</td></tr></table>
   
   <div class="detail">
 <h2>概要</h2>
 <p>サービスの起動と停止、設定の生成、状態の確認、記録の収集を担う中心。約400KB の小さな部品で、Android ネイティブで動く。</p>
-<p>あわせて、git と基本コマンド（uutils の coreutils）もネイティブで入っている。</p>
-<h2>実測（Pixel 3a）</h2>
-<ul><li>アプリ本体の待機メモリは 37.9 MiB</li><li>ネイティブの git は、proot 経由より速い（clone の中央値 510ms）</li></ul>
+<p>あわせて、git と基本コマンド（uutils の coreutils）もネイティブで入っている。SSH サーバー（russh）もネイティブ部品で、土台に依存しない入り口になっている。</p>
+<h2>実測</h2>
+<ul><li>アプリ本体（APK）は 11.99 MiB。Forgejo などを同梱せず、レシピで足す形にしたため、この小ささになった（Pixel 4）</li><li>アプリ本体の待機メモリは 37.9 MiB（Pixel 3a）</li><li>ネイティブの git は、proot 経由より速い（clone の中央値 510ms）</li></ul>
   </div>
   <a class="backlink" href="index.html">← Hako Hub の一覧へ戻る</a>
   <footer>Hako Hub ― hako（箱）のカタログ。数値は Pixel 3a 実機の実測です。</footer>

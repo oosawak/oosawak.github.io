@@ -57,6 +57,7 @@
   .row-sum{font-size:14px;color:var(--ink-2);margin-top:2px}
   .row-meta{white-space:nowrap;text-align:right}
   .row-genre{font-size:12px;color:var(--muted);display:block}
+  .testbar{background:#b3541e;color:#fff;text-align:center;font-weight:700;font-size:14px;padding:9px 16px;letter-spacing:.02em}
   .row.off{opacity:.45}
   .row .off-note{display:none;font-size:12px;color:var(--muted);display:none}
   .row.off .off-note{display:block;font-size:12px;color:#a33;font-weight:700}
@@ -83,23 +84,25 @@
 </style>
 </head>
 <body>
+<div class="testbar">テスト公開中 ― このサイトは試行中のものです。内容は変わることがあります</div>
 <div class="wrap">
 
   <header class="hero">
     <span class="hero-eyebrow">Hako Hub ／ 土台</span>
     <h1>Bionicのみ（土台なし）</h1>
     <p class="hero-lead">土台（rootfs）を使わず、Bionic 側の部品だけで動かす一番軽い形。</p>
-    <p style="margin-top:14px"><span class="badge b-plan">候補</span></p>
+    <p style="margin-top:14px"><span class="badge b-base">選べる土台</span></p>
   </header>
-  <table class="spec"><tr><th>ジャンル</th><td>土台</td></tr><tr><th>状態</th><td>候補</td></tr><tr><th>方式</th><td>土台なし（ネイティブのみ）</td></tr><tr><th>標準ライブラリ</th><td>Bionic</td></tr></table>
+  <table class="spec"><tr><th>ジャンル</th><td>土台</td></tr><tr><th>状態</th><td>選べる土台</td></tr><tr><th>方式</th><td>土台なし（ネイティブのみ）</td></tr><tr><th>標準ライブラリ</th><td>Bionic</td></tr><tr><th>確認日</th><td>2026-11-25</td></tr></table>
   
-  <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td>セットアップの時に選ぶ形を用意中</td></tr><tr><th>消す</th><td>その箱の作業場所を削除する（共有領域のデータは残る）</td></tr><tr><th>上げる（更新）</th><td>部品の更新は、箱の更新と一緒に行う</td></tr></table>
+  <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td>初回セットアップの時に選ぶ。初期ユーザーとパスワードも、その時に設定する</td></tr><tr><th>消す</th><td>その箱の作業場所を削除する（共有領域のデータは残る）</td></tr><tr><th>上げる（更新）</th><td>部品の更新は、箱の更新と一緒に行う</td></tr></table>
   
   <div class="detail">
 <h2>概要</h2>
 <p>土台（rootfs）を展開せず、Android の標準ライブラリ（Bionic）側の部品だけで動かす形。制御コア、git、bash、sshd（russh）など、Bionic 向けに作った部品がそのまま使える。</p>
 <h2>できること</h2>
-<p>SSH で入って、git で作業する、といった箱の中心の使い方は、この形でも成立する。パッケージの置き場（apt など）は無いので、使える物は Bionic 側の部品の一覧にある範囲になる。</p>
+<p>SSH で入って、git で作業する、といった箱の中心の使い方は、この形でも成立する。実機では、Bionic のシェル（bash 5.2.37、git 2.47.1）で応答することを確認済み。パッケージの置き場（apt など）は無いので、使える物は Bionic 側の部品の一覧にある範囲になる。</p>
+<p>土台を止めた時の受け口も、この形である。</p>
   </div>
   <a class="backlink" href="index.html">← Hako Hub の一覧へ戻る</a>
   <footer>Hako Hub ― hako（箱）のカタログ。数値は Pixel 3a 実機の実測です。</footer>

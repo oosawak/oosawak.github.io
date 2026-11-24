@@ -57,6 +57,7 @@
   .row-sum{font-size:14px;color:var(--ink-2);margin-top:2px}
   .row-meta{white-space:nowrap;text-align:right}
   .row-genre{font-size:12px;color:var(--muted);display:block}
+  .testbar{background:#b3541e;color:#fff;text-align:center;font-weight:700;font-size:14px;padding:9px 16px;letter-spacing:.02em}
   .row.off{opacity:.45}
   .row .off-note{display:none;font-size:12px;color:var(--muted);display:none}
   .row.off .off-note{display:block;font-size:12px;color:#a33;font-weight:700}
@@ -83,6 +84,7 @@
 </style>
 </head>
 <body>
+<div class="testbar">テスト公開中 ― このサイトは試行中のものです。内容は変わることがあります</div>
 <div class="wrap">
 
   <header class="hero">
@@ -91,15 +93,15 @@
     <p class="hero-lead">超軽量・速さ特化の土台。軽いサーバーを常駐させる向け。</p>
     <p style="margin-top:14px"><span class="badge b-done">実機実証済み</span></p>
   </header>
-  <table class="spec"><tr><th>ジャンル</th><td>土台</td></tr><tr><th>状態</th><td>実機実証済み</td></tr><tr><th>方式</th><td>土台（rootfs）</td></tr><tr><th>標準ライブラリ</th><td>musl</td></tr><tr><th>版</th><td>3.24.4</td></tr><tr><th>確認日</th><td>2026-11-24</td></tr></table>
+  <table class="spec"><tr><th>ジャンル</th><td>土台</td></tr><tr><th>状態</th><td>実機実証済み</td></tr><tr><th>方式</th><td>土台（rootfs）</td></tr><tr><th>標準ライブラリ</th><td>musl</td></tr><tr><th>版</th><td>3.24.4</td></tr><tr><th>確認日</th><td>2026-11-25</td></tr></table>
   
   <h2 style="font-size:19px;margin:30px 0 4px">操作コマンド</h2><table class="spec"><tr><th>入れる</th><td>セットアップの時に選ぶ。後から足す場合は、土台ファイルを箱の置き場に追加する</td></tr><tr><th>消す</th><td>その箱の土台と作業場所を削除する（共有領域のデータは残る）</td></tr><tr><th>上げる（更新）</th><td>中では上げず、新しい版の土台ファイルに差し替える。作業場所と共有領域のデータは引き継げる</td></tr></table>
   
   <div class="detail">
 <h2>概要</h2>
 <p>セットアップで選べる土台の1つ。超軽量で、展開もセットアップも速い。軽いサーバーを常駐させる用途に向く。</p>
-<h2>実測（Pixel 3a）</h2>
-<ul><li>土台ファイル 3.84 MiB、展開 0.51 秒</li><li>git・nginx・Python 3.14 を入れても合計 69.5 MiB</li><li>セットアップ約11秒（apk の導入まで）</li><li>git の操作も Ubuntu の土台より約22%速い（clone の中央値で比較）</li></ul>
+<h2>実測</h2>
+<ul><li>セットアップ 6.7 秒、大きさ 25.9 MiB（Pixel 4。SSH サーバーはネイティブ側にあるため、土台には入れない構成）</li><li>土台ファイル 3.84 MiB、展開 0.51 秒（Pixel 3a）</li><li>git・nginx・Python 3.14 を入れても合計 69.5 MiB</li><li>セットアップ約11秒（apk の導入まで）</li><li>git の操作も Ubuntu の土台より約22%速い（clone の中央値で比較）</li></ul>
 <h2>向かないこと</h2>
 <p>glibc が要るソフト（code-server など）は、この土台では動かない。その場合は Ubuntu の土台を選ぶ。</p>
   </div>
