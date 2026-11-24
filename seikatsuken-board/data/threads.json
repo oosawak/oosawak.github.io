@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-24T19:57:04+09:00",
+  "generatedAt": "2026-11-24T21:57:50+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-24T19:57:04+09:00",
+      "fetchedAt": "2026-11-24T21:57:50+09:00",
       "posts": [
         {
           "username": "trafficlip",
@@ -355,7 +355,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-24T19:57:04+09:00",
+      "fetchedAt": "2026-11-24T21:57:50+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -377,8 +377,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-24T19:57:04+09:00",
+      "fetchedAt": "2026-11-24T21:57:50+09:00",
       "posts": [
+        {
+          "username": "izumizyuusetu",
+          "url": "https://www.threads.com/@izumizyuusetu/post/DgH10atGdRA",
+          "text": "先日山形県は天童市に石油給湯器の取付で行ってきました！ 通行止により不安視していた48関山峠を通りましたが、路面凍っておらず助かった☺️ 最近石油ばっか触ってるからか車内が石油臭くてかなわん。 部屋用の芳香剤2個置いてるけど消臭出来てない。。あの臭い嫌いじゃ無いけどずっとはきついー。 外したトイレは便座の裏が綺麗なら臭いません😌 #宮城県 #仙台市 #設備屋 #給湯器 #トイレ",
+          "likeCount": 0,
+          "takenAt": "2026-11-24T20:24:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#通行止",
+          "spot": "関山峠"
+        },
         {
           "username": "tc_highway",
           "url": "https://www.threads.com/@tc_highway/post/DgHjJEWkxG2",
@@ -1074,7 +1089,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-24T19:57:04+09:00",
+      "fetchedAt": "2026-11-24T21:57:50+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1111,7 +1126,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-24T19:57:04+09:00",
+      "fetchedAt": "2026-11-24T21:57:50+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1238,7 +1253,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-24T19:57:04+09:00",
+      "fetchedAt": "2026-11-24T21:57:50+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
