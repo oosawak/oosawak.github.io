@@ -1,10 +1,25 @@
 {
-  "generatedAt": "2026-11-24T02:57:34+09:00",
+  "generatedAt": "2026-11-24T14:57:15+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-24T02:57:34+09:00",
+      "fetchedAt": "2026-11-24T14:57:15+09:00",
       "posts": [
+        {
+          "username": "tc_highway",
+          "url": "https://www.threads.com/@tc_highway/post/DgHJ8n1kz4A",
+          "text": "#仙台北部道路 利府町内で事故 一部通行止め #tc_highway #通行止 #宮城県道路情報 NEXCO東日本などによると、宮城県利府町の仙台北部道路で事故が発生し、11月24日13:48から、上下線の利府しらかし台IC＝利府JCT間で通行止めとなっています。 https://news.jp/i/1497824623142912946",
+          "likeCount": 0,
+          "takenAt": "2026-11-24T14:00:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#通行止",
+          "spot": "仙台"
+        },
         {
           "username": "katakura_totto",
           "url": "https://www.threads.com/@katakura_totto/post/DgE34LykgHD",
@@ -310,7 +325,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-24T02:57:34+09:00",
+      "fetchedAt": "2026-11-24T14:57:15+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -332,7 +347,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-24T02:57:34+09:00",
+      "fetchedAt": "2026-11-24T14:57:15+09:00",
       "posts": [
         {
           "username": "inaka_rabbit_",
@@ -999,7 +1014,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-24T02:57:34+09:00",
+      "fetchedAt": "2026-11-24T14:57:15+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1036,7 +1051,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-24T02:57:34+09:00",
+      "fetchedAt": "2026-11-24T14:57:15+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1163,7 +1178,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-24T02:57:34+09:00",
+      "fetchedAt": "2026-11-24T14:57:15+09:00",
       "posts": [
         {
           "username": "mypl.aizu",
