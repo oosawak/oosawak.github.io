@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-25T11:57:12+09:00",
+  "generatedAt": "2026-11-25T17:56:55+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-25T11:57:12+09:00",
+      "fetchedAt": "2026-11-25T17:56:55+09:00",
       "posts": [
         {
           "username": "tc_highway",
@@ -370,7 +370,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-25T11:57:12+09:00",
+      "fetchedAt": "2026-11-25T17:56:55+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -392,8 +392,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-25T11:57:12+09:00",
+      "fetchedAt": "2026-11-25T17:56:55+09:00",
       "posts": [
+        {
+          "username": "trafficlip",
+          "url": "https://www.threads.com/@trafficlip/post/DgKJh72mMVu",
+          "text": "#国道7号 #鶴岡バイパス で事故 一部通行止め #tc_highway #通行止 #山形県道路情報 酒田河川国道事務所などによると、山形県鶴岡市の国道7号[鶴岡バイパス]で事故が発生し、11月25日17:03から、鶴岡市荒井京田付近の下り線(北行/三川方面)で通行止めとなっています。 https://news.jp/i/1498245671302480094",
+          "likeCount": 0,
+          "takenAt": "2026-11-25T17:54:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
         {
           "username": "tc_highway",
           "url": "https://www.threads.com/@tc_highway/post/DgJOlLwE47a",
@@ -1149,7 +1164,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-25T11:57:12+09:00",
+      "fetchedAt": "2026-11-25T17:56:55+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1186,7 +1201,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-25T11:57:12+09:00",
+      "fetchedAt": "2026-11-25T17:56:55+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1313,7 +1328,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-25T11:57:12+09:00",
+      "fetchedAt": "2026-11-25T17:56:55+09:00",
       "posts": [
         {
           "username": "aizu1988",
