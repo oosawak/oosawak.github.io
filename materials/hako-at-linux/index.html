@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hako@Linux ― 電話の中に立つ Linux の箱</title>
+<meta name="description" content="Android の電話の中に Linux の箱を作る仕組み Hako@Linux。仮想マシンを使わず、proot の土台と Bionic ネイティブの部品と Rust の sshd を組み合わせます。APK 15.80 MiB。開発中の技術紹介ページです。">
+<style>
+  :root{
+    --cream:#FAF6EE; --paper:#FFFDF8; --ink:#2B2B28; --muted:#6E6A5E;
+    --olive:#5F6B3A; --olive-soft:#EDF0E2; --terra:#C4663B; --line:#E3DCCB;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+    line-height:1.8;font-size:16px}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  header{padding:56px 0 8px;text-align:center}
+  .badge{display:inline-block;background:var(--olive);color:#fff;font-size:13px;
+    padding:2px 14px;border-radius:999px;letter-spacing:.08em}
+  h1{font-size:40px;line-height:1.3;margin:18px 0 6px;font-weight:800}
+  h1 .sub{display:block;font-size:19px;font-weight:600;color:var(--olive);margin-top:8px}
+  .lead{color:var(--muted);max-width:640px;margin:14px auto 0}
+  .cover{margin:34px auto 0;max-width:760px}
+  .cover img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:28px 0 6px}
+  .cta a{display:inline-block;padding:11px 26px;border-radius:10px;text-decoration:none;font-weight:700}
+  .cta .primary{background:var(--terra);color:#fff}
+  .cta .ghost{background:var(--paper);color:var(--olive);border:1.5px solid var(--olive)}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:40px 0 8px}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 10px;text-align:center}
+  .stat .num{font-size:26px;font-weight:800;color:var(--olive)}
+  .stat .num small{font-size:14px;font-weight:700}
+  .stat .cap{font-size:12.5px;color:var(--muted);margin-top:2px}
+  section{padding:38px 0 6px}
+  h2{font-size:24px;margin:0 0 6px;padding-left:12px;border-left:5px solid var(--terra)}
+  .sec-lead{color:var(--muted);margin:4px 0 18px}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .card h3{margin:0 0 6px;font-size:17px;color:var(--olive)}
+  .card p{margin:0;color:var(--ink);font-size:15px}
+  .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  figure{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px}
+  figure img{width:100%;height:auto;border-radius:8px;display:block}
+  figcaption{font-size:13px;color:var(--muted);padding:8px 4px 2px}
+  .layers{background:var(--olive-soft);border-radius:12px;padding:20px 24px}
+  .layers ol{margin:6px 0;padding-left:22px}
+  .layers li{margin:8px 0}
+  .layers b{color:var(--olive)}
+  footer{margin:52px 0 0;border-top:1px solid var(--line);padding:22px 0 40px;
+    color:var(--muted);font-size:13.5px;text-align:center}
+  footer a{color:var(--olive)}
+  @media (max-width:720px){
+    h1{font-size:30px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .cards{grid-template-columns:1fr}
+    .shots{grid-template-columns:1fr}
+    .shots figure{max-width:340px;margin:0 auto}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="badge">開発中</span>
+  <h1>電話の中に立つ Linux の箱<span class="sub">Hako@Linux</span></h1>
+  <p class="lead">Android の電話の中に、Linux の箱を作る仕組みです。仮想マシンは使いません。電話のカーネルをそのまま使って、土台と部品を組み合わせます。操作は SSH から。電話の画面は、状態確認とボタンだけです。</p>
+  <div class="cover"><img src="cover.webp" alt="スマートフォンの中に小さな Linux の箱が見えて、横のパソコンと鍵のかかった線で繋がっているイラスト"></div>
+  <div class="cta">
+    <a class="primary" href="https://oosawak.github.io/tech/#/post/hako-at-linux">技術記事を読む</a>
+    <a class="ghost" href="https://oosawak.github.io/materials/hako-hub/">Hako Hub を見る</a>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="num">15.80<small> MiB</small></div><div class="cap">アプリ本体（APK）の大きさ</div></div>
+  <div class="stat"><div class="num">879<small> ms</small></div><div class="cap">起動（Pixel 3a）</div></div>
+  <div class="stat"><div class="num">37.9<small> MiB</small></div><div class="cap">待機メモリ（箱だけの状態）</div></div>
+  <div class="stat"><div class="num">14.0<small> ms</small></div><div class="cap">SSH サーバーの起動</div></div>
+</div>
+
+<section>
+  <h2>特徴</h2>
+  <p class="sec-lead">小ささは、同梱しない作りから来ています。</p>
+  <div class="cards">
+    <div class="card"><h3>同梱しない</h3><p>箱が最初から持つのは、入り口と制御と土台だけです。Forgejo や code-server のようなサービスは、レシピ（設定ファイル）で後から足します。</p></div>
+    <div class="card"><h3>入り口は Rust の sshd</h3><p>SSH サーバーは、Rust のライブラリ russh で作ったネイティブ部品です。土台が止まっていても Bionic 側のシェルで応答するので、復旧の口にもなります。</p></div>
+    <div class="card"><h3>土台は3択</h3><p>Ubuntu 24.04（glibc）と Alpine 3.24（musl）と Bionicのみ（土台なし）。用途に合わせて選べます。Alpine のセットアップは 6.7 秒です。</p></div>
+    <div class="card"><h3>レシピで足す</h3><p>本体は、入れる時に公式の配布元から取ってきて、ハッシュで照合します。カタログは Hako Hub に置いてあります。</p></div>
+    <div class="card"><h3>センサーブリッジ</h3><p>気圧・照度・加速度などを、箱の中から HTTP の JSON で読めます。電話が、そのまま環境センサーになります。</p></div>
+    <div class="card"><h3>Doze でも記録が続く</h3><p>画面オフ・無充電で60秒間隔の記録を試したところ、2機種とも欠けはゼロでした。Pixel 3a では電池の消費が1時間で 2%、計算で約 50 時間の記録が続けられます（実験段階の測定）。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>画面</h2>
+  <p class="sec-lead">電話側の画面は、状態の確認と操作ボタンだけです。</p>
+  <div class="shots">
+    <figure><img src="status.jpg" alt="Hako@Linux の状態画面"><figcaption>状態画面。稼働中の土台と接続情報と、土台切り替えの記録が出ています。</figcaption></figure>
+    <figure><img src="base-switch.jpg" alt="土台の切り替え画面"><figcaption>土台の切り替え。Ubuntu と Alpine と Bionic から選びます。</figcaption></figure>
+    <figure><img src="sensor.png" alt="センサーの現在値の表示"><figcaption>センサーの現在値。気圧と照度と電池と加速度が画面に出ます。</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>仕組み</h2>
+  <p class="sec-lead">作りは、大きく3つの層に分かれています。</p>
+  <div class="layers">
+    <ol>
+      <li><b>ネイティブ側の部品</b> ― Rust の制御コア、git、bash、jq、SQLite、tmux、Vim、sshd。Android のプロセスとして直接動きます。一番大きい Vim は、無いと作っている人が困るので入っています。</li>
+      <li><b>proot と土台</b> ― 土台は proot の中で動きます。システムコールを変換する仕組みで、カーネルは電話のものを共用します。速さが要る物はネイティブ側に、互換性が要る物は土台の中に置きます。</li>
+      <li><b>レシピで足すサービス</b> ― <code>hako up 名前</code> で、nginx や code-server や Forgejo を足します。更新は知らせるだけで、勝手に上げません。</li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <p>Hako@Linux は開発中の仕組みです。内容は変わることがあります。<br>
+  詳しくは <a href="https://oosawak.github.io/tech/#/post/hako-at-linux">技術記事「電話の中に立つ Linux の箱」</a> と <a href="https://oosawak.github.io/materials/hako-hub/">Hako Hub</a> をご覧ください。<br>
+  Lyre3 Games</p>
+</footer>
+
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "cdf4ee53507948e4a412f503875833cd"}'></script>
+</body>
+</html>
