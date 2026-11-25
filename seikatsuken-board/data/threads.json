@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-25T17:56:55+09:00",
+  "generatedAt": "2026-11-26T01:57:26+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-25T17:56:55+09:00",
+      "fetchedAt": "2026-11-26T01:57:26+09:00",
       "posts": [
         {
           "username": "tc_highway",
@@ -18,6 +18,21 @@
           "liked": false,
           "watched": true,
           "community": "#通行止",
+          "spot": "仙台"
+        },
+        {
+          "username": "daisuke_h21",
+          "url": "https://www.threads.com/@daisuke_h21/post/DgIw9-qgQxk",
+          "text": "仙台 R48愛子バイパス 04時23分 1℃ 雪がが降っている早朝夜明け前。 気温は氷点下になっていないので、積もる心配は無さそうだけど寒いですー🥶 20261125",
+          "likeCount": 86,
+          "takenAt": "2026-11-25T05:01:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
           "spot": "仙台"
         },
         {
@@ -370,7 +385,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-25T17:56:55+09:00",
+      "fetchedAt": "2026-11-26T01:57:26+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -392,7 +407,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-25T17:56:55+09:00",
+      "fetchedAt": "2026-11-26T01:57:26+09:00",
       "posts": [
         {
           "username": "trafficlip",
@@ -1164,7 +1179,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-25T17:56:55+09:00",
+      "fetchedAt": "2026-11-26T01:57:26+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1201,7 +1216,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-25T17:56:55+09:00",
+      "fetchedAt": "2026-11-26T01:57:26+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1328,7 +1343,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-25T17:56:55+09:00",
+      "fetchedAt": "2026-11-26T01:57:26+09:00",
       "posts": [
         {
           "username": "aizu1988",
