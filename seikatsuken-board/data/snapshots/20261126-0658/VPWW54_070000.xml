@@ -2,22 +2,22 @@
 <Report xmlns="http://xml.kishou.go.jp/jmaxml1/" xmlns:jmx="http://xml.kishou.go.jp/jmaxml1/" xmlns:jmx_add="http://xml.kishou.go.jp/jmaxml1/addition1/">
 <Control>
 <Title>気象警報・注意報（Ｈ２７）</Title>
-<DateTime>2026-11-22T20:33:33Z</DateTime>
+<DateTime>2026-11-25T21:34:08Z</DateTime>
 <Status>通常</Status>
-<EditorialOffice>山形地方気象台</EditorialOffice>
-<PublishingOffice>山形地方気象台</PublishingOffice>
+<EditorialOffice>福島地方気象台</EditorialOffice>
+<PublishingOffice>福島地方気象台</PublishingOffice>
 </Control>
 <Head xmlns="http://xml.kishou.go.jp/jmaxml1/informationBasis1/">
-<Title>山形県気象警報・注意報</Title>
-<ReportDateTime>2026-11-23T05:33:00+09:00</ReportDateTime>
-<TargetDateTime>2026-11-23T05:33:00+09:00</TargetDateTime>
+<Title>福島県気象警報・注意報</Title>
+<ReportDateTime>2026-11-26T06:34:00+09:00</ReportDateTime>
+<TargetDateTime>2026-11-26T06:34:00+09:00</TargetDateTime>
 <EventID/>
 <InfoType>発表</InfoType>
 <Serial/>
 <InfoKind>気象警報・注意報</InfoKind>
 <InfoKindVersion>1.2_2</InfoKindVersion>
 <Headline>
-<Text>村山、置賜、最上では、濃霧による視程障害に注意してください。</Text>
+<Text>会津では、濃霧による視程障害に注意してください。</Text>
 <Information type="気象警報・注意報（府県予報区等）">
 <Item>
 <Kind>
@@ -26,8 +26,8 @@
 </Kind>
 <Areas codeType="気象情報／府県予報区・細分区域等">
 <Area>
-<Name>山形県</Name>
-<Code>060000</Code>
+<Name>福島県</Name>
+<Code>070000</Code>
 </Area>
 </Areas>
 </Item>
@@ -40,32 +40,8 @@
 </Kind>
 <Areas codeType="気象情報／府県予報区・細分区域等">
 <Area>
-<Name>村山</Name>
-<Code>060010</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象情報／府県予報区・細分区域等">
-<Area>
-<Name>置賜</Name>
-<Code>060020</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象情報／府県予報区・細分区域等">
-<Area>
-<Name>最上</Name>
-<Code>060040</Code>
+<Name>会津</Name>
+<Code>070030</Code>
 </Area>
 </Areas>
 </Item>
@@ -78,8 +54,8 @@
 </Kind>
 <Areas codeType="気象情報／府県予報区・細分区域等">
 <Area>
-<Name>東南村山</Name>
-<Code>060011</Code>
+<Name>会津北部</Name>
+<Code>070031</Code>
 </Area>
 </Areas>
 </Item>
@@ -90,8 +66,8 @@
 </Kind>
 <Areas codeType="気象情報／府県予報区・細分区域等">
 <Area>
-<Name>北村山</Name>
-<Code>060012</Code>
+<Name>会津中部</Name>
+<Code>070032</Code>
 </Area>
 </Areas>
 </Item>
@@ -102,44 +78,8 @@
 </Kind>
 <Areas codeType="気象情報／府県予報区・細分区域等">
 <Area>
-<Name>西村山</Name>
-<Code>060013</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象情報／府県予報区・細分区域等">
-<Area>
-<Name>東南置賜</Name>
-<Code>060021</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象情報／府県予報区・細分区域等">
-<Area>
-<Name>西置賜</Name>
-<Code>060022</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象情報／府県予報区・細分区域等">
-<Area>
-<Name>最上</Name>
-<Code>060040</Code>
+<Name>会津南部</Name>
+<Code>070033</Code>
 </Area>
 </Areas>
 </Item>
@@ -152,8 +92,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>山形市</Name>
-<Code>0620100</Code>
+<Name>会津若松市</Name>
+<Code>0720200</Code>
 </Area>
 </Areas>
 </Item>
@@ -164,8 +104,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>米沢市</Name>
-<Code>0620200</Code>
+<Name>郡山市湖南</Name>
+<Code>0720302</Code>
 </Area>
 </Areas>
 </Item>
@@ -176,8 +116,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>新庄市</Name>
-<Code>0620500</Code>
+<Name>喜多方市</Name>
+<Code>0720800</Code>
 </Area>
 </Areas>
 </Item>
@@ -188,8 +128,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>寒河江市</Name>
-<Code>0620600</Code>
+<Name>天栄村湯本</Name>
+<Code>0734402</Code>
 </Area>
 </Areas>
 </Item>
@@ -200,8 +140,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>上山市</Name>
-<Code>0620700</Code>
+<Name>下郷町</Name>
+<Code>0736200</Code>
 </Area>
 </Areas>
 </Item>
@@ -212,8 +152,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>村山市</Name>
-<Code>0620800</Code>
+<Name>檜枝岐村</Name>
+<Code>0736400</Code>
 </Area>
 </Areas>
 </Item>
@@ -224,8 +164,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>長井市</Name>
-<Code>0620900</Code>
+<Name>只見町</Name>
+<Code>0736700</Code>
 </Area>
 </Areas>
 </Item>
@@ -236,8 +176,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>天童市</Name>
-<Code>0621000</Code>
+<Name>南会津町</Name>
+<Code>0736800</Code>
 </Area>
 </Areas>
 </Item>
@@ -248,8 +188,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>東根市</Name>
-<Code>0621100</Code>
+<Name>北塩原村</Name>
+<Code>0740200</Code>
 </Area>
 </Areas>
 </Item>
@@ -260,8 +200,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>尾花沢市</Name>
-<Code>0621200</Code>
+<Name>西会津町</Name>
+<Code>0740500</Code>
 </Area>
 </Areas>
 </Item>
@@ -272,8 +212,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>南陽市</Name>
-<Code>0621300</Code>
+<Name>磐梯町</Name>
+<Code>0740700</Code>
 </Area>
 </Areas>
 </Item>
@@ -284,8 +224,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>山辺町</Name>
-<Code>0630100</Code>
+<Name>猪苗代町</Name>
+<Code>0740800</Code>
 </Area>
 </Areas>
 </Item>
@@ -296,8 +236,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>中山町</Name>
-<Code>0630200</Code>
+<Name>会津坂下町</Name>
+<Code>0742100</Code>
 </Area>
 </Areas>
 </Item>
@@ -308,8 +248,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>河北町</Name>
-<Code>0632100</Code>
+<Name>湯川村</Name>
+<Code>0742200</Code>
 </Area>
 </Areas>
 </Item>
@@ -320,8 +260,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>西川町</Name>
-<Code>0632200</Code>
+<Name>柳津町</Name>
+<Code>0742300</Code>
 </Area>
 </Areas>
 </Item>
@@ -332,32 +272,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>朝日町</Name>
-<Code>0632300</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象・地震・火山情報／市町村等">
-<Area>
-<Name>大江町</Name>
-<Code>0632400</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象・地震・火山情報／市町村等">
-<Area>
-<Name>大石田町</Name>
-<Code>0634100</Code>
+<Name>三島町</Name>
+<Code>0744400</Code>
 </Area>
 </Areas>
 </Item>
@@ -369,7 +285,7 @@
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
 <Name>金山町</Name>
-<Code>0636100</Code>
+<Code>0744500</Code>
 </Area>
 </Areas>
 </Item>
@@ -380,8 +296,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>最上町</Name>
-<Code>0636200</Code>
+<Name>昭和村</Name>
+<Code>0744600</Code>
 </Area>
 </Areas>
 </Item>
@@ -392,116 +308,8 @@
 </Kind>
 <Areas codeType="気象・地震・火山情報／市町村等">
 <Area>
-<Name>舟形町</Name>
-<Code>0636300</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象・地震・火山情報／市町村等">
-<Area>
-<Name>真室川町</Name>
-<Code>0636400</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象・地震・火山情報／市町村等">
-<Area>
-<Name>大蔵村</Name>
-<Code>0636500</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象・地震・火山情報／市町村等">
-<Area>
-<Name>鮭川村</Name>
-<Code>0636600</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象・地震・火山情報／市町村等">
-<Area>
-<Name>戸沢村</Name>
-<Code>0636700</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象・地震・火山情報／市町村等">
-<Area>
-<Name>高畠町</Name>
-<Code>0638100</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象・地震・火山情報／市町村等">
-<Area>
-<Name>川西町</Name>
-<Code>0638200</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象・地震・火山情報／市町村等">
-<Area>
-<Name>小国町</Name>
-<Code>0640100</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象・地震・火山情報／市町村等">
-<Area>
-<Name>白鷹町</Name>
-<Code>0640200</Code>
-</Area>
-</Areas>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</Kind>
-<Areas codeType="気象・地震・火山情報／市町村等">
-<Area>
-<Name>飯豊町</Name>
-<Code>0640300</Code>
+<Name>会津美里町</Name>
+<Code>0744700</Code>
 </Area>
 </Areas>
 </Item>
@@ -514,16 +322,8 @@
 </Kind>
 <Areas codeType="気象情報／府県予報区・細分区域等">
 <Area>
-<Name>村山</Name>
-<Code>060010</Code>
-</Area>
-<Area>
-<Name>置賜</Name>
-<Code>060020</Code>
-</Area>
-<Area>
-<Name>最上</Name>
-<Code>060040</Code>
+<Name>会津</Name>
+<Code>070030</Code>
 </Area>
 </Areas>
 </Item>
@@ -545,8 +345,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>山形県</Name>
-<Code>060000</Code>
+<Name>福島県</Name>
+<Code>070000</Code>
 </Area>
 <ChangeStatus>変化無</ChangeStatus>
 <FullStatus>一部</FullStatus>
@@ -556,47 +356,20 @@
 <Warning type="気象警報・注意報（一次細分区域等）">
 <Item>
 <Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
+<Status>発表警報・注意報はなし</Status>
 </Kind>
 <Area>
-<Name>村山</Name>
-<Code>060010</Code>
+<Name>中通り</Name>
+<Code>070010</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
-<FullStatus>全域</FullStatus>
-<EditingMark>1</EditingMark>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>置賜</Name>
-<Code>060020</Code>
-</Area>
-<ChangeStatus>変化無</ChangeStatus>
-<FullStatus>全域</FullStatus>
-<EditingMark>1</EditingMark>
 </Item>
 <Item>
 <Kind>
 <Status>発表警報・注意報はなし</Status>
 </Kind>
 <Area>
-<Name>庄内</Name>
-<Code>060030</Code>
+<Name>浜通り</Name>
+<Code>070020</Code>
 </Area>
 </Item>
 <Item>
@@ -610,8 +383,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>最上</Name>
-<Code>060040</Code>
+<Name>会津</Name>
+<Code>070030</Code>
 </Area>
 <ChangeStatus>変化無</ChangeStatus>
 <FullStatus>全域</FullStatus>
@@ -621,101 +394,11 @@
 <Warning type="気象警報・注意報（市町村等をまとめた地域等）">
 <Item>
 <Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>東南村山</Name>
-<Code>060011</Code>
-</Area>
-<ChangeStatus>変化無</ChangeStatus>
-<FullStatus>全域</FullStatus>
-<EditingMark>0</EditingMark>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>北村山</Name>
-<Code>060012</Code>
-</Area>
-<ChangeStatus>変化無</ChangeStatus>
-<FullStatus>全域</FullStatus>
-<EditingMark>0</EditingMark>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>西村山</Name>
-<Code>060013</Code>
-</Area>
-<ChangeStatus>変化無</ChangeStatus>
-<FullStatus>全域</FullStatus>
-<EditingMark>0</EditingMark>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>東南置賜</Name>
-<Code>060021</Code>
-</Area>
-<ChangeStatus>変化無</ChangeStatus>
-<FullStatus>全域</FullStatus>
-<EditingMark>0</EditingMark>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>西置賜</Name>
-<Code>060022</Code>
-</Area>
-<ChangeStatus>変化無</ChangeStatus>
-<FullStatus>全域</FullStatus>
-<EditingMark>0</EditingMark>
-</Item>
-<Item>
-<Kind>
 <Status>発表警報・注意報はなし</Status>
 </Kind>
 <Area>
-<Name>庄内北部</Name>
-<Code>060031</Code>
+<Name>中通り北部</Name>
+<Code>070011</Code>
 </Area>
 </Item>
 <Item>
@@ -723,8 +406,44 @@
 <Status>発表警報・注意報はなし</Status>
 </Kind>
 <Area>
-<Name>庄内南部</Name>
-<Code>060032</Code>
+<Name>中通り中部</Name>
+<Code>070012</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>中通り南部</Name>
+<Code>070013</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>浜通り北部</Name>
+<Code>070021</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>浜通り中部</Name>
+<Code>070022</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>浜通り南部</Name>
+<Code>070023</Code>
 </Area>
 </Item>
 <Item>
@@ -738,8 +457,44 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>最上</Name>
-<Code>060040</Code>
+<Name>会津北部</Name>
+<Code>070031</Code>
+</Area>
+<ChangeStatus>変化無</ChangeStatus>
+<FullStatus>全域</FullStatus>
+<EditingMark>0</EditingMark>
+</Item>
+<Item>
+<Kind>
+<Name>濃霧注意報</Name>
+<Code>20</Code>
+<Status>継続</Status>
+<LastKind>
+<Name>濃霧注意報</Name>
+<Code>20</Code>
+</LastKind>
+</Kind>
+<Area>
+<Name>会津中部</Name>
+<Code>070032</Code>
+</Area>
+<ChangeStatus>変化無</ChangeStatus>
+<FullStatus>全域</FullStatus>
+<EditingMark>0</EditingMark>
+</Item>
+<Item>
+<Kind>
+<Name>濃霧注意報</Name>
+<Code>20</Code>
+<Status>継続</Status>
+<LastKind>
+<Name>濃霧注意報</Name>
+<Code>20</Code>
+</LastKind>
+</Kind>
+<Area>
+<Name>会津南部</Name>
+<Code>070033</Code>
 </Area>
 <ChangeStatus>変化無</ChangeStatus>
 <FullStatus>全域</FullStatus>
@@ -749,19 +504,12 @@
 <Warning type="気象警報・注意報（市町村等）">
 <Item>
 <Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
+<Status>発表警報・注意報はなし</Status>
 </Kind>
 <Area>
-<Name>山形市</Name>
-<Code>0620100</Code>
+<Name>福島市</Name>
+<Code>0720100</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
@@ -774,8 +522,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>米沢市</Name>
-<Code>0620200</Code>
+<Name>会津若松市</Name>
+<Code>0720200</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -784,8 +532,33 @@
 <Status>発表警報・注意報はなし</Status>
 </Kind>
 <Area>
-<Name>鶴岡市</Name>
-<Code>0620300</Code>
+<Name>郡山市</Name>
+<Code>0720301</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Name>濃霧注意報</Name>
+<Code>20</Code>
+<Status>継続</Status>
+<LastKind>
+<Name>濃霧注意報</Name>
+<Code>20</Code>
+</LastKind>
+</Kind>
+<Area>
+<Name>郡山市湖南</Name>
+<Code>0720302</Code>
+</Area>
+<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>いわき市</Name>
+<Code>0720400</Code>
 </Area>
 </Item>
 <Item>
@@ -793,8 +566,17 @@
 <Status>発表警報・注意報はなし</Status>
 </Kind>
 <Area>
-<Name>酒田市</Name>
-<Code>0620400</Code>
+<Name>白河市</Name>
+<Code>0720500</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>須賀川市</Name>
+<Code>0720700</Code>
 </Area>
 </Item>
 <Item>
@@ -808,8 +590,132 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>新庄市</Name>
-<Code>0620500</Code>
+<Name>喜多方市</Name>
+<Code>0720800</Code>
+</Area>
+<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>相馬市</Name>
+<Code>0720900</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>二本松市</Name>
+<Code>0721000</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>田村市</Name>
+<Code>0721100</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>南相馬市</Name>
+<Code>0721200</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>伊達市</Name>
+<Code>0721300</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>本宮市</Name>
+<Code>0721400</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>桑折町</Name>
+<Code>0730100</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>国見町</Name>
+<Code>0730300</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>川俣町</Name>
+<Code>0730800</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>大玉村</Name>
+<Code>0732200</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>鏡石町</Name>
+<Code>0734200</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>天栄村</Name>
+<Code>0734401</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Name>濃霧注意報</Name>
+<Code>20</Code>
+<Status>継続</Status>
+<LastKind>
+<Name>濃霧注意報</Name>
+<Code>20</Code>
+</LastKind>
+</Kind>
+<Area>
+<Name>天栄村湯本</Name>
+<Code>0734402</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -824,8 +730,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>寒河江市</Name>
-<Code>0620600</Code>
+<Name>下郷町</Name>
+<Code>0736200</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -840,8 +746,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>上山市</Name>
-<Code>0620700</Code>
+<Name>檜枝岐村</Name>
+<Code>0736400</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -856,8 +762,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>村山市</Name>
-<Code>0620800</Code>
+<Name>只見町</Name>
+<Code>0736700</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -872,8 +778,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>長井市</Name>
-<Code>0620900</Code>
+<Name>南会津町</Name>
+<Code>0736800</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -888,8 +794,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>天童市</Name>
-<Code>0621000</Code>
+<Name>北塩原村</Name>
+<Code>0740200</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -904,8 +810,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>東根市</Name>
-<Code>0621100</Code>
+<Name>西会津町</Name>
+<Code>0740500</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -920,8 +826,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>尾花沢市</Name>
-<Code>0621200</Code>
+<Name>磐梯町</Name>
+<Code>0740700</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -936,8 +842,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>南陽市</Name>
-<Code>0621300</Code>
+<Name>猪苗代町</Name>
+<Code>0740800</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -952,8 +858,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>山辺町</Name>
-<Code>0630100</Code>
+<Name>会津坂下町</Name>
+<Code>0742100</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -968,8 +874,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>中山町</Name>
-<Code>0630200</Code>
+<Name>湯川村</Name>
+<Code>0742200</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -984,8 +890,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>河北町</Name>
-<Code>0632100</Code>
+<Name>柳津町</Name>
+<Code>0742300</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -1000,56 +906,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>西川町</Name>
-<Code>0632200</Code>
-</Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>朝日町</Name>
-<Code>0632300</Code>
-</Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>大江町</Name>
-<Code>0632400</Code>
-</Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>大石田町</Name>
-<Code>0634100</Code>
+<Name>三島町</Name>
+<Code>0744400</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -1065,7 +923,7 @@
 </Kind>
 <Area>
 <Name>金山町</Name>
-<Code>0636100</Code>
+<Code>0744500</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -1080,8 +938,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>最上町</Name>
-<Code>0636200</Code>
+<Name>昭和村</Name>
+<Code>0744600</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -1096,152 +954,8 @@
 </LastKind>
 </Kind>
 <Area>
-<Name>舟形町</Name>
-<Code>0636300</Code>
-</Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>真室川町</Name>
-<Code>0636400</Code>
-</Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>大蔵村</Name>
-<Code>0636500</Code>
-</Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>鮭川村</Name>
-<Code>0636600</Code>
-</Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>戸沢村</Name>
-<Code>0636700</Code>
-</Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>高畠町</Name>
-<Code>0638100</Code>
-</Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>川西町</Name>
-<Code>0638200</Code>
-</Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>小国町</Name>
-<Code>0640100</Code>
-</Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>白鷹町</Name>
-<Code>0640200</Code>
-</Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-</LastKind>
-</Kind>
-<Area>
-<Name>飯豊町</Name>
-<Code>0640300</Code>
+<Name>会津美里町</Name>
+<Code>0744700</Code>
 </Area>
 <ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
 </Item>
@@ -1250,8 +964,8 @@
 <Status>発表警報・注意報はなし</Status>
 </Kind>
 <Area>
-<Name>三川町</Name>
-<Code>0642600</Code>
+<Name>西郷村</Name>
+<Code>0746100</Code>
 </Area>
 </Item>
 <Item>
@@ -1259,8 +973,8 @@
 <Status>発表警報・注意報はなし</Status>
 </Kind>
 <Area>
-<Name>庄内町</Name>
-<Code>0642800</Code>
+<Name>泉崎村</Name>
+<Code>0746400</Code>
 </Area>
 </Item>
 <Item>
@@ -1268,8 +982,206 @@
 <Status>発表警報・注意報はなし</Status>
 </Kind>
 <Area>
-<Name>遊佐町</Name>
-<Code>0646100</Code>
+<Name>中島村</Name>
+<Code>0746500</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>矢吹町</Name>
+<Code>0746600</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>棚倉町</Name>
+<Code>0748100</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>矢祭町</Name>
+<Code>0748200</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>塙町</Name>
+<Code>0748300</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>鮫川村</Name>
+<Code>0748400</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>石川町</Name>
+<Code>0750100</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>玉川村</Name>
+<Code>0750200</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>平田村</Name>
+<Code>0750300</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>浅川町</Name>
+<Code>0750400</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>古殿町</Name>
+<Code>0750500</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>三春町</Name>
+<Code>0752100</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>小野町</Name>
+<Code>0752200</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>広野町</Name>
+<Code>0754100</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>楢葉町</Name>
+<Code>0754200</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>富岡町</Name>
+<Code>0754300</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>川内村</Name>
+<Code>0754400</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>大熊町</Name>
+<Code>0754500</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>双葉町</Name>
+<Code>0754600</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>浪江町</Name>
+<Code>0754700</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>葛尾村</Name>
+<Code>0754800</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>新地町</Name>
+<Code>0756100</Code>
+</Area>
+</Item>
+<Item>
+<Kind>
+<Status>発表警報・注意報はなし</Status>
+</Kind>
+<Area>
+<Name>飯舘村</Name>
+<Code>0756400</Code>
 </Area>
 </Item>
 </Warning>
@@ -1277,49 +1189,49 @@
 <TimeSeriesInfo>
 <TimeDefines>
 <TimeDefine timeId="1">
-<DateTime>2026-11-23T03:00:00+09:00</DateTime>
+<DateTime>2026-11-26T06:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２３日明け方</Name>
+<Name>２６日朝</Name>
 </TimeDefine>
 <TimeDefine timeId="2">
-<DateTime>2026-11-23T06:00:00+09:00</DateTime>
+<DateTime>2026-11-26T09:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２３日朝</Name>
+<Name>２６日昼前</Name>
 </TimeDefine>
 <TimeDefine timeId="3">
-<DateTime>2026-11-23T09:00:00+09:00</DateTime>
+<DateTime>2026-11-26T12:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２３日昼前</Name>
+<Name>２６日昼過ぎ</Name>
 </TimeDefine>
 <TimeDefine timeId="4">
-<DateTime>2026-11-23T12:00:00+09:00</DateTime>
+<DateTime>2026-11-26T15:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２３日昼過ぎ</Name>
+<Name>２６日夕方</Name>
 </TimeDefine>
 <TimeDefine timeId="5">
-<DateTime>2026-11-23T15:00:00+09:00</DateTime>
+<DateTime>2026-11-26T18:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２３日夕方</Name>
+<Name>２６日夜のはじめ頃</Name>
 </TimeDefine>
 <TimeDefine timeId="6">
-<DateTime>2026-11-23T18:00:00+09:00</DateTime>
+<DateTime>2026-11-26T21:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２３日夜のはじめ頃</Name>
+<Name>２６日夜遅く</Name>
 </TimeDefine>
 <TimeDefine timeId="7">
-<DateTime>2026-11-23T21:00:00+09:00</DateTime>
+<DateTime>2026-11-27T00:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２３日夜遅く</Name>
+<Name>２７日未明</Name>
 </TimeDefine>
 <TimeDefine timeId="8">
-<DateTime>2026-11-24T00:00:00+09:00</DateTime>
+<DateTime>2026-11-27T03:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２４日未明</Name>
+<Name>２７日明け方</Name>
 </TimeDefine>
 <TimeDefine timeId="9">
-<DateTime>2026-11-24T03:00:00+09:00</DateTime>
+<DateTime>2026-11-27T06:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２４日明け方</Name>
+<Name>２７日朝</Name>
 </TimeDefine>
 </TimeDefines>
 <Item>
@@ -1331,16 +1243,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -1379,8 +1291,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>山形市</Name>
-<Code>0620100</Code>
+<Name>会津若松市</Name>
+<Code>0720200</Code>
 </Area>
 </Item>
 <Item>
@@ -1392,16 +1304,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -1440,8 +1352,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>米沢市</Name>
-<Code>0620200</Code>
+<Name>郡山市湖南</Name>
+<Code>0720302</Code>
 </Area>
 </Item>
 <Item>
@@ -1453,16 +1365,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -1501,8 +1413,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>新庄市</Name>
-<Code>0620500</Code>
+<Name>喜多方市</Name>
+<Code>0720800</Code>
 </Area>
 </Item>
 <Item>
@@ -1514,16 +1426,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -1562,8 +1474,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>寒河江市</Name>
-<Code>0620600</Code>
+<Name>天栄村湯本</Name>
+<Code>0734402</Code>
 </Area>
 </Item>
 <Item>
@@ -1575,16 +1487,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -1623,8 +1535,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>上山市</Name>
-<Code>0620700</Code>
+<Name>下郷町</Name>
+<Code>0736200</Code>
 </Area>
 </Item>
 <Item>
@@ -1636,16 +1548,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -1684,8 +1596,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>村山市</Name>
-<Code>0620800</Code>
+<Name>檜枝岐村</Name>
+<Code>0736400</Code>
 </Area>
 </Item>
 <Item>
@@ -1697,16 +1609,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -1745,8 +1657,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>長井市</Name>
-<Code>0620900</Code>
+<Name>只見町</Name>
+<Code>0736700</Code>
 </Area>
 </Item>
 <Item>
@@ -1758,16 +1670,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -1806,8 +1718,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>天童市</Name>
-<Code>0621000</Code>
+<Name>南会津町</Name>
+<Code>0736800</Code>
 </Area>
 </Item>
 <Item>
@@ -1819,16 +1731,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -1867,8 +1779,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>東根市</Name>
-<Code>0621100</Code>
+<Name>北塩原村</Name>
+<Code>0740200</Code>
 </Area>
 </Item>
 <Item>
@@ -1880,16 +1792,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -1928,8 +1840,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>尾花沢市</Name>
-<Code>0621200</Code>
+<Name>西会津町</Name>
+<Code>0740500</Code>
 </Area>
 </Item>
 <Item>
@@ -1941,16 +1853,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -1989,8 +1901,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>南陽市</Name>
-<Code>0621300</Code>
+<Name>磐梯町</Name>
+<Code>0740700</Code>
 </Area>
 </Item>
 <Item>
@@ -2002,16 +1914,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -2050,8 +1962,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>山辺町</Name>
-<Code>0630100</Code>
+<Name>猪苗代町</Name>
+<Code>0740800</Code>
 </Area>
 </Item>
 <Item>
@@ -2063,16 +1975,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -2111,8 +2023,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>中山町</Name>
-<Code>0630200</Code>
+<Name>会津坂下町</Name>
+<Code>0742100</Code>
 </Area>
 </Item>
 <Item>
@@ -2124,16 +2036,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -2172,8 +2084,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>河北町</Name>
-<Code>0632100</Code>
+<Name>湯川村</Name>
+<Code>0742200</Code>
 </Area>
 </Item>
 <Item>
@@ -2185,16 +2097,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -2233,8 +2145,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>西川町</Name>
-<Code>0632200</Code>
+<Name>柳津町</Name>
+<Code>0742300</Code>
 </Area>
 </Item>
 <Item>
@@ -2246,16 +2158,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -2294,8 +2206,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>朝日町</Name>
-<Code>0632300</Code>
+<Name>三島町</Name>
+<Code>0744400</Code>
 </Area>
 </Item>
 <Item>
@@ -2307,138 +2219,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
 <Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>濃霧</Type>
-<VisibilityPart>
-<Base>
-<jmx_eb:Visibility condition="以下" description="１００メートル以下" type="視程" unit="m">100</jmx_eb:Visibility>
-</Base>
-</VisibilityPart>
-</Property>
-</Kind>
-<Area>
-<Name>大江町</Name>
-<Code>0632400</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>濃霧</Type>
-<VisibilityPart>
-<Base>
-<jmx_eb:Visibility condition="以下" description="１００メートル以下" type="視程" unit="m">100</jmx_eb:Visibility>
-</Base>
-</VisibilityPart>
-</Property>
-</Kind>
-<Area>
-<Name>大石田町</Name>
-<Code>0634100</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -2478,7 +2268,7 @@
 </Kind>
 <Area>
 <Name>金山町</Name>
-<Code>0636100</Code>
+<Code>0744500</Code>
 </Area>
 </Item>
 <Item>
@@ -2490,16 +2280,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -2538,8 +2328,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>最上町</Name>
-<Code>0636200</Code>
+<Name>昭和村</Name>
+<Code>0744600</Code>
 </Area>
 </Item>
 <Item>
@@ -2551,16 +2341,16 @@
 <SignificancyPart>
 <Base>
 <Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="濃霧危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="4" type="濃霧危険度">
 <Name>注意報級未満</Name>
@@ -2599,557 +2389,8 @@
 </Property>
 </Kind>
 <Area>
-<Name>舟形町</Name>
-<Code>0636300</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>濃霧</Type>
-<VisibilityPart>
-<Base>
-<jmx_eb:Visibility condition="以下" description="１００メートル以下" type="視程" unit="m">100</jmx_eb:Visibility>
-</Base>
-</VisibilityPart>
-</Property>
-</Kind>
-<Area>
-<Name>真室川町</Name>
-<Code>0636400</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>濃霧</Type>
-<VisibilityPart>
-<Base>
-<jmx_eb:Visibility condition="以下" description="１００メートル以下" type="視程" unit="m">100</jmx_eb:Visibility>
-</Base>
-</VisibilityPart>
-</Property>
-</Kind>
-<Area>
-<Name>大蔵村</Name>
-<Code>0636500</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>濃霧</Type>
-<VisibilityPart>
-<Base>
-<jmx_eb:Visibility condition="以下" description="１００メートル以下" type="視程" unit="m">100</jmx_eb:Visibility>
-</Base>
-</VisibilityPart>
-</Property>
-</Kind>
-<Area>
-<Name>鮭川村</Name>
-<Code>0636600</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>濃霧</Type>
-<VisibilityPart>
-<Base>
-<jmx_eb:Visibility condition="以下" description="１００メートル以下" type="視程" unit="m">100</jmx_eb:Visibility>
-</Base>
-</VisibilityPart>
-</Property>
-</Kind>
-<Area>
-<Name>戸沢村</Name>
-<Code>0636700</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>濃霧</Type>
-<VisibilityPart>
-<Base>
-<jmx_eb:Visibility condition="以下" description="１００メートル以下" type="視程" unit="m">100</jmx_eb:Visibility>
-</Base>
-</VisibilityPart>
-</Property>
-</Kind>
-<Area>
-<Name>高畠町</Name>
-<Code>0638100</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>濃霧</Type>
-<VisibilityPart>
-<Base>
-<jmx_eb:Visibility condition="以下" description="１００メートル以下" type="視程" unit="m">100</jmx_eb:Visibility>
-</Base>
-</VisibilityPart>
-</Property>
-</Kind>
-<Area>
-<Name>川西町</Name>
-<Code>0638200</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>濃霧</Type>
-<VisibilityPart>
-<Base>
-<jmx_eb:Visibility condition="以下" description="１００メートル以下" type="視程" unit="m">100</jmx_eb:Visibility>
-</Base>
-</VisibilityPart>
-</Property>
-</Kind>
-<Area>
-<Name>小国町</Name>
-<Code>0640100</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>濃霧</Type>
-<VisibilityPart>
-<Base>
-<jmx_eb:Visibility condition="以下" description="１００メートル以下" type="視程" unit="m">100</jmx_eb:Visibility>
-</Base>
-</VisibilityPart>
-</Property>
-</Kind>
-<Area>
-<Name>白鷹町</Name>
-<Code>0640200</Code>
-</Area>
-</Item>
-<Item>
-<Kind>
-<Name>濃霧注意報</Name>
-<Code>20</Code>
-<Property>
-<Type>危険度</Type>
-<SignificancyPart>
-<Base>
-<Significancy refID="1" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="2" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="濃霧危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="濃霧危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Base>
-</SignificancyPart>
-</Property>
-<Property>
-<Type>濃霧</Type>
-<VisibilityPart>
-<Base>
-<jmx_eb:Visibility condition="以下" description="１００メートル以下" type="視程" unit="m">100</jmx_eb:Visibility>
-</Base>
-</VisibilityPart>
-</Property>
-</Kind>
-<Area>
-<Name>飯豊町</Name>
-<Code>0640300</Code>
+<Name>会津美里町</Name>
+<Code>0744700</Code>
 </Area>
 </Item>
 </TimeSeriesInfo>
