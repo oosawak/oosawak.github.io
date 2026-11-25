@@ -76,7 +76,7 @@
 <div class="stats">
   <div class="stat"><div class="num">15.80<small> MiB</small></div><div class="cap">アプリ本体（APK）の大きさ</div></div>
   <div class="stat"><div class="num">879<small> ms</small></div><div class="cap">起動（Pixel 3a）</div></div>
-  <div class="stat"><div class="num">37.9<small> MiB</small></div><div class="cap">待機メモリ（箱だけの状態）</div></div>
+  <div class="stat"><div class="num">37.9<small> MiB</small></div><div class="cap">待機メモリ（Hako@Linux だけの状態）</div></div>
   <div class="stat"><div class="num">14.0<small> ms</small></div><div class="cap">SSH サーバーの起動</div></div>
 </div>
 
@@ -84,7 +84,7 @@
   <h2>特徴</h2>
   <p class="sec-lead">小ささは、同梱しない作りから来ています。</p>
   <div class="cards">
-    <div class="card"><h3>同梱しない</h3><p>箱が最初から持つのは、入り口と制御と土台だけです。Forgejo や code-server のようなサービスは、レシピ（設定ファイル）で後から足します。</p></div>
+    <div class="card"><h3>同梱しない</h3><p>Hako@Linux が最初から持つのは、入り口と制御と土台だけです。Forgejo や code-server のようなサービスは、レシピ（設定ファイル）で後から足します。</p></div>
     <div class="card"><h3>入り口は Rust の sshd</h3><p>SSH サーバーは、Rust のライブラリ russh で作ったネイティブ部品です。土台が止まっていても Bionic 側のシェルで応答するので、復旧の口にもなります。</p></div>
     <div class="card"><h3>土台は3択</h3><p>Ubuntu 24.04（glibc）と Alpine 3.24（musl）と Bionicのみ（土台なし）。用途に合わせて選べます。Alpine のセットアップは 6.7 秒です。</p></div>
     <div class="card"><h3>レシピで足す</h3><p>本体は、入れる時に公式の配布元から取ってきて、ハッシュで照合します。カタログは Hako Hub に置いてあります。</p></div>
