@@ -1,9 +1,9 @@
 {
- "generatedAt": "2026-11-25T07:40:12+09:00",
+ "generatedAt": "2026-11-26T07:39:38+09:00",
  "windowDays": 45,
  "sources": {
   "宮城県": {
-   "status": "ok",
+   "status": "unchanged",
    "page": "https://www.pref.miyagi.jp/soshiki/sizenhogo/r8kumamokugeki.html"
   },
   "福島県": {
@@ -1436,111 +1436,6 @@
    "urban": "住居集合地域等",
    "note": null,
    "source": "宮城県「令和8年度クマ目撃等情報」"
-  },
-  {
-   "date": "2026-10-11",
-   "time": "21:50",
-   "pref": "宮城県",
-   "muni": "気仙沼市",
-   "area": "気仙沼市",
-   "district": "八日町",
-   "kind": "目撃",
-   "count": 1,
-   "lat": 38.9081,
-   "lon": 141.571206,
-   "urban": "不明",
-   "note": null,
-   "source": "宮城県「令和8年度クマ目撃等情報」"
-  },
-  {
-   "date": "2026-10-11",
-   "time": "16:30",
-   "pref": "宮城県",
-   "muni": "栗原市",
-   "area": "栗原市",
-   "district": "栗駒沼倉耕英東 地内",
-   "kind": "目撃",
-   "count": 1,
-   "lat": 38.941696,
-   "lon": 140.814065,
-   "urban": "住居集合地域等以外",
-   "note": null,
-   "source": "宮城県「令和8年度クマ目撃等情報」"
-  },
-  {
-   "date": "2026-10-11",
-   "time": "16:00",
-   "pref": "宮城県",
-   "muni": "大和町",
-   "area": "大和町",
-   "district": "宮床字上綱木",
-   "kind": "目撃",
-   "count": null,
-   "lat": 38.431909,
-   "lon": 140.864925,
-   "urban": "住居集合地域等以外",
-   "note": null,
-   "source": "宮城県「令和8年度クマ目撃等情報」"
-  },
-  {
-   "date": "2026-10-11",
-   "time": "10:30",
-   "pref": "宮城県",
-   "muni": "色麻町",
-   "area": "色麻町",
-   "district": "色麻町大字新大原",
-   "kind": "目撃",
-   "count": 1,
-   "lat": 38.51220713,
-   "lon": 140.8550752,
-   "urban": "不明",
-   "note": null,
-   "source": "宮城県「令和8年度クマ目撃等情報」"
-  },
-  {
-   "date": "2026-10-11",
-   "time": "08:55",
-   "pref": "宮城県",
-   "muni": "名取市",
-   "area": "名取市",
-   "district": "相互台東一丁目",
-   "kind": "目撃",
-   "count": 1,
-   "lat": 38.209447,
-   "lon": 140.814391,
-   "urban": "住居集合地域等",
-   "note": null,
-   "source": "宮城県「令和8年度クマ目撃等情報」"
-  },
-  {
-   "date": "2026-10-11",
-   "time": "05:15",
-   "pref": "福島県",
-   "muni": "郡山市",
-   "area": "郡山市",
-   "district": "熱海町高玉字樋口",
-   "kind": "目撃",
-   "count": 1,
-   "lat": null,
-   "lon": null,
-   "urban": "道路脇",
-   "note": "車両運転中、路肩にいる熊1頭(体長約0.5m)を目撃したもの。",
-   "source": "福島県クマ目撃情報（県警発表に基づく）"
-  },
-  {
-   "date": "2026-10-11",
-   "time": "03:30",
-   "pref": "福島県",
-   "muni": "郡山市",
-   "area": "郡山市",
-   "district": "熱海町安子ヶ島字馬場",
-   "kind": "目撃",
-   "count": 1,
-   "lat": null,
-   "lon": null,
-   "urban": "道路上",
-   "note": "車両運転中、路上にいる熊1頭(体長約0.5m)を目撃したもの。",
-   "source": "福島県クマ目撃情報（県警発表に基づく）"
   }
  ]
 }
