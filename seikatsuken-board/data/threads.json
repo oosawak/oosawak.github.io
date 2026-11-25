@@ -1,10 +1,25 @@
 {
-  "generatedAt": "2026-11-25T09:57:16+09:00",
+  "generatedAt": "2026-11-25T11:57:12+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-25T09:57:16+09:00",
+      "fetchedAt": "2026-11-25T11:57:12+09:00",
       "posts": [
+        {
+          "username": "tc_highway",
+          "url": "https://www.threads.com/@tc_highway/post/DgJT6ZlE-6-",
+          "text": "#仙台南部道路 山田IC付近で事故復旧緊急工事 一部通行止め #tc_highway #通行止 #宮城県道路情報 NEXCO東日本などによると、11月25日06:00過ぎ、宮城県の仙台南部道路山田IC付近で発生した事故の復旧緊急工事のため、10:00から、上下線の長町IC＝仙台南IC間で通行止めとなっています。 https://news.jp/i/1498127619123266364",
+          "likeCount": 0,
+          "takenAt": "2026-11-25T10:06:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#通行止",
+          "spot": "仙台"
+        },
         {
           "username": "trafficlip",
           "url": "https://www.threads.com/@trafficlip/post/DgHgF-GmGdL",
@@ -355,7 +370,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-25T09:57:16+09:00",
+      "fetchedAt": "2026-11-25T11:57:12+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -377,7 +392,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-25T09:57:16+09:00",
+      "fetchedAt": "2026-11-25T11:57:12+09:00",
       "posts": [
         {
           "username": "tc_highway",
@@ -1134,7 +1149,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-25T09:57:16+09:00",
+      "fetchedAt": "2026-11-25T11:57:12+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1171,7 +1186,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-25T09:57:16+09:00",
+      "fetchedAt": "2026-11-25T11:57:12+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1298,7 +1313,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-25T09:57:16+09:00",
+      "fetchedAt": "2026-11-25T11:57:12+09:00",
       "posts": [
         {
           "username": "aizu1988",
