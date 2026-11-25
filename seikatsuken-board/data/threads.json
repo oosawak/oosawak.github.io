@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-26T01:57:26+09:00",
+  "generatedAt": "2026-11-26T03:57:29+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-26T01:57:26+09:00",
+      "fetchedAt": "2026-11-26T03:57:29+09:00",
       "posts": [
         {
           "username": "tc_highway",
@@ -385,7 +385,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-26T01:57:26+09:00",
+      "fetchedAt": "2026-11-26T03:57:29+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -407,8 +407,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-26T01:57:26+09:00",
+      "fetchedAt": "2026-11-26T03:57:29+09:00",
       "posts": [
+        {
+          "username": "yy809141",
+          "url": "https://www.threads.com/@yy809141/post/DgKYsl-jpX_",
+          "text": "雪の山形県 視界の上の方に白いものが見えて、 大きな鳥がとまってると思って写真撮ったら これでした。全然鳥じゃなかった。。 #山形 #雪 #鳥じゃなかった #アンテナ",
+          "likeCount": 3,
+          "takenAt": "2026-11-25T20:07:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
         {
           "username": "trafficlip",
           "url": "https://www.threads.com/@trafficlip/post/DgKJh72mMVu",
@@ -1179,7 +1194,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-26T01:57:26+09:00",
+      "fetchedAt": "2026-11-26T03:57:29+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1216,7 +1231,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-26T01:57:26+09:00",
+      "fetchedAt": "2026-11-26T03:57:29+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1343,7 +1358,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-26T01:57:26+09:00",
+      "fetchedAt": "2026-11-26T03:57:29+09:00",
       "posts": [
         {
           "username": "aizu1988",
