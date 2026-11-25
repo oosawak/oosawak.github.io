@@ -16,6 +16,15 @@
     line-height:1.85;font-size:16px}
   .wrap{max-width:960px;margin:0 auto;padding:0 20px}
   header{padding:56px 0 8px;text-align:center}
+  .hero-flex{display:grid;gap:26px}
+  .hero-manga img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+  .hero-manga figcaption{font-size:13px;color:var(--muted);padding:8px 4px 2px}
+  @media (min-width:860px){
+    .hero-flex{grid-template-columns:1.02fr .98fr;align-items:center}
+    .hero-text{text-align:left}
+    .hero-text .cta{justify-content:flex-start}
+    .hero-text .lead{margin-left:0}
+  }
   .badge{display:inline-block;background:var(--olive);color:#fff;font-size:13px;
     padding:2px 14px;border-radius:999px;letter-spacing:.08em}
   h1{font-size:38px;line-height:1.4;margin:20px 0 6px;font-weight:800}
@@ -68,14 +77,19 @@
 <div class="wrap">
 
 <header>
-  <span class="badge">開発中</span>
-  <h1>引き出しの中の古いスマホが、<br>サーバーになります。<span class="sub">Hako@Linux ― 電話の中に立つ Linux の箱</span></h1>
-  <p class="lead">アプリを入れるだけで、Android の電話が小さな Linux サーバーに変わります。専用の機械を買わなくても、手元の電話がそのまま使えます。</p>
-  <div class="cover"><img src="cover.webp" alt="スマートフォンの中に小さな Linux の箱が見えて、横のパソコンと鍵のかかった線で繋がっているイラスト"></div>
-  <div class="cta">
-    <a class="primary" href="https://oosawak.github.io/tech/#/post/hako-at-linux">仕組みを読む（技術記事）</a>
-    <a class="ghost" href="https://oosawak.github.io/materials/hako-hub/">Hako Hub を見る</a>
+  <div class="hero-flex">
+    <div class="hero-text">
+      <span class="badge">開発中</span>
+      <h1>引き出しの中の古いスマホが、<br>サーバーになります。<span class="sub">Hako@Linux ― 電話の中に立つ Linux の箱</span></h1>
+      <p class="lead">アプリを入れるだけで、Android の電話が小さな Linux サーバーに変わります。専用の機械を買わなくても、手元の電話がそのまま使えます。</p>
+      <div class="cta">
+        <a class="primary" href="https://oosawak.github.io/tech/#/post/hako-at-linux">仕組みを読む（技術記事）</a>
+        <a class="ghost" href="https://oosawak.github.io/materials/hako-hub/">Hako Hub を見る</a>
+      </div>
+    </div>
+    <figure class="hero-manga" style="margin:0"><img src="tanbo-manga-v1.webp" alt="田んぼに置いた電話が、朝の設置、昼の自動送信、声と光のお知らせ、夕方のデータ確認までを描いた4コマ漫画"><figcaption>マンガで見る、田んぼの1日。朝に置くだけで、夕方にはデータが見えます。</figcaption></figure>
   </div>
+  <div class="cover"><img src="cover.webp" alt="スマートフォンの中に小さな Linux の箱が見えて、横のパソコンと鍵のかかった線で繋がっているイラスト"></div>
 </header>
 
 <section>
@@ -98,12 +112,6 @@
     <div class="scene"><img src="media-generation-scene-fishery-v1-0-3dcdab0a-f7f0-4464-87dd-4c29ce2c92df.webp" alt="漁港の養殖いかだのそばで、電話が記録係をしているイラスト"><h3>水産業の現場で</h3><p>漁港や養殖場のような、ネットが弱い場所の記録係に。電話1台でその場の状態を記録して貯めておき、戻ってからまとめて送れます。</p></div>
     <div class="scene"><img src="media-generation-scene-industry-v1-0-b3ed4b89-0b7e-4c1c-aad8-14faf64e4974.webp" alt="工場の現場事務所で、電話がデータの置き場になっているイラスト"><h3>工業・建設の現場で</h3><p>ネットに出せない記録の置き場に。閉じたネットワークの中で、現場のデータを手元に貯めておけます。</p></div>
   </div>
-</section>
-
-<section>
-  <h2>マンガで見る、田んぼの1日</h2>
-  <p class="sec-lead">ネットが無い場所では、こんな使い方もできます。電話が記録して、人が近づいた時にまとめて送る形です。</p>
-  <figure style="max-width:820px;margin:0 auto"><img src="tanbo-manga-v1.webp" alt="田んぼに置いた電話が、朝の設置、昼の自動送信、声と光のお知らせ、夕方のデータ確認までを描いた4コマ漫画"><figcaption>朝に置くだけ。昼、おじいちゃんが近づくと自動で送って、声と光で知らせます。夕方、家で1日分のデータが見えます。</figcaption></figure>
 </section>
 
 <section>
