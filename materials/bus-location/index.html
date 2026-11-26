@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>電話1台でバスロケ ― バスの位置情報システム</title>
+<meta name="description" content="コミュニティバスやスクールバスに、スマートフォンを1台置くだけ。専用の車載機なしで、バスの位置が待っている人に分かります。位置はサーバーに貯まり、1日の記録から時刻表も作れます。">
+<style>
+  :root{
+    --cream:#faf6ec; --paper:#fffdf6; --ink:#2f3330; --muted:#6b6f66;
+    --olive:#6d7c4f; --olive-dark:#4c5a36; --terra:#c96f4a; --line:#e3dcc8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+    line-height:1.9;font-size:16px}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 64px}
+  header{padding:56px 0 8px;text-align:center}
+  .kicker{color:var(--terra);font-weight:700;letter-spacing:.18em;font-size:13px}
+  h1{font-size:34px;line-height:1.4;margin:10px 0 12px}
+  .lead{color:var(--muted);max-width:640px;margin:0 auto}
+  figure{margin:28px 0}
+  figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
+  figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:8px}
+  h2{font-size:23px;margin:48px 0 14px;padding-left:12px;border-left:5px solid var(--olive)}
+  p{margin:10px 0}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .card h3{margin:0 0 8px;font-size:17px;color:var(--olive-dark)}
+  .card p{margin:0;color:var(--ink);font-size:15px}
+  ol.flow{padding-left:22px}
+  ol.flow li{margin:8px 0}
+  .note{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;color:var(--muted);font-size:14px}
+  a{color:var(--olive-dark)}
+  footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">BUS LOCATION</div>
+  <h1>電話1台で、バスロケ。</h1>
+  <p class="lead">コミュニティバスやスクールバスに、スマートフォンを1台置くだけ。専用の車載機は要りません。バスの位置はサーバーに貯まって、待っている人には「もうすぐ来る」が分かります。</p>
+</header>
+
+<figure>
+  <img src="bus-manga-v1.webp" alt="朝にバスへ電話を置き、昼は走りながら位置を送り、待っている人に到着が分かり、夜には1日の記録から時刻表ができる、という流れを描いた4コマ漫画">
+  <figcaption>朝に置くだけ。昼は位置を送り、待つ人に分かり、夜には記録が時刻表になります。</figcaption>
+</figure>
+
+<h2>仕組み</h2>
+<ol class="flow">
+  <li>バスに電話を1台置きます。運転手の電話でも、車両に置きっぱなしの1台でも構いません。</li>
+  <li>電話が GPS で位置を取り、サーバーへ送ります。電波の無い区間では電話の中に記録しておき、届いた所でまとめて送ります。</li>
+  <li>待っている人は、自分の電話やパソコンでサーバーの情報を見ます。「バスが今どこにいて、あと何分で来るか」が分かります。</li>
+  <li>1日の走行記録がサーバーに貯まります。その実績から、時刻表の下書きを AI に作らせることもできます。</li>
+</ol>
+
+<h2>使い道</h2>
+<div class="cards">
+  <div class="card">
+    <h3>コミュニティバス</h3>
+    <p>専用システムは高くて入れられなかった路線に。余っている電話が、そのままバスロケになります。</p>
+  </div>
+  <div class="card">
+    <h3>スクールバス</h3>
+    <p>行政が運行するスクールバスに。保護者は「バスが今どこまで来ているか」が分かり、迎えの待ち方が変わります。</p>
+  </div>
+  <div class="card">
+    <h3>運行の見直し</h3>
+    <p>実際の到着時刻の記録が残るので、遅れやすい区間や余裕のありすぎる区間が見えます。ダイヤ改正の材料になります。</p>
+  </div>
+</div>
+
+<h2>土台は、もう動いている仕組みです</h2>
+<p>位置を取り続ける部分は、Android の中で Linux の箱を動かす <a href="https://oosawak.github.io/materials/hako-at-linux/">Hako@Linux</a> の GPS ロガーで実証済みです。画面を消したままでも、電池を抑えて記録し続けられます。ネットの無い場所に置きっぱなしにする用途のために作った仕組みが、そのままバスに載ります。</p>
+
+<div class="note">
+  このページは構想の紹介です。実証済みなのは位置の記録と、記録を後から送る仕組みまでで、バスでの実運用はこれからです。
+</div>
+
+<footer>Lyre3 Games</footer>
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "cdf4ee53507948e4a412f503875833cd"}'></script>
+</body>
+</html>
