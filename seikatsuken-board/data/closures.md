@@ -1,6 +1,6 @@
 # 通行止め情報（生活圏防災ライブボード）
 
-生成日時: 2026-11-26 16:43（日本時間）
+生成日時: 2026-11-26 16:58（日本時間）
 出典: 国土交通省 東北地方整備局 各河川国道事務所の道路規制情報ページ。
 取得に失敗した事務所は「なし」とせず、状態不明として記録する。
 
@@ -21,13 +21,21 @@
 - 状態: 取得OK
 - 記者発表の確認: OK（東北地方整備局の一覧、新着のみ72時間表示）
 - 出典ページ: https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/
-- ページ更新日: 2026-11-18
+- ページ更新日: 2026-11-26
 - 【E13】東北中央自動車道(村山名取IC⇔尾花沢北IC)上下線夜間通行止め
   - 期間: 11月12日~11月27日 / 理由: 道路工事 / 詳細: https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/
 - 【E13】東北中央自動車道(新庄IC⇔川原子IC)夜間通行止め
-  - 期間: 1上り線 舟形IC~川原子IC 11月20日)(2下り線 舟形IC~新庄IC 11月27日 / 理由: 道路工事 / 詳細: https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/
+  - 期間: 11月27日 / 理由: 道路工事 / 詳細: https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/
+- 【E13】東北中央自動車道(尾花沢北IC⇔舟形IC)上下線夜間通行止め
+  - 期間: 11月30日~12月11日 / 理由: 道路工事 / 詳細: https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/
 - 【E13】東北中央自動車道(東根IC⇔村山IC)上下線夜間通行止め
   - 期間: 1東根IC~東根北IC 12月2日)(2東根北IC~村山IC 12月3日 / 理由: 道路工事 / 詳細: https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/
+- 【E13】東北中央自動車道(尾花沢北IC⇔川原子IC)上下線夜間通行止め
+  - 期間: 12月16日~12月25日 / 理由: 道路工事 / 詳細: https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/
+- 【国道47号】新庄古口道路【津谷交差点、福宮交差点⇔升形交差点】 上下線夜間通行止め
+  - 期間: 12月1日 / 理由: 道路工事 / 詳細: https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/
+- 【国道47号】新庄南バイパス(新庄IC⇔鳥越交差点) 上下線夜間通行止め
+  - 期間: 12月9日~12月11日 / 理由: 道路工事 / 詳細: https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/
 - 【国道113号】赤湯バイパス 鍋田交差点⇔深沼交差点 上下線夜間通行止め
   - 期間: 11月24日~12月11日 / 理由: 道路工事 / 詳細: https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/
 - 【国道113号】赤湯バイパス 高梨交差点⇔鍋田交差点 上下線夜間通行止め
