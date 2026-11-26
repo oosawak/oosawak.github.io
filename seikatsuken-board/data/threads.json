@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-26T03:57:29+09:00",
+  "generatedAt": "2026-11-26T22:57:08+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-26T03:57:29+09:00",
+      "fetchedAt": "2026-11-26T22:57:08+09:00",
       "posts": [
         {
           "username": "tc_highway",
@@ -385,7 +385,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-26T03:57:29+09:00",
+      "fetchedAt": "2026-11-26T22:57:08+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -407,7 +407,7 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-26T03:57:29+09:00",
+      "fetchedAt": "2026-11-26T22:57:08+09:00",
       "posts": [
         {
           "username": "yy809141",
@@ -1194,7 +1194,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-26T03:57:29+09:00",
+      "fetchedAt": "2026-11-26T22:57:08+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1231,7 +1231,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-26T03:57:29+09:00",
+      "fetchedAt": "2026-11-26T22:57:08+09:00",
       "posts": [
         {
           "username": "iiyone2020",
@@ -1358,8 +1358,23 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-26T03:57:29+09:00",
+      "fetchedAt": "2026-11-26T22:57:08+09:00",
       "posts": [
+        {
+          "username": "tc_highway",
+          "url": "https://www.threads.com/@tc_highway/post/DgNLZpmk8rR",
+          "text": "#磐越道 福島/新潟県境区間で事故復旧緊急工事 一部通行止め #tc_highway #通行止 #福島県道路情報 #新潟県道路情報 NEXCO東日本などによると、福島/新潟県境区間の磐越自動車道で発生した事故の復旧緊急工事のため、11月26日22:00から、上下線の西会津IC＝津川IC間で通行止めとなっています。 https://news.jp/i/1498671263021810399",
+          "likeCount": 0,
+          "takenAt": "2026-11-26T22:09:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#通行止",
+          "spot": "福島"
+        },
         {
           "username": "aizu1988",
           "url": "https://www.threads.com/@aizu1988/post/DgG54j5DjJq",
