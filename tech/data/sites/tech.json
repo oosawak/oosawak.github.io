@@ -53,7 +53,13 @@
         "mime": "image/webp"
       },
       "i18n": {
-        "en": {}
+        "en": {
+          "title": "A Linux Box Inside Your Phone",
+          "subtitle": "How Hako@Linux Works, Measured",
+          "category": "Tech",
+          "summary": "Technical notes on Hako@Linux, which builds a Linux box inside an Android phone. No virtual machine: a proot base, native Bionic parts and a Rust sshd combined, with the measurements that decided the split. A work-in-progress record.",
+          "cover_alt": "Illustration of a small Linux box inside a smartphone, connected to a PC with a locked line"
+        }
       }
     },
     {
