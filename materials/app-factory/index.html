@@ -48,6 +48,37 @@
   <li>Android のパッケージが出てきます。入れる人は、それを電話に入れるだけです。</li>
 </ol>
 
+<h2>構成図</h2>
+<svg viewBox="0 0 860 300" width="100%" role="img" aria-label="構成図：一枚のHTMLをツールへ放り込むと、箱リナックスと通信するAndroidアプリが出てくる" style="background:var(--paper);border:1px solid var(--line);border-radius:12px;margin:8px 0 4px">
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4c5a36"></path>
+    </marker>
+  </defs>
+  <rect x="20" y="40" width="180" height="90" rx="10" fill="#faf6ec" stroke="#6d7c4f" stroke-width="2"></rect>
+  <text x="110" y="78" text-anchor="middle" font-size="16" font-weight="700" fill="#2f3330">一枚の HTML</text>
+  <text x="110" y="104" text-anchor="middle" font-size="12.5" fill="#6b6f66">画面の設計（AIが書く）</text>
+  <line x1="200" y1="85" x2="268" y2="85" stroke="#4c5a36" stroke-width="2" marker-end="url(#arw)"></line>
+  <text x="234" y="70" text-anchor="middle" font-size="11.5" fill="#6b6f66">放り込む</text>
+  <rect x="270" y="40" width="220" height="90" rx="10" fill="#faf6ec" stroke="#6d7c4f" stroke-width="2"></rect>
+  <text x="380" y="72" text-anchor="middle" font-size="16" font-weight="700" fill="#2f3330">ツール</text>
+  <text x="380" y="96" text-anchor="middle" font-size="12.5" fill="#6b6f66">土台は「どこでもソース管理」</text>
+  <text x="380" y="114" text-anchor="middle" font-size="12.5" fill="#6b6f66">殻と組む・ビルド・署名</text>
+  <line x1="490" y1="85" x2="558" y2="85" stroke="#4c5a36" stroke-width="2" marker-end="url(#arw)"></line>
+  <rect x="560" y="40" width="280" height="90" rx="10" fill="#faf6ec" stroke="#c96f4a" stroke-width="2"></rect>
+  <text x="700" y="72" text-anchor="middle" font-size="16" font-weight="700" fill="#2f3330">Android アプリ</text>
+  <text x="700" y="96" text-anchor="middle" font-size="12.5" fill="#6b6f66">画面は WebView で表示</text>
+  <text x="700" y="114" text-anchor="middle" font-size="12.5" fill="#6b6f66">操作は箱側へ返す（双方向）</text>
+  <line x1="700" y1="130" x2="700" y2="196" stroke="#4c5a36" stroke-width="2" marker-start="url(#arw)" marker-end="url(#arw)"></line>
+  <text x="712" y="168" font-size="12.5" fill="#6b6f66">橋の約束事で通信</text>
+  <rect x="470" y="198" width="370" height="82" rx="10" fill="#faf6ec" stroke="#6d7c4f" stroke-width="2"></rect>
+  <text x="655" y="230" text-anchor="middle" font-size="16" font-weight="700" fill="#2f3330">箱リナックス（Hako@Linux）</text>
+  <text x="655" y="256" text-anchor="middle" font-size="12.5" fill="#6b6f66">記録・処理・センサー・Bluetooth の情報はここに集まる</text>
+  <rect x="20" y="198" width="330" height="82" rx="10" fill="#fffdf6" stroke="#e3dcc8" stroke-width="1.5"></rect>
+  <text x="185" y="230" text-anchor="middle" font-size="14" font-weight="700" fill="#2f3330">この仕組みで作るもの</text>
+  <text x="185" y="256" text-anchor="middle" font-size="12.5" fill="#6b6f66">バスの位置情報・クマの出没情報・ドライブレコーダー</text>
+</svg>
+
 <h2>土台は「どこでもソース管理」</h2>
 <p>このツールのベースは「<a href="https://oosawak.github.io/materials/source-control-anywhere/">どこでもソース管理</a>」です。その中には <a href="https://oosawak.github.io/materials/hako-at-linux/">Hako@Linux</a> と同じ仕組み（箱と入り口）が入っています。ミューズさんはその仕組みを理解して HTML を書くので、出来上がるアプリには、箱リナックスとの通信処理が最初から入っています。</p>
 
@@ -78,11 +109,15 @@
   </div>
   <div class="card">
     <h3>バスの位置情報</h3>
-    <p>電話1台でバスロケをする構想です。<a href="https://oosawak.github.io/materials/bus-location/">紹介ページ</a>と、<a href="https://oosawak.github.io/materials/bus-location/map.html">GPS ログの地図表示の試作</a>があります。</p>
+    <p>電話1台でバスロケをする仕組みを、この作り方で作ります。<a href="https://oosawak.github.io/materials/bus-location/">紹介ページ</a>と、<a href="https://oosawak.github.io/materials/bus-location/map.html">GPS ログの地図表示の試作</a>があります。</p>
+  </div>
+  <div class="card">
+    <h3>クマの出没情報</h3>
+    <p>出没したら写真と位置を送り、集まった記録から予測と個体の管理をする仕組みを、この作り方で作ります。</p>
   </div>
   <div class="card">
     <h3>箱をコアにしたナビ</h3>
-    <p>ナビのコアに箱リナックスを置き、ドライブレコーダーの情報も一緒に表示する形が、次の候補です。</p>
+    <p>ナビのコアに箱リナックスを置き、ドライブレコーダーの情報も一緒に表示する形を、この作り方で作ります。</p>
   </div>
 </div>
 
