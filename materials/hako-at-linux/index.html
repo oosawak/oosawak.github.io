@@ -15,6 +15,11 @@
     font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
     line-height:1.85;font-size:16px}
   .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  .langbar{display:flex;justify-content:flex-end;padding:14px 0 0}
+  .langbar .group{display:inline-flex;border:1.5px solid var(--olive);border-radius:999px;overflow:hidden}
+  .langbar button{appearance:none;border:0;background:var(--paper);color:var(--olive);
+    font:inherit;font-size:13.5px;font-weight:700;padding:4px 16px;cursor:pointer}
+  .langbar button.chosen{background:var(--olive);color:#fff}
   header{padding:56px 0 8px;text-align:center}
   .cover-pair{display:grid;gap:14px;max-width:1020px;margin:26px auto 6px}
   .cover-pair figure{margin:0}
@@ -72,91 +77,209 @@
 <body>
 <div class="wrap">
 
+<div class="langbar"><div class="group" role="group" aria-label="Language / 言語"><button type="button" data-setlang="ja">日本語</button><button type="button" data-setlang="en">English</button></div></div>
+
 <header>
-  <span class="badge">開発中</span>
-  <h1>引き出しの中の古いスマホが、<br>サーバーになります。<span class="sub">Hako@Linux ― 電話の中に立つ Linux の箱</span></h1>
-  <p class="lead">アプリを入れるだけで、Android の電話が小さな Linux サーバーに変わります。専用の機械を買わなくても、手元の電話がそのまま使えます。</p>
+  <span class="badge" data-i18n="badge">開発中</span>
+  <h1 data-i18n="h1">引き出しの中の古いスマホが、<br>サーバーになります。<span class="sub">Hako@Linux ― 電話の中に立つ Linux の箱</span></h1>
+  <p class="lead" data-i18n="lead">アプリを入れるだけで、Android の電話が小さな Linux サーバーに変わります。専用の機械を買わなくても、手元の電話がそのまま使えます。</p>
   <div class="cover-pair">
-    <figure><img src="cover.webp" alt="スマートフォンの中に小さな Linux の箱が見えて、横のパソコンと鍵のかかった線で繋がっているイラスト"></figure>
-    <figure><img src="tanbo-manga-v1.webp" alt="田んぼに置いた電話が、朝の設置、昼の自動送信、声と光のお知らせ、夕方のデータ確認までを描いた4コマ漫画"></figure>
+    <figure><img src="cover.webp" data-i18n-alt="altCover" alt="スマートフォンの中に小さな Linux の箱が見えて、横のパソコンと鍵のかかった線で繋がっているイラスト"></figure>
+    <figure><img src="tanbo-manga-v1.webp" data-i18n-alt="altManga" alt="田んぼに置いた電話が、朝の設置、昼の自動送信、声と光のお知らせ、夕方のデータ確認までを描いた4コマ漫画"></figure>
   </div>
   <div class="cta">
-    <a class="primary" href="https://oosawak.github.io/tech/#/post/hako-at-linux">仕組みを読む（技術記事）</a>
-    <a class="ghost" href="https://oosawak.github.io/materials/hako-hub/">Hako Hub を見る</a>
+    <a class="primary tech-link" href="https://oosawak.github.io/tech/#/post/tech/hako-at-linux" data-i18n="cta1">仕組みを読む（技術記事）</a>
+    <a class="ghost" href="https://oosawak.github.io/materials/hako-hub/" data-i18n="cta2">Hako Hub を見る</a>
   </div>
 </header>
 
 <section>
-  <h2>できること</h2>
-  <p class="sec-lead">サーバーというと、大きな機械と契約の話になりがちです。これは違います。</p>
+  <h2 data-i18n="s1h">できること</h2>
+  <p class="sec-lead" data-i18n="s1lead">サーバーというと、大きな機械と契約の話になりがちです。これは違います。</p>
   <div class="cards">
-    <div class="card"><h3>電話1台で、全部入り</h3><p>普通のサーバーには別々に要る物――電池、時計、気圧や明るさを測るセンサー、通信の仕組み――が、電話には最初から全部入っています。停電しても、電池で動き続けます。</p></div>
-    <div class="card"><h3>ネットが無くても動く</h3><p>外のサービスに頼らないので、教室の中だけ、建物の中だけでも動きます。ネットの無い所や、ネットに出したくない物を置く場所に使えます。</p></div>
-    <div class="card"><h3>電気をほとんど食わない</h3><p>画面を消して置きっぱなしにする実験では、電池の減りは1時間で 2% でした。計算では、満充電で約 50 時間、測り続けることができます（実験段階の測定）。</p></div>
-    <div class="card"><h3>古い電話がよみがえる</h3><p>2019年発売の Pixel 3a でも動いています。アプリ本体は 15.80 MiB と小さいので、眠っている電話の使い道になります。</p></div>
+    <div class="card"><h3 data-i18n="c1h">電話1台で、全部入り</h3><p data-i18n="c1p">普通のサーバーには別々に要る物――電池、時計、気圧や明るさを測るセンサー、通信の仕組み――が、電話には最初から全部入っています。停電しても、電池で動き続けます。</p></div>
+    <div class="card"><h3 data-i18n="c2h">ネットが無くても動く</h3><p data-i18n="c2p">外のサービスに頼らないので、教室の中だけ、建物の中だけでも動きます。ネットの無い所や、ネットに出したくない物を置く場所に使えます。</p></div>
+    <div class="card"><h3 data-i18n="c3h">電気をほとんど食わない</h3><p data-i18n="c3p">画面を消して置きっぱなしにする実験では、電池の減りは1時間で 2% でした。計算では、満充電で約 50 時間、測り続けることができます（実験段階の測定）。</p></div>
+    <div class="card"><h3 data-i18n="c4h">古い電話がよみがえる</h3><p data-i18n="c4p">2019年発売の Pixel 3a でも動いています。アプリ本体は 15.80 MiB と小さいので、眠っている電話の使い道になります。</p></div>
   </div>
 </section>
 
 <section>
-  <h2>使い方の場面</h2>
-  <p class="sec-lead">例えば、こんな所で使えます。</p>
+  <h2 data-i18n="s2h">使い方の場面</h2>
+  <p class="sec-lead" data-i18n="s2lead">例えば、こんな所で使えます。</p>
   <div class="scenes">
-    <div class="scene"><img src="media-generation-scene-school-v1-0-cbbd73fd-02a2-4bef-b30c-3f3bfc2cd16c.webp" alt="教室で、先生の机の電話を中心に生徒がノートパソコンで作業しているイラスト"><h3>学校の授業で</h3><p>プログラミングの授業で使う「ソースコードの置き場」を、電話1台で用意できます。生徒のアカウント登録は不要で、ネットが無くても授業が進みます。</p></div>
-    <div class="scene"><img src="media-generation-scene-farm-v1-0-28bfab65-63bc-46ed-9381-cfa276b5df85.webp" alt="畑とハウスのそばに立てた電話が、天気を記録しているイラスト"><h3>農業の現場で</h3><p>畑やハウスのそばに置いて、気圧や明るさなどを置きっぱなしで記録します。電池で長く持つので、コンセントの無い場所にも置けます。記録は後からパソコンで取り出せます。</p></div>
-    <div class="scene"><img src="media-generation-scene-fishery-v1-0-3dcdab0a-f7f0-4464-87dd-4c29ce2c92df.webp" alt="漁港の養殖いかだのそばで、電話が記録係をしているイラスト"><h3>水産業の現場で</h3><p>漁港や養殖場のような、ネットが弱い場所の記録係に。電話1台でその場の状態を記録して貯めておき、戻ってからまとめて送れます。</p></div>
-    <div class="scene"><img src="media-generation-scene-industry-v1-0-b3ed4b89-0b7e-4c1c-aad8-14faf64e4974.webp" alt="工場の現場事務所で、電話がデータの置き場になっているイラスト"><h3>工業・建設の現場で</h3><p>ネットに出せない記録の置き場に。閉じたネットワークの中で、現場のデータを手元に貯めておけます。</p></div>
+    <div class="scene"><img src="media-generation-scene-school-v1-0-cbbd73fd-02a2-4bef-b30c-3f3bfc2cd16c.webp" data-i18n-alt="altSc1" alt="教室で、先生の机の電話を中心に生徒がノートパソコンで作業しているイラスト"><h3 data-i18n="sc1h">学校の授業で</h3><p data-i18n="sc1p">プログラミングの授業で使う「ソースコードの置き場」を、電話1台で用意できます。生徒のアカウント登録は不要で、ネットが無くても授業が進みます。</p></div>
+    <div class="scene"><img src="media-generation-scene-farm-v1-0-28bfab65-63bc-46ed-9381-cfa276b5df85.webp" data-i18n-alt="altSc2" alt="畑とハウスのそばに立てた電話が、天気を記録しているイラスト"><h3 data-i18n="sc2h">農業の現場で</h3><p data-i18n="sc2p">畑やハウスのそばに置いて、気圧や明るさなどを置きっぱなしで記録します。電池で長く持つので、コンセントの無い場所にも置けます。記録は後からパソコンで取り出せます。</p></div>
+    <div class="scene"><img src="media-generation-scene-fishery-v1-0-3dcdab0a-f7f0-4464-87dd-4c29ce2c92df.webp" data-i18n-alt="altSc3" alt="漁港の養殖いかだのそばで、電話が記録係をしているイラスト"><h3 data-i18n="sc3h">水産業の現場で</h3><p data-i18n="sc3p">漁港や養殖場のような、ネットが弱い場所の記録係に。電話1台でその場の状態を記録して貯めておき、戻ってからまとめて送れます。</p></div>
+    <div class="scene"><img src="media-generation-scene-industry-v1-0-b3ed4b89-0b7e4c1c-aad8-14faf64e4974.webp" data-i18n-alt="altSc4" alt="工場の現場事務所で、電話がデータの置き場になっているイラスト"><h3 data-i18n="sc4h">工業・建設の現場で</h3><p data-i18n="sc4p">ネットに出せない記録の置き場に。閉じたネットワークの中で、現場のデータを手元に貯めておけます。</p></div>
   </div>
 </section>
 
 <section>
-  <h2>機能一覧</h2>
-  <p class="sec-lead">今の Android 版でできることです。</p>
+  <h2 data-i18n="s3h">機能一覧</h2>
+  <p class="sec-lead" data-i18n="s3lead">今の Android 版でできることです。</p>
   <div class="cards">
-    <div class="card"><h3>箱の基本</h3><p>アプリを入れるだけで、電話が Linux サーバーになります。土台は Ubuntu 24.04、Alpine 3.24、Bionic の3つから切り替えでき、土台の中では apt や apk で普通にソフトを入れられます。土台の切り替えは、アプリのボタンのほか、SSH の中から hako base use でもできます。</p></div>
-    <div class="card"><h3>入り口</h3><p>自作の SSH サーバー（Rust 製）で、パスワード認証、SFTP、ポート転送に対応します。土台を切り替えても SSH サーバーは再起動せず、接続中の作業はそのまま続き、新しい接続だけ新しい土台へ入ります。土台が止まっていても Bionic 側のシェルで応答します。接続情報は QR コードで表示し、USB シリアルでもつながります。</p></div>
-    <div class="card"><h3>サービス</h3><p>Forgejo、code-server、nginx などは、hako up でレシピから足せます。本体は公式の配布元から取り、ハッシュで照合します。カタログは Hako Hub です。</p></div>
-    <div class="card"><h3>ネイティブ部品</h3><p>git、curl、bash、tmux、Vim、jq、SQLite などを、Bionic ネイティブで用意しています。</p></div>
-    <div class="card"><h3>センサー</h3><p>気圧、明るさ、加速度、電池の状態を、箱の中から読めます。Python からも使えます。置きっぱなしの記録は、画面を消して1時間の測定で、欠けた記録がありませんでした。</p></div>
+    <div class="card"><h3 data-i18n="f1h">箱の基本</h3><p data-i18n="f1p">アプリを入れるだけで、電話が Linux サーバーになります。土台は Ubuntu 24.04、Alpine 3.24、Bionic の3つから切り替えでき、土台の中では apt や apk で普通にソフトを入れられます。土台の切り替えは、アプリのボタンのほか、SSH の中から hako base use でもできます。</p></div>
+    <div class="card"><h3 data-i18n="f2h">入り口</h3><p data-i18n="f2p">自作の SSH サーバー（Rust 製）で、パスワード認証、SFTP、ポート転送に対応します。土台を切り替えても SSH サーバーは再起動せず、接続中の作業はそのまま続き、新しい接続だけ新しい土台へ入ります。土台が止まっていても Bionic 側のシェルで応答します。接続情報は QR コードで表示し、USB シリアルでもつながります。</p></div>
+    <div class="card"><h3 data-i18n="f3h">サービス</h3><p data-i18n="f3p">Forgejo、code-server、nginx などは、hako up でレシピから足せます。本体は公式の配布元から取り、ハッシュで照合します。カタログは Hako Hub です。</p></div>
+    <div class="card"><h3 data-i18n="f4h">ネイティブ部品</h3><p data-i18n="f4p">git、curl、bash、tmux、Vim、jq、SQLite などを、Bionic ネイティブで用意しています。</p></div>
+    <div class="card"><h3 data-i18n="f5h">センサー</h3><p data-i18n="f5p">気圧、明るさ、加速度、電池の状態を、箱の中から読めます。Python からも使えます。置きっぱなしの記録は、画面を消して1時間の測定で、欠けた記録がありませんでした。</p></div>
   </div>
 </section>
 
 <section>
-  <h2>数字で見る</h2>
-  <p class="sec-lead">実機で測った数字です。</p>
+  <h2 data-i18n="s4h">数字で見る</h2>
+  <p class="sec-lead" data-i18n="s4lead">実機で測った数字です。</p>
   <div class="stats">
-    <div class="stat"><div class="num">15.80<small> MiB</small></div><div class="cap">アプリ本体の大きさ</div></div>
-    <div class="stat"><div class="num">879<small> ms</small></div><div class="cap">起動にかかる時間（Pixel 3a）</div></div>
-    <div class="stat"><div class="num">37.9<small> MiB</small></div><div class="cap">待機中のメモリ（Hako@Linux だけの状態）</div></div>
-    <div class="stat"><div class="num">約50<small> 時間</small></div><div class="cap">満充電で測り続けられる時間（計算）</div></div>
+    <div class="stat"><div class="num">15.80<small> MiB</small></div><div class="cap" data-i18n="st1cap">アプリ本体の大きさ</div></div>
+    <div class="stat"><div class="num">879<small> ms</small></div><div class="cap" data-i18n="st2cap">起動にかかる時間（Pixel 3a）</div></div>
+    <div class="stat"><div class="num">37.9<small> MiB</small></div><div class="cap" data-i18n="st3cap">待機中のメモリ（Hako@Linux だけの状態）</div></div>
+    <div class="stat"><div class="num" data-i18n="st4num">約50<small> 時間</small></div><div class="cap" data-i18n="st4cap">満充電で測り続けられる時間（計算）</div></div>
   </div>
 </section>
 
 <section>
-  <h2>画面</h2>
-  <p class="sec-lead">電話側の画面は、状態の確認とボタンだけです。操作はパソコンから行います。</p>
+  <h2 data-i18n="s5h">画面</h2>
+  <p class="sec-lead" data-i18n="s5lead">電話側の画面は、状態の確認とボタンだけです。操作はパソコンから行います。</p>
   <div class="shots">
-    <figure><img src="status.jpg" alt="Hako@Linux の状態画面"><figcaption>状態画面。動いている土台と、つなぎ方が出ています。</figcaption></figure>
-    <figure><img src="base-switch.jpg" alt="土台の切り替え画面"><figcaption>土台の切り替え。Ubuntu と Alpine と Bionic から選びます。</figcaption></figure>
-    <figure><img src="sensor.png" alt="センサーの現在値の表示"><figcaption>センサーの現在値。気圧と照度と電池と加速度が画面に出ます。</figcaption></figure>
+    <figure><img src="status.jpg" data-i18n-alt="altShot1" alt="Hako@Linux の状態画面"><figcaption data-i18n="cap1">状態画面。動いている土台と、つなぎ方が出ています。</figcaption></figure>
+    <figure><img src="base-switch.jpg" data-i18n-alt="altShot2" alt="土台の切り替え画面"><figcaption data-i18n="cap2">土台の切り替え。Ubuntu と Alpine と Bionic から選びます。</figcaption></figure>
+    <figure><img src="sensor.png" data-i18n-alt="altShot3" alt="センサーの現在値の表示"><figcaption data-i18n="cap3">センサーの現在値。気圧と照度と電池と加速度が画面に出ます。</figcaption></figure>
   </div>
 </section>
 
 <section>
-  <h2>仕組み（技術者向け）</h2>
+  <h2 data-i18n="s6h">仕組み（技術者向け）</h2>
   <div class="tech">
-    <p><b>仮想マシンは使いません。</b>電話のカーネルを共用し、土台（Ubuntu 24.04／Alpine 3.24／Bionicのみ）は proot の中で動かします。速さが要る物は Bionic ネイティブ側に、互換性が要る物は土台の中に置くのが、実測から決めた振り分けです。</p>
-    <p><b>入り口は自作の SSH サーバーです。</b>Rust のライブラリ russh で作り、起動 14.0 ms、待ち受け 2.43 MiB。土台が止まっていても Bionic 側のシェルで応答します。サービス（Forgejo、code-server、nginx）は同梱せず、<code>hako up</code> でレシピから足します。本体は公式の配布元から取り、ハッシュで照合します。</p>
-    <p>詳しくは <a href="https://oosawak.github.io/tech/#/post/hako-at-linux">技術記事「電話の中に立つ Linux の箱」</a> に、実測と一緒に書いてあります。</p>
+    <p data-i18n="tech1"><b>仮想マシンは使いません。</b>電話のカーネルを共用し、土台（Ubuntu 24.04／Alpine 3.24／Bionicのみ）は proot の中で動かします。速さが要る物は Bionic ネイティブ側に、互換性が要る物は土台の中に置くのが、実測から決めた振り分けです。</p>
+    <p data-i18n="tech2"><b>入り口は自作の SSH サーバーです。</b>Rust のライブラリ russh で作り、起動 14.0 ms、待ち受け 2.43 MiB。土台が止まっていても Bionic 側のシェルで応答します。サービス（Forgejo、code-server、nginx）は同梱せず、<code>hako up</code> でレシピから足します。本体は公式の配布元から取り、ハッシュで照合します。</p>
+    <p data-i18n="tech3">詳しくは <a class="tech-link" href="https://oosawak.github.io/tech/#/post/tech/hako-at-linux">技術記事「電話の中に立つ Linux の箱」</a> に、実測と一緒に書いてあります。</p>
   </div>
 </section>
 
 <footer>
-  <p>Hako@Linux は開発中の仕組みです。内容は変わることがあります。<br>
-  カタログは <a href="https://oosawak.github.io/materials/hako-hub/">Hako Hub</a>、仕組みの詳細は <a href="https://oosawak.github.io/tech/#/post/hako-at-linux">技術記事</a> をご覧ください。<br>
+  <p data-i18n="footer">Hako@Linux は開発中の仕組みです。内容は変わることがあります。<br>
+  カタログは <a href="https://oosawak.github.io/materials/hako-hub/">Hako Hub</a>、仕組みの詳細は <a class="tech-link" href="https://oosawak.github.io/tech/#/post/tech/hako-at-linux">技術記事</a> をご覧ください。<br>
   Lyre3 Games</p>
 </footer>
 
 </div>
+<script>
+(function(){
+  var EN = {
+    badge: "In development",
+    h1: "The old phone in your drawer<br>becomes a server.<span class=\"sub\">Hako@Linux — a Linux box inside your phone</span>",
+    lead: "Install one app, and your Android phone turns into a small Linux server. No new hardware to buy — the phone you already have is all you need.",
+    cta1: "Read how it works (technical article)",
+    cta2: "Browse Hako Hub",
+    s1h: "What it does",
+    s1lead: "When people hear “server”, they picture big machines and contracts. This is different.",
+    c1h: "Everything in one phone",
+    c1p: "What a normal server needs separately — a battery, a clock, sensors for pressure and light, a way to communicate — a phone already has all of it built in. Even in a blackout, it keeps running on its battery.",
+    c2h: "Works without internet",
+    c2p: "It does not depend on outside services, so it runs inside a single classroom or a single building. Use it where there is no internet, or where you do not want your data to leave the room.",
+    c3h: "Sips power",
+    c3p: "In a leave-it-running test with the screen off, the battery dropped 2% in one hour. On a full charge, that works out to roughly 50 hours of continuous measuring (measured at the experimental stage).",
+    c4h: "Old phones come back to life",
+    c4p: "It runs on a Pixel 3a from 2019. The app itself is only 15.80 MiB, so a phone sleeping in a drawer gets a new job.",
+    s2h: "Where it fits",
+    s2lead: "For example, in places like these.",
+    sc1h: "In the classroom",
+    sc1p: "One phone can host the place where students keep their source code for programming classes. No student accounts to register, and the class goes on even without internet.",
+    sc2h: "On the farm",
+    sc2p: "Place it by a field or a greenhouse and let it record pressure, light and more, unattended. The battery lasts, so it can sit where there is no outlet. Records can be collected later from a PC.",
+    sc3h: "At the fishing port",
+    sc3p: "A recorder for places with weak networks, like fishing ports and fish farms. One phone records and stores what happens on site, and sends it all together when you get back.",
+    sc4h: "On industrial and construction sites",
+    sc4p: "A home for records that must not go out to the internet. Inside a closed network, the site's data stays right there on site.",
+    s3h: "Features",
+    s3lead: "What the current Android version can do.",
+    f1h: "The box itself",
+    f1p: "Install the app and your phone becomes a Linux server. Switch between three bases — Ubuntu 24.04, Alpine 3.24 and Bionic — and inside a base you install software the usual way, with apt or apk. You can switch bases from the app's button, or from inside SSH with hako base use.",
+    f2h: "The entrance",
+    f2p: "A home-built SSH server (written in Rust) with password authentication, SFTP and port forwarding. Switching bases does not restart the SSH server: work in progress keeps going, and only new connections land in the new base. Even when a base is stopped, a Bionic-side shell answers. Connection details are shown as a QR code, and USB serial works too.",
+    f3h: "Services",
+    f3p: "Forgejo, code-server, nginx and more can be added from recipes with hako up. Binaries are fetched from their official distributors and verified by hash. The catalog is Hako Hub.",
+    f4h: "Native parts",
+    f4p: "git, curl, bash, tmux, Vim, jq, SQLite and more, built natively for Bionic.",
+    f5h: "Sensors",
+    f5p: "Pressure, light, acceleration and battery state, readable from inside the box — including from Python. In a one-hour unattended recording test with the screen off, not a single record was missing.",
+    s4h: "Measured numbers",
+    s4lead: "Numbers measured on real devices.",
+    st1cap: "Size of the app itself",
+    st2cap: "Time to start (Pixel 3a)",
+    st3cap: "Memory while idle (Hako@Linux only)",
+    st4num: "≈50<small> hours</small>",
+    st4cap: "Hours of measuring on a full charge (calculated)",
+    s5h: "Screens",
+    s5lead: "The phone's screen is only for status and buttons. You operate it from a PC.",
+    cap1: "Status screen: the running base and how to connect.",
+    cap2: "Switching bases: choose Ubuntu, Alpine or Bionic.",
+    cap3: "Current sensor values: pressure, light, battery and acceleration on screen.",
+    s6h: "How it works (for the technical reader)",
+    tech1: "<b>No virtual machine.</b> The phone's kernel is shared, and the bases (Ubuntu 24.04 / Alpine 3.24 / Bionic only) run inside proot. Measurements decided the split: what needs speed lives on the native Bionic side, what needs compatibility lives inside a base.",
+    tech2: "<b>The entrance is a home-built SSH server.</b> Built with the Rust library russh: starts in 14.0 ms, waits in 2.43 MiB. Even when a base is stopped, a Bionic-side shell answers. Services (Forgejo, code-server, nginx) are not bundled; you add them from recipes with <code>hako up</code>. Binaries come from their official distributors and are verified by hash.",
+    tech3: "Details and measurements are in the technical article <a class=\"tech-link\" href=\"https://oosawak.github.io/tech/#/en/post/tech/hako-at-linux\">“A Linux Box Inside Your Phone”</a>.",
+    footer: "Hako@Linux is a work in progress; details may change.<br>See the <a href=\"https://oosawak.github.io/materials/hako-hub/\">Hako Hub</a> catalog and the <a class=\"tech-link\" href=\"https://oosawak.github.io/tech/#/en/post/tech/hako-at-linux\">technical article</a> for details.<br>Lyre3 Games",
+    altCover: "Illustration of a small Linux box inside a smartphone, connected to a PC with a locked line",
+    altManga: "A four-panel comic: a phone placed in a rice field is set up in the morning, sends data automatically at noon, notifies with voice and light, and the data is checked in the evening",
+    altSc1: "Illustration of a classroom where students work on laptops around a phone on the teacher's desk",
+    altSc2: "Illustration of a phone standing by a field and a greenhouse, recording the weather",
+    altSc3: "Illustration of a phone acting as a recorder by the rafts of a fish farm at a fishing port",
+    altSc4: "Illustration of a phone serving as a data store in a factory site office",
+    altShot1: "Hako@Linux status screen",
+    altShot2: "Base switching screen",
+    altShot3: "Display of current sensor values"
+  };
+  var JA_TITLE = document.title;
+  var EN_TITLE = "Hako@Linux — The old phone in your drawer becomes a server";
+  var JA_DESC = document.querySelector('meta[name="description"]').getAttribute('content');
+  var EN_DESC = "Install one app and your Android phone turns into a small Linux server. Hako@Linux works even without internet. A work-in-progress technology page.";
+  var JA_URL = "https://oosawak.github.io/tech/#/post/tech/hako-at-linux";
+  var EN_URL = "https://oosawak.github.io/tech/#/en/post/tech/hako-at-linux";
+  var jaText = {}, jaAlt = {};
+  function apply(lang){
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if(!(k in jaText)) jaText[k] = el.innerHTML;
+      el.innerHTML = (lang === 'en' && EN[k]) ? EN[k] : jaText[k];
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(function(el){
+      var k = el.getAttribute('data-i18n-alt');
+      if(!(k in jaAlt)) jaAlt[k] = el.getAttribute('alt');
+      el.setAttribute('alt', (lang === 'en' && EN[k]) ? EN[k] : jaAlt[k]);
+    });
+    document.querySelectorAll('a.tech-link').forEach(function(a){
+      if(!a.closest('.tech') && !a.closest('footer')) return;
+      a.setAttribute('href', lang === 'en' ? EN_URL : JA_URL);
+    });
+    document.querySelectorAll('.cta a.tech-link').forEach(function(a){
+      a.setAttribute('href', lang === 'en' ? EN_URL : JA_URL);
+    });
+    document.title = (lang === 'en') ? EN_TITLE : JA_TITLE;
+    document.querySelector('meta[name="description"]').setAttribute('content', (lang === 'en') ? EN_DESC : JA_DESC);
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-setlang]').forEach(function(b){
+      b.classList.toggle('chosen', b.getAttribute('data-setlang') === lang);
+      b.setAttribute('aria-pressed', b.getAttribute('data-setlang') === lang ? 'true' : 'false');
+    });
+    try{ localStorage.setItem('hako-lp-lang', lang); }catch(e){}
+    try{
+      var u = new URL(location.href);
+      if(u.searchParams.get('lang') !== lang){ u.searchParams.set('lang', lang); history.replaceState(null, '', u.href); }
+    }catch(e){}
+  }
+  var param = null;
+  try{ param = new URLSearchParams(location.search).get('lang'); }catch(e){}
+  var saved = null;
+  try{ saved = localStorage.getItem('hako-lp-lang'); }catch(e){}
+  var initial = (param === 'en' || param === 'ja') ? param : (saved === 'en' ? 'en' : 'ja');
+  document.querySelectorAll('[data-setlang]').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.getAttribute('data-setlang')); });
+  });
+  apply(initial);
+})();
+</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "cdf4ee53507948e4a412f503875833cd"}'></script>
 </body>
 </html>
