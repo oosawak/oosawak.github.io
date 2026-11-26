@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>専用アプリの作り方 ― AIが書いて、Actionsが組む</title>
-<meta name="description" content="1つの大きなアプリではなく、用途ごとの小さい専用アプリを。AIエージェントのミューズさんがソースを書き、GitHub Actions がビルドと署名をして、専用の Android アプリが出てきます。土台は Hako@Linux の箱、中身は Python、表示は WebView です。">
+<title>専用アプリの作り方 ― 一枚のHTMLから、Androidアプリへ</title>
+<meta name="description" content="AIに頼んで作った一枚のHTMLを、ツールへドラッグアンドドロップすると、Androidのパッケージが出来上がります。土台は「どこでもソース管理」で、中には Hako@Linux と同じ仕組みが入っています。AIはその仕組みを理解して書くので、出来上がるアプリには箱との通信処理が最初から入っています。">
 <style>
   :root{
     --cream:#faf6ec; --paper:#fffdf6; --ink:#2f3330; --muted:#6b6f66;
@@ -36,51 +36,58 @@
 <div class="wrap">
 <header>
   <div class="kicker">DEDICATED APPS</div>
-  <h1>専用アプリは、AIと作る。</h1>
-  <p class="lead">1つの大きなアプリに全部を入れるのではなく、用途ごとの小さい専用アプリを作ります。AIエージェントのミューズさんがソースを書き、GitHub に置くと、GitHub Actions がビルドと署名をして、専用の Android アプリが出てきます。</p>
+  <h1>一枚のHTMLから、アプリができる。</h1>
+  <p class="lead">画面の設計を AIエージェントのミューズさんに頼んで、一枚の HTML で作ってもらいます。それをツールへドラッグアンドドロップすると、Android のパッケージが出来上がります。</p>
 </header>
 
 <h2>流れ</h2>
 <ol class="flow">
-  <li>用途を決めます。たとえば「バスの位置を記録する」「田んぼに置いて記録する」など、1つの仕事だけです。</li>
-  <li>ミューズさんがソースを書いて、GitHub のリポジトリへ置きます。</li>
-  <li>GitHub Actions が自動でビルドし、署名を付けます。</li>
-  <li>専用の Android アプリが成果物として出てきます。入れる人は、それを電話に入れるだけです。</li>
+  <li>画面を頼みます。たとえば「カーナビと、音楽を流す機能」のような画面を、ミューズさんが一枚の HTML で作ります。</li>
+  <li>その HTML を、ツールへドラッグアンドドロップします。</li>
+  <li>ツールが殻と組み合わせて、ビルドと署名をします。</li>
+  <li>Android のパッケージが出てきます。入れる人は、それを電話に入れるだけです。</li>
 </ol>
+
+<h2>土台は「どこでもソース管理」</h2>
+<p>このツールのベースは「<a href="https://oosawak.github.io/materials/source-control-anywhere/">どこでもソース管理</a>」です。その中には <a href="https://oosawak.github.io/materials/hako-at-linux/">Hako@Linux</a> と同じ仕組み（箱と入り口）が入っています。ミューズさんはその仕組みを理解して HTML を書くので、出来上がるアプリには、箱リナックスとの通信処理が最初から入っています。</p>
 
 <h2>中の作り</h2>
 <div class="cards">
   <div class="card">
-    <h3>土台は箱</h3>
-    <p>どの専用アプリも、土台は <a href="https://oosawak.github.io/materials/hako-at-linux/">Hako@Linux</a> の箱です。箱と入り口は共通で、用途ごとに作るのは薄い殻のほうだけです。</p>
+    <h3>画面は一枚の HTML</h3>
+    <p>作る人が触るのは、画面の HTML だけです。表示は WebView で映し、操作は箱側へ返ります。表示と操作の、双方向です。</p>
   </div>
   <div class="card">
-    <h3>仕事は Python</h3>
-    <p>中身の仕事は、箱の中の Python がやります。センサーや位置を読む橋は、もう動いているものを使います。</p>
+    <h3>仕事は箱の中</h3>
+    <p>記録や処理は、箱の中の Python がやります。センサーや位置を読む橋は、もう動いているものを使います。Bluetooth のセンサーを取り込む橋も、同じ形で足せます。</p>
   </div>
   <div class="card">
-    <h3>表示は WebView</h3>
-    <p>画面は Web ページとして Linux 側から出し、アプリは WebView で映します。素の HTML と JavaScript で、ビルドは要りません。表示を出す方向と、操作を Linux 側へ返す方向の、双方向です。</p>
+    <h3>肝は橋の約束事</h3>
+    <p>箱との通信の決まりを仕様として固定してあります。だから、AI が書く HTML はどれも、箱と話せます。</p>
   </div>
 </div>
 
 <h2>なぜ分けるのか</h2>
-<p>専用アプリに分けると、権限も機能も、その用途に要るものだけに絞れます。「置きっぱなしロガー専用」「バス専用」「見守り専用」が、それぞれ小さいアプリとして並びます。作る側の手間は、AI が書いて Actions が組むので、以前ほどかかりません。</p>
+<p>1つの大きなアプリに全部を入れるのではなく、用途ごとの小さい専用アプリに分けます。権限も機能も、その用途に要るものだけに絞れます。画面は作り直しが軽いので、専用の UI を作り込むメーカーの作り方とは逆に、画面を使い捨てにできます。残る価値は、箱の中の記録と処理です。</p>
 
 <h2>実例</h2>
 <div class="cards">
+  <div class="card">
+    <h3>壁紙アプリ</h3>
+    <p>放り込むとアプリになる流れは、壁紙アプリで先に実証済みです。この仕組みの原型です。</p>
+  </div>
   <div class="card">
     <h3>バスの位置情報</h3>
     <p>電話1台でバスロケをする構想です。<a href="https://oosawak.github.io/materials/bus-location/">紹介ページ</a>と、<a href="https://oosawak.github.io/materials/bus-location/map.html">GPS ログの地図表示の試作</a>があります。</p>
   </div>
   <div class="card">
-    <h3>壁紙アプリ</h3>
-    <p>GitHub にソースを置いて Actions で組む形は、壁紙アプリで先に実証済みです。この仕組みの原型です。</p>
+    <h3>箱をコアにしたナビ</h3>
+    <p>ナビのコアに箱リナックスを置き、ドライブレコーダーの情報も一緒に表示する形が、次の候補です。</p>
   </div>
 </div>
 
 <div class="note">
-  部品ごとの実証は済んでいます（箱、センサーの橋、Actions でのビルド）。専用アプリを量産する形としての運用は、これからです。
+  部品ごとの実証は済んでいます（箱、センサーの橋、放り込むとアプリになる流れ）。一枚 HTML から包む部分と、Bluetooth の橋は、これから作ります。
 </div>
 
 <footer>Lyre3 Games</footer>
