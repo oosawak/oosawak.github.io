@@ -40,8 +40,9 @@ const SECTIONS = [
   ['forecast', '天気予報'], ['cameras', 'ライブカメラ'], ['posts', '現地の声'],
   ['bears', '熊の目撃'], ['volcano', '火山情報'], ['flood', '洪水予報'],
   ['radiation', '放射線（モニタリングポスト）'], ['outage', '停電情報'], ['wbgt', '暑さ指数'],
+  ['evac', '指定緊急避難場所'],
 ];
-function defaultShow() { const o = {}; for (const [k] of SECTIONS) o[k] = true; return o; }
+function defaultShow() { const o = {}; for (const [k] of SECTIONS) o[k] = k !== 'evac'; return o; }
 
 const state = {
   settings: loadSettings(),
@@ -549,7 +550,9 @@ function initMap() {
   }).addTo(state.map);
   state.layers = L.layerGroup().addTo(state.map);
   state.myLayer = L.layerGroup().addTo(state.map);
+  state.evacLayer = L.layerGroup().addTo(state.map);
   state.map.on('contextmenu', onMapContextMenu);
+  state.map.on('moveend', () => drawEvacPins());
   drawMyPoints();
 }
 const CAM_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#231a00" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>';
@@ -604,7 +607,39 @@ function renderMap(places) {
     L.marker([r.lat, r.lon], { icon }).addTo(state.layers)
       .bindPopup(`<h4>熊の${esc(r.kind)}</h4>${esc(r.date)} ${esc(r.time)}<br>${esc(r.muni)} ${esc(r.district)}<br>${r.count ? `${r.count}頭 / ` : ''}出典: ${esc(r.source)}`);
   }
+  if (show('evac')) { loadAllEvac().then(() => drawEvacPins()); drawEvacPins(); }
+  else if (state.evacLayer) state.evacLayer.clearLayers();
   if (bounds.length) state.map.fitBounds(bounds, { padding: [16, 16] });
+}
+
+/* ---------- 指定緊急避難場所（国土地理院データ） ---------- */
+const EVAC_TYPES = ['洪水', '土砂', '高潮', '地震', '津波', '火事', '内水', '火山'];
+const evacByPref = {};   // 県コード -> {dataDate, sites:[[名称, 住所, 緯度, 経度, 対応フラグ8桁]]}
+const evacLoading = {};
+async function loadEvac(pref) {
+  if (evacByPref[pref] || evacLoading[pref]) return;
+  evacLoading[pref] = true;
+  try { evacByPref[pref] = await (await fetch(`data/evac-${pref}.json`)).json(); }
+  catch (e) { /* データが無い県はそのまま */ }
+  evacLoading[pref] = false;
+}
+async function loadAllEvac() { await Promise.all(['04', '06', '07'].map(loadEvac)); }
+function evacTypesOf(flags) { return EVAC_TYPES.filter((_, i) => flags[i] === '1'); }
+function drawEvacPins() {
+  if (!state.map || !state.evacLayer) return;
+  state.evacLayer.clearLayers();
+  if (!show('evac')) return;
+  const b = state.map.getBounds();
+  let drawn = 0;
+  for (const pref of Object.keys(evacByPref)) {
+    for (const s of evacByPref[pref].sites) {
+      if (s[2] < b.getSouth() || s[2] > b.getNorth() || s[3] < b.getWest() || s[3] > b.getEast()) continue;
+      const icon = L.divIcon({ className: '', html: '<div class="evac-pin">避</div>', iconSize: [20, 20], iconAnchor: [10, 10] });
+      L.marker([s[2], s[3]], { icon }).addTo(state.evacLayer)
+        .bindPopup(`<h4>${esc(s[0])}</h4>${esc(s[1])}<br>対応: ${esc(evacTypesOf(s[4]).join('・') || 'なし')}<br><span class="muted">指定緊急避難場所（国土地理院データ）</span>`);
+      if (++drawn >= 800) return;
+    }
+  }
 }
 /* 地図の両脇パネル（大画面のみ表示。左=警報・通行止めの要約、右=天気・気温と地震） */
 function renderMapSides(places) {
@@ -916,6 +951,18 @@ async function judgePoint(lat, lon) {
       out.tsunami = { status: 'inside', dists: [...new Set(hits.map(p => p.A40_003).filter(Boolean))] };
     }
   }
+  // 最寄りの指定緊急避難場所（近い順に3件）
+  const pref = muni.code.slice(0, 2);
+  await loadEvac(pref);
+  const ed = evacByPref[pref];
+  if (ed) {
+    const R = Math.PI / 180;
+    const near = ed.sites.map(s => {
+      const dx = (s[3] - lon) * R * Math.cos(lat * R), dy = (s[2] - lat) * R;
+      return { name: s[0], addr: s[1], dist: Math.round(Math.sqrt(dx * dx + dy * dy) * 6371 * 10) / 10, types: evacTypesOf(s[4]) };
+    }).sort((a, b) => a.dist - b.dist).slice(0, 3);
+    out.evac = { dataDate: ed.dataDate, near };
+  }
   return out;
 }
 
@@ -939,6 +986,13 @@ function myPointPopup(pt) {
     for (const hit of pt.landslide.hits) {
       if (hit.name) h += `<div class="muted">区域名: ${esc(hit.name)}${hit.loc ? '（' + esc(hit.loc) + '）' : ''}</div>`;
     }
+  }
+  if (pt.evac && pt.evac.near && pt.evac.near.length) {
+    h += `<div><b>最寄りの指定緊急避難場所</b></div>`;
+    for (const n of pt.evac.near) {
+      h += `<div>${esc(n.name)}（約${n.dist}km）<br><span class="muted">対応: ${esc(n.types.join('・') || 'なし')}</span></div>`;
+    }
+    h += `<div class="muted">国土地理院の指定緊急避難場所データ（${esc(pt.evac.dataDate || '')}時点）による目安です。最新の指定状況は市町村に確認してください。</div>`;
   }
   h += `<div class="muted">国土数値情報の区域データによる目安です（精度1/25,000）。</div>`;
   h += `<div class="mp-actions"><button type="button" onclick="mpRejudge('${pt.id}')">再判定</button> <button type="button" onclick="mpDelete('${pt.id}')">削除</button></div>`;
