@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>箱のフロントエンド ― 小さなサイトが、箱の顔になる</title>
+<meta name="description" content="Hako@Linux の箱には管理画面がありません。代わりに、小さなサイト（HTMLと素のJavaScript）を箱のフロントエンドとして、アプリの WebView で表示します。表示は箱から、操作は箱へ返す、双方向の仕組みです。">
+<style>
+  :root{
+    --cream:#faf6ec; --paper:#fffdf6; --ink:#2f3330; --muted:#6b6f66;
+    --olive:#6d7c4f; --olive-dark:#4c5a36; --terra:#c96f4a; --line:#e3dcc8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+    line-height:1.9;font-size:16px}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 64px}
+  header{padding:56px 0 8px;text-align:center}
+  .kicker{color:var(--terra);font-weight:700;letter-spacing:.18em;font-size:13px}
+  h1{font-size:32px;line-height:1.4;margin:10px 0 12px}
+  .lead{color:var(--muted);max-width:660px;margin:0 auto}
+  h2{font-size:23px;margin:48px 0 14px;padding-left:12px;border-left:5px solid var(--olive)}
+  p{margin:10px 0}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .card h3{margin:0 0 8px;font-size:17px;color:var(--olive-dark)}
+  .card p{margin:0;font-size:15px}
+  ol.flow{padding-left:22px}
+  ol.flow li{margin:8px 0}
+  .note{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;color:var(--muted);font-size:14px}
+  a{color:var(--olive-dark)}
+  footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">BOX FRONTEND</div>
+  <h1>箱の顔は、小さなサイトでいい。</h1>
+  <p class="lead"><a href="https://oosawak.github.io/materials/hako-at-linux/">Hako@Linux</a> の箱には、管理画面がありません。代わりに、小さなサイトを箱のフロントエンドとして表示する、小さなアプリを作れます。アプリの仕事は、箱が出すサイトを WebView で映すことです。</p>
+</header>
+
+<h2>仕組み</h2>
+<ol class="flow">
+  <li>箱の中の小さなサーバーが、フロントエンドのサイト（HTML と素の JavaScript）を出します。</li>
+  <li>アプリは、そのサイトを WebView で表示します。アプリ側に画面の作りは持ちません。</li>
+  <li>サイトでの操作は、普通の Web のリクエストで箱側へ返ります。表示を出す方向と、操作を返す方向の、双方向です。</li>
+  <li>サイトを直せば、箱の顔が変わります。アプリを作り直す必要はありません。</li>
+</ol>
+
+<h2>なぜ小さなサイトなのか</h2>
+<div class="cards">
+  <div class="card">
+    <h3>ビルドが要らない</h3>
+    <p>素の HTML と JavaScript なので、そのまま置けば動きます。道具の依存が増えません。</p>
+  </div>
+  <div class="card">
+    <h3>AI が書ける</h3>
+    <p>サイトの形なら、AIエージェントのミューズさんがそのまま読み書きできます。画面の追加や変更が軽くなります。</p>
+  </div>
+  <div class="card">
+    <h3>箱の外でも同じ表示</h3>
+    <p>サイトなので、パソコンのブラウザからも同じものが見られます。管理は電話の画面だけに閉じません。</p>
+  </div>
+</div>
+
+<h2>実例</h2>
+<div class="cards">
+  <div class="card">
+    <h3>GPS ログの地図表示</h3>
+    <p>箱に貯まった GPS ログを、OpenStreetMap の上に表示する試作です。これがフロントエンドの形そのものです。<a href="https://oosawak.github.io/materials/bus-location/map.html">地図表示の試作</a></p>
+  </div>
+  <div class="card">
+    <h3>バスの運行管理</h3>
+    <p>バスの位置と状況を見る管理画面も、同じ形で作れます。<a href="https://oosawak.github.io/materials/bus-location/">バス位置情報のページ</a></p>
+  </div>
+</div>
+
+<div class="note">
+  地図表示の試作は公開済みです。箱の実機の中で WebView 表示する部分は、これから作ります。
+</div>
+
+<footer>Lyre3 Games</footer>
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "cdf4ee53507948e4a412f503875833cd"}'></script>
+</body>
+</html>
