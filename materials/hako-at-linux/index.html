@@ -109,6 +109,18 @@
 </section>
 
 <section>
+  <h2>機能一覧</h2>
+  <p class="sec-lead">今の Android 版でできることです。</p>
+  <div class="cards">
+    <div class="card"><h3>箱の基本</h3><p>アプリを入れるだけで、電話が Linux サーバーになります。土台は Ubuntu 24.04、Alpine 3.24、Bionic の3つから切り替えでき、土台の中では apt や apk で普通にソフトを入れられます。</p></div>
+    <div class="card"><h3>入り口</h3><p>自作の SSH サーバー（Rust 製）で、パスワード認証、SFTP、ポート転送に対応します。土台が止まっていても Bionic 側のシェルで応答します。接続情報は QR コードで表示し、USB シリアルでもつながります。</p></div>
+    <div class="card"><h3>サービス</h3><p>Forgejo、code-server、nginx などは、hako up でレシピから足せます。本体は公式の配布元から取り、ハッシュで照合します。カタログは Hako Hub です。</p></div>
+    <div class="card"><h3>ネイティブ部品</h3><p>git、curl、bash、tmux、Vim、jq、SQLite などを、Bionic ネイティブで用意しています。</p></div>
+    <div class="card"><h3>センサー</h3><p>気圧、明るさ、加速度、電池の状態を、箱の中から読めます。Python からも使えます。置きっぱなしの記録は、画面を消して1時間の測定で、欠けた記録がありませんでした。</p></div>
+  </div>
+</section>
+
+<section>
   <h2>数字で見る</h2>
   <p class="sec-lead">実機で測った数字です。</p>
   <div class="stats">
