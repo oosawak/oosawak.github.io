@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T12:13:44+09:00",
+  "generatedAt": "2026-11-26T12:13:44+09:00",
   "sources": [
     {
       "office": "仙台河川国道事務所",
@@ -80,15 +80,6 @@
           "period": "1東根IC~東根北IC 12月2日)(2東根北IC~村山IC 12月3日",
           "reason": "道路工事",
           "title": "【E13】東北中央自動車道(東根IC⇔村山IC)上下線夜間通行止め",
-          "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
-        },
-        {
-          "route": "主寝坂道路（E13）",
-          "section": "",
-          "type": "上下線どちらか片側を通行止め",
-          "period": "10月13日~11月20日",
-          "reason": "道路工事",
-          "title": "【E13】主寝坂道路(金山北IC(仮称)⇔中田IC(仮称))上下線どちらか片側を通行止め",
           "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
         },
         {
