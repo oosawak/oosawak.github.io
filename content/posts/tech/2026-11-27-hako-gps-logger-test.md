@@ -36,7 +36,7 @@ Pixel 4 は SIM なしで、画面オフのまま GPS を記録して実車に�
 
 ```embed
 https://oosawak.github.io/materials/bus-location/map-real-embed.html
-4x3
+3x4
 100%
 ```
 
