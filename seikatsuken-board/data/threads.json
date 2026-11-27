@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-28T05:57:21+09:00",
+  "generatedAt": "2026-11-28T06:57:35+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-28T05:57:21+09:00",
+      "fetchedAt": "2026-11-28T06:57:35+09:00",
       "posts": [
         {
           "username": "trafficlip",
@@ -400,7 +400,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-28T05:57:21+09:00",
+      "fetchedAt": "2026-11-28T06:57:35+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -422,8 +422,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-28T05:57:21+09:00",
+      "fetchedAt": "2026-11-28T06:57:35+09:00",
       "posts": [
+        {
+          "username": "tc_highway",
+          "url": "https://www.threads.com/@tc_highway/post/DgPSs6ME_qc",
+          "text": "#東北中央道 #新庄北道路 で故障車 一部通行止め #tc_highway #通行止 #山形県道路情報 山形河川国道事務所などによると、山形県新庄市の東北中央自動車道[新庄北道路]で故障車のため、11月27日17:25から、上り線(南行/舟形方面)の新庄鮭川IC→新庄IC間で通行止めとなっています。 https://news.jp/i/1498968148221018795",
+          "likeCount": 1,
+          "takenAt": "2026-11-27T17:51:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#通行止",
+          "spot": "山形"
+        },
         {
           "username": "yy809141",
           "url": "https://www.threads.com/@yy809141/post/DgKYsl-jpX_",
@@ -1209,7 +1224,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-28T05:57:21+09:00",
+      "fetchedAt": "2026-11-28T06:57:35+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1246,7 +1261,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-28T05:57:21+09:00",
+      "fetchedAt": "2026-11-28T06:57:35+09:00",
       "posts": [
         {
           "username": "da0510n",
@@ -1388,7 +1403,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-28T05:57:21+09:00",
+      "fetchedAt": "2026-11-28T06:57:35+09:00",
       "posts": [
         {
           "username": "tc_highway",
