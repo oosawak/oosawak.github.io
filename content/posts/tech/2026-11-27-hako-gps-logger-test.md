@@ -10,7 +10,7 @@ cover_alt: '峠の山道の脇に画面を消したスマートフォンが置�
 type: 'article'
 ---
 
-中古の Android 電話に Hako@Linux を載せて、置きっぱなしの記録装置として使えるかを試しました。\
+中古の Android 電話に [Hako@Linux](https://oosawak.github.io/materials/hako-at-linux/) を載せて、置きっぱなしの記録装置として使えるかを試しました。\
 電話は画面を消したまま、箱の中で位置とセンサーを記録し続けます。\
 今回の実測では、2台の Pixel で 20 時間を超える記録を取りました。
 
