@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>実測 GPS ログの地図表示 ― Pixel 4 のドライブ記録</title>
+<meta name="description" content="Hako@Linux を載せた Pixel 4 が画面オフのまま記録した実測 GPS ログ（2026年11月26日、96.3 km）を OpenStreetMap の上に表示するページ。">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  :root{--cream:#faf6ec;--paper:#fffdf6;--ink:#2f3330;--muted:#6b6f66;--olive:#6d7c4f;--olive-dark:#4c5a36;--terra:#c96f4a;--line:#e3dcc8}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.8}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 56px}
+  header{padding:36px 0 6px}
+  h1{font-size:25px;margin:6px 0}
+  .lead{color:var(--muted);margin:0 0 14px}
+  #map{height:480px;border-radius:12px;border:1px solid var(--line)}
+  .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0}
+  button{background:var(--olive);color:#fff;border:0;border-radius:8px;padding:9px 18px;font-size:15px;cursor:pointer}
+  button:hover{background:var(--olive-dark)}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:14px}
+  .note{color:var(--muted);font-size:13px;margin-top:16px}
+  a{color:var(--olive-dark)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>実測 GPS ログの地図表示</h1>
+  <p class="lead">Hako@Linux を載せた Pixel 4 が、画面オフのまま記録した実測の GPS ログです。点を押すと、その地点の時刻と速度、高度が出ます。「再生」で、走った順にたどれます。</p>
+</header>
+
+<div id="map"></div>
+<div class="bar">
+  <button id="play" type="button">再生</button>
+  <span class="stat" id="summary">読み込み中…</span>
+  <span class="stat" id="now">—</span>
+</div>
+
+<p class="note">2026年11月26日 14:08 から翌27日 5:43 までの記録です。測位できた点は 3,397 点、推定走行距離は 96.32 km、画面オフでの測位率は 99.5% でした。地図は OpenStreetMap、表示は Leaflet を使っています。</p>
+<p><a href="./">バス位置情報のページへ戻る</a></p>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  var map = L.map('map');
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19, attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  fetch('track-real.json').then(function(r){ return r.json(); }).then(function(data){
+    var pts = data.points;
+    var latlngs = pts.map(function(p){ return [p.lat, p.lon]; });
+    var line = L.polyline(latlngs, {color: '#c96f4a', weight: 4}).addTo(map);
+    map.fitBounds(line.getBounds(), {padding: [20, 20]});
+
+    pts.forEach(function(p, i){
+      var m = L.circleMarker([p.lat, p.lon], {radius: 3, color: '#4c5a36', fillColor: '#6d7c4f', fillOpacity: 0.9}).addTo(map);
+      m.bindPopup((i + 1) + ' 点目<br>' + p.t + '<br>' + p.spd + ' km/h / 高度 ' + p.alt + ' m<br>精度 ' + p.acc + ' m（' + p.prov + '）');
+    });
+
+    L.marker(latlngs[0]).addTo(map).bindPopup('出発<br>' + pts[0].t);
+    L.marker(latlngs[latlngs.length - 1]).addTo(map).bindPopup('到着<br>' + pts[pts.length - 1].t);
+
+    document.getElementById('summary').textContent =
+      '全 ' + pts.length + ' 点 / 推定 ' + data.meta.distance_km + ' km';
+
+    var idx = 0, timer = null;
+    var cursor = L.circleMarker(latlngs[0], {radius: 8, color: '#c96f4a', fillColor: '#c96f4a', fillOpacity: 1}).addTo(map);
+    var btn = document.getElementById('play');
+    btn.addEventListener('click', function(){
+      if (timer) { clearInterval(timer); timer = null; btn.textContent = '再生'; return; }
+      btn.textContent = '停止';
+      timer = setInterval(function(){
+        if (idx >= pts.length) { clearInterval(timer); timer = null; btn.textContent = '再生'; idx = 0; return; }
+        var p = pts[idx];
+        cursor.setLatLng([p.lat, p.lon]);
+        document.getElementById('now').textContent = p.t + ' / ' + p.spd + ' km/h';
+        idx += 5;
+      }, 100);
+    });
+  });
+})();
+</script>
+</body>
+</html>
