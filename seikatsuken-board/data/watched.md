@@ -6,6 +6,9 @@ place-aliases.md の地名に当たった投稿のうち、現地の状況を伝
 fetch_threads.py が liked と合わせて threads.json へ反映する。
 
 ## 仙台
+- [2026-11-27 05:06] @trafficlip いいね1 コミュニティ:#宮城県道路情報 地名:仙台
+  - #国道4号 泉区内で事故 一部通行止め #trafficlip #通行止 #宮城県道路情報 仙台河川国道事務所などによると、宮城県仙台市泉区の国道4号で事故が発生し、11月27日04:33から、泉消防署前付近の下り線(北行/泉IC方面)で通行止めとなっています。 https://news.jp/i/1498777081059443617
+  - https://www.threads.com/@trafficlip/post/DgN7Heik6W8
 - [2026-11-25 10:06] @tc_highway いいね0 コミュニティ:#通行止 地名:仙台
   - #仙台南部道路 山田IC付近で事故復旧緊急工事 一部通行止め #tc_highway #通行止 #宮城県道路情報 NEXCO東日本などによると、11月25日06:00過ぎ、宮城県の仙台南部道路山田IC付近で発生した事故の復旧緊急工事のため、10:00から、上下線の長町IC＝仙台南IC間で通行止めとなっています。 https://news.jp/i/1498127619123266364
   - https://www.threads.com/@tc_highway/post/DgJT6ZlE-6-
