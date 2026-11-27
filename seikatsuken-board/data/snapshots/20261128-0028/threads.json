@@ -1,10 +1,40 @@
 {
-  "generatedAt": "2026-11-24T21:57:50+09:00",
+  "generatedAt": "2026-11-27T09:57:30+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-24T21:57:50+09:00",
+      "fetchedAt": "2026-11-27T09:57:30+09:00",
       "posts": [
+        {
+          "username": "tc_highway",
+          "url": "https://www.threads.com/@tc_highway/post/DgJT6ZlE-6-",
+          "text": "#仙台南部道路 山田IC付近で事故復旧緊急工事 一部通行止め #tc_highway #通行止 #宮城県道路情報 NEXCO東日本などによると、11月25日06:00過ぎ、宮城県の仙台南部道路山田IC付近で発生した事故の復旧緊急工事のため、10:00から、上下線の長町IC＝仙台南IC間で通行止めとなっています。 https://news.jp/i/1498127619123266364",
+          "likeCount": 0,
+          "takenAt": "2026-11-25T10:06:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#通行止",
+          "spot": "仙台"
+        },
+        {
+          "username": "daisuke_h21",
+          "url": "https://www.threads.com/@daisuke_h21/post/DgIw9-qgQxk",
+          "text": "仙台 R48愛子バイパス 04時23分 1℃ 雪がが降っている早朝夜明け前。 気温は氷点下になっていないので、積もる心配は無さそうだけど寒いですー🥶 20261125",
+          "likeCount": 86,
+          "takenAt": "2026-11-25T05:01:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "仙台"
+        },
         {
           "username": "trafficlip",
           "url": "https://www.threads.com/@trafficlip/post/DgHgF-GmGdL",
@@ -355,7 +385,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-24T21:57:50+09:00",
+      "fetchedAt": "2026-11-27T09:57:30+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -377,8 +407,83 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-24T21:57:50+09:00",
+      "fetchedAt": "2026-11-27T09:57:30+09:00",
       "posts": [
+        {
+          "username": "yy809141",
+          "url": "https://www.threads.com/@yy809141/post/DgKYsl-jpX_",
+          "text": "雪の山形県 視界の上の方に白いものが見えて、 大きな鳥がとまってると思って写真撮ったら これでした。全然鳥じゃなかった。。 #山形 #雪 #鳥じゃなかった #アンテナ",
+          "likeCount": 3,
+          "takenAt": "2026-11-25T20:07:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
+        {
+          "username": "trafficlip",
+          "url": "https://www.threads.com/@trafficlip/post/DgKJh72mMVu",
+          "text": "#国道7号 #鶴岡バイパス で事故 一部通行止め #tc_highway #通行止 #山形県道路情報 酒田河川国道事務所などによると、山形県鶴岡市の国道7号[鶴岡バイパス]で事故が発生し、11月25日17:03から、鶴岡市荒井京田付近の下り線(北行/三川方面)で通行止めとなっています。 https://news.jp/i/1498245671302480094",
+          "likeCount": 0,
+          "takenAt": "2026-11-25T17:54:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
+        {
+          "username": "tc_highway",
+          "url": "https://www.threads.com/@tc_highway/post/DgJOlLwE47a",
+          "text": "#日本海東北道 鶴岡市内で故障車 一部通行止め #tc_highway #通行止 #山形県道路情報 酒田河川国道事務所などによると、山形県鶴岡市の日本海東北自動車道で故障車のため、11月25日08:50から、上り線(南行/鼠ヶ関方面)のいらがわIC→あつみ温泉IC間で通行止めとなっています。 https://news.jp/i/1498116206949220654",
+          "likeCount": 0,
+          "takenAt": "2026-11-25T09:19:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "道路交通情報",
+          "spot": "山形"
+        },
+        {
+          "username": "tc_highway",
+          "url": "https://www.threads.com/@tc_highway/post/DgI1p-9E9Vh",
+          "text": "#冬用タイヤ規制 #山形道＝宮城/山形県内で実施 #tc_highway #宮城県道路情報 #山形県道路情報 NEXCO東日本などによると、東北南部で路面凍結のため、11月24日夜遅くから、山形自動車道で冬用タイヤ規制を実施しています。 https://news.jp/i/1497974400452838099",
+          "likeCount": 0,
+          "takenAt": "2026-11-25T05:42:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
+        {
+          "username": "yahagi20021225",
+          "url": "https://www.threads.com/@yahagi20021225/post/DgIuVtnkpPu",
+          "text": "【山形県】👉ニュース拾い読み 『山形県内で11月20日からの雪により14市町村で農作物に被害 積雪深は平年値29倍の地点も（YBC山形放送）』 https://news.yahoo.co.jp/articles/38f16af69bcda394921dc1129666238a89c761a5 🖊️「まさかこの時期にこの量が降るとは…」 想定外の事態で、意表を突かれた感もあったですね",
+          "likeCount": 1,
+          "takenAt": "2026-11-25T04:38:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "山形"
+        },
         {
           "username": "izumizyuusetu",
           "url": "https://www.threads.com/@izumizyuusetu/post/DgH10atGdRA",
@@ -1089,7 +1194,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-24T21:57:50+09:00",
+      "fetchedAt": "2026-11-27T09:57:30+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1126,8 +1231,23 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-24T21:57:50+09:00",
+      "fetchedAt": "2026-11-27T09:57:30+09:00",
       "posts": [
+        {
+          "username": "da0510n",
+          "url": "https://www.threads.com/@da0510n/post/DgOS9vQiLFA",
+          "text": "米沢市杉の目の交差点で、乗用車が横転 私はすぐ目の前のコンビニ駐車場に停車していた所、「ボンッ」と大きめのバウンド音がし、顔を上げたらこの状態だった 近くのガソリンスタンドのスタッフさんは交通整備をして下さっており、他の方は救急など電話連絡されていました 運転手さんが無事なのか？ また、学生の通学路で、すぐ目の前で横転を目撃した学生数名のショックも大きかったろうと心配 #米沢市#事故",
+          "likeCount": 3,
+          "takenAt": "2026-11-27T08:34:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "米沢市"
+        },
         {
           "username": "iiyone2020",
           "url": "https://www.threads.com/@iiyone2020/post/DgCOf28o5AL",
@@ -1253,8 +1373,38 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-24T21:57:50+09:00",
+      "fetchedAt": "2026-11-27T09:57:30+09:00",
       "posts": [
+        {
+          "username": "tc_highway",
+          "url": "https://www.threads.com/@tc_highway/post/DgNLZpmk8rR",
+          "text": "#磐越道 福島/新潟県境区間で事故復旧緊急工事 一部通行止め #tc_highway #通行止 #福島県道路情報 #新潟県道路情報 NEXCO東日本などによると、福島/新潟県境区間の磐越自動車道で発生した事故の復旧緊急工事のため、11月26日22:00から、上下線の西会津IC＝津川IC間で通行止めとなっています。 https://news.jp/i/1498671263021810399",
+          "likeCount": 0,
+          "takenAt": "2026-11-26T22:09:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#通行止",
+          "spot": "福島"
+        },
+        {
+          "username": "aizu1988",
+          "url": "https://www.threads.com/@aizu1988/post/DgG54j5DjJq",
+          "text": "先程、国道115号を通りましたが猪苗代の高森の直売所も今回のドカ雪でプレハブの建物が潰れていました😭 どれだけ今回の雪が重かったのか🥺 この他、あちらこちらで路肩に倒木があり一部は走行車線スレスレまで迫っていて道幅が狭くなっているので通行の際はご注意ください🙇",
+          "likeCount": 11,
+          "takenAt": "2026-11-24T11:40:00+09:00",
+          "hasImage": true,
+          "imageCount": 1,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#宮城県道路情報",
+          "spot": "猪苗代"
+        },
         {
           "username": "mypl.aizu",
           "url": "https://www.threads.com/@mypl.aizu/post/DgFfkg2D6sQ",
