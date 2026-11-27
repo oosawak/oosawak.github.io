@@ -35,7 +35,7 @@ Pixel 4 は SIM なしで、画面オフのまま GPS を記録して実車に�
 記録した軌跡は、地図の上でそのまま見られます。\
 
 ```embed
-https://oosawak.github.io/materials/bus-location/map-real.html
+https://oosawak.github.io/materials/bus-location/map-real-embed.html
 4x3
 100%
 ```
