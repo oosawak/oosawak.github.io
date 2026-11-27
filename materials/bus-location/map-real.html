@@ -55,7 +55,9 @@
     var line = L.polyline(latlngs, {color: '#c96f4a', weight: 4}).addTo(map);
     map.fitBounds(line.getBounds(), {padding: [20, 20]});
 
+    var step = Math.max(1, Math.round(pts.length / 500));
     pts.forEach(function(p, i){
+      if (i % step !== 0 && i !== pts.length - 1) return;
       var m = L.circleMarker([p.lat, p.lon], {radius: 3, color: '#4c5a36', fillColor: '#6d7c4f', fillOpacity: 0.9}).addTo(map);
       m.bindPopup((i + 1) + ' 点目<br>' + p.t + '<br>' + p.spd + ' km/h / 高度 ' + p.alt + ' m<br>精度 ' + p.acc + ' m（' + p.prov + '）');
     });
