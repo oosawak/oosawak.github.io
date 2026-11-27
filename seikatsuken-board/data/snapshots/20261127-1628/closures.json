@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T16:13:40+09:00",
+  "generatedAt": "2026-11-27T16:13:41+09:00",
   "sources": [
     {
       "office": "仙台河川国道事務所",
@@ -53,7 +53,7 @@
       "pref": "山形県",
       "sourceUrl": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/",
       "status": "ok",
-      "pageUpdated": "2026-11-18",
+      "pageUpdated": "2026-11-26",
       "items": [
         {
           "route": "東北中央自動車道（E13）",
@@ -68,9 +68,18 @@
           "route": "東北中央自動車道（E13）",
           "section": "",
           "type": "夜間通行止め",
-          "period": "1上り線 舟形IC~川原子IC 11月20日)(2下り線 舟形IC~新庄IC 11月27日",
+          "period": "11月27日",
           "reason": "道路工事",
           "title": "【E13】東北中央自動車道(新庄IC⇔川原子IC)夜間通行止め",
+          "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
+        },
+        {
+          "route": "東北中央自動車道（E13）",
+          "section": "",
+          "type": "上下線夜間通行止め",
+          "period": "11月30日~12月11日",
+          "reason": "道路工事",
+          "title": "【E13】東北中央自動車道(尾花沢北IC⇔舟形IC)上下線夜間通行止め",
           "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
         },
         {
@@ -83,12 +92,30 @@
           "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
         },
         {
-          "route": "主寝坂道路（E13）",
+          "route": "東北中央自動車道（E13）",
           "section": "",
-          "type": "上下線どちらか片側を通行止め",
-          "period": "10月13日~11月20日",
+          "type": "上下線夜間通行止め",
+          "period": "12月16日~12月25日",
           "reason": "道路工事",
-          "title": "【E13】主寝坂道路(金山北IC(仮称)⇔中田IC(仮称))上下線どちらか片側を通行止め",
+          "title": "【E13】東北中央自動車道(尾花沢北IC⇔川原子IC)上下線夜間通行止め",
+          "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
+        },
+        {
+          "route": "新庄古口道路【津谷交差点、福宮交差点⇔升形交差点】 上下線夜間通行止め",
+          "section": "",
+          "type": "上下線夜間通行止め",
+          "period": "12月1日",
+          "reason": "道路工事",
+          "title": "【国道47号】新庄古口道路【津谷交差点、福宮交差点⇔升形交差点】 上下線夜間通行止め",
+          "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
+        },
+        {
+          "route": "新庄南バイパス",
+          "section": "",
+          "type": "上下線夜間通行止め",
+          "period": "12月9日~12月11日",
+          "reason": "道路工事",
+          "title": "【国道47号】新庄南バイパス(新庄IC⇔鳥越交差点) 上下線夜間通行止め",
           "link": "https://www.thr.mlit.go.jp/yamagata/road/roadconstruction/"
         },
         {
