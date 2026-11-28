@@ -141,6 +141,7 @@
   <div class="tech">
     <p data-i18n="tech1"><b>土台は libkrun と Hypervisor.framework です。</b>Apple Silicon の Mac 上で Linux の仮想マシンを動かし、ゲストは Ubuntu 24.04 系に labwc（Wayland）を載せています。表示は virtio-gpu の直接表示です。</p>
     <p data-i18n="tech2"><b>入口はホスト側に常駐します。</b>Rust の russh で作った SSH サーバーが土台の外側にいて、土台を切り替えても接続が残ります。通信は gvproxy で、日本語入力の直通しもこの経路で約66ミリ秒まで詰めました。</p>
+    <p data-i18n="tech2b"><b>Vulkan は実験で実証済みです。</b>Venus 経由で Vulkan の3D描画が動き、1080p のシェーダで CPU 描画の約188倍（1,340 fps 対 7.12 fps）を実測しました。画面表示とは分けて、計算とオフスクリーン描画に GPU を使うための線です。教育型で Blender を実用に動かすには、この線が効いてきます。基盤初版にはまだ入っていません。</p>
     <p data-i18n="tech3">Android 版の仕組みと実測は <a href="https://oosawak.github.io/materials/hako-at-linux/">Android 版のページ</a> にあります。コミュニティは <a href="https://www.reddit.com/r/hakolinux/">r/hakolinux</a> です。</p>
   </div>
 </section>
@@ -149,7 +150,7 @@
   <h2 data-i18n="l0h">今の制限</h2>
   <p class="sec-lead" data-i18n="l0lead">正直に書いておきます。</p>
   <div class="cards">
-    <div class="card"><h3 data-i18n="l1h">描画はソフトウェア2D</h3><p data-i18n="l1p">表示の描画はソフトウェア2D（pixman）で、3D ハードウェア加速はありません。YouTube の再生はできますが、重い3D用途には向きません。</p></div>
+    <div class="card"><h3 data-i18n="l1h">描画はソフトウェア2D</h3><p data-i18n="l1p">表示の描画はソフトウェア2D（pixman）です。YouTube の再生はできますが、表示そのものに3D加速は使っていません。Vulkan は実験で動作確認済みで、製品版への統合はこれからです。</p></div>
     <div class="card"><h3 data-i18n="l2h">解像度は起動時に選ぶ</h3><p data-i18n="l2p">解像度は起動時の設定で決まります。窓の大きさを変えても、ゲストの解像度は自動では追随しません。</p></div>
     <div class="card"><h3 data-i18n="l3h">まだ基盤初版です</h3><p data-i18n="l3p">これは基盤初版（v0.1）です。AI 特化型と教育型のディストリビューションは、この土台の上にこれから作ります。内容は変わることがあります。</p></div>
   </div>
@@ -227,11 +228,12 @@
     s6h: "How it works (for the technical reader)",
     tech1: "<b>The foundation is libkrun and Hypervisor.framework.</b> A Linux virtual machine runs on Apple Silicon Macs; the guest is Ubuntu 24.04-based with labwc (Wayland). The display is virtio-gpu direct display.",
     tech2: "<b>The entrance lives on the host side.</b> An SSH server built with Rust's russh sits outside the base, so connections survive base switches. Networking goes through gvproxy — the Japanese input path uses the same route, tuned down to about 66 milliseconds.",
+    tech2b: "<b>Vulkan is verified in experiments.</b> 3D rendering over Venus works, measured at about 188x the CPU renderer on a 1080p shader (1,340 fps vs 7.12 fps). Kept separate from the display path, this is the line for GPU compute and offscreen rendering — and the one that matters for making Blender practical in the education edition. It is not in baseline v0.1 yet.",
     tech3: "The Android version's design and measurements are on the <a href=\"https://oosawak.github.io/materials/hako-at-linux/\">Android version page</a>. The community is <a href=\"https://www.reddit.com/r/hakolinux/\">r/hakolinux</a>.",
     l0h: "Current limits",
     l0lead: "Stated honestly.",
     l1h: "Rendering is software 2D",
-    l1p: "Display rendering is software 2D (pixman), with no 3D hardware acceleration. YouTube plays, but heavy 3D work is not what this is for.",
+    l1p: "Display rendering is software 2D (pixman); the display itself uses no 3D acceleration, though YouTube plays fine. Vulkan is verified in experiments; product integration is still to come.",
     l2h: "Resolution is chosen at launch",
     l2p: "The resolution is set at launch. Resizing the window does not make the guest resolution follow automatically yet.",
     l3h: "Still a baseline",
