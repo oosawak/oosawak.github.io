@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-28T12:57:30+09:00",
+  "generatedAt": "2026-11-28T20:57:03+09:00",
   "places": {
     "仙台": {
       "query": "仙台",
-      "fetchedAt": "2026-11-28T12:57:30+09:00",
+      "fetchedAt": "2026-11-28T20:57:03+09:00",
       "posts": [
         {
           "username": "trafficlip",
@@ -415,7 +415,7 @@
     },
     "松島": {
       "query": "松島",
-      "fetchedAt": "2026-11-28T12:57:30+09:00",
+      "fetchedAt": "2026-11-28T20:57:03+09:00",
       "posts": [
         {
           "username": "hanapyon.87",
@@ -437,8 +437,23 @@
     },
     "山形": {
       "query": "山形",
-      "fetchedAt": "2026-11-28T12:57:30+09:00",
+      "fetchedAt": "2026-11-28T20:57:03+09:00",
       "posts": [
+        {
+          "username": "trafficlip",
+          "url": "https://www.threads.com/@trafficlip/post/DgR_GulGO08",
+          "text": "#国道13号 #山形バイパス 天童市内で事故 一部通行止め #trafficlip #通行止 #山形県道路情報 山形河川国道事務所などによると、山形県天童市の国道13号[山形バイパス]で事故が発生し、11月28日18:15から、下り線(北行/東根方面)の天童市貫津→天童温泉口間で通行止めとなっています。 https://news.jp/i/1499348744398176741",
+          "likeCount": 0,
+          "takenAt": "2026-11-28T18:57:00+09:00",
+          "hasImage": false,
+          "imageCount": 0,
+          "promo": false,
+          "scene": true,
+          "liked": false,
+          "watched": true,
+          "community": "#山形県道路情報",
+          "spot": "国道13号"
+        },
         {
           "username": "tc_highway",
           "url": "https://www.threads.com/@tc_highway/post/DgPSs6ME_qc",
@@ -1239,7 +1254,7 @@
     },
     "東根": {
       "query": "東根",
-      "fetchedAt": "2026-11-28T12:57:30+09:00",
+      "fetchedAt": "2026-11-28T20:57:03+09:00",
       "posts": [
         {
           "username": "hiroshi0700",
@@ -1276,7 +1291,7 @@
     },
     "米沢": {
       "query": "米沢",
-      "fetchedAt": "2026-11-28T12:57:30+09:00",
+      "fetchedAt": "2026-11-28T20:57:03+09:00",
       "posts": [
         {
           "username": "da0510n",
@@ -1418,7 +1433,7 @@
     },
     "福島": {
       "query": "福島",
-      "fetchedAt": "2026-11-28T12:57:30+09:00",
+      "fetchedAt": "2026-11-28T20:57:03+09:00",
       "posts": [
         {
           "username": "tc_highway",
