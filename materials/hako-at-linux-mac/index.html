@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hako@Linux.mac ― Mac の中に、約1秒で立つ Linux の箱</title>
+<meta name="description" content="Mac の中で動く Linux の「箱」hako@linux.mac。約1秒で Wayland デスクトップが起動し、箱の複製は約5ミリ秒。人にも AI エージェントにも渡せる作業場です。開発中の技術紹介ページです。">
+<style>
+  :root{
+    --cream:#FAF6EE; --paper:#FFFDF8; --ink:#2B2B28; --muted:#6E6A5E;
+    --olive:#5F6B3A; --olive-soft:#EDF0E2; --terra:#C4663B; --line:#E3DCCB;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+    line-height:1.85;font-size:16px}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  .langbar{display:flex;justify-content:flex-end;padding:14px 0 0}
+  .langbar .group{display:inline-flex;border:1.5px solid var(--olive);border-radius:999px;overflow:hidden}
+  .langbar button{appearance:none;border:0;background:var(--paper);color:var(--olive);
+    font:inherit;font-size:13.5px;font-weight:700;padding:4px 16px;cursor:pointer}
+  .langbar button.chosen{background:var(--olive);color:#fff}
+  header{padding:56px 0 8px;text-align:center}
+  .badge{display:inline-block;background:var(--olive);color:#fff;font-size:13px;
+    padding:2px 14px;border-radius:999px;letter-spacing:.08em}
+  h1{font-size:38px;line-height:1.4;margin:20px 0 6px;font-weight:800}
+  h1 .sub{display:block;font-size:17px;font-weight:600;color:var(--olive);margin-top:10px;letter-spacing:.06em}
+  .lead{color:var(--ink);max-width:660px;margin:16px auto 0;font-size:17px}
+  .lead b{color:var(--terra)}
+  .video{margin:34px auto 0;max-width:760px}
+  .video .frame{position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+  .video figcaption{font-size:13px;color:var(--muted);padding:8px 4px 2px;text-align:left}
+  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:28px 0 6px}
+  .cta a{display:inline-block;padding:11px 26px;border-radius:10px;text-decoration:none;font-weight:700}
+  .cta .primary{background:var(--terra);color:#fff}
+  .cta .ghost{background:var(--paper);color:var(--olive);border:1.5px solid var(--olive)}
+  section{padding:40px 0 6px}
+  h2{font-size:24px;margin:0 0 6px;padding-left:12px;border-left:5px solid var(--terra)}
+  .sec-lead{color:var(--muted);margin:4px 0 18px}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .card h3{margin:0 0 6px;font-size:17px;color:var(--olive)}
+  .card p{margin:0;font-size:15px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:6px 0 8px}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 10px;text-align:center}
+  .stat .num{font-size:26px;font-weight:800;color:var(--olive)}
+  .stat .num small{font-size:14px;font-weight:700}
+  .stat .cap{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .tech{background:var(--olive-soft);border-radius:12px;padding:20px 24px}
+  .tech p{margin:6px 0;font-size:15px}
+  .tech b{color:var(--olive)}
+  footer{margin:52px 0 0;border-top:1px solid var(--line);padding:22px 0 40px;
+    color:var(--muted);font-size:13.5px;text-align:center}
+  footer a{color:var(--olive)}
+  @media (max-width:720px){
+    h1{font-size:28px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .cards{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar"><div class="group" role="group" aria-label="Language / 言語"><button type="button" data-setlang="ja">日本語</button><button type="button" data-setlang="en">English</button></div></div>
+
+<header>
+  <span class="badge" data-i18n="badge">開発中・基盤初版 v0.1</span>
+  <h1 data-i18n="h1">Mac の中に、約1秒で立つ<br>Linux の箱ができました。<span class="sub">hako@linux.mac ― Mac で動く Hako@Linux</span></h1>
+  <p class="lead" data-i18n="lead">Android 版に続いて、Mac 版の基盤初版ができました。アプリを開くと、約1秒で Linux のデスクトップが立ち上がります。作った本人は、日常の YouTube プレイヤーとして使っています。</p>
+  <figure class="video">
+    <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/0UZ9z6JfuPM" title="hako@linux.mac 紹介動画" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+    <figcaption data-i18n="capVideo">紹介動画（約105秒）。起動からデスクトップ、Firefox、Mac の日本語入力、テーマ変更までを実時間で収録しています。</figcaption>
+  </figure>
+  <div class="cta">
+    <a class="primary" href="https://youtu.be/0UZ9z6JfuPM" data-i18n="cta1">紹介動画を見る（YouTube）</a>
+    <a class="ghost" href="https://oosawak.github.io/materials/hako-at-linux/" data-i18n="cta2">Android 版を見る</a>
+  </div>
+</header>
+
+<section>
+  <h2 data-i18n="i0h">「箱」の考え方</h2>
+  <p class="sec-lead" data-i18n="i0lead">Hako@Linux は、Linux そのものではなく「箱」を作る仕組みです。</p>
+  <div class="cards">
+    <div class="card"><h3 data-i18n="i1h">中身を替えても、入口が残る</h3><p data-i18n="i1p">箱の中の Linux（土台）を切り替えても、SSH の入口はホスト側に残ります。接続中の作業は切れず、新しい接続だけ新しい土台へ入ります。</p></div>
+    <div class="card"><h3 data-i18n="i2h">複製して、捨てられる</h3><p data-i18n="i2p">箱の複製とスナップショットは約5ミリ秒。試して、壊れたら、巻き戻す。実験用の箱を気軽に作って、気軽に捨てられます。</p></div>
+    <div class="card"><h3 data-i18n="i3h">人にも、AI にも渡せる</h3><p data-i18n="i3p">ターミナルとブラウザとファイルを、そのまま渡せる作業場です。AI エージェントに仕事を任せるための場所として作っています。</p></div>
+    <div class="card"><h3 data-i18n="i4h">本体は軽いまま</h3><p data-i18n="i4p">基本機能は軽く保ち、必要な道具は後から足します。土台やソフトを同梱せず、レシピから組み立てるのが Hako@Linux のやり方です。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="s1h">できること</h2>
+  <p class="sec-lead" data-i18n="s1lead">基盤初版（v0.1）で、実機で確認したことです。</p>
+  <div class="cards">
+    <div class="card"><h3 data-i18n="c1h">約1秒でデスクトップ</h3><p data-i18n="c1p">起動から約1秒で、Wayland デスクトップ（labwc）が使えます。待ち時間の無い Linux が、Mac の中に常駐します。</p></div>
+    <div class="card"><h3 data-i18n="c2h">音が出る</h3><p data-i18n="c2p">音声は virtio-snd から Mac の CoreAudio へ出ます。Firefox で YouTube の音も再生できます。</p></div>
+    <div class="card"><h3 data-i18n="c3h">Mac の日本語入力が届く</h3><p data-i18n="c3p">Mac 側の日本語入力（IME）が、そのまま箱の中のアプリへ届きます。届くまでの往復は実測で約66ミリ秒です。</p></div>
+    <div class="card"><h3 data-i18n="c4h">メモリ2GBでも動く</h3><p data-i18n="c4p">メモリ2GBの設定で、Firefox と YouTube の再生を確認しました。解像度（1024×768〜1920×1080）とメモリ・CPU（2コア/2GB〜6コア/12GB）は、メニューで切り替えられます。</p></div>
+    <div class="card"><h3 data-i18n="c5h">Mac とファイル共有</h3><p data-i18n="c5p">共有フォルダ（~/Mac）が、箱の中から読み書きできます。Mac と箱の間で、ファイルをそのままやり取りできます。</p></div>
+    <div class="card"><h3 data-i18n="c6h">hako install</h3><p data-i18n="c6p">GitHub CLI や Codex などの道具は、<code>hako install</code> で必要な時に足せます。本体は軽いままです。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="u0h">使い方の場面</h2>
+  <p class="sec-lead" data-i18n="u0lead">例えば、こんな使い方を想定しています。</p>
+  <div class="cards">
+    <div class="card"><h3 data-i18n="u1h">AI エージェントの作業場</h3><p data-i18n="u1p">複製できる箱を AI に渡して、作業させる場所に。失敗したら、スナップショットから巻き戻せます。</p></div>
+    <div class="card"><h3 data-i18n="u2h">壊してもいい実験場</h3><p data-i18n="u2p">新しい土台やソフトを試す場所に。本体の Mac を汚さず、箱の中だけで試せます。</p></div>
+    <div class="card"><h3 data-i18n="u3h">日常の小さな Linux</h3><p data-i18n="u3p">約1秒で立つので、ちょっとした作業のたびに開けます。作った本人は、日常の YouTube プレイヤーとして普通に使っています。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="s4h">数字で見る</h2>
+  <p class="sec-lead" data-i18n="s4lead">実機で測った数字です（MacBook Pro 16、Apple M1 Max）。</p>
+  <div class="stats">
+    <div class="stat"><div class="num" data-i18n="st1num">約1<small> 秒</small></div><div class="cap" data-i18n="st1cap">起動からデスクトップまで</div></div>
+    <div class="stat"><div class="num" data-i18n="st2num">約5<small> ミリ秒</small></div><div class="cap" data-i18n="st2cap">箱の複製・スナップショット</div></div>
+    <div class="stat"><div class="num" data-i18n="st3num">66<small> ミリ秒</small></div><div class="cap" data-i18n="st3cap">Mac の日本語入力が届くまで</div></div>
+    <div class="stat"><div class="num">2<small> GB</small></div><div class="cap" data-i18n="st4cap">YouTube 再生を確認したメモリ</div></div>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="s3h">機能一覧</h2>
+  <p class="sec-lead" data-i18n="s3lead">基盤初版（v0.1）に入っているものです。</p>
+  <div class="cards">
+    <div class="card"><h3 data-i18n="f1h">箱の基本</h3><p data-i18n="f1p">土台は Ubuntu 24.04 系で、デスクトップは Wayland（labwc）です。ディスクは 16GB（空き約9.3GB）。アプリの名前は Hako@Linux.app です。</p></div>
+    <div class="card"><h3 data-i18n="f2h">入り口</h3><p data-i18n="f2p">Rust 製の SSH サーバー（russh）がホスト側に常駐します。接続は実測 0.0311 秒。土台を切り替えても再起動せず、接続中のセッションは維持されます。</p></div>
+    <div class="card"><h3 data-i18n="f3h">箱の管理</h3><p data-i18n="f3p">APFS の Copy-on-Write を使った複製・スナップショット・切り替えと巻き戻し。巻き戻しの前には、自動で退避が作られます。</p></div>
+    <div class="card"><h3 data-i18n="f4h">見た目の切り替え</h3><p data-i18n="f4p">Hako Look で、テーマとフォント（12/18/24pt）が切り替えられます。ステータスバーには解像度と CPU・メモリの使用量が出ます。</p></div>
+    <div class="card"><h3 data-i18n="f5h">道具の追加</h3><p data-i18n="f5p"><code>hako list</code> / <code>hako install</code> で、道具をオンデマンドで導入できます。基本機能は軽く保ち、要る物だけを足す形です。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="s6h">仕組み（技術者向け）</h2>
+  <div class="tech">
+    <p data-i18n="tech1"><b>土台は libkrun と Hypervisor.framework です。</b>Apple Silicon の Mac 上で Linux の仮想マシンを動かし、ゲストは Ubuntu 24.04 系に labwc（Wayland）を載せています。表示は virtio-gpu の直接表示です。</p>
+    <p data-i18n="tech2"><b>入口はホスト側に常駐します。</b>Rust の russh で作った SSH サーバーが土台の外側にいて、土台を切り替えても接続が残ります。通信は gvproxy で、日本語入力の直通しもこの経路で約66ミリ秒まで詰めました。</p>
+    <p data-i18n="tech3">Android 版の仕組みと実測は <a href="https://oosawak.github.io/materials/hako-at-linux/">Android 版のページ</a> にあります。コミュニティは <a href="https://www.reddit.com/r/hakolinux/">r/hakolinux</a> です。</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="l0h">今の制限</h2>
+  <p class="sec-lead" data-i18n="l0lead">正直に書いておきます。</p>
+  <div class="cards">
+    <div class="card"><h3 data-i18n="l1h">描画はソフトウェア2D</h3><p data-i18n="l1p">表示の描画はソフトウェア2D（pixman）で、3D ハードウェア加速はありません。YouTube の再生はできますが、重い3D用途には向きません。</p></div>
+    <div class="card"><h3 data-i18n="l2h">解像度は起動時に選ぶ</h3><p data-i18n="l2p">解像度は起動時の設定で決まります。窓の大きさを変えても、ゲストの解像度は自動では追随しません。</p></div>
+    <div class="card"><h3 data-i18n="l3h">まだ基盤初版です</h3><p data-i18n="l3p">これは基盤初版（v0.1）です。AI 特化型と教育型のディストリビューションは、この土台の上にこれから作ります。内容は変わることがあります。</p></div>
+  </div>
+</section>
+
+<footer>
+  <p data-i18n="footer">hako@linux.mac は開発中の仕組みです。内容は変わることがあります。<br>
+  Android 版は <a href="https://oosawak.github.io/materials/hako-at-linux/">Hako@Linux（Android 版）</a>、コミュニティは <a href="https://www.reddit.com/r/hakolinux/">r/hakolinux</a>、カタログは <a href="https://oosawak.github.io/materials/hako-hub/">Hako Hub</a> をご覧ください。<br>
+  Lyre3 Games</p>
+</footer>
+
+</div>
+<script>
+(function(){
+  var EN = {
+    badge: "In development — baseline v0.1",
+    h1: "A Linux box on your Mac,<br>up in about a second.<span class=\"sub\">hako@linux.mac — Hako@Linux on Mac</span>",
+    lead: "After the Android version, the Mac version's baseline (v0.1) is ready. Open the app and a Linux desktop is there in about a second. Its maker uses it as an everyday YouTube player.",
+    capVideo: "Intro video (about 105 seconds): boot, the desktop, Firefox, Mac Japanese input and a theme change, recorded in real time.",
+    cta1: "Watch the intro video (YouTube)",
+    cta2: "See the Android version",
+    i0h: "The idea of the “box”",
+    i0lead: "Hako@Linux does not build Linux itself — it builds the box around it.",
+    i1h: "Swap the inside, keep the entrance",
+    i1p: "Switch the Linux base inside the box, and the SSH entrance stays on the host side. Work in progress is not cut off; only new connections land in the new base.",
+    i2h: "Clone it, throw it away",
+    i2p: "Cloning a box and taking a snapshot take about 5 milliseconds. Try things, break things, roll back. Experiment boxes are cheap to make and cheap to discard.",
+    i3h: "Hand it to a person — or an AI",
+    i3p: "A workplace with a terminal, a browser and files, ready to hand over as-is. It is built as a place where AI agents can be given work.",
+    i4h: "The core stays light",
+    i4p: "The basics stay small, and tools are added later. Bases and software are not bundled; they are assembled from recipes — that is the Hako@Linux way.",
+    s1h: "What it does",
+    s1lead: "What baseline v0.1 does, verified on a real machine.",
+    c1h: "Desktop in about a second",
+    c1p: "A Wayland desktop (labwc) is usable about a second after launch. A Linux with no waiting, resident on your Mac.",
+    c2h: "Sound works",
+    c2p: "Audio goes from virtio-snd to macOS CoreAudio. YouTube sound plays in Firefox, too.",
+    c3h: "Mac Japanese input arrives",
+    c3p: "Your Mac's Japanese IME input reaches apps inside the box as-is. The round trip measured about 66 milliseconds.",
+    c4h: "Runs in 2 GB of memory",
+    c4p: "Firefox and YouTube playback were verified with a 2 GB memory setting. Resolution (1024×768 to 1920×1080) and memory/CPU (2 cores/2 GB to 6 cores/12 GB) switch from a menu.",
+    c5h: "File sharing with the Mac",
+    c5p: "A shared folder (~/Mac) is readable and writable from inside the box. Files move between Mac and box directly.",
+    c6h: "hako install",
+    c6p: "Tools such as the GitHub CLI and Codex can be added with <code>hako install</code> when you need them. The core stays light.",
+    u0h: "Where it fits",
+    u0lead: "For example, in ways like these.",
+    u1h: "A workplace for AI agents",
+    u1p: "Hand a clonable box to an AI and let it work there. If it fails, roll back from a snapshot.",
+    u2h: "A lab you may break",
+    u2p: "A place to try new bases and software — inside the box only, without dirtying the Mac itself.",
+    u3h: "An everyday small Linux",
+    u3p: "It comes up in about a second, so you can open it for every small job. Its maker uses it as an ordinary, everyday YouTube player.",
+    s4h: "Measured numbers",
+    s4lead: "Numbers measured on a real machine (MacBook Pro 16, Apple M1 Max).",
+    st1num: "≈1<small> sec</small>",
+    st1cap: "From launch to desktop",
+    st2num: "≈5<small> ms</small>",
+    st2cap: "Cloning a box / taking a snapshot",
+    st3num: "66<small> ms</small>",
+    st3cap: "For Mac Japanese input to arrive",
+    st4cap: "Memory YouTube playback was verified with",
+    s3h: "Features",
+    s3lead: "What is in baseline v0.1.",
+    f1h: "The box itself",
+    f1p: "The base is Ubuntu 24.04-based, with a Wayland desktop (labwc). The disk is 16 GB (about 9.3 GB free). The app is named Hako@Linux.app.",
+    f2h: "The entrance",
+    f2p: "An SSH server written in Rust (russh) stays resident on the host side. A connection measured 0.0311 seconds. Switching bases does not restart it, and live sessions are kept.",
+    f3h: "Box management",
+    f3p: "Clone, snapshot, switch and roll back, using APFS copy-on-write. Before a rollback, a backup is saved automatically.",
+    f4h: "Look switching",
+    f4p: "Hako Look switches themes and fonts (12/18/24pt). The status bar shows the resolution and CPU/memory usage.",
+    f5h: "Adding tools",
+    f5p: "<code>hako list</code> / <code>hako install</code> add tools on demand. The basics stay light; you add only what you need.",
+    s6h: "How it works (for the technical reader)",
+    tech1: "<b>The foundation is libkrun and Hypervisor.framework.</b> A Linux virtual machine runs on Apple Silicon Macs; the guest is Ubuntu 24.04-based with labwc (Wayland). The display is virtio-gpu direct display.",
+    tech2: "<b>The entrance lives on the host side.</b> An SSH server built with Rust's russh sits outside the base, so connections survive base switches. Networking goes through gvproxy — the Japanese input path uses the same route, tuned down to about 66 milliseconds.",
+    tech3: "The Android version's design and measurements are on the <a href=\"https://oosawak.github.io/materials/hako-at-linux/\">Android version page</a>. The community is <a href=\"https://www.reddit.com/r/hakolinux/\">r/hakolinux</a>.",
+    l0h: "Current limits",
+    l0lead: "Stated honestly.",
+    l1h: "Rendering is software 2D",
+    l1p: "Display rendering is software 2D (pixman), with no 3D hardware acceleration. YouTube plays, but heavy 3D work is not what this is for.",
+    l2h: "Resolution is chosen at launch",
+    l2p: "The resolution is set at launch. Resizing the window does not make the guest resolution follow automatically yet.",
+    l3h: "Still a baseline",
+    l3p: "This is baseline v0.1. The AI-specialised and education distributions will be built on top of this foundation. Details may change.",
+    footer: "hako@linux.mac is a work in progress; details may change.<br>See the <a href=\"https://oosawak.github.io/materials/hako-at-linux/\">Android version page</a>, the <a href=\"https://www.reddit.com/r/hakolinux/\">r/hakolinux</a> community, and the <a href=\"https://oosawak.github.io/materials/hako-hub/\">Hako Hub</a> catalog.<br>Lyre3 Games"
+  };
+  var JA_TITLE = document.title;
+  var EN_TITLE = "hako@linux.mac — A Linux box on your Mac, up in about a second";
+  var JA_DESC = document.querySelector('meta[name="description"]').getAttribute('content');
+  var EN_DESC = "hako@linux.mac is a Linux “box” that runs on your Mac: a Wayland desktop in about a second, box clones in about 5 milliseconds. A workplace you can hand to a person or an AI agent. A work-in-progress technology page.";
+  var jaText = {};
+  function apply(lang){
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if(!(k in jaText)) jaText[k] = el.innerHTML;
+      el.innerHTML = (lang === 'en' && EN[k]) ? EN[k] : jaText[k];
+    });
+    document.title = (lang === 'en') ? EN_TITLE : JA_TITLE;
+    document.querySelector('meta[name="description"]').setAttribute('content', (lang === 'en') ? EN_DESC : JA_DESC);
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-setlang]').forEach(function(b){
+      b.classList.toggle('chosen', b.getAttribute('data-setlang') === lang);
+      b.setAttribute('aria-pressed', b.getAttribute('data-setlang') === lang ? 'true' : 'false');
+    });
+    try{ localStorage.setItem('hako-mac-lp-lang', lang); }catch(e){}
+    try{
+      var u = new URL(location.href);
+      if(u.searchParams.get('lang') !== lang){ u.searchParams.set('lang', lang); history.replaceState(null, '', u.href); }
+    }catch(e){}
+  }
+  var param = null;
+  try{ param = new URLSearchParams(location.search).get('lang'); }catch(e){}
+  var saved = null;
+  try{ saved = localStorage.getItem('hako-mac-lp-lang'); }catch(e){}
+  var initial = (param === 'en' || param === 'ja') ? param : (saved === 'en' ? 'en' : 'ja');
+  document.querySelectorAll('[data-setlang]').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.getAttribute('data-setlang')); });
+  });
+  apply(initial);
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "cdf4ee53507948e4a412f503875833cd"}'></script>
+</body>
+</html>
