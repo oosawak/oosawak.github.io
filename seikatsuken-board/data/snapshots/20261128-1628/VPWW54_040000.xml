@@ -2,15 +2,15 @@
 <Report xmlns="http://xml.kishou.go.jp/jmaxml1/" xmlns:jmx="http://xml.kishou.go.jp/jmaxml1/" xmlns:jmx_add="http://xml.kishou.go.jp/jmaxml1/addition1/">
 <Control>
 <Title>気象警報・注意報（Ｈ２７）</Title>
-<DateTime>2026-11-25T01:57:50Z</DateTime>
+<DateTime>2026-11-28T03:05:19Z</DateTime>
 <Status>通常</Status>
 <EditorialOffice>仙台管区気象台</EditorialOffice>
 <PublishingOffice>仙台管区気象台</PublishingOffice>
 </Control>
 <Head xmlns="http://xml.kishou.go.jp/jmaxml1/informationBasis1/">
 <Title>宮城県気象警報・注意報</Title>
-<ReportDateTime>2026-11-25T10:57:00+09:00</ReportDateTime>
-<TargetDateTime>2026-11-25T10:57:00+09:00</TargetDateTime>
+<ReportDateTime>2026-11-28T12:05:00+09:00</ReportDateTime>
+<TargetDateTime>2026-11-28T12:05:00+09:00</TargetDateTime>
 <EventID/>
 <InfoType>発表</InfoType>
 <Serial/>
@@ -482,17 +482,13 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>宮城県</Name>
 <Code>040000</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 <FullStatus>一部</FullStatus>
 <EditingMark>0</EditingMark>
 </Item>
@@ -502,17 +498,13 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>東部</Name>
 <Code>040010</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 <FullStatus>全域</FullStatus>
 <EditingMark>1</EditingMark>
 </Item>
@@ -531,17 +523,13 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>東部仙台</Name>
 <Code>040011</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 <FullStatus>全域</FullStatus>
 <EditingMark>0</EditingMark>
 </Item>
@@ -549,17 +537,13 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>石巻地域</Name>
 <Code>040012</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 <FullStatus>全域</FullStatus>
 <EditingMark>0</EditingMark>
 </Item>
@@ -567,17 +551,13 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>東部大崎</Name>
 <Code>040013</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 <FullStatus>全域</FullStatus>
 <EditingMark>0</EditingMark>
 </Item>
@@ -585,17 +565,13 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>気仙沼地域</Name>
 <Code>040014</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 <FullStatus>全域</FullStatus>
 <EditingMark>0</EditingMark>
 </Item>
@@ -603,17 +579,13 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>東部仙南</Name>
 <Code>040015</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 <FullStatus>全域</FullStatus>
 <EditingMark>0</EditingMark>
 </Item>
@@ -621,17 +593,13 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>登米・東部栗原</Name>
 <Code>040016</Code>
 </Area>
-<ChangeStatus>変化無</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 <FullStatus>全域</FullStatus>
 <EditingMark>0</EditingMark>
 </Item>
@@ -677,17 +645,13 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>仙台市東部</Name>
 <Code>0410001</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
@@ -702,49 +666,37 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>石巻市</Name>
 <Code>0420200</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>塩竈市</Name>
 <Code>0420300</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>気仙沼市</Name>
 <Code>0420500</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
@@ -759,97 +711,73 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>名取市</Name>
 <Code>0420700</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>角田市</Name>
 <Code>0420800</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>多賀城市</Name>
 <Code>0420900</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>岩沼市</Name>
 <Code>0421100</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>登米市</Name>
 <Code>0421200</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>栗原市東部</Name>
 <Code>0421301</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
@@ -864,33 +792,25 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>東松島市</Name>
 <Code>0421400</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>大崎市東部</Name>
 <Code>0421501</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
@@ -905,17 +825,13 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>富谷市</Name>
 <Code>0421600</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
@@ -939,49 +855,37 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>大河原町</Name>
 <Code>0432100</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>村田町</Name>
 <Code>0432200</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>柴田町</Name>
 <Code>0432300</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
@@ -996,113 +900,85 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>丸森町</Name>
 <Code>0434100</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>亘理町</Name>
 <Code>0436100</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>山元町</Name>
 <Code>0436200</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>松島町</Name>
 <Code>0440100</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>七ヶ浜町</Name>
 <Code>0440400</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>利府町</Name>
 <Code>0440600</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>大和町東部</Name>
 <Code>0442101</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
@@ -1117,17 +993,13 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>大郷町</Name>
 <Code>0442200</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
@@ -1160,114 +1032,98 @@
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>涌谷町</Name>
 <Code>0450100</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>美里町</Name>
 <Code>0450500</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>女川町</Name>
 <Code>0458100</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 <Item>
 <Kind>
 <Name>強風注意報</Name>
 <Code>15</Code>
-<Status>継続</Status>
-<LastKind>
-<Name>強風注意報</Name>
-<Code>15</Code>
-</LastKind>
+<Status>発表</Status>
 </Kind>
 <Area>
 <Name>南三陸町</Name>
 <Code>0460600</Code>
 </Area>
-<ChangeStatus>警報・注意報種別に変化無、量的予想事項等に変化有</ChangeStatus>
+<ChangeStatus>警報・注意報種別に変化有</ChangeStatus>
 </Item>
 </Warning>
 <MeteorologicalInfos type="量的予想時系列（市町村等）">
 <TimeSeriesInfo>
 <TimeDefines>
 <TimeDefine timeId="1">
-<DateTime>2026-11-25T09:00:00+09:00</DateTime>
+<DateTime>2026-11-28T12:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２５日昼前</Name>
+<Name>２８日昼過ぎ</Name>
 </TimeDefine>
 <TimeDefine timeId="2">
-<DateTime>2026-11-25T12:00:00+09:00</DateTime>
+<DateTime>2026-11-28T15:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２５日昼過ぎ</Name>
+<Name>２８日夕方</Name>
 </TimeDefine>
 <TimeDefine timeId="3">
-<DateTime>2026-11-25T15:00:00+09:00</DateTime>
+<DateTime>2026-11-28T18:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２５日夕方</Name>
+<Name>２８日夜のはじめ頃</Name>
 </TimeDefine>
 <TimeDefine timeId="4">
-<DateTime>2026-11-25T18:00:00+09:00</DateTime>
+<DateTime>2026-11-28T21:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２５日夜のはじめ頃</Name>
+<Name>２８日夜遅く</Name>
 </TimeDefine>
 <TimeDefine timeId="5">
-<DateTime>2026-11-25T21:00:00+09:00</DateTime>
+<DateTime>2026-11-29T00:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２５日夜遅く</Name>
+<Name>２９日未明</Name>
 </TimeDefine>
 <TimeDefine timeId="6">
-<DateTime>2026-11-26T00:00:00+09:00</DateTime>
+<DateTime>2026-11-29T03:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２６日未明</Name>
+<Name>２９日明け方</Name>
 </TimeDefine>
 <TimeDefine timeId="7">
-<DateTime>2026-11-26T03:00:00+09:00</DateTime>
+<DateTime>2026-11-29T06:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２６日明け方</Name>
+<Name>２９日朝</Name>
 </TimeDefine>
 <TimeDefine timeId="8">
-<DateTime>2026-11-26T06:00:00+09:00</DateTime>
+<DateTime>2026-11-29T09:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２６日朝</Name>
+<Name>２９日昼前</Name>
 </TimeDefine>
 <TimeDefine timeId="9">
-<DateTime>2026-11-26T09:00:00+09:00</DateTime>
+<DateTime>2026-11-29T12:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
-<Name>２６日昼前</Name>
+<Name>２９日昼過ぎ</Name>
 </TimeDefine>
 </TimeDefines>
 <Item>
@@ -1285,55 +1141,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -1365,22 +1182,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -1393,22 +1198,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -1439,55 +1232,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -1519,22 +1273,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="北西の風" refID="1" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -1547,22 +1289,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -1593,55 +1323,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -1673,22 +1364,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -1701,22 +1380,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -1747,55 +1414,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -1827,22 +1455,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -1855,22 +1471,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="２メートル" refID="1" type="最大風速" unit="m/s">2</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -1901,55 +1505,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -1981,22 +1546,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -2009,22 +1562,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -2053,16 +1594,16 @@
 <Code>00</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -2091,10 +1632,10 @@
 <Type>風</Type>
 <WindDirectionPart>
 <Base>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -2104,10 +1645,10 @@
 </WindDirectionPart>
 <WindSpeedPart>
 <Base>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="６メートル" refID="1" type="最大風速" unit="m/s">6</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -2137,55 +1678,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -2217,22 +1719,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -2245,22 +1735,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -2291,55 +1769,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -2371,22 +1810,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -2399,22 +1826,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -2443,16 +1858,16 @@
 <Code>00</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -2481,10 +1896,10 @@
 <Type>風</Type>
 <WindDirectionPart>
 <Base>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -2494,10 +1909,10 @@
 </WindDirectionPart>
 <WindSpeedPart>
 <Base>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="５メートル" refID="1" type="最大風速" unit="m/s">5</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -2525,16 +1940,16 @@
 <Code>00</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -2563,10 +1978,10 @@
 <Type>風</Type>
 <WindDirectionPart>
 <Base>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -2576,10 +1991,10 @@
 </WindDirectionPart>
 <WindSpeedPart>
 <Base>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="５メートル" refID="1" type="最大風速" unit="m/s">5</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -2609,55 +2024,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -2689,22 +2065,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="北西の風" refID="1" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -2717,22 +2081,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -2761,16 +2113,16 @@
 <Code>00</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -2799,10 +2151,10 @@
 <Type>風</Type>
 <WindDirectionPart>
 <Base>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -2812,10 +2164,10 @@
 </WindDirectionPart>
 <WindSpeedPart>
 <Base>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="８メートル" refID="1" type="最大風速" unit="m/s">8</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -2843,16 +2195,16 @@
 <Code>00</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -2881,10 +2233,10 @@
 <Type>風</Type>
 <WindDirectionPart>
 <Base>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -2894,10 +2246,10 @@
 </WindDirectionPart>
 <WindSpeedPart>
 <Base>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -2925,16 +2277,16 @@
 <Code>00</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -2963,10 +2315,10 @@
 <Type>風</Type>
 <WindDirectionPart>
 <Base>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -2976,10 +2328,10 @@
 </WindDirectionPart>
 <WindSpeedPart>
 <Base>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="６メートル" refID="1" type="最大風速" unit="m/s">6</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -3007,16 +2359,16 @@
 <Code>00</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -3045,10 +2397,10 @@
 <Type>風</Type>
 <WindDirectionPart>
 <Base>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -3058,10 +2410,10 @@
 </WindDirectionPart>
 <WindSpeedPart>
 <Base>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="６メートル" refID="1" type="最大風速" unit="m/s">6</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -3089,16 +2441,16 @@
 <Code>00</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -3127,10 +2479,10 @@
 <Type>風</Type>
 <WindDirectionPart>
 <Base>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -3140,10 +2492,10 @@
 </WindDirectionPart>
 <WindSpeedPart>
 <Base>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="６メートル" refID="1" type="最大風速" unit="m/s">6</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -3171,16 +2523,16 @@
 <Code>00</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -3209,10 +2561,10 @@
 <Type>風</Type>
 <WindDirectionPart>
 <Base>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -3222,10 +2574,10 @@
 </WindDirectionPart>
 <WindSpeedPart>
 <Base>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="６メートル" refID="1" type="最大風速" unit="m/s">6</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -3255,55 +2607,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -3335,22 +2648,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -3363,22 +2664,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -3409,55 +2698,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -3489,22 +2739,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -3517,22 +2755,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -3563,55 +2789,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -3643,22 +2830,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -3671,22 +2846,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -3717,55 +2880,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -3797,22 +2921,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -3825,22 +2937,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -3871,55 +2971,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -3951,22 +3012,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -3979,22 +3028,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -4023,16 +3060,16 @@
 <Code>00</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -4061,10 +3098,10 @@
 <Type>風</Type>
 <WindDirectionPart>
 <Base>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -4074,10 +3111,10 @@
 </WindDirectionPart>
 <WindSpeedPart>
 <Base>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -4105,16 +3142,16 @@
 <Code>00</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -4143,10 +3180,10 @@
 <Type>風</Type>
 <WindDirectionPart>
 <Base>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -4156,10 +3193,10 @@
 </WindDirectionPart>
 <WindSpeedPart>
 <Base>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -4187,16 +3224,16 @@
 <Code>00</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -4225,10 +3262,10 @@
 <Type>風</Type>
 <WindDirectionPart>
 <Base>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -4238,10 +3275,10 @@
 </WindDirectionPart>
 <WindSpeedPart>
 <Base>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="８メートル" refID="1" type="最大風速" unit="m/s">8</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -4269,16 +3306,16 @@
 <Code>00</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
+<Name>注意報級</Name>
+<Code>10</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -4307,10 +3344,10 @@
 <Type>風</Type>
 <WindDirectionPart>
 <Base>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -4320,10 +3357,10 @@
 </WindDirectionPart>
 <WindSpeedPart>
 <Base>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="８メートル" refID="1" type="最大風速" unit="m/s">8</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -4353,55 +3390,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -4433,22 +3431,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="北西の風" refID="1" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -4461,22 +3447,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="４メートル" refID="1" type="最大風速" unit="m/s">4</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
@@ -4507,55 +3481,16 @@
 <Code>10</Code>
 </Significancy>
 <Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
+<Name>注意報級未満</Name>
+<Code>00</Code>
 </Significancy>
 <Significancy refID="3" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
 </Significancy>
 <Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="5" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="6" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="7" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="8" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-<Significancy refID="9" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
-</Significancy>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<Significancy refID="1" type="風危険度">
 <Name>注意報級</Name>
 <Code>10</Code>
-</Significancy>
-<Significancy refID="2" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="3" type="風危険度">
-<Name>注意報級</Name>
-<Code>10</Code>
-</Significancy>
-<Significancy refID="4" type="風危険度">
-<Name>注意報級未満</Name>
-<Code>00</Code>
 </Significancy>
 <Significancy refID="5" type="風危険度">
 <Name>注意報級未満</Name>
@@ -4587,22 +3522,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="8" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection condition="値なし" refID="9" type="風向" unit="８方位漢字"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindDirection condition="値なし" refID="1" type="風向" unit="８方位漢字"/>
-<jmx_eb:WindDirection description="西の風" refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection description="西の風" refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection condition="値なし" refID="4" type="風向" unit="８方位漢字"/>
+<jmx_eb:WindDirection description="西の風" refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
 <jmx_eb:WindDirection condition="値なし" refID="5" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="6" type="風向" unit="８方位漢字"/>
 <jmx_eb:WindDirection condition="値なし" refID="7" type="風向" unit="８方位漢字"/>
@@ -4615,22 +3538,10 @@
 <Base>
 <Local>
 <AreaName>陸上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１３メートル" refID="2" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="２メートル" refID="1" type="最大風速" unit="m/s">2</jmx_eb:WindSpeed>
+<jmx_eb:WindSpeed description="１０メートル" refID="2" type="最大風速" unit="m/s">10</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed description="１３メートル" refID="3" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="8" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed condition="値なし" refID="9" type="最大風速" unit="m/s"/>
-</Local>
-<Local>
-<AreaName>海上</AreaName>
-<jmx_eb:WindSpeed condition="値なし" refID="1" type="最大風速" unit="m/s"/>
-<jmx_eb:WindSpeed description="１５メートル" refID="2" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed description="１５メートル" refID="3" type="最大風速" unit="m/s">15</jmx_eb:WindSpeed>
-<jmx_eb:WindSpeed condition="値なし" refID="4" type="最大風速" unit="m/s"/>
+<jmx_eb:WindSpeed description="１３メートル" refID="4" type="最大風速" unit="m/s">13</jmx_eb:WindSpeed>
 <jmx_eb:WindSpeed condition="値なし" refID="5" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="6" type="最大風速" unit="m/s"/>
 <jmx_eb:WindSpeed condition="値なし" refID="7" type="最大風速" unit="m/s"/>
